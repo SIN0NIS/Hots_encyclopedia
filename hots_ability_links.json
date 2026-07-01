@@ -1,0 +1,2821 @@
+{
+  "patch_build": "97039",
+  "generated": "2026-07-01 13:34",
+  "manual_overrides": {
+    "SamuroSelectSamuroPrime": {
+      "parent": "SamuroIllusionMaster",
+      "note_ko": "궁극기 '환영의 대가'를 선택해야 사용 가능",
+      "note_en": "Usable only when the 'Illusion Master' heroic is chosen"
+    },
+    "SamuroSelectAll": {
+      "parent": "SamuroIllusionMaster",
+      "note_ko": "궁극기 '환영의 대가'를 선택해야 사용 가능",
+      "note_en": "Usable only when the 'Illusion Master' heroic is chosen"
+    },
+    "TinkerFocusTurrets": {
+      "parent": "TinkerRockItTurret",
+      "note_ko": "설치된 '잘나가! 포탑'을 대상으로 사용",
+      "note_en": "Used together with deployed 'Rock-it! Turret's"
+    }
+  },
+  "manual_child_overrides": {
+    "WizardArchonPurePowerDisintegrate": {
+      "parent": "WizardDisintegrate",
+      "display_name_ko": "파열 (마인: 순수한 힘)",
+      "display_name_en": "Disintegrate (Mine: Pure Power)",
+      "note_ko": "Lv20 '마인: 순수한 힘' 특성 필요",
+      "note_en": "Requires Lv20 talent 'Mine: Pure Power'"
+    }
+  },
+  "heroes": {
+    "Abathur": {
+      "name": "아바투르",
+      "links": [
+        {
+          "parent": "AbathurEvolveMonstrosity",
+          "parent_name": "흉물 진화",
+          "child": "AbathurEvolveMonstrosityActiveSymbiote",
+          "child_name": "흉물 진화 활성화됨",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "Alarak": {
+      "name": "알라라크",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "AlarakDeadlyChargeActivate",
+          "parent_name": "치명적인 돌진",
+          "child": "AlarakDeadlyChargeExecute",
+          "child_name": "치명적인 돌진 사용",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "AlarakLightningSurge",
+          "parent_name": "번개 쇄도",
+          "child": "AlarakLightningSurgeLightningBarrage",
+          "child_name": "번개 쇄도",
+          "source": "nameId-match",
+          "note_ko": "Lv16 '번개 포화' 특성 필요",
+          "note_en": "Requires Lv16 talent '번개 포화'"
+        },
+        {
+          "parent": null,
+          "parent_name": "(미해결: AlarakDeadlyChargeActivate2ndHeroic)",
+          "child": "AlarakDeadlyChargeExecute2ndHeroic",
+          "child_name": "치명적인 돌진 사용",
+          "source": "unresolved",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "AlarakSadism",
+          "parent_name": "가학성",
+          "child": "AlarakDeadlyChargeActivate2ndHeroic",
+          "child_name": "치명적인 돌진",
+          "source": "nameId-match",
+          "note_ko": "Lv16 '우월한 일격' 특성 필요",
+          "note_en": "Requires Lv16 talent '우월한 일격'"
+        },
+        {
+          "parent": "AlarakSadism",
+          "parent_name": "가학성",
+          "child": "AlarakCounterStrikeTargeted2ndHeroic",
+          "child_name": "반격",
+          "source": "nameId-match",
+          "note_ko": "Lv16 '우월한 일격' 특성 필요",
+          "note_en": "Requires Lv16 talent '우월한 일격'"
+        }
+      ]
+    },
+    "Alexstrasza": {
+      "name": "알렉스트라자",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "Amazon": {
+      "name": "카시아",
+      "links": [
+        {
+          "parent": "AmazonFend",
+          "parent_name": "난격",
+          "child": "AmazonFendCancelChannel",
+          "child_name": "난격 취소",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "AmazonAvoidance",
+          "parent_name": "공격 저지",
+          "child": "AmazonSurgeOfLight",
+          "child_name": "공격 저지",
+          "source": "nameId-match",
+          "note_ko": "Lv20 '거인의 복수' 특성 필요",
+          "note_en": "Requires Lv20 talent '거인의 복수'"
+        },
+        {
+          "parent": "AmazonAvoidance",
+          "parent_name": "공격 저지",
+          "child": "AmazonWarTravelerSummonMount",
+          "child_name": "전쟁 여행자",
+          "source": "nameId-match",
+          "note_ko": "Lv13 '전쟁 여행자' 특성 필요",
+          "note_en": "Requires Lv13 talent '전쟁 여행자'"
+        }
+      ]
+    },
+    "Ana": {
+      "name": "아나",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "AnaEyeOfHorusActivate",
+          "parent_name": "호루스의 눈",
+          "child": "AnaEyeOfHorusAttackDummy",
+          "child_name": "고성능 탄환",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "AnaEyeOfHorusActivate",
+          "parent_name": "호루스의 눈",
+          "child": "AnaEyeOfHorusCancel",
+          "child_name": "호루스의 눈 취소",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "AnaEyeOfHorusActivate",
+          "parent_name": "호루스의 눈",
+          "child": "AnaEyeOfHorusCancel",
+          "child_name": "호루스의 눈 취소",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "AnaEyeOfHorusActivate",
+          "parent_name": "호루스의 눈",
+          "child": "AnaEyeOfHorusAttackDummy",
+          "child_name": "고성능 탄환",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "AnaAimDownSightsActivate",
+          "parent_name": "때까치",
+          "child": "AnaAimDownSightsDeactivate",
+          "child_name": "때까치 취소",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "Anduin": {
+      "name": "안두인",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "AnduinHolyWordSalvation",
+          "parent_name": "빛의 권능: 구원",
+          "child": "AnduinHolyWordSalvationCancel",
+          "child_name": "빛의 권능: 구원 취소",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "Anubarak": {
+      "name": "아눕아락",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "AnubarakBurrowCharge",
+          "parent_name": "잠복 돌진",
+          "child": "AnubarakBurrowChargeCancel",
+          "child_name": "잠복 돌진 취소",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "Artanis": {
+      "name": "아르타니스",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "ArtanisTwinBlades",
+          "parent_name": "이연격",
+          "child": "ArtanisTwinBladesPrimed",
+          "child_name": "이연격 (준비 완료)",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "Arthas": {
+      "name": "아서스",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "ArthasArmyOfTheDead",
+          "parent_name": "사자의 군대",
+          "child": "ArthasArmyOfTheDeadSacrifice",
+          "child_name": "희생",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "ArthasFrozenTempest",
+          "parent_name": "서리 폭풍",
+          "child": "ArthasFrozenTempestCancel",
+          "child_name": "서리 폭풍 비활성화",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "ArthasFrostmourneHungers",
+          "parent_name": "서리한이 굶주렸다",
+          "child": "ArthasFrostmourneHungersPrimed",
+          "child_name": "서리한이 굶주렸다 준비 완료",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "Auriel": {
+      "name": "아우리엘",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "AurielResurrect",
+          "parent_name": "부활",
+          "child": "AurielResurrectSelf",
+          "child_name": "부활",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "Azmodan": {
+      "name": "아즈모단",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "AzmodanTideOfSin",
+          "parent_name": "죄악의 물결",
+          "child": "AzmodanTideOfSinPassive",
+          "child_name": "죄악의 물결",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "AzmodanAllShallBurn",
+          "parent_name": "모두 다 불타리라",
+          "child": "AzmodanAllShallBurnCancel",
+          "child_name": "모두 다 불타리라",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "Barbarian": {
+      "name": "소냐",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "BarbarianLeap",
+          "parent_name": "도약 강타",
+          "child": "BarbarianCancelLeapArreatCrater",
+          "child_name": "도약 강타 취소",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "BarbarianWhirlwind",
+          "parent_name": "소용돌이",
+          "child": "BarbarianWhirlwindCancel",
+          "child_name": "소용돌이 취소",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "BarbarianFury",
+          "parent_name": "분노",
+          "child": "BarbarianShotofFury",
+          "child_name": "분노",
+          "source": "nameId-match",
+          "note_ko": "Lv13 '도주 불가' 특성 필요",
+          "note_en": "Requires Lv13 talent '도주 불가'"
+        }
+      ]
+    },
+    "Butcher": {
+      "name": "도살자",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "ButcherRuthlessOnslaught",
+          "parent_name": "무자비한 돌진",
+          "child": "RuthlessOnslaughtCancel",
+          "child_name": "무자비한 돌진 취소",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "Chen": {
+      "name": "첸",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "ChenStormEarthFire",
+          "parent_name": "폭풍, 대지, 불",
+          "child": "ChenStorm",
+          "child_name": "폭풍",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "ChenStormEarthFire",
+          "parent_name": "폭풍, 대지, 불",
+          "child": "ChenEarth",
+          "child_name": "대지",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "ChenStormEarthFire",
+          "parent_name": "폭풍, 대지, 불",
+          "child": "ChenFire",
+          "child_name": "불",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "ChenKegSmash",
+          "parent_name": "술통 부수기",
+          "child": "ChenBreathOfFire",
+          "child_name": "불의 숨결",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "Cho": {
+      "name": "초",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "ChoSurgingFistCast",
+          "parent_name": "쇄도의 주먹",
+          "child": "ChoSurgingFistTrigger",
+          "child_name": "쇄도의 주먹",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "ChoOgreHide",
+          "parent_name": "오우거의 가죽",
+          "child": "ChoOgreHidePassive",
+          "child_name": "오우거의 가죽",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "Chromie": {
+      "name": "크로미",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "ChromieSlowingSands",
+          "parent_name": "감속의 모래",
+          "child": "ChromieSlowingSandsCancel",
+          "child_name": "감속의 모래 취소",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "ChromieTimeTrap",
+          "parent_name": "시간의 덫",
+          "child": "ChromieTimeTrapDetonate",
+          "child_name": "시간의 덫 폭발",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "Crusader": {
+      "name": "요한나",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "Deathwing": {
+      "name": "데스윙",
+      "links": [
+        {
+          "parent": "DeathwingDragonflight",
+          "parent_name": "용의 비상",
+          "child": "DeathwingDestroyerForm",
+          "child_name": "파괴자",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "DeathwingDragonflight",
+          "parent_name": "용의 비상",
+          "child": "DeathwingWorldbreakerForm",
+          "child_name": "세계 파괴자",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "DeathwingMoltenFlame",
+          "parent_name": "이글거리는 화염",
+          "child": "DeathwingMoltenFlameCancel",
+          "child_name": "취소",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "DeathwingIncinerate",
+          "parent_name": "소각",
+          "child": "DeathwingLavaBurst",
+          "child_name": "용암 폭발",
+          "source": "nameId-match",
+          "note_ko": "Lv4 '열기의 파도' 특성 필요",
+          "note_en": "Requires Lv4 talent '열기의 파도'"
+        },
+        {
+          "parent": "DeathwingOnslaught",
+          "parent_name": "맹격",
+          "child": "DeathwingEarthShatter",
+          "child_name": "대지 분쇄",
+          "source": "nameId-match",
+          "note_ko": "Lv13 '초토화' 특성 필요",
+          "note_en": "Requires Lv13 talent '초토화'"
+        },
+        {
+          "parent": null,
+          "parent_name": "(미해결: DeathwingSkyfall)",
+          "child": "DeathwingSkyfall",
+          "child_name": "하늘붕괴",
+          "source": "unresolved",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "Deckard": {
+      "name": "데커드",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "DeckardStayAWhileAndListen",
+          "parent_name": "잠시 내 말 좀 들어보게나",
+          "child": "DeckardStayAWhileAndListenCancel",
+          "child_name": "잠시 내 말 좀 들어보게나 취소",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "DeckardFortitudeOfTheFaithful",
+          "parent_name": "케인의 수호자",
+          "child": "DeckardAncientBlessings",
+          "child_name": "케인의 수호자",
+          "source": "nameId-match",
+          "note_ko": "Lv16 '케인의 호위대' 특성 필요",
+          "note_en": "Requires Lv16 talent '케인의 호위대'"
+        }
+      ]
+    },
+    "Dehaka": {
+      "name": "데하카",
+      "links": [
+        {
+          "parent": "DehakaBurrow",
+          "parent_name": "잠복",
+          "child": "DehakaCancelBurrow",
+          "child_name": "잠복 취소",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "DemonHunter": {
+      "name": "발라",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "Diablo": {
+      "name": "디아블로",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "DiabloLightningBreath",
+          "parent_name": "번개 숨결",
+          "child": "LightningBreathCancel",
+          "child_name": "번개 숨결 중지",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "Dryad": {
+      "name": "루나라",
+      "links": [
+        {
+          "parent": "DryadWisp",
+          "parent_name": "위습",
+          "child": "DryadWispRedirect",
+          "child_name": "위습 위치 변경",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "DryadDryadsSwiftness",
+          "parent_name": "드리아드의 날렵함",
+          "child": "DryadGallopingGait",
+          "child_name": "드리아드의 날렵함",
+          "source": "nameId-match",
+          "note_ko": "Lv1 '폴짝 폴짝' 특성 필요",
+          "note_en": "Requires Lv1 talent '폴짝 폴짝'"
+        }
+      ]
+    },
+    "DVa": {
+      "name": "D.Va",
+      "links": [
+        {
+          "parent": "DVaMechBunnyHopHeroic",
+          "parent_name": "토끼뜀",
+          "child": "DVaMechBunnyHopHeroic",
+          "child_name": "토끼뜀",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "DVaBoostersOn",
+          "parent_name": "부스터",
+          "child": "DVaBoostersOff",
+          "child_name": "부스터 취소",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "DVaMechDefenseMatrixOn",
+          "parent_name": "방어 매트릭스",
+          "child": "DVaMechDefenseMatrixRetarget",
+          "child_name": "방어 매트릭스 대상 변경",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "DVaMechDefenseMatrixOn",
+          "parent_name": "방어 매트릭스",
+          "child": "DvaCancelDefenseMatrix",
+          "child_name": "방어 매트릭스 취소",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "FaerieDragon": {
+      "name": "빛나래",
+      "links": [
+        {
+          "parent": "FaerieDragonBlinkHealDash",
+          "parent_name": "점멸 치유",
+          "child": "BrightwingBlinkHealDoubleWyrmholeDash",
+          "child_name": "폴짝용",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "Falstad": {
+      "name": "폴스타트",
+      "links": [
+        {
+          "parent": "FalstadHammerang",
+          "parent_name": "부메랑 망치",
+          "child": "FalstadBOOMerang",
+          "child_name": "폭발",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "Fenix": {
+      "name": "피닉스",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "FenixPlanetCracker",
+          "parent_name": "행성 분열기",
+          "child": "FenixPlanetCrackerCancel",
+          "child_name": "행성 분열기 취소",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "FenixPhaseBomb",
+          "parent_name": "무기 모드: 연발포",
+          "child": "FenixRepeaterCannon",
+          "child_name": "무기 모드: 위상 폭탄",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "Firebat": {
+      "name": "블레이즈",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "FirebatCombustion",
+          "parent_name": "연소",
+          "child": "FirebatCombustionCancel",
+          "child_name": "연소 취소",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "Gall": {
+      "name": "갈",
+      "links": [
+        {
+          "parent": "GallTwistingNether",
+          "parent_name": "뒤틀린 황천",
+          "child": "GallTwistingNetherActivated",
+          "child_name": "뒤틀린 황천 폭발시키기",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "GallDreadOrb",
+          "parent_name": "공포의 보주",
+          "child": "GallDoubleBack",
+          "child_name": "백도",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "GallOgreRage",
+          "parent_name": "오우거의 분노",
+          "child": "GallOgreRagePassive",
+          "child_name": "오우거의 분노",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": null,
+          "parent_name": "(미해결: GallShiftingNether)",
+          "child": "GallShiftingNether",
+          "child_name": "뒤틀린 황천",
+          "source": "unresolved",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "Garrosh": {
+      "name": "가로쉬",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "GarroshArmorUp",
+          "parent_name": "방어력 증가",
+          "child": "GarroshArmorUpDoubleUp",
+          "child_name": "방어력 상승",
+          "source": "nameId-match",
+          "note_ko": "Lv16 '노련한 병사' 특성 필요",
+          "note_en": "Requires Lv16 talent '노련한 병사'"
+        }
+      ]
+    },
+    "Genji": {
+      "name": "겐지",
+      "links": [
+        {
+          "parent": "GenjiDragonblade",
+          "parent_name": "용검",
+          "child": "GenjiDragonbladeAttack",
+          "child_name": "용검",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "GenjiDragonblade",
+          "parent_name": "용검",
+          "child": "GenjiDragonbladeAttack",
+          "child_name": "용검",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "Greymane": {
+      "name": "그레이메인",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "GreymaneWorgenForm",
+          "parent_name": "늑대인간의 저주",
+          "child": "GreymaneRazorSwipe",
+          "child_name": "잔혹한 할퀴기 ",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "GreymaneWorgenForm",
+          "parent_name": "늑대인간의 저주",
+          "child": "GreymaneDisengage",
+          "child_name": "철수",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "GreymaneInnerBeast",
+          "parent_name": "내면의 야성",
+          "child": "GreymaneInnerBeastActive",
+          "child_name": "내면의 야성",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "Guldan": {
+      "name": "굴단",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "GuldanDrainLife",
+          "parent_name": "생명력 흡수",
+          "child": "GuldanDrainLifeCancel",
+          "child_name": "생명력 흡수 취소",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "GuldanLifeTap",
+          "parent_name": "생명력 전환",
+          "child": "GuldanLifeTapFree",
+          "child_name": "생명력 전환",
+          "source": "nameId-match",
+          "note_ko": "Lv16 '내면의 어둠' 특성 필요",
+          "note_en": "Requires Lv16 talent '내면의 어둠'"
+        }
+      ]
+    },
+    "Hanzo": {
+      "name": "한조",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": null,
+          "parent_name": "(미해결: HanzoPOTG)",
+          "child": "HanzoPOTG",
+          "child_name": "최고의 플레이",
+          "source": "unresolved",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "Hogger": {
+      "name": "들창코",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "HoggerHoardapult",
+          "parent_name": "노획물 투척",
+          "child": "HoggerCancelHoardapult",
+          "child_name": "노획물 투척 파괴",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "HoggerHoggWild",
+          "parent_name": "들창 폭풍",
+          "child": "HoggerCancelHoggWild",
+          "child_name": "들창 폭풍 취소 ",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "HoggerLootHoard",
+          "parent_name": "노획물 더미",
+          "child": "HoggerCancelLootHoard",
+          "child_name": "노획물 더미 파괴",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "Illidan": {
+      "name": "일리단",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "Imperius": {
+      "name": "임페리우스",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "Jaina": {
+      "name": "제이나",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "JainaSummonWaterElemental",
+          "parent_name": "물의 정령 소환",
+          "child": "JainaCommandWaterElemental",
+          "child_name": "물의 정령 조종",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "JainaTraitFrostbite",
+          "parent_name": "동상",
+          "child": "ImprovedIceBlock",
+          "child_name": "향상된 얼음 방패",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "Junkrat": {
+      "name": "정크랫",
+      "links": [
+        {
+          "parent": "JunkratRIPTire",
+          "parent_name": "죽이는 타이어",
+          "child": "JunkratRIPTireJump",
+          "child_name": "점프!",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "JunkratRIPTire",
+          "parent_name": "죽이는 타이어",
+          "child": "JunkratDetonateRIPTire",
+          "child_name": "죽이는 타이어 폭발",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "JunkratConcussionMine",
+          "parent_name": "충격 지뢰",
+          "child": "JunkratDetonateMine",
+          "child_name": "지뢰 폭발",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": null,
+          "parent_name": "(미해결: JunkratIHateWaitingSummonMount)",
+          "child": "JunkratRocketRideDismount",
+          "child_name": "탈것 소환 해제",
+          "source": "unresolved",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": null,
+          "parent_name": "(미해결: JunkratIHateWaitingTalent)",
+          "child": "JunkratIHateWaitingSummonMount",
+          "child_name": "탈것 소환",
+          "source": "unresolved",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "Kaelthas": {
+      "name": "캘타스",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "KaelthasPhoenix",
+          "parent_name": "불사조",
+          "child": "KaelthasPhoenixRetargetPhoenixAbility",
+          "child_name": "불사조 위치 이동",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "KaelthasVerdantSpheres",
+          "parent_name": "신록의 구슬",
+          "child": "KaelthasVerdantSpheresActive",
+          "child_name": "신록의 구슬 활성화됨",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "KelThuzad": {
+      "name": "켈투자드",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "KelThuzadChains",
+          "parent_name": "켈투자드의 사슬",
+          "child": "KelThuzadChainsLink",
+          "child_name": "켈투자드의 사슬",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "KelThuzadMasterOfTheColdDark",
+          "parent_name": "차디찬 어둠의 지배자",
+          "child": "KelThuzadGlacialSpike",
+          "child_name": "혹한의 쐐기",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "Kerrigan": {
+      "name": "케리건",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "KerriganSummonUltralisk",
+          "parent_name": "울트라리스크 소환",
+          "child": "KerriganSummonUltraliskIssueOrder",
+          "child_name": "울트라리스크 명령 내리기",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "L90ETC": {
+      "name": "정예 타우렌 족장",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "L90ETCMoshPit",
+          "parent_name": "광란의 도가니",
+          "child": "L90ETCMoshPitCancel",
+          "child_name": "광란의 도가니 취소",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "Leoric": {
+      "name": "레오릭",
+      "links": [
+        {
+          "parent": "LeoricEntomb",
+          "parent_name": "망자의 묘실",
+          "child": "LeoricEntombCancel",
+          "child_name": "망자의 묘실 취소",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "LeoricUndyingTrait",
+          "parent_name": "불사",
+          "child": "LeoricGhastlySwing",
+          "child_name": "섬뜩한 휩쓸기",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "LeoricUndyingTrait",
+          "parent_name": "불사",
+          "child": "LeoricDrainEssence",
+          "child_name": "착취의 손아귀",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "LeoricWraithWalk",
+          "parent_name": "망령 걸음",
+          "child": "LeoricCancelWraithWalk",
+          "child_name": "망령 걸음 취소",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "LiLi": {
+      "name": "리 리",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "LiLiJugof1000Cups",
+          "parent_name": "1,000잔 돌리기",
+          "child": "LiLiCancelJugof1000Cups",
+          "child_name": "1,000잔 돌리기 취소",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "LiLiFastFeet",
+          "parent_name": "빠른 발",
+          "child": "LiLiSafetySprint",
+          "child_name": "빠른 발",
+          "source": "nameId-match",
+          "note_ko": "Lv20 '괜찮아' 특성 필요",
+          "note_en": "Requires Lv20 talent '괜찮아'"
+        }
+      ]
+    },
+    "Lucio": {
+      "name": "루시우",
+      "links": [
+        {
+          "parent": "LucioCrossfade",
+          "parent_name": "분위기 전환!",
+          "child": "LucioCrossfade",
+          "child_name": "분위기 전환!",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "Maiev": {
+      "name": "마이에브",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "MaievContainmentDisc",
+          "parent_name": "속박의 원반",
+          "child": "MaievContainmentDiscContain",
+          "child_name": "속박",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "MaievSpiritOfVengeance",
+          "parent_name": "복수의 영혼",
+          "child": "MaievSpiritOfVengeanceBlink",
+          "child_name": "점멸",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "MaievUmbralBind",
+          "parent_name": "그림자 목줄",
+          "child": "MaievUmbralBindPrimed",
+          "child_name": "그림자 목줄",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "Malfurion": {
+      "name": "말퓨리온",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "MalGanis": {
+      "name": "말가니스",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "MalGanisFelClawsFirst",
+          "parent_name": "지옥 발톱",
+          "child": "MalGanisFelClawsSecond",
+          "child_name": "지옥 발톱",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "MalGanisNightRush",
+          "parent_name": "밤의 질주",
+          "child": "MalGanisNightRushCancel",
+          "child_name": "밤의 질주",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "MalGanisFelClawsFirst",
+          "parent_name": "지옥 발톱",
+          "child": "MalGanisFelClawsThird",
+          "child_name": "지옥 발톱",
+          "source": "nameId-match",
+          "note_ko": "Lv20 '나약한 자는 처단한다' 특성 필요",
+          "note_en": "Requires Lv20 talent '나약한 자는 처단한다'"
+        }
+      ]
+    },
+    "Malthael": {
+      "name": "말티엘",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "Medic": {
+      "name": "모랄레스 중위",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "MedicHealingBeam",
+          "parent_name": "치료 광선",
+          "child": "MedicRedirectHealingBeam",
+          "child_name": "치료 광선 대상 변경",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "MedicHealingBeam",
+          "parent_name": "치료 광선",
+          "child": "MedicCancelHealingBeam",
+          "child_name": "치료 광선 취소",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "MedicDisplacementGrenade",
+          "parent_name": "변위 수류탄",
+          "child": "MedicDetonateDisplacementGrenade",
+          "child_name": "변위 수류탄 폭발",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "Medivh": {
+      "name": "메디브",
+      "links": [
+        {
+          "parent": "MedivhTransformRaven",
+          "parent_name": "까마귀 형상",
+          "child": "MedivhTransformRavenLand",
+          "child_name": "까마귀 형상 취소",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": null,
+          "parent_name": "(미해결: MedivhPolyBombGlyphOfPolyBomb)",
+          "child": "MedivhPolyBombGlyphOfPolyBomb",
+          "child_name": "변이 폭탄",
+          "source": "unresolved",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": null,
+          "parent_name": "(미해결: MedivhLeyLineSealMedivhCheats)",
+          "child": "MedivhLeyLineSealMedivhCheats",
+          "child_name": "봉인의 지맥 경로 변경",
+          "source": "unresolved",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": null,
+          "parent_name": "(미해결: MedivhPortalPortalMastery)",
+          "child": "MedivhPortalCancel",
+          "child_name": "차원문 취소",
+          "source": "unresolved",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "MeiOW": {
+      "name": "메이",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "MeiOWIcing",
+          "parent_name": "얼음 활주",
+          "child": "MeiOWIcingCancel",
+          "child_name": "얼음 활주",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "MeiOWCryoFreeze",
+          "parent_name": "급속 빙결",
+          "child": "MeiOWCryoFreezeCancel",
+          "child_name": "급속 빙결",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "Mephisto": {
+      "name": "메피스토",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "Monk": {
+      "name": "카라짐",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "MonkDeadlyReach",
+          "parent_name": "연속 격파",
+          "child": "MonkDeadlyReachActive",
+          "child_name": "연속 격파 활성화됨",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": null,
+          "parent_name": "(미해결: MonkIronFists)",
+          "child": "MonkIronFists",
+          "child_name": "철권",
+          "source": "unresolved",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": null,
+          "parent_name": "(미해결: MonkInsight)",
+          "child": "MonkInsight",
+          "child_name": "통찰",
+          "source": "unresolved",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": null,
+          "parent_name": "(미해결: MonkTranscendence)",
+          "child": "MonkTranscendence",
+          "child_name": "초월",
+          "source": "unresolved",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "Muradin": {
+      "name": "무라딘",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "MuradinSecondWind",
+          "parent_name": "재기의 바람",
+          "child": "Stoneform",
+          "child_name": "재기의 바람",
+          "source": "nameId-match",
+          "note_ko": "Lv16 '석화' 특성 필요",
+          "note_en": "Requires Lv16 talent '석화'"
+        }
+      ]
+    },
+    "Murky": {
+      "name": "머키",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "MurkyMarchoftheMurlocs",
+          "parent_name": "멀록 대행진",
+          "child": "MurkyCancelMarchoftheMurlocs",
+          "child_name": "멀록 대행진 취소",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "Necromancer": {
+      "name": "줄",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "NecromancerSpectralScythe",
+          "parent_name": "유령의 낫",
+          "child": "NecromancerSpectralScythe",
+          "child_name": "유령의 낫",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "NecromancerCursedStrikes",
+          "parent_name": "저주의 수확",
+          "child": "NecromancerCursedStrikesPassive",
+          "child_name": "저주의 수확",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "NexusHunter": {
+      "name": "키히라",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "NexusHunterRevolvingSweep",
+          "parent_name": "회전 휩쓸기",
+          "child": "NexusHunterRevolvingSweepSecondary",
+          "child_name": "회전 휩쓸기",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "Nova": {
+      "name": "노바",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "Orphea": {
+      "name": "오르피아",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "OrpheaOverflowingChaos",
+          "parent_name": "넘치는 혼돈",
+          "child": "OrpheaOverflowingChaosInvasiveMiasma",
+          "child_name": "넘치는 혼돈",
+          "source": "nameId-match",
+          "note_ko": "Lv20 '기괴한 전도' 특성 필요",
+          "note_en": "Requires Lv20 talent '기괴한 전도'"
+        }
+      ]
+    },
+    "Ragnaros": {
+      "name": "라그나로스",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "RagnarosEmpowerSulfuras",
+          "parent_name": "설퍼라스 강화",
+          "child": "RagnarosEmpowerSulfurasActive",
+          "child_name": "설퍼라스 강화",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": null,
+          "parent_name": "(미해결: RagnarosLivingMeteorShiftingMeteor)",
+          "child": "RagnarosLivingMeteorShiftingMeteor",
+          "child_name": "선회하는 유성",
+          "source": "unresolved",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "Raynor": {
+      "name": "레이너",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "RaynorRaynorsRaidersDummy",
+          "parent_name": "레이너 특공대",
+          "child": "RaynorRaynorsRaidersRedirect",
+          "child_name": "레이너 특공대 명령 내리기",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "RaynorGiveEmSomePepper",
+          "parent_name": "뜨거운 맛을 보여주지",
+          "child": "RaynorBountyHunter",
+          "child_name": "뜨거운 맛을 보여주지",
+          "source": "nameId-match",
+          "note_ko": "Lv20 '더 뜨거운 맛' 특성 필요",
+          "note_en": "Requires Lv20 talent '더 뜨거운 맛'"
+        }
+      ]
+    },
+    "Rehgar": {
+      "name": "레가르",
+      "links": [
+        {
+          "parent": "RehgarGhostWolfActivate",
+          "parent_name": "늑대 정령",
+          "child": "RehgarGhostWolfDeactivate",
+          "child_name": "늑대 정령 비활성화",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": null,
+          "parent_name": "(미해결: RehgarEarthbindTotemColossalTotem)",
+          "child": "RehgarTotemicProjection",
+          "child_name": "토템 재배치",
+          "source": "unresolved",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "Rexxar": {
+      "name": "렉사르",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "Samuro": {
+      "name": "사무로",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "SamuroBladeStormDummy",
+          "parent_name": "칼날폭풍",
+          "child": "SamuroBladestormCancel",
+          "child_name": "칼날폭풍 취소",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "SamuroIllusionMaster",
+          "parent_name": "환영의 대가",
+          "child": "SamuroSelectSamuroPrime",
+          "child_name": "사무로 선택",
+          "source": "manual",
+          "note_ko": "궁극기 '환영의 대가'를 선택해야 사용 가능",
+          "note_en": "Usable only when the 'Illusion Master' heroic is chosen"
+        },
+        {
+          "parent": "SamuroIllusionMaster",
+          "parent_name": "환영의 대가",
+          "child": "SamuroSelectAll",
+          "child_name": "모두 선택",
+          "source": "manual",
+          "note_ko": "궁극기 '환영의 대가'를 선택해야 사용 가능",
+          "note_en": "Usable only when the 'Illusion Master' heroic is chosen"
+        }
+      ]
+    },
+    "SgtHammer": {
+      "name": "해머 상사",
+      "links": [
+        {
+          "parent": "SgtHammerSiegeMode",
+          "parent_name": "공성 모드",
+          "child": "SgtHammerSpiderMinesSiegeMode",
+          "child_name": "거미 지뢰",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "SgtHammerSiegeMode",
+          "parent_name": "공성 모드",
+          "child": "SgtHammerNapalmStrikeSiege",
+          "child_name": "네이팜 포격",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "SgtHammerSiegeMode",
+          "parent_name": "공성 모드",
+          "child": "SgtHammerTankMode",
+          "child_name": "전차 모드",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": null,
+          "parent_name": "(미해결: SgtHammerConcussiveBlastEntrenched)",
+          "child": "ConcussiveBlastScrapCancel",
+          "child_name": "방호벽 취소",
+          "source": "unresolved",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "Stitches": {
+      "name": "누더기",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "Stukov": {
+      "name": "스투코프",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "StukovLurkingArm",
+          "parent_name": "스멀거리는 팔",
+          "child": "StukovLurkingArmCancel",
+          "child_name": "스멀거리는 팔 취소",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "Sylvanas": {
+      "name": "실바나스",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "SylvanasWailingArrow",
+          "parent_name": "울부짖는 화살",
+          "child": "SylvanasWailingArrowActivate",
+          "child_name": "울부짖는 화살",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "SylvanasMindControlMissile",
+          "parent_name": "정신 지배",
+          "child": "SylvanasMindControlCancel",
+          "child_name": "정신 지배 취소",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "SylvanasHauntingWave",
+          "parent_name": "유령의 파도",
+          "child": "SylvanasHauntingWaveActivate",
+          "child_name": "유령의 순간이동",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "SylvanasBlackArrowsActive",
+          "parent_name": "검은 화살",
+          "child": "SylvanasBlackArrowsPassive",
+          "child_name": "검은 화살",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": null,
+          "parent_name": "(미해결: SylvanasHauntingWaveWindrunnerTalent)",
+          "child": "SylvanasHauntingWaveActivateWindrunnerTalent",
+          "child_name": "유령의 순간이동",
+          "source": "unresolved",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "SylvanasHauntingWave",
+          "parent_name": "유령의 파도",
+          "child": "SylvanasHauntingWaveWindrunnerTalent",
+          "child_name": "유령의 파도",
+          "source": "nameId-match",
+          "note_ko": "Lv13 '바람길잡이' 특성 필요",
+          "note_en": "Requires Lv13 talent '바람길잡이'"
+        }
+      ]
+    },
+    "Tassadar": {
+      "name": "태사다르",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "TassadarArchon",
+          "parent_name": "집정관",
+          "child": "TassadarArchon",
+          "child_name": "집정관",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "TassadarForceWall",
+          "parent_name": "역장",
+          "child": "TassadarForceWallCancel",
+          "child_name": "역장벽 취소",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "TassadarResonanceBeam",
+          "parent_name": "공명 광선",
+          "child": "TassadarResonanceBeamArcDischargeDummy",
+          "child_name": "공명 광선",
+          "source": "nameId-match",
+          "note_ko": "Lv7 '아크 방전' 특성 필요",
+          "note_en": "Requires Lv7 talent '아크 방전'"
+        }
+      ]
+    },
+    "Thrall": {
+      "name": "스랄",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "ThrallSundering",
+          "parent_name": "세계의 분리",
+          "child": "ThrallCancelSundering",
+          "child_name": "세계의 분리",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "ThrallFrostwolfResilience",
+          "parent_name": "서리늑대의 회복력",
+          "child": "ThrallFrostwolfsGrace",
+          "child_name": "서리늑대의 회복력",
+          "source": "nameId-match",
+          "note_ko": "Lv13 '서리늑대의 은총' 특성 필요",
+          "note_en": "Requires Lv13 talent '서리늑대의 은총'"
+        }
+      ]
+    },
+    "Tinker": {
+      "name": "가즈로",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "TinkerRockItTurret",
+          "parent_name": "잘나가! 포탑",
+          "child": "TinkerFocusTurrets",
+          "child_name": "집중 포화!",
+          "source": "manual",
+          "note_ko": "설치된 '잘나가! 포탑'을 대상으로 사용",
+          "note_en": "Used together with deployed 'Rock-it! Turret's"
+        }
+      ]
+    },
+    "Tracer": {
+      "name": "트레이서",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "TracerReload",
+          "parent_name": "재장전",
+          "child": "TracerLockedandLoadedFailReload",
+          "child_name": "완벽한 장전",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": null,
+          "parent_name": "(미해결: TracerLockedandLoaded)",
+          "child": "TracerLockedandLoaded",
+          "child_name": "완벽한 장전",
+          "source": "unresolved",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "Tychus": {
+      "name": "타이커스",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "TychusDrakkenLaserDrill",
+          "parent_name": "드라켄 레이저 천공기",
+          "child": "TychusDrakkenLaserDrillIssueOrder",
+          "child_name": "레이저 천공기 공격 명령",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "TychusOdinNoHealth",
+          "parent_name": "오딘 출격",
+          "child": "TychusOdinAnnihilate",
+          "child_name": "몰살",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "TychusOdinNoHealth",
+          "parent_name": "오딘 출격",
+          "child": "TychusOdinRagnarokMissilesTargeted",
+          "child_name": "라그나로크 미사일",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "TychusOdinNoHealth",
+          "parent_name": "오딘 출격",
+          "child": "TychusOdinThrusters",
+          "child_name": "추진기 가동",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "TychusOverkillTargeted",
+          "parent_name": "포화",
+          "child": "OverkillTargetedRetarget",
+          "child_name": "포화 대상 변경",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "TychusOverkillTargeted",
+          "parent_name": "포화",
+          "child": "TychusRunAndGunOverkill",
+          "child_name": "달려 쏴",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "TychusMinigun",
+          "parent_name": "미니건",
+          "child": "TychusMinigunActive",
+          "child_name": "미니건",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "Tyrael": {
+      "name": "티리엘",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "TyraelSanctificationStationary",
+          "parent_name": "축성",
+          "child": "CancelSanctification",
+          "child_name": "축성 취소",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "TyraelElDruinsMight",
+          "parent_name": "엘드루인의 힘",
+          "child": "ElDruinsMightEldruinsFlash",
+          "child_name": "엘드루인의 섬광",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": null,
+          "parent_name": "(미해결: TyraelAspectofJustice)",
+          "child": "TyraelAspectofJustice",
+          "child_name": "대천사의 분노",
+          "source": "unresolved",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "Tyrande": {
+      "name": "티란데",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "Uther": {
+      "name": "우서",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "UtherEternalDevotion",
+          "parent_name": "헌신",
+          "child": "UtherFlashofLight",
+          "child_name": "빛의 섬광",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "Valeera": {
+      "name": "발리라",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "ValeeraStealth",
+          "parent_name": "소멸",
+          "child": "ValeeraAmbush",
+          "child_name": "매복",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "ValeeraStealth",
+          "parent_name": "소멸",
+          "child": "ValeeraCheapShot",
+          "child_name": "비열한 습격",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "ValeeraStealth",
+          "parent_name": "소멸",
+          "child": "ValeeraGarrote",
+          "child_name": "목조르기",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "ValeeraStealth",
+          "parent_name": "소멸",
+          "child": "ValeeraCancelStealth",
+          "child_name": "은신 취소",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "Varian": {
+      "name": "바리안",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "VarianHeroicStrike",
+          "parent_name": "영웅의 일격",
+          "child": "VarianHeroicStrikeActive",
+          "child_name": "영웅의 일격",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "Whitemane": {
+      "name": "화이트메인",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "WhitemaneInquisition",
+          "parent_name": "심문",
+          "child": "WhitemaneInquisitionCancel",
+          "child_name": "심문 (취소)",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "WhitemaneInquisitionClemency",
+          "parent_name": "관용",
+          "child": "WhitemaneInquisitionCancel",
+          "child_name": "심문 (취소)",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "WitchDoctor": {
+      "name": "나지보",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "WitchDoctorGargantuan",
+          "parent_name": "덩치",
+          "child": "WitchDoctorGargantuanStompCommand",
+          "child_name": "덩치 발구르기",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "WitchDoctorRavenousSpirit",
+          "parent_name": "굶주린 혼령",
+          "child": "WitchDoctorRavenousSpiritCancel",
+          "child_name": "굶주린 혼령",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "WitchDoctorZombieWall",
+          "parent_name": "좀비 벽",
+          "child": "WitchDoctorZombieWallCancel",
+          "child_name": "좀비 벽",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": null,
+          "parent_name": "(미해결: WitchDoctorGargantuanStompCommand)",
+          "child": "WitchDoctorGargantuanStomp",
+          "child_name": "덩치 발구르기",
+          "source": "unresolved",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "Wizard": {
+      "name": "리밍",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "WizardDisintegrate",
+          "parent_name": "파열",
+          "child": "WizardDisintegrateCancel",
+          "child_name": "파열 (취소)",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": null,
+          "parent_name": "(미해결: WizardArchonPurePowerDisintegrate)",
+          "child": "WizardArchonPurePowerDisintegrateCancel",
+          "child_name": "파열 취소",
+          "source": "unresolved",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "WizardDisintegrate",
+          "parent_name": "파열",
+          "child": "WizardArchonPurePowerDisintegrate",
+          "child_name": "파열 → 파열 (마인: 순수한 힘)",
+          "source": "manual-child",
+          "note_ko": "Lv20 '마인: 순수한 힘' 특성 필요",
+          "note_en": "Requires Lv20 talent 'Mine: Pure Power'"
+        }
+      ]
+    },
+    "Yrel": {
+      "name": "이렐",
+      "links": [
+        {
+          "parent": "YrelVindication",
+          "parent_name": "비호",
+          "child": "YrelVindicationCast",
+          "child_name": "비호",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "YrelDivinePurpose",
+          "parent_name": "신성한 목적",
+          "child": "YrelRighteousHammerDivinePurpose",
+          "child_name": "정의의 망치",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "YrelDivinePurpose",
+          "parent_name": "신성한 목적",
+          "child": "YrelAvengingWrathDivinePurpose",
+          "child_name": "응징의 격노",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "YrelDivinePurpose",
+          "parent_name": "신성한 목적",
+          "child": "YrelDivinePurposeActive",
+          "child_name": "신성한 목적",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "YrelRighteousHammerChannel",
+          "parent_name": "정의의 망치",
+          "child": "YrelRighteousHammer",
+          "child_name": "정의의 망치",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "YrelAvengingWrath",
+          "parent_name": "응징의 격노",
+          "child": "YrelAvengingWrathChannel",
+          "child_name": "응징의 격노",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": null,
+          "parent_name": "(미해결: YrelDivineSteed)",
+          "child": "YrelDivineSteedSummonMount",
+          "child_name": "천상의 군마",
+          "source": "unresolved",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "Zagara": {
+      "name": "자가라",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "Zarya": {
+      "name": "자리야",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "Zeratul": {
+      "name": "제라툴",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "ZeratulMightOfTheNerazimDummy",
+          "parent_name": "네라짐의 힘",
+          "child": "ZeratulCleaveMightOfTheNerazim",
+          "child_name": "가르기",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "ZeratulMightOfTheNerazimDummy",
+          "parent_name": "네라짐의 힘",
+          "child": "ZeratulSingularitySpikeMightOfTheNerazim",
+          "child_name": "특이점 폭발",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "ZeratulMightOfTheNerazimDummy",
+          "parent_name": "네라짐의 힘",
+          "child": "ZeratulBlinkMightOfTheNerazim",
+          "child_name": "점멸",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "ZeratulVoidPrison",
+          "parent_name": "공허의 감옥",
+          "child": "VoidPrisonCancel",
+          "child_name": "공허의 감옥 취소",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": null,
+          "parent_name": "(미해결: ZeratulSeekerInTheDark)",
+          "child": "ZeratulSeekerInTheDark",
+          "child_name": "어둠 속의 추적자",
+          "source": "unresolved",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": null,
+          "parent_name": "(미해결: ZeratulWormhole)",
+          "child": "ZeratulWormhole",
+          "child_name": "웜홀",
+          "source": "unresolved",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    },
+    "Zuljin": {
+      "name": "줄진",
+      "links": [
+        {
+          "parent": "Mount",
+          "parent_name": "탈것 소환",
+          "child": "Dismount",
+          "child_name": "탈것 소환 해제",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "ZuljinRegeneration",
+          "parent_name": "재생",
+          "child": "ZuljinCancelRegeneration",
+          "child_name": "재생 취소",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        },
+        {
+          "parent": "ZuljinBerserker",
+          "parent_name": "광전사",
+          "child": "ZuljinCancelBerserker",
+          "child_name": "광전사 취소",
+          "source": "direct",
+          "note_ko": "",
+          "note_en": ""
+        }
+      ]
+    }
+  }
+}
