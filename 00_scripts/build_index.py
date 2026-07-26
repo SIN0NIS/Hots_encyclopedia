@@ -14,6 +14,31 @@ import paths
 
 OUT = os.path.join(paths.OUTPUT, "index.html")
 
+# 예전 저장소가 쓰던 이름. 그 주소로 걸어 둔 링크와 즐겨찾기가 있으므로 계속
+# 열려야 한다. 6.8MB 를 두 벌 두지 않고 같은 곳으로 보내기만 한다.
+ALIAS = "hots_encyclopedia.html"
+
+ALIAS_PAGE = """<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="refresh" content="0; url={target}">
+<title>히오스 영웅 백과사전</title>
+<style>body {{ background:#0b0b0d; color:#8a8a95; font-family:"Malgun Gothic",sans-serif;
+  display:flex; align-items:center; justify-content:center; height:100vh; margin:0;
+  font-size:13px; }}
+a {{ color:#a333ff; }}</style>
+</head>
+<body>
+<div>백과사전으로 넘어갑니다 — <a href="{target}">안 넘어가면 여기를 누르세요</a></div>
+<script>
+// 주소 뒤에 붙은 #용어집 같은 것도 그대로 들고 간다
+location.replace('{target}' + location.search + location.hash);
+</script>
+</body>
+</html>
+"""
+
 LINKS = paths.settings().get("links") or {}
 WIKI_URL = LINKS.get("wiki", "")
 BUILDER_URL = LINKS.get("builder", "")
@@ -138,9 +163,14 @@ def main():
                                  wiki=WIKI_URL, builder=BUILDER_URL,
                                  archive=past_versions()))
     print("메인 페이지 -> %s" % OUT)
+
+    with open(os.path.join(paths.OUTPUT, ALIAS), "w", encoding="utf-8") as fh:
+        fh.write(ALIAS_PAGE.format(target=local))
+    print("옛 주소 -> %s (%s 로 보냄)" % (ALIAS, local))
+
     for stray in glob.glob(os.path.join(paths.OUTPUT, "*")):
         name = os.path.basename(stray)
-        if name not in (local, "index.html"):
+        if name not in (local, "index.html", ALIAS):
             print("  [참고] 결과물 폴더에 다른 파일이 있습니다: %s" % name)
 
 
