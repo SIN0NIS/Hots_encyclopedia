@@ -1,0 +1,76 @@
+name: online 추출 시험
+
+# 파서의 online 모드가 리눅스 러너에서 되는지만 본다.
+# 윈도우에서는 "Not a valid Win32 FileTime" 으로 죽는데, 그 이름이 윈도우 전용
+# API 라 리눅스에서는 다를 수 있다. 되면 게임 데이터까지 CI 가 스스로 받아올 수
+# 있고, 안 되면 그 부분만 로컬에서 밀어 넣어야 한다.
+#
+# 결과를 PROBE.md 에 적어 커밋한다. 로그는 비공개라 밖에서 못 읽기 때문이다.
+on:
+  push:
+    paths: ['.github/workflows/probe-online.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0'
+
+      - name: 파서 설치
+        run: |
+          dotnet tool install -g heroesdataparser
+          echo "$HOME/.dotnet/tools" >> "$GITHUB_PATH"
+
+      - name: 시험 1 — 현재 빌드 번호 읽기
+        id: build
+        run: |
+          curl -sS --max-time 30 http://us.patch.battle.net:1119/hero/versions > versions.txt || true
+          echo '--- versions ---' ; cat versions.txt | head -5
+          NUM=$(awk -F'|' '/^us\|/ {print $5}' versions.txt)
+          echo "number=${NUM:-읽기실패}" >> "$GITHUB_OUTPUT"
+
+      - name: 시험 2 — online 으로 파일 하나 뽑기
+        id: extract
+        continue-on-error: true
+        run: |
+          set +e
+          dotnet-heroes-data-parser casc-extract online -o probe_out \
+            -i "mods/core.stormmod/enUS.stormdata/LocalizedData/GameStrings.txt" \
+            > probe.log 2>&1
+          echo "code=$?" >> "$GITHUB_OUTPUT"
+          tail -20 probe.log
+          find probe_out -type f 2>/dev/null | head -5
+
+      - name: 결과 적기
+        if: always()
+        run: |
+          {
+            echo "# online 추출 시험 결과"
+            echo
+            echo "리눅스 러너(ubuntu-latest)에서 파서의 online 모드가 되는지 본 것이다."
+            echo "윈도우에서는 \`Not a valid Win32 FileTime\` 으로 죽는다."
+            echo
+            echo "- 시험 일시(UTC): $(date -u '+%Y-%m-%d %H:%M')"
+            echo "- 패치 서버가 알려 준 현재 빌드: **${{ steps.build.outputs.number }}**"
+            echo "- casc-extract online 종료 코드: **${{ steps.extract.outputs.code }}**"
+            SIZE=$(du -sh probe_out 2>/dev/null | cut -f1)
+            echo "- 뽑힌 것: **${SIZE:-없음}**"
+            echo
+            echo '## 파서가 뱉은 말'
+            echo '```'
+            tail -25 probe.log 2>/dev/null || echo '(로그 없음)'
+            echo '```'
+          } > PROBE.md
+          cat PROBE.md
+          git config user.name  'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add PROBE.md
+          git diff --staged --quiet || { git commit -m 'online 추출 시험 결과'; git push; }
