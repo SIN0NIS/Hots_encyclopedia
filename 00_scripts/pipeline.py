@@ -50,7 +50,9 @@ OUTPUT = Path(paths.OUTPUT)
 FINAL = Path(paths.FINAL)
 INDEX = Path(paths.INDEX)
 
-PARSER = "dotnet-heroes-data-parser.exe"
+# 확장자를 붙이지 않는다. 윈도우는 PATHEXT 로 .exe 를 알아서 붙이고,
+# 리눅스 러너에는 확장자 없는 파일만 있다.
+PARSER = "dotnet-heroes-data-parser"
 DEFAULT_GAME_PATH = r"C:\Program Files (x86)\Heroes of the Storm"
 
 # 게임플레이 XML 과 양쪽 언어 게임스트링만 가져온다.
