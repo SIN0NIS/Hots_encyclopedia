@@ -43,6 +43,10 @@ jobs:
       why: ${{ steps.decide.outputs.why }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          # 여기서는 보관함 목록만 보면 된다. 위키 수집분까지 받을 이유가 없다.
+          sparse-checkout: archive
+          sparse-checkout-cone-mode: false
 
       - name: 지금 게임 빌드와 이미 만든 판 견주기
         id: decide
