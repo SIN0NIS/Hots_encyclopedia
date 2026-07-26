@@ -42,26 +42,27 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+          cache: pip
+
+      - name: 의존성 설치
+        run: pip install -r requirements.txt
+
+      # 점검은 실제로 돌릴 것과 같은 범위를 봐야 한다. 범위가 어긋나면
+      # 돌지도 않을 단계의 준비물이 없다고 빌드가 죽는다.
+      - name: 계획 정하기
+        id: plan
+        run: |
+          if [ "${{ github.event.inputs.refresh_wiki }}" = "true" ]; then
+            echo 'steps=analysis,wiki,profile,build,kr,verify' >> "$GITHUB_OUTPUT"
+          else
+            echo 'steps=analysis,profile,build,kr,verify' >> "$GITHUB_OUTPUT"
+          fi
 
       - name: 준비물 점검
-        run: python 00_scripts/pipeline.py --from analysis --check
+        run: python 00_scripts/pipeline.py --only ${{ steps.plan.outputs.steps }} --check
 
-      - name: 빌드 (위키 캐시 사용)
-        if: github.event.inputs.refresh_wiki != 'true'
-        run: python 00_scripts/pipeline.py --only analysis,profile,build,kr,verify
-
-      - name: 빌드 (위키 다시 긁기)
-        if: github.event.inputs.refresh_wiki == 'true'
-        run: python 00_scripts/pipeline.py --from analysis
-
-      - name: 새로 긁은 위키 데이터 되돌려 놓기
-        if: github.event.inputs.refresh_wiki == 'true'
-        run: |
-          git config user.name  'github-actions[bot]'
-          git config user.email 'github-actions[bot]@users.noreply.github.com'
-          git add 04_auto_wiki
-          git diff --staged --quiet || git commit -m '위키 수집분 갱신 (자동)'
-          git push
+      - name: 빌드
+        run: python 00_scripts/pipeline.py --only ${{ steps.plan.outputs.steps }}
 
       - name: 이번 판 보관
         run: python 00_scripts/archive_build.py
@@ -70,13 +71,18 @@ jobs:
         # Pages 는 output/ 만 올린다. 보관함은 저장소 루트에 두고 올릴 때만 넣는다.
         run: cp -r archive output/archive
 
-      - name: 보관함·변경 기록 되돌려 놓기
+      - name: 바뀐 것 되돌려 놓기
+        # 위키를 다시 긁었으면 그 수집분도, 새 판이 생겼으면 보관함도 함께 커밋한다.
         run: |
           git config user.name  'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
-          git add archive CHANGELOG.md
-          git diff --staged --quiet || git commit -m '이번 판 보관 (자동)'
-          git push
+          git add archive CHANGELOG.md 04_auto_wiki
+          if git diff --staged --quiet; then
+            echo "바뀐 것이 없습니다."
+          else
+            git commit -m '이번 판 보관 (자동)'
+            git push
+          fi
 
       - name: 리포트 남기기
         # 실패해도 결과물은 올린다. 리포트는 사람이 볼 참고 자료지 통과 조건이 아니다.
