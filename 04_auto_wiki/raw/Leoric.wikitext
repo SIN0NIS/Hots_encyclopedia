@@ -1,0 +1,256 @@
+{{hero data
+| name = Leoric
+| date = July 21, 2015
+| price = 7000
+| title = The Skeleton King
+| role = Bruiser
+| franchise = Diablo
+| info = A Bruiser who deals high damage against teams with many high Health Heroes.
+| lore = Madness. Betrayal. Death. These are the legacy of the Black King Leoric's reign. Driven to madness by the spirit of Diablo, Leoric brought untold suffering on his kingdom. Even after his death there was no release for the Skeleton King.
+| difficulty = Easy
+| melee = True
+| health = 2550
+| healthRegen = 5.3125
+| resource = 500
+| resourceType = Mana
+| armor = 0
+| attackSpeed = 0.77
+| attackRange = 2
+| attackDamage = 115
+| healthScaling = 0.04
+| regenScaling = 0.04
+| adamageScaling = 0.04
+| unitRadius = 0.8125
+| icon = File:Leoric_Icon.png
+| skills =
+Undying;Trait;File:Undying_Icon.png;Leoric becomes a ghost when he dies, and resurrects upon reaching full Health. Leoric deals no damage while dead.<!--
+-->{{undoc-x|type=Special death state<!--
+-->|affects=Self<!--
+-->|notes=<li>Leoric can use ''Ghastly Swing'' (Q), ''Drain Essence'' (W) and [[Hearth]] and provide vision while Undying. Leoric cannot Mount, use other Abilities or interact with other units in any other way while Undying, unless otherwise noted.<li>Leoric is untargetable by everything while Undying and cannot be interacted with.<li>Leoric can pass through pathing blockers and enemy Gates while Undying, but not through real terrain.<li>Reaching full Health while Undying automatically resurrects him at his current location after 1 second. Leoric is still Undying, but unable to act for the duration of the resurrection sequence.}}<!--
+
+--><br/>'''Wrath Of The Bone King'''<hr/>Leoric's first two Basic Attacks cleave for 100% damage, and his third Basic Attack deals 225% damage to a single target.<!--
+-->{{undoc-x|type=Physical Damage / Offensive damage modifier<!--
+-->|scaling=-<!--
+-->|affects=Enemies / Self<!--
+-->|props=[[Attack Modifier]], [[Splash]]<!--
+-->|aoe=Radial<!--
+-->|radius=3.5<!--
+-->|arc=220 degrees<!--
+-->|notes=<li>Damage bonus of the third attack (+125%) stacks additively with other offensive damage modifiers that can affect Leoric's Basic Attack damage.}};;;trait;False
+
+Skeletal Swing;Q;File:Skeletal_Swing_Icon.png;Leoric swings his mace, dealing 150 damage and Slowing enemies by 40% for 2.5 seconds. If an enemy Hero is hit, refund 50% of the cooldown and Mana cost. Deals 75% additional damage to Minions. Peasants!<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Clamping]], [[Slow]]<!--
+-->|cast=0.15 + 0.1875 seconds<!--
+-->|aoe=Radial<!--
+-->|radius=5.0<!--
+-->|arc=180 degrees<!--
+-->|notes=<li>Damage bonus to [[Minion]]s stacks additively with other offensive damage modifiers that can affect <i>Skeletal Swing</i>'s damage.}};12;70;;False
+
+Ghastly Swing;Q;File:Ghastly_Swing_Icon.png;Slow enemies by 40% for 2.5 seconds.<!--
+-->{{undoc-x|type=Crowd control<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Clamping]], [[Slow]]<!--
+-->|cast=0.15 + 0.1875 seconds<!--
+-->|aoe=Radial<!--
+-->|radius=5.0<!--
+-->|arc=180 degrees<!--
+-->|notes=<li>Replaces ''Skeletal Swing'' while Undying.<li>Does not benefit from talents affecting ''Skeletal Swing''.}};8;;;False
+
+Drain Hope;W;File:Drain_Hope_Icon.png;Grab an enemy Hero's soul, dealing up to 20% of their maximum Health as damage and healing Leoric for up to 20% of his maximum Health while he is nearby, over 4 seconds. Leoric's Movement Speed is reduced by 20% while this is active.<!--
+-->{{undoc-x|type=Percent damage / Healing<!--
+-->|scaling=-<!--
+-->|affects=Enemy Heroes / Self<!--
+-->|target=Point target<!--
+-->|props=[[Percent damage]], [[Skillshot]]<!--
+-->|cast=0.15 + 0 seconds<!--
+-->|range=8.0<!--
+-->|hitbox=1.25 x 1.25<!--
+-->|missile=25<!--
+-->|tickrate=2.0 per second (x9)<!--
+-->|notes=<li>''Drain Hope'' is interrupted if Leoric dies or is put in [[Stasis]].}};10;60;;False
+
+Drain Essence;W;File:Drain_Essence_Icon.png;Throw out a chain, attaching to the first enemy Hero hit, healing Leoric for up to 10% of his maximum Health over 4 seconds as long as the enemy remains close.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|target=Point target<!--
+-->|props=[[Healing]], [[Skillshot]]<!--
+-->|cast=0.15 + 0 seconds<!--
+-->|range=8.0<!--
+-->|hitbox=1.25 x 1.25<!--
+-->|missile=25<!--
+-->|tickrate=2.0 per second (x9)<!--
+-->|notes=<li>Replaces ''Drain Hope'' while Undying.<li>Does not benefit from Talents affecting ''Drain Hope''.<li>''Drain Essence'' applied to a target before they change states may remain on them in some cases (e.g. [[D.Va]] before she uses ''Self-Destruct'').}};9;;;False
+
+Wraith Walk;E;File:Wraith_Walk_Icon.png;Leoric separates from his body, becoming Unstoppable and gaining Movement Speed accelerating up to 50% over 2.5 seconds. When Wraith Walk ends or is canceled, his body jumps to his wraith.<!--
+-->{{undoc-x|type=Status effect, Movement: [[Teleport]]<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|props=[[Unstoppable]]<!--
+-->|cast=Instant<!--
+-->|notes=<li>Can be cast while [[Root]]ed.<li>''Wraith Walk'' can be reactivated after 0.25 seconds to apply its end effect early.<li>Leoric's Wraith is an Invulnerable Summon that has regular base Movement Speed.<li>Wraith's Movement Speed can be affected by conveyor belts in [[Volskaya Foundry]].<li>Leoric can pass through pathing blockers and enemy Gates while Wraith Walking, but not through real terrain.<li>Unstoppable is removed before teleporting to Wraith.<li>''Wraith Walk'' is interrupted, without teleporting Leoric, if he dies or is put in Stasis.}};14 / 0.25;50;;False
+
+Entomb;R;File:Entomb_Icon.png;Create an unpassable tomb for 4 seconds.<!--
+-->{{undoc-x|type=Pathing blocker<!--
+-->|affects=All units<!--
+-->|target=Point target<!--
+-->|props=[[Clamping]]<!--
+-->|cast=0.0625 + 0.875 seconds.<!--
+-->|aoe=Rectangle<!--
+-->|width=<br/>- Inner: 4.0<br/>- Outer: 6.5<!--
+-->|height=<br/>- Inner: 7.0<br/>- Outer: 8.0<!--
+-->|prop1=Initial delay|val1=0.1875 seconds<!--
+-->|notes=<li>Entomb can be reactivated after 0.5 seconds to end its effect early.}};50;90;heroic;False
+
+March of the Black King;R;File:March_of_the_Black_King_Icon.png;Leoric becomes Unstoppable and walks forward, swinging his mace 3 times. Enemies hit take 250 damage, and Heroes hit heal Leoric for 12% of his maximum Health.<!--
+-->{{undoc-x|type=Spell Damage / Healing, Movement: [[Dash]], Status effect<!--
+-->|scaling=4.00% / -<!--
+-->|affects=Enemies / Self<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Unstoppable]]<!--
+-->|cast=Instant<!--
+-->|range=8.125<!--
+-->|aoe=Radial (swings)<!--
+-->|radius=2.5<!--
+-->|arc=270 degrees<!--
+-->|missile=3.25<!--
+-->|notes=<li>First swing takes place 0.5 seconds after the cast and the following two at 1 second intervals.<li>Cannot be cast while [[Root]]ed.}};50;75;heroic;False
+
+| talents = 
+<!-- LEVEL 1 -->
+Consume Vitality;1;1;Skeletal Swing's cooldown is reduced by 2 seconds. Enemy Heroes hit heal Leoric for 4% of his maximum Health.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|notes=<li>Baseline cooldown reduction from hitting a Hero is applied after base reduction from ''Consume Vitality''.}};File:Consume_Vitality_Icon.png;
+
+Fealty Unto Death;1;2;When a nearby friendly or enemy Minion dies, Leoric restores 1.25% of his maximum Health and 6 Mana.<!--
+-->{{undoc-x|type=Healing, Mana Restoration<!--
+-->|scaling=-<!--
+-->|affects=Self}};File:Fealty_Unto_Death_Icon.png;
+
+Ossein Renewal;1;3;{{Cooldown|120}}<br>{{Active}} Activate to heal Leoric for 30% of his maximum Health over 5 seconds. Regeneration Globes lower the cooldown of this Ability by 20 seconds.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|props=[[Heal over Time]]<!--
+-->|tickrate=1.0 per second (x6)<!--
+-->|notes=}};File:Ossein_Renewal_Icon.png;
+
+<!-- LEVEL 4 -->
+Ghastly Reach;2;1;Increase the range of Skeletal Swing by 25%.<!--
+-->{{undoc-x|prop1=Bonus radius|val1=1.25}};File:Ghastly_Reach_Icon.png;
+
+Paralyzing Rage;2;2;Increase the Slow of Skeletal Swing by 20%.;File:Paralyzing_Rage_Icon.png;
+
+Kneel, Peasants!;2;3;Skeletal Swing deals 75% additional damage to Mercenaries and Monsters, and hitting them activates Skeletal Swing's cost and cooldown refund.<!--
+-->{{undoc-x|type=Offensive damage modifier, Cooldown reduction<!--
+-->|affects=Ability<!--
+-->|notes=<li>Damage bonus stacks additively with other offensive damage modifiers that can affect <i>Skeletal Swing</i>'s damage.}};File:Kneel,_Peasants!_Icon.png;
+
+<!-- LEVEL 7 -->
+Willing Vessel;3;1;Increase the healing from Drain Hope to 25% of Leoric's maximum Health. If Drain Hope lasts its full duration, Leoric instantly heals for an additional 5% of his maximum Health.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|notes=}};File:Willing_Vessel_Icon.png;
+
+Drain Momentum;3;2;Drain Hope no longer reduces Leoric's Movement Speed. If Drain Hope lasts its full duration, gain 30% Movement Speed for 4 seconds.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|props=[[Movement speed]]<!--
+-->|notes=}};File:Drain_Momentum_Icon.png;
+
+Hopelessness;3;3;Increase the range of Drain Hope by 25%.<!--
+-->{{undoc-x|prop1=Bonus range|val1=2.0}};File:Hopelessness_Icon.png;
+
+<!-- LEVEL 10 -->
+Entomb;4;1;{{Cooldown|50}}<br>Create an unpassable tomb for 4 seconds.;File:Entomb_Icon.png;
+March of the Black King;4;2;{{Cooldown|50}}<br>Leoric becomes Unstoppable and walks forward, swinging his mace 3 times. Enemies hit take 250 damage, and Heroes hit heal Leoric for 12% of his maximum Health.;File:March_of_the_Black_King_Icon.png;
+
+<!-- LEVEL 13 -->
+Unyielding Despair;5;1;Drain Hope's cooldown is reduced by 0.75 seconds for every 1 second it is active. If Drain Hope lasts its full duration, its cooldown is reduced by an additional 2 seconds.;File:Unyielding_Despair_Icon.png;
+
+Ominous Wraith;5;2;Increase Wraith Walk's duration by 100%. Enemy Heroes that come in contact with the wraith deal 50% less damage for 4 seconds.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Area of Effect]]<!--
+-->|aoe=Circle<!--
+-->|radius=0.5<!--
+-->|notes=<li>Damage reduction stacks additively with other offensive damage modifiers affecting the target Hero's damage output.}};File:Ominous_Wraith_Icon.png;
+
+Spectral Leech;5;3;Basic Attacks against enemy Heroes deal bonus damage equal to 2.5% of the Hero's maximum Health and heal Leoric for twice that amount.<!--
+-->{{undoc-x|type=Percent damage / Healing<!--
+-->|scaling=-<!--
+-->|affects=Enemy Heroes / Self<!--
+-->|props=[[Attack Modifier]], [[Lifesteal]], [[Percent damage]]<!--
+-->|notes=<li>Only affects the primary target of the Basic Attack.<li>Only heals for twice the bonus damage actually dealt (relevant if the target has less than 2.5% of maximum Health remaining).}};File:Spectral_Leech_Icon.png;
+
+<!-- LEVEL 16 -->
+Crushing Hope;6;1;If Drain Hope lasts its full duration, it instantly deals an additional 15% of the target's maximum Health as damage. This damage does not heal Leoric.<!--
+-->{{undoc-x|type=Percent damage<!--
+-->|scaling=-<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Percent damage]]<!--
+-->|notes=}};File:Crushing_Hope_Icon.png;
+
+Royal Focus;6;2;Wraith Walk increases the damage of the next Skeletal Swing within 5 seconds by 50%. Each enemy Hero hit by this Skeletal Swing reduces the cooldown of Wraith Walk by 7 seconds.<!--
+-->{{undoc-x|type=Offensive damage modifier, Cooldown reduction<!--
+-->|affects=Ability<!--
+-->|notes=<li>Stacks additively with other offensive damage modifiers affecting <i>Skeletal Swing</i>'s damage.}};File:Royal_Focus_Icon.png;
+
+Mithril Mace;6;3;Increase Leoric's Attack Speed by 20%.<p>{{Repeatable Quest|Nearby enemy Minion deaths grant 0.3% permanent Attack Speed, and Takedowns grant 3% permanent Attack Speed, up to 30%.}}<!--
+-->{{undoc|<hr/><li>Leoric can gain stacks while Undying.}};File:Mithril_Mace_Icon.png;
+
+Buried Alive;7;1;The duration of Entomb is lowered by 1 second, but enemies trapped inside are Silenced and take 50 damage every 1 second.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|props=[[Silence]]<!--
+-->|tickrate=2.0 per second (x7)<!--
+-->|prop1=Damage per tick|val1=50<!--
+-->|notes=<li>Because of the relatively low tickrate, it is possible for e.g. [[Lúcio]] to ''High Five'' in and Cleanse targets, without it being canceled by being Silenced on the way in, if timed correctly.}};File:Buried_Alive_Icon.png;
+
+Death March;7;2;The final swing of March of the Black King also applies Drain Hope to nearby enemy Heroes.<!--
+-->{{undoc-x|type=Percent damage<!--
+-->|scaling=-<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Area of Effect]], [[Percent damage]]<!--
+-->|aoe=Circle<!--
+-->|radius=7.25 <sup>(1</sup><!--
+-->|notes=<li><sup>1)</sup> Extended by Leoric's unit radius.<li>Movement speed bonuses from multiple instances of ''Drain Momentum'' do not stack.<li>''Hopelessness'' does not affect the initial radius of ''Death March'' application. Only the active range is increased.<li>''Death March'' fully interacts with all other Talents affecting ''Drain Hope''.<li>''Drain Hope''s applied to a target before they change states may remain on them in some cases (e.g. [[D.Va]] before she uses ''Self-Destruct'').}};File:Death_March_Icon.png;
+
+Burning Despair;7;3;Deal 40 damage per second to nearby enemies.<p>While Drain Hope is active, gain 40 Armor and the damage and area is increased by 100%.<!--
+-->{{undoc-x|type=Spell Damage / Defensive damage modifier<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies / Self<!--
+-->|props=[[Area of Effect]], [[Armor]]<!--
+-->|aoe=Circle<!--
+-->|radius=2.5<!--
+-->|tickrate=1.0 per second<!--
+-->|notes=<li>Damage from ''Burning Despair'' is unaffected by external offensive damage modifiers, doesn't trigger [[lifesteal]] effects and doesn't draw tower aggro from [[A Call For Help]].<li>Does not stack with other positive Armor effects. Other defensive damage modifiers may stack.}};File:Burning_Despair_Icon.png;
+
+Shroud of the Dead King;7;4;{{Cooldown|25}}<br>{{Active}} Activate to become Protected for 3 seconds, preventing all damage.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|props=[[Protected]]<!--
+-->|cast=Instant<!--
+-->|notes=}};File:Shroud_of_the_Dead_King_Icon.png;
+}}
+
+<noinclude>
+{{Scaling table/start|{{#var:health}}|{{#var:health scaling}}|{{#var:health regen}}|{{#var:health regen scaling}}|{{#var:attack damage}}|{{#var:attack damage scaling}}}}
+{{Scaling table/slot|Skeletal Swing|150|0.04}}
+{{Scaling table/slot|March of the Black King|250|0.04|10}}
+{{Scaling table/slot|Buried Alive (single)|25|0.04|20}}
+{{Scaling table/slot|Buried Alive (per second)|50|0.04|20}}
+{{Scaling table/slot|Burning Despair|40|0.04}}
+{{Scaling table/end}}
+</noinclude>

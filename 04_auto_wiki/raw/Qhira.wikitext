@@ -1,0 +1,246 @@
+{{Hero data
+| name = Qhira
+| date = August 6, 2019
+| price = 10000
+| title = Realmless Bounty Hunter
+| role = Melee
+| franchise = Heroes
+| info = A brutal Melee Assassin who is adept at both beginning and ending fights.
+| lore = A sworn knight and holder of a singularity shard, Qhira's only desire is to seek out others who may have escaped the destruction of her doomed home realm, Iresia. While she searches, she gets by as a bounty hunter a – job she loathes, despite her exceptional skill.
+| difficulty = Medium
+| melee = true
+| health = 2000
+| healthRegen = 4.168
+| resource = 500
+| resourceType = Mana
+| armor = 0
+| attackSpeed = 1.0
+| attackRange = 2.25
+| attackDamage = 100
+| healthScaling = 0.04
+| regenScaling = 0.04
+| adamageScaling = 0.04
+| unitRadius = 0.625
+| icon = 
+| skills = 
+Grappling Hook (Trait);D;File:Grappling_Hook_Icon.png;Qhira fires a Grappling Hook that pulls her to terrain it contacts. If an enemy Hero is hit, they take 35 damage and Qhira launches at them, kicking them for an additional 108 damage.<p>Can be used while Revolving Sweep is active.<!--
+-->{{undoc-x|type=Spell Damage / Movement: [[Launch]]<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemy Heroes / Self<!--
+-->|target=Point target<!--
+-->|props=[[Skillshot]]<!--
+-->|cast=Instant<!--
+-->|range=11<!--
+-->|hitbox=1.0 x 1.15<!--
+-->|missile=25<!--
+-->|notes=}};20;;False;
+
+Carnage;Q;File:Carnage_Icon.png;Unleash your sword in the target direction, continuously dealing 30 damage to enemies caught in its path.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Clamping]], [[Stationary channel]]<!--
+-->|cast=0.125 + CH + 0 seconds<!--
+-->|aoe=Rectangle<!--
+-->|width=1.25<!--
+-->|height=8.5<!--
+-->|prop1=Channel time|val1=0.5625 seconds<!--
+-->|notes=<li>The area grows to its maximum length in 4 ticks over 0.25 seconds, dealing damage every tick. After an additional 0.3125 seconds the sword is pulled back, dealing an additional tick of damage to all targets.}};6;40;False;
+
+Blood Rage;W;File:Blood_Rage_Icon.png;{{Passive}} Basic Attack and Ability damage cause enemies to bleed for 44 damage over 4 seconds. Stacks 5 times.<p>{{Active}} Qhira deals 32 damage and heals for 90 Health per enemy Hero affected. Damage and healing are increased by 50% per each additional stack on that Hero.<!--
+-->{{undoc-x|type=Spell Damage / Healing<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies / Self<!--
+-->|target=No target<!--
+-->|props=[[Damage over Time]]<!--
+-->|cast=Instant<!--
+-->|range=Global<!--
+-->|tickrate=1.0 per second (x4)<!--
+-->|prop1=Damage per tick|val1=11<!--
+-->|notes=<li>Active component is disabled if no enemies are affected by the passive.<li>Subsequent applications of the DoT add to its damage and refresh its duration.<li>Damage from either <i>Blood Rage</i>'s active or passive do not add or refresh any stacks.<li>Damage from both bleed and activation can affect non-Heroes, but do not trigger healing.<li>Damage and healing bonuses from the active component stack additively with itself and multiplicatively with other modifiers.<li>If multiple Qhiras are on a team, each of them can apply their own Bleed damage over time to the target. However, only the unit who placed the first Bleed stack on the unit may activate and benefit from ''Blood Rage'' on it. Additionally, the stack count and duration are shared among all Bleed effects applied on the target, meaning that any Qhira (re)applying Bleed instantly inherits the current stack count, increments it and refreshes the duration of all active Bleeds on the target.}};7;35;False;
+
+Revolving Sweep;E;File:Revolving_Sweep_Icon.png;Attach your sword to the first enemy Hero hit, dealing 96 damage and Stunning them for 0.25 seconds. Once attached, Qhira becomes Immune to all effects, rotating around the target for 2.75 seconds, and dealing 105 damage to any enemies between you and the target.<p>Reactivate to send you to the target's location, knocking them away, dealing 108 damage and Stunning them for 0.75 seconds.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control / Movement: [[Launch]], Status effect<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies / Self<!--
+-->|target=Point target<!--
+-->|props=[[Clamping]], [[Evasion]], [[Knockback]], [[Skillshot]], [[Stun]], [[Untargetable]]<!--
+-->|cast=0.125 + 0.75 seconds<!--
+-->|range=8.0<!--
+-->|radius=6.0 (swing)<!--
+-->|hitbox=<br/>- Initial: 1.0 x 1.15<br/>- Swing: 0.75 x 5.5<!--
+-->|missile=25 (initial)<!--
+-->|prop1=Knockback duration|val1=0.1875<!--
+-->|prop2=Knockback speed|val2=12<!--
+-->|notes=<li>Rotation is always clockwise and at set distance from the target.<li>While Qhira is swinging, she is [[Unstoppable]] and [[untargetable]], nullifies all incoming damage, [[Evade]]s Basic Attacks and has no collision.<li>Qhira is unable to attack, move or use her abilities other than ''Grappling Hook'' and ''Revolving Sweep's'' reactivation.<li>Swing behaviour is instantly removed, dropping Qhira at her current location (as long as it's on pathable surface), if:<br/>- the target becomes [[Unstoppable]] or [[Invulnerable]]<br/>- the target or Qhira is put in [[Stasis]] or [[Time Stop]]<br/>- the target instantly moves farther than 10 units from Qhira's current location<br/>- the target is Falstad during ''Flight'' or Ragnaros during ''Molten Core''<br/>- Qhira latches on to a Hero or terrain with ''Grappling Hook''.<li>If the ability has not been reactivated or interrupted, swinging stops after completing one full circle and Qhira is placed at range distance from the target.}};16 / 0.25;70;False;
+
+Unrelenting Strikes;R;File:Unrelenting_Strikes_Icon.png;Deal 44 damage to nearby enemies every 0.5 seconds for 2.5 seconds as your sword grows outward. Upon expiring, deal 160 damage to all nearby enemy Heroes and Stun them for 1.5 seconds.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=No target<!--
+-->|props=[[Area of Effect]], [[Mobile channel]], [[Stun]]<!--
+-->|cast=Instant<!--
+-->|aoe=Circle<!--
+-->|radius=<br/>- Initial: 1.5 <sup>(1</sup><br/>- Final: 3.5 <sup>(1</sup><!--
+-->|tickrate=2.0 per second (x6)<!--
+-->|notes=<li><sup>1)</sup> Extended by Qhira's unit radius.<li>Qhira can activate ''Blood Rage'', while channeling ''Unrelenting Strikes'' without interrupting it. Qhira cannot use any other abilities or attack during the channel.<li>First 2 ticks strike at the initial radius, after which it grows in 0.5 increments.<li>Final damage is dealt in a separate instance on the last tick in addition to the periodic damage.}};60;50;Heroic;False;
+
+Final Strike;R;File:Final_Strike_Icon.png;After 1 second, deal 410 damage to all enemies in a line. This damage is increased by 25% against enemy Heroes below 50% Health.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Channeled cast]] (stationary), [[Clamping]]<!--
+-->|cast=1.0 (ch) + 0.5 seconds<!--
+-->|range=20<!--
+-->|hitbox=3.0 x 1.5<!--
+-->|missile=36<!--
+-->|notes=<li>Interrupting the ability during its cast puts it on a 10 second cooldown.<li>Low health damage bonus stacks additively with other damage modifiers affecting Qhira's Spell Damage output.}};40;45;Heroic;False;
+
+| talents =
+<!-- LEVEL 1 -->
+Maximum Effort;1;1;If Carnage damages the same enemy Hero 3 times, it deals an additional 108 damage and Slows by 25% for 2.5 seconds.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Slow]]<!--
+-->|notes=}};File:Maximum_Effort_Icon.png;
+
+Fatal Wounds;1;2;While at maximum stacks, Blood Rage's bleed deals 30% more damage to enemy Heroes below 50% Health.<p>{{Quest|Damage enemy Heroes with Blood Rage's bleed damage.|After damaging Heroes with Blood Rage's bleed damage 150 times, Blood Rage's duration is increased by 2 seconds.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Abilty<!--
+-->|notes=<li>Stacks additively with other damage modifiers affecting Qhira's Spell Damage output.}}}};File:Fatal_Wounds_Icon.png;
+
+Finishing Touch;1;3;Gain 20% Basic Attack damage. When Qhira Basic Attacks an enemy Hero below 50% Health it deals an additional 20% damage, and she gains 35% Attack Speed for 3 seconds.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Attack Modifier]] (heroes)<!--
+-->|notes=<li>Bonus damage is only dealt and Attack Speed bonus gained (or refreshed) if the target is below 50% Health before the Basic Attack damage itself is done.<li>Stacks additively with itself and other offensive damage modifiers affecting Qhira's physical damage output.}};File:Finishing_Touch_Icon.png;
+
+<!-- LEVEL 4 -->
+Upstage;2;1;Damaging at least 2 Heroes with Blood Rage causes Qhira to Evade the next 4 Heroic Basic Attacks within 12 seconds.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|props=[[Evasion]]<!--
+-->|notes=<li>Triggering the effect while already affected by it resets the Evasion charges and duration.<li>Avoids the damage from the Basic Attack, but not necessarily all of its effects. For example [[Maiev]]'s ''Umbral Bind'' will still attach a Tether.}};File:Upstage_Icon.png;
+
+Ensnaring Swing;2;2;The primary target of Revolving Sweep is Slowed by 60% while Qhira is attached to them. Secondary targets hit by Revolving Sweep's swing are Slowed by 40% for 3 seconds.<!--
+-->{{undoc-x|type=Crowd control<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Slow]]<!--
+-->|notes=}};File:Ensnaring_Swing_Icon.png;
+
+Your Pain, My Gain;2;3;Basic Attacking an enemy Hero causes Qhira to gain 10 Armor for 3 seconds. Stacks 3 times.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Attack Modifier]] (heroes), [[Armor]]<!--
+-->|notes=<li>Subsequent applications refresh the duration.<li>Stacks additively with itself, but not with other positive Armor effects. Other defensive damage modifiers may stack.}};File:Your_Pain,_My_Gain_Icon.png;
+
+<!-- LEVEL 7 -->
+The Thirst;3;1;Carnage heals for 50% of the damage dealt to enemy Heroes. Anytime Carnage damages an enemy Hero, Qhira’s next Basic Attack within 4 seconds against an enemy Hero deals 15% additional damage, stacking up to 10 times.<!--
+-->{{undoc-x|type=Offensive damage modifier, Healing<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|props=[[Lifesteal]]<!--
+-->|notes=<li>Fully interacts with the bonus damage instance from ''Maximum Effort''.<li>Damage bonus stacks additively with itself and other offensive damage modifiers affecting Qhira's Basic Attack damage.}};File:The_Thirst_Icon.png;
+
+Healmonger;3;2;If Blood Rage damages an enemy Hero below 50% Health, it Heals for an additional 210 Health.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=4.00%<!--
+-->|affects=Self<!--
+-->|notes=<li>Every Hero below the Health threshold triggers the effect.<li>Healing from ''Healmonger'' does not benefit from <i>Blood Rage</i>'s per Hero bonus.}};File:Healmonger_Icon.png;
+
+Siphoning Link;3;3;Damaging an enemy Hero with Revolving Sweep's initial impact or swing causes Qhira to regenerate 96 Health over 4 seconds. Stacks up to 4 times.<p>{{Passive}} Qhira heals for 20% of her damage dealt by Basic Attacks.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=4.00%<!--
+-->|affects=Self<!--
+-->|props=[[Heal over time]]<!--
+-->|tickrate=2.0 per second (x8)<!--
+-->|prop1=Heal per tick|val1=12 (per target)<!--
+-->|notes=}};File:Siphoning_Link_Icon.png;
+
+<!-- LEVEL 10 -->
+Unrelenting Strikes;4;1;{{Cooldown|60}}<br>Deal 44 damage to all nearby enemies every 0.5 seconds for 2.5 seconds as your sword grows outward. Upon expiring, deal 160 damage to all nearby enemy Heroes and Stun them for 1.5 second.;File:Unrelenting_Strikes_Icon.png;
+Final Strike;4;2;{{Cooldown|40}}<br>After 1 second, deal 410 damage to all enemies in a line. This damage is increased by 25% against enemy Heroes below 50% Health.;File:Final_Strike_Icon.png;
+
+<!-- LEVEL 13 -->
+Chainsaw;5;1;Carnage's cooldown regenerates 100% faster while an enemy Hero has maximum Blood Rage stacks.<!--
+-->{{undoc|<hr><li>Does not stack with itself.<li>While active, reduces the cooldown of ''Carnage'' by 0.0625 seconds every 0.0625 seconds.}};File:Chainsaw_Icon.png;
+
+Pulsing Pain;5;2;Each additional enemy Hero hit by Revolving Sweep causes the primary target to take an additional 135 damage.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemy Heroes<!--
+-->|notes=}};File:Pulsing_Pain_Icon.png;
+
+The Hunted;5;3;Basic Attacking an enemy Hero increases your Basic Attack damage against that Hero by 25% for 4 seconds. Stacks up to 4 times and lasts 4 seconds. Bonus is reset if a different Hero is attacked.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Attack Modifier]] (heroes)<!--
+-->|notes=<li>Stacks additively with itself and other damage modifiers affecting Qhira's physical damage output.}};File:The_Hunted_Icon.png;
+
+<!-- LEVEL 16 -->
+Booming Kick;6;1;Increase the Stun duration of Revolving Sweep's reactivation by 0.25 seconds. Enemy Heroes around the primary target are also affected by Revolving Sweeps reactivation.<!--
+-->{{undoc-x|props=[[Area of Effect]]<!--
+-->|aoe=Circle<!--
+-->|radius=4.0<!--
+-->|notes=<li>AoE hit has the same properties as the primary hit.}};File:Booming_Kick_Icon.png;
+
+Lingering Ailment;6;2;Enemy Heroes hit by Revolving Sweep or by Grappling Hook have their Armor reduced by 35 for 4 seconds.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Armor reduction]]<!--
+-->|notes=<li>Does not stack with other negative Armor effects. Other defensive damage modifiers may stack.<li>Only applies to the initial impact and swing of Revolving Sweep, not the reactivation.}};File:Lingering_Ailment_Icon.png;
+
+Swing Life Away;6;3;Revolving Sweep's cooldown recharges 250% faster while Qhira is swinging around her target. She also gains 60 Spell Armor for 5 seconds after the re-activation impact.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Spell Armor]]<!--
+-->|notes=<li>Reactivation is required to gain Spell Armor.<li>While active, reduces the cooldown of ''Revolving Sweep'' by 0.1562 seconds every 0.0625 seconds.<li>Does not stack with other positive Spell Armor effects. Other defensive damage modifiers may stack.}};File:Swing_Life_Away_Icon.png;
+
+<!-- LEVEL 20 -->
+Silent Killer;7;1;Hitting enemy Heroes with Unrelenting Strikes Silences them for 0.5 seconds and reduces its cooldown by 3 seconds.<!--
+-->{{undoc-x|type=Crowd control<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Silence]]<!--
+-->|notes=}};File:Silent_Killer_Icon.png;
+
+Unleashed Potential;7;2;Increase the damage to enemy Heroes below 50% Health from 25% to 50%.<p>If an enemy Hero dies within 1.5 seconds of being hit with Final Strike, then reset the cooldowns of Final Strike and all of Qhira's Basic Abilities.;File:Unleashed_Potential_Icon.png;
+
+Utility Belt;7;3;Grappling Hook's cooldown is reset when hitting an enemy Hero with the initial impact of Revolving Sweep and recharges 900% faster if Qhira hasn't taken damage within the last 2 seconds.<!--
+-->{{undoc|<hr><li>While active, reduces the cooldown of ''Grappling Hook'' by 0.5625 seconds every 0.0625 seconds.}};File:Utility_Belt_Icon.png;
+
+No Sanctuary;7;4;Nearby enemy Heroes below 50% Health are revealed and you gain 20% Movement Speed while an enemy is revealed by you in this way.<p>Additionally, you deal 20% increased damage to these revealed enemies.<!--
+-->{{undoc-x|type=Status effect / Offensive damage modifier<!--
+-->|affects=Enemies / Self<!--
+-->|props=[[Area of Effect]], [[Revealed]]<!--
+-->|aoe=Circle<!--
+-->|radius=26<!--
+-->|notes=<li>Stacks additively with other damage modifiers affecting Qhira's damage output.}};File:No_Sanctuary_Icon.png;
+}}
+
+<noinclude>
+{{Scaling table/start|{{#var:health}}|{{#var:health scaling}}|{{#var:health regen}}|{{#var:health regen scaling}}|{{#var:attack damage}}|{{#var:attack damage scaling}}}}
+{{Scaling table/slot|Grappling Hook (initial)|35|0.04}}
+{{Scaling table/slot|Grappling Hook (impact)|108|0.04}}
+{{Scaling table/slot|Carnage (single)|30|0.04}}
+{{Scaling table/slot|Carnage (full)|150|0.04}}
+{{Scaling table/slot|Bloodrage (passive)|44|0.04}}
+{{Scaling table/slot|Bloodrage (damage)|32|0.04}}
+{{Scaling table/slot|Bloodrage (healing)|85|0.04}}
+{{Scaling table/slot|Revolving Sweep (initial)|96|0.04}}
+{{Scaling table/slot|Revolving Sweep (swing)|105|0.04}}
+{{Scaling table/slot|Revolving Sweep (impact)|108|0.04}}
+{{Scaling table/slot|Unrelenting Strikes (periodic)|44|0.04|10}}
+{{Scaling table/slot|Unrelenting Strikes (periodic, per second)|88|0.04|10}}
+{{Scaling table/slot|Unrelenting Strikes (final)|160|0.04|10}}
+{{Scaling table/slot|Final Strike|395|0.04|10}}
+{{Scaling table/slot|Maximum Effort|108|0.04|1}}
+{{Scaling table/slot|Healmonger|190|0.04|7}}
+{{Scaling table/slot|Siphoning Link|96|0.04|7}}
+{{Scaling table/slot|Siphoning Link (per second)|24|0.04|7}}
+{{Scaling table/slot|Pulsing Pain|135|0.04|7}}
+{{Scaling table/end}}
+</noinclude>

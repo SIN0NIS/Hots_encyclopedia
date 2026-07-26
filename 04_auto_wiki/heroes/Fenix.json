@@ -1,0 +1,581 @@
+{
+  "hero": "Fenix",
+  "abilities": [
+    {
+      "name": "Shield Capacitor",
+      "hotkey": "TRAIT",
+      "icon": "Shield_Capacitor_Fenix_Icon.png",
+      "description": "Fenix has a permanent 760 Shield which regenerates at 10% per second after not taking damage for 5 seconds.; trait",
+      "fields": {
+        "type": "Shield",
+        "scaling": "4.00%",
+        "affects": "Self",
+        "tickrate": "1.0 per second"
+      }
+    },
+    {
+      "name": "Plasma Cutter",
+      "hotkey": "Q",
+      "icon": "Plasma_Cutter_Icon.png",
+      "description": "Create a laser beam at the target point that circles around Fenix twice, dealing 135 damage to enemies hit and Slowing them by 25% for 4 seconds.",
+      "fields": {
+        "type": "Spell Damage, Crowd control",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "target": "Point target",
+        "props": "Area of Effect, Clamping, Slow",
+        "cast": "Instant",
+        "range": "- Minimum: 1.5 - Maximum: 6.0",
+        "aoe": "Circle",
+        "radius": "0.7",
+        "prop1": "Cycle duration",
+        "val1": "1.5 seconds",
+        "notes": "Enemies can be hit by Plasma Cutter multiple times within the same cast, but not more often than once every 0.5 seconds. Damage is dealt before any additional effects of Plasma Cutter or associated Talents are applied.",
+        "cooldown": "12"
+      }
+    },
+    {
+      "name": "Weapon Mode: Repeater Cannon",
+      "hotkey": "W",
+      "icon": "Weapon Mode Repeater Cannon Icon.png",
+      "description": "Basic Attack speed increased by 150%. Activate to change to Weapon Mode Phase Bomb, increasing Basic Attack range and damage and causing Basic Attacks to splash.",
+      "fields": {
+        "type": "Status effect",
+        "affects": "Self",
+        "target": "No target (toggle)",
+        "props": "Attack Modifier, Attack Speed",
+        "cast": "Instant",
+        "notes": "Repeater Cannon's single-target DPS is twice that of Phase Bomb. Switching weapon modes does not dismount nor does it interrupt mounting, hearthing or channeling objectives. Attack Speed stacks additively with other effects that can affect Fenix's Attack Speed.",
+        "cooldown": "0.5"
+      }
+    },
+    {
+      "name": "Weapon Mode: Phase Bomb",
+      "hotkey": "W",
+      "icon": "Weapon Mode Phase Bomb Icon.png",
+      "description": "Basic Attacks have 1.25 increased range, deal 25% more damage, and splash to nearby enemies. Activate to change to Weapon Mode Repeater Cannon, increasing Basic Attack Speed.",
+      "fields": {
+        "type": "Bonus damage / Physical Damage",
+        "scaling": "-",
+        "affects": "Self / Enemies",
+        "target": "No target (toggle)",
+        "props": "Attack Modifier, Splash",
+        "cast": "Instant",
+        "prop1": "Splash radius",
+        "val1": "3.0",
+        "notes": "Damage bonus is implemented as a direct base damage increase, causing it to stack multiplicatively with offensive damage modifiers. Switching weapon modes does not reset Fenix's auto-attack timer. The auto-attack timer ticks from its current completion percentage according to the weapon mode currently selected. Therefore, by attacking exclusively with Phase Bomb and quickly switching to Repeater Cannon and back just between auto-attacks (ideally staying in Repeater Cannon mode for all of the auto-attack downtime), Fenix can benefit from the bonus range, damage, and splash damage of Phase Bomb as well as the bonus attack speed of Repeater Cannon.",
+        "cooldown": "0.5"
+      }
+    },
+    {
+      "name": "Warp",
+      "hotkey": "E",
+      "icon": "Warp_Icon.png",
+      "description": "Warp to a targeted location, phasing out after 0.5 seconds, and arriving 0.75 seconds later.",
+      "fields": {
+        "type": "Movement: Teleport, Status effect",
+        "affects": "Self",
+        "target": "Point target",
+        "props": "Channeled cast (stationary) Clamping, Pseudo-Stasis",
+        "cast": "0.5 (ch) + 0 seconds",
+        "range": "9.0",
+        "notes": "Interrupting Warp during its cast puts it on full cooldown. While phased out Fenix is put in Stasis. However, he does not get the debuff removal most Stasis effects give.",
+        "cooldown": "17"
+      }
+    },
+    {
+      "name": "Purification Salvo",
+      "hotkey": "R",
+      "icon": "Purification_Salvo_Icon.png",
+      "description": "Channel for 1.5 seconds, sweeping a laser in front of Fenix that locks onto enemy Heroes. Once Channeling finishes, fire 5 missiles at each locked Hero, dealing 79 damage each. Deals 50% increased damage to Slowed targets.; 90; heroic",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "4.00%",
+        "affects": "Enemy Heroes",
+        "target": "Point target",
+        "props": "Area of Effect, Clamping, Mobile channel",
+        "cast": "0.0625 + CH + 0 seconds",
+        "aoe": "Radial",
+        "radius": "13.25",
+        "arc": "180 degrees (1",
+        "prop1": "Channel time",
+        "val1": "1.5 seconds",
+        "prop2": "Missile fire delay",
+        "val2": "0.5 seconds",
+        "prop3": "Missile interval",
+        "val3": "0.125 seconds",
+        "notes": "1) Scan is performed in twenty-four 7.5 degree sections rotating counter-clockwise over 1.5 seconds and only detects visible enemy Heroes. Fenix cannot attack or use his Abilities while channeling. Interrupting the Ability during the channeled targeting period puts it on a 10-second cooldown. Purification Salvo missiles can only be disjointed if the target dies, is removed from the plane (certain Stasis effects) or instantly teleports farther than 60 units from its previous location. When disjointed, the missile expires upon reaching the target's location before the event. Otherwise, the missiles will keep redirecting to the target unit. Damage bonus stacks additively with other offensive damage modifiers that can affect Purification Salvo 's damage."
+      }
+    },
+    {
+      "name": "Planet Cracker",
+      "hotkey": "R",
+      "icon": "Planet_Cracker_Icon.png",
+      "description": "After 0.5 seconds, Channel a powerful beam that spans across the battleground for 4 seconds, dealing 112 damage every 0.25 seconds to non-Structure enemies hit.; 100 / 1.0; heroic",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "4.00%",
+        "affects": "Non-Structure enemies",
+        "target": "Point target",
+        "props": "Area of Effect, Channeled cast (stationary), Stationary channel",
+        "cast": "0.5 (ch) + CH + 0 seconds",
+        "range": "Global",
+        "aoe": "Rectangle",
+        "tickrate": "4.0 per second (x16)",
+        "notes": "Interrupting the Ability during its 0.5 second windup channel puts it on a 10 second cooldown. Planet Cracker can be reactivated after 1 second to end its effect early."
+      }
+    }
+  ],
+  "talents": [
+    {
+      "name": "Advanced Targeting",
+      "tier": "1",
+      "slot": "1",
+      "icon": "Advanced Targeting Icon.png",
+      "description": "quest Hitting enemy Heroes with Plasma Cutter permanently increases Fenix's Basic Attack damage by 0.5, up to 60. After hitting 30 Heroes, Plasma Cutter circles an additional time.",
+      "fields": {
+        "type": "Bonus damage",
+        "scaling": "-",
+        "affects": "Self",
+        "notes": "Bonus damage from Advanced Targeting does not benefit from Weapon Mode: Phase Bomb 's damage multiplier."
+      },
+      "_raw_fields": [
+        "Advanced Targeting",
+        "1",
+        "1",
+        "quest Hitting enemy Heroes with Plasma Cutter permanently increases Fenix's Basic Attack damage by 0.5, up to 60. After hitting 30 Heroes, Plasma Cutter circles an additional time.",
+        "File:Advanced Targeting Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Arsenal Synergy",
+      "tier": "1",
+      "slot": "2",
+      "icon": "Arsenal Synergy Icon.png",
+      "description": "After hitting enemy Heroes with Basic Attacks 3 times while Repeater Cannon is active, the next Basic Attack with Phase Bomb deals 150% more damage and splashes in a 50% larger area.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Self",
+        "props": "Attack Modifier",
+        "prop1": "Bonus splash radius",
+        "val1": "1.5",
+        "notes": "Damage bonus stacks additively with other offensive damage modifiers that can affect Fenix's Basic Attack damage."
+      },
+      "_raw_fields": [
+        "Arsenal Synergy",
+        "1",
+        "2",
+        "After hitting enemy Heroes with Basic Attacks 3 times while Repeater Cannon is active, the next Basic Attack with Phase Bomb deals 150% more damage and splashes in a 50% larger area.",
+        "File:Arsenal Synergy Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Mobile Offense",
+      "tier": "1",
+      "slot": "3",
+      "icon": "Mobile Offense Icon.png",
+      "description": "After moving, Fenix's next Basic Attack deals 35% more damage to Heroes.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Self",
+        "props": "Attack Modifier",
+        "notes": "Damage bonus stacks additively with other offensive damage modifiers that can affect Fenix's Basic Attack damage. The bonus damage vs Heroes applies to splash damage as well, even if the primary target is non-Heroic."
+      },
+      "_raw_fields": [
+        "Mobile Offense",
+        "1",
+        "3",
+        "After moving, Fenix's next Basic Attack deals 35% more damage to Heroes.",
+        "File:Mobile Offense Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Target Acquired",
+      "tier": "2",
+      "slot": "1",
+      "icon": "Target Acquired Icon.png",
+      "description": "Basic Attacks against Slowed Heroes with Repeater Cannon active grant 10% Movement Speed for 4 seconds, up to 40%.",
+      "fields": {
+        "type": "Status effect",
+        "affects": "Self",
+        "props": "Attack Modifier, Movement speed",
+        "notes": "Stacks additively with itself, but not with other sources of Movement Speed."
+      },
+      "_raw_fields": [
+        "Target Acquired",
+        "2",
+        "1",
+        "Basic Attacks against Slowed Heroes with Repeater Cannon active grant 10% Movement Speed for 4 seconds, up to 40%.",
+        "File:Target Acquired Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Inhibiting Energy",
+      "tier": "2",
+      "slot": "2",
+      "icon": "Inhibiting Energy Icon.png",
+      "description": "Every 10 seconds, Fenix's next Basic Attack with Phase Bomb active Slows all enemies hit by 60%, decaying in strength over 1.5 seconds.",
+      "fields": {
+        "type": "Crowd control",
+        "affects": "Enemies",
+        "props": "Attack Modifier,Slow",
+        "notes": "Goes on full cooldown if Fenix's Basic Attack misses due to Blinds, but does not go on cooldown if it misses due to the target Evading."
+      },
+      "_raw_fields": [
+        "Inhibiting Energy",
+        "2",
+        "2",
+        "Every 10 seconds, Fenix's next Basic Attack with Phase Bomb active Slows all enemies hit by 60%, decaying in strength over 1.5 seconds.",
+        "File:Inhibiting Energy Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Emergency Protocol",
+      "tier": "2",
+      "slot": "3",
+      "icon": "Emergency Protocol Icon.png",
+      "description": "While Fenix has shields from Shield Capacitor, he gains 10% Movement Speed. This bonus is increased to 15% when Fenix loses shields from Shield Capacitor.",
+      "fields": {
+        "type": "Status effect",
+        "affects": "Self",
+        "props": "Movement speed",
+        "notes": "Does not stack with other sources of Movement Speed."
+      },
+      "_raw_fields": [
+        "Emergency Protocol",
+        "2",
+        "3",
+        "While Fenix has shields from Shield Capacitor, he gains 10% Movement Speed. This bonus is increased to 15% when Fenix loses shields from Shield Capacitor.",
+        "File:Emergency Protocol Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Combat Advantage",
+      "tier": "3",
+      "slot": "1",
+      "icon": "Combat Advantage Icon.png",
+      "description": "Plasma Cutter deals 35% more damage to Slowed targets.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Ability",
+        "notes": "Damage bonus stacks additively with other offensive damage modifiers that can affect Plasma Cutter 's damage."
+      },
+      "_raw_fields": [
+        "Combat Advantage",
+        "3",
+        "1",
+        "Plasma Cutter deals 35% more damage to Slowed targets.",
+        "File:Combat Advantage Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Warp Warfare",
+      "tier": "3",
+      "slot": "2",
+      "icon": "Warp Warfare Icon.png",
+      "description": "After arriving with Warp, gain 175% Attack Speed for 4 seconds while in Repeater Cannon mode. Hero Takedowns reset Warp's cooldown.",
+      "fields": {
+        "type": "Status effect",
+        "affects": "Self",
+        "props": "Attack Speed",
+        "notes": "Stacks additively with Attack Speed bonus from Weapon Mode: Repeater Cannon and other effects that can affect Fenix's Attack Speed."
+      },
+      "_raw_fields": [
+        "Warp Warfare",
+        "3",
+        "2",
+        "After arriving with Warp, gain 175% Attack Speed for 4 seconds while in Repeater Cannon mode. Hero Takedowns reset Warp's cooldown.",
+        "File:Warp Warfare Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Divert Power: Weapons",
+      "tier": "3",
+      "slot": "3",
+      "icon": "Divert Power Weapon Icon.png",
+      "description": "Cooldown 40 Active Activate to gain 40% Basic Attack damage for 5 seconds. Basic Attacking a Hero refreshes this duration. Once Divert Power: Weapons ends, drain all of Shield Capacitor's Shields.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Self",
+        "notes": "Cooldown starts ticking immediately when the Ability is cast. Damage bonus stacks additively with other offensive damage modifiers that can affect Fenix's Basic Attack damage."
+      },
+      "_raw_fields": [
+        "Divert Power: Weapons",
+        "3",
+        "3",
+        "Cooldown 40 Active Activate to gain 40% Basic Attack damage for 5 seconds. Basic Attacking a Hero refreshes this duration. Once Divert Power: Weapons ends, drain all of Shield Capacitor's Shields.",
+        "File:Divert Power Weapon Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Purification Salvo",
+      "tier": "4",
+      "slot": "1",
+      "icon": "Purification Salvo Icon.png",
+      "description": "Cooldown 90 Channel for 1.5 seconds, sweeping a laser in front of Fenix that locks onto enemy Heroes. Once Channeling finishes, fire 5 missiles at each locked Hero, dealing 79 damage each. Deals 50% increased damage to Slowed targets.",
+      "fields": {},
+      "_raw_fields": [
+        "Purification Salvo",
+        "4",
+        "1",
+        "Cooldown 90 Channel for 1.5 seconds, sweeping a laser in front of Fenix that locks onto enemy Heroes. Once Channeling finishes, fire 5 missiles at each locked Hero, dealing 79 damage each. Deals 50% increased damage to Slowed targets.",
+        "File:Purification Salvo Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Planet Cracker",
+      "tier": "4",
+      "slot": "2",
+      "icon": "Planet Cracker Icon.png",
+      "description": "Cooldown 100 After 0.5 seconds, Channel a powerful beam that spans across the battleground for 4 seconds, dealing 112 damage every 0.25 seconds to non-Structure enemies hit.",
+      "fields": {},
+      "_raw_fields": [
+        "Planet Cracker",
+        "4",
+        "2",
+        "Cooldown 100 After 0.5 seconds, Channel a powerful beam that spans across the battleground for 4 seconds, dealing 112 damage every 0.25 seconds to non-Structure enemies hit.",
+        "File:Planet Cracker Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Adanium Shell",
+      "tier": "5",
+      "slot": "1",
+      "icon": "Adanium Shell Icon.png",
+      "description": "After arriving with Warp, gain 50 Armor for 4 seconds.",
+      "fields": {
+        "type": "Defensive damage modifier",
+        "affects": "Self",
+        "props": "Armor",
+        "notes": "Does not stack with other positive Armor effects. Other defensive damage modifiers may stack."
+      },
+      "_raw_fields": [
+        "Adanium Shell",
+        "5",
+        "1",
+        "After arriving with Warp, gain 50 Armor for 4 seconds.",
+        "File:Adanium Shell Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Dampening Field",
+      "tier": "5",
+      "slot": "2",
+      "icon": "Dampening Field Icon.png",
+      "description": "Fenix gains 30 Spell Armor while he has a Shield from Shield Capacitor.",
+      "fields": {
+        "type": "Defensive damage modifier",
+        "affects": "Self",
+        "props": "Spell Armor",
+        "notes": "Does not stack with other positive Spell Armor Effects. Other defensive damage modifiers may stack."
+      },
+      "_raw_fields": [
+        "Dampening Field",
+        "5",
+        "2",
+        "Fenix gains 30 Spell Armor while he has a Shield from Shield Capacitor.",
+        "File:Dampening Field Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Rapid Recharge",
+      "tier": "5",
+      "slot": "3",
+      "icon": "Rapid Recharge Icon.png",
+      "description": "The time before Shield Capacitor begins regenerating after taking damage is reduced by 2 seconds. Whenever Fenix is healed, Shield Capacitor's Shield recharges for 60% of the healing received.",
+      "fields": {
+        "type": "Healing",
+        "scaling": "-",
+        "affects": "Fenix's Shield",
+        "notes": "Shield healing can be increased or decreased based on Fenix's Spell Power."
+      },
+      "_raw_fields": [
+        "Rapid Recharge",
+        "5",
+        "3",
+        "The time before Shield Capacitor begins regenerating after taking damage is reduced by 2 seconds. Whenever Fenix is healed, Shield Capacitor's Shield recharges for 60% of the healing received.",
+        "File:Rapid Recharge Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Auxiliary Shields",
+      "tier": "5",
+      "slot": "4",
+      "icon": "Auxiliary Shields Icon.png",
+      "description": "Permanently reduce Fenix's maximum Health by 30% but increase Shield Capacitor's Shield by 40%. Basic Attacks regenerate Shields equal to 10% of the damage dealt.",
+      "fields": {
+        "type": "Shield",
+        "scaling": "-",
+        "affects": "Self",
+        "target": "No target",
+        "props": "Attack Modifier",
+        "notes": "This lowers overall Fenix's effective Health pool (including Shields) by 2%. Shield gain is calculated from final damage dealt after all damage modifications."
+      },
+      "_raw_fields": [
+        "Auxiliary Shields",
+        "5",
+        "4",
+        "Permanently reduce Fenix's maximum Health by 30% but increase Shield Capacitor's Shield by 40%. Basic Attacks regenerate Shields equal to 10% of the damage dealt.",
+        "File:Auxiliary Shields Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Offensive Cadence",
+      "tier": "6",
+      "slot": "1",
+      "icon": "Offensive Cadence Icon.png",
+      "description": "Every 3rd Basic Attack against Heroes while Repeater Cannon is active deals an additional 6% of the target's maximum Health as damage.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "-",
+        "affects": "Enemy Heroes",
+        "props": "Attack Modifier, Percent Damage"
+      },
+      "_raw_fields": [
+        "Offensive Cadence",
+        "6",
+        "1",
+        "Every 3rd Basic Attack against Heroes while Repeater Cannon is active deals an additional 6% of the target's maximum Health as damage.",
+        "File:Offensive Cadence Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Photonic Weaponry",
+      "tier": "6",
+      "slot": "2",
+      "icon": "Photonic Weaponry Icon.png",
+      "description": "Fenix deals 20% more damage while he has a Shield from Shield Capacitor.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Self",
+        "notes": "Affects damage dealt by both Basic Attacks and all Abilities. Damage bonus stacks additively with other offensive damage modifiers that can affect Fenix's damage."
+      },
+      "_raw_fields": [
+        "Photonic Weaponry",
+        "6",
+        "2",
+        "Fenix deals 20% more damage while he has a Shield from Shield Capacitor.",
+        "File:Photonic Weaponry Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Arsenal Overcharge",
+      "tier": "6",
+      "slot": "3",
+      "icon": "Arsenal Overcharge Icon.png",
+      "description": "Basic Attacks with Repeater Cannon reduce Ability cooldowns by 0.5 seconds. Basic Attacks with Phase Bomb active reduce Ability cooldowns by 0.5 seconds per Hero hit.",
+      "fields": {
+        "props": "Attack Modifier, Cooldown reduction",
+        "notes": "Affects both Basic and Heroic Abilities, but not Trait or Talents that have a cooldown. Repeater Cannon attacks do not require the target to be a Hero. Phase Bomb does not grant cooldown reduction for the primary target hit, even if it is a Hero. Phase Bomb attack cooldown reduction is capped at 1.5 seconds per Basic Attack (i.e. 3 Heroes)."
+      },
+      "_raw_fields": [
+        "Arsenal Overcharge",
+        "6",
+        "3",
+        "Basic Attacks with Repeater Cannon reduce Ability cooldowns by 0.5 seconds. Basic Attacks with Phase Bomb active reduce Ability cooldowns by 0.5 seconds per Hero hit.",
+        "File:Arsenal Overcharge Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Armageddon Beam",
+      "tier": "7",
+      "slot": "1",
+      "icon": "Armageddon_Beam_Icon.png",
+      "description": "Planet Cracker's width increases by 100% over 1.5 seconds. Passive Reduce Planet Cracker's cooldown by 40 seconds.",
+      "fields": {
+        "prop1": "Bonus width",
+        "val1": "2.5"
+      },
+      "_raw_fields": [
+        "Armageddon Beam",
+        "7",
+        "1",
+        "Planet Cracker's width increases by 100% over 1.5 seconds. Passive Reduce Planet Cracker's cooldown by 40 seconds.",
+        "File:Armageddon_Beam_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Secondary Fire",
+      "tier": "7",
+      "slot": "2",
+      "icon": "Secondary Fire Icon.png",
+      "description": "Hitting an enemy Hero with Plasma Cutter fires a Purification Salvo missile at them after 0.5 seconds, dealing 79 damage. Deals 50% increased damage to Slowed targets.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "4.00%",
+        "affects": "Enemy Heroes",
+        "notes": "Damage bonus stacks additively with other offensive damage modifiers that can affect Fenix's Spell Damage."
+      },
+      "_raw_fields": [
+        "Secondary Fire",
+        "7",
+        "2",
+        "Hitting an enemy Hero with Plasma Cutter fires a Purification Salvo missile at them after 0.5 seconds, dealing 79 damage. Deals 50% increased damage to Slowed targets.",
+        "File:Secondary Fire Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Singularity Charge",
+      "tier": "7",
+      "slot": "3",
+      "icon": "Singularity Charge Icon.png",
+      "description": "Repeater Cannon grants 100% more Attack Speed, and Phase Bomb grants 1.25 more range.",
+      "fields": {
+        "type": "Status effect",
+        "affects": "Self",
+        "props": "Attack Speed",
+        "notes": "Stacks additively with Attack Speed bonus from Weapon Mode: Repeater Cannon and other effects that can affect Fenix's Attack Speed."
+      },
+      "_raw_fields": [
+        "Singularity Charge",
+        "7",
+        "3",
+        "Repeater Cannon grants 100% more Attack Speed, and Phase Bomb grants 1.25 more range.",
+        "File:Singularity Charge Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Unconquered Spirit",
+      "tier": "7",
+      "slot": "4",
+      "icon": "Unconquered Spirit Icon.png",
+      "description": "Upon taking fatal damage, Shield Capacitor regains 800 Shields. This effect has a 120 second cooldown.",
+      "fields": {
+        "type": "Healing",
+        "scaling": "4.00%",
+        "affects": "Fenix's Shield"
+      },
+      "_raw_fields": [
+        "Unconquered Spirit",
+        "7",
+        "4",
+        "Upon taking fatal damage, Shield Capacitor regains 800 Shields. This effect has a 120 second cooldown.",
+        "File:Unconquered Spirit Icon.png"
+      ],
+      "level": "20"
+    }
+  ],
+  "other": [],
+  "_unparsed_count": 0
+}

@@ -1,0 +1,14 @@
+{
+  "_comment": "자동 매칭이 실패하거나 잘못 잡은 항목을 수동으로 고정한다. 키 형식은 \"<위키 영웅명>|<위키 기술·특성명>\": \"<gamestring 키>\". 위키 표기가 게임 내 최신 명칭과 어긋난 경우(개명된 특성 등)가 대부분이다.",
+  "Deathwing|Destroyer Incinerate": "Button/Name/DeathwingIncinerate",
+  "Deathwing|Destroyer Onslaught": "Button/Name/DeathwingOnslaught",
+  "Deathwing|World Breaker Lava Burst": "Button/Name/DeathwingLavaBurst",
+  "Deathwing|World Breaker Earth Shatter": "Button/Name/DeathwingEarthShatter",
+  "Deathwing|Dragonflight Destroyer": "Button/Name/DeathwingDestroyerForm",
+  "Deathwing|Dragonflight World Breaker": "Button/Name/DeathwingWorldbreakerForm",
+  "Deathwing|Cataclysm": "Button/Name/DeathwingCataclysm",
+  "Anduin|Enchanted Boots - Lion's Speed": "Button/Name/AnduinLeapOfFaithEnchantBootsLionsSpeed",
+  "Murky|Big Tuna Kahuna": "Button/Name/MurkyBigTunaKahuna",
+  "Tyrande|Huntress's Fury": "Button/Name/TyrandeSentinel",
+  "Sgt. Hammer|Siege Thrusters": "Button/Name/SgtHammerThrusters"
+}

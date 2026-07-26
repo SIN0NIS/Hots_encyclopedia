@@ -1,0 +1,257 @@
+{{hero data
+| name = Kel'Thuzad
+| date = September 5, 2017
+| price = 10000
+| title = Archlich of Naxxramas
+| role = Ranged
+| franchise = Warcraft
+| info = A burst damage Mage who locks down enemies and devastates them with powerful combos.
+| lore = Kel'Thuzad has faithfully served the Lich King both in life and after death. Reanimated as the Archlich of the Scourge and given domain of the Dread Necropolis, Naxxramas, Kel'Thuzad remains Arthas's most trusted advisor and master of the cold dark.
+| difficulty = Hard
+| melee = False
+| health = 1490
+| healthRegen = 3.0976
+| resource = 500
+| resourceType = Mana
+| armor = 0
+| attackSpeed = 1.0
+| attackRange = 5.5
+| attackDamage = 72
+| healthScaling = 0.04
+| regenScaling = 0.04
+| adamageScaling = 0.04
+| unitRadius = 0.875
+| icon = File:Kel'Thuzad_Icon.png
+| skills =
+Master of the Cold Dark;Trait;File:Master_of_the_Cold_Dark_Icon.png;{{Quest|Gain 1 Blight every time a Hero is Rooted by Frost Nova or hit by Chains of Kel'Thuzad.|After gaining 15 Blight, gain the Glacial Spike Ability.}}<p>{{Reward|After gaining 30 Blight, gain 75% Spell Power.}}<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Spell Power]]<!--
+-->|notes=<li>[[Unstoppable]] enemy Heroes cannot be [[Root]]ed and thus do not grant stacks from being hit by ''Frost Nova''. ''Chains of Kel'Thuzad'', however, still does as it only requires hitting enemy Heroes.<li>Spell Power from ''Master of the Cold Dark'' stacks additively with other sources of Spell Power as well as other offensive damage and healing dealt modifiers affecting Kel'Thuzad's Spell Damage or healing output.}};;;False;
+
+Death and Decay;Q;File:Death_and_Decay_Icon.png;After 0.5 seconds, launch an orb that explodes upon hitting an enemy, dealing 150 damage to enemies in the area. The explosion leaves behind a pool of decay that lasts 2 seconds, dealing 82 damage every 0.5 seconds to enemies.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=2.49023438%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Clamping]], [[Skillshot]], [[Splash]]<!--
+-->|cast=0.5 + 0 seconds<!--
+-->|range=11<!--
+-->|aoe=Circle<!--
+-->|radius=<br/>- Initial: 2.5<br/>- Pool: 2.0<!--
+-->|hitbox=1.0 x 1.25<!--
+-->|missile=20<!--
+-->|tickrate=2.0 per second (x4)<!--
+-->|notes=<li>Units that are immune to skillshots cannot be hit by the initial projectile, but can still be damaged by the splash and AoE damage.<li>Casting ''Death and Decay'' sets Kel'Thuzad's Basic Attack cooldown to 0.5 seconds.}};5;20;False;
+
+Frost Nova;W;File:Frost_Nova_Icon.png;Create a nova that explodes after 1 second, dealing 180 damage to enemies inside and Slowing them by 35% for 2.5 seconds. Enemies in the center are Rooted for 1 second.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=2.49023438%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Root]], [[Slow]]<!--
+-->|cast=0.125 + 0 seconds<!--
+-->|range=9.0<!--
+-->|aoe=Circle<!--
+-->|radius=<br/>- Inner: 1.5<br/>- Outer: 3.0<!--
+-->|notes=<li>Enemies hit by the center are both Rooted and Slowed.<li>Casting ''Frost Nova'' sets Kel'Thuzad's Basic Attack cooldown to 0.5 seconds.}};8;50;False;
+
+Chains of Kel'Thuzad;E;File:Chains_of_Kel'Thuzad_Icon.png;Launch a chain, dealing 97 damage to the first enemy Hero hit. For 3 seconds after hitting an enemy, Chains can be reactivated to launch to an additional enemy, pulling both enemies together and Stunning them for 0.5 seconds.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=2.49023438%<!--
+-->|affects=Enemy Heroes<!--
+-->|target=Point target<!--
+-->|props=[[Skillshot]], [[Knockback|Pull]], [[Stun]]<!--
+-->|cast=0.125 + 0 seconds<!--
+-->|range=9.5<!--
+-->|hitbox=1.0 x 1.5<!--
+-->|missile=<br>- Initial: 25<br>- Minimum: 15<br>- Acceleration: -1.0<!--
+-->|prop1=Pull duration|val1=0.4375 seconds (max)<!--
+-->|prop2=Pull speed|val2=22<!--
+-->|notes=<li>Chain is launched from primary target toward target point on reactivation.<li>If one target is [[Unstoppable]], the other is pulled all the way to them.<li>Casting ''Chains of Kel'Thuzad'' sets Kel'Thuzad's Basic Attack cooldown to 0.5 seconds.}};10;50;False;
+
+Frost Blast;R;File:Frost_Blast_Icon.png;Launch a meteor of ice at an enemy Hero. Upon impact, the meteor deals 115 damage to its target and 275 damage to enemies in the area. All enemies hit by Frost Blast are Rooted for 2 seconds.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=2.49023438%<!--
+-->|affects=Enemy Heroes (targeting), Enemies<!--
+-->|target=Unit target<!--
+-->|props=[[Area of Effect]], [[Root]]<!--
+-->|cast=0.25 + 0 seconds<!--
+-->|range=14.0<!--
+-->|aoe=Circle<!--
+-->|radius=5.5<!--
+-->|missile=<br>- Initial: 8.0<br>- Maximum: 35<br>- Acceleration: 4.0<!--
+-->|notes=<li>''Frost Blast'' missile can only be disjointed if the target dies, is removed from the plane (certain [[Stasis]] effects) or instantly teleports farther than 30 units from its previous location. When disjointed, the missile explodes upon reaching the target's location before the event. Otherwise, the missile will keep redirecting to the target unit.<li>''Frost Blast'' always explodes, applying its area effects upon reaching the end location, regardless of being able to hit its original target.<li>Primary target does not take area damage.<li>Casting ''Frost Blast'' sets Kel'Thuzad's Basic Attack cooldown to 0.5 seconds.}};50;45;False;
+
+Shadow Fissure;R;File:Shadow_Fissure_Icon.png;Create a fissure anywhere on the Battleground that explodes after 1.5 seconds, dealing 320 damage to enemy Heroes in its area. If an enemy Hero is hit, set its cooldown to 1.5 seconds.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=2.49023438%<!--
+-->|affects=Enemy Heroes<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]]<!--
+-->|cast=0.125+0 seconds<!--
+-->|range=Global<!--
+-->|aoe=Circle<!--
+-->|radius=2.25<!--
+-->|notes=<li> Casting ''Shadow Fissure'' sets Kel'Thuzad's Basic Attack cooldown to 0.5 seconds.}};16;40;False;
+
+Glacial Spike;1;File:Glacial_Spike_Icon.png;Activate to create a spike that detonates after 4 seconds, dealing 70 damage to nearby enemies. The spike can be affected by Chains of Kel'Thuzad.<p>{{Yellowtext|Quest requirements must be completed before activating.}}<!--
+-->{{undoc-x|type=Spell Damage / Pathing blocker<!--
+-->|scaling=2.49023438%<!--
+-->|affects=Enemies / All units<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]]<!--
+-->|cast=0.125 + 0 seconds<!--
+-->|range=8.0<!--
+-->|aoe=Circle<!--
+-->|radius=<br/>- Damage: 3.0<br/>- Collision: 1.5|<!--
+-->|notes=<li>The spike has collision.}};30;;False;
+
+| talents = <!-- LEVEL 1 -->
+The Plaguelands;1;1;Increase Death and Decay's duration by 1 second. After gaining 30 Blight, increase the radius of Death and Decay's pool by 30%.<!--
+-->{{undoc-x|prop1=Bonus radius|val1=0.6<!--
+-->|notes=<li>Does not affect the initial splash radius.}};File:The_Plaguelands_Icon.png;
+
+Blighted Frost;1;2;Frost Nova deals 75% more damage to enemies in the center. After gaining 30 Blight, increase Frost Nova's Root duration by 0.5 seconds.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|notes=<li>Damage bonus stacks additively with other offensive damage modifiers affecting <i>Frost Nova</i>'s damage.}};File:Blighted_Frost_Icon.png;
+
+Barbed Chains;1;3;Increase Chains of Kel'Thuzad's damage by 125%. After gaining 30 Blight, Chains of Kel'Thuzad reduces the Armor of pulled Heroes by 10 for 4 seconds.<!--
+-->{{undoc-x|type=Defensive damage modifier / Offensive damage modifier<!--
+-->|affects=Enemy Heroes / Ability<!--
+-->|props=[[Armor reduction]]<!--
+-->|notes=<li>Does not stack with other negative Armor effects. Other defensive damage modifiers may stack.<li>Damage bonus stacks additively with other offensive damage modifiers.}};File:Barbed_Chains_Icon.png;
+
+<!-- LEVEL 4 -->
+Strip Shields;2;1;Pulling a Hero with Chains of Kel'Thuzad grants Kel'Thuzad a permanent 128 Shield, stacking up to 2 times.<p>Additionally, Chains of Kel'Thuzad deals up to 270 bonus damage to Shields.<!--
+-->{{undoc-x|type=Shield / Spell Damage<!--
+-->|scaling=4.00% / 2.49023438%%<!--
+-->|affects=Self / Shields<!--
+-->|notes=<li>Damage is dealt to Shields only, cannot overflow to the target unit.}};File:Strip_Shields_Icon.png;
+
+Phylactery of Kel'Thuzad;2;2;{{Quest|Collect 12 Regeneration Globes to charge Kel'Thuzad's Phylactery.|Kel'Thuzad's Phylactery can be activated while dead to immediately respawn at the Hall of Storms, but must be charged again.}}<p>{{Passive}} Kel'Thuzad heals for 10% of all Spell Damage dealt while the Phylactery is charged.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|props=[[Lifesteal]]<!--
+-->|notes=<li>All stacks are consumed and passive effect is lost when the Ability is activated.}};File:Phylactery_of_Kel'Thuzad_Icon.png;
+
+Armor of the Archlich;2;3;{{Cooldown|25}}<br>{{Active}} Activate to gain 50 Physical Armor for 4 seconds. Upon activation, nearby enemies take 45 damage and are Slowed by 35% for 4 seconds.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control / Defensive damage modifier<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies / Self<!--
+-->|target=No target<!--
+-->|props=[[Area of Effect]], [[Physical Armor]], [[Slow]]<!--
+-->|cast=Instant<!--
+-->|aoe=Circle<!--
+-->|radius=6.0<!--
+-->|notes=}};File:Armor_of_the_Archlich_Icon.png;
+
+<!-- LEVEL 7 -->
+Accelerated Decay;3;1;Each time a Hero is hit by Death and Decay's pool, they take 25% more periodic damage from Death and Decay for the next 4 seconds, stacking up to 4 times.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|notes=<li>Counter tracks each enemy Hero affected by ''Death and Decay'' separately.<li>Damage bonus stacks additively with itself and other offensive damage modifiers.}};File:Accelerated_Decay_Icon.png;
+
+Chilling Touch;3;2;Every 8 seconds, Kel'Thuzad's next Basic Attack hits all enemies in the area for 80% additional damage, deals Spell Damage instead of Physical, and Slows by 30% for 2 seconds.<!--
+-->{{undoc-x|type=Spell Damage / Offensive damage modifier<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies / Ability<!--
+-->|props=[[Attack Modifier]], [[Slow]], [[Splash]]<!--
+-->|radius=3.0<!--
+-->|notes=<li>Damage bonus stacks additively with other offensive damage modifiers affecting <i>Chilling Touch</i>'s damage.}};File:Chilling_Touch_Icon.png;
+
+Ice Cold;3;3;Reduce the cooldown of Glacial Spike by 10 seconds and increase its damage by 400%.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|scaling=4.00%<!--
+-->|notes=<li>Damage bonus stacks additively with other offensive damage modifiers affecting <i>Glacial Spike</i>'s damage.}};File:Ice_Cold_Icon.png;
+
+<!-- LEVEL 10 -->
+Frost Blast;4;1;{{Cooldown|50}}<br>Launch a meteor of ice at an enemy Hero. Upon impact, the meteor deals 115 damage to its target and 275 damage to enemies in the area. All enemies hit by Frost Blast are Rooted for 2 seconds.;File:Frost_Blast_Icon.png;
+Shadow Fissure;4;2;{{Cooldown|16}}<br>Create a fissure anywhere on the Battleground that explodes after 1.5 seconds, dealing 320 damage to enemy Heroes in its area. If an enemy Hero is hit, set its cooldown to 1.5 seconds.;File:Shadow_Fissure_Icon.png;
+
+<!-- LEVEL 13 -->
+Icy Grasp;5;1;Increase Frost Nova's Slow by 20%. Each time Kel'Thuzad damages enemies Slowed by Frost Nova, reduce the cooldown of Frost Nova by 0.75 seconds.<!--
+-->{{undoc-x|type=Crowd control, Cooldown reduction<!--
+-->|affects=Enemies<!--
+-->|props=[[Slow]]<!--
+-->|notes=<li>Cooldown reduction is triggered by every tick of damage dealt by Kel'Thuzad from both Basic Attacks and Abilities.}};File:Icy_Grasp_Icon.png;
+
+Chains of Ice;5;2;After Chains of Kel'Thuzad's Stun expires, targets are Slowed by 60% for 1 seconds.<!--
+-->{{undoc-x|type=Crowd control<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Slow]]<!--
+-->|notes=<li>The slow effect is not applied if the stun is cleansed.}};File:Chains_of_Ice_Icon.png;
+
+Chain-Link;5;3;Pulling a Hero with Chains of Kel'Thuzad reduces its cooldown by 5 seconds and refunds its Mana cost.<!--
+-->{{undoc|<hr><li>The effect can trigger only once per cast regardless of how many Heroes were chained.}};File:Chain-Link_Icon.png;
+
+<!-- LEVEL 16 -->
+Arcane Echoes;6;1;Whenver Kel'Thuzad hits an enemy Hero with Death and Decay's explosion, its cooldown is reduced by 1.5 seconds.<!--
+-->{{undoc|<hr><li>Cooldown reduction can trigger multiple times per cast.<li>Periodic damage instances do not grant cooldown reduction.}};File:Arcane_Echoes_Icon.png;
+
+Hungering Cold;6;2;Enemies that are Rooted take an additional 55 damage each time they are damaged by Kel'Thuzad.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=2.49023438%<!--
+-->|affects=Enemies<!--
+-->|notes=<li>Bonus damage is added to every tick of damage dealt by Kel'Thuzad from both Basic Attacks and Abilities.}};File:Hungering_Cold_Icon.png;
+
+Power of Icecrown;6;3;Stunning, Rooting, or Slowing a Hero grants 6% Spell Power for 10 seconds, stacking up to 5 times.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Spell Power]]<!--
+-->|notes=<li>Spell Power stacks additively with itself and offensive damage modifiers affecting Kel'Thuzad's Spell Damage output.}};File:Power_of_Icecrown_Icon.png;
+
+<!-- LEVEL 20 -->
+Deathchill;7;1;When Frost Blast's Root expires, enemies are Slowed by 40% for 3 seconds. Heroes killed while under the effects of Frost Blast instantly release another Frost Blast explosion.<!--
+-->{{undoc-x|props=[[Slow]]<!--
+-->|notes=<li>The post-Root Slow from ''Deathchill'' also counts as being affected by ''Frost Blast'', triggering the secondary explosion upon a Hero's death.}};File:Deathchill_Icon.png;
+
+Might of the Scourge;7;2;If a Hero is hit with Shadow Fissure, a second one is cast below them 1 second later. This second cast will not duplicate itself.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=2.49023438%<!--
+-->|affects=Enemy Heroes<!--
+-->|notes=<li>The secondary explosion has the same area and initial delay, which starts after the 1 second secondary cast delay, as the original, but it does not grant the cooldown reduction upon hitting an enemy Hero}};File:Might_of_the_Scourge_Icon.png;
+
+Shifting Malice;7;3;{{Cooldown|240}}<br>{{Active}} Activate to dash forward, dealing 150 damage to enemies in the path. Takedowns reset the cooldown of Shifting Malice.<!--
+-->{{undoc-x|type=Spell Damage / Movement: [[Dash]]<!--
+-->|scaling=2.49023438%<!--
+-->|affects=Enemies / Self<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]]<!--
+-->|cast=Instant<!--
+-->|range=7.0<!--
+-->|hitbox=2.0 x 2.0<!--
+-->|missile=14<!--
+-->|notes=}};File:Shifting_Malice_Icon.png;
+
+The Damned Return;7;4;{{Cooldown|15}}<br>{{Active}} Activate to create a Shade of Naxxramas that lasts 15 seconds and mimics Kel'Thuzad's casts of Death and Decay.<!--
+-->{{undoc-x|type=Summon figment<!--
+-->|target=Point target<!--
+-->|cast=Instant<!--
+-->|range=9.0<!--
+-->|notes=<li>Shade is Invulnerable and Untargetable and has no collision.<li>Shade's ''Death and Decay'' benefits from all talents affecting it.}};File:The_Damned_Return_Icon.png;
+}}
+
+<noinclude>
+{{Scaling table/start|{{#var:health}}|{{#var:health scaling}}|{{#var:health regen}}|{{#var:health regen scaling}}|{{#var:attack damage}}|{{#var:attack damage scaling}}}}
+{{Scaling table/slot|Death and Decay (initial)|150|0.0249023438}}
+{{Scaling table/slot|Death and Decay (periodic)|82|0.0249023438}}
+{{Scaling table/slot|Death and Decay (periodic, per second)|164|0.0249023438}}
+{{Scaling table/slot|Frost Nova|180|0.0249023438}}
+{{Scaling table/slot|Chains of Kel'Thuzad|97|0.0249023438}}
+{{Scaling table/slot|Frost Blast (primary)|115|0.0249023438|10}}
+{{Scaling table/slot|Frost Blast (area)|275|0.0249023438|10}}
+{{Scaling table/slot|Shadow Fissure|320|0.0249023438|10}}
+{{Scaling table/slot|Glacial Spike|70|0.0249023438}}
+{{Scaling table/slot|Strip Shields (Shield)|128|0.04|4}}
+{{Scaling table/slot|Strip Shieds (damage)|270|0.0249023438|4}}
+{{Scaling table/slot|Armor of the Archlich|45|0.04|4}}
+{{Scaling table/slot|Chilling Touch (no bonus)|72|0.04|7}}
+{{Scaling table/slot|Hungering Cold|55|0.02490234385|16}}
+{{Scaling table/slot|Shifting Malice|150|0.0249023438|20}}
+{{Scaling table/end}}
+</noinclude>
+
+<noinclude>{{DEFAULTSORT:Kel'Thuzad}}</noinclude>

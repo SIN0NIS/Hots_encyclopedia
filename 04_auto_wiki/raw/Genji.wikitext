@@ -1,0 +1,229 @@
+{{hero data
+| name = Genji
+| date = April 25, 2017
+| price = 10000
+| title = Cybernetic Ninja
+| role = Ranged
+| franchise = Overwatch
+| info = An opportunistic, mobile Assassin who can tear apart a weak backline.
+| lore = Once the carefree youngest scion of the Shimada clan, Genji was cut down by his own brother for refusing to take part in their illegal ventures. Grafted into a cyborg body by Overwatch, Genji walks his own path as one who fights for what's right.
+| difficulty = Hard
+| melee = False
+| skins = Oni, Steel Dragon
+| health = 1675
+| healthRegen = 3.4882
+| resource = 500
+| resourceType = Mana
+| armor = 0
+| attackSpeed = 1.00
+| attackRange = 4.5
+| attackDamage = 44
+| healthScaling = 0.04
+| regenScaling = 0.04
+| adamageScaling = 0.04
+| unitRadius = 0.6875
+| icon = File:Genji_Icon.png
+| skills = 
+Cyber Agility;D;File:Cyber_Agility_Icon.png;Activate to jump to the target area.<!--
+-->{{undoc-x|type=Movement: [[Launch]]<!--
+-->|affects=Self<!--
+-->|target=Point target<!--
+-->|props=[[Clamping]]<!--
+-->|cast=Instant<!--
+-->|range=7.0<!--
+-->|prop1=Duration|val1=0.5625 seconds<!--
+-->|notes=<li>Genji's Basic Attack launches 3 projectiles in quick succession, each one doing the full amount of damage listed in his base stats.}};20;;False;
+
+Shuriken;Q;File:Shuriken_Icon.png;Throw 3 Shuriken in a spread pattern, each dealing 65 damage to the first enemy hit.<p>Stores up to 3 charges. Shuriken's cooldown replenishes all charges at the same time.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Clamping]], [[Skillshot]]<!--
+-->|cast=Instant<!--
+-->|range=11<!--
+-->|hitbox=0.25 x 2.75<!--
+-->|missile=38<!--
+-->|notes=<li>Shuriken at the edges are aligned 10 degrees to both sides from the target point.<li>Cooldown starts when the first charge is consumed.}};12 / 0.5;20;False;
+
+Deflect;W;File:Deflect_Icon.png; Channel for 1.25 seconds, becoming Protected and blocking damage. Any damage blocked while channeling causes Genji to throw a Kunai toward the nearest enemy, prioritizing Heroes and dealing 55 damage.<!--
+-->{{undoc-x|type=Spell Damage / Status effect<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies / Self<!--
+-->|target=No target, Automatic (closest)<!--
+-->|props=[[Mobile channel]], [[Protected]]<!--
+-->|cast=Instant<!--
+-->|radius=7.0<!--
+-->|notes=<li>Genji cannot use Basic Attacks while ''Deflect'' is active. Using other Abilities instantly ends ''Deflect''.<li>Cannot target enemies out of vision.<li>[[Damage over Time]] effects and Abilities that deal periodic damage proc ''Deflect'' on every tick of damage.<li>If the channel gets interrupted by a Stun or a Silence, the damage of the Ability that caused the interruption still gets deflected.}};16;70;False;
+
+Swift Strike;E;File:Swift_Strike_Icon.png;Dash forward, dealing 190 damage to all enemies in a line. Enemy Heroes who die within 1.5 seconds of being hit with Swift Strike cause the cooldown and Mana cost to be refunded.<!--
+-->{{undoc-x|type=Spell Damage / Movement: [[Launch]]<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies / Self<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Clamping]]<!--
+-->|cast=0 + 0.125 seconds<!--
+-->|range=12<!--
+-->|hitbox=1.0 x 3.99<!--
+-->|prop1=Duration|val1=0.1875 seconds<!--
+-->|notes=<li>Killing [[Hallucination]]s does not grant the cooldown reset or Mana refund.}};12;75;False;
+
+Dragonblade;R;File:Dragonblade_Icon.png;Unleash the Dragonblade for 8 seconds. While active, Dragonblade can be reactivated to lunge forward and slash in a huge arc, dealing 240 damage.<!--
+-->{{undoc-x|type=Spell Damage / Movement: [[Dash]]<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies / Self<!--
+-->|target=No target (initial), Point target (reactivate)<!--
+-->|props=[[Area of Effect]], [[Clamping]]<!--
+-->|cast=Instant<!--
+-->|range=3.0 (dash)<!--
+-->|aoe=Radial<!--
+-->|radius=5.0<!--
+-->|arc=180<!--
+-->|missile=16 (dash)<!--
+-->|notes=<li>''Dragonblade'' replaces ''Shuriken'' for its duration and can be reactivated with both the 'Q' and 'R' keys. ''Deflect'', ''Swift Strike'' and ''Cyber Agility'' can be used normally during ''Dragonblade''.}};100;75;False;
+
+X-Strike;R;File:X-Strike_Icon.png;Perform two slashes dealing 145 damage. The slashes detonate after 1.25 seconds causing an additional 290 damage to enemies in their area.<!--
+-->{{undoc-x|type=Spell Damage / Movement: [[Teleport]], Status effect<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies / Self<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Pseudo-Stasis]]<!--
+-->|cast=Instant<!--
+-->|range=8.0<!--
+-->|aoe=Rectangle (slashes) <sup>(1</sup><!--
+-->|width=1.0 <sup>(1</sup><!--
+-->|height=16 <sup>(1</sup><!--
+-->|notes=<li><sup>1)</sup> Slash AoEs consist of a 1.0 x 6.0 rectangle in the middle and 1.0 x 5.0 triangles on both ends.<li>Slashes are aligned 45 degrees to both sides from the direction Genji is facing, the first slash hitting from rear left to front right. Genji turns toward the target point before the Ability is cast.<li>The first two strikes take place at 0.3125 second intervals and the final strike 0.5625 seconds later.<li>Casting X-Strike removes [[Root]] effects from Genji.<li>For the duration of the slash animation (1.3125 seconds), Genji is put in a [[Pseudo-Stasis]]. In addition to usual effects of Stasis, Genji is removed from ground plane (disjoints certain projectiles) and has no collision, but does not receive the initial expanded debuff removal.<li>Self-casting the Ability slightly moves Genji forward.}};75;70;False;
+
+
+| talents = 
+<!-- LEVEL 1 -->
+Swift as the Wind;1;1;Hitting an enemy Hero with Swift Strike increases Genji's Movement Speed by 30% for 3 seconds.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|props=[[Movement Speed]]<!--
+-->}};File:Swift_as_the_Wind_Icon.png;
+
+Agile Dismount;1;2;While mounted, the range of Cyber Agility is increased by 70%, its cooldown is reduced by 14 seconds, and it Slows enemy Heroes in its landing area by 25% for 2 seconds.<!--
+-->{{undoc-x|type=Crowd control<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Area of Effect]], [[Slow]]<!--
+-->|aoe=Circle<!--
+-->|radius=2.5<!--
+-->|prop1=Bonus range|val1=4.9<!--
+-->|notes=<li>Range of ''Cyber Agility'' is not increased for casts queued up using the Command Queue system (Shift by default) prior to Mounting.}};File:Agile_Dismount_Icon.png;
+
+Pathfinder;1;3;Jumping over terrain with Cyber Agility increases Movement Speed by 30% and grants Stealth for 4 seconds.<p>{{passive}} Genji's Heroic ability heals him for 10% of the damage dealt to enemy Heroes, increasing up to 30% the lower Genji's health is.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|props=[[Movement Speed]], [[Stealth]]<!--
+-->|notes=<li>Genji is [[unrevealable]] for 1 second after entering Stealth.}};File:Pathfinder_Icon.png;
+
+
+<!-- LEVEL 4 -->
+Shuriken Mastery;2;1;{{Quest|Hit enemy Heroes with Shuriken.|After hitting 30 Heroes, Shuriken damage is increased by 25.}}<p>{{Reward|After hitting 60 Heroes, Cyber Agility now refunds 3 charges of Shuriken.}}<!--
+-->{{undoc-x|type=Bonus damage<!--
+-->|scaling=-<!--
+-->|affects=Ability<!--
+-->|notes=<li>Each shuriken hitting an enemy Hero contributes a stack.}};File:Shuriken_Mastery_Icon.png;
+
+Strike At The Heart;2;2;Enemies hit by the end of Swift Strike take an additional 134 damage after 1 second.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|prop1=End distance|val1=2.571<!--
+-->|notes=}};File:Strike_at_the_Heart_Icon.png;
+
+Dragon Claw;2;3;{{Active}} After Genji blocks 330 damage with Deflect, he may activate Dragon Claw to deal 190 damage to all nearby enemies.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00% (threshold & damage)<!--
+-->|affects=Enemies<!--
+-->|target=No target<!--
+-->|props=[[Area of Effect]]<!--
+-->|cast=Instant<!--
+-->|aoe=Circle<!--
+-->|radius=4.0<!--
+-->|notes=<li>Stored damage does not scale upon leveling up, but a fully charged Ability remains activatable.}};File:Dragon_Claw_Icon.png;
+
+
+<!-- LEVEL 7 -->
+Augmented Guard;3;1;When Deflect ends, Genji gains a Shield equal to 100% of the damage blocked for 4 seconds.<!--
+-->{{undoc-x|type=Shield<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|notes=<li>The Shield is actually gained 62.5ms (1 server tick) after ''Deflect'' ends, so there is a small window where Genji may take damage before it is applied.}};File:Augmented_Guard_Icon.png;
+
+Perfect Defense;3;2;Deflected damage reduces the cooldown of Deflect by 2 seconds, up to a maximum of 10 seconds.;File:Perfect_Defense_Icon.png;
+
+Cyber Shield;3;3;Using Cyber Agility grants 40 Spell Armor for 4 seconds.<p>{{Passive}} Genji dodges 1 Heroic Basic Attack every 5 seconds.<!--
+-->{{undoc-x|type=Defensive damage modifier, Status effect<!--
+-->|affects=Self<!--
+-->|props=[[Evasion]], [[Spell Armor]]<!--
+-->|notes=<li>Does not stack with other Armor effects. Other defensive damage modifiers may stack.}};File:Cyber_Shield_Icon.png;
+
+
+<!-- LEVEL 10 -->
+Dragonblade;4;1;{{Cooldown|100}}<br>Unleash the Dragonblade for 8 seconds. While active, Dragonblade can be reactivated to lunge forward and slash in a huge arc, dealing 240 damage.;File:Dragonblade_Icon.png;
+X-Strike;4;2;{{Cooldown|75}}<br>Perform two slashes dealing 145 damage. The slashes detonate after 1.25 seconds causing an additional 290 damage to enemies in their area.;File:X-Strike_Icon.png;
+
+
+<!-- LEVEL 13 -->
+Shingan;5;1;Hitting an enemy with all 3 Shuriken deals 110 bonus damage. Deals 40% less damage to structures.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|notes=}};File:Shingan_Icon.png;
+
+Flow Like Water;5;2;Each enemy Hero hit with Swift Strike reduces its cooldown by 3 seconds.;File:Flow_Like_Water_Icon.png;
+
+Way Of The Shimada;5;3;Increase Genji's Basic Attack Range by 1. Each time Genji hits an enemy Hero with a Basic Attack, increase his Basic Attack damage by 1% for 3 seconds, stacking up to 15%.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Attack Modifier]]<!--
+-->|notes=<li>Each hit of the three part Basic Attack contributes a stack.<li>Stacks additively with itself and other offensive damage modifiers that can affect Genji's Basic Attack damage.}};File:Way_Of_The_Shimada.png;
+
+<!-- LEVEL 16 -->
+Reflect;6;1;Deflect also deals an additional 33% of the damage blocked.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=-<!--
+-->|affects=Enemies<!--
+-->|notes=<li>All damage is dealt in [[Spell Damage]] regardless of the damage type of the blocked attack.<li>Reflected damage stored is calculated after defensive damage modifiers from the final damage taken. When the damage is dealt by Genji, it is affected by his offensive damage modifiers. Finally, the damage taken by the target can further be affected by their defensive damage modifiers.}};File:Reflect_Icon.png;
+
+Final Cut;6;2;After 1 second, Swift Strike deals an additional 125 damage to all enemies in the area.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|props=[[Area of Effect]]<!--
+-->|affects=Enemies<!--
+-->|notes=}};File:Final_Cut_Icon.png;
+
+Steady Blade;6;3;Each enemy Hero hit by Swift Strike increases the damage of the next Swift Strike by 30%. This bonus stacks up to 3 times.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|notes=<li>Stacks additively with itself and other offensive damage modifiers affecting ''Swift Strike''.}};File:Steady_Blade_Icon.png;
+
+<!-- LEVEL 20 -->
+The Dragon Becomes Me;7;1;Each time Dragonblade hits an enemy Hero, the duration of Dragonblade is increased by 0.5 seconds. If a Hero is killed within 1.5 seconds of being hit by Dragonblade, Swift Strike's cooldown is reset.;File:The_Dragon_Becomes_Me_Icon.png;
+
+Living Weapon;7;2;Each enemy Hero hit by X-Strike reduces its cooldown by 12.5 seconds.<!--
+-->{{undoc|<hr><li>Both slashes and the final strike apply cooldown reduction for every Hero who is hit.}};File:Living_Weapon_Icon.png;
+
+Sharpened Stars;7;3;Shuriken now pierce all enemies hit. Swift Strike's refund grants 1 charge of Shuriken.;File:Sharpened_Stars_Icon.png;
+
+Zanshin;7;4;{{Quest|Block 6500 damage with Deflect, including damage blocked so far.|Deflect hits all nearby enemy Heroes.}};File:Zanshin_Icon.png;
+}}
+
+<noinclude>
+{{Scaling table/start|{{#var:health}}|{{#var:health scaling}}|{{#var:health regen}}|{{#var:health regen scaling}}|{{#var:attack damage}}|{{#var:attack damage scaling}}}}
+{{Scaling table/slot|Shuriken|65|0.04}}
+{{Scaling table/slot|Deflect|55|0.04}}
+{{Scaling table/slot|Swift Strike|190|0.04}}
+{{Scaling table/slot|Dragonblade|240|0.04|10}}
+{{Scaling table/slot|X-Strike (slashes)|145|0.04|10}}
+{{Scaling table/slot|X-Strike (final)|290|0.04}}
+{{Scaling table/slot|Strike At The Heart|134|0.04|4}}
+{{Scaling table/slot|Dragon Claw (threshold)|330|0.04|4}}
+{{Scaling table/slot|Dragon Claw (damage)|190|0.04|4}}
+{{Scaling table/slot|Shingan|115|0.04|13}}
+{{Scaling table/slot|Final Cut|125|0.04|16}}
+{{Scaling table/end}}
+</noinclude>

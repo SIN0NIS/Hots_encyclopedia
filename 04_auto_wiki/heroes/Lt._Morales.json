@@ -1,0 +1,583 @@
+{
+  "hero": "Lt. Morales",
+  "abilities": [
+    {
+      "name": "Caduceus Reactor",
+      "hotkey": "TRAIT",
+      "icon": "Caduceus_Reactor_Icon.png",
+      "description": "While channeling Healing Beam, Lt. Morales regenerates 2% of her maximum Health per second.; trait",
+      "fields": {
+        "type": "Healing",
+        "scaling": "-",
+        "affects": "Self",
+        "tickrate": "1.0 per second",
+        "notes": "Lt. Morales uses Energy instead of Mana as a resource. Morales has 100 max Energy, which regenerates at 6 Energy per second while not using Healing Beam."
+      }
+    },
+    {
+      "name": "Healing Beam",
+      "hotkey": "Q",
+      "icon": "Healing_Beam_Icon.png",
+      "description": "Heal target ally for 172 Health per second as long as they are in range. After not channeling Healing Beam for 2 seconds, regenerate 6 Energy per second. Reactivate to switch targets. Self-cast or activate your Trait to cancel the channel.",
+      "fields": {
+        "type": "Healing",
+        "scaling": "4.00%",
+        "affects": "Non-Structure allies",
+        "target": "Unit target",
+        "props": "Mobile channel",
+        "cast": "Instant",
+        "cast range": "6.5",
+        "channel range": "8.25",
+        "tickrate": "2.0 per second (heal & energy gain)",
+        "prop1": "Heal per tick",
+        "val1": "86",
+        "prop2": "Energy recovery per tick",
+        "val2": "3.0",
+        "notes": "Consumes no energy, but still triggers Caduceus Reactor , when held on a full Health target. Healing Beam goes on cooldown for 2 seconds when interrupted by enemies, 0.5 seconds when switching target, 0.5 seconds when canceling it within 0.5 seconds from the beginning of the channel, and 0 seconds when canceling it after 0.5 seconds from the beginning of the channel. Lt. Morales can attack and use her Abilities without interrupting Healing Beam. Consumes 3 Energy per Healing tick while activated. Healing Beam is able to heal Minions.",
+        "cooldown": "0.5",
+        "cost": "6"
+      }
+    },
+    {
+      "name": "Redirect Healing Beam",
+      "hotkey": "Q",
+      "icon": "Redirect_Healing_Beam_Icon.png",
+      "description": "Redirect Healing Beam to another target. Use on self to cancel channeling.",
+      "fields": {
+        "type": "Healing",
+        "scaling": "4.00%",
+        "affects": "Non-Structure allies",
+        "target": "Unit Target",
+        "props": "Mobile channel",
+        "cast": "Instant",
+        "cast range": "6.5",
+        "cooldown": "0.5"
+      }
+    },
+    {
+      "name": "Safeguard",
+      "hotkey": "W",
+      "icon": "Safeguard_Icon.png",
+      "description": "Grant target ally Hero 35 Armor for 3 seconds.",
+      "fields": {
+        "type": "Defensive damage modifier",
+        "affects": "Allied Heroes",
+        "target": "Unit target",
+        "cast": "Instant",
+        "range": "7.5",
+        "notes": "Does not stack with itself or other positive Armor effects except Garrosh's Trait. Other defensive damage modifiers may stack",
+        "cooldown": "11"
+      }
+    },
+    {
+      "name": "Displacement Grenade",
+      "hotkey": "E",
+      "icon": "Displacement_Grenade_Icon.png",
+      "description": "Fire a grenade that can be manually detonated, dealing 208 damage to nearby enemies and knocking them away.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "target": "Point target",
+        "props": "Area of Effect, Knockback, Skillshot",
+        "cast": "0.1875 + 0.0625 seconds",
+        "range": "13.5",
+        "radius": "2.25",
+        "prop1": "Missile speed",
+        "val1": "22.5",
+        "prop2": "Knockback duration",
+        "val2": "0.25",
+        "prop3": "Knockback speed",
+        "val3": "16",
+        "prop4": "Reactivate",
+        "val4": "Detonate Displacement Grenade - Detonate Displacement Grenade, dealing 208 damage to nearby enemies and knocking them away.",
+        "notes": "Grenade detonates automatically at maximum range.",
+        "cooldown": "12"
+      }
+    },
+    {
+      "name": "Stim Drone",
+      "hotkey": "R",
+      "icon": "Stim_Drone_Icon.png",
+      "description": "Grant an allied Hero 75% Attack Speed and 25% Movement Speed for 10 seconds.; 70; heroic",
+      "fields": {
+        "type": "Status effect",
+        "affects": "Allied Heroes",
+        "target": "Unit target",
+        "props": "Attack Speed buff, Channeled cast (stationary), Movement Speed buff",
+        "cast": "0.5(ch) + 0 seconds",
+        "range": "6.0",
+        "notes": "Interrupting the Ability during its cast puts it on a 10 second cooldown. Cast is interrupted if the target moves over 10 range beyond the Ability's maximum range before the channel has finished."
+      }
+    },
+    {
+      "name": "Medivac Dropship",
+      "hotkey": "R",
+      "icon": "Medivac_Dropship_Icon.png",
+      "description": "Target a location for a Medivac transport. For up to 10 seconds before takeoff, allies can right-click to enter the Medivac. Medivac Dropship ; 45; heroic",
+      "fields": {
+        "type": "Passive",
+        "target": "Point target",
+        "props": "Unstoppable",
+        "cast": "1.0 (ch) + 0.25 seconds",
+        "range": "- Min: 11 - Max: 100 Selecting Medivac Dropship also unlocks Reinforcements Ability, which shares a cooldown with it. Interrupting the Ability during its cast puts it on a 10 second cooldown. Must be cast on pathable surface. Lt. Morales is automatically put in the dropship once the cast finishes. Allies that enter Dropship cannot leave manually. All Heroes inside are ejected automatically when Dropship reaches its destination or is destroyed. Upon successfully casting Medivac Dropship, Lt. Morales gains access to Depart Ability, which can be cast after 3 seconds to immediately launch toward the target location. The dropship departs automatically after 10 seconds. Heroes that have entered the dropship cannot leave until it arrives to its target location. Heroes inside the dropship are put in Stasis, removed from ground plane (disjoints certain projectiles) and have no collision. Enemies can attack the dropship. If the dropship is destroyed, the Heroes inside it will be immediately ejected and Stunned for 0.5 seconds.",
+        "nohr": "true",
+        "scaling": "4.00% (Health)",
+        "prop1": "Health",
+        "val1": "955.8",
+        "prop2": "Basic Attack damage",
+        "val2": "-",
+        "prop5": "Movement Speed",
+        "val5": "28",
+        "prop6": "Unit radius",
+        "val6": "0.75",
+        "prop7": "Sight radius",
+        "val7": "8.0",
+        "notes": "Dropship is Unstoppable and has no collision."
+      }
+    },
+    {
+      "name": "Medivac Dropship - Depart",
+      "hotkey": "E",
+      "icon": "",
+      "description": "Departs for the target location immediately.; 0.5; heroic",
+      "fields": {
+        "target": "No target",
+        "cast": "Instant",
+        "notes": "Starts on a 3 second cooldown upon successfully casting Medivac Dropship or Reinforcements."
+      }
+    },
+    {
+      "name": "Medivac Dropship - Reinforcements",
+      "hotkey": "1",
+      "icon": "Reinforcements_Icon.png",
+      "description": "Call down a Medivac Dropship at your Hall of Storms for your allies. After 10 seconds, or when the Ability is activated again, the Medivac will travel to its original cast location to unload its passengers.; 45 / 3.0; heroic",
+      "fields": {
+        "type": "Summon",
+        "target": "No target",
+        "props": "Channeled cast (stationary)",
+        "cast": "1.0 (ch) + 0.25 seconds",
+        "notes": "Shares cooldown with Medivac Dropship. Can be recast after 3 seconds to depart immediately. Cannot be cast while within the mines on Haunted Mines."
+      }
+    }
+  ],
+  "talents": [
+    {
+      "name": "Caduceus Feedback",
+      "tier": "1",
+      "slot": "1",
+      "icon": "Caduceus_Feedback_Icon.png",
+      "description": "Increase Attack Range by 1.1, and Basic Attacks against Heroes generate 4 Energy.",
+      "fields": {
+        "props": "Attack Modifier"
+      },
+      "_raw_fields": [
+        "Caduceus Feedback",
+        "1",
+        "1",
+        "Increase Attack Range by 1.1, and Basic Attacks against Heroes generate 4 Energy.",
+        "File:Caduceus_Feedback_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Life Support",
+      "tier": "1",
+      "slot": "2",
+      "icon": "Healing_Beam_Icon.png",
+      "description": "During the first 2 seconds of Energy regeneration Healing Beam regenerates 100% more Energy. Passive Increase your maximum Energy by 10.",
+      "fields": {},
+      "_raw_fields": [
+        "Life Support",
+        "1",
+        "2",
+        "During the first 2 seconds of Energy regeneration Healing Beam regenerates 100% more Energy. Passive Increase your maximum Energy by 10.",
+        "File:Healing_Beam_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Clear!",
+      "tier": "1",
+      "slot": "3",
+      "icon": "Clear!_Icon.png",
+      "description": "Quest Each Hero hit with Displacement Grenade restores 3 Energy. After hitting 15 Heroes, reduce the cooldown of Displacement Grenade from 12 seconds to 9 seconds. Reward After hitting 30 Heroes, increase the detonation area of Displacement Grenade by 25%.",
+      "fields": {
+        "prop1": "Bonus radius",
+        "val1": "0.5625"
+      },
+      "_raw_fields": [
+        "Clear!",
+        "1",
+        "3",
+        "Quest Each Hero hit with Displacement Grenade restores 3 Energy. After hitting 15 Heroes, reduce the cooldown of Displacement Grenade from 12 seconds to 9 seconds. Reward After hitting 30 Heroes, increase the detonation area of Displacement Grenade by 25%.",
+        "File:Clear!_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Cellular Reactor",
+      "tier": "2",
+      "slot": "1",
+      "icon": "Cellular_Reactor_Icon.png",
+      "description": "Cooldown 20 Active Consume 30 Energy to heal Lt. Morales for 30% of her maximum Health over 3 seconds. Caduceus Reactor is disabled while this is active. Passive Generate 2 Energy each time Safeguard reduces damage, up to a maximum of 10 Energy per use.",
+      "fields": {
+        "type": "Healing",
+        "scaling": "-",
+        "affects": "Self",
+        "target": "No target",
+        "props": "Heal over time",
+        "cast": "Instant",
+        "tickrate": "2.0 per second (x6)"
+      },
+      "_raw_fields": [
+        "Cellular Reactor",
+        "2",
+        "1",
+        "Cooldown 20 Active Consume 30 Energy to heal Lt. Morales for 30% of her maximum Health over 3 seconds. Caduceus Reactor is disabled while this is active. Passive Generate 2 Energy each time Safeguard reduces damage, up to a maximum of 10 Energy per use.",
+        "File:Cellular_Reactor_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Trauma Trigger",
+      "tier": "2",
+      "slot": "2",
+      "icon": "Trauma_Trigger_Icon.png",
+      "description": "Gain 40 Armor for 3 seconds if damage is taken while below 40% Health. This effect has a 30 second cooldown. Increase the healing provided by Caduceus Reactor from 2% to 4% of Lt. Morales's maximum Health per second.",
+      "fields": {
+        "type": "Defensive damage modifier",
+        "affects": "Self",
+        "props": "Armor",
+        "notes": "Does not stack with other positive Armor effects. Other defensive damage modifiers may stack."
+      },
+      "_raw_fields": [
+        "Trauma Trigger",
+        "2",
+        "2",
+        "Gain 40 Armor for 3 seconds if damage is taken while below 40% Health. This effect has a 30 second cooldown. Increase the healing provided by Caduceus Reactor from 2% to 4% of Lt. Morales's maximum Health per second.",
+        "File:Trauma_Trigger_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Blast Shield",
+      "tier": "2",
+      "slot": "3",
+      "icon": "Blast_Shield_Icon.png",
+      "description": "Heroes hit by Displacement Grenade are Slowed by 50% for 1 second after being knocked away and grant Lt. Morales a Shield equal to 6% of her maximum Health. This Shield stacks up to 5 times.",
+      "fields": {
+        "type": "Shield",
+        "scaling": "-",
+        "affects": "Self"
+      },
+      "_raw_fields": [
+        "Blast Shield",
+        "2",
+        "3",
+        "Heroes hit by Displacement Grenade are Slowed by 50% for 1 second after being knocked away and grant Lt. Morales a Shield equal to 6% of her maximum Health. This Shield stacks up to 5 times.",
+        "File:Blast_Shield_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Physical Therapy",
+      "tier": "3",
+      "slot": "1",
+      "icon": "Physical_Therapy_Icon.png",
+      "description": "Safeguard removes all Slows from its target and its cooldown is reduced by 3 seconds.",
+      "fields": {
+        "props": "CC removal (Slow)"
+      },
+      "_raw_fields": [
+        "Physical Therapy",
+        "3",
+        "1",
+        "Safeguard removes all Slows from its target and its cooldown is reduced by 3 seconds.",
+        "File:Physical_Therapy_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Vanadium Plating",
+      "tier": "3",
+      "slot": "2",
+      "icon": "Vanadium_Plating_Icon.png",
+      "description": "While an ally affected by Safeguard is Stunned or Rooted, Safeguard grants an additional 20 Armor. Passive Increase the duration of Safeguard by 1 second.",
+      "fields": {},
+      "_raw_fields": [
+        "Vanadium Plating",
+        "3",
+        "2",
+        "While an ally affected by Safeguard is Stunned or Rooted, Safeguard grants an additional 20 Armor. Passive Increase the duration of Safeguard by 1 second.",
+        "File:Vanadium_Plating_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Medi-Drone",
+      "tier": "3",
+      "slot": "3",
+      "icon": "Medi-Drone_Icon.png",
+      "description": "Allies with Safeguard receive 75% of the healing done by Healing Beam on another ally.",
+      "fields": {
+        "type": "Healing",
+        "scaling": "4.00%",
+        "affects": "Allied Heroes, Self",
+        "tickrate": "2.0 per second",
+        "prop1": "Heal per tick",
+        "val1": "64.5",
+        "notes": "Medi-Drone does not heal if the primary target of Healing Beam is at full Health. Lt. Morales can also benefit from Medi-Drone by using Safeguard on herself. Medi-Drone benefits from the bonus healing from First Responder. Medi-Drone has its own separate base value that is 75% of Healing Beam 's, causing the percentage to stack multiplicatively with healing modifiers and bonus healing effects."
+      },
+      "_raw_fields": [
+        "Medi-Drone",
+        "3",
+        "3",
+        "Allies with Safeguard receive 75% of the healing done by Healing Beam on another ally.",
+        "File:Medi-Drone_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Stim Drone",
+      "tier": "4",
+      "slot": "1",
+      "icon": "Stim_Drone_Icon.png",
+      "description": "Cooldown 70 Grant an allied Hero 75% Attack Speed and 25% Movement Speed for 10 seconds.",
+      "fields": {},
+      "_raw_fields": [
+        "Stim Drone",
+        "4",
+        "1",
+        "Cooldown 70 Grant an allied Hero 75% Attack Speed and 25% Movement Speed for 10 seconds.",
+        "File:Stim_Drone_Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Medivac Dropship",
+      "tier": "4",
+      "slot": "2",
+      "icon": "Medivac_Dropship_Icon.png",
+      "description": "Cooldown 45 Unlock the Medivac Dropship and Reinforcements Abilities. These Abilities share a cooldown. Medivac Dropship Target a location for a Medivac transport. For up to 10 seconds before takeoff, allies can right-click to enter the Medivac. Reinforcements Call down a Medivac Dropship at your Hall of Storms for your allies. After 10 seconds, or when the Ability is activated again, the Medivac will travel to its original cast location to unload its passengers.",
+      "fields": {},
+      "_raw_fields": [
+        "Medivac Dropship",
+        "4",
+        "2",
+        "Cooldown 45 Unlock the Medivac Dropship and Reinforcements Abilities. These Abilities share a cooldown. Medivac Dropship Target a location for a Medivac transport. For up to 10 seconds before takeoff, allies can right-click to enter the Medivac. Reinforcements Call down a Medivac Dropship at your Hall of Storms for your allies. After 10 seconds, or when the Ability is activated again, the Medivac will travel to its original cast location to unload its passengers.",
+        "File:Medivac_Dropship_Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "EMP Grenade",
+      "tier": "5",
+      "slot": "1",
+      "icon": "EMP_Grenade_Icon.png",
+      "description": "Displacement Grenade deals an additional 96 damage over 2 seconds, and up to 400 bonus damage to Shields.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "props": "Damage over time",
+        "tickrate": "2.0 per second (x4)",
+        "prop2": "Damage per tick",
+        "val2": "24",
+        "notes": "Bonus damage to Shields only applies against Heroic targets."
+      },
+      "_raw_fields": [
+        "EMP Grenade",
+        "5",
+        "1",
+        "Displacement Grenade deals an additional 96 damage over 2 seconds, and up to 400 bonus damage to Shields.",
+        "File:EMP_Grenade_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "System Shock",
+      "tier": "5",
+      "slot": "2",
+      "icon": "System_Shock_Icon.png",
+      "description": "Heroes hit by Displacement Grenade deal 30% less damage for 3 seconds.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Enemy Heroes",
+        "notes": "Damage reduction stacks additively with other offensive damage modifiers affecting targets' damage output."
+      },
+      "_raw_fields": [
+        "System Shock",
+        "5",
+        "2",
+        "Heroes hit by Displacement Grenade deal 30% less damage for 3 seconds.",
+        "File:System_Shock_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Bedside Manner",
+      "tier": "5",
+      "slot": "3",
+      "icon": "Bedside_Manner_Icon.png",
+      "description": "Heroes hit by Displacement Grenade will take an additional 6% of maximum Health as damage from Lt. Morales's next Basic Attack against them. Passive Basic Attacks against Heroes deal an additional 1% of maximum Health as damage.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "-",
+        "affects": "Enemy Heroes",
+        "props": "Attack modifier, Percent Damage",
+        "notes": "Displacement Grenade puts a mark on the enemy Hero that lasts for 6 seconds and is consumed if Lt. Morales Basic Attacks them during this time, dealing the bonus damage, or else expires at the end of this interval. The mark is removed, but the bonus damage does not connect, if Lt. Morales is Blinded or if the target is Evading on this Basic Attack."
+      },
+      "_raw_fields": [
+        "Bedside Manner",
+        "5",
+        "3",
+        "Heroes hit by Displacement Grenade will take an additional 6% of maximum Health as damage from Lt. Morales's next Basic Attack against them. Passive Basic Attacks against Heroes deal an additional 1% of maximum Health as damage.",
+        "File:Bedside_Manner_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Extended Care",
+      "tier": "6",
+      "slot": "1",
+      "icon": "Extended_Care_Icon.png",
+      "description": "Channeling Healing Beam on a Hero for at least 3 seconds causes them to be healed for 258 over 3 seconds when Healing Beam ends. Passive Increase the range of Healing Beam by 30%.",
+      "fields": {
+        "type": "Healing",
+        "scaling": "4.00%",
+        "affects": "Allied Heroes",
+        "props": "Heal over Time",
+        "tickrate": "2.0 per second (x6)",
+        "prop1": "Heal per tick",
+        "val1": "43",
+        "prop2": "Bonus range",
+        "val2": "1.95",
+        "notes": "Increases both cast and channel range by the same value. Heal over Time ends immediately if Lt. Morales targets the ally with Healing Beam again."
+      },
+      "_raw_fields": [
+        "Extended Care",
+        "6",
+        "1",
+        "Channeling Healing Beam on a Hero for at least 3 seconds causes them to be healed for 258 over 3 seconds when Healing Beam ends. Passive Increase the range of Healing Beam by 30%.",
+        "File:Extended_Care_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "First Responder",
+      "tier": "6",
+      "slot": "2",
+      "icon": "First_Responder_Icon.png",
+      "description": "While above 60 energy, Healing Beam's healing is increased by 20% and both Lt. Morales and her Healing Beam target gain 15% Movement Speed.",
+      "fields": {
+        "type": "Healing dealt modifier / Status effect",
+        "affects": "Ability / Allied Heroes, Self",
+        "props": "Movement Speed",
+        "notes": "Stacks additively with healing modifiers that affect Lt. Morales's healing output and multiplicatively with modifiers that affect healing received by the target."
+      },
+      "_raw_fields": [
+        "First Responder",
+        "6",
+        "2",
+        "While above 60 energy, Healing Beam's healing is increased by 20% and both Lt. Morales and her Healing Beam target gain 15% Movement Speed.",
+        "File:First_Responder_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Shield Sequencer",
+      "tier": "6",
+      "slot": "3",
+      "icon": "Shield_Sequencer_Icon.png",
+      "description": "Safeguard gains a second charge and its range is increased by 60%.",
+      "fields": {
+        "prop1": "Charge cooldown",
+        "val1": "0.5 seconds"
+      },
+      "_raw_fields": [
+        "Shield Sequencer",
+        "6",
+        "3",
+        "Safeguard gains a second charge and its range is increased by 60%.",
+        "File:Shield_Sequencer_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Hyperactivity",
+      "tier": "7",
+      "slot": "1",
+      "icon": "Hyperactivity_Icon.png",
+      "description": "Reduce the cooldown of Stim Drone from 70 seconds to 35 seconds, and increase the Movement Speed bonus from 25% to 50%.",
+      "fields": {},
+      "_raw_fields": [
+        "Hyperactivity",
+        "7",
+        "1",
+        "Reduce the cooldown of Stim Drone from 70 seconds to 35 seconds, and increase the Movement Speed bonus from 25% to 50%.",
+        "File:Hyperactivity_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Safe Zone",
+      "tier": "7",
+      "slot": "2",
+      "icon": "Safe_Zone_Icon.png",
+      "description": "After exiting the Medivac, allies are Protected from all damage for 3 seconds. Passive Reduces the cooldown of Medivac Dropship Abilities by 15 seconds.",
+      "fields": {
+        "type": "Status effect",
+        "affects": "Allied Heroes",
+        "props": "Protected"
+      },
+      "_raw_fields": [
+        "Safe Zone",
+        "7",
+        "2",
+        "After exiting the Medivac, allies are Protected from all damage for 3 seconds. Passive Reduces the cooldown of Medivac Dropship Abilities by 15 seconds.",
+        "File:Safe_Zone_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Hospice Care",
+      "tier": "7",
+      "slot": "3",
+      "icon": "Hospice_Care_Icon.png",
+      "description": "Safeguard grants its target Unkillable for 1 second. If the target is under 50% maximum Health when the Unkillable effect ends, they are healed for 8% of their maximum Health.",
+      "fields": {
+        "type": "Healing, Status effect",
+        "scaling": "-",
+        "affects": "Allied Heroes, Self",
+        "props": "Unkillable"
+      },
+      "_raw_fields": [
+        "Hospice Care",
+        "7",
+        "3",
+        "Safeguard grants its target Unkillable for 1 second. If the target is under 50% maximum Health when the Unkillable effect ends, they are healed for 8% of their maximum Health.",
+        "File:Hospice_Care_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Second Opinion",
+      "tier": "7",
+      "slot": "4",
+      "icon": "Second_Opinion_Icon.png",
+      "description": "Hitting 2 or more Heroes with Displacement Grenade reduces its cooldown to 2 seconds.",
+      "fields": {},
+      "_raw_fields": [
+        "Second Opinion",
+        "7",
+        "4",
+        "Hitting 2 or more Heroes with Displacement Grenade reduces its cooldown to 2 seconds.",
+        "File:Second_Opinion_Icon.png"
+      ],
+      "level": "20"
+    }
+  ],
+  "other": [],
+  "_unparsed_count": 0
+}

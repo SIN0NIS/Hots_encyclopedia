@@ -1,0 +1,588 @@
+{
+  "hero": "Stitches",
+  "abilities": [
+    {
+      "name": "Shambling Horror",
+      "hotkey": "D",
+      "icon": "Shambling_Horror_Icon.png",
+      "description": "Activate to spread Vile Gas in a large area and prevent your Movement Speed from being reduced below 110% for 4 seconds. Vile Gas Hitting enemies with Basic Attacks or the inner area of Slam afflicts them with Vile Gas, dealing an additional 36 damage over 4 seconds. Deals 150% more damage to Minions, Mercenaries and Monsters.; 60; trait",
+      "fields": {
+        "type": "Spell Damage",
+        "affects": "Enemies",
+        "target": "No target",
+        "props": "Damage over Time",
+        "cast": "Instant",
+        "radius": "3.75",
+        "tickrate": "1.0 per second (x3)",
+        "notes": "Does not stack with itself. Reapplying refreshes the duration. Damage bonus to Minions, Mercenaries and Monsters stacks additively with offensive damage modifiers that can affect Vile Gas 's damage.",
+        "scaling": "4.00%",
+        "prop1": "Damage per tick",
+        "val1": "9"
+      }
+    },
+    {
+      "name": "Hook",
+      "hotkey": "Q",
+      "icon": "Hook_Icon.png",
+      "description": "Pull the first enemy hit toward Stitches and deal 91 damage. After reaching level 13, Hook's range is increased by 40%.",
+      "fields": {
+        "type": "Spell Damage, Crowd control",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "props": "Pull, Skillshot, Stationary channel, Stun",
+        "cast": "0.2 + CH + 0 seconds",
+        "range": "12",
+        "hitbox": "1.25 x 1.25",
+        "missile": "- Initial: 20 - Return (on hit): 25 - Return (on miss): 50",
+        "prop1": "Range bonus",
+        "val1": "4.5",
+        "notes": "Shares cooldown with Helping Hand. Enemies can be pulled through unpassable terrain, but not through allied Structures. Unstoppable enemies and Structures hit by the Hook will get damaged and stop the Hook, but cannot be pulled. Hook Stuns the target upon impact for 0.125 seconds.",
+        "cooldown": "16",
+        "cost": "75"
+      }
+    },
+    {
+      "name": "Slam",
+      "hotkey": "W",
+      "icon": "Slam_Icon.png",
+      "description": "Deal 104 damage to enemies within the target area. Enemies in the inner impact take 50% more damage and are Slowed by 45% for 2 seconds.",
+      "fields": {
+        "type": "Spell Damage, Crowd control",
+        "affects": "Enemies",
+        "scaling": "4.00%",
+        "target": "Point target",
+        "props": "Area of Effect, Clamping, Slow",
+        "cast": "0.2 + 0.0625 seconds",
+        "aoe": "Radial",
+        "radius": "- Outer: 9.5 - Inner: 5.25",
+        "arc": "70 degrees",
+        "notes": "Damage bonuses stack additively with other offensive damage modifiers that can affect Slam 's damage.",
+        "cooldown": "8",
+        "cost": "35"
+      }
+    },
+    {
+      "name": "Devour",
+      "hotkey": "E",
+      "icon": "Devour_Icon.png",
+      "description": "Deal 319 damage to non-Heroic units, or 114 damage to Heroes. Restores 20% of Stitches's maximum Health.",
+      "fields": {
+        "type": "Spell Damage / Healing",
+        "affects": "Non-Structure Enemies / Self",
+        "scaling": "4.00% / -",
+        "target": "Unit target",
+        "cast": "0 + 0.2 seconds",
+        "range": "1.5",
+        "cooldown": "20",
+        "cost": "55"
+      }
+    },
+    {
+      "name": "Putrid Bile",
+      "hotkey": "R",
+      "icon": "Putrid_Bile_Icon.png",
+      "description": "Emit bile that deals 37 damage per second to enemies within, Slowing them by 35% for 1.5 seconds. Gain 20% Movement Speed while emitting bile. Lasts 8 seconds.; 75; 75; heroic",
+      "fields": {
+        "type": "Spell Damage, Crowd control / Status effect",
+        "scaling": "4.00%",
+        "affects": "Enemies / Self",
+        "target": "No target",
+        "props": "Area of Effect, Slow, Movement Speed",
+        "cast": "0.2 + 0 seconds.",
+        "aoe": "Circle (1",
+        "radius": "3.0",
+        "tickrate": "1.0 per second (x13)",
+        "prop1": "Puddle duration",
+        "val1": "4.0 seconds",
+        "notes": "1) Stitches emits bile puddles every 0.5 seconds at his current location. Bile puddles deal damage immediately upon being created to enemies that are not affected by it and once every second thereafter to enemies that remain within their area of effect."
+      }
+    },
+    {
+      "name": "Gorge",
+      "hotkey": "R",
+      "icon": "Gorge_Icon.png",
+      "description": "Consume an enemy Hero, trapping them for 4 seconds. When Gorge ends, the enemy Hero takes 274 damage. The trapped Hero cannot move or act and doesn't take damage from other sources.; 65; 70; heroic",
+      "fields": {
+        "type": "Spell Damage, Status effect",
+        "affects": "Enemy Heroes",
+        "scaling": "4.00%",
+        "target": "Unit target",
+        "props": "Stasis",
+        "cast": "0 + 0.4 seconds",
+        "range": "1.5",
+        "notes": "Targets under the effect of Stitches's Gorge will be instantly expelled if Stitches himself enters Stasis or dies. In addition to the usual effects of Stasis, the target is also Stunned, has no collision, does not receive the expanded debuff removal and some delayed healing Abilities applied beforehand are prevented."
+      }
+    },
+    {
+      "name": "Helping Hand",
+      "hotkey": "1",
+      "icon": "Helping Hand_Icon.png",
+      "description": "Activate to use Hook that can hit allied Heroes. Hitting an allied Hero this way reduces the cooldown of Hook by 8 seconds. After reaching level 13, Helping Hand's range is increased by 40%.",
+      "fields": {
+        "type": "Spell Damage, Crowd control / Crowd control",
+        "affects": "Enemies / Allied Heroes",
+        "notes": "Shares cooldown with Hook. Helping Hand has the same properties as Hook and benefits from all Talents affecting it.",
+        "cooldown": "16",
+        "cost": "75"
+      }
+    }
+  ],
+  "talents": [
+    {
+      "name": "Patchwork Creation",
+      "tier": "1",
+      "slot": "1",
+      "icon": "Patchwork Creation Icon.png",
+      "description": "Gain 3 Armor for every unit afflicted with Vile Gas, stacking up to 8 times. While Shambling Horror is activated, this Armor amount is doubled. Passive Increase regeneration effects and all healing received by 15%.",
+      "fields": {
+        "type": "Defensive damage modifier, Healing received modifier",
+        "affects": "Self",
+        "props": "Armor",
+        "notes": "Armor bonus stacks additively with itself, but not with other positive Armor effects. Other defensive damage modifiers may stack. Healing buff stacks additively with healing modifiers that affect healing received and multiplicatively with modifiers that affect healing dealt."
+      },
+      "_raw_fields": [
+        "Patchwork Creation",
+        "1",
+        "1",
+        "Gain 3 Armor for every unit afflicted with Vile Gas, stacking up to 8 times. While Shambling Horror is activated, this Armor amount is doubled. Passive Increase regeneration effects and all healing received by 15%.",
+        "File:Patchwork Creation Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Savor the Flavor",
+      "tier": "1",
+      "slot": "2",
+      "icon": "Savor_the_Flavor_Icon.png",
+      "description": "Questonly Hitting an enemy Hero with Devour increases Stitches's Health Regeneration by 1.5 and the damage of Vile Gas by 2%, stacking up to 100 times.",
+      "fields": {
+        "type": "Bonus Health Regeneration / Offensive damage modifier",
+        "scaling": "-",
+        "affects": "Self / Ability",
+        "props": "Heal over time",
+        "notes": "Damage bonus stacks additively with itself and other offensive damage modifiers that can affect Vile Gas 's damage."
+      },
+      "_raw_fields": [
+        "Savor the Flavor",
+        "1",
+        "2",
+        "Questonly Hitting an enemy Hero with Devour increases Stitches's Health Regeneration by 1.5 and the damage of Vile Gas by 2%, stacking up to 100 times.",
+        "File:Savor_the_Flavor_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Hungry for More",
+      "tier": "1",
+      "slot": "3",
+      "icon": "Hungry_for_More_Icon.png",
+      "description": "Gain 5% Movement Speed. quest Gathering a Regeneration Globe increases Stitches's maximum Health by 25. Every 20 Globes gathered permanently increases Stitches's Movement Speed by 5%.",
+      "fields": {
+        "type": "Bonus Health, Status effect",
+        "scaling": "-",
+        "affects": "Self",
+        "props": "Movement Speed",
+        "prop1": "Maximum Health bonus",
+        "val1": "25,000 (x1,000)",
+        "prop2": "Maximum Speed bonus",
+        "val2": "250% (x50)",
+        "notes": "Only affects unmounted Movement Speed. At 100 Globes, Mounting therefore no longer affects Stitches's Movement Speed, and at 120 or more Globes it actually reduces it."
+      },
+      "_raw_fields": [
+        "Hungry for More",
+        "1",
+        "3",
+        "Gain 5% Movement Speed. quest Gathering a Regeneration Globe increases Stitches's maximum Health by 25. Every 20 Globes gathered permanently increases Stitches's Movement Speed by 5%.",
+        "File:Hungry_for_More_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Playtime!",
+      "tier": "2",
+      "slot": "1",
+      "icon": "Playtime! Icon.png",
+      "description": "Basic Attacks reduce the cooldown of Slam by 0.75 seconds and restore 5 Mana. Hitting Heroes with the inner area of Slam reduces its cooldown by 1.5 seconds.",
+      "fields": {
+        "type": "Mana restoration, Cooldown reduction",
+        "scaling": "-",
+        "affects": "Self",
+        "props": "Attack modifier",
+        "notes": "Each enemy hit by the inner area of Slam also restores 5 Mana."
+      },
+      "_raw_fields": [
+        "Playtime!",
+        "2",
+        "1",
+        "Basic Attacks reduce the cooldown of Slam by 0.75 seconds and restore 5 Mana. Hitting Heroes with the inner area of Slam reduces its cooldown by 1.5 seconds.",
+        "File:Playtime! Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Vile Cleaver",
+      "tier": "2",
+      "slot": "2",
+      "icon": "Vile_Cleaver_Icon.png",
+      "description": "Basic Attacks against enemies with Vile Gas deal 35% more damage and spread Vile Gas to nearby enemies. Passive Slam applies Vile Gas to all targets hit.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Self",
+        "props": "Attack modifier, Splash",
+        "radius": "2.5",
+        "notes": "Damage bonus stacks additively with other offensive damage modifiers that can affect Stitches's Basic Attack damage."
+      },
+      "_raw_fields": [
+        "Vile Cleaver",
+        "2",
+        "2",
+        "Basic Attacks against enemies with Vile Gas deal 35% more damage and spread Vile Gas to nearby enemies. Passive Slam applies Vile Gas to all targets hit.",
+        "File:Vile_Cleaver_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Tenderizer",
+      "tier": "2",
+      "slot": "3",
+      "icon": "Tenderizer_Icon.png",
+      "description": "Basic Attacks against enemy Heroes Slow by 20% for 1.5 seconds and restore 1.75% of Stitches's maximum Health.",
+      "fields": {
+        "type": "Crowd control / Healing",
+        "scaling": "-",
+        "affects": "Enemies / Self",
+        "props": "Attack Modifier, Slow",
+        "notes": "Basic Attacks against non-Heroes Slow, but do not trigger the healing."
+      },
+      "_raw_fields": [
+        "Tenderizer",
+        "2",
+        "3",
+        "Basic Attacks against enemy Heroes Slow by 20% for 1.5 seconds and restore 1.75% of Stitches's maximum Health.",
+        "File:Tenderizer_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Serrated Edge",
+      "tier": "3",
+      "slot": "1",
+      "icon": "Serrated Edge Icon.png",
+      "description": "Hitting an enemy Hero with Hook deals bonus damage equal to 5% of their maximum Health, reduces Hook's cooldown by 4 seconds and restores 35 Mana.",
+      "fields": {
+        "type": "Spell Damage / Mana restoration",
+        "scaling": "-",
+        "affects": "Enemy Heroes",
+        "props": "Percent Damage",
+        "notes": "Damage from Serrated Edge is dealt in a separate instance."
+      },
+      "_raw_fields": [
+        "Serrated Edge",
+        "3",
+        "1",
+        "Hitting an enemy Hero with Hook deals bonus damage equal to 5% of their maximum Health, reduces Hook's cooldown by 4 seconds and restores 35 Mana.",
+        "File:Serrated Edge Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Second Helping",
+      "tier": "3",
+      "slot": "2",
+      "icon": "Second Helping Icon.png",
+      "description": "Devour gains 1 additional charge with a 6 second cooldown between uses. Gambitonly If Stitches is at max Health after using Devour, he gains a Shield equal to 15% of his maximum Health for 10 seconds. Every death, reduce this Shield by 3%.",
+      "fields": {
+        "type": "Shield",
+        "scaling": "-",
+        "affects": "Self"
+      },
+      "_raw_fields": [
+        "Second Helping",
+        "3",
+        "2",
+        "Devour gains 1 additional charge with a 6 second cooldown between uses. Gambitonly If Stitches is at max Health after using Devour, he gains a Shield equal to 15% of his maximum Health for 10 seconds. Every death, reduce this Shield by 3%.",
+        "File:Second Helping Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Putrefaction",
+      "tier": "3",
+      "slot": "3",
+      "icon": "Putrefaction Icon.png",
+      "description": "While Shambling Horror is active, Vile Gas reduces healing received by 40%. Passive Vile Gas heals Stitches for 75% of the damage dealt.",
+      "fields": {
+        "type": "Healing received modifier / Healing",
+        "scaling": "-",
+        "affects": "Enemy Heroes / Self",
+        "props": "Lifesteal",
+        "notes": "Affects both enemies who were already afflicted by Vile Gas and those who gained Vile Gas after the activation of Shambling Horror. Healing reduction stacks additively with healing modifiers that affect healing received and multiplicatively with modifiers that affect healing dealt."
+      },
+      "_raw_fields": [
+        "Putrefaction",
+        "3",
+        "3",
+        "While Shambling Horror is active, Vile Gas reduces healing received by 40%. Passive Vile Gas heals Stitches for 75% of the damage dealt.",
+        "File:Putrefaction Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Putrid Bile",
+      "tier": "4",
+      "slot": "1",
+      "icon": "Putrid_Bile_Icon.png",
+      "description": "cooldown 75 Emit bile that deals 37 damage per second to enemies within, Slowing them by 35% for 1.5 seconds. Gain 20% Movement Speed while emitting bile. Lasts 8 seconds.",
+      "fields": {},
+      "_raw_fields": [
+        "Putrid Bile",
+        "4",
+        "1",
+        "cooldown 75 Emit bile that deals 37 damage per second to enemies within, Slowing them by 35% for 1.5 seconds. Gain 20% Movement Speed while emitting bile. Lasts 8 seconds.",
+        "File:Putrid_Bile_Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Gorge",
+      "tier": "4",
+      "slot": "2",
+      "icon": "Gorge_Icon.png",
+      "description": "cooldown 65 Consume an enemy Hero, trapping them for 4 seconds. When Gorge ends, the enemy Hero takes 274 damage. The trapped Hero cannot move or act and doesn't take damage from other sources.",
+      "fields": {},
+      "_raw_fields": [
+        "Gorge",
+        "4",
+        "2",
+        "cooldown 65 Consume an enemy Hero, trapping them for 4 seconds. When Gorge ends, the enemy Hero takes 274 damage. The trapped Hero cannot move or act and doesn't take damage from other sources.",
+        "File:Gorge_Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Meat Hook",
+      "tier": "5",
+      "slot": "1",
+      "icon": "Meat Hook Icon.png",
+      "description": "Hitting an enemy Hero with Hook heals Stitches for 20% of his maximum Health over 5 seconds. While active, Basic Attacks against the Hero hit refresh the duration of this effect.",
+      "fields": {
+        "type": "Healing",
+        "scaling": "-",
+        "affects": "Self",
+        "props": "Heal over Time",
+        "tickrate": "2.0 per second (x11)",
+        "prop1": "Heal per tick",
+        "val1": "1.8%"
+      },
+      "_raw_fields": [
+        "Meat Hook",
+        "5",
+        "1",
+        "Hitting an enemy Hero with Hook heals Stitches for 20% of his maximum Health over 5 seconds. While active, Basic Attacks against the Hero hit refresh the duration of this effect.",
+        "File:Meat Hook Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Under Pressure",
+      "tier": "5",
+      "slot": "2",
+      "icon": "Under_Pressure_Icon.png",
+      "description": "Increase Slam's damage by 25. questonly After damaging Heroes with Vile Gas 6 times, permanently increase the damage of Slam by 1, to a maximum of 75 additional damage.",
+      "fields": {
+        "type": "Bonus damage",
+        "scaling": "-",
+        "affects": "Ability"
+      },
+      "_raw_fields": [
+        "Under Pressure",
+        "5",
+        "2",
+        "Increase Slam's damage by 25. questonly After damaging Heroes with Vile Gas 6 times, permanently increase the damage of Slam by 1, to a maximum of 75 additional damage.",
+        "File:Under_Pressure_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Chop Chop",
+      "tier": "5",
+      "slot": "3",
+      "icon": "Chop Chop Icon.png",
+      "description": "Hitting a Hero with Hook or activating Shambling Horror grants 40% increased Attack Speed for 4 seconds. Basic Attacks refresh the duration of this effect.",
+      "fields": {
+        "type": "Status effect",
+        "affects": "Self",
+        "props": "Attack Speed",
+        "notes": "Does not stack with itself. Reapplying refreshes the duration. Attack Speed from Chop Chop stacks additively with other effects that can affect Stitches's Attack Speed."
+      },
+      "_raw_fields": [
+        "Chop Chop",
+        "5",
+        "3",
+        "Hitting a Hero with Hook or activating Shambling Horror grants 40% increased Attack Speed for 4 seconds. Basic Attacks refresh the duration of this effect.",
+        "File:Chop Chop Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Pulverize",
+      "tier": "6",
+      "slot": "1",
+      "icon": "Pulverize_Icon.png",
+      "description": "All enemies hit by Slam are Slowed by 70% for 0.75 seconds and Heroes have their Armor reduced 10 for 3 seconds.",
+      "fields": {
+        "type": "Crowd control / Defensive damage modifier",
+        "affects": "Enemies / Enemy Heroes",
+        "props": "Armor reduction, Slow",
+        "notes": "Slow from Slam 's inner area continues with its remaining duration once Pulverize ends. Does not stack with other negative Armor effects. Other defensive damage modifiers may stack."
+      },
+      "_raw_fields": [
+        "Pulverize",
+        "6",
+        "1",
+        "All enemies hit by Slam are Slowed by 70% for 0.75 seconds and Heroes have their Armor reduced 10 for 3 seconds.",
+        "File:Pulverize_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Digestive Juices",
+      "tier": "6",
+      "slot": "2",
+      "icon": "Digestive Juices Icon.png",
+      "description": "Devour deals an additional 140 damage over 5 seconds. When used on a Hero, its cooldown is reduced by 4 seconds and causes the Hero hit to deal 50% reduced damage for 4 seconds.",
+      "fields": {
+        "type": "Spell Damage / Offensive damage modifier",
+        "scaling": "4.00%",
+        "affects": "Enemies / Enemy Heroes",
+        "props": "Damage over Time",
+        "tickrate": "1.0 per second (x5)",
+        "prop1": "Damage per tick",
+        "val1": "28",
+        "notes": "DoT and damage reduction effects are independent from each other. Damage reduction stacks additively with other offensive damage modifiers affecting the target Hero's damage output."
+      },
+      "_raw_fields": [
+        "Digestive Juices",
+        "6",
+        "2",
+        "Devour deals an additional 140 damage over 5 seconds. When used on a Hero, its cooldown is reduced by 4 seconds and causes the Hero hit to deal 50% reduced damage for 4 seconds.",
+        "File:Digestive Juices Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Flare Up",
+      "tier": "6",
+      "slot": "3",
+      "icon": "Flare_Up_Icon.png",
+      "description": "Deals 15 damage per second to nearby enemies. Hitting an enemy Hero with Hook or activating Shambling Horror increases this damage by 150% for 4 seconds.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "props": "Area of Effect, Burning Rage",
+        "radius": "2.5 (1",
+        "tickrate": "2.0 per second",
+        "prop1": "Damage per tick",
+        "val1": "7.5",
+        "notes": "1) Extended by Stitches's unit radius. Flare Up is inactive while Mounted. Damaging enemy Heroes with Flare Up does not trigger A Call For Help. Damage bonus stacks additively with offensive damage modifiers that can affect Flare Up 's damage."
+      },
+      "_raw_fields": [
+        "Flare Up",
+        "6",
+        "3",
+        "Deals 15 damage per second to nearby enemies. Hitting an enemy Hero with Hook or activating Shambling Horror increases this damage by 150% for 4 seconds.",
+        "File:Flare_Up_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Gift From The Embalmer",
+      "tier": "7",
+      "slot": "1",
+      "icon": "Gift_From_The_Embalmer_Icon.png",
+      "description": "Putrid Bile deals 100% more damage to Heroes. Questonly Each time Putrid Bile damages an enemy Hero, the duration of Stitches's next death timer is reduced by 2%, to a maximum of 80% total reduction. All stacks of this effect are lost upon death.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Ability",
+        "notes": "Damage bonus stacks additively with other offensive damage modifiers that can affect Putrid Bile 's damage."
+      },
+      "_raw_fields": [
+        "Gift From The Embalmer",
+        "7",
+        "1",
+        "Putrid Bile deals 100% more damage to Heroes. Questonly Each time Putrid Bile damages an enemy Hero, the duration of Stitches's next death timer is reduced by 2%, to a maximum of 80% total reduction. All stacks of this effect are lost upon death.",
+        "File:Gift_From_The_Embalmer_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Hungry Hungry Stitches",
+      "tier": "7",
+      "slot": "2",
+      "icon": "Hungry_Hungry_Stitches_Icon.png",
+      "description": "For 4 seconds after using Gorge, Stitches can teleport a short distance to additional targets and Gorge them. Enemies are Slowed by 75% for 1 second after Gorge ends.",
+      "fields": {
+        "type": "Movement: Teleport / Crowd control",
+        "affects": "Self / Enemy Heroes",
+        "target": "Unit target",
+        "cast": "0 + 0.4 seconds",
+        "range": "3.6",
+        "props": "Slow",
+        "prop1": "Recast cooldown",
+        "val1": "0.5 seconds"
+      },
+      "_raw_fields": [
+        "Hungry Hungry Stitches",
+        "7",
+        "2",
+        "For 4 seconds after using Gorge, Stitches can teleport a short distance to additional targets and Gorge them. Enemies are Slowed by 75% for 1 second after Gorge ends.",
+        "File:Hungry_Hungry_Stitches_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Master Hooker",
+      "tier": "7",
+      "slot": "3",
+      "icon": "Master_Hooker_Icon.png",
+      "description": "Reduce the cooldown of Hook by 4 seconds. Enemy Heroes hit by Hook have 75% reduced healing for 2 seconds. Allies hit by Helping Hand are Unkillable for 2 seconds.",
+      "fields": {
+        "type": "Healing received modifier / Status effect",
+        "affects": "Enemy Heroes / Allied Heroes",
+        "props": "Unkillable, Healing reduction",
+        "notes": "Healing reduction stacks additively with other healing received modifiers."
+      },
+      "_raw_fields": [
+        "Master Hooker",
+        "7",
+        "3",
+        "Reduce the cooldown of Hook by 4 seconds. Enemy Heroes hit by Hook have 75% reduced healing for 2 seconds. Allies hit by Helping Hand are Unkillable for 2 seconds.",
+        "File:Master_Hooker_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Gas Bag",
+      "tier": "7",
+      "slot": "4",
+      "icon": "Gas_Bag_Icon.png",
+      "description": "Activating Shambling Horror grants Unstoppable for 3 seconds. Passive Shambling Horror's cooldown is reduced by 20 seconds.",
+      "fields": {
+        "type": "Status effect",
+        "affects": "Self",
+        "props": "Unstoppable"
+      },
+      "_raw_fields": [
+        "Gas Bag",
+        "7",
+        "4",
+        "Activating Shambling Horror grants Unstoppable for 3 seconds. Passive Shambling Horror's cooldown is reduced by 20 seconds.",
+        "File:Gas_Bag_Icon.png"
+      ],
+      "level": "20"
+    }
+  ],
+  "other": [],
+  "_unparsed_count": 0
+}

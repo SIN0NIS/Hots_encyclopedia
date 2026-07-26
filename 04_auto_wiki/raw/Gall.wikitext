@@ -1,0 +1,233 @@
+{{hero data
+| name = Gall
+| date = November 11, 2015
+| price = 10000
+| title = Twilight's Hammer Chieftain
+| role = Ranged
+| franchise = Warcraft
+| info = Head 2 of a 2 Headed Hero, Gall is a powerful [[Mage]] stuck to Cho.
+| lore = Cho’gall is one of the most powerful, intelligent, and insane ogre-magi to have ever lived. As the leader of the Twilight's Hammer the two brothers seek to bring about an age of destruction... whenever they aren’t bickering that is.
+| difficulty = Easy
+| melee = False
+| health = 
+| healthRegen = 
+| resource = 
+| resourceType = None
+| armor = 
+| attackSpeed = 
+| attackRange = 
+| attackDamage = 
+| healthScaling = 
+| regenScaling = 
+| adamageScaling = 
+| unitRadius = 
+| icon = File:Gall_Icon.png
+| skills = 
+Ogre Rage;D;File:Ogre_Rage_Icon.png;Activate to increase Gall's damage by 25%, but reduce Cho's Armor by 25.<p>{{passive}} Gall is permanently immune to Stun and Silence effects.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Self (Gall only)<!--
+-->|target=No target<!--
+-->|cast=Instant<!--
+-->|notes=<li>Shares cooldown with Cho's ''Ogre Hide''.<li>Gall's Abilities can be cast without dismounting Cho.<li>Damage bonus stacks additively with other offensive damage modifiers that can affect Gall's damage output.}};;;trait;False
+
+Shadowflame;Q;File:Shadowflame_Icon.png;Deal 135 damage to enemies in the area.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=5.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Clamping]]<!--
+-->|cast=Instant<!--
+-->|aoe=Rectangle<!--
+-->|width=1.0<!--
+-->|height=10.6<!--
+-->|notes=}};3;;;False
+
+Dread Orb;W;File:Dread_Orb_Icon.png;Throw a bomb that will bounce three times, dealing 126 damage to enemies.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=5.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Clamping]]<!--
+-->|cast=Instant|range=<br/>- Minimum: 3.0 <sup>(1</sup><br/>- Maximum: 6.5 <sup>(1</sup><!--
+-->|aoe=Circle<!--
+-->|radius=1.6<!--
+-->|notes=<li><sup>1)</sup> This is the cast range of the first bounce. Distance between each bounce is the same as the range first bounce was cast at.}};6;;;False
+
+Runic Blast;E;File:Runic_Blast_Icon.png;Detonate Cho's Rune Bomb, dealing 210 damage around it.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=No target<!--
+-->|props=[[Area of Effect]]<!--
+-->|cast=Instant<!--
+-->|aoe=Circle<!--
+-->|radius=2.5<!--
+-->|notes=}};0.5;;;False
+
+Shadow Bolt Volley;R;File:Shadow_Bolt_Volley_Icon.png;After 1 second, unleash 20 Shadow Bolts over 4 seconds, each dealing 87 damage to the first target hit. The bolts fire towards your mouse.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target, Cursor tracking<!--
+-->|props=[[Clamping]], [[Skillshot]]<!--
+-->|cast=1.0 + 0 seconds<!--
+-->|range=14.76<!--
+-->|radius=0.65 (hitbox)<!--
+-->|missile=15.0<!--
+-->|tickrate=5.0 per second (x20)<!--
+-->|notes=}};60;;heroic;False
+
+Twisting Nether;R;File:Twisting_Nether_Icon.png;After 1 second, nearby enemies are Slowed by 50% while Gall channels, up to 5 seconds. Activate to deal 353 damage.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=5.00%<!--
+-->|affects=Enemies<!--
+-->|target=No target<!--
+-->|props=[[Area of Effect]], [[Channeled Ability]], [[Slow]]<!--
+-->|cast=<br/>- Initial: 0.25 + 0 seconds<br/>- Reactivation: 0.125 + 0 seconds<!--
+-->|aoe=Circle<!--
+-->|radius=5.5<!--
+-->|notes=}};80;;heroic;False
+
+Detonate Twisting Nether;R;File:Detonate_Twisting_Nether_Icon.png;After 1 second, nearby enemies are Slowed by 50% while Gall channels, up to 5 seconds. Activate to deal 353 damage.;1.0;;;False
+
+Eye of Kilrogg;1;File:Eye_of_Kilrogg_Icon.png;Place an eye, granting vision of a large area around it for 45 seconds. The eye can be killed by enemies with 2 Basic Attacks. Stores up to 2 charges.<!--
+-->{{undoc-x|type=Summon<!--
+-->|target=Point target<!--
+-->|cast=Instant<!--
+-->|range=12.0}}<!--
+--><hr/><small>'''Eye of Kilrrogg'''</small>{{undoc-x|nohr=true<!--
+-->|type=Passive<!--
+-->|scaling=-<!--
+-->|prop1=Health|val1=2<!--
+-->|prop2=Basic Attack damage|val2=-<!--
+-->|prop5=Movement Speed|val5=-<!--
+-->|prop7=Sight radius|val7=10.25<!--
+-->|prop8=Leash radius|val8=-<!--
+-->|notes=<li>Takes only 1 damage per instance.}};45
+
+Shove;Z;File:Shove_Icon.png;Nudge Cho a small distance and grant him 25% Movement Speed for 2 seconds.<!--
+-->{{undoc-x|type=Crowd control, Status effect<!--
+-->|affects=Self<!--
+-->|target=Point target<!--
+-->|props=[[Knockback]], [[Movement Speed]]<!--
+-->|cast=Instant<!--
+-->|prop1=Knockback duration|val1=0.1875 seconds<!--
+-->|prop2=Knockback speed|val2=21<!--
+-->|notes=}};30
+
+| talents = <!-- LEVEL 1 -->
+Keep Moving!;1;1;Increases the Movement Speed bonus of Shove by 10% and its duration by 2 seconds.;File:Keep_Moving!_Icon.png;
+
+Taskmaster;1;2;Every time Cho is hit by a Hero Basic Attack, reduce the Cooldown of Shove by 1 second.;File:Taskmaster Icon.png;
+
+We See You!;1;3;Eye of Kilrogg's cooldown is decreased by 25 seconds, its range is increased by 33% and the number of Basic Attacks required to kill it is increased by 1.<!--
+-->{{undoc-x|prop1=Bonus range|val1=4.0<!--
+-->|notes=}};File:We_See_You!_Icon.png;
+
+<!-- LEVEL 4-->
+Rising Dread;2;1;Each bounce of Dread Orb increases its radius by 25% and damage by 15%. Activate Dread Orb before the second bounce ends to reverse the direction of the third bounce.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|prop1=Bonus radius per bounce|val1=0.4<!--
+-->|notes=<li>Stacks additively with itself and other offensive damage modifiers that can affect ''Dread Orb's'' damage.}};File:Rising_Dread_Icon.png;
+
+Runic Persistence;2;2;Runic Blast deals an additional 180 damage over 3 seconds in an area around the detonation point.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|props=[[Area of Effect]]<!--
+-->|aoe=Circle<!--
+-->|radius=2.5<!--
+-->|tickrate=2.0 per second (x6)<!--
+-->|prop1=Damage per tick|val1=30<!--
+-->|notes=}};File:Runic_Persistence_Icon.png;
+
+Bomb's Away;2;3;{{quest|Damaging a Hero with Runic Blast increases its damage by 5, up to 200.|After damaging 20 Heroes, the range and speed of Cho's Rune Bomb is increased by 20%.}}<!--
+-->{{undoc-x|type=Bonus damage<!--
+-->|scaling=-<!--
+-->|affects=Ability<!--
+-->|notes=<li>Also increases the return speed, if Cho has chosen the ''Rollback'' Talent.}};File:Bomb's_Away_Icon.png;
+
+<!-- LEVEL 7 -->
+Edge of Madness;3;1;Every subsequent hit of Shadowflame against the same enemy Hero deals an additional 12% damage, to a maximum of 60%. These bonuses are lost if the Hero has not been hit for 7 seconds.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|notes=<li>Damage bonus stacks additively with itself and other offensive damage modifiers that can affect ''Shadowflame's'' damage.}};File:Edge_of_Madness_Icon.png;
+
+Double Trouble;3;2;{{quest|If Shadowflame hits an enemy Hero that is afflicted by Cho's Consuming Blaze, its cooldown is reduced by 0.5 seconds.|After hitting 20 Heroes, Shadowflame's cooldown is instead permanently reduced by 0.5 seconds.}};File:Double_Trouble_Icon.png;
+
+Ogre Rampage;3;3;Increase the damage bonus of Ogre Rage by 5%. Each time Gall damages enemy Heroes this bonus increases by 1% for 4 seconds, up to an additional 10% bonus damage.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Self<!--
+-->|notes=<li>Requires ''Ogre Rage'' to be active to gain stacks.<li>Cho activating ''Ogre Hide'' causes Gall to instantly lose all stacks.<li>Stacks additively with baseline damage bonus and other offensive damage modifiers.}};File:Ogre_Rampage_Icon.png;
+
+<!-- LEVEL 10 -->
+Shadow Bolt Volley;4;1;{{Cooldown|60}}<br />After 1 second, unleash 20 Shadow Bolts over 4 seconds, each dealing 87 damage to the first target hit. The bolts fire towards your mouse.;File:Shadow_Bolt_Volley_Icon.png;
+Twisting Nether;4;2;{{Cooldown|80}}<br />After 1 second, nearby enemies are Slowed by 50% while Gall channels, up to 5 seconds. Activate to deal 353 damage.;File:Twisting_Nether_Icon.png;
+
+<!-- LEVEL 13 -->
+Searing Shadows;5;1;Enemy Heroes hit by Shadowflame take an additional 2% of their maximum Health as damage.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=-<!--
+-->|props=[[Percent Damage]]<!--
+-->|affects=Enemy Heroes<!--
+-->|notes=}};File:Searing_Shadows_Icon.png;
+
+Psychotic Break;5;2;Increase Gall's damage to enemy Heroes by 10%. Upon dying, Gall gains Ogre Rage and can use Abilities for 10 seconds.<!--
+-->{{undoc-x|type=Offensive damage modifier, Special death state<!--
+-->|notes=<li>Stacks additively with other offensive damage modifiers that can affect Gall's damage.}};File:Psychotic_Break_Icon.png;
+
+Twilight Nova;5;3;After the first bounce of Dread Orb, 2 extra bombs bounce to the sides once.;File:Twilight_Nova_Icon.png;
+
+<!-- LEVEL 16 -->
+Leaden Orb;6;1;Dread Orb Stuns enemy Heroes for 0.75 seconds.<!--
+-->{{undoc-x|type=Crowd control<!--
+-->=|affects=Enemy Heroes<!--
+-->|props=[[Stun]]<!--
+-->|notes=}};File:Leaden_Orb_Icon.png;
+
+Deafening Blast;6;2;Runic Blast Silences enemy Heroes for 1.25 seconds.<!--
+-->{{undoc-x|type=Crowd control<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Silence]]<!--
+-->|notes=}};File:Deafening_Blast_Gall_Icon.png;
+
+Shadowsnare;6;3;Enemy Heroes hit by your Basic Abilities are Slowed by 15% for 4 seconds. This effect can stack up to 2 times.<!--
+-->{{undoc-x|type=Crowd control<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Slow]]<!--
+-->|notes=}};File:Shadowsnare_Icon.png;
+
+<!-- LEVEL 20 -->
+Shadowfury;7;1;Shadow Bolt Volley hits all enemies in its path.;File:Shadowfury_Icon.png;
+
+Shifting Nether;7;2;Twisting Nether now teleports Cho to a targeted location before it begins channeling.<!--
+-->{{undoc-x|type=Movement: [[Teleport]]<!--
+-->|affects=Self<!--
+-->|range=6.0<!--
+-->|notes=<li>An ''Ultimate Evolution'' Clone of Cho will also be teleported by this Ability if in range.}};File:Shifting_Nether_Icon.png;
+
+The Will of Gall;7;3;Takedowns permanently increase the bonus of Ogre Rage by 2%.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Self<!--
+-->|notes=<li>Stacks additively with itself and baseline damage bonus.}};File:The_Will_of_Gall_Icon.png;
+
+Twilight Frenzy;7;4;{{cooldown|30}}<br/>{{active}}Activate to reduce the cooldowns of Shadowflame and Dread Orb to 2 seconds for the next 6 seconds.<!--
+-->{{undoc-x|<!--
+-->|affects=Abilities<!--
+-->|target=No target<!--
+-->|notes=<li>Any Ability on cooldown when ''Twilight Frenzy'' is activated only has its cooldown changed the next time it is used. The 6 second duration of the effect triggers immediately after activation regardless.<li>Changes the base cooldown of both Abilities and therefore stacks multiplicatively with the sum of any cooldown reduction applied to Cho'gall.}};File:Twilight_Frenzy_Icon.png;
+}}
+
+<noinclude>
+{{Scaling table/start|0|0|0|0|0|0}}}
+{{Scaling table/slot|Shadowflame|135|0.05}}
+{{Scaling table/slot|Dread Orb|126|0.05}}
+{{Scaling table/slot|Runic Blast|210|0.04}}
+{{Scaling table/slot|Shadow Bolt Volley|87|0.04|10}}
+{{Scaling table/slot|Shadow Bolt Volley (per second)|435|0.04|10}}
+{{Scaling table/slot|Twisting Nether|353|0.05|10}}
+{{Scaling table/slot|Runic Persistence|180|0.04|4}}
+{{Scaling table/slot|Runic Persistence (per second)|60|0.04|4}}
+{{Scaling table/end}}
+</noinclude>

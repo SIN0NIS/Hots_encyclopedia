@@ -1,0 +1,677 @@
+{
+  "hero": "The Lost Vikings",
+  "abilities": [
+    {
+      "name": "Viking Hoard",
+      "hotkey": "TRAIT",
+      "icon": "Viking_Hoard_Icon.png",
+      "description": "Gathering a Regeneration Globe with a Viking permanently increases all their Health Regeneration by 0.5 per second.; trait",
+      "fields": {
+        "type": "Bonus Health Regeneration",
+        "scaling": "-",
+        "affects": "Self (Vikings)",
+        "notes": "Each Regeneration Globe only counts as 1 stack, even if it's collected by multiple Vikings."
+      }
+    },
+    {
+      "name": "Select Olaf",
+      "hotkey": "1",
+      "icon": "Select_Olaf_Icon.png",
+      "description": "Olaf can charge enemies and Slow their Movement Speed by 30% for 3 seconds by right-clicking on them. 8 second cooldown. Olaf gains increased Health Regeneration when out of combat for 4 seconds. Charge Stoutness",
+      "fields": {
+        "type": "Healing",
+        "affects": "Self (Olaf)",
+        "target": "Unit target",
+        "props": "Slow",
+        "cast": "Instant",
+        "range": "- Minimum: 1.75 - Maximum: 5.0",
+        "missile": "20",
+        "notes": "Targeting an enemy below the minimum range will not initiate Charge, and causes Olaf to Basic Attack them normally. Attack orders issued while Silenced will never trigger the charge, Olaf will simply walk all the way up and Basic Attack normally instead. If Olaf is mid-charge when Play Again triggers from another Viking, he will continue his charge globally, either flying all the way to and hitting his target or returning to the start location of the charge, depending on the part of the animation he is in when Play Again completes.",
+        "scaling": "-",
+        "tickrate": "1.0 per second",
+        "prop1": "Healing per tick",
+        "val1": "5.07% (of max Health)"
+      }
+    },
+    {
+      "name": "Select Baleog",
+      "hotkey": "2",
+      "icon": "Select_Baelog_Icon.png",
+      "description": "Baleog's Basic Attacks deal 50% splash damage to enemies behind his attack target.",
+      "fields": {
+        "type": "Physical Damage",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "props": "Splash",
+        "radius": "5.0",
+        "arc": "65 degrees"
+      }
+    },
+    {
+      "name": "Longboat Raid!",
+      "hotkey": "R",
+      "icon": "Longboat_Raid!_Icon.png",
+      "description": "Hop into an Unstoppable Longboat that fires at nearby enemies for 128 damage per second and can fire a mortar that deals 228 damage in an area. The boat has increased Health for each Viking inside. If the boat is destroyed by enemies, all Vikings are Stunned for 1 second. Lasts 15 seconds. yellowtext Requires all surviving Vikings to be nearby. Longboat",
+      "fields": {
+        "type": "Heroic Pet",
+        "target": "Automatic",
+        "props": "Stasis",
+        "cast": "Instant",
+        "notes": "Longboat's attacks are siege attacks that deal Spell Damage. Longboat's attacks prioritize Heroes, then the closest enemy.",
+        "nohr": "true",
+        "scaling": "4.00% (damage & Health)",
+        "prop1": "Health",
+        "val1": "750 + 185 per Viking",
+        "prop2": "Basic Attack damage",
+        "val2": "64",
+        "prop3": "Attack speed",
+        "val3": "2.00",
+        "prop4": "Attack range",
+        "val4": "11.5",
+        "prop5": "Movement Speed",
+        "val5": "3.3",
+        "cooldown": "90"
+      }
+    },
+    {
+      "name": "Longboat Raid! - Mortar",
+      "hotkey": "Q",
+      "icon": "Mortar_Icon.png",
+      "description": "Fires a mortar at the targeted location, dealing 228 damage in a large area.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "target": "Point target",
+        "props": "Area of Effect",
+        "cast": "Instant",
+        "range": "12",
+        "aoe": "Circle",
+        "radius": "2.5",
+        "notes": "Available during Longboat Raid! . Mortar projectile has a flight time of 0.3, 1.0 or 1.5 seconds, depending on the distance to the target point.",
+        "cooldown": "3"
+      }
+    },
+    {
+      "name": "Play Again!",
+      "hotkey": "R",
+      "icon": "Play_Again!_Icon.png",
+      "description": "Summon, fully heal, and revive all Lost Vikings at target location after a Viking channels for 2 seconds. yellowtext Only one Viking may attempt to summon at a time.",
+      "fields": {
+        "type": "Healing, Resurrection",
+        "affects": "Self",
+        "target": "Point target",
+        "props": "Channeled cast (stationary)",
+        "cast": "2.0(ch) + 0 seconds",
+        "range": "2.5",
+        "radius": "Global",
+        "notes": "Placed on a 10 second cooldown if interrupted. Vikings in Stasis at the end of the channel will not be healed or teleported to the cast location.",
+        "cooldown": "100"
+      }
+    },
+    {
+      "name": "Go Go Go!",
+      "hotkey": "Z",
+      "icon": "Go-go-go.png",
+      "description": "The Vikings gain 30% increased Movement Speed for 4 seconds.",
+      "fields": {
+        "type": "Status effect",
+        "affects": "Self",
+        "target": "No target",
+        "props": "Movement Speed",
+        "cooldown": "30"
+      }
+    }
+  ],
+  "talents": [
+    {
+      "name": "Select Erik",
+      "tier": "3",
+      "slot": "",
+      "icon": "Select_Erik_Icon.png",
+      "description": "Erik moves faster than the other Vikings and has increased Basic Attack range. False",
+      "fields": {
+        "prop1": "Movement speed",
+        "val1": "5.5664",
+        "prop2": "Vision radius",
+        "val2": "13"
+      },
+      "_raw_fields": [
+        "Select Erik",
+        "3",
+        "File:Select_Erik_Icon.png",
+        "Erik moves faster than the other Vikings and has increased Basic Attack range.",
+        "False"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Select All Vikings",
+      "tier": "4",
+      "slot": "",
+      "icon": "Select_All_Vikings_Icon.png",
+      "description": "The Lost Vikings can be controlled individually or as a group. Each Viking has particular strengths. False",
+      "fields": {},
+      "_raw_fields": [
+        "Select All Vikings",
+        "4",
+        "File:Select_All_Vikings_Icon.png",
+        "The Lost Vikings can be controlled individually or as a group. Each Viking has particular strengths.",
+        "False"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Olaf the Stout",
+      "tier": "1",
+      "slot": "1",
+      "icon": "Olaf_the_Stout_Icon.png",
+      "description": "Passive Olaf gains 20% bonus maximum Health. Every 5 seconds, Olaf gains 75 Physical Armor against the next enemy Hero Basic Attack, reducing the damage taken by 75%. Stores up to 2 charges.",
+      "fields": {
+        "type": "Defensive damage modifier, Bonus Health",
+        "scaling": "-",
+        "affects": "Self (Olaf)",
+        "props": "Block, Physical Armor",
+        "notes": "Does not stack with other positive Armor effects. Other defensive damage modifiers may stack."
+      },
+      "_raw_fields": [
+        "Olaf the Stout",
+        "1",
+        "1",
+        "Passive Olaf gains 20% bonus maximum Health. Every 5 seconds, Olaf gains 75 Physical Armor against the next enemy Hero Basic Attack, reducing the damage taken by 75%. Stores up to 2 charges.",
+        "File:Olaf_the_Stout_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Spy Games",
+      "tier": "1",
+      "slot": "2",
+      "icon": "Spy_Games_Icon.png",
+      "description": "After standing still for 3 seconds, Erik gains Stealth and his Sight Radius is increased by 75%. The Stealth persists for 3 seconds after moving and once removed, Erik gains 75% bonus Basic Attack damage for 6 seconds.",
+      "fields": {
+        "type": "Offensive damage modifier, Status effect",
+        "affects": "Self (Erik)",
+        "props": "Stealth",
+        "prop1": "Bonus sight radius",
+        "val1": "10",
+        "notes": "Stacks additively with other offensive damage modifiers that can affect Erik's Basic Attack damage."
+      },
+      "_raw_fields": [
+        "Spy Games",
+        "1",
+        "2",
+        "After standing still for 3 seconds, Erik gains Stealth and his Sight Radius is increased by 75%. The Stealth persists for 3 seconds after moving and once removed, Erik gains 75% bonus Basic Attack damage for 6 seconds.",
+        "File:Spy_Games_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Explosive Attacks",
+      "tier": "1",
+      "slot": "3",
+      "icon": "Explosive_Attacks_Icon.png",
+      "description": "Increases Baleog’s splash damage against non-Heroes to 100%.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Ability",
+        "notes": "Stacks additively with other offensive damage modifiers that can affect Baleog's Basic Attack damage."
+      },
+      "_raw_fields": [
+        "Explosive Attacks",
+        "1",
+        "3",
+        "Increases Baleog’s splash damage against non-Heroes to 100%.",
+        "File:Explosive_Attacks_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Viking Bribery",
+      "tier": "1",
+      "slot": "4",
+      "icon": "Viking_Bribery_Icon.png",
+      "description": "Enemy Minions or captured Mercenaries killed near The Lost Vikings grant stacks of Bribe. Use 40 stacks to bribe target Mercenary, instantly defeating them. Does not work on Elite Mercenaries. Maximum stacks available: 200.",
+      "fields": {
+        "type": "Instant kill",
+        "affects": "Neutral Non-Elite Mercenaries",
+        "target": "Unit target",
+        "props": "Bribe",
+        "cast": "Instant",
+        "range": "6.0",
+        "notes": "Players from either team can see the exact number of stacks for this Talent currently available by hovering over the icon on the Talents screen."
+      },
+      "_raw_fields": [
+        "Viking Bribery",
+        "1",
+        "4",
+        "Enemy Minions or captured Mercenaries killed near The Lost Vikings grant stacks of Bribe. Use 40 stacks to bribe target Mercenary, instantly defeating them. Does not work on Elite Mercenaries. Maximum stacks available: 200.",
+        "File:Viking_Bribery_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Pain Don't Hurt",
+      "tier": "2",
+      "slot": "1",
+      "icon": "Pain_Don't_Hurt_Icon.png",
+      "description": "Baleog's Basic Attacks and splash damage heal for 20% of the damage dealt. Healing is doubled against Heroes.",
+      "fields": {
+        "type": "Healing",
+        "scaling": "-",
+        "affects": "Enemies / Self (Baleog)",
+        "props": "Attack Modifier, Lifesteal"
+      },
+      "_raw_fields": [
+        "Pain Don't Hurt",
+        "2",
+        "1",
+        "Baleog's Basic Attacks and splash damage heal for 20% of the damage dealt. Healing is doubled against Heroes.",
+        "File:Pain_Don't_Hurt_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Erik The Swift",
+      "tier": "2",
+      "slot": "2",
+      "icon": "Erik_The_Swift_Icon.png",
+      "description": "Permanently increases Erik's base Movement Speed by 10%, and as long as Erik is moving he heals 34 Health per second.",
+      "fields": {
+        "type": "Healing, Status effect",
+        "scaling": "4.00%",
+        "props": "Movement Speed",
+        "affects": "Self (Erik)",
+        "tickrate": "1.0 per second",
+        "prop1": "Bonus Movement Speed",
+        "val1": "0.5562",
+        "notes": "You can use shift to queue up Erik to run back and forth in a small area and therefore passively heal while you control another Viking. Movement Speed bonus is an increase to Erik's base Movement Speed, causing it to stack multiplicatively with the highest Movement Speed buff affecting him."
+      },
+      "_raw_fields": [
+        "Erik The Swift",
+        "2",
+        "2",
+        "Permanently increases Erik's base Movement Speed by 10%, and as long as Erik is moving he heals 34 Health per second.",
+        "File:Erik_The_Swift_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "It's a Sabotage!",
+      "tier": "2",
+      "slot": "3",
+      "icon": "Its_a_Sabotage!_Icon.png",
+      "description": "Erik's Basic Attacks against Structures light them on fire for 3 seconds, causing 225 damage.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "4.00%",
+        "affects": "Enemy Structures",
+        "props": "Damage over Time",
+        "tickrate": "1.0 per second",
+        "prop1": "Damage per tick",
+        "val1": "75",
+        "notes": "Does not stack with itself. Reapplying the effect refreshes the duration."
+      },
+      "_raw_fields": [
+        "It's a Sabotage!",
+        "2",
+        "3",
+        "Erik's Basic Attacks against Structures light them on fire for 3 seconds, causing 225 damage.",
+        "File:Its_a_Sabotage!_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Mercenary Lord",
+      "tier": "2",
+      "slot": "4",
+      "icon": "Mercenary_Lord_Icon.png",
+      "description": "Friendly non-Boss Mercenaries near your Hero deal 50% more damage. Gain 50 Armor against Minions and Mercenaries, reducing the damage taken by 50%.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Self (Vikings), Mercenaries",
+        "props": "Area of Effect, Mercenary Lord",
+        "aoe": "Circle",
+        "radius": "9.0",
+        "tickrate": "2.0 per second",
+        "notes": "Damage bonus does not stack with other Mercenary Lord auras and its derivatives. Does not stack with other positive Armor effects against Minions and Mercenaries. Other defensive damage modifiers may stack."
+      },
+      "_raw_fields": [
+        "Mercenary Lord",
+        "2",
+        "4",
+        "Friendly non-Boss Mercenaries near your Hero deal 50% more damage. Gain 50 Armor against Minions and Mercenaries, reducing the damage taken by 50%.",
+        "File:Mercenary_Lord_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Baleog the Fierce",
+      "tier": "3",
+      "slot": "1",
+      "icon": "Baleog_the_Fierce_Icon.png",
+      "description": "Increase Baleog’s attack range by 2.5. While near Olaf and Erik, he becomes inspired by the power of teamwork and his Attack Speed is increased by 50%.",
+      "fields": {
+        "type": "Status effect",
+        "affects": "Self (Baleog)",
+        "props": "Attack Speed",
+        "radius": "16"
+      },
+      "_raw_fields": [
+        "Baleog the Fierce",
+        "3",
+        "1",
+        "Increase Baleog’s attack range by 2.5. While near Olaf and Erik, he becomes inspired by the power of teamwork and his Attack Speed is increased by 50%.",
+        "File:Baleog_the_Fierce_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Spin To Win!",
+      "tier": "3",
+      "slot": "2",
+      "icon": "Spin_To_Win_Icon.png",
+      "description": "cooldown 10 Activate to have each Viking deal 85 damage to nearby enemies. Deals 100% bonus damage to enemy Heroes.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "target": "No target",
+        "props": "Area of Effect",
+        "cast": "Instant",
+        "aoe": "Circle",
+        "radius": "2.0",
+        "notes": "Hero bonus stacks additively with offensive damage modifiers that can affect Spin To Win! 's damage."
+      },
+      "_raw_fields": [
+        "Spin To Win!",
+        "3",
+        "2",
+        "cooldown 10 Activate to have each Viking deal 85 damage to nearby enemies. Deals 100% bonus damage to enemy Heroes.",
+        "File:Spin_To_Win_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Norse Force",
+      "tier": "3",
+      "slot": "3",
+      "icon": "Norse_Force_Icon.png",
+      "description": "cooldown 15 All Vikings gain a 140 to 308 point Shield, increasing in strength for each Viking alive. Lasts 4 seconds.",
+      "fields": {
+        "type": "Shield",
+        "scaling": "4.00%",
+        "affects": "Self (Vikings)",
+        "target": "No target",
+        "cast": "Instant",
+        "prop1": "Bonus Shield per Viking",
+        "val1": "84"
+      },
+      "_raw_fields": [
+        "Norse Force",
+        "3",
+        "3",
+        "cooldown 15 All Vikings gain a 140 to 308 point Shield, increasing in strength for each Viking alive. Lasts 4 seconds.",
+        "File:Norse_Force_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Longboat Raid!",
+      "tier": "4",
+      "slot": "1",
+      "icon": "Longboat_Raid_Icon.png",
+      "description": "cooldown 90 Hop into an Unstoppable Longboat that fires at nearby enemies for 128 damage per second and can fire a mortar that deals 228 damage in an area. The boat has increased Health for each Viking inside. If the boat is destroyed by enemies, all Vikings are Stunned for 1 second. Lasts 15 seconds. yellowtext Requires all surviving Vikings to be nearby.",
+      "fields": {},
+      "_raw_fields": [
+        "Longboat Raid!",
+        "4",
+        "1",
+        "cooldown 90 Hop into an Unstoppable Longboat that fires at nearby enemies for 128 damage per second and can fire a mortar that deals 228 damage in an area. The boat has increased Health for each Viking inside. If the boat is destroyed by enemies, all Vikings are Stunned for 1 second. Lasts 15 seconds. yellowtext Requires all surviving Vikings to be nearby.",
+        "File:Longboat_Raid_Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Play Again!",
+      "tier": "4",
+      "slot": "2",
+      "icon": "Play_Again!_Icon.png",
+      "description": "cooldown 100 Summon, fully heal, and revive all Lost Vikings at target location after a Viking channels for 2 seconds. yellowtext Only one Viking may attempt to summon at a time.",
+      "fields": {},
+      "_raw_fields": [
+        "Play Again!",
+        "4",
+        "2",
+        "cooldown 100 Summon, fully heal, and revive all Lost Vikings at target location after a Viking channels for 2 seconds. yellowtext Only one Viking may attempt to summon at a time.",
+        "File:Play_Again!_Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Hunka' Burning Olaf",
+      "tier": "5",
+      "slot": "1",
+      "icon": "Hunka'_Burning_Olaf_Icon.png",
+      "description": "Olaf deals 34 damage every second to nearby enemies.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "props": "Area of Effect",
+        "aoe": "Circle",
+        "radius": "2.5",
+        "tickrate": "1.0 seconds"
+      },
+      "_raw_fields": [
+        "Hunka' Burning Olaf",
+        "5",
+        "1",
+        "Olaf deals 34 damage every second to nearby enemies.",
+        "File:Hunka'_Burning_Olaf_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Jump!",
+      "tier": "5",
+      "slot": "2",
+      "icon": "Jump!_Icon.png",
+      "description": "cooldown 30 Makes all Vikings Invulnerable and able to pass over enemies for 1.5 seconds.",
+      "fields": {
+        "type": "Status effect",
+        "affects": "Self (Vikings)",
+        "target": "No target",
+        "props": "Invulnerable",
+        "cast": "Instant",
+        "notes": "Cannot be activated if Stunned, Silenced, or in Stasis, except you can select a Viking which isn't so impaired and press W to immediately free all 3 Vikings with this Talent."
+      },
+      "_raw_fields": [
+        "Jump!",
+        "5",
+        "2",
+        "cooldown 30 Makes all Vikings Invulnerable and able to pass over enemies for 1.5 seconds.",
+        "File:Jump!_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Nordic Attack Squad",
+      "tier": "5",
+      "slot": "3",
+      "icon": "Nordic_Attack_Squad_Icon.png",
+      "description": "While Olaf, Baleog, and Erik are near each of the other Vikings, their Basic Attacks deal bonus damage equal to 1.25% maximum Health to enemy Heroes.",
+      "fields": {
+        "type": "Percent Damage",
+        "scaling": "-",
+        "affects": "Enemy Heroes",
+        "target": "No target",
+        "props": "Percent Damage",
+        "radius": "16"
+      },
+      "_raw_fields": [
+        "Nordic Attack Squad",
+        "5",
+        "3",
+        "While Olaf, Baleog, and Erik are near each of the other Vikings, their Basic Attacks deal bonus damage equal to 1.25% maximum Health to enemy Heroes.",
+        "File:Nordic_Attack_Squad_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Large and In Charge",
+      "tier": "6",
+      "slot": "1",
+      "icon": "Large_and_In_Charge_Icon.png",
+      "description": "When Olaf charges enemies, they are Stunned for 1 second.",
+      "fields": {
+        "type": "Crowd control",
+        "affects": "Enemies",
+        "props": "Stun"
+      },
+      "_raw_fields": [
+        "Large and In Charge",
+        "6",
+        "1",
+        "When Olaf charges enemies, they are Stunned for 1 second.",
+        "File:Large_and_In_Charge_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Impatience Is a Virtue",
+      "tier": "6",
+      "slot": "2",
+      "icon": "Impatience_Is_a_Virtue_Icon.png",
+      "description": "Enemies damaged by a Viking's Basic Attack reduce the cooldown of all Viking Abilities by 0.3125 seconds.",
+      "fields": {
+        "props": "Attack Modifier"
+      },
+      "_raw_fields": [
+        "Impatience Is a Virtue",
+        "6",
+        "2",
+        "Enemies damaged by a Viking's Basic Attack reduce the cooldown of all Viking Abilities by 0.3125 seconds.",
+        "File:Impatience_Is_a_Virtue_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "64 KB Marathon",
+      "tier": "6",
+      "slot": "3",
+      "icon": "64_KB_Marathon_Icon.png",
+      "description": "Activating Go Go Go! grants an additional 40% Movement Speed and breaks the Vikings out of Roots and Slows.",
+      "fields": {
+        "type": "CC removal",
+        "affects": "Self",
+        "notes": "Stacks additively with baseline Go Go Go! Movement Speed bonus, but not with other Movement Speed bonuses."
+      },
+      "_raw_fields": [
+        "64 KB Marathon",
+        "6",
+        "3",
+        "Activating Go Go Go! grants an additional 40% Movement Speed and breaks the Vikings out of Roots and Slows.",
+        "File:64_KB_Marathon_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Executioner",
+      "tier": "6",
+      "slot": "4",
+      "icon": "Executioner_Icon.png",
+      "description": "Attacking a Hero who is Slowed, Rooted, or Stunned increases your Basic Attack damage by 30% for 3 seconds.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Enemy Heroes",
+        "props": "Attack Modifier",
+        "notes": "The effect triggers separately on each Viking. Stacks additively with other offensive damage modifiers that can affect Vikings' Basic Attack damage."
+      },
+      "_raw_fields": [
+        "Executioner",
+        "6",
+        "4",
+        "Attacking a Hero who is Slowed, Rooted, or Stunned increases your Basic Attack damage by 30% for 3 seconds.",
+        "File:Executioner_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Ragnarok 'n' Roll!",
+      "tier": "7",
+      "slot": "1",
+      "icon": "Ragnarok_'n'_Roll!_Icon.png",
+      "description": "The Longboat can attack two targets at once and the range of its Mortar is increased by 100%. Reduce Longboat Raid!'s cooldown by 30 seconds.",
+      "fields": {
+        "prop1": "Bonus range",
+        "val1": "6.0"
+      },
+      "_raw_fields": [
+        "Ragnarok 'n' Roll!",
+        "7",
+        "1",
+        "The Longboat can attack two targets at once and the range of its Mortar is increased by 100%. Reduce Longboat Raid!'s cooldown by 30 seconds.",
+        "File:Ragnarok_'n'_Roll!_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Checkpoint Reached",
+      "tier": "7",
+      "slot": "2",
+      "icon": "Checkpoint_Reached_Icon.png",
+      "description": "10 seconds after using Play Again!, any dead Vikings are revived and summoned again, and all are healed to full.",
+      "fields": {},
+      "_raw_fields": [
+        "Checkpoint Reached",
+        "7",
+        "2",
+        "10 seconds after using Play Again!, any dead Vikings are revived and summoned again, and all are healed to full.",
+        "File:Checkpoint_Reached_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "The Sequel!",
+      "tier": "7",
+      "slot": "3",
+      "icon": "The_Sequel!_Icon.png",
+      "description": "Reduces The Lost Vikings' death timer by 50%.",
+      "fields": {},
+      "_raw_fields": [
+        "The Sequel!",
+        "7",
+        "3",
+        "Reduces The Lost Vikings' death timer by 50%.",
+        "File:The_Sequel!_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Fury of the Storm",
+      "tier": "7",
+      "slot": "4",
+      "icon": "Fury_of_the_Storm_Icon.png",
+      "description": "Every 5 seconds, the next Basic Attack will deal an additional 41 damage to the target, and 105 damage to all nearby Minions, Mercenaries and Monsters. Each Viking has their own cooldown.",
+      "fields": {
+        "type": "Bonus damage / Physical Damage",
+        "scaling": "4.00%",
+        "affects": "Enemies (primary) / Enemy Minions and Mercenaries (splash)",
+        "props": "Splash",
+        "aoe": "Circle",
+        "radius": "6.0"
+      },
+      "_raw_fields": [
+        "Fury of the Storm",
+        "7",
+        "4",
+        "Every 5 seconds, the next Basic Attack will deal an additional 41 damage to the target, and 105 damage to all nearby Minions, Mercenaries and Monsters. Each Viking has their own cooldown.",
+        "File:Fury_of_the_Storm_Icon.png"
+      ],
+      "level": "20"
+    }
+  ],
+  "other": [],
+  "_unparsed_count": 0
+}

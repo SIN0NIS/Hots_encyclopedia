@@ -1,0 +1,229 @@
+
+{{hero data
+| name = Zeratul
+| date = March 13, 2014
+| price = 10000
+| title = Dark Prelate
+| role = Melee
+| franchise = Starcraft
+| info = A [[stealth]]ed Assassin who can dart around his enemies. 
+| lore = The enigmatic Dark Templar Zeratul serves the Xel'Naga. While he expertly wields the power of the Void, it is his wisdom that earns him the respect of the Koprulu sector's leaders - despite his penchant for dramatic entrances.
+| difficulty = Hard
+| melee = True
+| health = 1622
+| healthRegen = 3.379
+| resource = 500
+| resourceType = Mana
+| armor = 0
+| attackSpeed = 1.11
+| attackRange = 1.5
+| attackDamage = 126
+| healthScaling = 0.04
+| regenScaling = 0.04
+| adamageScaling = 0.04
+| unitRadius = 0.75
+| icon = File:Zeratul_Icon.png
+| skills =
+ Permanent Cloak;Trait;File:Permanent_Cloak_Icon.png;Gain Stealth when out of combat for 3 seconds. Taking damage, attacking, using Abilities, or channeling ends Stealth. Remaining stationary for at least 1.5 seconds while Stealthed grants Invisible.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|props=[[Stealth]]<!--
+-->|notes=<li>Stealth and Invisibility can be gained while mounted.}};3;;trait;False
+
+Cleave;Q;File:Cleave_Icon.png;Deal 200 damage to nearby enemies.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=No target<!--
+-->|props=[[Area of Effect]]<!--
+-->|cast=Instant<!--
+-->|aoe=Circle<!--
+-->|radius=3.0<!--
+-->|notes=}};6;40;;False
+
+Singularity Spike;W;File:Singularity_Spike_Icon.png;Flings a Singularity Spike that sticks to the first enemy hit. Deals 240 damage after 1 second and Slows the enemy by 40% for 3 seconds.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Clamping]], [[Skillshot]], [[Slow]]<!--
+-->|cast=0.1 + 0 seconds<!--
+-->|range=9.25<!--
+-->|hitbox=1.25 x 1.35<!--
+-->|missile=25<!--
+-->|notes=<li>''Singularity Spike'' grants vision in 2.7 radius around the target, until it explodes.<li>''Singularity Spike'' is instantly removed, preventing any associated effects from triggering, if the target becomes [[Invulnerable]], or enters [[Stasis]].}};12;70;;False
+
+Blink;E;File:Blink_Icon.png;Teleport to the target location.<p>Using this Ability does not break Stealth.<!--
+-->{{undoc-x|type=Movement: [[Teleport]]<!--
+-->|target=Point target<!--
+-->|props=[[Clamping]]<!--
+-->|cast=Instant<!--
+-->|range=7.15<!--
+-->|notes=}};10;50;;True
+
+Might Of The Nerazim;R;File:Might_Of_The_Nerazim_Icon.png;Activate to cast an untalented version of Zeratul's most recently used Basic Ability, dealing 50% less damage.<p>{{Passive}} After using an Ability, Zeratul's next Basic Attack within 6 seconds deals 30% more damage.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Attack Modifier]]<!--
+-->|notes=<li>Does not interact with ''Vorpal Blade'' in any way.<li>Has all the same properties as the untalented Basic Ability, except its base damage is set to half of the original.<li>''Might of the Nerazim'' does not affect Talented versions of the Ability that involve reactivating the Ability.<li>Attack Damage bonus stacks additively with other offensive damage modifiers affecting Zeratul's Basic Attack damage.}};20;30;heroic;False
+
+Void Prison;R;File:Void_Prison_Icon.png;Slows time in an area to a near standstill, placing allies and enemies in Time Stop for 5 seconds. Zeratul is not affected.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Units (excl. Self), Capture points<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Time Stop]]<!--
+-->|cast=0.1 + 0 seconds<!--
+-->|range=5.0<!--
+-->|aoe=Circle<!--
+-->|radius=2.625<!--
+-->|notes=<li>''Void Prison'' can be ended prematurely by reactivating the Ability.<li>Target units that walk into the AoE after the Ability has been cast are also affected.}};100 / 1.5;80;heroic;False
+
+Vorpal Blade;1;File:Vorpal_Blade_Icon.png;Activate to teleport to Zeratul's last non-Structure Basic Attack target within 3 seconds. The target is Revealed during these 3 seconds.{{undoc-x|type=Status effect / Movement: [[Teleport]]<!--
+-->|affects=Enemies / Self<!--
+-->|target=No target<!--
+-->|props=[[Attack Modifier]], [[Revealed]]<!--
+-->|cast=Instant<!--
+-->|range=Global<!--
+-->|notes=<li>When teleporting with ''Vorpal Blade'', Zeratul retains the direction he is facing and is placed right next to the target in a position where the target is right in front of him.<li>The mark is consumed immediately upon cast, but the target will still be revealed for its full duration (3 seconds after the last AA).}};15;;:False
+
+| talents =
+<!-- LEVEL 1 -->
+Greater Cleave;1;1;Increases the radius of Cleave by 33%.<!--
+-->{{undoc-x|prop1=Bonus radius|val1=1}};File:Greater_Cleave_Icon.png;
+
+Shadow Hunter;1;2;{{quest|Gather [[Regeneration Globe]]s to lower the Mana cost of Blink by 3.|Upon gathering 15 Regeneration Globes, Basic Attacks reduce the cooldown of Blink by 1.5 seconds.}}<!--
+-->{{undoc-x|type=Cooldown reduction<!--
+-->|affects=Self<!--
+-->|notes=}};File:Shadow_Hunter_Icon.png;
+
+Move Unseen;1;3;Reduce the cooldown of Permanent Cloak by 1 second. Gain 30% Movement Speed while Stealthed.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|props=[[Movement speed]]<!--
+-->}};File:Move_Unseen_Icon.png;
+
+<!-- LEVEL 4 -->
+Rending Cleave;2;1;Cleave deals an additional 40% damage over 3 seconds.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|props=[[Damage over Time]]<!--
+-->|tickrate=1.0 per second (x3)<!--
+-->|prop1=Damage per tick|val1=26.67<!--
+-->|notes=<li>''Rending Cleave'' benefits from all of Zeratul's talents affecting ''Cleave''.<li>''Rending Cleave'' has independent base damage values, causing the given percentage to stack '''multiplicatively''' with offensive damage modifiers.}};File:Rending_Cleave_Icon.png;
+
+Psionic Strength;2;2;Dealing damage to enemy Heroes increases all damage dealt by 6% for 3 seconds, stacking up to 30%.<!--
+-->{{undoc-x<!--
+-->|type=Offensive damage modifier<!--
+-->|scaling=4.00%<!--
+-->|affects=Self<!--
+-->|notes=<li>''Psionic Strength'' gains a stack after an enemy Hero has been damaged and therefore only affects subsequent instances of damage.<li>Stacks additively with itself and other damage modifiers affecting Zeratul's damage output.}};File:Psionic_Strength_Icon.png;
+
+Darkness Descends;2;3;{{cooldown|30}}<br/>Activate to gain 40% bonus Attack Speed for 5 seconds.<p>{{passive}} Gain 20% Attack Speed.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|props=[[Attack Speed]]<!--
+-->|cast=Instant<!--
+-->|notes=<li>Active and passive bonuses stack additively with each other as well as other effects affecting Zeratul's Attack Speed.}};File:Darkness_Descends_Icon.png
+
+<!-- LEVEL 7 -->
+Wormhole;3;1;After 1.25 seconds, reactivate Blink to return to the point where it was cast from, within 4 seconds.<!--
+-->{{undoc-x|type=Movement: [[Teleport]]<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|cast=Instant<!--
+-->|notes=}};File:Wormhole_Icon.png;
+
+Seeker in the Dark;3;2;Singularity Spike takes 50% longer to explode. It can be reactivated to teleport to the target, granting 30% increased Move Speed for 3 seconds.<!--
+-->{{undoc-x|type=Movement: [[Teleport]], Status effect<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|props=[[Movement speed]]<!--
+-->|notes=}};File:Seeker_in_the_Dark_Icon.png;
+
+Warp Skirmisher;3;3;Vorpal Blade gains a 2nd charge. Teleporting with Vorpal Blade or entering Permanent Cloak causes Zeratul's next Basic Attack to deal 50% increased damage.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|scaling=4.00%<!--
+-->|affects=Self<!--
+-->|props=[[Attack Modifier]]<!--
+-->|prop1=Charge cooldown|val1=0.5 seconds<!--
+-->|notes=<li>Stacks additively with other offensive damage modifiers that can affect Zeratul's Basic Attack damage.}};File:Warp_Skirmisher_Icon.png
+
+<!-- LEVEL 10 -->
+Might of the Nerazim;4;1;{{Cooldown|20}}<br />Activate to cast an untalented version of Zeratul's most recently used Basic Ability, dealing 50% less damage.<p>{{Passive}} After using an Ability, Zeratul's next Basic Attack within 6 seconds deals 30% more damage.;File:Might_Of_The_Nerazim_Icon.png;
+Void Prison;4;2;{{Cooldown|100}}<br />Slows time in an area to a near standstill, placing allies and enemies in [[Time Stop]] for 5 seconds. Zeratul is not affected.;File:Void_Prison_Icon.png;
+
+<!-- LEVEL 13 -->
+Shroud of Adun;5;1;Zeratul gains a Shield equal to 20% of his Maximum Health over 3 seconds while under Permanent Cloak.<!--
+-->{{undoc-x|type=Shield<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|tickrate=1.0 per second (x3)<!--
+-->|prop1=Shield per tick|val1=6.6%<!--
+-->|notes=}};File:Shroud_of_Adun_Icon.png;
+
+Mending Strikes;5;2;Basic Attacks heal for 35% of the damage dealt.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|props=[[Attack Modifier]], [[Lifesteal]]<!--
+-->|notes=}};File:Mending_Strikes_Icon.png;
+
+Spell Shield;5;3;Every 30 seconds, gain 50 Spell Armor against the next Ability and subsequent Abilities for 3 seconds, reducing the damage taken by 50%.<p>Can be toggled to allow or prevent this talent from triggering automatically.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Self<!--
+-->|target=No target (toggle)<!--
+-->|props=[[Spell Armor]], [[Spell Shield]]<!--
+-->|cast=Instant<!--
+-->|prop1=Toggle cooldown|val1=0.5 seconds<!--
+-->|notes=<li>Does not stack with other positive Spell Armor effects. Other defensive damage modifiers may stack.}};File:Spell_Shield_Icon.png;
+
+<!-- LEVEL 16 -->
+Master Warp-Blade;6;1;Every third consecutive Basic Attack against the same target deals 125% bonus damage.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Attack Modifier]]<!--
+-->|notes=<li>Stacks additively with other damage modifiers that can affect Zeratul's Basic Attack damage.}};File:Master_Warp-Blade_Icon.png;
+
+Void Slash;6;2;If Cleave hits more than one enemy Hero, it deals 40% increased damage and its cooldown is reduced by 3 seconds.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|notes=<li>Also affects damage over time from ''Rending Cleave''.<li>Stacks additively with other damage modifiers that can affect <i>Cleave</i>'s damage output.}};File:Void_Slash_Icon.png;
+
+Sentenced to Death;6;3;Deal 25% increased damage to enemies while they are marked or Slowed by Singularity Spike.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Enemies<!--
+-->|notes=<li>Removing the Slow effect from the target after ''Singularity Spike'' has exploded also removes the damage bonus.<li>Stacks additively with other offensive damage modifiers affecting Zeratul's damage output.}};File:Sentenced_to_Death_Icon.png;
+
+<!-- LEVEL 20 -->
+Twilight Falls;7;1;Might of the Nerazim resets the cooldown of all Basic Abilities.;File:Twilight_Falls_Icon.png;
+
+Unwavering Pressure;7;2;Singularity Spike no longer costs Mana. Basic Attacks against enemies reduce its cooldown by 1.25 seconds, doubled against Heroes.<!--
+-->{{undoc-x|props=[[Attack Modifier]]<!--
+-->|notes=}};File:Unwavering_Pressure_Icon.png;
+
+Shadow Stride;7;3;Reduce the cooldown of Vorpal Blade by 10 seconds. Casting Vorpal Blade grants Zeratul a Shield that absorbs 260 damage over 3 seconds.<!--
+-->{{undoc-x|type=Shield<!--
+-->|scaling=4.00%<!--
+-->|affects=Self<!--
+-->|notes=<li>Does not stack with itself. Subsequent applications refresh the Shield amount and duration.}};File:Shadow_Stride_Icon.png
+
+Shadow Mending;7;4;Heal for 60% of Spell Damage dealt to Heroes.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|props=[[Lifesteal]]<!--
+-->|notes=}};File:Shadow_Mending_Icon.png;
+
+}}
+<noinclude>
+{{Scaling table/start|{{#var:health}}|{{#var:health scaling}}|{{#var:health regen}}|{{#var:health regen scaling}}|{{#var:attack damage}}|{{#var:attack damage scaling}}}}
+{{Scaling table/slot|Cleave|200|0.04}}
+{{Scaling table/slot|Singularity Spike|240|0.04}}
+{{Scaling table/slot|Might of the Nerazim - Cleave|100|0.04|10}}
+{{Scaling table/slot|Might of the Nerazim - Singularity Spike|120|0.04|10}}
+{{Scaling table/slot|Rending Cleave|26.67|0.04|4}}
+{{Scaling table/slot|Shadow Stride|260|0.04|20}}
+{{Scaling table/end}}
+</noinclude>

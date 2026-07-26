@@ -1,0 +1,270 @@
+{{hero data
+| name = Alexstrasza
+| date = November 14, 2017
+| price = 10000
+| title = The Life Binder
+| role = Healer
+| franchise = Warcraft
+| info = A Healer who shares her Health with allies and can transform into a Dragon to empower her Abilities.
+| lore = Alexstrasza, the queen of dragons, was empowered by the titans to be the guardian of all life on Azeroth. She has aided mortals time and again, even at great personal cost. Now, she soars across the Nexus, protecting life wherever she finds it.
+| difficulty = Medium
+| melee = False
+| health = 1698
+| healthRegen = 3.539
+| resource = 500
+| resourceType = Mana
+| armor = None
+| attackSpeed = 1.00
+| attackRange = 5.5
+| attackDamage = 73
+| healthScaling = 0.04
+| regenScaling = 0.04
+| adamageScaling = 0.04
+| unitRadius = 0.625
+| icon = File:Alexstrasza_Icon.png
+| skills = 
+Dragonqueen;D;File:Dragonqueen_Icon.png;After 1.25 seconds, transform into a dragon and gain 500 Health. While Dragonqueen is active, Alexstrasza's Basic Abilities are empowered, her Basic Attacks deal 143 damage and heal allied Heroes for 43 in an arc in front of her, and the duration of incoming Slows, Roots, and Stuns is reduced by 50%. Lasts 15 seconds.<!--
+-->{{undoc-x|type=Transformation, Status effect / Physical Damage / Healing<!--
+-->|scaling=4.00%<!--
+-->|affects=Self / Enemies / Allied Heroes<!--
+-->|target=No target<!--
+-->|props=[[Attack Modifier]], [[Channeled cast]] (stationary), CC-reduction, [[Splash]], [[Stasis]]<!--
+-->|cast=1.25 (ch) + 0.5 seconds<!--
+-->|prop1=Attack damage|val1=143<!--
+-->|prop2=Attack speed|val2=0.8<!--
+-->|prop3=Attack range|val3=9.0<!--
+-->|prop4=Splash arc|val4=50 degrees<!--
+-->|width=<!--
+-->|height=<!--
+-->|hitbox=<!--
+-->|missile=<!--
+-->|tickrate=<!--
+-->|notes=<li>Interrupting ''Dragonqueen'' during its cast puts it on a 10-second cooldown.<li>''Dragonqueen'' grants Alexstrasza a different set of Basic Abilities, which have independent cooldowns and are unaffected by Alexstrasza's Talents that interact with her base form Basic Abilities.<li>When the Ability is successfully cast, and upon ending and transformation back to base form, Alexstrasza enters [[Stasis]] for 0.5 seconds. In addition to usual effects of Stasis, Alexstrasza is removed from the ground plane (disjoints certain projectiles), has no collision, cannot regenerate Health, Mana, Energy or Shields and cannot be seen on the minimap or revealed.<li>Both current and maximum Health are increased upon successful transformation. When the Ability expires, only maximum Health is reduced back to normal.<li>''Dragonqueen's'' cooldown starts when the Ability is successfully cast.}};150;;trait;False
+
+Gift of Life;Q;File:Gift_of_Life_Icon.png;Sacrifice 15% of Alexstrasza's current Health, healing an ally for 150% of that amount.<p>{{Passive}} Alextraza's Health regeneration is increased by 150%<p>{{purpletext|'''Dragonqueen: Breath of Life'''}}<br>Cooldown greatly reduced and does not cost Health.<!--
+-->{{undoc-x|type=Healing / Self-damage<!--
+-->|scaling=-<!--
+-->|affects=Allied Heroes / Self<!--
+-->|target=Unit target<!--
+-->|props=<!--
+-->|cast=Instant<!--
+-->|range=7.0<!--
+-->|prop1=Bonus Health regeneration|val1=5.3047 per second<!--
+-->|notes=<li>Passive Health regeneration bonus also affects Alexstrasza in her dragon form.<li>Passive bonus directly increases Alexstrasza's base Health regeneration, meaning that calculations using the given percentage should be made multiplicatively with any modifiers affecting her Health regeneration.}};7;
+
+Breath of Life;Q;File:Breath_of_Life_Icon.png;Heal an Ally for 20% of Alexstrasza's current Health.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=-<!--
+-->|affects=Allied Heroes<!--
+-->|target=Unit target<!--
+-->|props=<!--
+-->|cast=Instant<!--
+-->|range=10.5<!--
+-->|notes=}};3;
+
+Abundance;W;File:Abundance_Icon.png;Plant a seed of healing that blooms after 3 seconds, healing nearby allied Heroes for 20% of their maximum Health.<p>{{purpletext|'''Dragonqueen: Preservation'''}}<br>Heal area and amount greatly increased.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=-<!--
+-->|affects=Allied Heroes, Self<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Clamping]]<!--
+-->|cast=0.125 + 0 seconds<!--
+-->|range=11.5<!--
+-->|aoe=Circle<!--
+-->|radius=3.0<!--
+-->|notes=<li>Target area is visible to enemies.}};14;75
+
+Preservation;W;File:Preservation_Icon.png;Plant a seed of healing that blooms after 3 seconds, healing nearby allied Heroes for 30% of their maximum Health.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=-<!--
+-->|affects=Allied Heroes, Self<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Clamping]]<!--
+-->|cast=0.125 + 0 seconds<!--
+-->|range=11.5<!--
+-->|aoe=Circle<!--
+-->|radius=4.0<!--
+-->|notes=<li>Target area is visible to enemies.}};16;
+
+Flame Buffet;E;File:Flame_Buffet_Icon.png;Launch a fireball, Burning enemies hit for 75 damage over 5.5 seconds. Hitting enemies that are already Burning deals 125 bonus damage upon impact, Slows them by 40% decaying over 2 seconds, and refunds the Mana cost.<p>{{purpletext|'''Dragonqueen: Wing Buffet'''}}<br>Damage and Knockback enemies in an arc.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Clamping]], [[Damage over Time]], Piercing [[Skillshot]], [[Slow]]<!--
+-->|cast=0.125 + 0 seconds<!--
+-->|range=12<!--
+-->|hitbox=1.35 x 2.6<!--
+-->|missile=24<!--
+-->|tickrate=1.0 per second (x5)<!--
+-->|prop1=Damage per tick|val1=12<!--
+-->|notes=}};2;50
+
+Wing Buffet;E;File:Wing_Buffet_Icon.png;Deal 162 damage to enemies in an area, knocking them back and Slowing them by 50% for 3 seconds.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Clamping]], [[Knockback]]<!--
+-->|cast=0.25 + 0 seconds<!--
+-->|range=3.0<!--
+-->|aoe=Circle<!--
+-->|radius=7.8 (maximum)<!--
+-->|arc=50 degrees<!--
+-->|prop1=Knockback duration|val1=0.3125 seconds<!--
+-->|prop2=Knockback speed|val2=16.5<!--
+-->|notes=<li>The area starts at 3 radius and grows to its maximum radius over 0.3125 seconds.}};4;
+
+Life-Binder;R;File:Life-Binder_Icon.png;Bind Alexstrasa's life force with an allied Hero. Both she and her target are healed for 480 over 2 seconds. Afterward, the Hero with a lower percentage of health is set to the same Health percentage as the other Hero.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=4.00% (over time)/ - (end)<!--
+-->|affects=Allied Heroes, Self<!--
+-->|target=Unit target<!--
+-->|props=Delayed Heal<!--
+-->|cast=0 + 0.1875 seconds<!--
+-->|range=6.0<!--
+-->|tickrate=4.0 per second (x8)<!--
+-->|prop1=Heal per tick|val1=60<!--
+-->|notes=<li>Life-Binder immediately ends, going on full cooldown, if either of the two linked Heroes dies, becomes [[Time Stopped]], enters a [[Vehicle]] or hostile [[Stasis]] or otherwise becomes untargetable by friendly Abilities.<li>The heal resolves normally if the target ally enters a friendly Stasis effect, like ''Ice-Block'' or ''Bunker''. However, the Ability still ends if Alexstrasza herself enters Stasis through means other than her ''Dragonqueen'' transformation.}};50;50
+
+Cleansing Flame;R;File:Cleansing_Flame_Icon.png;After 1.25 seconds, take to the sky and drop fireballs at the position of your mouse cursor every 1.2 seconds for 6 seconds. Each fireball restores 300 Health to nearby allied Heroes, and deals 135 damage to nearby enemies. 2 seconds after dropping all fireballs, Alexstrasza lands at the position of your mouse cursor.<!--
+-->{{undoc-x|type=Spell Damage / Healing / Status effect<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies / Allied Heroes / Self<!--
+-->|target=No target<!--
+-->|props=[[Area of Effect]], [[Channeled cast]] (stationary), [[Stasis]]<!--
+-->|cast=<br/>- Base form: 1.25 (ch) + 0 seconds<br/>- Dragonqueen: Instant<!--
+-->|range=20 (retarget)<!--
+-->|aoe=Circle<!--
+-->|radius=3.0<!--
+-->|notes=<li>Interrupting ''Cleansing Flame'' during its cast period puts it on a 10-second cooldown.<li><i>Cleansing Flame</i>'s cooldown starts when the Ability is successfully cast.<li>For the duration of the Ability, Alexstrasza is put in [[Stasis]]. In addition to the usual effects of Stasis, Alexstrasza is removed from the ground plane (disjoints certain projectiles), has no collision, cannot regenerate Health, Mana, Energy or Shields and cannot be seen on the minimap or revealed.<li><i>Dragonqueen</i>'s duration is paused during ''Cleansing Flame'' but its cooldowns are not.}};100;100
+
+| talents = <!-- LEVEL 1 -->
+Live and Let Live;1;1;While Alexstrasza is above 75% Health, Gift of Life's cooldown recharges 125% faster.;File:Live_and_Let_Live_Icon.png;
+
+Circle of Life;1;2;{{Quest|Collect Regeneration Globes.|After collecting 10 Regeneration Globes, Abundance heals for an additional 5% of maximum Health.}}<p>{{Reward|After collecting 15 Regeneration Globes, Abundance's healing burst creates a Regeneration Globe.}}<!--
+-->{{undoc-x|type=Bonus Healing<!--
+-->|scaling=-<!--
+-->|affects=Ability<!--
+-->|notes=<li>Healing bonus affects the base value, causing it to stack multiplicatively with healing modifiers.}};File:Circle_of_Life_Icon.png;
+
+Flames of Fury;1;3;Reduce the Mana cost of Flame Buffet from 50 to 40.<p>{{Quest|Hit 20 Burning Heroes with Flame Buffet.|Hitting a Burning Hero with Flame Buffet reduces Dragonqueen's cooldown by 5 seconds.}};File:Flames_of_Fury_Icon.png;
+
+<!-- LEVEL 4 -->
+Surge of Vitality;2;1;Abundance's healing burst grants allied Heroes 30% Movement Speed for 3 seconds.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Allied Heroes, Self<!--
+-->|props=[[Movement Speed]]<!--
+-->|notes=}};File:Surge_of_Vitality_Icon.png;
+
+Heat Exhaustion;2;2;Increase Flame Buffet's initial Slow from 40% to 50% and cause it to no longer decay.;File:Heat_Exhaustion_Icon.png;
+
+Exuberance;2;3;While above 75% Health, gain 15% Movement Speed.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|props=[[Movement Speed]]<!--
+-->|notes=}};File:Exuberance_Icon.png;
+
+<!-- LEVEL 7 -->
+Lifeblossom;3;1;While Alexstrasza is above 75% Health, Gift of Life creates a Lifeblossom at the target's location. Alexstrasza can collect the Lifeblossom to make her next Gift of Life cost no Health.<p>{{Passive}} Reduces the cost of Gift of Life to 10% of Alexstrasza's current Health.<!--
+-->{{undoc-x|prop1=Pick up range|val1=2.25<!--
+-->|notes=<li>Lifeblossom remains on the ground for 7 seconds.}};File:Lifeblossom_Icon.png;
+
+Verdant Flourish;3;2;Alexstrasza receives 40% more healing from Abundance and 100% more healing from Regeneration Globes.<!--
+-->{{undoc-x|type=Healing dealt modifier<!--
+-->|affects=Ability<!--
+-->|notes=<li>Stacks additively with other modifiers affecting healing dealt and multiplicatively with modifiers affecting healing received.}};File:Verdant_Flourish_Icon.png;
+
+Fire Within;3;3;Hitting a Burning Hero with Flame Buffet heals Alexstrasza for 10% of her maximum Health.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|notes=}};File:Fire_Within_Icon.png;
+
+<!-- LEVEL 10 -->
+Life-Binder;4;1;{{Cooldown|50}}<br>Bind Alexstrasa's life force with an allied Hero. Both she and her target are healed for 480 over 2 seconds. Afterward, the Hero with a lower percentage of health is set to the same Health percentage as the other Hero.;File:Life-Binder_Icon.png;
+Cleansing Flame;4;2;{{Cooldown|100}}<br>After 1.25 seconds, take to the sky and drop 5 fireballs over 6 seconds at the position of the mouse cursor. Fireballs deal 135 damage to enemies and heal allied Heroes for 300 Health.<p>2 seconds after dropping all fireballs, Alexstrasza lands at the position of the mouse cursor.;File:Cleansing_Flame_Icon.png;
+
+<!-- LEVEL 13 -->
+Dragon Scales;5;1;Gain 50 Armor while Stunned, Silenced, or Rooted, and for 2 seconds afterward. Can only trigger once every 10 seconds.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Armor]]<!--
+-->|notes=<li>Does not stack with other positive Armor effects. Other defensive damage modifiers may stack.}};File:Dragon_Scales_Icon.png;
+
+Pacify;5;2;{{Cooldown|60}}<br>{{Active}} Activate to Slow and reduce an enemy Hero's damage by 50% for 3 seconds.<p>Healing a Stunned, Silenced, or Rooted ally reduces Pacify's cooldown by 30 seconds.<!--
+-->{{undoc-x|type=Crowd control, Offensive damage modifier<!--
+-->|affects=Enemy Heroes<!--
+-->|target=Unit target<!--
+-->|props=[[Slow]]<!--
+-->|cast=Instant<!--
+-->|range=7.0<!--
+-->|notes=<li>Damage reduction stacks additively with other offensive damage modifiers affecting the target Hero's damage output.}};File:Pacify_Icon.png;
+
+Life Unbound;5;3;{{Cooldown|90}}<br>{{Active}} Activate to heal an allied Hero for 15% of their maximum Health and deal 200 damage to nearby enemies.<p>Healing a Stunned, Rooted, or Silenced ally reduces Life Unbound's cooldown by 30 seconds.<p>Cannot be used on Alexstrasza.<!--
+-->{{undoc-x|type=Healing / Spell Damage<!--
+-->|scaling=- / 4.00%<!--
+-->|affects=Allied Heroes / Enemies<!--
+-->|target=Unit target<!--
+-->|props=[[Splash]]<!--
+-->|cast=Instant<!--
+-->|range=9.0<!--
+-->|aoe=Circle<!--
+-->|radius=3.5<!--
+-->|notes=}};File:Life_Unbound_Icon.png;
+
+<!-- LEVEL 16 -->
+Tough Love;6;1; Gift of Life grants its target 10 Armor for 2.5 seconds, increased to 30 while Alexstrasza is above 75% Health.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Allied Heroes<!--
+-->|props=[[Armor]]<!--
+-->|notes=<li>Does not stack with other positive Armor effects. Other defensive damage modifiers may stack.}};File:Tough_Love_Icon.png;
+
+Overprotective;6;2;Heroes healed by Abundance gain a Shield for 6 seconds equal to 70% of the amount healed.<!--
+-->{{undoc-x|type=Shield<!--
+-->|scaling=-<!--
+-->|affects=Allied Heroes, Self<!--
+-->|notes=<li>Shield amount is calculated from final amount healed after all modifications. Healing over a target's maximum Health does not count toward this amount.}};File:Overprotective_Icon.png;
+
+Draconic Discipline;6;3;Increase Dragonqueen's duration by 6 seconds, and Basic Attack healing by 50%.;File:Draconic_Discipline_Icon.png;
+
+<!-- LEVEL 20 -->
+Ritual of Life;7;1;Life-Binder activates 3 times over 6 seconds.<!--
+-->{{undoc|<hr/><li>Additional activations occur with 2 second intervals.<li>Targets continue to receive the healing-over-time effect for the whole duration and at the same rate.}};File:Ritual_of_Life_Icon.png;
+
+On Ruby Wings;7;2;Healing or damaging Heroes 8 or more times with Cleansing Flame activates Dragonqueen for 15 seconds upon landing.<!--
+-->{{undoc-x|nohr=1|notes=<li>Alextrasza lands in the Dragon form upon triggering this talent.<li>If Alextrasza triggers this talent having used ''Cleansing Flame'' in Dragon form, the duration of ''Dragonqueen'' is prolonged by 15 seconds.}};File:On_Ruby_Wings_Icon.png;
+
+Ancient Flame;7;3;While Dragonqueen is active, Alexstrasza's Basic Attacks apply Flame Buffet.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=<!--
+-->|props=[[Attack Modifier]]<!--
+-->|notes=<li>The ''Flame Buffet'' applied by this talent interacts with all talents affecting ''Flame Buffet''.}};File:Ancient_Flame_Icon.png;
+
+Blessing of the Red;7;4;{{Cooldown|40}}<br>{{Active}} Activate to grant an allied Hero 500 bonus maximum Health until they die.<p>Cannot be used on Alexstrasza, or on a Hero who already has Blessing of the Red.<!--
+-->{{undoc-x|type=Bonus Health<!--
+-->|scaling=-<!--
+-->|affects=Allied Heroes<!--
+-->|target=Unit target<!--
+-->|cast=Instant<!--
+-->|range=10<!--
+-->|notes=}};File:Blessing_of_the_Red_Icon.png;
+}}
+
+<noinclude>
+{{Scaling table/start|{{#var:health}}|{{#var:health scaling}}|{{#var:health regen}}|{{#var:health regen scaling}}|{{#var:attack damage}}|{{#var:attack damage scaling}}}}
+{{Scaling table/slot|Gift of Life (regen)|5.3047|0.04}}
+{{Scaling table/slot|Dragonqueen (damage)|143|0.04}}
+{{Scaling table/slot|Dragonqueen (healing)|43|0.04}}
+{{Scaling table/slot|Flame Buffet (per second)|15|0.04}}
+{{Scaling table/slot|Flame Buffet (impact)|125|0.04}}
+{{Scaling table/slot|Wing Buffet|162|0.04}}
+{{Scaling table/slot|Cleansing Flame (damage)|135|0.04|10}}
+{{Scaling table/slot|Cleansing Flame (heal)|300|0.04|10}}
+{{Scaling table/slot|Lifebinder (single)|60|0.04|10}}
+{{Scaling table/slot|Lifebinder (per second)|300|0.04|10}}
+{{Scaling table/slot|Life Unbound (damage)|200|0.04|13}}
+{{Scaling table/end}}
+</noinclude>

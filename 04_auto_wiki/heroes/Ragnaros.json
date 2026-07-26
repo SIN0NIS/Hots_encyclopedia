@@ -1,0 +1,620 @@
+{
+  "hero": "Ragnaros",
+  "abilities": [
+    {
+      "name": "Molten Core",
+      "hotkey": "TRAIT",
+      "icon": "Molten_Core_Icon.png",
+      "description": "Channel on an allied or destroyed Fort or Keep to replace it with Ragnaros's ultimate form, temporarily gaining new Abilities, having 3996 Health that burns away over 18 seconds. Ragnaros returns to his normal form upon losing all Health in Molten Core.",
+      "fields": {
+        "type": "Transformation, Status effect",
+        "scaling": "4.00% (Health & decay)",
+        "affects": "Allied or destroyed Forts & Keeps",
+        "target": "Unit target",
+        "props": "Channeled cast, Heroic Target, Stasis",
+        "cast": "2.0(ch) + 0 seconds",
+        "range": "5.75",
+        "prop1": "Health decay",
+        "val1": "222 per second",
+        "notes": "Interrupting Molten Core during its windup puts it on a 10 second cooldown. Ragnaros can exit Molten Core after a 1 second channel by reactivating the Trait. Exiting can be canceled by pressing the Trait button again before the channel is complete. Successfully casting Molten Core puts real Ragnaros and the target Structure in Stasis for its duration and replaces them with different Molten Core Ragnaros unit. In addition to usual effects of Stasis, real Ragnaros is removed from ground plane (disjoints certain projectiles), has no collision, cannot regenerate Health, Mana, Energy or Shields and cannot be seen on the minimap or revealed. Molten Core Ragnaros cannot be targeted by friendly Abilities during Molten Core. Buffs, like Heal over time effects, applied to real Ragnaros beforehand persist for their duration, but cannot affect Molten Core Ragnaros. Molten Core Ragnaros cannot be targeted or affected by Abathur's Ultimate Evolution, Sylvanas's Black Arrow disable or Zagara's Devouring Maw.",
+        "cooldown": "120"
+      }
+    },
+    {
+      "name": "Empower Sulfuras",
+      "hotkey": "Q",
+      "icon": "Empower_Sulfuras_Icon.png",
+      "description": "Ragnaros's next Basic Attack is instant, dealing 191 Spell Damage in an area, and heals for 20% of the damage dealt. Healing doubled versus Heroes. purpletext Molten Core: Molten Swing Stun and damage nearby enemies.",
+      "fields": {
+        "type": "Spell Damage / Healing",
+        "scaling": "4.00% / -",
+        "affects": "Enemies / Self",
+        "target": "No target",
+        "props": "Attack Modifier, Lifesteal, Primed, Splash",
+        "cast": "Instant",
+        "aoe": "Circle",
+        "radius": "3.5",
+        "notes": "Cooldown starts when the Ability is triggered by attacking an enemy. Empower Sulfuras will miss completely and the Ability’s cooldown will be consumed if Ragnaros is Blinded or the primary target of the attack is Evading. Activating during the windup of a Basic Attack will cause that attack to be the empowered attack (splashing and dealing Spell Damage) and the reset to happen immediately afterward, the second being a normal Basic Attack (dealing Physical Damage and not splashing).",
+        "cooldown": "4",
+        "cost": "25"
+      }
+    },
+    {
+      "name": "Molten Core - Molten Swing",
+      "hotkey": "Q",
+      "icon": "Molten_Swing_Icon.png",
+      "description": "Swing your hammer in a wide arc, dealing moderate (161) damage and Stunning enemies for 1 second. Damage increased by 25% versus Minions and Mercenaries.",
+      "fields": {
+        "type": "Spell Damage, Crowd Control",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "target": "Point target",
+        "props": "Area of Effect, Clamping",
+        "cast": "0 + 1.0 seconds",
+        "aoe": "Radial",
+        "radius": "12",
+        "arc": "180 degrees",
+        "prop1": "Initial delay",
+        "val1": "0.625 seconds",
+        "notes": "Search area is split into three 60 degree sectors, rotating counter-clockwise over 0.375 seconds.",
+        "cooldown": "6"
+      }
+    },
+    {
+      "name": "Living Meteor",
+      "hotkey": "W",
+      "icon": "Living_Meteor_Icon.png",
+      "description": "Summon a meteor at the target point that deals 68 damage, then rolls in the target direction dealing 272 damage per second for 1.75 seconds. purpletext Molten Core: Meteor Shower Drop a line of meteor impacts.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "target": "Vector Targeting",
+        "props": "Area of Effect (moving)",
+        "cast": "Instant",
+        "range": "8.5",
+        "aoe": "Circle",
+        "radius": "1.25",
+        "missile": "6.5",
+        "tickrate": "4.0 per second (x7)",
+        "prop1": "Damage per tick",
+        "val1": "68",
+        "prop2": "Initial delay",
+        "val2": "0.125 seconds",
+        "notes": "Meteor can damage enemies multiple times as it rolls.",
+        "cooldown": "12",
+        "cost": "60"
+      }
+    },
+    {
+      "name": "Molten Core - Meteor Shower",
+      "hotkey": "W",
+      "icon": "Meteor_Shower_Icon.png",
+      "description": "Summon 3 meteors at the target point that fall in the target direction. Each meteor deals moderate (151) damage and Slows enemies by 25% for 2 seconds. Damage increased by 25% versus Minions and Mercenaries.",
+      "fields": {
+        "type": "Spell Damage, Crowd Control",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "target": "Vector Targeting",
+        "props": "Area of effect, Slow",
+        "cast": "Instan",
+        "range": "35",
+        "aoe": "Circle",
+        "radius": "1.5",
+        "prop1": "Impact distance",
+        "val1": "3.5",
+        "prop2": "Impact interval",
+        "val2": "0.3725 seconds",
+        "prop3": "Initial delay",
+        "val3": "0.125 seconds",
+        "cooldown": "2.5"
+      }
+    },
+    {
+      "name": "Blast Wave",
+      "hotkey": "E",
+      "icon": "Blast_Wave_Icon.png",
+      "description": "Ignite Ragnaros or an ally, granting 25% Movement Speed for 1.5 seconds before exploding, dealing 104 damage to nearby enemies. purpletext Molten Core: Explosive Rune Cause a delayed explosion in a large area.",
+      "fields": {
+        "type": "Spell Damage / Status effect",
+        "scaling": "4.00%",
+        "affects": "Enemies / Allies, Self",
+        "target": "Unit target",
+        "props": "Area of Effect (damage), Movement Speed buff",
+        "cast": "Instant",
+        "range": "8.5",
+        "aoe": "Circle",
+        "radius": "3.75",
+        "cooldown": "9",
+        "cost": "50"
+      }
+    },
+    {
+      "name": "Explosive Rune",
+      "hotkey": "E",
+      "icon": "Explosive_Rune_Icon.png",
+      "description": "Create a rune that explodes after 1.5 seconds, dealing 285 damage to non-Structure enemies in a circular area. Damage increased by 25% versus Minions and Mercenaries.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "target": "Point Target",
+        "props": "Area of Effect, Clamping",
+        "cast": "Instant",
+        "range": "35",
+        "aoe": "Circle",
+        "radius": "3.5",
+        "cooldown": "4"
+      }
+    },
+    {
+      "name": "Sulfuras Smash",
+      "hotkey": "R",
+      "icon": "Sulfuras_Smash_Icon.png",
+      "description": "Hurl Sulfuras at the target area, landing after 0.75 seconds, dealing 250 damage. Enemies in the center take 594 damage instead and are Stunned for 0.5 seconds.; 60; 70; Heroic",
+      "fields": {
+        "type": "Spell Damage, Crowd control",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "target": "Point target",
+        "props": "Area of Effect, Stun",
+        "cast": "0.1875 + 0 seconds",
+        "range": "16",
+        "aoe": "Circle",
+        "radius": "- Inner: 1.5 - Outer: 3.75",
+        "notes": "During Molten Core, the cast range is increased to 35, matching Meteor Shower and Explosive Rune."
+      }
+    },
+    {
+      "name": "Lava Wave",
+      "hotkey": "R",
+      "icon": "Lava_Wave_Icon.png",
+      "description": "Release a wave of lava from Ragnaros's Core that travels down the targeted lane, dealing 240 damage per second to non-Structure enemies in its path and instantly killing enemy Minions. Damage increased by 100% versus Heroes.; 120; 80; Heroic",
+      "fields": {
+        "type": "Spell Damage / Instant kill",
+        "scaling": "4.00%",
+        "affects": "Non-Structure Enemies / Enemy Minions",
+        "target": "Point target",
+        "props": "Area of Effect",
+        "cast": "Instant",
+        "range": "Global",
+        "aoe": "Line",
+        "width": "12",
+        "missile": "11",
+        "tickrate": "4.0 per second",
+        "prop1": "Damage per tick",
+        "val1": "60"
+      }
+    }
+  ],
+  "talents": [
+    {
+      "name": "Sulfuras Hungers",
+      "tier": "1",
+      "slot": "1",
+      "icon": "Sulfuras_Hungers_Icon.png",
+      "description": "quest Every time Empower Sulfuras kills a Minion, its damage is increased by 1, up to 25. After killing 25 Minions, increase its damage by an additional 100.",
+      "fields": {
+        "type": "Bonus damage",
+        "scaling": "-",
+        "affects": "Ability",
+        "notes": "Gives credit if the Minion dies to anything with 0.25s of being hit by Empower Sulfuras."
+      },
+      "_raw_fields": [
+        "Sulfuras Hungers",
+        "1",
+        "1",
+        "quest Every time Empower Sulfuras kills a Minion, its damage is increased by 1, up to 25. After killing 25 Minions, increase its damage by an additional 100.",
+        "File:Sulfuras_Hungers_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Shifting Meteor",
+      "tier": "1",
+      "slot": "2",
+      "icon": "Shifting_Meteor_Icon.png",
+      "description": "Each time an enemy is hit by the same Living Meteor, they take 6% increased damage from it. quest Hit 75 Heroes with Living Meteor. After hitting 75 Heroes with Living Meteor, its duration is increased to 2.25 seconds, and it can be reactivated to change its direction once per use.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Ability",
+        "notes": "Stacks additively with itself and other offensive damage modifiers that can affect Living Meteor 's damage."
+      },
+      "_raw_fields": [
+        "Shifting Meteor",
+        "1",
+        "2",
+        "Each time an enemy is hit by the same Living Meteor, they take 6% increased damage from it. quest Hit 75 Heroes with Living Meteor. After hitting 75 Heroes with Living Meteor, its duration is increased to 2.25 seconds, and it can be reactivated to change its direction once per use.",
+        "File:Shifting_Meteor_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Engulfing Flame",
+      "tier": "1",
+      "slot": "3",
+      "icon": "Engulfing_Flame_Icon.png",
+      "description": "Increase Blast Wave's damage by 75% and its radius by 15%.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Ability",
+        "prop1": "Bonus radius",
+        "val1": "0.5625",
+        "notes": "Stacks additively with other offensive damage modifiers that can affect Blast Wave 's damage."
+      },
+      "_raw_fields": [
+        "Engulfing Flame",
+        "1",
+        "3",
+        "Increase Blast Wave's damage by 75% and its radius by 15%.",
+        "File:Engulfing_Flame_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Fire Ward",
+      "tier": "2",
+      "slot": "1",
+      "icon": "Fire_Ward_Icon.png",
+      "description": "When Living Meteor hits an enemy Hero, gain a charge of Spell Armor, reducing damage from the next enemy Ability by 50%. Stores up to 2 charges.",
+      "fields": {
+        "type": "Defensive damage modifier",
+        "affects": "Self",
+        "props": "Spell Block",
+        "notes": "Hitting a Hero multiple times generates a charge for every hit. Does not stack with other positive Spell Armor effects. Other defensive damage modifiers may stack."
+      },
+      "_raw_fields": [
+        "Fire Ward",
+        "2",
+        "1",
+        "When Living Meteor hits an enemy Hero, gain a charge of Spell Armor, reducing damage from the next enemy Ability by 50%. Stores up to 2 charges.",
+        "File:Fire_Ward_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Slow Burn",
+      "tier": "2",
+      "slot": "2",
+      "icon": "Slow_Burn_Icon.png",
+      "description": "Blast Wave Slows enemies hit by 40% for 2 seconds.",
+      "fields": {
+        "type": "Crowd control",
+        "affects": "Enemies",
+        "props": "Slow"
+      },
+      "_raw_fields": [
+        "Slow Burn",
+        "2",
+        "2",
+        "Blast Wave Slows enemies hit by 40% for 2 seconds.",
+        "File:Slow_Burn_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Catching Fire",
+      "tier": "2",
+      "slot": "3",
+      "icon": "Catching Fire Icon.png",
+      "description": "quest Gathering a Regeneration Globe increases Ragnaros's Health Regeneration by 1.25 per second, up to 18.75. After gathering 15 Regeneration Globes, activate Catching Fire to gain 25 Armor for 3 seconds, reducing damage taken by 25%.",
+      "fields": {
+        "type": "Bonus health regeneration, Defensive damage modifier",
+        "scaling": "-",
+        "affects": "Self",
+        "target": "No target",
+        "cast": "Instant",
+        "notes": "Does not stack with other positive Armor effects. Other defensive damage modifiers may stack."
+      },
+      "_raw_fields": [
+        "Catching Fire",
+        "2",
+        "3",
+        "quest Gathering a Regeneration Globe increases Ragnaros's Health Regeneration by 1.25 per second, up to 18.75. After gathering 15 Regeneration Globes, activate Catching Fire to gain 25 Armor for 3 seconds, reducing damage taken by 25%.",
+        "File:Catching Fire Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Hand of Ragnaros",
+      "tier": "3",
+      "slot": "1",
+      "icon": "Hand_of_Ragnaros_Icon.png",
+      "description": "If Empower Sulfuras hits at least 2 enemy Heroes, refund 10 Mana and its cooldown recharges 100% faster for 4 seconds.",
+      "fields": {
+        "nohr": "1",
+        "notes": "While active, reduces the cooldown of Empower Sulfuras by 0.125 seconds every 0.125 seconds."
+      },
+      "_raw_fields": [
+        "Hand of Ragnaros",
+        "3",
+        "1",
+        "If Empower Sulfuras hits at least 2 enemy Heroes, refund 10 Mana and its cooldown recharges 100% faster for 4 seconds.",
+        "File:Hand_of_Ragnaros_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Molten Power",
+      "tier": "3",
+      "slot": "2",
+      "icon": "Molten_Power_Icon.png",
+      "description": "If Living Meteor hits enemy Heroes at least 5 times, reduce its cooldown by 7 seconds and refund 30 Mana.",
+      "fields": {},
+      "_raw_fields": [
+        "Molten Power",
+        "3",
+        "2",
+        "If Living Meteor hits enemy Heroes at least 5 times, reduce its cooldown by 7 seconds and refund 30 Mana.",
+        "File:Molten_Power_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Blistering Attacks",
+      "tier": "3",
+      "slot": "3",
+      "icon": "Focused_Attack_Icon.png",
+      "description": "Every 10 seconds, Ragnaros's next Basic Attack against a Hero deals 60% bonus damage. Hitting enemies with Basic Abilities reduces this cooldown by 1 second.",
+      "fields": {
+        "type": "Offensive damage modifier, Cooldown reduction",
+        "affects": "Self",
+        "props": "Attack Modifier",
+        "notes": "Every enemy hit including Structures triggers the cooldown reduction. Cannot empower damage on Basic Attacks affected by Empower Sulfuras. Damage from Blast Echo and Meteor Bomb talents can grant cooldown reduction, but periodic damage from Giant Scorcher doesn't. Stacks additively with other offensive damage modifiers affecting Ragnaros's Basic Attack damage."
+      },
+      "_raw_fields": [
+        "Blistering Attacks",
+        "3",
+        "3",
+        "Every 10 seconds, Ragnaros's next Basic Attack against a Hero deals 60% bonus damage. Hitting enemies with Basic Abilities reduces this cooldown by 1 second.",
+        "File:Focused_Attack_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Sulfuras Smash",
+      "tier": "4",
+      "slot": "1",
+      "icon": "Sulfuras_Smash_Icon.png",
+      "description": "cooldown 60 Hurl Sulfuras at the target area, landing after 0.75 seconds, dealing 250 damage. Enemies in the center take 594 damage instead and are Stunned for 0.5 seconds.",
+      "fields": {},
+      "_raw_fields": [
+        "Sulfuras Smash",
+        "4",
+        "1",
+        "cooldown 60 Hurl Sulfuras at the target area, landing after 0.75 seconds, dealing 250 damage. Enemies in the center take 594 damage instead and are Stunned for 0.5 seconds.",
+        "File:Sulfuras_Smash_Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Lava Wave",
+      "tier": "4",
+      "slot": "2",
+      "icon": "Lava_Wave_Icon.png",
+      "description": "cooldown 120 Release a wave of lava from Ragnaros's Core that travels down the targeted lane, dealing 240 damage per second to non-Structure enemies in its path and instantly killing enemy Minions. Damage increased by 100% versus Heroes.",
+      "fields": {},
+      "_raw_fields": [
+        "Lava Wave",
+        "4",
+        "2",
+        "cooldown 120 Release a wave of lava from Ragnaros's Core that travels down the targeted lane, dealing 240 damage per second to non-Structure enemies in its path and instantly killing enemy Minions. Damage increased by 100% versus Heroes.",
+        "File:Lava_Wave_Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Cauterize Wounds",
+      "tier": "5",
+      "slot": "1",
+      "icon": "Cauterized_Wounds_Icon.png",
+      "description": "Empower Sulfuras heals for an additional 45% of damage dealt to Heroes over 2 seconds.",
+      "fields": {
+        "type": "Bonus healing",
+        "scaling": "-",
+        "affects": "Self",
+        "props": "Heal over Time",
+        "tickrate": "2.0 per second (x4)",
+        "notes": "Healing is based on the actual damage dealt (not including overkill) only to the Hero most radially outward from the primary target, multiplied by the number of Heroes hit."
+      },
+      "_raw_fields": [
+        "Cauterize Wounds",
+        "5",
+        "1",
+        "Empower Sulfuras heals for an additional 45% of damage dealt to Heroes over 2 seconds.",
+        "File:Cauterized_Wounds_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Tempered Flame",
+      "tier": "5",
+      "slot": "2",
+      "icon": "Tempered_Flame_Icon.png",
+      "description": "When Blast Wave damages an enemy Hero, gain a Shield equal to 100% of the damage dealt for 3 seconds.",
+      "fields": {
+        "type": "Shield",
+        "scaling": "-",
+        "affects": "Self",
+        "notes": "Shield gain is based only on damage dealt to Heroes. Shield gain follows lifesteal rules."
+      },
+      "_raw_fields": [
+        "Tempered Flame",
+        "5",
+        "2",
+        "When Blast Wave damages an enemy Hero, gain a Shield equal to 100% of the damage dealt for 3 seconds.",
+        "File:Tempered_Flame_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Resilient Flame",
+      "tier": "5",
+      "slot": "3",
+      "icon": "Resilient_Flame_Icon.png",
+      "description": "While Ragnaros is Stunned, he gains 40 Armor for 3 seconds, reducing damage taken by 40%. This effect has a 15 second cooldown.",
+      "fields": {
+        "type": "Defensive damage modifier",
+        "affects": "Self",
+        "props": "Armor",
+        "notes": "Does not stack with other positive Armor effects. Other defensive damage modifiers may stack."
+      },
+      "_raw_fields": [
+        "Resilient Flame",
+        "5",
+        "3",
+        "While Ragnaros is Stunned, he gains 40 Armor for 3 seconds, reducing damage taken by 40%. This effect has a 15 second cooldown.",
+        "File:Resilient_Flame_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Giant Scorcher",
+      "tier": "6",
+      "slot": "1",
+      "icon": "Giant_Scorcher_Ragnaros_Icon.png",
+      "description": "Empower Sulfuras burns enemy Heroes for 9% of their maximum Health over 3 seconds. This additional damage does not heal Ragnaros.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "-",
+        "affects": "Enemy Heroes",
+        "props": "Damage over Time, Percent damage",
+        "tickrate": "1.0 per second (x3)",
+        "notes": "Does not stack with itself. Subsequent applications refresh the duration. Damage over ticks do not trigger cooldown reduction for Blistering Attacks."
+      },
+      "_raw_fields": [
+        "Giant Scorcher",
+        "6",
+        "1",
+        "Empower Sulfuras burns enemy Heroes for 9% of their maximum Health over 3 seconds. This additional damage does not heal Ragnaros.",
+        "File:Giant_Scorcher_Ragnaros_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Meteor Bomb",
+      "tier": "6",
+      "slot": "2",
+      "icon": "Meteor_Bomb_Icon.png",
+      "description": "Living Meteor explodes at the end of its path, dealing 220 damage. Enemies at its center take 30% increased damage.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "props": "Area of Effect",
+        "aoe": "Circle",
+        "radius": "- Outer: 3.0 - Center: 1.25",
+        "notes": "Meteor Bomb does not interact with talents affecting Living Meteor. Enemies hit by Meteor Bomb grant cooldown reduction for Blistering Attacks. Center damage bonus stacks additively with offensive damage modifiers that can affect Meteor Bomb 's damage."
+      },
+      "_raw_fields": [
+        "Meteor Bomb",
+        "6",
+        "2",
+        "Living Meteor explodes at the end of its path, dealing 220 damage. Enemies at its center take 30% increased damage.",
+        "File:Meteor_Bomb_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Blast Echo",
+      "tier": "6",
+      "slot": "3",
+      "icon": "Blast_Echo_Icon.png",
+      "description": "After Blast Wave explodes, another Blast Wave is created on Ragnaros.",
+      "fields": {
+        "nohr": "True",
+        "notes": "The secondary Blast Wave has the same properties as the inital and fully benefits from all Talents affecting Blast Wave."
+      },
+      "_raw_fields": [
+        "Blast Echo",
+        "6",
+        "3",
+        "After Blast Wave explodes, another Blast Wave is created on Ragnaros.",
+        "File:Blast_Echo_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Flames of Sulfuron",
+      "tier": "7",
+      "slot": "1",
+      "icon": "Flames_of_Sulfuron_Icon.png",
+      "description": "Sulfuras Smash Slows enemies by 50% for 2.5 seconds, and the Stun duration of enemies hit in the center is increased by 1 second.",
+      "fields": {
+        "type": "Crowd control",
+        "affects": "Enemies",
+        "props": "Slow"
+      },
+      "_raw_fields": [
+        "Flames of Sulfuron",
+        "7",
+        "1",
+        "Sulfuras Smash Slows enemies by 50% for 2.5 seconds, and the Stun duration of enemies hit in the center is increased by 1 second.",
+        "File:Flames_of_Sulfuron_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Lava Surge",
+      "tier": "7",
+      "slot": "2",
+      "icon": "Lava_Surge_Icon.png",
+      "description": "Lava Wave gains an additional charge and its cooldown is reduced by 30 seconds.",
+      "fields": {},
+      "_raw_fields": [
+        "Lava Surge",
+        "7",
+        "2",
+        "Lava Wave gains an additional charge and its cooldown is reduced by 30 seconds.",
+        "File:Lava_Surge_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Heroic Difficulty",
+      "tier": "7",
+      "slot": "3",
+      "icon": "Heroic_Difficulty_Icon.png",
+      "description": "Molten Core has 25% increased Health and Damage, and its cooldown is reduced by 50 seconds.",
+      "fields": {
+        "type": "Offensive damage modifier, Cooldown reduction",
+        "affects": "Ability",
+        "notes": "Does not affect the Health decay, effectively also increasing the duration of Molten Core by 25% to 22.5 seconds."
+      },
+      "_raw_fields": [
+        "Heroic Difficulty",
+        "7",
+        "3",
+        "Molten Core has 25% increased Health and Damage, and its cooldown is reduced by 50 seconds.",
+        "File:Heroic_Difficulty_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Submerge",
+      "tier": "7",
+      "slot": "4",
+      "icon": "Submerge_Icon.png",
+      "description": "cooldown 60 / 0.5 Active Ragnaros submerges below, entering Stasis and healing for 600 Health over 3 seconds.",
+      "fields": {
+        "type": "Healing, Status effect",
+        "scaling": "4.00%",
+        "affects": "Self",
+        "target": "No target",
+        "props": "Stasis",
+        "cast": "Instant",
+        "notes": "Submerge can be reactivated after 0.5 seconds to end its effect early. All other Abilities are disabled for its duration. Ragnaros retains collision during Submerge. Submerge does not interrupt friendly Abilities, like Phase Shift, which channeling was initiated before the activation."
+      },
+      "_raw_fields": [
+        "Submerge",
+        "7",
+        "4",
+        "cooldown 60 / 0.5 Active Ragnaros submerges below, entering Stasis and healing for 600 Health over 3 seconds.",
+        "File:Submerge_Icon.png"
+      ],
+      "level": "20"
+    }
+  ],
+  "other": [],
+  "_unparsed_count": 0
+}

@@ -1,0 +1,572 @@
+{
+  "hero": "Zul'jin",
+  "abilities": [
+    {
+      "name": "Berserker",
+      "hotkey": "D",
+      "icon": "Berserker_Icon.png",
+      "description": "Cooldown 0.5 Activate to increase Basic Attack damage by 25% but consume 2% maximum Health per attack. Passive Zul'jin attacks 1% faster for every 1% of maximum Health missing. You Want Axe? Quest Every 5 Basic Attacks against Heroes permanently increase Basic Attack damage by 1. After attacking Heroes 75 times, Basic Attack range is increased by 1.1. Reward After attacking Heroes 150 times, Twin Cleave now revolves twice. Lose 3 stacks upon death.",
+      "fields": {
+        "type": "Bonus damage",
+        "scaling": "-",
+        "affects": "Self",
+        "target": "No target (toggle)",
+        "props": "Attack Speed",
+        "cast": "Instant",
+        "notes": "Lose 15 Basic Attacks' worth of stacks (3 bonus Attack Damage) upon death. Continues to gain stacks after the second reward is completed."
+      }
+    },
+    {
+      "name": "Grievous Throw",
+      "hotkey": "Q",
+      "icon": "Grievous_Throw_Icon.png",
+      "description": "Zul'jin throws an axe forward, dealing 125 damage to the first 2 enemies hit and marking them for 6 seconds. Marked enemies take 50% bonus damage from Zul'jin's next 3 Basic Attacks against them.",
+      "fields": {
+        "type": "Spell Damage / Offensive damage modifier",
+        "scaling": "4.00%",
+        "affects": "Enemies / Self",
+        "target": "Point target",
+        "props": "Skillshot",
+        "cast": "0 + 0.125 seconds",
+        "range": "9.775",
+        "hitbox": "1 x 1.15",
+        "missile": "25",
+        "notes": "Basic Attacks which miss due to being Blinded or the target Evading remove charges from the mark. Damage bonus stacks additively with other offensive damage modifiers that can affect Zuljin's Basic Attack damage.",
+        "cooldown": "8",
+        "cost": "40"
+      }
+    },
+    {
+      "name": "Twin Cleave",
+      "hotkey": "W",
+      "icon": "Twin_Cleave_Icon.png",
+      "description": "Throw 2 axes in a large, circular arc, dealing 112 damage and Slowing affected enemies by 15% per axe for 2 seconds.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "target": "Point target",
+        "props": "Area of Effect, Clamping",
+        "cast": "Instant",
+        "radius": "- Path: 10.0 - Hitbox: 0.75",
+        "missile": "~39",
+        "notes": "Enemies can only be hit once per revolution for each axe. Twin Cleave 's axes return and revolve from the initial cast location, regardless of where Zul'jin is. One full rotation takes 1.25 seconds. Slow stacks additively with itself, up to 2 times, but not with other Slows. Slow duration does not stack. Subsequent applications refresh the duration.",
+        "cooldown": "10",
+        "cost": "60"
+      }
+    },
+    {
+      "name": "Regeneration",
+      "hotkey": "E",
+      "icon": "Regeneration_Icon.png",
+      "description": "Zul'jin channels to regenerate 30% of his maximum Health over 4 seconds. Moving while channeling or taking damage will interrupt this effect.",
+      "fields": {
+        "type": "Healing",
+        "scaling": "-",
+        "affects": "Self",
+        "target": "No target",
+        "props": "Weak channel (stationary)",
+        "cast": "Instant",
+        "tickrate": "1.0 per second. (x5)",
+        "prop1": "Healing per tick",
+        "val1": "6.0% (of max Health)",
+        "notes": "Damage over Time effects applied before cast do not interrupt Regeneration.",
+        "cooldown": "15",
+        "cost": "75"
+      }
+    },
+    {
+      "name": "Taz'dingo!",
+      "hotkey": "R",
+      "icon": "Taz'dingo_Icon.png",
+      "description": "For the next 4 seconds, Zul'jin is Unkillable, and cannot be reduced to less than 1 Health. Taz'dingo!",
+      "fields": {
+        "type": "Status effect",
+        "affects": "Self",
+        "target": "No target",
+        "props": "Unkillable",
+        "cast": "Instant",
+        "notes": "Overflowing damage taken is nullified.",
+        "cooldown": "100",
+        "cost": "80"
+      }
+    },
+    {
+      "name": "Guillotine",
+      "hotkey": "R",
+      "icon": "Guillotine_Icon.png",
+      "description": "Zul'jin launches a massive axe into the air that drops on the targeted area, dealing 330 damage plus bonus damage the lower his Health is.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "target": "Point target",
+        "props": "Area of Effect",
+        "cast": "0 + 0.5 seconds",
+        "range": "20.0",
+        "aoe": "Rectangle",
+        "width": "2.5",
+        "height": "5.5",
+        "prop1": "Impact delay",
+        "val1": "1.375 seconds",
+        "prop2": "Maximum damage bonus",
+        "val2": "200%",
+        "notes": "Bonus damage from missing Health is determined when the Ability is activated. Offensive damage modifiers, such as Spell Power bonus from Recklessness, are verified and applied when it impacts. Bonus damage is proportional to the square of Zul'jin's missing Health: bonusDamage% = missingHealth% 2 / 50 Bonus damage is added directly to the base damage and stacks multiplicatively with offensive damage modifiers.",
+        "cooldown": "30",
+        "cost": "60"
+      }
+    },
+    {
+      "name": "Amani Rage",
+      "hotkey": "1",
+      "icon": "Amani_Rage_Icon.png",
+      "description": "Activate to cause Zul'jin to instantly lose 50% of his current Health and heal for that amount over 10 seconds.",
+      "fields": {
+        "type": "Self-Damage, Healing",
+        "scaling": "-",
+        "affects": "Self",
+        "target": "No target",
+        "props": "Heal over Time",
+        "cast": "Instant",
+        "tickrate": "1.0 per second (x10)",
+        "cooldown": "30"
+      }
+    }
+  ],
+  "talents": [
+    {
+      "name": "Boneslicer",
+      "tier": "1",
+      "slot": "1",
+      "icon": "Boneslicer_Icon.png",
+      "description": "Grievous Throw now pierces through all enemies hit and restores 15 Mana per Hero hit. Additionally, Grievous Throw's mark is no longer removed by Basic Attacks.",
+      "fields": {
+        "type": "Mana restoration",
+        "scaling": "-",
+        "affects": "Self"
+      },
+      "_raw_fields": [
+        "Boneslicer",
+        "1",
+        "1",
+        "Grievous Throw now pierces through all enemies hit and restores 15 Mana per Hero hit. Additionally, Grievous Throw's mark is no longer removed by Basic Attacks.",
+        "File:Boneslicer_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Recklessness",
+      "tier": "1",
+      "slot": "2",
+      "icon": "Recklessness_Icon.png",
+      "description": "While Zul'jin is below 75% Health, he gains 10% Spell Power. While he is below 50% Health, his Basic Attack damage is increased by 10% and Basic Attacks against Heroes grant an additional stack of You Want Axe?.",
+      "fields": {
+        "type": "Offensive damage modifier, Healing dealt modifier",
+        "affects": "Self",
+        "props": "Spell Power",
+        "notes": "Attack damage bonus stacks additively with other offensive damage modifiers that can affect Zul'jin's Basic Attack damage. Spell Power stacks additively with itself and other offensive damage and healing modifiers affecting Zul'jin's Spell Damage or healing output."
+      },
+      "_raw_fields": [
+        "Recklessness",
+        "1",
+        "2",
+        "While Zul'jin is below 75% Health, he gains 10% Spell Power. While he is below 50% Health, his Basic Attack damage is increased by 10% and Basic Attacks against Heroes grant an additional stack of You Want Axe?.",
+        "File:Recklessness_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Headhunter",
+      "tier": "1",
+      "slot": "3",
+      "icon": "Headhunter_Icon.png",
+      "description": "quest Zul'jin's first Takedown against each enemy Hero permanently increases his damage dealt by 2.5%. After getting Takedowns on every enemy Hero, Basic Attack range is increased by 1.1.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Self",
+        "notes": "Damage bonus stacks additively with other offensive damage modifiers that can affect Zul'jin's damage."
+      },
+      "_raw_fields": [
+        "Headhunter",
+        "1",
+        "3",
+        "quest Zul'jin's first Takedown against each enemy Hero permanently increases his damage dealt by 2.5%. After getting Takedowns on every enemy Hero, Basic Attack range is increased by 1.1.",
+        "File:Headhunter_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Troll's Blood",
+      "tier": "2",
+      "slot": "1",
+      "icon": "Troll's_Blood_Icon.png",
+      "description": "Increase Regeneration's healing by 25%. If Regeneration fully finishes, restore 10% of Zul'jin's maximum Mana.",
+      "fields": {
+        "type": "Bonus healing / Mana restoration",
+        "scaling": "-",
+        "affects": "Ability / Self",
+        "notes": "Healing bonus directly affects the base value, causing the given percentage to stack multiplicatively with healing dealt modifiers."
+      },
+      "_raw_fields": [
+        "Troll's Blood",
+        "2",
+        "1",
+        "Increase Regeneration's healing by 25%. If Regeneration fully finishes, restore 10% of Zul'jin's maximum Mana.",
+        "File:Troll's_Blood_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Voodoo Shuffle",
+      "tier": "2",
+      "slot": "2",
+      "icon": "Voodoo_Shuffle_Icon.png",
+      "description": "cooldown 10 Activate to remove Roots and Slows. Passive Lower the cooldown and Mana cost of Regeneration by 40%.",
+      "fields": {
+        "type": "CC removal",
+        "affects": "Self",
+        "target": "No target",
+        "cast": "Instant"
+      },
+      "_raw_fields": [
+        "Voodoo Shuffle",
+        "2",
+        "2",
+        "cooldown 10 Activate to remove Roots and Slows. Passive Lower the cooldown and Mana cost of Regeneration by 40%.",
+        "File:Voodoo_Shuffle_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Amani Hide",
+      "tier": "2",
+      "slot": "3",
+      "icon": "Amani_Hide_Icon.png",
+      "description": "Lower Amani Rage's cooldown by 10 seconds and gain 15 Armor while regenerating Health from it.",
+      "fields": {
+        "type": "Defensive damage modifier",
+        "affects": "Self",
+        "props": "Armor",
+        "notes": "Does not stack with other positive Armor effects. Other defensive damage modifiers may stack."
+      },
+      "_raw_fields": [
+        "Amani Hide",
+        "2",
+        "3",
+        "Lower Amani Rage's cooldown by 10 seconds and gain 15 Armor while regenerating Health from it.",
+        "File:Amani_Hide_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Vicious Assault",
+      "tier": "3",
+      "slot": "1",
+      "icon": "Vicious_Assault_Icon.png",
+      "description": "Increase the duration of Grievous Throw's mark by 3 seconds and its damage bonus by 45%.",
+      "fields": {
+        "nohr": "true",
+        "notes": "Stacks additively with baseline bonus and other offensive damage modifiers."
+      },
+      "_raw_fields": [
+        "Vicious Assault",
+        "3",
+        "1",
+        "Increase the duration of Grievous Throw's mark by 3 seconds and its damage bonus by 45%.",
+        "File:Vicious_Assault_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Arcanite Axes",
+      "tier": "3",
+      "slot": "2",
+      "icon": "Arcanite_Axes_Icon.png",
+      "description": "Questonly Twin Cleave's damage is permanently increased by 0.75 every time it hits a Hero.",
+      "fields": {
+        "type": "Bonus damage",
+        "scaling": "-",
+        "affects": "Ability",
+        "prop1": "Maximum bonus damage",
+        "val1": "9,001 (12,002 stacks)",
+        "notes": "Each flying axe generates stacks."
+      },
+      "_raw_fields": [
+        "Arcanite Axes",
+        "3",
+        "2",
+        "Questonly Twin Cleave's damage is permanently increased by 0.75 every time it hits a Hero.",
+        "File:Arcanite_Axes_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Ferocity",
+      "tier": "3",
+      "slot": "3",
+      "icon": "Ferocity_Icon.png",
+      "description": "Increases the Attack Speed bonus of Berserker by 40%.",
+      "fields": {
+        "nohr": "true",
+        "notes": "Increases the Attack Speed gain per 1% of missing Health from 1% to 1.4%."
+      },
+      "_raw_fields": [
+        "Ferocity",
+        "3",
+        "3",
+        "Increases the Attack Speed bonus of Berserker by 40%.",
+        "File:Ferocity_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Taz'dingo!",
+      "tier": "4",
+      "slot": "1",
+      "icon": "Taz'dingo_Icon.png",
+      "description": "cooldown 100 For the next 4 seconds, Zul'jin is Unkillable, and cannot be reduced to less than 1 Health. Taz'dingo!",
+      "fields": {},
+      "_raw_fields": [
+        "Taz'dingo!",
+        "4",
+        "1",
+        "cooldown 100 For the next 4 seconds, Zul'jin is Unkillable, and cannot be reduced to less than 1 Health. Taz'dingo!",
+        "File:Taz'dingo_Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Guillotine",
+      "tier": "4",
+      "slot": "2",
+      "icon": "Guillotine_Icon.png",
+      "description": "cooldown 30 Zul'jin launches a massive axe into the air that drops on the targeted area, dealing 330 damage plus bonus damage the lower his Health is.",
+      "fields": {},
+      "_raw_fields": [
+        "Guillotine",
+        "4",
+        "2",
+        "cooldown 30 Zul'jin launches a massive axe into the air that drops on the targeted area, dealing 330 damage plus bonus damage the lower his Health is.",
+        "File:Guillotine_Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Lacerate",
+      "tier": "5",
+      "slot": "1",
+      "icon": "Lacerate_Icon.png",
+      "description": "Increase the Slow amount of each Twin Cleave axe by 10% and its duration by 0.5 seconds.",
+      "fields": {},
+      "_raw_fields": [
+        "Lacerate",
+        "5",
+        "1",
+        "Increase the Slow amount of each Twin Cleave axe by 10% and its duration by 0.5 seconds.",
+        "File:Lacerate_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Eye of Zul'jin",
+      "tier": "5",
+      "slot": "2",
+      "icon": "Eye_of_Zul'jin_Icon.png",
+      "description": "Basic Attack against enemy Heroes grant Zul'jin 6% Movement Speed for 2 seconds, up to 30%.",
+      "fields": {
+        "type": "Status effect",
+        "affects": "Self",
+        "props": "Attack Modifier, Movement Speed",
+        "notes": "Stack additively with itself, but not with other Movement Speed bonuses."
+      },
+      "_raw_fields": [
+        "Eye of Zul'jin",
+        "5",
+        "2",
+        "Basic Attack against enemy Heroes grant Zul'jin 6% Movement Speed for 2 seconds, up to 30%.",
+        "File:Eye_of_Zul'jin_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Ensnare",
+      "tier": "5",
+      "slot": "3",
+      "icon": "Ensnare_Icon.png",
+      "description": "cooldown 40 Throw a net forward, Rooting the first enemy Hero hit for 1.5 seconds. If no Heroes are hit, Ensnare's cooldown is reduced to 10 seconds.",
+      "fields": {
+        "type": "Crowd control",
+        "affects": "Enemy Heroes",
+        "target": "Point target",
+        "props": "Clamping, Root, Skillshot",
+        "cast": "Instant",
+        "range": "10",
+        "hitbox": "1.5 x 1.5625",
+        "missile": "25.0"
+      },
+      "_raw_fields": [
+        "Ensnare",
+        "5",
+        "3",
+        "cooldown 40 Throw a net forward, Rooting the first enemy Hero hit for 1.5 seconds. If no Heroes are hit, Ensnare's cooldown is reduced to 10 seconds.",
+        "File:Ensnare_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "No Mercy!",
+      "tier": "6",
+      "slot": "1",
+      "icon": "No_Mercy_Icon.png",
+      "description": "Zul'jin's Basic Attacks against enemy Heroes marked with Grievous Throw ignore Armor and deal an additional 2% of maximum Health as damage.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "-",
+        "affects": "Enemy Heroes",
+        "props": "Attack Modifier, Percent Damage",
+        "notes": "Ignores only positive Armor effects. Bonus damage is dealt in a separate instance."
+      },
+      "_raw_fields": [
+        "No Mercy!",
+        "6",
+        "1",
+        "Zul'jin's Basic Attacks against enemy Heroes marked with Grievous Throw ignore Armor and deal an additional 2% of maximum Health as damage.",
+        "File:No_Mercy_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Wrong Place Wrong Time",
+      "tier": "6",
+      "slot": "2",
+      "icon": "Wrong_Place_Wrong_Time_Icon.png",
+      "description": "If an enemy is hit by both Twin Cleave Axes at the same time, they take an additional 100 damage and counts as 5 Hero hits for You Want Axe?.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "props": "Area of Effect",
+        "aoe": "Circle",
+        "radius": "0.75",
+        "notes": "Bonus damage may occur in both locations where the two axes meet each other: in the mid-arc as well as in the end of axes' traveling path, i.e. the initial cast location. After completing the You Want Axe? quest, the second revolution also applies this Talent's effects."
+      },
+      "_raw_fields": [
+        "Wrong Place Wrong Time",
+        "6",
+        "2",
+        "If an enemy is hit by both Twin Cleave Axes at the same time, they take an additional 100 damage and counts as 5 Hero hits for You Want Axe?.",
+        "File:Wrong_Place_Wrong_Time_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Let the Killing Begin",
+      "tier": "6",
+      "slot": "3",
+      "icon": "Let_the_Killing_Begin_Icon.png",
+      "description": "When Zul'jin kills an enemy, his Attack Speed is increased by 5%, up to 40%, for 12 seconds. Basic Attacks refresh the duration. Hero Takedowns instantly grant 40% Attack Speed.",
+      "fields": {
+        "type": "Status effect",
+        "affects": "Self",
+        "props": "Attack Speed",
+        "notes": "Non-Heroes that die within 0.5 seconds of being damaged by Zul'jin grant a stack regardless of who dealt the killing blow. Destroyed Structures do not grant Attack Speed. Stacks additively with itself and other Attack Speed bonuses."
+      },
+      "_raw_fields": [
+        "Let the Killing Begin",
+        "6",
+        "3",
+        "When Zul'jin kills an enemy, his Attack Speed is increased by 5%, up to 40%, for 12 seconds. Basic Attacks refresh the duration. Hero Takedowns instantly grant 40% Attack Speed.",
+        "File:Let_the_Killing_Begin_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Amani Resilience",
+      "tier": "7",
+      "slot": "1",
+      "icon": "Amani_Resilience_Icon.png",
+      "description": "Increase Taz'dingo's duration by 1 second. Upon expiring, Zul'jin heals for 50% of the damage he dealt during Taz'dingo.",
+      "fields": {
+        "type": "Healing",
+        "scaling": "-",
+        "affects": "Self",
+        "props": "Lifesteal"
+      },
+      "_raw_fields": [
+        "Amani Resilience",
+        "7",
+        "1",
+        "Increase Taz'dingo's duration by 1 second. Upon expiring, Zul'jin heals for 50% of the damage he dealt during Taz'dingo.",
+        "File:Amani_Resilience_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Buzzsaw",
+      "tier": "7",
+      "slot": "2",
+      "icon": "Buzzsaw_Icon.png",
+      "description": "After impact, Guillotine continues forward, dealing 75% damage to enemies hit. If a Hero is killed by Guillotine, Zul'jin is instantly healed to full.",
+      "fields": {
+        "type": "Spell Damage / Healing",
+        "scaling": "-",
+        "affects": "Enemies / Self",
+        "props": "Area of Effect",
+        "hitbox": "2.5 x 5.5",
+        "missile": "15.0",
+        "tickrate": "2.0 per second",
+        "notes": "Buzzsaw's damage is based on the increased damage value from the missing Health bonus. The healing is applied if a Hero dies from any cause within 1.5 seconds after being hit by the initial impact of Guillotine or damage from Buzzsaw. Buzzsaw searches for targets every 0.0625 seconds, but enemies cannot be damaged more often than once every 0.5 seconds. Buzzaw 's damage reduction stacks additively with offensive damage modifiers that can affect its damage."
+      },
+      "_raw_fields": [
+        "Buzzsaw",
+        "7",
+        "2",
+        "After impact, Guillotine continues forward, dealing 75% damage to enemies hit. If a Hero is killed by Guillotine, Zul'jin is instantly healed to full.",
+        "File:Buzzsaw_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Forest Medicine",
+      "tier": "7",
+      "slot": "3",
+      "icon": "Forest_Medicine_Icon.png",
+      "description": "Regeneration is no longer Channeled, and cannot be interrupted.",
+      "fields": {},
+      "_raw_fields": [
+        "Forest Medicine",
+        "7",
+        "3",
+        "Regeneration is no longer Channeled, and cannot be interrupted.",
+        "File:Forest_Medicine_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "A Surprise For Ya",
+      "tier": "7",
+      "slot": "4",
+      "icon": "A_Surprise_For_Ya_Icon.png",
+      "description": "Basic Attacks bounce to a nearby enemy for 50% damage, prioritizing enemy Heroes.",
+      "fields": {
+        "type": "Physical Damage",
+        "scaling": "-",
+        "affects": "Enemies",
+        "props": "Attack Modifier, Bounce",
+        "prop1": "Bounce range",
+        "val1": "5.0",
+        "notes": "Target is chosen at random within the bounce range. Does not interact with Grievous Throw mark at all and does not give quest progress for You Want Axe?. The bouncing axe damage is affected by flat bonus damage from You Want Axe? and other offensive damage modifiers affecting Zul'jin's Basic Attack damage, including Recklessness, Headhunter, and the Berserker state Zul'jin was in at the moment the primary Basic Attack was fired. The 50% damage reduction stacks multiplicatively with other damage modifiers. Does not bounce to unaggroed Mercenaries."
+      },
+      "_raw_fields": [
+        "A Surprise For Ya",
+        "7",
+        "4",
+        "Basic Attacks bounce to a nearby enemy for 50% damage, prioritizing enemy Heroes.",
+        "File:A_Surprise_For_Ya_Icon.png"
+      ],
+      "level": "20"
+    }
+  ],
+  "other": [],
+  "_unparsed_count": 0
+}

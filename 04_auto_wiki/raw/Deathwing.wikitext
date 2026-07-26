@@ -1,0 +1,316 @@
+{{hero data
+| name = Deathwing
+| date = December 3, 2019
+| price = 15001
+| title = The Destroyer
+| role = Bruiser
+| franchise = Warcraft
+| info = A massive Unstoppable Dragon who can withstand punishment while dishing it out, but is unaffected by allied Abilities.
+| lore =
+| difficulty = Hard
+| melee = True
+| health = 2750
+| healthRegen = 5.7292
+| resource = 100
+| resourceType = Energy
+| armor =
+| attackSpeed = 0.67
+| attackRange = 2.5
+| attackDamage = 117
+| healthScaling = 0.04
+| regenScaling = 0.04
+| adamageScaling = 0.04
+| unitRadius = 1.25
+| icon = 
+| skills = 
+Aspect of Death;Trait;File:Aspect of Death_Icon.png;Deathwing is fitted with 4 Armor Plates which grant 10 Armor each. Every 25% Health lost causes Deathwing to lose a plate. Plates are only restored when {{Dragonflight}} is used, based on the amount of Health Deathwing has when landing.<p>Deathwing is also a mighty Dragon Aspect who is permanently Unstoppable and deals 100% additional Spell Damage to Heroes, but views his allies with contempt and ignores any of their friendly effects.<!-- 
+-->{{undoc-x|type=Defensive damage modifier, Offensive damage modifier, Status effect<!-- 
+-->|affects=Self<!-- 
+-->|props=[[Armor]], [[Unstoppable]]<!--
+-->|notes=<li>Deathwing uses [[Energy]] instead of Mana as a resource. Deathwing has 100 max Energy, which regenerates at 5 Energy per second (even while channeling ''Molten Flame'').<li>Deathwing can still be affected by allied and enemy [[Time Stop]] and pathing blockers and by enemy non-crowd control debuffs, like [[Attack Slow]]s, [[Damage over time]], [[Damage modifier]], [[Healing modifier]], [[Revealed]], [[armor|Armor debuff]]s and hero specific debuffs that are not tied to applying a crowd control effect on the target.<li>Deathwing cannot be eaten by Zagara's ''Devouring Maw'' (but its pathing blocking properties still work).<li>Damage bonus stacks additively with other offensive damage modifiers that can affect Deathwing's damage.<li>Armor bonus stacks additively with itself, but not with other Armor effects. Other defensive damage modifiers may stack.<li>Deathwing does not heal while in the [[Hall of Storms]] or after casting [[Hearthstone]].<li>Deathwing can heal himself by using ''Dragonflight'', benefiting from [[Regeneration Globe]]s, using [[Healing Fountain]]s, and by selecting certain talents.}};;;trait;False
+
+Molten Flame;Q;File:Molten_Flame_Icon.png;After 1.5 seconds, Deathwing breathes a stream of flame, dealing 20 damage every 0.125 seconds. Drains 30 Energy per second.<!--
+-->{{undoc-x|type=Spell Damage<!-- 
+-->|scaling=4.00%<!-- 
+-->|affects=Enemies<!-- 
+-->|target=Point target<!-- 
+-->|props=[[Area of Effect]], [[Stationary channel]]<!-- 
+-->|cast=1.5 + 0 seconds<!-- 
+-->|aoe=Rectangle<!-- 
+-->|width=3.5<!-- 
+-->|height=12.0<!-- 
+-->|tickrate=8.0 per second<!--
+-->|notes=<li>''Molten Flame'' is usable in both forms.<li>''Molten Flame'' can be canceled 0.75 seconds after successfully casting it to end its effect early.}};3;10;;False
+
+{{Destroyer||Incinerate}};W;File:Incinerate_Icon.png;After 0.75 seconds, Deathwing flaps his wings, dealing 100 damage to nearby enemies.<p>'''{{World Breaker|: Lava burst}}'''<br/>Create a lava pool that damages and Slows.<!--
+-->{{undoc-x|type=Spell Damage<!-- 
+-->|scaling=4.00%<!-- 
+-->|affects=Enemies<!-- 
+-->|target=No target<!-- 
+-->|props=[[Area of Effect]]<!-- 
+-->|cast=0.75 + 0 seconds<!-- 
+-->|aoe=Circle<!-- 
+-->|radius=7.0<!--
+-->|notes=}};7;30;;False
+
+{{World Breaker||Lava Burst}};W;File:Lava_Burst_Icon.png;After a 0.75 second delay, deal 35 damage to all enemies in the area and create a pool of magma that deals 28 damage per second and Slows enemies by 45%. Lasts 6 seconds.<p>'''{{Destroyer|: Incinerate}}'''<br/>Damage enemies near Deathwing.<!--
+-->{{undoc-x|type=Spell damage, Crowd control<!-- 
+-->|scaling=4.00%|affects=Enemies<!-- 
+-->|target=Point target<!-- 
+-->|props=[[Area of Effect]], [[Slow]]<!-- 
+-->|cast=0.75 + 0 seconds<!-- 
+-->|range=9.0<!-- 
+-->|aoe=Circle<!-- 
+-->|radius=3.0<!-- 
+-->|tickrate=4.0 per second (x24)<!-- 
+-->|prop1=Damage per tick|val1=7<!--
+-->|notes=}};9;25;;False
+
+{{Destroyer||Onslaught}};E;File:Onslaught_Icon.png;After 0.5 seconds, Deathwing lunges in a direction, dealing 60 damage to enemies and Slowing them by 35% for 2 seconds. Deathwing bites enemies at the end of the lunge, dealing an additional 120 damage.<p>'''{{World Breaker|: Earth Shatter}}'''<br/>Damage and Stun enemies in two lines.<!--
+-->{{undoc-x|type=Spell Damage, Crowd Control / Movement: [[Dash]]<!-- 
+-->|scaling=4.00%<!-- 
+-->|affects=Enemies / Self<!-- 
+-->|target=Point target<!-- 
+-->|props=[[Area of Effect]], Piercing [[Skillshot]], [[Slow]]<!-- 
+-->|cast=0.5 + 0.1875 seconds<!-- 
+-->|range=<br/>- Dash: 2.0<br/>- Bite: 3.0<!-- 
+-->|aoe=<br/>- End: Radial<br/>- Bite: Circle<!-- 
+-->|radius=<br/>- End: 2.25<br/>- Bite: 1.25<!-- 
+-->|arc=180 degrees (end area)<!-- 
+-->|hitbox=4.5 x 1.5<!-- 
+-->|missile=20.0<!--
+-->|notes=<li>After dash the hitbox lingers for 0.25 seconds. 0.0625 seconds after that it impacts the half-circle at the end of the hitbox and another 0.0625 seconds later it deals the bite damage.}};6;20;;False
+
+{{World Breaker||Earth Shatter}};E;File:Earth_Shatter_Icon.png;Create a fissure of earth that deals 90 damage to enemies hit and Stuns them for 0.75 seconds.<p>'''{{Destroyer|: Onslaught}}'''<br/>Lunge in a direction.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!-- 
+-->|scaling=4.00%<!-- 
+-->|affects=Enemies<!-- 
+-->|props=Piercing [[Skillshot]]<!-- 
+-->|cast=1.0 + 0 seconds<!-- 
+-->|range=14.0<!-- 
+-->|hitbox=2.0 x 2.0<!-- 
+-->|missile=13.0|prop1=Fissure alignment|val1=6 degrees<!--
+-->|notes=}};12;25;;False
+
+Cataclysm;R;File:Cataclysm_Icon.png;After 2 seconds, Deathwing flies in the targeted direction, dealing 90 damage on impact and leaving scorched ground that deals 36 damage a second. Lasts 6 seconds.<p>{{Questonly|Hit Heroes with Molten Flame to grant 3 stacks.}}<p>{{Quest|Score Takedowns to grant 50 stacks.|After reaching 2000 stacks, Deathwing brings on the Hour of Twilight. Cataclysm's periodic damage to Structures is increased by 2500%.}}<!--  
+-->{{undoc-x|type=Spell Damage / Movement: [[Launch]]<!-- 
+-->|scaling=4.00%<!-- 
+-->|affects=Enemies / Self<!-- 
+-->|target=Point target<!-- 
+-->|props=[[Area of Effect]], [[Area of Effect|Piercing Skillshot]]<!-- 
+-->|cast=2.0 + 0 seconds<!-- 
+-->|aoe=Rectangle<!-- 
+-->|width=9.0<!-- 
+-->|height=22.0<!-- 
+-->|hitbox=9.0 x 3.0<!-- 
+-->|missile=17.0<!-- 
+-->|tickrate=4.0 per second (x24)<!-- 
+-->|prop1=Damage per tick|val1=9<!--
+-->|notes=<li>Starts on a 270 second cooldown at the beginning of a match.<li>Disjoints projectiles such as most ranged Basic Attacks as well as Experience Globes which were moving toward Deathwing.<li>Can be used to enter out-of-bounds areas by landing exactly perpendicular to and with the end of the launch being exactly on the edge of Terrain.}};90;;;False
+
+Dragonflight;Z;File:Dragonflight_Icon.png;After 3 seconds, fly into the sky, becoming immune to all effects and gaining 2.5% Health per second. Once cast, this Ability cannot be interrupted. Cannot be cast for 6 seconds after taking damage, Basic Attacking or casting an Ability.<!--
+-->{{undoc-x|type=Healing<!-- 
+-->|scaling=-<!-- 
+-->|affects=Self<!-- 
+-->|target=No target<!-- 
+-->|cast=3.0 + 0 seconds<!-- 
+-->|tickrate=1.0 per second<!--
+-->|notes=<li>Taking damage only prevents using the Ability. Once it has been activated it cannot be interrupted.<li>Last indefinitely until Destroyer or World Breaker are used.<li>While in the air, enemies will be alerted by occasional roars.}};20;;;True
+
+{{Dragonflight|Destroyer}};Q;File:Destroyer_Icon.png;After 1.75 seconds, Deathwing slams down to the ground, dealing 50 damage to enemies in the area and landing in {{Destroyer}} form. Deathwing can begin to cast Abilities 3 seconds after landing.<!--  
+-->{{undoc-x|type=Spell Damage / Movement: [[Teleport]]<!-- 
+-->|scaling=4.00%<!-- 
+-->|affects=Enemies / Self|target=Point target<!-- 
+-->|props=[[Area of Effect]]<!-- 
+-->|cast=1.75 + 0 seconds<!-- 
+-->|range=Global<!-- 
+-->|aoe=Circle<!-- 
+-->|radius=5.0<!--
+-->|notes=<li>Cannot be cast on a point that is out of vision.<li>Begins on cooldown when Dragonflight is cast.<li>If Hero-created Terrain is placed in the landing zone after this is cast, it can prevent Deathwing from using his W and E Abilities until he next lands (correctly). This happens most often with Hogger ''Loot Hoard'' placed in the landing area.}};8;;False
+
+{{Dragonflight|World Breaker}};W;File:World_Breaker_Icon.png;After 1.75 seconds, Deathwing slams down to the ground, dealing 50 damage to enemies in the area and landing in {{World Breaker}} form. Deathwing can begin to cast Abilities 3 seconds after landing.<!--  
+-->{{undoc-x|type=Spell Damage / Movement: [[Teleport]]<!-- 
+-->|scaling=4.00%|affects=Enemies / Self<!-- 
+-->|target=Point target<!-- 
+-->|props=[[Area of Effect]]<!-- 
+-->|cast=1.75 + 0 seconds<!-- 
+-->|range=Global<!-- 
+-->|aoe=Circle<!-- 
+-->|radius=5.0<!--
+-->|notes=<li>Cannot be cast on a point that is out of vision.<li>Begins on cooldown when Dragonflight is cast.<li>If Hero-created Terrain is placed in the landing zone after this is cast, it can prevent Deathwing from using his W and E Abilities until he next lands (correctly). This happens most often with Hogger ''Loot Hoard'' placed in the landing area.}};8;;False
+
+| talents =
+<!-- LEVEL 1 -->
+Dragon Soul;1;1;{{Destroyer|: Incinerate}} heals Deathwing for 100% of the damage dealt to enemy Heroes. <p>{{World Breaker|: Lava Burst's}} explosion damage heals Deathwing for 200% of the damage dealt to enemy Heroes.<!--
+-->{{undoc-x|type=Healing<!-- 
+-->|scaling=-<!-- 
+-->|affects=Self<!-- 
+-->|props=[[Lifesteal]]<!--
+-->|notes=}};File:Dragon_Soul_Icon.png;
+
+Molten Blood;1;2;While Deathwing has 3 or more Armor Plates, he heals for 0.6% of his maximum Health per second.<!--
+-->{{undoc-x|type=Healing<!-- 
+-->|scaling=-<!-- 
+-->|affects=Self<!-- 
+-->|tickrate=1.0 per second<!--
+-->|notes=}};File:Molten_Blood_Icon.png;
+
+Draconic Might;1;3;Deathwing's Basic Attacks against enemy Heroes heal him for 25% of the damage dealt. Upon losing an Armor Plate, Deathwing becomes Protected for 0.75 seconds.<!--
+-->{{undoc-x|type=Healing, Status effect<!-- 
+-->|scaling=-<!-- 
+-->|affects=Self<!-- 
+-->|props=[[Attack Modifier]], [[Lifesteal]], [[Protected]]<!--
+-->|notes=}};File:Draconic_Might_Icon.png;
+
+<!-- LEVEL 4 -->
+Infernus;2;1;Increase the damage of Molten Flame against enemy Heroes by 25%. Increase this damage bonus to 75% when Molten Flame is cast at 75% Energy or higher.<!--
+-->{{undoc-x|type=Offensive damage modifier<!-- 
+-->|affects=Ability<!--
+-->|notes=<li>Damage bonus stacks additively with other offensive damage modifiers that can affect <i>Molten Flame</i>'s damage.}};File:Infernus_Icon.png;
+
+Heat Wave;2;2;{{Destroyer|:}} After hitting an enemy Hero with {{Destroyer||Incinerate}}, Deathwing deals 18 damage per second to all nearby enemies for the next 9 seconds. Stacks up to 3 times. <p>{{World Breaker|:}} Increases the explosion damage of {{World Breaker||Lava Burst}} by 150%.<!--
+-->{{undoc-x|type=Spell Damage / Offensive damage modifier<!-- 
+-->|scaling=4.00%|affects=Enemies / Ability<!-- 
+-->|props=[[Area of Effect]]<!-- 
+-->|aoe=Circle<!-- 
+-->|radius=3.75<!-- 
+-->|tickrate=2.0 per second (x16)<!-- 
+-->|prop1=Damage per tick|val1=9<!--
+-->|notes=<li>Burn damage from hitting Heroes with ''Incinerate'' does not benefit from ''Dragon Soul'' lifesteal.<li>Burn Damage is not effected by damage modifers other than the one the 100% bonus damage to heroes from Deathwing's trait.<li>Subsequent hits refresh the burn duration.<li>Damaging enemy Heroes with burn damage does not trigger tower aggro.<li>Damage bonus stacks additively with other offensive damage modifiers that can affect <i>Lava Burst</i>'s' damage.}};File:Heat_Wave_Icon.png;
+
+Dragon's Ire;2;3;While Deathwing has 3 or fewer Armor Plates, his damage is increased by 25%.<!--
+-->{{undoc-x|type=Offensive damage modifier<!-- 
+-->|affects=Self<!--
+-->|notes=<li>Damage bonus stacks additively with other offensive damage modifiers affecting Deathwing's damage output.}};File:Dragon's_Ire_Icon.png;
+
+<!-- LEVEL 7 -->
+Firestorm;3;1;Reduce the cooldowns of Deathwing's landing Abilities by 3 seconds. When Deathwing lands, he drops 7 meteors near the landing area, dealing 77 damage to enemies hit.<p>Meteors prioritize landing on Heroes, otherwise they fall randomly in the area.<!--
+-->{{undoc-x|type=Spell Damage<!-- 
+-->|scaling=4.00%<!-- 
+-->|affects=Enemies<!-- 
+-->|props=[[Area of Effect]]<!-- 
+-->|aoe=Circle<!-- 
+-->|radius=1.0<!--
+-->|notes=}};File:Firestorm_Icon.png;
+
+Death Drop;3;2;Hitting an enemy Hero with {{Destroyer}} or {{World Breaker|'s}} landing damage reduces their Spell Armor by 15 for 4 seconds and Deathwing's Basic Ability cooldowns by 2 seconds.<!--
+-->{{undoc-x|type=Defensive damage modifier<!-- 
+-->|affects=Enemy Heroes<!-- 
+-->|props=[[Armor]] reduction<!--
+-->|notes=<li>Does not stack with other negative Spell Armor effects. Other defensive damage modifiers may stack.}};File:Death_Drop_Icon.png;
+
+Skyfall;3;3;{{Charge Cooldown|10 / 0.5}}<br /> After using Dragonflight, Deathwing can drop meteors anywhere within vision, dealing 58 damage to enemies in the area. Has 3 charges.<p>If a Hero is hit, Deathwing heals for 3% of his maximum Health.<!--
+-->{{undoc-x|type=Spell Damage / Healing<!-- 
+-->|scaling=4.00% / -<!-- 
+-->|affects=Enemies / Self<!-- 
+-->|target=Point target<!-- 
+-->|props=[[Area of Effect]]<!-- 
+-->|cast=Instant<!-- 
+-->|range=Global<!-- 
+-->|aoe=Circle<!-- 
+-->|radius=2.0<!-- 
+-->|prop1=Impact delay<!-- 
+-->|val1=0.8125 seconds<!--
+-->|notes=<li>This Ability takes over the 'E' slot during ''Dragonflight''.<li>Cannot be cast on a point that is out of vision.}};File:Skyfall_Icon.png;
+
+<!-- LEVEL 10 -->
+Burn Beneath My Shadow;4;1;When an enemy Fort or Keep is destroyed the cooldown of Cataclysm is reset. Cataclysm's periodic damage is increased by 80%.<!--
+-->{{undoc-x|type=Offensive damage modifier<!-- 
+-->|affects=Ability<!--
+-->|notes=<li>Damage bonus stacks additively with other offensive damage modifiers that can affect <i>Cataclysm</i>'s damage.}};File:Burn_Beneath_My_Shadow_Icon.png;
+
+Bellowing Roar;4;2;{{Cooldown|60}}<br>{{Active}} After 1 second, Deathwing unleashes a mighty roar, dealing 25 damage to nearby Heroes and causing them to run in Fear for 1.5 seconds.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!-- 
+-->|scaling=4.00%<!-- 
+-->|affects=Enemy Heroes<!-- 
+-->|target=No target<!-- 
+-->|props=[[Area of Effect]], [[Fear]]<!-- 
+-->|cast=1.0 + 0.5 seconds<!-- 
+-->|aoe=Circle|radius=6.0<!--
+-->|notes=<li>Can be cast during ''Dragonflight'' for the rest of the game if the Talent is selected during <i>Molten Flame</i>'s cast or while landing from ''Dragonflight''.<li>Fear is treated as a [[Silence]] effect.}};File:Bellowing_Roar_Icon.png;
+
+<!-- LEVEL 13 -->
+Wicked Inferno;5;1;Molten Flame's Energy cost per second is reduced by 10. After using Molten Flame, Deathwing gains 15 Energy over 3 seconds.;File:Wicked_Inferno_Icon.png;
+
+Ruination;5;2;{{Destroyer|:}} The bite from {{Destroyer||Onslaught}} now Slows by 60% for 1.5 seconds.<p>{{World Breaker|:}} Reduce {{World Breaker||Earth Shatter's}} cooldown by 6 seconds and its Energy cost by 10.;File:Ruination_Icon.png;
+
+Fire and Fury;5;3;Basic Attacks against Rooted, Slowed, or Stunned enemy Heroes deal 40% additional damage and reduce the cooldowns of Deathwing's Basic Abilities by 0.5 seconds.<!--
+-->{{undoc-x|type=Offensive damage modifier<!-- 
+-->|affects=Self<!-- 
+-->|props=[[Attack Modifier]]<!--
+-->|notes=<li>Damage bonus stacks additively with other offensive damage modifiers that can affect Deathwing's Basic Attack damage.}};File:Fire_and_Fury_Icon.png;
+
+<!-- LEVEL 16 -->
+Conflagration;6;1;Dealing 320 damage with Molten Flame to enemy Heroes within 4 seconds causes them to burn for an additional 100 damage over 4 seconds. While burning, they explode every 1 second, dealing 80 damage to all nearby enemies.<!--
+-->{{undoc-x|type=Spell Damage<!-- 
+-->|scaling=4.00% (threshold & damage)<!-- 
+-->|affects=Enemy Heroes (DoT) / Enemies (AoE)<!-- 
+-->|target=|props=[[Area of Effect]], [[Damage over Time]]<!-- 
+-->|aoe=Circle<!-- 
+-->|radius=3.0<!-- 
+-->|tickrate=1.0 per second (x4)<!-- 
+-->|prop1=Damage per tick|val1=25<!--
+-->|notes=}};File:Conflagration_Icon.png;
+
+Gaze Onto Destruction;6;2;Hitting Heroes with {{Destroyer}} or {{World Breaker|'s}} landing causes their damage to be reduced by 75% and Slows them by 40% for 3.5 seconds.<!--
+-->{{undoc-x|type=Offensive damage modifier, Crowd control<!-- 
+-->|affects=Enemies<!--
+-->|notes=<li>Damage reduction stacks additively with other offensive damage modifiers affecting the target.}};File:Gaze_Onto_Destruction_Icon.png;
+
+Elementium Plating;6;3;{{Cooldown|60}}<br>{{Active}} Activate to gain a Shield equal to 30% of Deathwing's missing Health for 8 seconds. While the Shield holds, Deathwing regenerates 2% of his maximum Health per second.</br>When the Shield expires or is destroyed, Deathwing regains Armor Plates appropriate for his new Health.<p>The Shield and effect end immediately if Deathwing uses Dragonflight.<!--
+-->{{undoc-x|type=Shield, Healing<!-- 
+-->|scaling=-<!-- 
+-->|affects=Self<!-- 
+-->|target=No target<!-- 
+-->|cast=Instant<!-- 
+-->|tickrate=1.0 per second<!--
+-->|notes=}};File:Elementium_Plating_Icon.png;
+
+<!-- LEVEL 20 -->
+Stood in the Fire;7;1;Enemy Heroes are Slowed by 40% while standing in scorched ground, and its duration is increased by 50%.<!--
+-->{{undoc-x|type=Crowd control<!-- 
+-->|affects=Enemy Heroes<!-- 
+-->|props=[[Slow]]<!--
+-->|notes=}};File:Stood_in_the_Fire_Icon.png;
+
+Arrival of a God;7;2;{{Destroyer}} or {{World Breaker|'s}} landing damage is increased by 400%.<p>Deathwing also gains the benefits of all of his level 7 talents.<!--
+-->{{undoc-x|type=Offensive damage modifier<!-- 
+-->|affects=Ability<!--
+-->|notes=<li>Damage bonus stacks additively with other offensive damage modifiers that can affect landing damage from ''Dragonflight'' abilities.}};File:Arrival_of_a_God_Icon.png;
+
+Destroyer's Rampage;7;3;For the next 4 seconds after landing in {{Destroyer}} form, Deathwing's damage is increased by 40% and his Basic Ability cooldowns recharge 50% faster.<p>Damaging Heroes refreshes this effect and switching to {{World Breaker}} form removes the effect.<!--
+-->{{undoc-x|type=Offensive damage modifier<!-- 
+-->|affects=Self<!--
+-->|notes=<li>Damage bonus stacks additively with other offensive damage modifiers affecting Deathwing's damage output.<li>Damage bonus is lost on death unlike most other damage bonuses. This matters because some of Deathwing's Abilities can do damage after he dies, and damage modifiers are checked at the moment the damage hits.}};File:Destroyer's_Rampage_Icon.png;
+}}
+
+<noinclude>
+{{Scaling table/start|{{#var:health}}|{{#var:health scaling}}|{{#var:health regen}}|{{#var:health regen scaling}}|{{#var:attack damage}}|{{#var:attack damage scaling}}}}
+{{Scaling table/slot|Molten Flame|20|0.04}}
+{{Scaling table/slot|Molten Flame (per second)|160|0.04}}
+{{Scaling table/slot|Destroyer - Incinerate|100|0.04}}
+{{Scaling table/slot|World Breaker - Lava Burst (initial)|35|0.04}}
+{{Scaling table/slot|World Breaker - Lava Burst (periodic)|7|0.04}}
+{{Scaling table/slot|World Breaker - Lava Burst (periodic, per second)|28|0.04}}
+{{Scaling table/slot|Destroyer - Onslaught (base)|60|0.04}}
+{{Scaling table/slot|Destroyer - Onslaught (bite)|120|0.04}}
+{{Scaling table/slot|World Breaker - Earthshatter|90|0.04}}
+{{Scaling table/slot|Cataclysm (impact)|90|0.04}}
+{{Scaling table/slot|Cataclysm (periodic)|9|0.04}}
+{{Scaling table/slot|Cataclysm (periodic, per second)|36|0.04}}
+{{Scaling table/slot|(Dragonflight)|{{#expr:{{#var:health}}*0.025}}|{{#var:health scaling}}}}
+{{Scaling table/slot|Dragonflight - Destroyer / World Breaker|52|0.04}}
+{{Scaling table/slot|Heat Wave (per stack)|9|0.04|4}}
+{{Scaling table/slot|Heat Wave (per stack, per second)|18|0.04|4}}
+{{Scaling table/slot|Firestorm|77|0.04|7}}
+{{Scaling table/slot|Skyfall|58|0.04|7}}
+{{Scaling table/slot|Bellowing Roar|25|0.04|10}}
+{{Scaling table/slot|Conflagration (threshold)|320|0.04|16}}
+{{Scaling table/slot|Conflagration (dot)|100|0.04|16}}
+{{Scaling table/slot|Conflagration (dot, per second)|25|0.04|16}}
+{{Scaling table/slot|Conflagration (explosion)|80|0.04|16}}
+{{Scaling table/end}}
+</noinclude>
+
+<noinclude>
+{{DEFAULTSORT:Deathwing}}</noinclude>

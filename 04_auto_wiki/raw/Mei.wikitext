@@ -1,0 +1,256 @@
+{{hero data
+| name = Mei
+| date = June 23, 2020
+| price = 10000
+| title = Adventuring Climatologist
+| role = Tank
+| franchise = Overwatch
+| info = A mobile Tank who controls and disrupts the battlefield with weather-altering technology
+| lore = A brilliant mind with a sunny disposition, Dr. Mei-Ling Zhou joined Overwatch to help solve the world's growing climate problems. Armed with a host of weather-altering technologies, Mei now fights to protect her friends and secure a future for a troubled world.
+| difficulty = Medium
+| melee = False
+| health = 2625
+| healthRegen = 5.5703
+| resource = 500
+| resourceType = Mana
+| energyRegen = 3.0
+| armor = 0
+| attackSpeed = 1.0
+| attackRange = 4.5
+| attackDamage = 78
+| healthScaling = 0.04
+| regenScaling = 0.04
+| adamageScaling = 0.04
+| unitRadius = 0.875
+| icon =
+| skills = 
+Cryo-Freeze;D;File:Cryo-Freeze_Icon.png;Become encased in ice for 3 seconds, gaining a rapidly decaying Shield that absorbs up to 1104 damage. While active, this Shield grants Unstoppable and restores up to 35% of Mei's maximum Health.<!--
+-->{{undoc-x|type=Healing, Shield, Status effect<!--
+-->|scaling=4.00%<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|props=[[Stationary channel]], [[Unstoppable]]<!--
+-->|cast=Instant<!--
+-->|tickrate=8.0 per second (x24)<!--
+-->|prop1=Healing per tick|val1=1.46%<!--
+-->|prop2=Shield decay per tick|val2=46<!--
+-->|prop3=Maximum duration|val3=3.0 seconds<!--
+-->|notes=<li>''Cryo-Freeze'' can be reactivated after 0.5 seconds to end its effect early, removing the Shield, healing and Unstoppable.<li>The Ability ends immediately if the Shield expires or breaks, removing Unstoppable status and healing.}};40 / 0.5;
+
+Snow Blind;Q;File:Snow_Blind_Icon.png;Throw a snowball that hits all enemies in an area. Enemies hit take 70 damage, are Slowed by 35%, and are Blinded for 1.75 seconds.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Blind]], [[Slow]]<!--
+-->|cast=0.125 + 0 seconds<!--
+-->|range=9.0<!--
+-->|aoe=Circle<!--
+-->|radius=2.25<!--
+-->|missile=<br/>- Initial: 21<br/>- Acceleration: -7.0<!--
+-->|notes=<li>Slow and Blind are applied after the damage is dealt.}};10;35
+
+Blizzard;W;File:Blizzard_Mei_Icon.png;Command Snowball to create a blizzard at the target location for 2 seconds. Enemies within the blizzard take 13 damage every 0.25 seconds and are Slowed by 7%, stacking up to 35%. When the blizzard ends, enemies within its area take an additional 75 damage and are Stunned for 1.25 seconds.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Slow]], [[Stun]]<!--
+-->|cast=0.125 + 0 seconds<!--
+-->|range=9.0<!--
+-->|aoe=Circle<!--
+-->|radius=4.0<!--
+-->|tickrate=4.0 per second (x8)<!--
+-->|prop1=Initial delay|val1=0.5 seconds<!--
+-->|prop2=Slow duration|val2=3.0 seconds<!--
+-->|notes=<li>Slow is applied before the periodic damage is dealt.<li>Each instance of ramping up the Slow counts as applying it.<li>Final damage is dealt in a separate instance on the last tick in addition to the periodic damage.<li>Stun is applied after the final damage is dealt.}};14;70
+
+Icing;E;File:Icing_Icon.png;Slide quickly in the targeted direction. When this effect ends, enemies near Mei are knocked back, take 52 damage, and are Slowed by 80%, rapidly decaying over 1.5 seconds.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control / Movement: [[Dash]]<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies / Self<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Knockback]], [[Slow]]<!--
+-->|cast=0.125 + 0 seconds<!--
+-->|range=11<!--
+-->|aoe=Circle<!--
+-->|radius=4.0<!--
+-->|missile=<br/>- Initial: 0<br/>- Acceleration: 25<!--
+-->|prop1=Knockback duration|val1=0.1875 seconds<!--
+-->|prop2=Knockback speed|val2=12<!--
+-->|notes=<li>''Icing'' can be reactivated after 0.25 seconds to stop the dash and trigger its end effect early.<li>Knockback is applied before the damage is dealt.<li>Slow is applied as the knockback effect expires.}};14 / 0.25;70
+
+Avalanche;R;File:Avalanche_Icon.png;After 0.5 seconds, roll a massive snowball that consumes enemy Heroes in its path. At the end of its path, the snowball crumbles, releasing the consumed Heroes, dealing 220 damage and Stunning them for 0.5 per Hero consumed.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control, Status effect<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemy Heroes<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect|Piercing Skillshot]], [[Channeled cast]] (stationary), Debuff [[Stasis]], [[Stun]]<!--
+-->|cast=0.4375 (ch) + 0.0625 seconds<!--
+-->|range=22<!--
+-->|hitbox=2.5 x 0.65<!--
+-->|missile=10<!--
+-->|notes=<li>Interrupting the Ability during its windup puts it on a 10 second cooldown.<li>Enemies inside the snowball are put in hostile Stasis. In addition to usual effects of Stasis, the targets are removed from ground plane (disjoints certain projectiles), have no collision, cannot regenerate Health, Mana, Energy or Shields, cannot be seen on the minimap or revealed and some delayed heals applied beforehand are prevented.}};90;80
+
+Ice Wall;R;File:Ice_Wall_Icon.png;After a 0.75 second delay, create an impassable wall that traps enemy Heroes hit for 2.5 seconds. When the wall expires, trapped Heroes are Slowed by 75% decaying over 3 seconds.<!--
+-->{{undoc-x|type=Crowd control, Status effect / Pathing blocker<!--
+-->|scaling=<!--
+-->|affects=Enemy Heroes / Enemies<!--
+-->|target=[[Vector Targeting]]<!--
+-->|props=[[Area of Effect]], [[Slow]], [[Time Stop]]<!--
+-->|cast=0.0625 + 0.0625 seconds<!--
+-->|range=11<!--
+-->|aoe=Rectangle <sup>(1</sup><!--
+-->|width=3.0<!--
+-->|height=12<!--
+-->|notes=<li><sup>1)</sup> Area consists of 7 overlapping circular pathing blocker units with 1.5 radius.<li>The first point of vector targeting determines the initial point and the second the direction.<li>Blocker units are spawned at 0.125 second intervals, immediately affecting the units in their respective areas. Regardless, they will all expire at the same moment, as the duration of ''Ice Wall'' will not start counting until the wall has been fully formed.}};60;50
+
+| talents = 
+<!-- LEVEL 1 -->
+Heavy Pack;1;1;Increases the duration of Snow Blind's Slow by 1.5 seconds. Each time Blizzard damages an enemy Hero, reduce the cooldown of Snow Blind by 0.5 seconds and gain 3 Mana.;File:Heavy_Pack_Icon.png;
+
+Ice Storm;1;2;Every 3rd hit of Blizzard against enemy Heroes deals an additional 42 damage. Blizzard's final stun damage is increased by 150% against all enemies.<!--
+-->{{undoc-x|type=Spell Damage / Offensive damage modifier<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemy Heroes / Ability<!--
+-->|notes=<li>Periodic bonus damage is dealt in a separate instance on the same tick in addition to the periodic damage. This damage instance does not interact with other talents affecting ''Blizzard''.<li>Stun damage bonus stacks additively with other offensive damage modifiers that can affect <i>Blizzard</i>'s damage.}};File:Ice_Storm_Icon.png;
+
+Heat Transfer;1;3;Basic Attacks against Rooted, Stunned, or Slowed Heroes deal 33% more damage. Each time Mei Stuns or Slows an enemy Hero she heals for 16.5 Health.<!--
+-->{{undoc-x|type=Healing, Offensive damage modifier<!--
+-->|scaling=4.00%<!--
+-->|affects=Self<!--
+-->|target=<!--
+-->|props=[[Area of Effect]], [[Attack Modifier]]<!--
+-->|notes=<li>Damage bonus stacks additively with other offensive damage modifiers that can affect Mei's Basic Attack damage.}};File:Heat_Transfer_Icon.png;
+
+<!-- LEVEL 4 -->
+Slushball;2;1;Snow Blind deals 75% increased damage and Structures hit are disabled for 3 seconds.<!--
+-->{{undoc-x|type=Offensive damage modifier / Crowd control<!--
+-->|affects=Ability / Structures<!--
+-->|notes=<li>Damage bonus stacks additively with other offensive damage modifiers that can affect <i>Snow Blind</i>'s damage.}};File:Slushball_Icon.png;
+
+Cold Front;2;2;Reduce the cooldown of Icing by 3 seconds. If Mei enters her own Blizzard while Icing is active, the cooldown of Icing is reduced by 5 seconds and she gains 80 Mana.;File:Cold_Front_Icon.png;
+
+Crystallize;2;3;Reduce the cooldown of Cryo-Freeze by 10 seconds. Mei gains 40 Spell Armor while Cryo-Freeze is active and for 1 second after.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Spell Armor]]<!--
+-->|notes=<li>Spell Armor persists regardless of how Mei exits ''Cryo-Freeze''.<li>Does not stack with other positive Spell Armor effects. Other defensive damage modifiers may stack.}};File:Crystallize_Icon.png;
+
+<!-- LEVEL 7 -->
+Induce Hibernation;3;1;Enemy Heroes inside of Blizzard's area have their damage dealt reduced by 40%.<p>When Blizzard ends, enemy Heroes within its area gain this effect for an additional 4 seconds.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Enemy Heroes<!--
+-->|notes=.<li>Stacks additively with other offensive damage modifiers.}};File:Induce_Hibernation_Icon.png;
+
+Skating Away;3;2;When Icing ends, grant Mei and nearby allies 20% Movement Speed and 50 Physical Armor for 3 seconds.<!--
+-->{{undoc-x|type=Defensive damage modifier, Status effect<!--
+-->|affects=Allies, Self<!--
+-->|props=[[Area of Effect]], [[Movement Speed]], [[Physical Armor]]<!--
+-->|aoe=Circle<!--
+-->|radius=4.0<!--
+-->|notes=}};File:Skating_Away_Icon.png;
+
+Backup Battery;3;3;{{Cooldown|70}}<br>Activate to remove all Roots and Slows and regenerate 20% of maximum Health over 2 seconds. The cooldown of this Ability is reduced by 10 seconds each time Mei picks up a Regeneration Globe.<!--
+-->{{undoc-x|type=CC removal, Healing<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|props=[[Heal over time]]<!--
+-->|cast=Instant<!--
+-->|tickrate=2.0 per second (x4)<!--
+-->|prop1=Heal per tick|val1=5.0%<!--
+-->|notes=}};File:Backup_Battery_Icon.png;
+
+<!-- LEVEL 10 -->
+Avalanche;4;1;{{Cooldown|90}}<br>After 0.5 seconds, roll a massive snowball that consumes enemy Heroes in its path. At the end of its path, the snowball crumbles, releasing the consumed Heroes, dealing 220 damage and stunning them for 0.5 per Hero consumed.;File:Avalanche_Icon.png;
+Ice Wall;4;2;{{Cooldown|60}}<br>After a 0.75 second delay, create an impassable wall that traps enemy Heroes hit for 2.5 seconds. When the wall expires, trapped Heroes are slowed by 75% decaying over 3 seconds.;File:Ice_Wall_Icon.png;
+
+<!-- LEVEL 13 -->
+Flurry;5;1;While in her own Blizzard, Mei gains 50% increased Attack Speed and Blizzard's cooldown refreshes 125% faster. If Mei is in her own Blizzard when it ends, gain these bonuses for 3 additional seconds.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|props=[[Attack Speed]]<!--
+-->|notes=}};File:Flurry_Icon.png;
+
+Cooling Servos;5;2;While Cryo-Freeze is active, Mei's Basic Ability cooldowns recover 200% faster.<p>{{Passive}} Basic Attacks Slow by 20% for 1.5 seconds.<!--
+-->{{undoc-x|type=Crowd control<!--
+-->|affects=Enemies<!--
+-->|props=[[Attack Modifier]], [[Slow]]<!--
+-->|notes=<li>Slow is applied after damage is dealt.<li>Each instance counts as applying the Slow.}};File:Cooling_Servos_Icon.png;
+
+Polar Vortex;5;3;Using an Ability causes Mei to deal 24 damage a second to nearby enemies for 4 seconds. Enemy Heroes damaged by this effect also have their Movement and Attack Speed Slowed by 20%.<!--
+-->{{undoc-x|type=Spell Damage / Crows control, Status effect<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies / Enemy Heroes<!--
+-->|props=[[Area of Effect]], [[Attack Slow]], [[Slow]]<!--
+-->|aoe=Circle<!--
+-->|radius=2.5<!--
+-->|tickrate=2.0 per second (x8)<!--
+-->|prop1=Damage per tick|val1=12<!--
+-->|prop2=Slow duration|val2=0.5625 seconds<!--
+-->|notes=<li>Subsequent applications refresh the duration of the aura.<li>Each instance counts as applying the Slow.}};File:Polar_Vortex_Icon.png;
+
+<!-- LEVEL 16 -->
+Fresh Powder;6;1;Snow Blind gains an additional charge and its range is increased by 33%.<!--
+-->{{undoc-x|prop1=Bonus range|val1=3.0<!--
+-->|prop2=Cooldown between charges|val2=2.0 seconds}};File:Fresh_Powder_Icon.png;
+
+Black Ice;6;2;Icing's Slow effect no longer decays over its duration. Icing deals 300% more damage to enemies very close to Mei.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|radius=2.0<!--
+-->|notes=<li>Damage bonus stacks additively with other damage modifiers that can affect <i>Icing</i>'s damage.}};File:Black_Ice_Icon.png;
+
+Acclimation;6;3;Each time Mei Slows or Stuns an enemy Hero, the damage she deals and healing she receives is increased by 1%, stacking up to 20 times. While at maximum stacks, Mei also gains 10 Armor. Lasts 8 seconds.<!--
+-->{{undoc-x|type=Defensive damage modifier, Healing modifier, Offensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Armor]]<!--
+-->|notes=<li>Does not stack with other positive Armor effects. Other defensive damage modifiers may stack.<li>Stacks additively with healing modifiers that affect Mei's healing received.<li>Damage bonus stacks additively with itself and other offensive damage modifiers.<li>}};File:Acclimation_Icon.png;
+
+<!-- LEVEL 20 -->
+Cascade;7;1;While traveling, Avalanche constantly launches a volley of untalented Snow Blind snowballs ahead of itself.<p>{{Passive}} Reduce the cooldown of Avalanche by 30 seconds.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=<!--
+-->|target=<!--
+-->|props=[[Area of Effect]]<!--
+-->|range=12.5<!--
+-->|aoe=Circle<!--
+-->|radius=2.25<!--
+-->|missile=28<!--
+-->|notes=<li>Launches a total of 22 snowballs:<li>Immediately after release fires 5 snowballs over 0.375 seconds toward randomly selected 5 out of 7 possible predetermined locations ([x,y] = [0,10], [±2.75, 11], [±2.875, 12], [±2.75, 13]).<li>It then continues to launch snowballs to 7 predetermined locations 12.5 units ahead (x = 0, ±2.75, ±3.75, ±4.25) in randomized order, one every 0.125 seconds.<li>Upon reaching the end location, 5 more snowballs are released toward 8 possible locations within ~3.5 radius over 0.3125 seconds.}};File:Cascade_Icon.png;
+
+Shatter;7;2;When Ice Wall expires, trapped enemy Heroes hit take 210 damage and have their Armor reduced by 25 for 5 seconds.<!--
+-->{{undoc-x|type=Spell Damage, Defensive damage modifier<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Armor reduction]]<!--
+-->|notes=<li>Armor debuff is applied after damage is dealt.<li>Does not stack with other negative Armor effects. Other defensive damage modifiers may stack.}};File:Shatter_Icon.png;
+
+The Big One;7;3;Every 15 seconds, the next Snow Blind you cast has 67% increased area and 200% increased damage.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|prop1=Bonus range|val1=1.5<!--
+-->|notes=<li>Damage bonus stacks additively with other offensive damage modifiers that can affect <i>Snow Blind</i>'s damage.}};File:The_Big_One_Icon.png;
+
+Flash Freeze;7;4;When Mei takes fatal damage, she instantly gains Cryo-Freeze. This effect has a 180 second cooldown.;File:Flash_Freeze_Icon.png;
+
+}}
+<noinclude>
+{{Scaling table/start|{{#var:health}}|{{#var:health scaling}}|{{#var:health regen}}|{{#var:health regen scaling}}|{{#var:attack damage}}|{{#var:attack damage scaling}}}}
+{{Scaling table/slot|Cryo-Freeze|1104|0.04}}
+{{Scaling table/slot|Snow Blind|70|0.04}}
+{{Scaling table/slot|Blizzard (periodic, single)|13|0.04}}
+{{Scaling table/slot|Blizzard (periodic, per second)|52|0.04}}
+{{Scaling table/slot|Blizzard (final)|75|0.04}}
+{{Scaling table/slot|Icing|52|0.04}}
+{{Scaling table/slot|Avalanche|220|0.04|10}}
+{{Scaling table/slot|Ice Storm|42|0.04|1}}
+{{Scaling table/slot|Heat Transfer|16.5|0.04|1}}
+{{Scaling table/slot|Polar Vortex (single)|12|0.04|13}}
+{{Scaling table/slot|Polar Vortex (per second)|24|0.04|13}}
+{{Scaling table/slot|Cascade|70|0.04|20}}
+{{Scaling table/slot|Shatter|210|0.04|20}}
+{{Scaling table/end}}
+</noinclude>

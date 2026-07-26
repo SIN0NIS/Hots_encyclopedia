@@ -1,0 +1,360 @@
+{{hero data
+| name = Abathur
+| date = March 13, 2014
+| price = 10000
+| title = Evolution Master
+| role = Support
+| franchise = Starcraft
+| info =A unique Hero who can manipulate the battle from anywhere on the map.
+| lore = Abathur, the Evolution Master of Kerrigan's Swarm, works ceaselessly to improve the zerg from the genetic level up. His hate for chaos and imperfection almost rivals his hatred of pronouns.
+| difficulty = Very Hard
+| melee = True
+| health = 685
+| healthRegen = 1.4257
+| resource = 0
+| resourceType = None
+| armor = 0
+| attackSpeed = 1.43
+| attackRange = 1
+| attackDamage = 26
+| healthScaling = 0.04
+| regenScaling = 0.04
+| adamageScaling = 0.04
+| unitRadius = 0.75
+| icon = File:Abathur_Icon.png
+| skills = 
+Locust Strain;Trait;File:Locust_Strain_Icon.png;Spawns a Locust to attack down the nearest lane every 15 seconds. Locusts last for 16 seconds, have 350 Health and deal 46 damage with each Basic Attack. Locusts deal 25% bonus damage to enemy Structures.<!--
+-->{{undoc-x|type=Summon<!--
+
+-->|notes=}}<hr/><small>'''[[Locust]]'''</small><!--
+-->{{undoc-x|nohr=true<!--
+-->|type=Active<!--
+-->|scaling=4.00% (damage & Health)<!--
+-->|target=Automatic<!--
+-->|prop1=Health|val1=350<!--
+-->|prop2=Basic Attack damage|val2=46<!--
+-->|prop3=Attack speed|val3=1.00<!--
+-->|prop4=Attack range|val4=1.5<!--
+-->|prop5=Movement Speed|val5=3.25<!--
+-->|notes=<li>Damage bonus to Structures stacks additively with other offensive damage modifiers that can affect Locusts' Basic Attack damage.}};15;;trait;False
+
+Symbiote;Q;File:Symbiote_Icon.png;Spawn and attach a Symbiote to a target ally or Structure. While active, Abathur controls the Symbiote, gaining access to new Abilities. The Symbiote is able to gain XP from nearby enemy deaths.<!--
+-->{{undoc-x|type=Invulnerable summon<!--
+-->|affects=Allies<!--
+-->|target=Unit target<!--
+-->|cast=0.5 + 1.0 seconds<!--
+-->|range=Global<!--
+-->|notes=<li>Allied and enemy Symbiote hosts display a crown icon above their portraits on the [[Minimap]].<li>Symbiote will be paused if the allied target enters a [[Stasis]] effect. Symbiote can still be canceled in these situations, but no Symbiote Abilities can be used.}};4;;;False
+
+Symbiote - Stab;Q;File:Stab_Icon.png;Shoots a spike toward target area that deals 119 damage to the first enemy it contacts.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Skillshot]]<!--
+-->|cast=Instant<!--
+-->|range=8.75<!--
+-->|hitbox=1.25 x 1.75<!--
+-->|missile=25<!--
+-->|notes=<li>Starts with 2 charges.}};3 / 1.0;;;True
+
+Symbiote - Spike Burst;W;File:Spike_Burst_Icon.png;Deals 120 damage to nearby enemies.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=No target<!--
+-->|props=[[Area of Effect]]<!--
+-->|cast=Instant<!--
+-->|aoe=Circle<!--
+-->|radius=4.0<!--
+-->|notes=}};6;;;True
+
+Symbiote - Carapace;E;File:Carapace_Icon.png;Shields the assisted ally for 150. Allied Heroes are healed for 22 Health per second while the Shield is active. Lasts for 6 seconds.<!--
+-->{{undoc-x|type=Healing / Shield<!--
+-->|scaling=4.00% (both)<!--
+-->|affects= Non-Structure allied Heroes, Monstrosity / Allies<!--
+-->|target=No target<!--
+-->|cast=Instant<!--
+-->|tickrate=1.0 per second<!--
+-->|notes=<li>Healing ends immediately if Shield is destroyed.}};6;;;True
+
+Toxic Nest;W;File:Toxic_Nest_Icon.png;Spawn a mine that becomes active after a short time. Deals 153 damage and reveals the enemy for 4 seconds. Lasts 90 seconds.<!--
+-->{{undoc-x|type=Summon<!--
+-->|scaling=4.00%<!--
+-->|target=Point target<!--
+-->|cast=Instant<!--
+-->|range=70<!--
+-->|notes=<li>Toxic Nests align with the map grid, i.e. each 1 x 1 square can hold only 1 Toxic Nest.}}<!--
+
+--><hr/><small>'''Toxic Nest'''</small><!--
+-->{{undoc-x|nohr=true<!--
+-->|type=Passive<!--
+-->|scaling=4.00% (health)<!--
+-->|props=Invisible<!--
+-->|prop1=Health|val1=80<!--
+-->|prop2=Basic Attack damage|val2=-<!--
+-->|prop3=Movement Speed|val3=-<!--
+-->|prop4=Sight radius|val4=3.5<!--
+-->|prop5=Unit radius|val5=0.5<!--
+-->|prop6=Arming delay|val6=5 seconds<!--
+-->|notes=<li>After the arming period Toxic Nest becomes invisible, grants vision around it and is capable of exploding.<li>Invulnerable targets do not affect any ''Toxic Nest''s they walk over.}}<!--
+
+--><hr/><small>'''Toxic Nest Explosion'''</small><!--
+-->{{undoc-x|nohr=true<!--
+-->|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|props=[[Area of Effect]]<!--
+-->|aoe=Circle<!--
+-->|radius=<br/>- Trigger: 1.5<br/>- Damage: 2.0<!--
+-->|notes=}};10;;;False
+
+Ultimate Evolution;R;File:Ultimate_Evolution_Icon.png;Clone target allied Hero and control it for 20 seconds. Abathur has perfected the clone, granting it 20% Spell Power, 20% bonus Attack Damage, and 10% bonus Movement Speed. Cannot use their Heroic Ability.<!--
+-->{{undoc-x|type=Summon<!--
+-->|affects=Allied Heroes<!--
+-->|target=Unit target<!--
+-->|props=[[Channeled cast]] (stationary), [[Stasis]]<!--
+-->|cast=1 + 0.0625 seconds<!--
+-->|range=Global<!--
+-->|notes=<li>Interrupting the Ability puts it on a 10 second cooldown.<li>The target of ''Ultimate Evolution'' must be a real Hero<nowiki>;</nowiki> other [[Heroic Target]]s, like [[Heroic Pet]]s and [[Vehicles]], cannot be cloned.<li>Upon successfully casting ''Ultimate Evolution'', Abathur is put in Stasis for its duration. In addition to usual effects of Stasis, Abathur is removed from ground plane (disjoints certain projectiles), has no collision, cannot regenerate Health, Mana, Energy or Shields and cannot be seen on the minimap or revealed.<li>Abathur returns to the same location where he cast ''Ultimate Evolution'' once it ends.}}<!--
+
+--><hr/><small>'''Ultimate Evolution Clone'''</small>{{undoc-x|nohr=true<!--
+-->|type=[[Hallucination]]<!--
+-->|scaling=-<!--
+-->|target=Direct control<!--
+-->|prop1=Health|val1=100%<!--
+-->|prop2=Damage|val2=120%<!--
+-->|prop3=Attack speed|val3=100%<!--
+-->|prop4=Attack range|val4=100%<!--
+-->|prop5=Movement Speed|val5=110%<!--
+-->|prop6=Sight radius|val6=100%<!--
+-->|notes=<li>''Ultimate Evolution'' Clone is untalented and does not inherit any progress on baseline quests.<li>It is possible to complete baseline quests on the Clone, but any progress and rewards are reset for the next cast.<li>Clone does not gain Ability effects that are unlocked by reaching a certain level, such as [[Muradin]]'s ''Storm Bolt'' pierce.<li>Clone can [[Mount]], use the [[Healing Fountain]] and can benefit from, but not directly collect, [[Regeneration Globe]]s.<li>The Clone can fake channeling [[Objective]]s, but it cannot complete the channel to capture the Objective.<li>Some of the Clone's Summons, including [[Lunara]]'s ''Wisp''s, and [[Nova]]'s ''Holo Decoy''s do not expire when the Clone expires or is destroyed. However, [[Misha]] and [[Samuro]]'s Images, [[Probius]] Pylons, and [[Junkrat]] Mines and Traps exceptionally do expire.<!--
+
+Hero-specific interactions:
+--><li>There are some limitations and exceptions to cloning certain Heroes:<br>- [[Deathwing]] cannot be cloned due to his Trait.<br>- Cloning [[Cho'gall]] only grants access to Cho's Abilities.<br>- Cloning a [[The Lost Vikings|Viking]] only clones the specific Viking targeted.<br>- [[D.Va]]'s clone can only use the form she was cloned from. Pilot D.Va's ''Call Mech'' is disabled, and activating ''Self-Destruct'' in Mech mode immediately returns control to Abathur, leaving the exploding Mech on the Battleground. Additionally, if ''Ultimate Evolution'' expires during this time, the Mech will instantly explode as it does.<br>- [[Kharazim]]'s level 1 Talent is inherited, as it is his Trait, with Insight completed if that Talent was selected.<br>- [[Murky]]'s Trait, ''Spawn Egg'', is disabled.<br>- [[Alexstrasza]]'s and [[Ragnaros]]'s Traits start on full cooldown every time they are copied, making it impossible to use ''Molten Core'' and ''Dragonqueen'' during the clone's lifetime.<br>- The effects of [[Jaina]]'s ''Frostbite'', [[Malthael]]'s ''Reaper's Mark'', [[Murky]]'s ''Slime'', [[Sylvanas]]'s ''Banshee's Curse'', [[Tassadar]]'s ''Psionic Storm'', and [[Zagara]]'s ''Creep Tumor'' do not stack and are instead shared, benefiting both the clone and the cloned Hero regardless of who applied the effect.<br>- [[Qhira]] and her Clone can both apply their own instance of Bleed from ''Blood Rage''. However, only the unit who placed the first Bleed stack on the unit may activate ''Blood Rage'' on it. Additionally, the stack count and duration are shared among all Bleeds on the target, allowing both Qhira and Abathur to instantly gain the current stack count on the target and increment and extend each other's Bleed stacks on the target. Bleeds placed by the Clone also remain even after when the Clone has expired.<br>- Both [[Probius]] and his ''Ultimate Evolution'' Clone can fully interact with each other's ''Pylons'' and ''Warp Rifts''.<br>- On death effects that change a Heroes state, such as the traits of Uther, Tyrael, and Leoric, are not inherited by the Clone. Other post-death events, such as Junkrat's Total Mayhem, are inherited.<!--
+
+--><li>The Clone grants no [[XP]] or [[Takedown]] credit on death.<li>The Clone's Summons do not benefit from this Ability's Spell Power bonus.<li>Attack Damage and Spell Power bonuses stack additively with offensive damage modifiers and healing dealt modifiers.}};70;;heroic;False
+
+Evolve Monstrosity;R;File:Evolve_Monstrosity_Icon.png;Turn an allied [[Minion]] or [[Locust]] into a [[Monstrosity]]. When enemy Minions near the Monstrosity die, it gains 2% [[Health]] and 2% [[Basic Attack]] damage, stacking up to 40 times. The Monstrosity can be healed by Carapace and has the ability to Burrow to a visible location every 80 seconds.<p>Using Symbiote on the Monstrosity allows Abathur to control it, in addition to Symbiote's normal benefits. This Ability can be reactivated to automatically cast Symbiote on his Monstrosity.<!--
+-->{{undoc-x|type=Summon<!--
+-->|affects=Allied Minions & Locusts<!--
+-->|target=Unit target<!--
+-->|cast=Instant<!--
+-->|range=Global<!--
+-->|notes=<li>Cooldown starts when the ''Monstrosity'' is destroyed.}}<!--
+
+--><hr/><small>'''Monstrosity'''</small><!--
+-->{{undoc-x|nohr=true<!--
+-->|type=Active<!--
+-->|scaling=4.00% (damage & Health)<!--
+-->|target=Automatic, Direct control<!--
+-->|prop1=Health|val1=1350<!--
+-->|prop2=Basic Attack damage|val2=85<!--
+-->|prop3=Attack Speed|val3=1.0<!--
+-->|prop4=Attack Range|val4=2.0<!--
+-->|prop5=Movement Speed|val5=4.0<!--
+-->|prop6=Sight radius|val6=9.0<!--
+-->|notes=<li>''Monstrosity'' can use ''Deep Tunnel'' on an 80 second cooldown. This cooldown is separate from Abathur's.<li>''Monstrosity'' can heal in the [[Hall of Storms]].<li>Damage bonus from Minion kills stacks additively with itself and '''multiplicatively''' with offensive damage modifiers that can affect <i>Monstrosity</i>'s Basic Attack damage.}};90;;heroic;False
+
+Deep Tunnel;Z;File:Deep-tunnel.png;Quickly tunnel to a visible location.<!--
+-->{{undoc-x|type=Movement: [[Teleport]]<!--
+-->|affects=Self<!--
+-->|target=Point target<!--
+-->|props=[[Channeled cast]] (stationary)<!--
+-->|cast=2.5 (ch) + 0 seconds<!--
+-->|range=Global<!--
+-->|notes=<li>''Deep Tunnel'' can be canceled by issuing a "move" or "stop" command.<li>''Deep Tunnel'' goes on a 10 second cooldown when interrupted by enemy or allied Abilities, including self-canceling.<li>''Deep Tunnel'' has an allied chat announcement upon activation.}};30;;;True
+
+| talents = <!-- LEVEL 1 -->
+Pressurized Glands;1;1;Increases the range of Symbiote's Spike Burst by 25% and decreases the cooldown by 1 second.<!--
+-->{{undoc-x|prop1=Bonus radius|val1=1.0}};File:Pressurized_Glands_Icon.png;
+
+Envenomed Nest;1;2;[[Toxic Nest]]s deal 75% more damage over 3 seconds and reduce the Armor of enemy Heroes hit by 10 for 4 seconds.<!--
+-->{{undoc-x|type=Spell Damage / Defensive damage modifier<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies / Enemy Heroes<!--
+-->|props=[[Armor]] reduction, [[Damage over Time]]<!--
+-->|tickrate=1.0 per second (x3)<!--
+-->|prop1=Damage per tick|val1=38.25<!--
+-->|notes=<li>Damage-over-time from multiple Toxic Nests does not stack.}};File:Envenomed_Nest_Icon.png;
+
+Reinforced Carapace;1;3;Increase the Shield amount of Carapace by 40%.<!--
+-->{{undoc-x|type=Bonus Shield<!--
+-->|scaling=-<!--
+-->|affects=Allies<!--
+-->|notes=}};File:Reinforced Carapace_Icon.png;
+
+Survival Instincts;1;4;Increases [[Locust]]'s Health by 100% and damage by 60%.<!--
+-->{{undoc-x|type=Bonus Health, Offensive damage modifier<!--
+-->|scaling=-<!--
+-->|affects=Locusts<!--
+-->|notes=<li>Damage bonus stacks additively with other offensive damage modifiers.}};File:Survival_Instincts_Icon.png;
+
+<!-- LEVEL 4 -->
+Adrenal Overload;2;1;Heroic Symbiote hosts gain 25% increased Attack Speed.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Allied Heroes<!--
+-->|props=[[Attack Speed]]<!--
+-->|notes=<li>Does not affect current Symbiote target when Talent is taken. Symbiote must be canceled and re-applied to grant the buff.<li>Attack Speed bonus stacks additively with other effects that can affect the target's Attack Speed.}};File:Adrenal_Overload_Icon.png;
+
+Needlespine;2;2;Increases the damage and range of Symbiote's Stab by 20%.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|prop1=Bonus range|val1=1.75<!--
+-->|notes=<li>Damage bonus stacks additively with other offensive damage modifiers that can affect <i>Stab</i>'s damage.}};File:Needlespine_Icon.png;
+
+Prolific Dispersal;2;3;Increase the duration of Toxic Nests by 45 seconds, reduce its cooldown by 2 seconds and add 2 additional charges.;File:Prolific_Dispersal_Icon.png;
+
+<!-- LEVEL 7 -->
+Vile Nest;3;1;[[Toxic Nest]]s Slow enemy Movement Speed by 40% for 2.5 seconds.<!--
+-->{{undoc-x|type=Crowd control<!--
+-->|affects=Enemies<!--
+-->|props=[[Slow]]<!--
+-->|notes=}};File:Vile_Nest_Icon.png;
+
+Networked Carapace;3;2;Using Symbiote's Carapace also applies an untalented Carapace Shield to all nearby allied Heroes, Minions, and Mercenaries.<!--
+-->{{undoc-x|type=Shield, Healing<!--
+-->|scaling=4.00%<!--
+-->|affects=Allied Heroes, Minions & Mercenaries<!--
+-->|props=[[Area of Effect]]<!--
+-->|aoe=Circle<!--
+-->|radius=3.0 <sup>(1</sup><!--
+-->|notes=<sup>1)</sup> Extended by the target's unit radius.<li>Increases <i>Hivemind</i>'s ''Carapace'' by half of <i>Carapace</i>'s normal Shield value.}};File:Networked_Carapace_Icon.png;
+
+Calldown: MULE;3;3;{{Cooldown|60}}<Br />{{Active}} Activate to calldown a MULE that repairs Structures, one at a time, near target point for 40 seconds, healing for 90 Health every 1 second.<!--
+-->{{undoc-x|type=Summon<!--
+-->|target=Point target<!--
+-->|cast=Instant<!--
+-->|range=Global|prop1=Summon delay|val1=4 seconds<!--
+-->|notes=<li>''Calldown: MULE'' can only be cast in visible area.}}<!--
+
+--><hr/><small>'''MULE'''</small>{{undoc-x|nohr=true<!--
+-->|type=Active<!--
+-->|scaling=4.00%<!--
+-->|target=Automatic<!--
+-->|prop1=Health|val1=385<!--
+-->|prop2=Basic Attack damage|val2=-<!--
+-->|prop5=Movement Speed|val5=2.5<!--
+-->|prop6=Sight radius|val6=9.0<!--
+-->|prop7=Unit radius|val7=0.375<!--
+-->|notes=}}<!--
+
+--><hr/><small>'''Repair'''</small>{{undoc-x|nohr=1<!--
+-->|type=Healing<!--
+-->|scaling=-<!--
+-->|affects=Allied Structures<!--
+-->|target=Automatic<!--
+-->|props=[[Stationary channel]]<!--
+-->|range=1.0<!--
+-->|tickrate=1.0 per second<!--
+-->|prop1=Healing per tick|val1=90<!--
+-->|notes=}};File:Calldown- MULE_Icon.png;
+
+<!-- LEVEL 10 -->
+Ultimate Evolution;4;1;{{Cooldown|70}}<Br />Clone target allied Hero and control it for 20 seconds. Abathur has perfected the clone, granting it 20% Spell Power, 20% bonus Attack Damage, and 10% bonus Movement Speed. Cannot use their Heroic Ability.;File:Ultimate_Evolution_Icon.png;
+Evolve Monstrosity;4;2;{{Cooldown|90}}<Br />Turn an allied [[Minion]] or [[Locust]] into a [[Monstrosity]]. When enemy Minions near the Monstrosity die, it gains 2% [[Health]] and 2% [[Basic Attack]] damage, stacking up to 40 times. The Monstrosity can be healed by Carapace and has the ability to Burrow to a visible location every 80 seconds.<p>Using Symbiote on the Monstrosity allows Abathur to control it, in addition to Symbiote's normal benefits. This Ability can be reactivated to automatically cast Symbiote on his Monstrosity.;File:Evolve_Monstrosity_Icon.png;
+
+<!-- LEVEL 13 -->
+Spatial Efficiency;5;1;Symbiote's Stab gains 1 additional charge and its Cooldown is reduced by 0.5 seconds.;File:Spatial_Efficiency_Icon.png;
+
+Soma Transference;5;2;Symbiote's Spike Burst heals the host for 64 Health per enemy Hero hit.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=4.00%<!--
+-->|affects=Non-Structure Allies<!--
+-->|notes=}};File:Soma_Transference_Icon.png;
+
+Bombard Strain;5;3;[[Locust]]'s Basic Attacks become a long-range siege attack and their duration is increased by 75%.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Locusts<!--
+-->|props=[[Attack Modifier]], [[Splash]]<!--
+-->|prop1=Attack range|val1=7.0<!--
+-->|prop2=Splash radius|val2=0.4<!--
+-->|notes=<li>''Bombard Strain'' attacks can be dodged, similarly to [[Catapult]]s' and [[Siege Giant]]s' attacks, i.e. they can be dodged, although no preview is shown.<li>Against targets within 3 range, fires a projectile that cannot be dodged (except by being disjointed).}};File:Bombard_Strain_Icon.png;
+
+<!-- LEVEL 16 -->
+Envenomed Spikes;6;1;Abathur's Symbiote's Spike Burst also Slows enemy Movement Speed by 40% for 2 seconds.<!--
+-->{{undoc-x|type=Crowd control<!--
+-->|affects=Enemies<!--
+-->|props=[[Slow]]<!--
+-->|notes=}};File:Envenomed_Spikes_Icon.png;
+
+Adrenaline Boost;6;2;Symbiote's Carapace increases the Movement Speed of the target by 40% for 3.5 seconds.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Non-Structure Allies<!--
+-->|props=[[Movement Speed]]<!--
+-->|notes=}};File:Adrenaline_Boost_Icon.png
+
+Volatile Mutation;6;3;Ultimate Evolution clones and Monstrosities deal 137 damage to nearby enemies every 3 seconds and when they die. Enemy Heroes hit heal the clone or the Monstrosity for 100% of the damage dealt.<!--
+-->{{undoc-x|type=Spell Damage / Healing<!--
+-->|scaling=4.00% / -<!--
+-->|affects=UE Clone & Monstrosity<!--
+-->|props=[[Area of Effect]], [[Lifesteal]]<!--
+-->|aoe=Circle<!--
+-->|radius=4.0<!--
+-->|tickrate=0.33 per second<!--
+-->|notes=<li>Damage from <i>Volatile Mutation</i> does not benefit from <i>Ultimate Evolution</i> clone's damage bonus.}};File:Volatile_Mutation_Icon.png;
+
+Locust Brood;6;4;{{Cooldown|45}}<Br />{{Active}} Activate to spawn 3 [[Locust]]s at a nearby location.<!--
+-->{{undoc-x|type=Summon<!--
+-->|target=Point target<!--
+-->|cast=Instant<!--
+-->|range=6.0<!--
+-->|notes=}};File:Locust_Brood_Icon.png;
+
+<!-- LEVEL 20 -->
+Evolutionary Link;7;1;Increase the duration of Ultimate Evolution by 50%. As long as the Ultimate Evolution is alive, the original target of the clone gains a Shield equal to 35% of their maximum Health. Refreshes every 5 seconds.<!--
+-->{{undoc-x|type=Shield<!--
+-->|scaling=-<!--
+-->|affects=Allied Heroes<!--
+-->|tickrate=0.2 per second<!--
+-->|notes=<li>Shield from <i>Evolutionary Link</i> does not stack with itself.<li>If an ''Ultimate Evolution'' Clone expires or dies while the target of ''Ultimate Evolution'' (the real Hero) is flagged as Immune to AOE, then that Hero will also receive Shields from ''Evolutionary Link'' while ''Ultimate Evolution'' is active on any other target.}};File:Evolutionary_Link_Icon.png;
+
+Evolution Complete;7;2;Increase [[Monstrosity]]'s Basic Attack damage by 100%.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|scaling=-<!--
+-->|affects=Monstrosity<!--
+-->|notes=<li>Damage bonus stacks additively with other offensive damage modifiers that can affect <i>Monstrosity</i>'s Basic Attack damage.}};File:Evolution_Complete_Icon.png;
+
+Hivemind;7;3;Symbiote creates an additional Symbiote on a nearby allied Hero. This Symbiote mimics the commands of the first, but does half damage and Shielding.<!--
+-->{{undoc-x|prop1=Ally search radius|val1=10<!--
+-->|notes=<li><i>Hivemind</i>'s abilities have their own base values that are half the original.}};File:Hivemind_Icon.png;
+
+Locust Nest;7;4;{{Cooldown|45}}<Br />{{Active}} Activate to create a nest that periodically spawns [[Locust]]s. Only one [[Locust Nest]] can be active at a time.<!--
+-->{{undoc-x|type=Summon<!--
+-->|target=Point target<!--
+-->|cast=Instant<!--
+-->|range=6.0<!--
+-->|notes=}}<!--
+
+--><hr/><small>'''Locust Nest'''</small><!--
+-->{{undoc-x|nohr=true<!--
+-->|type=Passive<!--
+-->|scaling=4.00% (Health)<!--
+-->|prop1=Health|val1=319<!--
+-->|prop2=Basic Attack damage|val2=-<!--
+-->|prop5=Movement Speed|val5=-<!--
+-->|prop6=Unit radius|val6=0.5<!--
+-->|prop7=Sight radius|val7=-<!--
+-->|notes=}};File:Locust_Nest_Icon.png;
+
+}}
+
+<noinclude>
+{{Scaling table/start|{{#var:health}}|{{#var:health scaling}}|{{#var:health regen}}|{{#var:health regen scaling}}|{{#var:attack damage}}|{{#var:attack damage scaling}}}}
+{{Scaling table/slot|Locust (Health)|350|0.04}}
+{{Scaling table/slot|Locust (damage)|46|0.04}}
+{{Scaling table/slot|Symbiote - Stab|119|0.04}}
+{{Scaling table/slot|Symbiote - Spike Burst|120|0.04}}
+{{Scaling table/slot|Symbiote - Carapace (Shield)|150|0.04}}
+{{Scaling table/slot|Symbiote - Carapace (healing)|22|0.04}}
+{{Scaling table/slot|Toxic Nest (health)|80|0.04}}
+{{Scaling table/slot|Toxic Nest (damage)|153|0.04}}
+{{Scaling table/slot|Monstrosity (health)|1350|0.04|10}}
+{{Scaling table/slot|Monstrosity (att. damage)|85|0.04|10}}
+{{Scaling table/slot|Envenomed Nest|114.75|0.04|1}}
+{{Scaling table/slot|Envenomed Nest (per second)|38.25|0.04|1}}
+{{Scaling table/slot|Volatile Mutation|137|0.04|16}}
+{{Scaling table/slot|Volatile Mutation (per second)|45.67|0.04|16}}
+{{Scaling table/slot|Locust Nest (health)|319|0.04|20}}
+{{Scaling table/end}}
+</noinclude>

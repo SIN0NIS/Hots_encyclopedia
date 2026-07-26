@@ -1,0 +1,314 @@
+{{hero data
+| name = Chen
+| date = September 10, 2014
+| price = 4000
+| title = Legendary Brewmaster
+| role = Bruiser
+| franchise = Warcraft
+| info = A potent Bruiser who will dominate if the enemy team is lacking mobility.
+| lore = To be a Brewmaster is to be an explorer, a lover of nature, and when the need arises, a powerful fighter. For years Chen Stormstout has wandered the world of Azeroth in search of rare ingredients, stirring stories, and of course, good brew.
+| difficulty = Medium
+| melee = True
+| health = 2473
+| healthRegen = 5.1523
+| resource = 100
+| resourceType = Brew
+| armor = 0
+| attackSpeed = 1.11
+| attackRange = 2
+| attackDamage = 90
+| healthScaling = 0.04
+| regenScaling = 0.04
+| adamageScaling = 0.04
+| unitRadius = 0.9375
+| icon = File:Chen_Icon.png
+| skills =
+Fortifying Brew;D;File:Fortifying_Brew_Icon.png;Chen drinks from his keg, gaining 50 Brew and 190 temporary Shields per second, up to a maximum of 570 while drinking. Shields persist for 4 seconds after he stops drinking.<!--
+-->{{undoc-x|type=Shield, Resource<!--
+-->|scaling=4.00% / -<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|props=[[Stationary channel]]<!--
+-->|cast=Instant<!--
+-->|tickrate=<br/>- Shields: 2.0 per second (x8)<br/>- Brew: 8.0 per second (x32)<!--
+-->|prop1=Shields per tick|val1=23.75<!--
+-->|prop2=Brew per tick|val2=1.5625<!--
+-->|prop3=Channel time|val3=4.0 seconds<!--
+-->|notes=}};7;;trait;False
+
+Flying Kick;Q;File:Flying_Kick_Icon.png;Kick through target enemy, dealing 130 damage.<!--
+-->{{undoc-x|type=Spell Damage / Movement: [[Launch]]<!--
+-->|scaling=4.00%|affects=Enemies / Self<!--
+-->|target=Unit target<!--
+-->|cast=Instant<!--
+-->|range=7.0<!--
+-->|notes=<li>Chen is positioned on the opposite side of the target upon landing.}};5;10;;True
+
+Keg Smash;W;File:Keg_Smash_Icon.png;Deal 50 damage and soak enemies in Brew for 3 seconds, Slowing them by 10%. After 1.25 seconds, the Slow is increased to 40%.<p>After being used, this ability becomes Breath of Fire.<p><span style ="color:red">Breath of Fire</span><br/>Deal damage and Ignite Brew-soaked enemies.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Clamping]], Self-castable<!--
+-->|cast=0 + 0.1 seconds<!--
+-->|range=3.5<!--
+-->|aoe=Circle<!--
+-->|radius=2.0<!--
+-->|notes=<li>Igniting enemies also extend the duration of Brew-soaked debuff by 1.5 seconds.<li>Brew-soaked cannot be removed by cleansing the associated Slow.}};5;40;;True
+
+Keg Smash - Breath of Fire;W;File:Breath_of_Fire_Icon.png;Breathe a cone of flames, dealing 40 damage. Enemies soaked in Brew are Ignited, dealing 171 additional damage over 6 seconds and adding 1.5 seconds to the duration of the Slow from Keg Smash.<p>After being used or after 6 seconds, this Ability becomes Keg Smash.<p><span style ="color:yellow">Keg Smash</span><br/>Damage and Slow enemies.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Clamping]], [[Damage over Time]] (Ignited)<!--
+-->|cast=0.1 + 0.25 seconds<!--
+-->|aoe=Radial<!--
+-->|radius=7.0<!--
+-->|arc=60 degrees<!--
+-->|tickrate=1.0 per second (x6)<!--
+-->|prop1=Damage per tick|val1=55<!--
+-->|notes=<li>Igniting enemies also extends the duration of Brew-soaked debuff by 1.5 seconds.<li>The cooldown does not start counting until ''Breath of Fire'' has been used or it has expired.}};1.25;10;;False
+
+Stagger;E;File:Stagger_Icon.png;Damage taken over the next 3 seconds is prevented. Once this effect ends, Chen receives 75% of the damage taken over 5 seconds. This damage cannot be modified.<!--
+-->{{undoc-x|type=Status effect / [[Percent damage]]<!--
+-->|scaling=-<!--
+-->|affects=Self / Self<!--
+-->|target=No target<!--
+-->|props=[[Damage over Time]], [[Protected]]<!--
+-->|cast=Instant<!--
+-->|tickrate=1.0 per second (x5)<!--
+-->|notes=<li>Damage over time can still be prevented, absorbed or dispelled through specific Abilities and effects.<li>Chen can die from self-damage, which grants the enemy team the normal amount of XP and takedown credit.<li>Damage taken during <i>Stagger</i>'s protective period is calculated and stored after all reductions, causing its damage reduction to stack '''multiplicatively''' with other defensive damage modifiers, like Armor, that were active at the same time.<li>Does not prevent or store damage to Shields.}};18;;;True
+
+Wandering Keg;R;File:Wandering_Keg_Icon.png;Roll around inside an Unstoppable barrel with 70% increased Movement Speed and 25 Armor, dealing 59 damage to enemies in the way and knocking them back. Lasts for 5 seconds.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control / Defensive damage modifier, Status effect<!--
+-->|scaling=4.00%<!--
+-->|affects=Non-Structure enemies / Self<!--
+-->|props=[[Area of Effect]],[[Knockback]], [[Mobile channel]], [[Unstoppable]]<!--
+-->|cast=Instant<!--
+-->|aoe=Circle<!--
+-->|radius=1.0<!--
+-->|prop1=Knockback duration|val1=0.32 seconds<!--
+-->|prop2=Knockback speed|val2=23<!--
+-->|notes=<li>Chen can not attack, use his Abilities or stop during ''Wandering Keg''.<li>Colliding with an enemy removes the Movement Speed bonus which is then regained over 0.375 seconds.}};60;;heroic;False
+
+Storm, Earth, Fire;R;File:Storm,_Earth,_Fire_Icon.png;After 1 second, Chen splits into three elemental spirits for 12 seconds, each with 70% of Chen's maximum Health and a unique Ability. The last spirit Ability that is cast is empowered. If all three spirits are killed, Chen will die as well.<p><span style="color:cyan">Storm</span> can grant the spirits a Shield.<br/><span style="color:lime">Earth</span> can leap to an area and Slow Enemies.<br/><span style="color:tomato">Fire</span> can grant the spirits Attack Speed and damage.<!--
+-->{{undoc-x|type=Summon, Status effect<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|props=[[Channeled cast]] (stationary), [[Stasis]]<!--
+-->|cast=1.0 (ch) + 1.0625 seconds<!--
+-->|notes=<li>Interrupting the Ability during its cast time puts it on a 10 second cooldown.<li>Each spirit ability can be used only once per cast and requires the corresponding spirit to be alive.<li>Chen is put in [[Stasis]] while ''Storm, Earth, Fire'' is active. In addition to the usual effects of Stasis, Chen is removed from ground plane (disjoints certain projectiles), has no collision, cannot regenerate Health, Mana, Energy or Shields and cannot be seen on the minimap or revealed.<li>Spirits cannot Mount, Hearth, collect Regeneration Globes and power-ups, use Healing Fountain or channel Objectives.<li>Upon dying in this form, Chen receives damage equal to his maximum Health from the Hero who killed him.<li>Spirits cannot Mount, Hearth, collect Regeneration Globes and power-ups, use Healing Fountain or channel Objectives.<li>At the end of the duration Chen reappears at one of the alive spirit's locations based on the following priority: Storm -> Earth -> Fire.}}<!--
+
+--><hr/><small>'''Storm'''</small>{{undoc-x|nohr=true<!--
+-->|type=[[Heroic Pet]]<!--
+-->|scaling=4.00% (damage & Health)<!--
+-->|target=Player controlled<!--
+-->|prop1=Health|val1=1731<!--
+-->|prop2=Basic Attack damage|val2=59<!--
+-->|prop3=Attack speed|val3=1.25<!--
+-->|prop4=Attack range|val4=6.5<!--
+-->|prop5=Movement Speed|val5=4.4<!--
+-->|prop6=Unit radius|val6=0.625<!--
+-->|notes=}}<!--
+
+--><hr/><small>'''Earth'''</small>{{undoc-x|nohr=true<!--
+-->|type=[[Heroic Pet]]<!--
+-->|scaling=4.00% (damage & Health)<!--
+-->|target=Player controlled<!--
+-->|props=[[Splash]], [[Slow]]<!--
+-->|prop1=Health|val1=1731<!--
+-->|prop2=Basic Attack damage|val2=37<!--
+-->|prop3=Attack speed|val3=0.67<!--
+-->|prop4=Attack range|val4=1.0<!--
+-->|prop5=Movement Speed|val5=4.4<!--
+-->|prop6=Unit radius|val6=0.8125<!--
+-->|notes=<li>Earth's Basic Attacks splash in 3.5 radius, dealing [[Spell Damage]] and [[Slowing]] enemies within 3.5 radius of the primary target by 25% for 1.75 seconds.}}<!--
+
+--><hr/><small>'''Fire'''</small>{{undoc-x|nohr=true<!--
+-->|type=[[Heroic Pet]]<!--
+-->|scaling=4.00% (damage & Health)<!--
+-->|target=Player controlled<!--
+-->|prop1=Health|val1=1731<!--
+-->|prop2=Basic Attack damage|val2=17<!--
+-->|prop3=Attack speed|val3=1.67<!--
+-->|prop4=Attack range|val4=1.0<!--
+-->|prop5=Movement Speed|val5=4.4<!--
+-->|prop6=Unit radius|val6=0.625<!--
+-->|notes=}};120;;heroic;False
+
+Storm, Earth, Fire - Storm;Q;File:Storm_Icon.png;The spirits gain a Shield for 400 over 3 seconds.<p>If this is the final Ability cast, the Shield amount is increased to 750 with unlimited duration and the duration of Storm, Earth, Fire is increased by 5 seconds.<!--
+-->{{undoc-x|type=Shield<!--
+-->|scaling=4.00%<!--
+-->|affects=Self (spirits)<!--
+-->|target=No target|props=<!--
+-->|cast=Instant<!--
+-->|notes=}};;;;True
+
+Storm, Earth, Fire - Earth;W;File:Earth_Icon.png;Fire and Earth leap to the target location dealing 32 damage and Slowing enemies in a large area by 70% for 1.5 seconds.<p>If this is the final Ability cast, increase the damage dealt by 300% and instead of Slowing, the leap Roots enemy Heroes hit for 1.75 seconds.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control / Movement: [[Launch]]<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies / Self (Fire & Earth)<!--
+-->|target=Point target<!--
+-->|props=[[Root]], [[Slow]]<!--
+-->|cast=Instant<!--
+-->|range=9.0<!--
+-->|aoe=Circle<!--
+-->|radius=3.0<!--
+-->|notes=<li>Empowered leap bonus damage stacks additively with other offensive damage modifiers.<li>After the leap, Storm and Earth will attack the closest target within their acquisition range, if no attack command is issued.}};;;;True
+
+Storm, Earth, Fire - Fire;E;File:Fire_Icon.png;Increase the Attack Speed and Basic Attack damage of the spirits by 50% for 5 seconds.<p>If this is the final Ability cast, the Attack Speed and damage bonus is increased to 75% and the spirits gain 50% Movement Speed for its duration.<!--
+-->{{undoc-x|type=Offensive damage modifier, Status effect<!--
+-->|affects=Self (spirits)<!--
+-->|props=[[Attack Modifier]], [[Attack Speed]], [[Movement Speed]]<!--
+-->|target=No target<!--
+-->|cast=Instant<!--
+-->|notes=<li>Damage bonus stacks additively with other offensive damage modifiers.}};;;;True
+
+| talents = 
+<!-- LEVEL 1 -->
+Accumulating Flame;1;1;{{Quest|Damage enemy Heroes with Breath of Fire to permanently increase periodic damage by 0.25. Kills grant 2.|After gaining 25 damage, increase the range of Keg Smash.}}<p>{{Reward|Upon gaining 80 damage, Breath of Fire reduces enemy Armor by 20 and its duration is increased by 0.75 seconds each time Chen attacks the Hero.}}<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|notes=<li>Does not increase the duration of Brew-soaked debuff.<li>Stacks additively with other offensive damage modifiers that can affect <i>Breath of Fire</i>'s damage.}};File:Accumulating_Flame_Icon.png;
+
+Freshest Ingredients;1;2;Increase the healing duration of Regeneration Globes by 150%.<p>{{Quest|Gather 15 [[Regeneration Globe]]s.|Reduce Fortifying Brew's cooldown by 2 seconds, and 50% of its Shield persists indefinitely after drinking.}};File:Freshest_Ingredients_Icon.png;
+
+Stormstout Secret Recipe;1;3;Chen heals for 3.5% of his maximum Health when his Basic Abilities hit an enemy Hero.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|notes=<li>[[Damage over Time]] ticks from Ignited enemies do not trigger healing.}};File:Stormstout_Secret_Recipe_Icon.png;
+
+<!-- LEVEL 4 -->
+Deadly Strike;2;1;Flying Kick no longer costs Brew. Additionally, its damage is increased by 125% while Chen has Shields from Fortifying Brew.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|notes=<li>Stacks additively with other offensive damage modifiers that can affect <i>Flying Kick</i>'s damage.}};File:Deadly_Strike_Icon.png;
+
+Eye of the Tiger;2;2;Basic Attacks against Brew-soaked enemies deal 50% more damage and heal Chen for 60% of the damage done.<!--
+-->{{undoc-x|type=Offensive damage modifier / Healing<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|props=[[Lifesteal]]<!--
+-->|notes=<li>Stacks additively with other offensive damage modifiers affecting Chen's Basic Attack damage.}};File:Eye_of_the_Tiger_Icon.png;
+
+Withering Flames;2;3;Igniting an enemy Hero reduces their Spell Power by 60% for 4 seconds.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Enemy Heroes<!--
+-->|notes=<li>Stacks additively with other offensive damage modifiers that can affect the target's Spell Damage output.}};File:Withering_Flames_Icon.png;
+
+<!-- LEVEL 7 -->
+Gift of the Ox;3;1;Increase the duration of Stagger's damage prevention by 2 seconds and reduce the amount of damage taken over time to 50% of damage taken.;File:Gift_of_the_Ox_Icon.png;
+
+Brewmaster's Balance;3;2;While at or below 50 Brew, gain 20% Movement Speed. While at or above 50 Brew, regenerate an additional 18 Health per second.<!--
+-->{{undoc-x|type=Health regeneration<!--
+-->|scaling=4.00%<!--
+-->|affects=Self}};File:Brewmaster's_Balance_Icon.png;
+
+Elusive Brawler;3;3;{{cooldown|25}}<br/>{{Active}} Activate to gain 20% Movement Speed and Evade enemy Basic Attacks for 2 seconds. Chen's Basic Attacks reduce this cooldown by 2 seconds.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|props=[[Evade]], [[Movement Speed]]<!--
+-->|cast=Instant<!--
+-->|notes=<li>Can be activated while casting ''Fortifying Brew'' or ''Storm, Earth, Fire'' without interrupting the channel.<li>Buff is removed upon successfully casting ''Storm, Earth, Fire''.}};File:Elusive_Brawler_Icon.png;
+
+<!-- LEVEL 10 -->
+Wandering Keg;4;1;{{cooldown|60}}<br/>Roll around inside an Unstoppable barrel with 70% increased Movement Speed and 25 Armor, dealing 59 damage to enemies in the way and knocking them back. Lasts for 5 seconds.;File:Wandering_Keg_Icon.png;
+Storm, Earth, Fire;4;2;{{cooldown|100}}<br/>After 1 second, Chen splits into three elemental spirits for 12 seconds, each with 70% of Chen's maximum Health and a unique Ability. The last spirit Ability that is cast is empowered. If all three spirits are killed, Chen will die as well.<p><span style="color:cyan">Storm</span> can grant the spirits a Shield.<br/><span style="color:lime">Earth</span> can leap to an area and Slow Enemies.<br/><span style="color:tomato">Fire</span> can grant the spirits Attack Speed and damage.;File:Storm,_Earth,_Fire_Icon.png;
+
+<!-- LEVEL 13 -->
+Pressure Point;5;1;Flying Kick Slows the target enemy by 40% for 1.5 seconds, or by 80% if Chen has Shields from Fortifying Brew.<!--
+-->{{undoc-x|type=Crowd control<!--
+-->|affects=Enemies<!--
+-->|props=[[Slow]]<!--
+-->|notes=}};File:Pressure_Point_Icon.png;
+
+A Touch of Honey;5;2;Increase the Slows from Keg Smash by 30% and its duration by 0.5 seconds.<!--
+-->{{undoc-x|nohr2=True<!--
+-->|notes=<li>Also increases the duration of Brew-soaked debuff.}};File:A_Touch_of_Honey_Icon.png;
+
+Ring of Fire;5;3;After Igniting an enemy, become bathed in a fiery aura, dealing 60 damage every second to nearby enemies for 6 seconds.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|props=[[Area of Effect]]<!--
+-->|radius=3.0<!--
+-->|tickrate=1.0 per second<!--
+-->|notes=<li>''Ring of Fire'' does not affect unaggroed neutral mercenaries.<li>Damaging enemy Heroes with ''Ring of Fire'' does not trigger tower aggro.<li>Damage from ''Ring of Fire'' is unaffected by offensive damage modifiers and lifesteal effects.}};File:Ring_of_Fire_Icon.png;
+
+Enough to Share;5;4;Fortifying Brew instantly grants Chen a Shield that absorbs 190 damage, and each second grants nearby allied Heroes a Shield that absorbs 140 damage, up to 420.<!--
+-->{{undoc-x|type=Shield<!--
+-->|scaling=4.00%<!--
+-->|affects=Allied Heroes<!--
+-->|properties=[[Area of Effect]]<!--
+-->|tickrate=2.0 per second<!--
+-->|prop2=Shield per tick|val2=70<!--
+-->|prop3=Shield duration|val3=4.0 seconds<!--
+-->|notes=<li>Does not increase <i>Fortifting Brew</i>'s Shield cap.<li>Allied Shield does not benefit from talents enhancing ''Fortifying Brew''.<li>Subsequent applications refresh the duration.}};File:Enough_to_Share_Icon.png;
+
+<!-- LEVEL 16 -->
+Flying Leap;6;1;Increase Flying Kick's range by 15% and reduce its cooldown by 0.5 seconds each time an enemy Hero takes damage from being Ignited.<!--
+-->{{undoc-x|prop1=Bonus range|val1=1.05}};File:Flying_Leap_Icon.png;
+
+Celerity;6;2;Basic Attacks against Stunned, Rooted or Slowed enemy Heroes reduce the cooldown of Stagger by 2 seconds and grant Chen 30 Armor for 3 seconds.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Armor]], [[Attack Modifier]]<!--
+-->|notes=<li>Does not stack with other positive Armor effects. Other defensive damage modifiers, like <i>Stagger</i>'s damage reduction, may stack.}};File:Celerity_Icon.png;Flying
+
+Combo Strikes;6;3;Every 3rd Basic Attack against the same target deals 75% bonus damage. While Chen has Shields from Fortifying Brew and for 2 seconds after, he gains 35% Attack Speed.<!--
+-->{{undoc-x|type=Offensive damage modifier, Status effect<!--
+-->|affects=Self<!--
+-->|props=[[Attack Modifier]], [[Attack Speed]]<!--
+-->|notes=<li>Changes target and progresses in the cycle even if the attack misses due to Blinds or Evasion.<li>Stacks additively with other damage modifiers affecting Chen's Basic Attack damage.}};File:Combo_Strikes_Icon.png;
+
+<!-- LEVEL 20 -->
+Untapped Potential;7;1;Increase Wandering Keg's Movement Speed bonus from 70% to 125%, and its Armor bonus to 75 for its duration and 5 seconds afterwards.<!--
+-->{{undoc-x|type=Defensive damage mdifier<!--
+-->|affects=Self<!--
+-->|props=[[Armor]]<!--
+-->|notes=<li>Does not stack with other positive Armor effects. Other defensive damage modifiers, like <i>Stagger</i>'s damage reduction, may stack.}};File:Untapped_Potential_Icon.png;
+
+Elemental Conduit;7;2;Increases the spirits' Health to 100% of Chen's maximum Health and all of their Abilities are empowered.;File:Elemental_Conduit_Icon.png;
+
+Purifying Brew;7;3;Casting Fortifying Brew grants Chen Unstoppable for 1.5 seconds.<!--
+-->{{undoc-x|type=Status Effect<!--
+-->|affects=Self<!--
+-->|props=[[Unstoppable]]}};File:Purifying_Brew_Icon.png;
+
+Energizing Brew;7;4;If Chen Channels Fortifying Brew for its full duration, then he gains 20% bonus Health and 20% bonus damage for 25 seconds.<!--
+-->{{undoc-x|type=Bonus Health / Offensive damage modifier<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|notes=<li>Does not stack with itself. Subsequent applications refresh the duration.<li>Stacks additively with other damage modifiers affecting Chen's damage output.<li>''Energizing Brew'' buff is removed upon successfully casting ''Storm, Earth, Fire''.<li>Health increase is based on Chen's maximum Health regardless of Chen's current Health.<li>Upon expiration, Chen retains any Health gained through ''Energizing Brew'' that does not exceed his base maximum Health.}};File:Energizing_Brew_Icon.png;
+
+}}<noinclude>
+
+'''Chen'''
+{{Scaling table/start|2473|0.04|5.1573|0.04|84|0.04}}
+{{Scaling table/slot|Fortifying Brew (per second)|190|0.04}}
+{{Scaling table/slot|Fortifying Brew (max)|570|0.04}}
+{{Scaling table/slot|Flying Kick|130|0.04}}
+{{Scaling table/slot|Keg Smash|50|0.04}}
+{{Scaling table/slot|Breath of Fire (base)|40|0.04}}
+{{Scaling table/slot|Breath of Fire (ignited)|330|0.04}}
+{{Scaling table/slot|Breath of Fire (ignited, per second)|55|0.04}}
+{{Scaling table/slot|Wandering Keg|59|0.04|10}}
+{{Scaling table/slot|Brewmaster's Balance|18|0.04|7}}
+{{Scaling table/slot|Ring of Fire|60|0.04|13}}
+{{Scaling table/slot|Enough to Share (per second)|140|0.04|13}}
+{{Scaling table/slot|Enough to Share (max)|420|0.04|13}}
+{{Scaling table/end}}<br/>
+'''Storm'''
+{{Scaling table/start|1731|0.04|0|0|59|0.04}}
+{{Scaling table/slot|Storm|400|0.04|10}}
+{{Scaling table/slot|Storm (empowered)|750|0.04|13}}
+{{Scaling table/end}}<br/>
+'''Earth'''
+{{Scaling table/start|1731|0.04|0|0|37|0.04}}
+{{Scaling table/slot|Earth|32|0.04|10}}
+{{Scaling table/end}}<br/>
+'''Fire'''
+{{Scaling table/start|1731|0.04|0|0|17|0.04}}
+{{Scaling table/end}}<br/></noinclude>

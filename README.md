@@ -1,56 +1,100 @@
-# HotS Encyclopedia
+# 히오스 백과사전 — GitHub Actions 판
 
-히어로즈 오브 더 스톰 영웅 백과사전. 90명 전체 영웅의 스킬·특성·능력치·연계 관계를 한 페이지에서 볼 수 있는 정적 HTML 사이트입니다.
+[hots_date260725](../hots_date260725) 와 같은 파이프라인인데, **3단계부터 GitHub
+Actions 가 돌린다.** 결과물은 GitHub Pages 로 올라간다.
 
-**바로 보기:** GitHub Pages로 배포하면 `https://<사용자명>.github.io/Hots_encyclopedia/` 에서 바로 열립니다 (`index.html`이 루트에 있음).
+푸시하면 자동으로 다시 만들어지고, 매주 월요일에도 한 번 돈다.
 
-## 파일 구성
+---
 
-| 파일 | 설명 |
-|---|---|
-| `index.html` / `hots_encyclopedia.html` | 완성된 백과사전 (동일한 내용, 두 이름 모두로 접근 가능) |
-| `make_encyclopedia.py` | 패치 데이터(JSON)로부터 위 HTML을 생성하는 스크립트 |
-| `hots_ability_links.md` | 스킬 부모-자식 / 특수 연계 관계 정리 문서 (사람이 읽는 용도) |
-| `hots_ability_links.json` | 위 내용의 구조화 데이터 버전 |
-| `herodata_<빌드번호>_kokr.json` / `_enus.json` | Heroes Data Parser로 추출한 원본 영웅 데이터 (한국어/영어) |
+## 왜 1·2단계는 여기서 못 도는가
 
-## 새 패치 반영하는 법
+파이프라인 8단계 중 앞의 두 개만 **게임 원본**을 건드린다.
 
-1. 새로운 `herodata_<빌드번호>_kokr.json`, `herodata_<빌드번호>_enus.json`을 저장소 루트(또는 `data/` 폴더)에 추가
-2. `python3 make_encyclopedia.py` 실행
-   - `index.html`, `hots_encyclopedia.html`, `encyclopedia_<타임스탬프>.html`(백업용), `hots_ability_links.md`, `hots_ability_links.json`이 갱신됨
-3. 변경된 파일들을 커밋 & 푸시
+| 단계 | 하는 일 | Actions 에서 |
+|---|---|---|
+| 1 casc | 게임 XML·게임스트링 추출 | ❌ |
+| 2 herodata | 영웅 JSON·아이콘 추출 | ❌ |
+| 3 analysis ~ 8 verify | 나머지 전부 | ✅ |
+
+이유는 둘이다.
+
+1. **게임이 설치돼 있어야 한다.** 러너에는 히오스가 없다.
+2. **파서의 `online` 모드가 죽는다.** 블리자드 CDN 에서 바로 받아 오는 길이
+   있긴 한데, 실제로 돌려 보면 1.4초 만에 `Not a valid Win32 FileTime` 으로
+   끝난다. 파서가 CDN 메타데이터를 못 읽는다.
+
+   ```
+   $ dotnet-heroes-data-parser casc-extract online -o out -i "..."
+   Error: Not a valid Win32 FileTime.
+   ```
+
+그래서 **1·2단계의 결과물만 저장소에 커밋해 두고** Actions 는 3단계부터 돌린다.
+게임이 패치되면 그때만 로컬에서 1·2를 돌려 커밋하면 된다.
+
+## 저장소에 무엇이 들어 있나
+
+| 폴더 | 크기 | 무엇 |
+|---|---|---|
+| `00_manual/` | 76K | 손으로 관리하는 값 (범위 보정·용어집·설정) |
+| `00_scripts/` | 412K | 파이프라인 코드 |
+| `01_auto_casc/` | 39M | 게임 XML·게임스트링 — **1단계 결과물** |
+| `02_auto_herodata/data/` | 6.4M | 영웅 JSON — **2단계 결과물** |
+| `04_auto_wiki/` | 7.6M | Fandom 위키 수집분 (캐시) |
+| | **54M** | |
+
+**영웅 아이콘 43MB 는 넣지 않았다.** 백과사전이 아이콘을
+`raw.githubusercontent.com` 에서 불러오기 때문에 빌드에 필요 없다. 그것만 빼도
+저장소가 절반 아래로 줄었다.
+
+3·5·6·7 단계 폴더와 `output/` 은 `.gitignore` 로 뺐다. Actions 가 매번 다시
+만든다.
+
+## 게임이 패치되면
+
+로컬(게임이 깔린 컴퓨터)에서 앞의 두 단계만 돌리고 커밋한다.
 
 ```bash
-python3 make_encyclopedia.py
-git add -A
-git commit -m "패치 <빌드번호> 반영"
+python 00_scripts/pipeline.py --only casc,herodata
+git add 01_auto_casc 02_auto_herodata
+git commit -m "게임 데이터 갱신 (Build XXXXX)"
 git push
 ```
 
-## 예외 케이스(연계 관계) 추가하는 법
+푸시하면 Actions 가 나머지를 만들어 Pages 에 올린다.
 
-특성으로만 열리는 스킬처럼 게임 데이터만으로는 자동으로 못 찾는 연계는
-`make_encyclopedia.py` 안의 두 테이블에 등록되어 있습니다. 새로 발견하면
-**두 곳 다** 추가해야 HTML과 참고 문서가 일치합니다:
+## 위키를 다시 긁고 싶으면
 
-- JS 쪽: `MANUAL_REPARENT`, `MANUAL_CHILD_OVERRIDE`
-- Python 쪽(참고 문서 생성용): `MANUAL_REPARENT_PY`, `MANUAL_CHILD_OVERRIDE_PY`
+위키는 사람이 손으로 고치는 곳이라 게임 패치와 따로 논다. Actions 탭에서
+**Run workflow** 를 누르고 `refresh_wiki` 를 켜면 90개 영웅을 다시 긁는다
+(약 3분). 새로 긁은 결과는 봇이 `04_auto_wiki/` 에 되커밋한다.
 
-무엇이 왜 그렇게 연결됐는지는 `hots_ability_links.md`에서 `source` 값(`direct` / `nameId-match` /
-`name-match` / `manual` / `unresolved`)으로 확인할 수 있습니다.
+평소 빌드는 커밋된 캐시를 그대로 쓴다.
 
-## 참고
+## 나오는 것
 
-- 스킬/특성 아이콘, 초상화는 [SIN0NIS/images](https://github.com/SIN0NIS/images) 저장소를 CDN처럼 사용합니다.
-- 상단 "🧩 특성 찍기" 버튼은 [hots_talent_build_auto_git](https://github.com/SIN0NIS/hots_talent_build_auto_git)의
-  빌드 툴로 연결되며, 영웅을 선택하면 `?hero=<하이퍼링크ID>`가 자동으로 붙어 해당 영웅이 바로 선택됩니다
-  (빌드 툴 쪽이 이 파라미터를 읽도록 패치되어 있어야 함).
-- 이 저장소는 Blizzard Entertainment와 관련이 없는 비공식 팬 제작물이며, 게임 내 텍스트/아이콘의
-  저작권은 Blizzard Entertainment에 있습니다.
+- **Pages** — `index.html` (메인) → 백과사전 → 용어집
+- **아티팩트 `리포트`** — 빌드마다 남는 점검 결과
+  - `xml_check.md` — 위키 수치를 게임 데이터와 맞댄 결과
+  - `wiki_inventory.md` — 위키가 주는 데이터 전수 목록
+  - `no_aoe.html` — 범위 그림이 없는 스킬 목록
+  - `report.md` — 한글화 미검수 항목
 
-## 알려진 제한
+## 처음 켤 때
 
-- `index.html`은 90명의 한국어+영어 데이터를 전부 인라인으로 포함해 약 4MB입니다. 패치마다
-  파일 전체가 갱신되므로 git 히스토리가 매 커밋마다 수 MB씩 늘어납니다. 저장소 용량이 부담되면
-  오래된 `encyclopedia_<타임스탬프>.html` 백업 파일들을 주기적으로 정리하는 것을 권장합니다.
+저장소 **Settings → Pages → Source** 를 **GitHub Actions** 로 둔다.
+`refresh_wiki` 를 쓰려면 **Settings → Actions → Workflow permissions** 를
+**Read and write** 로 둬야 봇이 되커밋할 수 있다.
+
+## 한 가지 짚고 갈 것
+
+`01_auto_casc/` 와 `02_auto_herodata/` 는 **블리자드의 게임 데이터**다. 공개
+저장소에 올리면 그 자체를 재배포하는 셈이 된다. 결과물(백과사전)만 공개하는
+것과는 무게가 다르다.
+
+- **비공개 저장소**로 두고 Pages 만 공개하는 쪽이 안전하다
+  (Pages 는 비공개 저장소에서도 GitHub Pro 이상이면 공개로 낼 수 있다)
+- 공개로 갈 거면 최소한 게임 데이터를 뺀 채로 두고, 빌드할 때만 넣는 방법을
+  따로 마련하는 편이 낫다
+
+파이프라인 자체 설명은 [README_pipeline.md](README_pipeline.md) 에 있다.

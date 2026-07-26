@@ -1,0 +1,601 @@
+{
+  "hero": "Kharazim",
+  "abilities": [
+    {
+      "name": "Pick Your Trait",
+      "hotkey": "TRAIT",
+      "icon": "Pick_Your_Trait_Icon.png",
+      "description": "Choose between Transcendence, Iron Fists, and Insight from the Talents panel.; trait",
+      "fields": {}
+    },
+    {
+      "name": "Radiant Dash",
+      "hotkey": "Q",
+      "icon": "Radiant_Dash_Icon.png",
+      "description": "Jump to an ally or enemy. Enemies are immediately hit with a Basic Attack. Stores up to 2 charges.; 12 / 0.25",
+      "fields": {
+        "type": "Physical Damage / Movement: Launch",
+        "affects": "Enemies / Self",
+        "target": "Unit target",
+        "cast": "Instant",
+        "range": "8.5",
+        "missile": "180",
+        "notes": "Can target all non-Structure units. The Basic Attack from Radiant Dash can trigger attack modifiers, such as Kharazim's Trait, but does not activate Deadly Reach.",
+        "cooldown": "25"
+      }
+    },
+    {
+      "name": "Breath of Heaven",
+      "hotkey": "W",
+      "icon": "Breath_of_Heaven_Icon.png",
+      "description": "Heal nearby Heroes for 295 and give them 15% Movement Speed for 3 seconds.",
+      "fields": {
+        "type": "Healing",
+        "scaling": "4.00%",
+        "affects": "Self, Allied Heroes",
+        "target": "No target",
+        "props": "Area of Effect, Movement Speed bonus",
+        "cast": "Instant",
+        "aoe": "Circle",
+        "radius": "4.5",
+        "cooldown": "10",
+        "cost": "65"
+      }
+    },
+    {
+      "name": "Deadly Reach",
+      "hotkey": "E",
+      "icon": "Deadly_Reach_Icon.png",
+      "description": "Kharazim's next Basic Attack increases his Attack Speed and Attack Range by 100% for 2 seconds.",
+      "fields": {
+        "type": "Status effect",
+        "affects": "Self",
+        "target": "No target",
+        "props": "Area of Effect, Attack Speed, Primed",
+        "cast": "Instant",
+        "prop1": "Bonus attack range",
+        "val1": "1.75",
+        "cooldown": "10",
+        "cost": "45"
+      }
+    },
+    {
+      "name": "Seven-Sided Strike",
+      "hotkey": "R",
+      "icon": "Seven-Sided_Strike_Icon.png",
+      "description": "Become Invulnerable and strike 7 times over 1.6875 seconds. Each strike hits the highest Health nearby Hero for 7% of their maximum Health.; 50; 77; heroic",
+      "fields": {
+        "type": "Spell damage / Spell damage / Status effect",
+        "scaling": "- / 4.00%",
+        "affects": "Visible enemy Heroes / Vehicles / Self",
+        "target": "No target",
+        "props": "Area of Effect, Percent damage, Invulnerable",
+        "cast": "Instant",
+        "radius": "6.0",
+        "prop1": "Vehicle damage",
+        "val1": "256",
+        "notes": "First hit is instant, then every 0.25 seconds the last 6 hits activate. After the 7 hits there is a 0.1875 second delay before he exits. Kharazim is Invulnerable for the duration of the Ability. During this Kharazim is removed from the ground plane, allowing him to disjoint certain projectiles. Deals Percent damage to Heroes and special Spell Damage to Vehicles. Damage dealt to Heroes still ignores all damage modifications, but the damage dealt to Vehicles only ignores offensive damage modifiers and can still be affected by defensive damage modifiers, like Armor, on the target. Can only hit visible enemy Heroes."
+      }
+    },
+    {
+      "name": "Divine Palm",
+      "hotkey": "R",
+      "icon": "Divine_Palm_Icon.png",
+      "description": "Protect an allied Hero from death, causing them to be healed for 1200 if they take fatal damage in the next 4 seconds.; 50; 50; heroic",
+      "fields": {
+        "type": "Healing, Status effect",
+        "scaling": "4.00%",
+        "affects": "Self, Allied Heroes",
+        "target": "Unit target",
+        "props": "Stasis, Self-castable",
+        "cast": "0 + 0.125 seconds",
+        "range": "4.5"
+      }
+    }
+  ],
+  "talents": [
+    {
+      "name": "Transcendence",
+      "tier": "1",
+      "slot": "1",
+      "icon": "Transcendence_Icon.png",
+      "description": "Every 3rd Basic Attack heals the lowest nearby allied Hero for 104 and gives 25% increased Move Speed for 2.5 seconds.",
+      "fields": {
+        "type": "Healing",
+        "scaling": "4.00%",
+        "affects": "Self, Allied Heroes",
+        "target": "Automatic",
+        "props": "Attack Modifier, Movement Speed",
+        "prop1": "Target search radius",
+        "val1": "5.5"
+      },
+      "_raw_fields": [
+        "Transcendence",
+        "1",
+        "1",
+        "Every 3rd Basic Attack heals the lowest nearby allied Hero for 104 and gives 25% increased Move Speed for 2.5 seconds.",
+        "File:Transcendence_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Iron Fists",
+      "tier": "1",
+      "slot": "2",
+      "icon": "Iron_Fists_Icon.png",
+      "description": "Every 3rd Basic Attack deals 110% bonus damage and gives 25% increased Move Speed for 2.5 seconds.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Self",
+        "props": "Attack Modifier, Movement Speed",
+        "notes": "Damage bonus stacks additively with other offensive damage modifiers that can affect Kharazim's Basic Attack damage."
+      },
+      "_raw_fields": [
+        "Iron Fists",
+        "1",
+        "2",
+        "Every 3rd Basic Attack deals 110% bonus damage and gives 25% increased Move Speed for 2.5 seconds.",
+        "File:Iron_Fists_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Insight",
+      "tier": "1",
+      "slot": "3",
+      "icon": "Insight_Icon.png",
+      "description": "quest Every 3rd Basic Attack restores 14 Mana, grants a stack of Insight, and gives 25% increased Movement Speed for 2.5 seconds. Upon getting 100 stacks of Insight, every 3rd attack also reduces Basic Ability cooldowns by 1.75 seconds.",
+      "fields": {
+        "type": "Mana restoration, Cooldown reduction",
+        "scaling": "4.00%",
+        "affects": "Self",
+        "props": "Attack Modifier, Movement Speed"
+      },
+      "_raw_fields": [
+        "Insight",
+        "1",
+        "3",
+        "quest Every 3rd Basic Attack restores 14 Mana, grants a stack of Insight, and gives 25% increased Movement Speed for 2.5 seconds. Upon getting 100 stacks of Insight, every 3rd attack also reduces Basic Ability cooldowns by 1.75 seconds.",
+        "File:Insight_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Spirit Ally",
+      "tier": "2",
+      "slot": "1",
+      "icon": "Air_Ally_Icon.png",
+      "description": "cooldown 45 Active Place a Spirit Ally that heals allies in a large area around it for 2% of their maximum Health every second. Has 150 Health and lasts 10 seconds. Kharazim can Radiant Dash to Spirit Allies. Spirit Ally Healing Aura",
+      "fields": {
+        "type": "Healing",
+        "target": "Point target",
+        "cast": "Instant",
+        "props": "Area of Effect",
+        "range": "9.0",
+        "nohr": "1",
+        "scaling": "4.00% (Health)",
+        "prop1": "Health",
+        "val1": "150",
+        "prop2": "Basic Attack damage",
+        "val2": "-",
+        "prop4": "Vision radius",
+        "val4": "8.25",
+        "prop5": "Movement speed",
+        "val5": "-",
+        "prop6": "Unit radius",
+        "val6": "0.125",
+        "prop7": "Sight radius",
+        "val7": "8.25",
+        "affects": "Allied Heroes, Self",
+        "aoe": "Circle",
+        "radius": "8.0",
+        "tickrate": "1.0 per second"
+      },
+      "_raw_fields": [
+        "Spirit Ally",
+        "2",
+        "1",
+        "cooldown 45 Active Place a Spirit Ally that heals allies in a large area around it for 2% of their maximum Health every second. Has 150 Health and lasts 10 seconds. Kharazim can Radiant Dash to Spirit Allies. Spirit Ally Healing Aura",
+        "File:Air_Ally_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Earth Ally",
+      "tier": "2",
+      "slot": "2",
+      "icon": "Earth_Ally_Icon.png",
+      "description": "cooldown 45 Active Place an Earth Ally that grants nearby allied Heroes 50 Physical Armor against Heroic Basic Attacks, reducing damage taken by 50%. Has 400 Health and lasts 10 seconds. Kharazim can Radiant Dash to Earth Allies. Earth Ally Physical Armor Aura",
+      "fields": {
+        "type": "Defensive damage modifier",
+        "target": "Point target",
+        "cast": "Instant",
+        "props": "Area of Effect, Physical Armor",
+        "range": "9.0",
+        "nohr": "1",
+        "scaling": "4.00% (Health)",
+        "prop1": "Health",
+        "val1": "400",
+        "prop2": "Basic Attack damage",
+        "val2": "-",
+        "prop5": "Movement speed",
+        "val5": "-",
+        "prop6": "Unit radius",
+        "val6": "0.125",
+        "prop7": "Sight radius",
+        "val7": "8.25",
+        "affects": "Allied Heroes, Self",
+        "radius": "8.0",
+        "notes": "Does not stack with other positive Physical Armor effects. Other defensive damage modifiers may stack."
+      },
+      "_raw_fields": [
+        "Earth Ally",
+        "2",
+        "2",
+        "cooldown 45 Active Place an Earth Ally that grants nearby allied Heroes 50 Physical Armor against Heroic Basic Attacks, reducing damage taken by 50%. Has 400 Health and lasts 10 seconds. Kharazim can Radiant Dash to Earth Allies. Earth Ally Physical Armor Aura",
+        "File:Earth_Ally_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Air Ally",
+      "tier": "2",
+      "slot": "3",
+      "icon": "Spirit_Ally_Icon.png",
+      "description": "cooldown 30 Active Place an Air Ally that gives nearby allied Heroes 20% Spell Power, grants vision, and reveals a large area around it. Has 300 Health and lasts 10 seconds. Kharazim can Radiant Dash to Air Allies. Air Ally Spell Power Aura",
+      "fields": {
+        "type": "Offensive damage modifier / Status effect",
+        "target": "Point target",
+        "cast": "Instant",
+        "props": "Area of Effect, Revealed, Spell Power",
+        "range": "9.0",
+        "nohr": "1",
+        "scaling": "4.00% (Health)",
+        "prop1": "Health",
+        "val1": "200",
+        "prop2": "Basic Attack damage",
+        "val2": "-",
+        "prop5": "Movement speed",
+        "val5": "-",
+        "prop6": "Unit radius",
+        "val6": "0.125",
+        "prop7": "Sight radius",
+        "val7": "8.25",
+        "affects": "Allied Heroes, Self / Enemy Heroes",
+        "radius": "8.0",
+        "notes": "Spell Power stacks additively with itself and other offensive damage and healing modifiers affecting target Heroes' Spell Damage or healing output."
+      },
+      "_raw_fields": [
+        "Air Ally",
+        "2",
+        "3",
+        "cooldown 30 Active Place an Air Ally that gives nearby allied Heroes 20% Spell Power, grants vision, and reveals a large area around it. Has 300 Health and lasts 10 seconds. Kharazim can Radiant Dash to Air Allies. Air Ally Spell Power Aura",
+        "File:Spirit_Ally_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Blinding Speed",
+      "tier": "3",
+      "slot": "1",
+      "icon": "Blinding_Speed_Icon.png",
+      "description": "Decreases Radiant Dash's cooldown by 2 seconds and increases the maximum number of charges by 1.",
+      "fields": {},
+      "_raw_fields": [
+        "Blinding Speed",
+        "3",
+        "1",
+        "Decreases Radiant Dash's cooldown by 2 seconds and increases the maximum number of charges by 1.",
+        "File:Blinding_Speed_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Heavenly Zeal",
+      "tier": "3",
+      "slot": "2",
+      "icon": "Heavenly_Zeal_Icon.png",
+      "description": "Increases Breath of Heaven's Movement Speed bonus to 30%. Radiant Dashing to an ally increases the healing they receive from Breath of Heaven by 50% for 3.5 seconds.",
+      "fields": {
+        "type": "Healing dealt modifier",
+        "affects": "Ability",
+        "notes": "Bonus stacks additively with healing modifiers that affect Breath of Heaven 's healing output and multiplicatively with modifiers that affect healing received."
+      },
+      "_raw_fields": [
+        "Heavenly Zeal",
+        "3",
+        "2",
+        "Increases Breath of Heaven's Movement Speed bonus to 30%. Radiant Dashing to an ally increases the healing they receive from Breath of Heaven by 50% for 3.5 seconds.",
+        "File:Heavenly_Zeal_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Blazing Fists",
+      "tier": "3",
+      "slot": "3",
+      "icon": "Blazing_Fists_Icon.png",
+      "description": "Increase the duration of Deadly Reach by 100%. Every 3rd Basic Attack reduces the cooldown of Deadly Reach by 0.75 seconds.",
+      "fields": {
+        "props": "Attack Modifier"
+      },
+      "_raw_fields": [
+        "Blazing Fists",
+        "3",
+        "3",
+        "Increase the duration of Deadly Reach by 100%. Every 3rd Basic Attack reduces the cooldown of Deadly Reach by 0.75 seconds.",
+        "File:Blazing_Fists_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Divine Palm",
+      "tier": "4",
+      "slot": "1",
+      "icon": "Divine_Palm_Icon.png",
+      "description": "Cooldown 50 Protect an allied Hero from death, causing them to be healed for 1200 if they take fatal damage in the next 4 seconds.",
+      "fields": {},
+      "_raw_fields": [
+        "Divine Palm",
+        "4",
+        "1",
+        "Cooldown 50 Protect an allied Hero from death, causing them to be healed for 1200 if they take fatal damage in the next 4 seconds.",
+        "File:Divine_Palm_Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Seven-Sided Strike",
+      "tier": "4",
+      "slot": "2",
+      "icon": "Seven-Sided_Strike_Icon.png",
+      "description": "Cooldown 50 Become Invulnerable and strike 7 times over 1.6875 seconds. Each strike hits the highest Health nearby Hero for 7% of their maximum Health.",
+      "fields": {},
+      "_raw_fields": [
+        "Seven-Sided Strike",
+        "4",
+        "2",
+        "Cooldown 50 Become Invulnerable and strike 7 times over 1.6875 seconds. Each strike hits the highest Health nearby Hero for 7% of their maximum Health.",
+        "File:Seven-Sided_Strike_Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Quicksilver",
+      "tier": "5",
+      "slot": "1",
+      "icon": "Quicksilver_Icon.png",
+      "description": "Radiant Dashing to an ally gives you and the target 30% bonus Movement Speed for 3 seconds.",
+      "fields": {
+        "type": "Status effect",
+        "affects": "Allies, Self",
+        "props": "Movement Speed"
+      },
+      "_raw_fields": [
+        "Quicksilver",
+        "5",
+        "1",
+        "Radiant Dashing to an ally gives you and the target 30% bonus Movement Speed for 3 seconds.",
+        "File:Quicksilver_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Spell Shield",
+      "tier": "5",
+      "slot": "2",
+      "icon": "Spell_Shield_Icon.png",
+      "description": "Active Every 30 seconds, gain 50 Spell Armor against the next enemy Ability and subsequent Abilities for 3 seconds, reducing the damage taken by 50%. Can be toggled to allow or prevent this talent from triggering automatically.",
+      "fields": {
+        "type": "Defensive damage modifier",
+        "affects": "Self",
+        "target": "No Target (toggle)",
+        "props": "Spell Armor, Spell Shield",
+        "prop1": "Toggle cooldown",
+        "val1": "0.5 seconds",
+        "notes": "Does not stack with other positive Spell Armor effects. Other defensive damage modifiers may stack."
+      },
+      "_raw_fields": [
+        "Spell Shield",
+        "5",
+        "2",
+        "Active Every 30 seconds, gain 50 Spell Armor against the next enemy Ability and subsequent Abilities for 3 seconds, reducing the damage taken by 50%. Can be toggled to allow or prevent this talent from triggering automatically.",
+        "File:Spell_Shield_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Sixth Sense",
+      "tier": "5",
+      "slot": "3",
+      "icon": "Sixth_Sense_(Kharazim)_Icon.png",
+      "description": "While Stunned or Rooted, gain 75 Physical Armor against Hero Basic Attacks for 4 seconds, reducing their damage by 75%.",
+      "fields": {
+        "type": "Defensive damage modifier",
+        "affects": "Self",
+        "props": "Physical Armor",
+        "notes": "Duration starts counting down after the Stun or Root expires. Does not stack with other positive Physical Armor effects. Other defensive damage modifiers may stack."
+      },
+      "_raw_fields": [
+        "Sixth Sense",
+        "5",
+        "3",
+        "While Stunned or Rooted, gain 75 Physical Armor against Hero Basic Attacks for 4 seconds, reducing their damage by 75%.",
+        "File:Sixth_Sense_(Kharazim)_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Cleansing Touch",
+      "tier": "6",
+      "slot": "1",
+      "icon": "Cleansing_Touch_Icon.png",
+      "description": "Radiant Dashing to an ally makes them Unstoppable for 1 second.",
+      "fields": {
+        "type": "Status effect",
+        "affects": "Allied Heroes",
+        "props": "Unstoppable"
+      },
+      "_raw_fields": [
+        "Cleansing Touch",
+        "6",
+        "1",
+        "Radiant Dashing to an ally makes them Unstoppable for 1 second.",
+        "File:Cleansing_Touch_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Way of the Hundred Fists",
+      "tier": "6",
+      "slot": "2",
+      "icon": "Way_of_the_Hundred_Fists_Icon.png",
+      "description": "Radiant Dashing to an enemy launches a rapid volley of 6 Basic Attacks dealing 45% damage each.",
+      "fields": {
+        "type": "Physical Damage",
+        "scaling": "-",
+        "affects": "Enemies",
+        "props": "Mobile channel",
+        "range": "3.0",
+        "tickrate": "8.0 per second (x6)",
+        "prop1": "Initial delay",
+        "val1": "0.1875 seconds",
+        "notes": "The Basic Attacks from Way of the Hundred Fists can trigger attack modifiers, such as Kharazim's Trait, but do not trigger an activated Deadly Reach. Casting a Basic or Heroic Ability other than Deadly Reach interrupts the channel, but casting Active Abilities does not. The damage penalty stacks additively with other offensive damage modifiers affecting Kharazim's Basic Attack damage."
+      },
+      "_raw_fields": [
+        "Way of the Hundred Fists",
+        "6",
+        "2",
+        "Radiant Dashing to an enemy launches a rapid volley of 6 Basic Attacks dealing 45% damage each.",
+        "File:Way_of_the_Hundred_Fists_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Echo of Heaven",
+      "tier": "6",
+      "slot": "3",
+      "icon": "Echo_of_Heaven_Icon.png",
+      "description": "Breath of Heaven heals 75% of its normal amount, but heals a second time 3 seconds later.",
+      "fields": {
+        "type": "Healing dealt modifier / Healing",
+        "affects": "Ability / Allied Heroes, Self",
+        "notes": "Reduction is applied on both instances of healing. The reduction stacks additively with healing modifiers that affect Breath of Heaven 's healing output and multiplicatively with modifiers that affect healing received."
+      },
+      "_raw_fields": [
+        "Echo of Heaven",
+        "6",
+        "3",
+        "Breath of Heaven heals 75% of its normal amount, but heals a second time 3 seconds later.",
+        "File:Echo_of_Heaven_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Peaceful Repose",
+      "tier": "7",
+      "slot": "1",
+      "icon": "Peaceful_Repose_Icon.png",
+      "description": "Divine Palm's healing amount is increased by 75%, and its cooldown is set to 5 seconds if the Hero does not die.",
+      "fields": {
+        "type": "Healing dealt modifier",
+        "affects": "Ability",
+        "notes": "The bonus healing stacks additively with healing modifiers that affect Divine Palm 's healing output and multiplicatively with modifiers that affect healing received."
+      },
+      "_raw_fields": [
+        "Peaceful Repose",
+        "7",
+        "1",
+        "Divine Palm's healing amount is increased by 75%, and its cooldown is set to 5 seconds if the Hero does not die.",
+        "File:Peaceful_Repose_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Transgression",
+      "tier": "7",
+      "slot": "2",
+      "icon": "Transgression_Icon.png",
+      "description": "Seven-Sided Strike hits 4 additional times.",
+      "fields": {
+        "prop1": "Bonus duration",
+        "val1": "1 second"
+      },
+      "_raw_fields": [
+        "Transgression",
+        "7",
+        "2",
+        "Seven-Sided Strike hits 4 additional times.",
+        "File:Transgression_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Fists of Legend",
+      "tier": "7",
+      "slot": "3",
+      "icon": "Fists_of_Legend_Icon.png",
+      "description": "Gain 50% of the benefit from both level 1 Talents that were not chosen.",
+      "fields": {
+        "nohr": "1",
+        "notes": "Transcendence is applied with a 50% healing dealt reduction to the original value. This reduction stacks additively with other healing dealt modifiers that can affect Transcendence 's healing. Iron Fists applies a 55% damage bonus to the strike that triggers it. This bonus stacks additively with other offensive damage modifiers that can affect Kharazim's Basic Attack damage. Insight 's Mana restoration is reduced to 7 Mana and cooldown reduction to 0.8175 seconds. Completing the quest is not required to gain the cooldown reduction when Insight is gained through Fists of Legend."
+      },
+      "_raw_fields": [
+        "Fists of Legend",
+        "7",
+        "3",
+        "Gain 50% of the benefit from both level 1 Talents that were not chosen.",
+        "File:Fists_of_Legend_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Storm Shield",
+      "tier": "7",
+      "slot": "4",
+      "icon": "Storm_Shield_Icon.png",
+      "description": "cooldown 45 Active Activate to give all nearby allied Heroes a Shield for 20% of their max Health for 3 seconds.",
+      "fields": {
+        "type": "Shield",
+        "scaling": "-",
+        "affects": "Allied Heroes, Self",
+        "target": "No target",
+        "props": "Area of Effect, Storm Shield",
+        "cast": "Instant",
+        "radius": "8.0"
+      },
+      "_raw_fields": [
+        "Storm Shield",
+        "7",
+        "4",
+        "cooldown 45 Active Activate to give all nearby allied Heroes a Shield for 20% of their max Health for 3 seconds.",
+        "File:Storm_Shield_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Epiphany",
+      "tier": "7",
+      "slot": "5",
+      "icon": "Epiphany_Icon.png",
+      "description": "cooldown 70 Active Activate to restore 70% of Kharazim's maximum Mana and refill 2 charges of Radiant Dash.",
+      "fields": {
+        "type": "Mana Restoration",
+        "scaling": "-",
+        "affects": "Self, Ability",
+        "target": "No target",
+        "cast": "Instant"
+      },
+      "_raw_fields": [
+        "Epiphany",
+        "7",
+        "5",
+        "cooldown 70 Active Activate to restore 70% of Kharazim's maximum Mana and refill 2 charges of Radiant Dash.",
+        "File:Epiphany_Icon.png"
+      ],
+      "level": "20"
+    }
+  ],
+  "other": [],
+  "_unparsed_count": 0
+}

@@ -1,0 +1,569 @@
+{
+  "hero": "Whitemane",
+  "abilities": [
+    {
+      "name": "Zeal",
+      "hotkey": "D",
+      "icon": "Zeal Icon.png",
+      "description": "Whitemane's healing Abilities apply Zeal for 8 seconds. Allies with Zeal are healed for 100% of the damage Whitemane deals to Heroes. Activate to gain 25% Spell Power and lose 15 Armor for 5 seconds. Can be cast while channeling abilities.; 40; trait",
+      "fields": {
+        "type": "Defensive damage modifier (active), Offensive damage modifier (active), Healing dealt modifier (active) / Healing (passive)",
+        "scaling": "-",
+        "affects": "Self / Allied Heroes, Self",
+        "target": "No target",
+        "props": "Armor reduction (active), Spell Power (active)",
+        "cast": "Instant",
+        "notes": "Healing from Zeal follows Lifesteal rules. Healing is calculated directly from final damage dealt and is unaffected by Spell Power's healing modifying properties. Spell Power stacks additively with itself and other offensive damage and healing modifiers affecting Whitemane's Spell Damage or healing output. Does not stack with other negative Armor effects. Other defensive damage modifiers may stack."
+      }
+    },
+    {
+      "name": "Desperate Plea",
+      "hotkey": "Q",
+      "icon": "Desperate Plea Icon.png",
+      "description": "Heal an allied Hero for 140 and gain Desperation for 4 seconds. Desperation increases Desperate Plea's Mana cost by 40, and stacks up to 3 times. Zeal Current Mana Cost: 40. Mana Cost at 3 stacks of Desperation 160.",
+      "fields": {
+        "type": "Healing",
+        "scaling": "4.00%",
+        "affects": "Self, Allied Heroes",
+        "target": "Unit target",
+        "props": "Self-castable",
+        "cast": "Instant",
+        "range": "8.0",
+        "cooldown": "0.5",
+        "cost": "40"
+      }
+    },
+    {
+      "name": "Inquisition",
+      "hotkey": "W",
+      "icon": "Inquisition Icon.png",
+      "description": "Channel on an enemy Hero for up to 3 seconds, dealing 50 damage every 0.5 seconds and Slowing them by 30%. Removes a stack of Desperation. Shares a cooldown with Clemency.; 12 / 0.5",
+      "fields": {
+        "type": "Spell Damage, Crowd control",
+        "scaling": "4.00%",
+        "affects": "Enemy Heroes",
+        "target": "Unit target",
+        "props": "Stationary channel, Slow",
+        "cast": "0 + CH + 0 seconds",
+        "range": "- Cast: 7.5 - Active: 11.25",
+        "tickrate": "2.0 per second (x7)",
+        "notes": "Inquisition can be canceled after 0.5 seconds by reactivating the Ability to end its effect early. The channel is interrupted if the target moves outside the active range. Cooldown begins at the start of channel."
+      }
+    },
+    {
+      "name": "Searing Lash",
+      "hotkey": "E",
+      "icon": "Searing Lash Icon.png",
+      "description": "After 0.5 seconds, smite enemies in a straight line for 82 damage. If the first strike hits an enemy Hero, a second strike will occur after a short delay.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "target": "Point target",
+        "props": "Area of Effect",
+        "cast": "0.125 + 0 seconds",
+        "aoe": "Rectangle",
+        "width": "2.0",
+        "height": "7.0",
+        "range": "8.0",
+        "prop1": "Initial delay",
+        "val1": "0.375 seconds",
+        "prop2": "Secondary delay",
+        "val2": "0.75 seconds",
+        "notes": "The second strike is perpendicular to the first.",
+        "cooldown": "6"
+      }
+    },
+    {
+      "name": "Scarlet Aegis",
+      "hotkey": "R",
+      "icon": "Scarlet Aegis Icon.png",
+      "description": "Bolster the spirits of nearby allied Heroes, healing them for 300 and granting them 40 Armor for 4 seconds.",
+      "fields": {
+        "type": "Healing / Defensive damage modifier",
+        "scaling": "4.00%",
+        "affects": "Self, Allied Heroes",
+        "target": "No target",
+        "props": "Area of Effect, Armor",
+        "cast": "0.125 + 0 seconds",
+        "aoe": "Circle",
+        "radius": "5.0",
+        "notes": "Grants Zeal on cast to every hero inside Scarlet Aegis 's initial radius. Does not stack with other positive Armor effects. Other defensive damage modifiers may stack.",
+        "cooldown": "60"
+      }
+    },
+    {
+      "name": "Divine Reckoning",
+      "hotkey": "R",
+      "icon": "Divine Reckoning Icon.png",
+      "description": "After 1 second, consecrate an area for 4 seconds, dealing 50 damage every 0.5 seconds to enemies inside. 25% of the damage dealt to Heroes is returned as Mana.",
+      "fields": {
+        "type": "Spell Damage / Mana restoration",
+        "scaling": "4.00% / -",
+        "affects": "Enemies / Self",
+        "target": "Point target",
+        "props": "Area of Effect, Self-castable",
+        "cast": "0.125 + 0 seconds",
+        "range": "10",
+        "aoe": "Circle",
+        "radius": "5.0",
+        "tickrate": "2.0 per second (x9)",
+        "prop1": "Initial delay",
+        "val1": "0.875 seconds",
+        "cooldown": "75"
+      }
+    },
+    {
+      "name": "Clemency",
+      "hotkey": "1",
+      "icon": "Clemency Icon.png",
+      "description": "Activate to cast Inquisition on an allied Hero, healing them for up to 329 over 3 seconds while Channeling. Shares a cooldown with Inquisition. Removes a stack of Desperation.",
+      "fields": {
+        "type": "Healing",
+        "scaling": "4.00%",
+        "affects": "Allied Heroes",
+        "target": "Unit target",
+        "props": "Stationary channel",
+        "cast": "0 + CH + 0 seconds",
+        "range": "- Cast: 7.5 - Active: 13",
+        "tickrate": "2.0 per second (x7)",
+        "prop1": "Healing per tick",
+        "val1": "47",
+        "notes": "Clemency can be canceled after 0.5 seconds by reactivating it to end its effect early. Applies Zeal on every tick. The channel is interrupted if the target moves outside the active range. Cooldown begins at the start of channel.",
+        "cooldown": "12"
+      }
+    }
+  ],
+  "talents": [
+    {
+      "name": "Pity the Frail",
+      "tier": "1",
+      "slot": "1",
+      "icon": "Pity the Frail Icon.png",
+      "description": "For every Hero hit with Searing Lash, lower the cooldown of Inquisition by 1.5 second. Allies below 30% Health receive 25% more healing from Whitemane.",
+      "fields": {
+        "type": "Healing dealt modifier",
+        "affects": "Self",
+        "notes": "Pity the Frail can also affect the damage-based healing from Zeal, stacking additively with it. Bonus healing stacks additively with healing dealt modifiers that affect Whitemane's healing output and multiplicatively with healing received modifiers on the target."
+      },
+      "_raw_fields": [
+        "Pity the Frail",
+        "1",
+        "1",
+        "For every Hero hit with Searing Lash, lower the cooldown of Inquisition by 1.5 second. Allies below 30% Health receive 25% more healing from Whitemane.",
+        "File:Pity the Frail Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Righteous Flame",
+      "tier": "1",
+      "slot": "2",
+      "icon": "Righteous Flame Icon.png",
+      "description": "Searing Lash deals 25% more damage to enemies. If the second strike hits an enemy Hero, they take an additional 25% damage and Whitemane gains 40% Attack Speed for 3 seconds.",
+      "fields": {
+        "type": "Offensive damage modifier / Status effect",
+        "affects": "Ability / Self",
+        "props": "Attack Speed",
+        "notes": "Damage bonus stacks additively with itself and other offensive damage modifiers that can affect Searing Lash 's damage."
+      },
+      "_raw_fields": [
+        "Righteous Flame",
+        "1",
+        "2",
+        "Searing Lash deals 25% more damage to enemies. If the second strike hits an enemy Hero, they take an additional 25% damage and Whitemane gains 40% Attack Speed for 3 seconds.",
+        "File:Righteous Flame Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Inquisitor's Prayer",
+      "tier": "1",
+      "slot": "3",
+      "icon": "Inquisitor's Prayer Icon.png",
+      "description": "Repeatable Quest Hit Heroes with Searing Lash. Repeatable Quest Hit 3 Heroes with Basic Attacks. Reward Permanently increase Whitemane's maximum Health by 3 and Mana by 2. Heroes hit with the second strike of Searing Lash count as 2 hits.",
+      "fields": {
+        "type": "Bonus Health, Bonus Mana",
+        "scaling": "-",
+        "affects": "Self"
+      },
+      "_raw_fields": [
+        "Inquisitor's Prayer",
+        "1",
+        "3",
+        "Repeatable Quest Hit Heroes with Searing Lash. Repeatable Quest Hit 3 Heroes with Basic Attacks. Reward Permanently increase Whitemane's maximum Health by 3 and Mana by 2. Heroes hit with the second strike of Searing Lash count as 2 hits.",
+        "File:Inquisitor's Prayer Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Unwavering Faith",
+      "tier": "2",
+      "slot": "1",
+      "icon": "Unwavering Faith Icon.png",
+      "description": "Increase Whitemane's Basic Attack Range by 1.1. Whitemane gains 20% increased Basic Attack damage for each active Zeal buff.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Self",
+        "notes": "Stacks additively with itself and other offensive damage modifiers that can affect Whitemane's Basic Attack damage."
+      },
+      "_raw_fields": [
+        "Unwavering Faith",
+        "2",
+        "1",
+        "Increase Whitemane's Basic Attack Range by 1.1. Whitemane gains 20% increased Basic Attack damage for each active Zeal buff.",
+        "File:Unwavering Faith Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Martyrdom",
+      "tier": "2",
+      "slot": "2",
+      "icon": "Martyrdom Icon.png",
+      "description": "Desperate Plea's healing is increased by 30%. Increase this by an additional 10% for each active Zeal.",
+      "fields": {
+        "type": "Healing dealt modfier",
+        "affects": "Ability",
+        "notes": "Bonus healing stacks additively with healing modifiers that affect Whitemane's healing dealt modifiers and multiplicatively with healing received modifiers on the target."
+      },
+      "_raw_fields": [
+        "Martyrdom",
+        "2",
+        "2",
+        "Desperate Plea's healing is increased by 30%. Increase this by an additional 10% for each active Zeal.",
+        "File:Martyrdom Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Indulgence",
+      "tier": "2",
+      "slot": "3",
+      "icon": "Indulgence Icon.png",
+      "description": "Gain 5% Movement Speed. Increase this by an additional 5% for each active Zeal.",
+      "fields": {
+        "type": "Status effect",
+        "affects": "Self",
+        "props": "Movement Speed",
+        "notes": "Stacks additively with itself, but not with other sources of Movement Speed."
+      },
+      "_raw_fields": [
+        "Indulgence",
+        "2",
+        "3",
+        "Gain 5% Movement Speed. Increase this by an additional 5% for each active Zeal.",
+        "File:Indulgence Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Zealous Spirit",
+      "tier": "3",
+      "slot": "1",
+      "icon": "Zeaous Spirit Icon.png",
+      "description": "Upon reaching 2 stacks of Desperation, Whitemane gains Zeal.",
+      "fields": {},
+      "_raw_fields": [
+        "Zealous Spirit",
+        "3",
+        "1",
+        "Upon reaching 2 stacks of Desperation, Whitemane gains Zeal.",
+        "File:Zeaous Spirit Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Saintly Greatstaff",
+      "tier": "3",
+      "slot": "2",
+      "icon": "Saintly Greatstaff Icon.png",
+      "description": "Enemy Heroes hit by Searing Lash are marked for 3 seconds. Basic Attacks against them deal an additional 55 Spell Damage and remove the mark.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "4.00%",
+        "affects": "Enemy Heroes",
+        "props": "Attack Modifier",
+        "notes": "Mark is removed without triggering the Spell Damage bonus, if the Basic Attack misses due to Whitemane being Blinded or the target Evading."
+      },
+      "_raw_fields": [
+        "Saintly Greatstaff",
+        "3",
+        "2",
+        "Enemy Heroes hit by Searing Lash are marked for 3 seconds. Basic Attacks against them deal an additional 55 Spell Damage and remove the mark.",
+        "File:Saintly Greatstaff Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Intercession",
+      "tier": "3",
+      "slot": "3",
+      "icon": "Intercession Icon.png",
+      "description": "Cooldown 45 Active Activate to make an ally Unstoppable for 1 second.",
+      "fields": {
+        "type": "Status effect",
+        "affects": "Allied Heroes",
+        "tartget": "Unit target",
+        "cast": "Instant",
+        "props": "Unstoppable",
+        "range": "7.5"
+      },
+      "_raw_fields": [
+        "Intercession",
+        "3",
+        "3",
+        "Cooldown 45 Active Activate to make an ally Unstoppable for 1 second.",
+        "File:Intercession Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Scarlet Aegis",
+      "tier": "4",
+      "slot": "1",
+      "icon": "Scarlet Aegis Icon.png",
+      "description": "Cooldown 60 Bolster the spirits of nearby allied Heroes, healing them for 300 and granting them 40 Armor for 4 seconds.",
+      "fields": {},
+      "_raw_fields": [
+        "Scarlet Aegis",
+        "4",
+        "1",
+        "Cooldown 60 Bolster the spirits of nearby allied Heroes, healing them for 300 and granting them 40 Armor for 4 seconds.",
+        "File:Scarlet Aegis Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Divine Reckoning",
+      "tier": "4",
+      "slot": "2",
+      "icon": "Divine Reckoning Icon.png",
+      "description": "Cooldown 75 After 1 second, consecrate an area for 4 seconds, dealing 50 damage every 0.5 seconds to enemies inside. 25% of the damage dealt to Heroes is returned as Mana.",
+      "fields": {},
+      "_raw_fields": [
+        "Divine Reckoning",
+        "4",
+        "2",
+        "Cooldown 75 After 1 second, consecrate an area for 4 seconds, dealing 50 damage every 0.5 seconds to enemies inside. 25% of the damage dealt to Heroes is returned as Mana.",
+        "File:Divine Reckoning Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Subjugation",
+      "tier": "5",
+      "slot": "1",
+      "icon": "Subjugation Icon.png",
+      "description": "Inquisition reduces all damage the target deals by 50%.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Enemy Heroes",
+        "notes": "Damage reduction stacks additively with other offensive damage modifiers affecting the target's damage output."
+      },
+      "_raw_fields": [
+        "Subjugation",
+        "5",
+        "1",
+        "Inquisition reduces all damage the target deals by 50%.",
+        "File:Subjugation Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Lashing Out",
+      "tier": "5",
+      "slot": "2",
+      "icon": "Lashing Out Icon.png",
+      "description": "If Searing Lash's second strike hits an enemy Hero, reduce its cooldown to 1 second.",
+      "fields": {},
+      "_raw_fields": [
+        "Lashing Out",
+        "5",
+        "2",
+        "If Searing Lash's second strike hits an enemy Hero, reduce its cooldown to 1 second.",
+        "File:Lashing Out Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Scarlet Wrath",
+      "tier": "5",
+      "slot": "3",
+      "icon": "Scarlet Wrath Icon.png",
+      "description": "Basic Attacks against Heroes increase the duration of all active Zeals by 0.75 seconds, restore 0.5% Mana to all Zeal targets, and lower the cooldown of Zeal's activation by 4 seconds.",
+      "fields": {
+        "props": "Attack Modifier, Cooldown reduction"
+      },
+      "_raw_fields": [
+        "Scarlet Wrath",
+        "5",
+        "3",
+        "Basic Attacks against Heroes increase the duration of all active Zeals by 0.75 seconds, restore 0.5% Mana to all Zeal targets, and lower the cooldown of Zeal's activation by 4 seconds.",
+        "File:Scarlet Wrath Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Radiance",
+      "tier": "6",
+      "slot": "1",
+      "icon": "Radiance Icon.png",
+      "description": "Reaching 3 stacks of Desperation heals for 175 and reapplies Zeal to allies with Zeal.",
+      "fields": {
+        "type": "Healing, Defensive damage modifier",
+        "scaling": "4.00%",
+        "affects": "Self, Allied Heroes"
+      },
+      "_raw_fields": [
+        "Radiance",
+        "6",
+        "1",
+        "Reaching 3 stacks of Desperation heals for 175 and reapplies Zeal to allies with Zeal.",
+        "File:Radiance Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Shared Punishment",
+      "tier": "6",
+      "slot": "2",
+      "icon": "Shared Punishment Icon.png",
+      "description": "Upon casting, Inquisition can chain to an additional enemy Hero near its target, dealing 50 damage every 0.5 seconds. Affected enemies lose 10 Armor.",
+      "fields": {
+        "type": "Defensive damage modifier",
+        "affects": "Enemy Heroes",
+        "props": "Armor reduction, Bounce",
+        "radius": "5.0",
+        "notes": "Clemency can also chain to an enemy Hero. Additional target can receive the debuff from Subjugation. Does not stack with other negative Armor effects. Other defensive damage modifiers may stack."
+      },
+      "_raw_fields": [
+        "Shared Punishment",
+        "6",
+        "2",
+        "Upon casting, Inquisition can chain to an additional enemy Hero near its target, dealing 50 damage every 0.5 seconds. Affected enemies lose 10 Armor.",
+        "File:Shared Punishment Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Harsh Discipline",
+      "tier": "6",
+      "slot": "3",
+      "icon": "Harsh Discipline Icon.png",
+      "description": "Hitting a Hero with Searing Lash while they are being targeted by Inquisition Roots them for 1.5 seconds. Passive Reduce Inquisition's cooldown by 2 seconds.",
+      "fields": {
+        "type": "Crowd control",
+        "affects": "Enemy Heroes",
+        "props": "Root If a Hero is hit by both lashes while affected by Inquisition, only the first one applies a Root."
+      },
+      "_raw_fields": [
+        "Harsh Discipline",
+        "6",
+        "3",
+        "Hitting a Hero with Searing Lash while they are being targeted by Inquisition Roots them for 1.5 seconds. Passive Reduce Inquisition's cooldown by 2 seconds.",
+        "File:Harsh Discipline Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Scarlet Crusade",
+      "tier": "7",
+      "slot": "1",
+      "icon": "Scarlet Crusade Icon.png",
+      "description": "Scarlet Aegis heals for 50% more and makes affected allies Unstoppable for 2 seconds.",
+      "fields": {
+        "type": "Healing dealt modifier / Status effect",
+        "affects": "Ability / Self, Allied Heroes",
+        "props": "Unstoppable",
+        "notes": "Healing bonus stacks additively with other healing dealt modifiers that can affect Scarlet Aegis 's healing."
+      },
+      "_raw_fields": [
+        "Scarlet Crusade",
+        "7",
+        "1",
+        "Scarlet Aegis heals for 50% more and makes affected allies Unstoppable for 2 seconds.",
+        "File:Scarlet Crusade Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Judgment Day",
+      "tier": "7",
+      "slot": "2",
+      "icon": "Judgment Day Icon.png",
+      "description": "Divine Reckoning deals 50% more damage and pulls enemies to its center the first time it hits them.",
+      "fields": {
+        "type": "Offensive damage modifier / Crowd control",
+        "affects": "Ability / Enemies",
+        "props": "Knockback",
+        "prop1": "Knockback duration",
+        "val1": "0.1875 seconds",
+        "prop2": "Knockback speed",
+        "val2": "25",
+        "notes": "Damage bonus stacks additively with other offensive damage modifiers that can affect Divine Reckoning 's damage."
+      },
+      "_raw_fields": [
+        "Judgment Day",
+        "7",
+        "2",
+        "Divine Reckoning deals 50% more damage and pulls enemies to its center the first time it hits them.",
+        "File:Judgment Day Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Guiding Light",
+      "tier": "7",
+      "slot": "3",
+      "icon": "Guiding_Light_Icon.png",
+      "description": "Cooldown 30 Activate to cast a permanent Zeal on an allied Hero that costs no Mana and doesn't grant Desperation. Only one can be active at a time and has a global cast range.",
+      "fields": {
+        "type": "Healing",
+        "affects": "Self, Allied Heroes",
+        "target": "Unit target",
+        "props": "Self-castable",
+        "cast": "Instant",
+        "range": "Global"
+      },
+      "_raw_fields": [
+        "Guiding Light",
+        "7",
+        "3",
+        "Cooldown 30 Activate to cast a permanent Zeal on an allied Hero that costs no Mana and doesn't grant Desperation. Only one can be active at a time and has a global cast range.",
+        "File:Guiding_Light_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Purge the Wicked",
+      "tier": "7",
+      "slot": "4",
+      "icon": "Purge the Wicked Icon.png",
+      "description": "Cooldown 40 Active Activate to blast an enemy Hero with holy fire, reducing their Armor by 25 and dealing 300 damage over 4 seconds.",
+      "fields": {
+        "type": "Spell Damage, Defensive damage modifier",
+        "scaling": "4.00%",
+        "affects": "Enemy Heroes",
+        "target": "Unit target",
+        "props": "Damage over Time",
+        "cast": "0.125 + 0 seconds",
+        "range": "7.0",
+        "tickrate": "1.0 per second (x5)",
+        "prop1": "Damage per tick",
+        "val1": "60",
+        "notes": "The Armor debuff is applied after the first damage tick. Armor reduction is not cleansed by Stasis effects. Does not stack with other negative Armor effects. Other defensive damage modifiers may stack."
+      },
+      "_raw_fields": [
+        "Purge the Wicked",
+        "7",
+        "4",
+        "Cooldown 40 Active Activate to blast an enemy Hero with holy fire, reducing their Armor by 25 and dealing 300 damage over 4 seconds.",
+        "File:Purge the Wicked Icon.png"
+      ],
+      "level": "20"
+    }
+  ],
+  "other": [],
+  "_unparsed_count": 0
+}

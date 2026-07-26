@@ -1,0 +1,559 @@
+{
+  "hero": "Ana",
+  "abilities": [
+    {
+      "name": "Healing Dart",
+      "hotkey": "Q",
+      "icon": "Healing_Dart_Icon.png",
+      "description": "Fire a dart which heals the first allied Hero hit for 195 Health. Does not affect full Health Heroes.",
+      "fields": {
+        "type": "Healing",
+        "scaling": "4.00%",
+        "affects": "Allied Heroes",
+        "target": "Point target",
+        "props": "Clamping, Skillshot",
+        "cast": "0 + 0.0625 seconds",
+        "range": "12.75",
+        "hitbox": "1.0 x 3.125",
+        "missile": "50",
+        "cooldown": "2",
+        "cost": "10"
+      }
+    },
+    {
+      "name": "Biotic Grenade",
+      "hotkey": "W",
+      "icon": "Biotic_Grenade_Icon.png",
+      "description": "Toss a Grenade at the target area. Allied Heroes hit are healed for 152 Health and receive 25% increased healing from Ana for 4 seconds. Enemies hit take 60 damage and receive 100% less healing for 1.75 seconds. If Biotic Grenade does not hit any enemies, reduce its cooldown by 3 seconds, and if Ana is the only target hit, reduce its cooldown by an additional 2 seconds.",
+      "fields": {
+        "type": "Spell damage, Healing received modifier / Healing / Healing dealt modifier",
+        "scaling": "4.00%",
+        "affects": "Enemies / Allied Heroes, Self / Self",
+        "target": "Point target",
+        "props": "Area of Effect",
+        "cast": "0.125 + 0 seconds",
+        "range": "12",
+        "aoe": "Circle",
+        "radius": "2.25",
+        "missile": "- Initial: 21 - Minimum: 7.0 - Acceleration: -7.0",
+        "notes": "Healing modifiers are applied after damage and healing are dealt. Enemy healing reduction stacks additively with healing modifiers that affect healing received by the target. Ally healing bonus stacks additively with healing modifiers affecting healing dealt by Ana and multiplicatively with healing received modifiers on the target.",
+        "cooldown": "16",
+        "cost": "50"
+      }
+    },
+    {
+      "name": "Sleep Dart",
+      "hotkey": "E",
+      "icon": "Sleep_Dart_Icon.png",
+      "description": "Fire a dart that puts the first enemy Hero hit to Sleep, Stunning them for 3 seconds. Sleep's effects end instantly if the target takes damage after the first 0.5 seconds. Cannot be used on Vehicles.",
+      "fields": {
+        "type": "Crowd control",
+        "affects": "Enemies",
+        "target": "Point target",
+        "props": "Clamping, Skillshot, Sleep",
+        "cast": "0.25 + 0 seconds",
+        "range": "11.75",
+        "hitbox": "0.5 x 1.25",
+        "missile": "24",
+        "notes": "Sleep counts as a Stun effect and interacts with all effects that interact with Stuns. Damage over time effects applied beforehand do not interrupt Sleep.",
+        "cooldown": "14",
+        "cost": "50"
+      }
+    },
+    {
+      "name": "Nano Boost",
+      "hotkey": "R",
+      "icon": "Nano_Boost_Icon.png",
+      "description": "Instantly boost an allied Hero, restoring 200 Mana. For the next 8 seconds, they gain 30% Spell Power and their Basic Ability cooldowns recharge 150% faster. yellowtext Cannot be used on Ana.",
+      "fields": {
+        "type": "Offensive damage modifier, Healing dealt modifier, Mana",
+        "scaling": "-",
+        "affects": "Allied Heroes",
+        "target": "Unit target",
+        "props": "Spell Power",
+        "cast": "0.125 + 0 seconds",
+        "range": "8.0",
+        "notes": "Spell Power stacks additively with other sources of Spell Power and other damage and healing modifiers affecting the target hero's Spell Damage or healing output. Stacks additively with other effects that affect cooldown rerfresh rate.",
+        "cooldown": "70",
+        "cost": "60"
+      }
+    },
+    {
+      "name": "Eye of Horus",
+      "hotkey": "R",
+      "icon": "Eye_of_Horus_Icon.png",
+      "description": "Assume a sniping position, gaining the ability to fire up to 6 specialized rounds with unlimited range. Rounds pierce allied and enemy Heroes but collide with enemy Structures in their path. Allies are healed for 225 and enemies are damaged for 135. Deals 50% less damage to Structures. Ana is unable to move while Eye of Horus is active.",
+      "fields": {
+        "target": "No target",
+        "props": "Stationary channel",
+        "cast": "0.0625 + CH + 0",
+        "range": "Global",
+        "aoe": "Circle",
+        "notes": "Eye of Horus can be canceled after 0.5 seconds through the 'W' or 'E' key. If Eye of Horus is canceled or interrupted before any shots are fired, it will not be put on cooldown. Ana cannot move, Mount, Hearth or use other abilities while channeling Eye of Horus. Channel can last indefinitely and will only end if interrupted, manually canceled or once all shots have been fired.",
+        "cooldown": "60",
+        "cost": "45"
+      }
+    },
+    {
+      "name": "Eye of Horus - High Powered Round",
+      "hotkey": "Q",
+      "icon": "Eye_of_Horus_Icon.png",
+      "description": "Fire a specialized round with unlimited range, piercing all allied and enemy Heroes in its path. Allies are healed for 225 and enemies are damaged for 135. Deals 50% less damage to Structures.",
+      "fields": {
+        "type": "Spell Damage / Healing",
+        "scaling": "4.00%",
+        "affects": "Enemy Heroes & Structures / Allied Heroes",
+        "target": "Point target",
+        "props": "Area of Effect",
+        "cast": "Instant",
+        "range": "Global",
+        "width": "1.0",
+        "notes": "Can be activated using the 'Q', 'R' or left mouse button during Eye of Horus. Using High Powered Round briefly provides vision around the line of fire and upon hitting around the targets.",
+        "cooldown": "1"
+      }
+    }
+  ],
+  "talents": [
+    {
+      "name": "Contact Healing",
+      "tier": "1",
+      "slot": "1",
+      "icon": "Contact_Healing_Icon.png",
+      "description": "Hitting Heroes with Biotic Grenade increases its damage and healing by 30% Hero hit.",
+      "fields": {
+        "type": "Healing dealt modifier",
+        "affects": "Ability",
+        "notes": "Gains bonuses from both allied and enemy Heroes hit. Stacks additively with itself and other offensive damage modifiers that can affect Biotic Grenade 's damage. Stacks additively with itself and other healing dealt modifiers that can affect Biotic Grenade 's healing."
+      },
+      "_raw_fields": [
+        "Contact Healing",
+        "1",
+        "1",
+        "Hitting Heroes with Biotic Grenade increases its damage and healing by 30% Hero hit.",
+        "File:Contact_Healing_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Slumber Shells",
+      "tier": "1",
+      "slot": "2",
+      "icon": "Slumber_Shells_Icon.png",
+      "description": "Reduce the cooldown of Sleep Dart by 2 seconds. Upon waking, enemy Heroes are Slowed by 25% for 3 seconds.",
+      "fields": {
+        "type": "Crowd control",
+        "affects": "Enemy Heroes",
+        "props": "Slow"
+      },
+      "_raw_fields": [
+        "Slumber Shells",
+        "1",
+        "2",
+        "Reduce the cooldown of Sleep Dart by 2 seconds. Upon waking, enemy Heroes are Slowed by 25% for 3 seconds.",
+        "File:Slumber_Shells_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Vampiric Rounds",
+      "tier": "1",
+      "slot": "3",
+      "icon": "Vampiric Rounds_Icon.png",
+      "description": "Increase Shrike's healing by 15% Quest Stack 5 Doses on an enemy Hero or Basic Attack a Hero with 5 Doses. Stack 5 Doses to increase Shrike's healing by 1%. reward Basic Attack a Hero with 5 Doses to increase Shrike's healing by 0.25%",
+      "fields": {
+        "props": "Attack Modifier",
+        "prop1": "Maximum bonus",
+        "val1": "16383.75% (x65535)",
+        "notes": "Stacks additively with itself and baseline healing from Shrike."
+      },
+      "_raw_fields": [
+        "Vampiric Rounds",
+        "1",
+        "3",
+        "Increase Shrike's healing by 15% Quest Stack 5 Doses on an enemy Hero or Basic Attack a Hero with 5 Doses. Stack 5 Doses to increase Shrike's healing by 1%. reward Basic Attack a Hero with 5 Doses to increase Shrike's healing by 0.25%",
+        "File:Vampiric Rounds_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Biotic Enhancements",
+      "tier": "2",
+      "slot": "1",
+      "icon": "Biotic Enhancements_Icon.png",
+      "description": "Increase the bonus healing duration of Biotic Grenade by 50% and reduce its cooldown by 3 seconds.",
+      "fields": {},
+      "_raw_fields": [
+        "Biotic Enhancements",
+        "2",
+        "1",
+        "Increase the bonus healing duration of Biotic Grenade by 50% and reduce its cooldown by 3 seconds.",
+        "File:Biotic Enhancements_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Overdose",
+      "tier": "2",
+      "slot": "2",
+      "icon": "Overdose_Icon.png",
+      "description": "Sleep Dart applies 4 Doses. While Aim Down Sights is active, Sleep Dart pierces all enemy Heroes.",
+      "fields": {},
+      "_raw_fields": [
+        "Overdose",
+        "2",
+        "2",
+        "Sleep Dart applies 4 Doses. While Aim Down Sights is active, Sleep Dart pierces all enemy Heroes.",
+        "File:Overdose_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Debilitating Dart",
+      "tier": "2",
+      "slot": "3",
+      "icon": "Debilitating_Dart_Icon.png",
+      "description": "Cooldown 20 Active Activate to fire a dart which Slows the Movement Speed and reduces the damage dealt by the first enemy Hero it hits by 50% for 4 seconds. If no Heroes are hit reduce this cooldown by 8 seconds.",
+      "fields": {
+        "type": "Crowd control, Offensive damage modifier",
+        "affects": "Enemy Heroes",
+        "target": "Point target",
+        "props": "Skillshot, Slow",
+        "cast": "0.25 + 0 seconds",
+        "range": "11.75",
+        "hitbox": "0.5 x 1.25",
+        "missile": "24",
+        "notes": "Damage reduction stacks additively with other offensive damage modifiers affecting the target hero's damage output."
+      },
+      "_raw_fields": [
+        "Debilitating Dart",
+        "2",
+        "3",
+        "Cooldown 20 Active Activate to fire a dart which Slows the Movement Speed and reduces the damage dealt by the first enemy Hero it hits by 50% for 4 seconds. If no Heroes are hit reduce this cooldown by 8 seconds.",
+        "File:Debilitating_Dart_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Anti-Healer",
+      "tier": "3",
+      "slot": "1",
+      "icon": "Anti-Healer_Icon.png",
+      "description": "Increase the area of Biotic Grenade by 25% and the duration of the healing reduction by 0.75 seconds.",
+      "fields": {
+        "prop1": "Bonus radius",
+        "val1": "0.5625",
+        "notes": "25% increase in radius, therefore actually a 56% increase in area."
+      },
+      "_raw_fields": [
+        "Anti-Healer",
+        "3",
+        "1",
+        "Increase the area of Biotic Grenade by 25% and the duration of the healing reduction by 0.75 seconds.",
+        "File:Anti-Healer_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Night Terrors",
+      "tier": "3",
+      "slot": "2",
+      "icon": "Night Terrors_Icon.png",
+      "description": "Gain 25% Movement Speed for 2 seconds for every Hero hit by Sleep Dart. Upon waking, enemy Heroes take 8% of their maximum Health in damage.",
+      "fields": {
+        "type": "Percent Damage / Status effect",
+        "scaling": "-",
+        "affects": "Enemy Heroes / Self",
+        "props": "Movement Speed, Percent damage",
+        "notes": "Speed bonus amount does not stack, only duration does."
+      },
+      "_raw_fields": [
+        "Night Terrors",
+        "3",
+        "2",
+        "Gain 25% Movement Speed for 2 seconds for every Hero hit by Sleep Dart. Upon waking, enemy Heroes take 8% of their maximum Health in damage.",
+        "File:Night Terrors_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Mind-Numbing Agent",
+      "tier": "3",
+      "slot": "3",
+      "icon": "Mind-Numbing_Agent_Icon.png",
+      "description": "Every Dose a Hero has reduces their Spell Power by 10%.",
+      "fields": {
+        "type": "Offensive damage modifier, Healing dealt modifier",
+        "affects": "Enemy Heroes",
+        "props": "Spell Power",
+        "notes": "Spell Power stacks additively with itself, other sources of Spell Power and other damage and healing modifiers affecting the target hero's Spell Damage or healing output."
+      },
+      "_raw_fields": [
+        "Mind-Numbing Agent",
+        "3",
+        "3",
+        "Every Dose a Hero has reduces their Spell Power by 10%.",
+        "File:Mind-Numbing_Agent_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Nano Boost",
+      "tier": "4",
+      "slot": "1",
+      "icon": "Nano_Boost_Icon.png",
+      "description": "Cooldown 70 Instantly boost an allied Hero, restoring 200 Mana. For the next 8 seconds, they gain 30% Spell Power and their Basic Ability cooldowns recharge 150% faster. yellowtext Cannot be used on Ana.",
+      "fields": {},
+      "_raw_fields": [
+        "Nano Boost",
+        "4",
+        "1",
+        "Cooldown 70 Instantly boost an allied Hero, restoring 200 Mana. For the next 8 seconds, they gain 30% Spell Power and their Basic Ability cooldowns recharge 150% faster. yellowtext Cannot be used on Ana.",
+        "File:Nano_Boost_Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Eye of Horus",
+      "tier": "4",
+      "slot": "2",
+      "icon": "Eye_of_Horus_Icon.png",
+      "description": "Cooldown 60 Assume a sniping position, gaining the ability to fire up to 6 specialized rounds with unlimited range. Rounds pierce allied and enemy Heroes but collide with enemy Structures in their path. Allies are healed for 225 and enemies are damaged for 135. Deals 50% less damage to Structures. Ana is unable to move while Eye of Horus is active.",
+      "fields": {},
+      "_raw_fields": [
+        "Eye of Horus",
+        "4",
+        "2",
+        "Cooldown 60 Assume a sniping position, gaining the ability to fire up to 6 specialized rounds with unlimited range. Rounds pierce allied and enemy Heroes but collide with enemy Structures in their path. Allies are healed for 225 and enemies are damaged for 135. Deals 50% less damage to Structures. Ana is unable to move while Eye of Horus is active.",
+        "File:Eye_of_Horus_Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Speed Serum",
+      "tier": "5",
+      "slot": "1",
+      "icon": "Speed_Serum_Icon.png",
+      "description": "Healing Dart grants 25% Movement Speed to affected Heroes for 2 seconds.",
+      "fields": {
+        "type": "Status effect",
+        "affects": "Allied Heroes",
+        "props": "Movement Speed"
+      },
+      "_raw_fields": [
+        "Speed Serum",
+        "5",
+        "1",
+        "Healing Dart grants 25% Movement Speed to affected Heroes for 2 seconds.",
+        "File:Speed_Serum_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Purifying Darts",
+      "tier": "5",
+      "slot": "2",
+      "icon": "Purifying_Darts_Icon.png",
+      "description": "Healing Dart removes Roots and Slows from the target, and heals for 20% more when doing so.",
+      "fields": {
+        "type": "CC removal / Healing dealt modifier",
+        "affects": "Allied Heroes / Ability",
+        "notes": "Healing bonus stacks additively with other healing dealt modifiers that can affect Healing Dart 's healing."
+      },
+      "_raw_fields": [
+        "Purifying Darts",
+        "5",
+        "2",
+        "Healing Dart removes Roots and Slows from the target, and heals for 20% more when doing so.",
+        "File:Purifying_Darts_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Smelling Salts",
+      "tier": "5",
+      "slot": "3",
+      "icon": "Smelling_Salts_Icon.png",
+      "description": "Healing Dart removes Stuns from the target, and grants them 50 Armor for 2 seconds when doing so.",
+      "fields": {
+        "type": "CC removal, Defensive damage modifier",
+        "affects": "Allied Hereos",
+        "props": "Armor",
+        "notes": "Does not stack with other positive Armor effects. Other defensive damage modifiers may stack."
+      },
+      "_raw_fields": [
+        "Smelling Salts",
+        "5",
+        "3",
+        "Healing Dart removes Stuns from the target, and grants them 50 Armor for 2 seconds when doing so.",
+        "File:Smelling_Salts_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Sharpshooter",
+      "tier": "6",
+      "slot": "1",
+      "icon": "Sharpshooter_Icon.png",
+      "description": "Healing Dart's healing is increased by 5% if it heals a Hero, up to 50%. At maximum bonus, further increase its healing by 35%. This bonus is reset if Healing Dart fails to hit a Hero.",
+      "fields": {
+        "type": "Healing dealt modifier",
+        "affects": "Ability",
+        "notes": "If Aim Down Sights is active, only the first Hero healed by each Healing Dart grants a stack. If Healing Dart passes through at least one allied Hero, no stacks will be lost even if they are at full Health. For a stack to be gained it must actually heal at least one Hero, however. Healing bonus stacks additively with itself and other healing dealt modifiers that can affect Healing Dart 's healing."
+      },
+      "_raw_fields": [
+        "Sharpshooter",
+        "6",
+        "1",
+        "Healing Dart's healing is increased by 5% if it heals a Hero, up to 50%. At maximum bonus, further increase its healing by 35%. This bonus is reset if Healing Dart fails to hit a Hero.",
+        "File:Sharpshooter_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Concentrated Doses",
+      "tier": "6",
+      "slot": "2",
+      "icon": "Concentrated_Doses_Icon.png",
+      "description": "Increase Healing Dart's healing by 12% for each Dose active on enemy Heroes.",
+      "fields": {
+        "type": "Healing dealt modifier",
+        "affects": "Ability",
+        "notes": "Healing bonus stacks additively with itself and other healing dealt modifiers that can affect Healing Dart 's healing."
+      },
+      "_raw_fields": [
+        "Concentrated Doses",
+        "6",
+        "2",
+        "Increase Healing Dart's healing by 12% for each Dose active on enemy Heroes.",
+        "File:Concentrated_Doses_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Active Reload",
+      "tier": "6",
+      "slot": "3",
+      "icon": "Active Reload_Icon.png",
+      "description": "Cooldown 60 Active Activate to instantly gain 3 charges of Healing Dart.",
+      "fields": {
+        "target": "No target",
+        "cast": "Instant",
+        "notes": "Cannot hold more than 3 charges at any time. Activating Active Reload instantly refreshes the cooldown of Healing Dart. Charges last indefinitely, but cooldown doesn't start until all charges have been consumed."
+      },
+      "_raw_fields": [
+        "Active Reload",
+        "6",
+        "3",
+        "Cooldown 60 Active Activate to instantly gain 3 charges of Healing Dart.",
+        "File:Active Reload_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Nano Infusion",
+      "tier": "7",
+      "slot": "1",
+      "icon": "Nano_Infusion_Icon.png",
+      "description": "Allies affected by Nano Boost heal for 50% of Spell Damage dealt.",
+      "fields": {
+        "type": "Healing",
+        "scaling": "-",
+        "affects": "Allied Heroes",
+        "props": "Lifesteal",
+        "notes": "Stacks additively with other sources of lifesteal."
+      },
+      "_raw_fields": [
+        "Nano Infusion",
+        "7",
+        "1",
+        "Allies affected by Nano Boost heal for 50% of Spell Damage dealt.",
+        "File:Nano_Infusion_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Deadeye",
+      "tier": "7",
+      "slot": "2",
+      "icon": "Deadeye_Icon.png",
+      "description": "Eye of Horus's cooldown is reduced to 6 seconds, but it only regains charges every 10 seconds. Remaining cooldown is converted to rounds. For every Hero Eye of Horus hits, increase its healing and damage by 5%. This bonus resets after leaving Eye of Horus or after 4 seconds.",
+      "fields": {
+        "type": "Offensive damage modifier, Healing dealt modifier",
+        "affects": "Ability",
+        "notes": "Both damage and healing share the same bonus value. Bonus updates after all damage and healing for the shot has been dealt, and only affects the following shots. Stacks additively with itself and other offensive damage modifiers and healing dealt modifiers that can affect Eye of Horus 's damage or healing."
+      },
+      "_raw_fields": [
+        "Deadeye",
+        "7",
+        "2",
+        "Eye of Horus's cooldown is reduced to 6 seconds, but it only regains charges every 10 seconds. Remaining cooldown is converted to rounds. For every Hero Eye of Horus hits, increase its healing and damage by 5%. This bonus resets after leaving Eye of Horus or after 4 seconds.",
+        "File:Deadeye_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Armored Stance",
+      "tier": "7",
+      "slot": "3",
+      "icon": "Armored Stance_Icon.png",
+      "description": "Increase Shrike's damage by 50%. While Aim Down Sights is active, gain 25 Armor.",
+      "fields": {
+        "type": "Offensive damage modifier / Defensive damage modifier",
+        "affects": "Ability / Self",
+        "props": "Armor",
+        "notes": "Damage bonus stacks additively with other offensive damage modifiers that can affect Shrike 's damage. Does not stack with other positive Armor effects. Other defensive damage modifiers may stack."
+      },
+      "_raw_fields": [
+        "Armored Stance",
+        "7",
+        "3",
+        "Increase Shrike's damage by 50%. While Aim Down Sights is active, gain 25 Armor.",
+        "File:Armored Stance_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Dynamic Optics",
+      "tier": "7",
+      "slot": "4",
+      "icon": "Dynamic Optics_Icon.png",
+      "description": "Basic Attacks increase Attack Speed by 10% for 3 seconds, up to 100%. While Aim Down Sights is active, increase your Basic Attack Range by 4.",
+      "fields": {
+        "type": "Status effect",
+        "affects": "Self",
+        "props": "Attack Speed"
+      },
+      "_raw_fields": [
+        "Dynamic Optics",
+        "7",
+        "4",
+        "Basic Attacks increase Attack Speed by 10% for 3 seconds, up to 100%. While Aim Down Sights is active, increase your Basic Attack Range by 4.",
+        "File:Dynamic Optics_Icon.png"
+      ],
+      "level": "20"
+    }
+  ],
+  "other": [
+    {
+      "name": "Shrike",
+      "hotkey": "",
+      "icon": "Shrike_Icon.png",
+      "description": "Basic Attacks apply a Dose to enemies, dealing 40 damage over 5 seconds plus additional damage equal to the current number of stacks on the target, stacking up to 5 times. Every 0.5 seconds, Ana is healed for 60% of the damage dealt by Shrike. Aim Down Sights Cooldown 4 Activating Shrike reduces your Movement Speed by 25%, but increases the range of Healing Dart and Sleep Dart by 25% while also allowing them to pierce one Hero. Lasts until canceled.; trait",
+      "fields": {
+        "type": "Spell Damage / Healing",
+        "scaling": "4.00% / -",
+        "affects": "Enemies / Self",
+        "props": "Attack Modifier, Damage over Time",
+        "tickrate": "2.0 per second (x11)",
+        "prop1": "Bonus Healing Dart range",
+        "val1": "3.1875",
+        "notes": "Movement Speed reduction behaves like a Slow, but does not interact with effects that interact with Slows nor get removed by effects that grant crowd control immunity.",
+        "target": "No target (toggle)",
+        "cast": "Instant",
+        "prop2": "Bonus Sleep Dart Range",
+        "val2": "2.9375"
+      }
+    }
+  ],
+  "_unparsed_count": 0
+}

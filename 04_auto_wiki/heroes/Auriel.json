@@ -1,0 +1,530 @@
+{
+  "hero": "Auriel",
+  "abilities": [
+    {
+      "name": "Bestow Hope",
+      "hotkey": "D",
+      "icon": "Bestow_Hope_Icon.png",
+      "description": "passive 70% of the damage Auriel deals to Heroes and 35% dealt to non-Heroes is stored as energy. Bestow an allied Hero with Hope. While they remain near Auriel, 30% of their damage to Heroes and 10% of their damage to non-Heroes is converted to energy. Auriel can only have Bestow Hope on 1 ally at a time. Auriel can store up to 475 energy.",
+      "fields": {
+        "type": "Resource",
+        "scaling": "4.00% (max Energy)",
+        "affects": "Allied Heroes",
+        "target": "Unit target",
+        "cast": "Instant",
+        "range": "10",
+        "prop1": "Collect radius",
+        "val1": "20",
+        "cooldown": "1.5"
+      }
+    },
+    {
+      "name": "Sacred Sweep",
+      "hotkey": "Q",
+      "icon": "Sacred_Sweep_Icon.png",
+      "description": "Sweep the area with sacred power, dealing 40 damage to enemies and an additional 160 damage to enemies caught in the center.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "target": "Point target",
+        "props": "Area of Effect, Clamping, Stationary channel",
+        "cast": "0 + CH + 0.0625 seconds",
+        "aoe": "Radial",
+        "radius": "7.0",
+        "arc": "- Outer: 180 degrees (1 - Center: 30 degrees",
+        "prop1": "Channel time",
+        "val1": "0.3125 seconds",
+        "notes": "1) Target search is done in five 20 degree sections rotating inward from both sides over the duration of the channel. Enemies in the center area take both base and center damage. Center damage is dealt in an additional instance to all targets once the cast finishes.",
+        "cooldown": "8"
+      }
+    },
+    {
+      "name": "Ray of Heaven",
+      "hotkey": "W",
+      "icon": "Ray_of_Heaven_Icon.png",
+      "description": "Consume Auriel's stored energy and heal allied Heroes in the area for the amount of energy consumed.",
+      "fields": {
+        "type": "Healing",
+        "scaling": "-",
+        "affects": "Allied Heroes",
+        "target": "Point target",
+        "props": "Area of Effect",
+        "cast": "Instant",
+        "range": "8.0",
+        "radius": "3.0",
+        "cooldown": "4"
+      }
+    },
+    {
+      "name": "Detainment Strike",
+      "hotkey": "E",
+      "icon": "Detainment_Strike_Icon.png",
+      "description": "Deal 55 damage to the first enemy Hero hit and knock them back. If they collide with terrain, they are also Stunned for 1.25 seconds and take an additional 165 damage.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "target": "Point target",
+        "props": "Area of Effect, Clamping, Knockback, Skillshot, Stun",
+        "cast": "0 + 0.25 seconds",
+        "range": "6.0",
+        "hitbox": "1.0 x 2.0",
+        "missile": "30",
+        "prop2": "Knockback duration",
+        "val2": "0.25 seconds",
+        "prop3": "Knockback speed",
+        "val3": "25",
+        "notes": "Detainment Strike also interacts with pathing blockers, which are usually not considered as real terrain.",
+        "cooldown": "12"
+      }
+    },
+    {
+      "name": "Crystal Aegis",
+      "hotkey": "R",
+      "icon": "Crystal_Aegis_Icon.png",
+      "description": "Place an allied Hero into Stasis for 2 seconds. Upon expiration, Crystal Aegis deals 255 damage to all nearby enemies.",
+      "fields": {
+        "type": "Spell Damage / Status effect",
+        "scaling": "4.00%",
+        "affects": "Enemies / Allied Heroes, Self",
+        "target": "Unit target",
+        "props": "Area of Effect, Stasis",
+        "cast": "Instant",
+        "range": "8.0",
+        "cooldown": "60"
+      }
+    },
+    {
+      "name": "Resurrect",
+      "hotkey": "R",
+      "icon": "Ressurrect_Icon.png",
+      "description": "Channel on the spirit of a dead ally for 1 second. After a 3 second delay, they are brought back to life with 100% of their maximum Health at the location where they died. Auriel can use this ability while dead to resurrect herself.",
+      "fields": {
+        "type": "Resurrection",
+        "affects": "Allied Heroes, Self",
+        "target": "Unit target",
+        "props": "Channeled cast (stationary)",
+        "cast": "1.0 (ch) + 0 seconds",
+        "range": "5.0",
+        "notes": "Interrupting the Ability during its cast puts it on a 10 second cooldown.",
+        "cooldown": "100"
+      }
+    }
+  ],
+  "talents": [
+    {
+      "name": "Increasing Clarity",
+      "tier": "1",
+      "slot": "1",
+      "icon": "Increasing_Clarity_Icon.png",
+      "description": "quest Every time Sacred Sweep hits a Hero in the center, increase the center damage by 2, up to 50. After hitting 25 Heroes, this center damage bonus is increased to 180.",
+      "fields": {
+        "type": "Bonus damage",
+        "scaling": "-",
+        "affects": "Self"
+      },
+      "_raw_fields": [
+        "Increasing Clarity",
+        "1",
+        "1",
+        "quest Every time Sacred Sweep hits a Hero in the center, increase the center damage by 2, up to 50. After hitting 25 Heroes, this center damage bonus is increased to 180.",
+        "File:Increasing_Clarity_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Righteous Assault",
+      "tier": "1",
+      "slot": "2",
+      "icon": "Righteous_Assaul_Icon.png",
+      "description": "Reduces the cooldown of Sacred Sweep by 3 seconds for each enemy Hero hit by its center.",
+      "fields": {},
+      "_raw_fields": [
+        "Righteous Assault",
+        "1",
+        "2",
+        "Reduces the cooldown of Sacred Sweep by 3 seconds for each enemy Hero hit by its center.",
+        "File:Righteous_Assaul_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Searing Light",
+      "tier": "1",
+      "slot": "3",
+      "icon": "Searing_Light_Icon.png",
+      "description": "Ray of Heaven also deals damage to enemy Heroes in the area equal to 30% of the energy consumed.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "-",
+        "affects": "Enemies"
+      },
+      "_raw_fields": [
+        "Searing Light",
+        "1",
+        "3",
+        "Ray of Heaven also deals damage to enemy Heroes in the area equal to 30% of the energy consumed.",
+        "File:Searing_Light_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Majestic Span",
+      "tier": "2",
+      "slot": "1",
+      "icon": "Majestic_Span_Icon.png",
+      "description": "Increases the radius of Sacred Sweep by 15%.",
+      "fields": {
+        "prop1": "Bonus radius",
+        "val1": "1.05"
+      },
+      "_raw_fields": [
+        "Majestic Span",
+        "2",
+        "1",
+        "Increases the radius of Sacred Sweep by 15%.",
+        "File:Majestic_Span_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Heavy Burden",
+      "tier": "2",
+      "slot": "2",
+      "icon": "Heavy_Burden_Icon.png",
+      "description": "Detainment Strike Slows enemy Heroes by 20% for 2.5 seconds. Slow and duration are doubled on the enemies it Stuns. passive Increase Detainment Strike's Stun duration by 0.25 seconds.",
+      "fields": {
+        "type": "Crowd control",
+        "affects": "Enemy Heroes",
+        "props": "Slow"
+      },
+      "_raw_fields": [
+        "Heavy Burden",
+        "2",
+        "2",
+        "Detainment Strike Slows enemy Heroes by 20% for 2.5 seconds. Slow and duration are doubled on the enemies it Stuns. passive Increase Detainment Strike's Stun duration by 0.25 seconds.",
+        "File:Heavy_Burden_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Repeated Offense",
+      "tier": "2",
+      "slot": "3",
+      "icon": "Repeated_Offense_Icon.png",
+      "description": "Passive Enemies hit by Detainment Strike are knocked back 30% farther. quest Every time Detainment Strike Stuns a Hero, increase the Stun damage by 10, up to 60. After stunning 6 Heroes, increase this damage bonus to 250.",
+      "fields": {
+        "type": "Bonus damage",
+        "scaling": "-",
+        "affects": "Self",
+        "prop1": "Bonus knockback duration",
+        "val1": "0.0625 seconds",
+        "notes": "There is no increase in the speed of the knockback."
+      },
+      "_raw_fields": [
+        "Repeated Offense",
+        "2",
+        "3",
+        "Passive Enemies hit by Detainment Strike are knocked back 30% farther. quest Every time Detainment Strike Stuns a Hero, increase the Stun damage by 10, up to 60. After stunning 6 Heroes, increase this damage bonus to 250.",
+        "File:Repeated_Offense_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Glimmer of Hope",
+      "tier": "3",
+      "slot": "1",
+      "icon": "Glimmer_of_Hope_Icon.png",
+      "description": "Collecting a Regeneration Globe reduces the cost of Auriel's next Ray of Heaven by 75%.",
+      "fields": {},
+      "_raw_fields": [
+        "Glimmer of Hope",
+        "3",
+        "1",
+        "Collecting a Regeneration Globe reduces the cost of Auriel's next Ray of Heaven by 75%.",
+        "File:Glimmer_of_Hope_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Energized Cord",
+      "tier": "3",
+      "slot": "2",
+      "icon": "Energized_Cord_Icon.png",
+      "description": "Increases the energy stored from Auriel's Basic Attacks to 130% of the damage against Heroes and 70% of the damage against non-Heroes. yellowtext Does not affect Auriel's Bestow Hope ally. Passive Increase Basic Attack Range by 1.1.",
+      "fields": {},
+      "_raw_fields": [
+        "Energized Cord",
+        "3",
+        "2",
+        "Increases the energy stored from Auriel's Basic Attacks to 130% of the damage against Heroes and 70% of the damage against non-Heroes. yellowtext Does not affect Auriel's Bestow Hope ally. Passive Increase Basic Attack Range by 1.1.",
+        "File:Energized_Cord_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Empathic Link",
+      "tier": "3",
+      "slot": "3",
+      "icon": "Empathic_Link_Icon.png",
+      "description": "Auriel stores 25% of damage taken by allies with Bestow Hope.",
+      "fields": {
+        "nohr": "1",
+        "notes": "Self-damage does not grant any energy. The amount of energy stored is calculated after all damage modifiers."
+      },
+      "_raw_fields": [
+        "Empathic Link",
+        "3",
+        "3",
+        "Auriel stores 25% of damage taken by allies with Bestow Hope.",
+        "File:Empathic_Link_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Resurrect",
+      "tier": "4",
+      "slot": "1",
+      "icon": "Ressurrect_Icon.png",
+      "description": "Cooldown 100 Channel on the spirit of a dead ally for 1 second. After a 3 second delay, they are brought back to life with 100% of their maximum Health at the location where they died. Auriel can use this ability while dead to resurrect herself.",
+      "fields": {},
+      "_raw_fields": [
+        "Resurrect",
+        "4",
+        "1",
+        "Cooldown 100 Channel on the spirit of a dead ally for 1 second. After a 3 second delay, they are brought back to life with 100% of their maximum Health at the location where they died. Auriel can use this ability while dead to resurrect herself.",
+        "File:Ressurrect_Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Crystal Aegis",
+      "tier": "4",
+      "slot": "2",
+      "icon": "Crystal_Aegis_Icon.png",
+      "description": "Cooldown 60 Place an allied Hero into Stasis for 2 seconds. Upon expiration, Crystal Aegis deals 255 damage to all nearby enemies.",
+      "fields": {},
+      "_raw_fields": [
+        "Crystal Aegis",
+        "4",
+        "2",
+        "Cooldown 60 Place an allied Hero into Stasis for 2 seconds. Upon expiration, Crystal Aegis deals 255 damage to all nearby enemies.",
+        "File:Crystal_Aegis_Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Blinding Flash",
+      "tier": "5",
+      "slot": "1",
+      "icon": "Blinding_Flash_Icon.png",
+      "description": "Enemies hit by the center area of Sacred Sweep are blinded for 2 seconds.",
+      "fields": {
+        "type": "Crowd control",
+        "affects": "Enemies",
+        "props": "Blind"
+      },
+      "_raw_fields": [
+        "Blinding Flash",
+        "5",
+        "1",
+        "Enemies hit by the center area of Sacred Sweep are blinded for 2 seconds.",
+        "File:Blinding_Flash_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Converging Force",
+      "tier": "5",
+      "slot": "2",
+      "icon": "Converging_Force_Icon.png",
+      "description": "Enemies hit by the outer area of Sacred Sweep are pushed slightly toward the center.",
+      "fields": {
+        "type": "Crowd control",
+        "affects": "Enemies",
+        "props": "Knockback",
+        "prop1": "Knockback duration",
+        "val1": "0.125 seconds",
+        "prop2": "Knockback speed",
+        "val2": "7.0"
+      },
+      "_raw_fields": [
+        "Converging Force",
+        "5",
+        "2",
+        "Enemies hit by the outer area of Sacred Sweep are pushed slightly toward the center.",
+        "File:Converging_Force_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Piercing Lash",
+      "tier": "5",
+      "slot": "3",
+      "icon": "Piercing_Lash_Icon.png",
+      "description": "Detainment Strike now pierces and hits all enemy Heroes in a line, reducing the cooldown by 2 seconds for each Hero hit.",
+      "fields": {},
+      "_raw_fields": [
+        "Piercing Lash",
+        "5",
+        "3",
+        "Detainment Strike now pierces and hits all enemy Heroes in a line, reducing the cooldown by 2 seconds for each Hero hit.",
+        "File:Piercing_Lash_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Reservoir of Hope",
+      "tier": "6",
+      "slot": "1",
+      "icon": "Reservoir_of_Hope_Icon.png",
+      "description": "questonly Each maximum energy Ray of Heaven Auriel casts increases the maximum amount of energy that can be stored by 55.",
+      "fields": {
+        "type": "Bonus resource",
+        "scaling": "-",
+        "affects": "Self"
+      },
+      "_raw_fields": [
+        "Reservoir of Hope",
+        "6",
+        "1",
+        "questonly Each maximum energy Ray of Heaven Auriel casts increases the maximum amount of energy that can be stored by 55.",
+        "File:Reservoir_of_Hope_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Will of Heaven",
+      "tier": "6",
+      "slot": "2",
+      "icon": "Will_of_Heaven_Icon.png",
+      "description": "Allies with Bestow Hope gain 20% Attack Speed. passive Auriel gain 10% increased Basic Attack damage.",
+      "fields": {
+        "type": "Status effect",
+        "affects": "Allied Heroes",
+        "props": "Attack Speed",
+        "notes": "Damage bonus stacks additively with other offensive damage modifiers affecting Auriel's Basic Attack damage."
+      },
+      "_raw_fields": [
+        "Will of Heaven",
+        "6",
+        "2",
+        "Allies with Bestow Hope gain 20% Attack Speed. passive Auriel gain 10% increased Basic Attack damage.",
+        "File:Will_of_Heaven_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Wrath of Heaven",
+      "tier": "6",
+      "slot": "3",
+      "icon": "Wrath_of_Heaven_Icon.png",
+      "description": "Allies with Bestow Hope gain 15% Spell Power. Enemy Heroes hit by the center area of Sacred Sweep or the terrain collision of Detainment Strike have their Spell Armor reduced by 20 for 3 seconds.",
+      "fields": {
+        "type": "Offensive damage modifier, Healing dealt modifier / Defensive damage modifier",
+        "affects": "Allied Heroes / Enemy Heroes",
+        "props": "Spell Power, Armor reduction",
+        "notes": "Spell Power from Wrath of Heaven stacks additively with other sources of Spell Power as well as other offensive damage modifiers and healing dealt modifiers affecting the target Hero. Does not stack with other negative Armor effects. Other defensive damage modifiers may stack."
+      },
+      "_raw_fields": [
+        "Wrath of Heaven",
+        "6",
+        "3",
+        "Allies with Bestow Hope gain 15% Spell Power. Enemy Heroes hit by the center area of Sacred Sweep or the terrain collision of Detainment Strike have their Spell Armor reduced by 20 for 3 seconds.",
+        "File:Wrath_of_Heaven_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Light Speed",
+      "tier": "7",
+      "slot": "1",
+      "icon": "Light_Speed_Icon.png",
+      "description": "Resurrected allies gain 200% increased Movement Speed, decaying over 4 seconds. While a resurrected ally remains alive, Resurrect's next cooldown recharges 100% faster.",
+      "fields": {
+        "type": "Status effect",
+        "affects": "Allied Heroes, Self",
+        "props": "Movement Speed, Cooldown reduction"
+      },
+      "_raw_fields": [
+        "Light Speed",
+        "7",
+        "1",
+        "Resurrected allies gain 200% increased Movement Speed, decaying over 4 seconds. While a resurrected ally remains alive, Resurrect's next cooldown recharges 100% faster.",
+        "File:Light_Speed_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Diamond Resolve",
+      "tier": "7",
+      "slot": "2",
+      "icon": "Diamond_Resolve_Icon.png",
+      "description": "When Crystal Aegis expires, it grants the target 75 Armor for 5 seconds, reducing damage taken by 75%.",
+      "fields": {
+        "type": "Defensive damage modifier",
+        "affects": "Allied Heroes",
+        "props": "Armor",
+        "notes": "Does not stack with other positive Armor effects. Other defensive damage modifiers may stack."
+      },
+      "_raw_fields": [
+        "Diamond Resolve",
+        "7",
+        "2",
+        "When Crystal Aegis expires, it grants the target 75 Armor for 5 seconds, reducing damage taken by 75%.",
+        "File:Diamond_Resolve_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Angelic Flight",
+      "tier": "7",
+      "slot": "3",
+      "icon": "Angelic_Flight_Icon.png",
+      "description": "cooldown 30 Active After 2 seconds, fly to a target location.",
+      "fields": {
+        "type": "Movement: Launch",
+        "target": "Point target",
+        "cast": "2.0 + 0 seconds",
+        "range": "75",
+        "missile": "25",
+        "notes": "Interrupting the Ability before the cast finishes doesn't put it on cooldown. Auriel is completely untargetable during the flight."
+      },
+      "_raw_fields": [
+        "Angelic Flight",
+        "7",
+        "3",
+        "cooldown 30 Active After 2 seconds, fly to a target location.",
+        "File:Angelic_Flight_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Shield of Hope",
+      "tier": "7",
+      "slot": "4",
+      "icon": "Shield_of_Hope_Icon.png",
+      "description": "cooldown 60 Active Activate to grant all nearby allied Heroes a Shield for 3 seconds equal to 50% of the amount of Health they are missing.",
+      "fields": {
+        "type": "Shield",
+        "scaling": "-",
+        "affects": "Allied Heroes, Self",
+        "target": "No target",
+        "props": "Area of Effect",
+        "cast": "Instant",
+        "radius": "8.0"
+      },
+      "_raw_fields": [
+        "Shield of Hope",
+        "7",
+        "4",
+        "cooldown 60 Active Activate to grant all nearby allied Heroes a Shield for 3 seconds equal to 50% of the amount of Health they are missing.",
+        "File:Shield_of_Hope_Icon.png"
+      ],
+      "level": "20"
+    }
+  ],
+  "other": [],
+  "_unparsed_count": 0
+}

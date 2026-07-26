@@ -1,0 +1,575 @@
+{
+  "hero": "E.T.C.",
+  "abilities": [
+    {
+      "name": "Rockstar",
+      "hotkey": "TRAIT",
+      "icon": "Rockstar_Icon.png",
+      "description": "Using a Basic Ability grants 25 Armor for 2 seconds. Heroic Abilities grant 50 Armor.; trait",
+      "fields": {
+        "type": "Defensive damage modifier",
+        "affects": "Self",
+        "props": "Armor",
+        "notes": "When using Mosh Pit, Armor is granted after the initial channel finishes. Otherwise, the Armor is granted after casting the Ability is fully finished. Does not stack with itself or other positive Armor effects. Other defensive damage modifiers may stack."
+      }
+    },
+    {
+      "name": "Powerslide",
+      "hotkey": "Q",
+      "icon": "Powerslide_Icon.png",
+      "description": "Slide to a location, dealing 105 damage and Stunning enemies hit for 1.25 seconds.",
+      "fields": {
+        "type": "Spell Damage, Crowd control / Movement: Dash",
+        "scaling": "4.00%",
+        "affects": "Enemies / Self",
+        "target": "Point target",
+        "props": "Clamping, Piercing Skillshot, Stun",
+        "cast": "0.0625 + 0 seconds",
+        "range": "8.0",
+        "hitbox": "2.0 x 2.75",
+        "missile": "14.5",
+        "cooldown": "12",
+        "cost": "60"
+      }
+    },
+    {
+      "name": "Face Melt",
+      "hotkey": "W",
+      "icon": "Face_Melt_Icon.png",
+      "description": "Deals 68 damage to nearby enemies, knocking them back.",
+      "fields": {
+        "type": "Spell Damage, Crowd control",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "target": "No target",
+        "props": "Area of Effect, Knockback",
+        "cast": "Instant",
+        "aoe": "Circle",
+        "radius": "4.0",
+        "prop1": "Knockback duration",
+        "val1": "0.25 seconds",
+        "prop2": "Knockback speed",
+        "val2": "12",
+        "cooldown": "10",
+        "cost": "55"
+      }
+    },
+    {
+      "name": "Guitar Solo",
+      "hotkey": "E",
+      "icon": "Guitar_Solo_Icon.png",
+      "description": "Regenerate 66 Health per second for 4 seconds.",
+      "fields": {
+        "type": "Healing",
+        "scaling": "4.00%",
+        "affects": "Self",
+        "target": "No target",
+        "props": "Heal over Time",
+        "cast": "Instant",
+        "tickrate": "1.0 per second",
+        "cooldown": "9",
+        "cost": "40"
+      }
+    },
+    {
+      "name": "Mosh Pit",
+      "hotkey": "R",
+      "icon": "Mosh_Pit_Icon.png",
+      "description": "After 0.75 seconds, channel to Stun nearby enemies for 4 seconds.; 120; 100; heroic",
+      "fields": {
+        "type": "Crowd control",
+        "affects": "Enemies",
+        "target": "No target",
+        "props": "Area of Effect, Channeled cast (stationary), Stationary channel, Stun",
+        "cast": "0.75 (ch) + CH + 0 seconds",
+        "aoe": "Circle",
+        "radius": "4.0",
+        "tickrate": "8.0 per second (x32)",
+        "notes": "Interrupting Mosh Pit during its windup puts it on a 10 second cooldown."
+      }
+    },
+    {
+      "name": "Stage Dive",
+      "hotkey": "R",
+      "icon": "Stage_Dive_Icon.png",
+      "description": "Leap to target location, landing after 2.75 seconds, dealing 330 damage to enemies in the area, and Slowing them by 50% for 4 seconds.; 75; 70; heroic",
+      "fields": {
+        "type": "Spell Damage, Crowd control / Status effect, Movement: Teleport",
+        "scaling": "4.00%",
+        "affects": "Enemies / Self",
+        "target": "Point target",
+        "props": "Area of Effect, Channeled cast (stationary), Slow, Pseudo-Stasis (self)",
+        "cast": "1.25 + 0.25 seconds",
+        "range": "Global",
+        "aoe": "Circle",
+        "radius": "5.0",
+        "prop1": "Impact delay",
+        "val1": "1.5 seconds",
+        "notes": "Interrupting Stage Dive during its windup puts it on a 10 second cooldown. Stace Dive cannot be interrupted or prevented by Roots, unlike most other Movement Abilities. After successfully channeling, E.T.C is put in Stasis until landing. In addition to usual effects of Stasis, E.T.C is removed from ground plane (disjoints certain projectiles) and has no collision, but he does not receive the initial expanded debuff removal. A warning AoE appears for both teams when the Ability has been cast successfully."
+      }
+    }
+  ],
+  "talents": [
+    {
+      "name": "Guitar Hero",
+      "tier": "1",
+      "slot": "1",
+      "icon": "Guitar_Hero_Icon.png",
+      "description": "While Guitar Solo is active, E.T.C. heals for 60% of his damage dealt by Basic Attacks. Basic Attacks increase the duration of Guitar Solo by 0.5 seconds.",
+      "fields": {
+        "type": "Healing",
+        "scaling": "-",
+        "affects": "Self",
+        "props": "Attack Modifier, Lifesteal"
+      },
+      "_raw_fields": [
+        "Guitar Hero",
+        "1",
+        "1",
+        "While Guitar Solo is active, E.T.C. heals for 60% of his damage dealt by Basic Attacks. Basic Attacks increase the duration of Guitar Solo by 0.5 seconds.",
+        "File:Guitar_Hero_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Prog Rock",
+      "tier": "1",
+      "slot": "2",
+      "icon": "Prog_Rock_Icon.png",
+      "description": "quest Gathering a Regeneration Globe permanently increases the healing per second of Guitar Solo by 5, to a maximum of 100. After gathering 20 Regeneration Globes, Guitar Solo also heals nearby allied Heroes for 50 Health every second while it is active.",
+      "fields": {
+        "type": "Bonus Healing / Healing (reward)",
+        "scaling": "- / 4.00%",
+        "affects": "Ability / Allied Heroes",
+        "props": "Area of Effect",
+        "aoe": "Circle",
+        "radius": "4.0",
+        "tickrate": "1.0 per second"
+      },
+      "_raw_fields": [
+        "Prog Rock",
+        "1",
+        "2",
+        "quest Gathering a Regeneration Globe permanently increases the healing per second of Guitar Solo by 5, to a maximum of 100. After gathering 20 Regeneration Globes, Guitar Solo also heals nearby allied Heroes for 50 Health every second while it is active.",
+        "File:Prog_Rock_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Block Party",
+      "tier": "1",
+      "slot": "3",
+      "icon": "Block_Party_Icon.png",
+      "description": "Rockstar gives allies a stack of Block, granting 75 Physical Armor against the next Hero Basic Attack for 8 seconds, reducing the damage taken by 75%. Maximum 2 stacks of Block.",
+      "fields": {
+        "type": "Defensive damage modifier",
+        "affects": "Allied Heroes, Self",
+        "radius": "4.4",
+        "props": "Area of Effect, Armor, Block",
+        "notes": "Does not stack with other positive Physical Armor effects. Other defensive damage modifiers may stack."
+      },
+      "_raw_fields": [
+        "Block Party",
+        "1",
+        "3",
+        "Rockstar gives allies a stack of Block, granting 75 Physical Armor against the next Hero Basic Attack for 8 seconds, reducing the damage taken by 75%. Maximum 2 stacks of Block.",
+        "File:Block_Party_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Crowd Surfer",
+      "tier": "2",
+      "slot": "1",
+      "icon": "Crowd_Surfer_Icon.png",
+      "description": "Allows Powerslide to travel over walls and terrain. If no enemies are hit, reduce the cooldown by 6 seconds and refund the Mana cost.",
+      "fields": {
+        "type": "Movement: Launch"
+      },
+      "_raw_fields": [
+        "Crowd Surfer",
+        "2",
+        "1",
+        "Allows Powerslide to travel over walls and terrain. If no enemies are hit, reduce the cooldown by 6 seconds and refund the Mana cost.",
+        "File:Crowd_Surfer_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Loud Speakers",
+      "tier": "2",
+      "slot": "2",
+      "icon": "Loud_Speakers_Icon.png",
+      "description": "Increases Face Melt range and knockback by 50%.",
+      "fields": {
+        "prop1": "Bonus radius",
+        "val1": "2.0",
+        "prop2": "Bonus knockback speed",
+        "val2": "6.0"
+      },
+      "_raw_fields": [
+        "Loud Speakers",
+        "2",
+        "2",
+        "Increases Face Melt range and knockback by 50%.",
+        "File:Loud_Speakers_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Speed Metal",
+      "tier": "2",
+      "slot": "3",
+      "icon": "Speed_Metal_Icon.png",
+      "description": "Using a Basic or Heroic Ability also gives nearby allied Heroes 20% Movement Speed for 2.5 seconds.",
+      "fields": {
+        "type": "Status effect",
+        "affects": "Allied Heroes, Self",
+        "radius": "4.4",
+        "props": "Area of Effect, Movement Speed"
+      },
+      "_raw_fields": [
+        "Speed Metal",
+        "2",
+        "3",
+        "Using a Basic or Heroic Ability also gives nearby allied Heroes 20% Movement Speed for 2.5 seconds.",
+        "File:Speed_Metal_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Pinball Wizard",
+      "tier": "3",
+      "slot": "1",
+      "icon": "Pinball_Wizard_Icon.png",
+      "description": "Face Melt does 300% more damage to enemies recently affected by Powerslide.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "prop1": "Damage",
+        "val1": "272",
+        "prop2": "Duration",
+        "val2": "2.0 seconds",
+        "notes": "Pinball Wizard uses a separate damage value from Face Melt, causing the tooltip percentage to stack multiplicatively with offensive damage modifiers."
+      },
+      "_raw_fields": [
+        "Pinball Wizard",
+        "3",
+        "1",
+        "Face Melt does 300% more damage to enemies recently affected by Powerslide.",
+        "File:Pinball_Wizard_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Hammer-on",
+      "tier": "3",
+      "slot": "2",
+      "icon": "Hammer-on_Icon.png",
+      "description": "E.T.C's Basic Attacks deal 12% more damage, increased to 36% While Guitar Solo is active.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Self",
+        "props": "Attack Modifier",
+        "notes": "Damage bonus stacks additively with other offensive damage modifiers."
+      },
+      "_raw_fields": [
+        "Hammer-on",
+        "3",
+        "2",
+        "E.T.C's Basic Attacks deal 12% more damage, increased to 36% While Guitar Solo is active.",
+        "File:Hammer-on_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Echo Pedal",
+      "tier": "3",
+      "slot": "3",
+      "icon": "Echo_Pedal_Icon.png",
+      "description": "Using a Basic or Heroic Ability releases two pulses of 18 damage. This deals 200% bonus damage to Minions and Mercenaries. The first occurs instantly. The second occurs 2 seconds later.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "props": "Area of Effect",
+        "aoe": "Circle",
+        "radius": "4.0",
+        "notes": "Pulses do not stack. The second pulse for one Ability will not occur if you use another Ability before it activates. Note that the second pulse will always occur right when the Armor from Rockstar expires, so the visual icon for this Trait in the bottom left may help time Abilities for waveclear. When using Powerslide or Stage Dive, the first pulse is fired upon reaching the end location. When using Mosh Pit the first pulse is fired right after the windup completes. Damage bonus to Minions and Mercenaries stacks additively with offensive damage modifiers."
+      },
+      "_raw_fields": [
+        "Echo Pedal",
+        "3",
+        "3",
+        "Using a Basic or Heroic Ability releases two pulses of 18 damage. This deals 200% bonus damage to Minions and Mercenaries. The first occurs instantly. The second occurs 2 seconds later.",
+        "File:Echo_Pedal_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Mosh Pit",
+      "tier": "4",
+      "slot": "1",
+      "icon": "Mosh_Pit_Icon.png",
+      "description": "cooldown 120 After 0.75 seconds, channel to Stun nearby enemies for 4 seconds.",
+      "fields": {},
+      "_raw_fields": [
+        "Mosh Pit",
+        "4",
+        "1",
+        "cooldown 120 After 0.75 seconds, channel to Stun nearby enemies for 4 seconds.",
+        "File:Mosh_Pit_Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Stage Dive",
+      "tier": "4",
+      "slot": "2",
+      "icon": "Stage_Dive_Icon.png",
+      "description": "cooldown 75 Leap to target location, landing after 2.75 seconds, dealing 330 damage to enemies in the area, and Slowing them by 50% for 4 seconds.",
+      "fields": {},
+      "_raw_fields": [
+        "Stage Dive",
+        "4",
+        "2",
+        "cooldown 75 Leap to target location, landing after 2.75 seconds, dealing 330 damage to enemies in the area, and Slowing them by 50% for 4 seconds.",
+        "File:Stage_Dive_Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Mic Check",
+      "tier": "5",
+      "slot": "1",
+      "icon": "Mic_Check_Icon.png",
+      "description": "Hitting at least 2 targets with Face Melt reduces its cooldown by 6 seconds.",
+      "fields": {},
+      "_raw_fields": [
+        "Mic Check",
+        "5",
+        "1",
+        "Hitting at least 2 targets with Face Melt reduces its cooldown by 6 seconds.",
+        "File:Mic_Check_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Encore",
+      "tier": "5",
+      "slot": "2",
+      "icon": "Encore_Icon.png",
+      "description": "Face Melt leaves an Amp behind, which will knock enemies away again 2 seconds later. Passive Enemy Heroes knocked back by Face Melt or the Amp reduce E.T.C.'s Heroic cooldown by 4%.",
+      "fields": {
+        "type": "Spell Damage, Crowd control",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "props": "Area of Effect, Knockback",
+        "aoe": "Circle",
+        "radius": "4.0",
+        "prop1": "Knockback duration",
+        "val1": "0.25 seconds",
+        "prop2": "Knockback speed",
+        "val2": "12",
+        "notes": "Secondary pulse does not interact with talents affecting Face Melt."
+      },
+      "_raw_fields": [
+        "Encore",
+        "5",
+        "2",
+        "Face Melt leaves an Amp behind, which will knock enemies away again 2 seconds later. Passive Enemy Heroes knocked back by Face Melt or the Amp reduce E.T.C.'s Heroic cooldown by 4%.",
+        "File:Encore_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Face Smelt",
+      "tier": "5",
+      "slot": "3",
+      "icon": "Face_Smelt_Icon.png",
+      "description": "Face Melt Slows enemies by 50% fading over 2 seconds.",
+      "fields": {
+        "type": "Crowd control",
+        "affects": "Enemies",
+        "props": "Slow"
+      },
+      "_raw_fields": [
+        "Face Smelt",
+        "5",
+        "3",
+        "Face Melt Slows enemies by 50% fading over 2 seconds.",
+        "File:Face_Smelt_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Show Stopper",
+      "tier": "6",
+      "slot": "1",
+      "icon": "Show_Stopper_Icon.png",
+      "description": "After using Powerslide, gain 35 Armor for 4 seconds, reducing all damage taken by 35%.",
+      "fields": {
+        "type": "Defensive damage modifier",
+        "affects": "Self",
+        "props": "Armor",
+        "notes": "Does not stack with other positive Armor effects. Other defensive damage modifiers may stack."
+      },
+      "_raw_fields": [
+        "Show Stopper",
+        "6",
+        "1",
+        "After using Powerslide, gain 35 Armor for 4 seconds, reducing all damage taken by 35%.",
+        "File:Show_Stopper_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Aggressive Shredding",
+      "tier": "6",
+      "slot": "2",
+      "icon": "Aggressive_Shredding_Icon.png",
+      "description": "E.T.C.'s Basic Attacks reduce the cooldown of Guitar Solo by 0.75 seconds.",
+      "fields": {
+        "props": "Attack Modifier"
+      },
+      "_raw_fields": [
+        "Aggressive Shredding",
+        "6",
+        "2",
+        "E.T.C.'s Basic Attacks reduce the cooldown of Guitar Solo by 0.75 seconds.",
+        "File:Aggressive_Shredding_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Imposing Presence",
+      "tier": "6",
+      "slot": "4",
+      "icon": "Imposing_Presence_Icon.png",
+      "description": "cooldown 20 Active Activate to Slow the Attack Speed by 50% and Movement Speed by 20% of nearby Heroes and Summons for 2.5 seconds. Passive Heroes and Summons that attack your Hero have their Attack Speed slowed by 20% for 2.5 seconds.",
+      "fields": {
+        "type": "Crowd control, Status effect",
+        "affects": "Enemy Heroes & Summons",
+        "target": "No target",
+        "props": "Area of Effect, Attack Slow, Slow",
+        "cast": "Instant",
+        "aoe": "Circle",
+        "radius": "5.0",
+        "notes": "Passive is not applied if the enemy Basic Attack misses due to being Blinded. Passive Attack Slow does not stack with itself, nor the active component. Passive and active Attack Slow stack additively with other effects that can affect the target Hero's Attack Speed."
+      },
+      "_raw_fields": [
+        "Imposing Presence",
+        "6",
+        "4",
+        "cooldown 20 Active Activate to Slow the Attack Speed by 50% and Movement Speed by 20% of nearby Heroes and Summons for 2.5 seconds. Passive Heroes and Summons that attack your Hero have their Attack Speed slowed by 20% for 2.5 seconds.",
+        "File:Imposing_Presence_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Tour Bus",
+      "tier": "7",
+      "slot": "1",
+      "icon": "Tour_Bus_Icon.png",
+      "description": "Mosh Pit refreshes the cooldown of Powerslide. E.T.C. can Powerslide during Mosh Pit, which also increases its duration by 2 seconds.",
+      "fields": {},
+      "_raw_fields": [
+        "Tour Bus",
+        "7",
+        "1",
+        "Mosh Pit refreshes the cooldown of Powerslide. E.T.C. can Powerslide during Mosh Pit, which also increases its duration by 2 seconds.",
+        "File:Tour_Bus_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Crowd Pleaser",
+      "tier": "7",
+      "slot": "2",
+      "icon": "Crowd_Pleaser_Icon.png",
+      "description": "Stage Dive's impact area is 50% bigger, and its Slow is increased by 30%.",
+      "fields": {
+        "prop1": "Bonus radius",
+        "val1": "2.5",
+        "notes": "Slow increase is additive."
+      },
+      "_raw_fields": [
+        "Crowd Pleaser",
+        "7",
+        "2",
+        "Stage Dive's impact area is 50% bigger, and its Slow is increased by 30%.",
+        "File:Crowd_Pleaser_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Death Metal",
+      "tier": "7",
+      "slot": "3",
+      "icon": "Death_Metal_Icon.png",
+      "description": "Upon dying, a ghost uses Mosh Pit at E.T.C's location.",
+      "fields": {
+        "notes": "The ghost's Mosh Pit activates immediately upon E.T.C.'s death with no windup. As the ghost is untargetable, it cannot be interrupted, moved or delayed through any means, and will channel with a normal range and full duration Mosh Pit."
+      },
+      "_raw_fields": [
+        "Death Metal",
+        "7",
+        "3",
+        "Upon dying, a ghost uses Mosh Pit at E.T.C's location.",
+        "File:Death_Metal_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Power of the Horde",
+      "tier": "7",
+      "slot": "4",
+      "icon": "Storm_Shield_Icon.png",
+      "description": "Cooldown: 45 seconds Active Activate to give all nearby allied Heroes a Shield that absorbs damage equal to 30% of their maximum Health for 5 seconds, increased by 2% for each other allied Hero in the area.",
+      "fields": {
+        "type": "Shield",
+        "scaling": "-",
+        "affects": "Allied Heroes, Self",
+        "target": "No target",
+        "props": "Area of Effect",
+        "cast": "Instant",
+        "radius": "8.0"
+      },
+      "_raw_fields": [
+        "Power of the Horde",
+        "7",
+        "4",
+        "Cooldown: 45 seconds Active Activate to give all nearby allied Heroes a Shield that absorbs damage equal to 30% of their maximum Health for 5 seconds, increased by 2% for each other allied Hero in the area.",
+        "File:Storm_Shield_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Ride the Lightning",
+      "tier": "7",
+      "slot": "5",
+      "icon": "Bolt_of_the_Storm_Icon.png",
+      "description": "cooldown 70 Active Activate to teleport to a nearby location and deal 48 damage to nearby enemy Heroes. The cooldown is reduced by 10 seconds for every enemy Hero hit, up to 50 seconds.",
+      "fields": {
+        "type": "Movement: Teleport",
+        "affects": "Self",
+        "target": "Point target",
+        "props": "Area of Effect, Clamping",
+        "cast": "Instant",
+        "range": "7.2",
+        "notes": "If this Talent is chosen while E.T.C. is affected by certain Stasis effects including Stitches's Gorge, it becomes usable while channeling Mosh Pit."
+      },
+      "_raw_fields": [
+        "Ride the Lightning",
+        "7",
+        "5",
+        "cooldown 70 Active Activate to teleport to a nearby location and deal 48 damage to nearby enemy Heroes. The cooldown is reduced by 10 seconds for every enemy Hero hit, up to 50 seconds.",
+        "File:Bolt_of_the_Storm_Icon.png"
+      ],
+      "level": "20"
+    }
+  ],
+  "other": [],
+  "_unparsed_count": 0
+}

@@ -1,0 +1,546 @@
+{
+  "hero": "Tyrande",
+  "abilities": [
+    {
+      "name": "Hunter's Mark",
+      "hotkey": "D",
+      "icon": "Hunter's_Mark_Icon.png",
+      "description": "Reveal a non-Structure enemy and reduce their Armor by 15 for 4 seconds. passive Tyrande's Basic Attacks heal her for 1% of her maximum Health, doubled against targets with Hunter's Mark.; 20; trait",
+      "fields": {
+        "type": "Defensive damage modifier, Status effect / Healing",
+        "affects": "Non-Structure enemies / Self",
+        "target": "Unit target",
+        "props": "Armor reduction, Attack modifier, Revealed",
+        "cast": "0.1 + 0 seconds",
+        "range": "6.0",
+        "notes": "Does not stack with other negative Armor effects. Other defensive damage modifiers may stack."
+      }
+    },
+    {
+      "name": "Light of Elune",
+      "hotkey": "Q",
+      "icon": "Light_of_Elune_Icon.png",
+      "description": "Heal an ally Hero for 270. Light of Elune's cooldown is reduced by 1.5 seconds every time Tyrande hits an enemy with a Basic Attack or damages an enemy Hero. Stores up to 2 charges. Cooldown replenishes all charges at the same time.; 16 / 0.5",
+      "fields": {
+        "type": "Healing",
+        "scaling": "4.00%",
+        "affects": "Allied Heroes, Self",
+        "target": "Unit target",
+        "props": "Attack Modifier",
+        "cast": "Instant",
+        "range": "8.0",
+        "notes": "Basic Attacks trigger cooldown reduction from both Heroic and non-Heroic targets. Ability Damage only triggers cooldown reduction from Heroes. Casting Light of Elune sets the cooldown of Tyrande's next Basic Attack to 0.5 seconds, potentially causing it to come out slightly faster or slower depending on timing.",
+        "cooldown": "15"
+      }
+    },
+    {
+      "name": "Sentinel",
+      "hotkey": "W",
+      "icon": "Sentinel_Icon.png",
+      "description": "Send an Owl across the battleground revealing its path, dealing 120 damage to the first Hero hit, and revealing them for 5 seconds. If a Hero revealed by Sentinel dies, refresh its cooldown.",
+      "fields": {
+        "type": "Spell Damage, Status effect",
+        "scaling": "4.00%",
+        "affects": "Enemy Heroes",
+        "target": "Point target",
+        "props": "Revealed, Skillshot",
+        "cast": "0 + 0.1 seconds",
+        "range": "Global",
+        "radius": "8.0 (vision)",
+        "hitbox": "1.25 x 2.25",
+        "missile": "20",
+        "notes": "As Sentinel travels, it grants vision in a 7.0 x 7.0 area (increased by its hitbox) around the projectile that lasts for 4 seconds. Heroes hit by Sentinel grant vision in 8 radius around them for the duration of the revealed debuff.",
+        "cooldown": "15",
+        "cost": "55"
+      }
+    },
+    {
+      "name": "Lunar Flare",
+      "hotkey": "E",
+      "icon": "Lunar_Flare_Icon.png",
+      "description": "After 0.75 seconds, deal 150 damage and Stun enemies in the target area for 0.75 seconds. Restores 25 Mana per enemy hit. quest Hitting a Hero with Lunar Flare increases its damage by 4%, up to 160%. After hitting 10 Heroes, increase Lunar Flare's range by 30%. reward After hitting 20 Heroes, Sentinel now pierces the first Hero hit. reward After hitting 40 Heroes, every 8th Basic Attack fires a Lunar Flare, prioritizing Heroes.",
+      "fields": {
+        "type": "Spell Damage, Crowd control",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "target": "Point target",
+        "props": "Area of Effect, Stun",
+        "cast": "0.1 + 0 seconds",
+        "range": "10.5",
+        "aoe": "Circle",
+        "radius": "1.5",
+        "cooldown": "13",
+        "cost": "65"
+      }
+    },
+    {
+      "name": "Shadowstalk",
+      "hotkey": "R",
+      "icon": "Shadowstalk_Icon.png",
+      "description": "Grant all allied Heroes Stealth for 10 seconds and heal them for 380 Health over 10 seconds. Remaining stationary for at least 1.5 seconds while Stealthed grants Invisible.; 90; 85; heroic",
+      "fields": {
+        "type": "Healing, Status effect",
+        "scaling": "4.00%",
+        "affects": "Allied Heroes, Self",
+        "target": "No target",
+        "props": "Heal over Time, Stealth",
+        "cast": "Instant",
+        "range": "Global",
+        "tickrate": "1.0 per second (x10)",
+        "prop1": "Heal per tick",
+        "val1": "38",
+        "notes": "Heal over time persists even after Stealth has been broken."
+      }
+    },
+    {
+      "name": "Starfall",
+      "hotkey": "R",
+      "icon": "Starfall_Icon.png",
+      "description": "Deal 92 damage per second and Slow enemies by 20% in an area. Lasts 6 seconds.; 80; 85; heroic",
+      "fields": {
+        "type": "Spell Damage, Crowd Control",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "target": "Point target",
+        "props": "Area of Effect, Slow",
+        "cast": "0.1 + 0 seconds",
+        "range": "9.0",
+        "aoe": "Circle",
+        "radius": "5.0",
+        "tickrate": "1.0 per second (x7)",
+        "notes": "Casting Starfall sets the cooldown of Tyrande's next Basic Attack to 0.5 seconds, potentially causing it to come out slightly faster or slower depending on timing."
+      }
+    }
+  ],
+  "talents": [
+    {
+      "name": "Ranger",
+      "tier": "1",
+      "slot": "1",
+      "icon": "Ranger_Icon.png",
+      "description": "Sentinel width is increased by 25% and deals up to 250% more damage based on distance traveled.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Ability",
+        "prop1": "Bonus width",
+        "val1": "0.3125",
+        "notes": "Ranger increases Sentinel 's damage by 10% for every 2 units traveled, reaching the maximum bonus at 50 units. Damage bonus stacks additively with itself and other offensive damage modifiers that can affect Sentinel 's damage."
+      },
+      "_raw_fields": [
+        "Ranger",
+        "1",
+        "1",
+        "Sentinel width is increased by 25% and deals up to 250% more damage based on distance traveled.",
+        "File:Ranger_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Moonlit Arrows",
+      "tier": "3",
+      "slot": "1",
+      "icon": "Moonlit_Arrows_Icon.png",
+      "description": "Basic Attacks decrease the cooldown of Light of Elune by an additional 0.5 seconds.",
+      "fields": {},
+      "_raw_fields": [
+        "Moonlit Arrows",
+        "3",
+        "1",
+        "Basic Attacks decrease the cooldown of Light of Elune by an additional 0.5 seconds.",
+        "File:Moonlit_Arrows_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Trueshot Aura",
+      "tier": "1",
+      "slot": "3",
+      "icon": "Trueshot_Aura_Icon.png",
+      "description": "Cooldown 45 Activate to grant Tyrande and nearby allied Heroes 40% increased Attack Damage for 5 seconds, and to reset the cooldown of Hunter's Mark.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Allied Heroes / Self",
+        "target": "No target",
+        "props": "Area of Effect",
+        "cast": "Instant",
+        "aoe": "Circle",
+        "radius": "7.0",
+        "notes": "Stacks additively with other offensive damage modifiers that can affect Tyrande's or her allies' Basic Attack damage."
+      },
+      "_raw_fields": [
+        "Trueshot Aura",
+        "1",
+        "3",
+        "Cooldown 45 Activate to grant Tyrande and nearby allied Heroes 40% increased Attack Damage for 5 seconds, and to reset the cooldown of Hunter's Mark.",
+        "File:Trueshot_Aura_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Everlasting Light",
+      "tier": "2",
+      "slot": "1",
+      "icon": "Everlasting_Light_Icon.png",
+      "description": "If Light of Elune's second charge is cast on a different target from the first, it heals for 80% more.",
+      "fields": {
+        "type": "Healing dealt modifier",
+        "scaling": "-",
+        "affects": "Allied Heroes, Self",
+        "notes": "Stacks additively with healing modifiers that affect Light of Elune 's healing output and multiplicatively with modifiers that affect healing received by the target."
+      },
+      "_raw_fields": [
+        "Everlasting Light",
+        "2",
+        "1",
+        "If Light of Elune's second charge is cast on a different target from the first, it heals for 80% more.",
+        "File:Everlasting_Light_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Mark of Mending",
+      "tier": "2",
+      "slot": "2",
+      "icon": "Mark_of_Mending_Icon.png",
+      "description": "Tyrande's Basic Attacks against Marked targets heal other allied Heroes near the enemy for 4% of their maximum Health.",
+      "fields": {
+        "type": "Healing",
+        "scaling": "-",
+        "affects": "Allied Heroes",
+        "props": "Area of Effect, Attack Modifier",
+        "aoe": "Circle",
+        "radius": "8.5",
+        "notes": "Healing is based on the receiving ally's Health."
+      },
+      "_raw_fields": [
+        "Mark of Mending",
+        "2",
+        "2",
+        "Tyrande's Basic Attacks against Marked targets heal other allied Heroes near the enemy for 4% of their maximum Health.",
+        "File:Mark_of_Mending_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Elune's Chosen",
+      "tier": "2",
+      "slot": "3",
+      "icon": "Elune's_Chosen_Icon.png",
+      "description": "Cooldown 30 Activate to make Tyrande's Basic Attacks heal target allied Hero for 175% of the damage dealt. Lasts for 8 seconds.",
+      "fields": {
+        "type": "Healing",
+        "scaling": "-",
+        "affects": "Allied Heroes",
+        "target": "Unit target",
+        "props": "Attack Modifier, Lifesteal",
+        "cast": "Instant",
+        "range": "7.0"
+      },
+      "_raw_fields": [
+        "Elune's Chosen",
+        "2",
+        "3",
+        "Cooldown 30 Activate to make Tyrande's Basic Attacks heal target allied Hero for 175% of the damage dealt. Lasts for 8 seconds.",
+        "File:Elune's_Chosen_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Elune's Gift",
+      "tier": "1",
+      "slot": "2",
+      "icon": "Lunar_Blaze_Icon.png",
+      "description": "Hitting an enemy Hero with Lunar Flare grants 20% Spell Power for 10 seconds.",
+      "fields": {
+        "type": "Spell Power modifier",
+        "affects": "Ability"
+      },
+      "_raw_fields": [
+        "Elune's Gift",
+        "1",
+        "2",
+        "Hitting an enemy Hero with Lunar Flare grants 20% Spell Power for 10 seconds.",
+        "File:Lunar_Blaze_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Kaldorei Resistance",
+      "tier": "3",
+      "slot": "2",
+      "icon": "Kaldorei_Resistance_Icon.png",
+      "description": "Light of Elune grants the target 10 Spell Armor for 2 seconds. This effect stacks up to 2 times.",
+      "fields": {
+        "type": "Defensive damage modifier",
+        "affects": "Allied Heroes, Self",
+        "props": "Spell Armor"
+      },
+      "_raw_fields": [
+        "Kaldorei Resistance",
+        "3",
+        "2",
+        "Light of Elune grants the target 10 Spell Armor for 2 seconds. This effect stacks up to 2 times.",
+        "File:Kaldorei_Resistance_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Huntress's Fury",
+      "tier": "3",
+      "slot": "3",
+      "icon": "Huntress'_Fury_Icon.png",
+      "description": "Increase the cast range and duration of Hunter's Mark by 25%. Tyrande's Basic Attacks against targets with Hunter's Mark splash to nearby enemy Heroes.",
+      "fields": {
+        "type": "Physical Damage",
+        "scaling": "-",
+        "props": "Attack Modifier, Bounce",
+        "prop1": "Bonus range",
+        "val1": "1.5",
+        "prop2": "Bonus duration",
+        "val2": "1.0 second",
+        "prop3": "Splash radius",
+        "val3": "7.0",
+        "notes": "Splashing attacks grant cooldown reduction for Light of Elune. Splashing attacks do not interact with any of Tyrande's talents affecting her Basic Attacks, except the damage increase from Trueshot Aura."
+      },
+      "_raw_fields": [
+        "Huntress's Fury",
+        "3",
+        "3",
+        "Increase the cast range and duration of Hunter's Mark by 25%. Tyrande's Basic Attacks against targets with Hunter's Mark splash to nearby enemy Heroes.",
+        "File:Huntress'_Fury_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Shadowstalk",
+      "tier": "4",
+      "slot": "1",
+      "icon": "Shadowstalk_Icon.png",
+      "description": "Cooldown 90 Grant all allied Heroes Stealth for 10 seconds and heal them for 380 Health over 10 seconds. Remaining stationary for at least 1.5 seconds while Stealthed grants Invisible.",
+      "fields": {},
+      "_raw_fields": [
+        "Shadowstalk",
+        "4",
+        "1",
+        "Cooldown 90 Grant all allied Heroes Stealth for 10 seconds and heal them for 380 Health over 10 seconds. Remaining stationary for at least 1.5 seconds while Stealthed grants Invisible.",
+        "File:Shadowstalk_Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Starfall",
+      "tier": "4",
+      "slot": "2",
+      "icon": "Starfall_Icon.png",
+      "description": "Cooldown 80 Deal 92 damage per second and Slow enemies by 20% in an area. Lasts 6 seconds.",
+      "fields": {},
+      "_raw_fields": [
+        "Starfall",
+        "4",
+        "2",
+        "Cooldown 80 Deal 92 damage per second and Slow enemies by 20% in an area. Lasts 6 seconds.",
+        "File:Starfall_Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Quickening Blessing",
+      "tier": "5",
+      "slot": "1",
+      "icon": "Quickening_Blessing_Icon.png",
+      "description": "Gain 5% Movement Speed. Light of Elune increases the target's Movement Speed by 20% for 3 seconds.",
+      "fields": {
+        "type": "Status effect",
+        "affects": "Allied Heroes, Self",
+        "props": "Movement Speed"
+      },
+      "_raw_fields": [
+        "Quickening Blessing",
+        "5",
+        "1",
+        "Gain 5% Movement Speed. Light of Elune increases the target's Movement Speed by 20% for 3 seconds.",
+        "File:Quickening_Blessing_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Harsh Moonlight",
+      "tier": "5",
+      "slot": "2",
+      "icon": "Harsh_Moonlight_Icon.png",
+      "description": "Sentinel Slows enemies hit by 35% and reduces their damage dealt by 35% for 3 seconds.",
+      "fields": {
+        "type": "Offensive damage modifier, Crowd Control",
+        "affects": "Enemy Heroes",
+        "props": "Slow",
+        "notes": "Stacks additively with itself and other offensive damage modifiers that can affect the target's damage output."
+      },
+      "_raw_fields": [
+        "Harsh Moonlight",
+        "5",
+        "2",
+        "Sentinel Slows enemies hit by 35% and reduces their damage dealt by 35% for 3 seconds.",
+        "File:Harsh_Moonlight_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Ranger's Mark",
+      "tier": "5",
+      "slot": "3",
+      "icon": "Ranger's_Mark_Icon.png",
+      "description": "Basic Attacks reduce the cooldown of Hunter's Mark by 2 seconds. Basic Attacks against marked targets reduce the cooldown of Lunar Flare by 4 seconds.",
+      "fields": {
+        "props": "Attack Modifier"
+      },
+      "_raw_fields": [
+        "Ranger's Mark",
+        "5",
+        "3",
+        "Basic Attacks reduce the cooldown of Hunter's Mark by 2 seconds. Basic Attacks against marked targets reduce the cooldown of Lunar Flare by 4 seconds.",
+        "File:Ranger's_Mark_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Celestial Attunement",
+      "tier": "6",
+      "slot": "1",
+      "icon": "Quickening_Blessing_Icon.png",
+      "description": "Light of Elune removes Stuns, Silences, and Slows from its target.",
+      "fields": {
+        "type": "CC removal",
+        "affects": "Allied Heroes, Self"
+      },
+      "_raw_fields": [
+        "Celestial Attunement",
+        "6",
+        "1",
+        "Light of Elune removes Stuns, Silences, and Slows from its target.",
+        "File:Quickening_Blessing_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Empower",
+      "tier": "6",
+      "slot": "2",
+      "icon": "Empower_Icon.png",
+      "description": "Reduce Sentinel's cooldown by 3 seconds. Heroes hit by Sentinel take bonus damage equal to 6% of their maximum Health.",
+      "fields": {
+        "type": "Percent damage",
+        "scaling": "-",
+        "affects": "Enemy Heroes"
+      },
+      "_raw_fields": [
+        "Empower",
+        "6",
+        "2",
+        "Reduce Sentinel's cooldown by 3 seconds. Heroes hit by Sentinel take bonus damage equal to 6% of their maximum Health.",
+        "File:Empower_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Darnassian Archery",
+      "tier": "6",
+      "slot": "3",
+      "icon": "Darnassian_Archery_Icon.png",
+      "description": "Basic Attacks against enemy Heroes grant a stacking 12% increased Attack Damage bonus for 4 seconds.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Self",
+        "props": "Attack Modifier",
+        "prop1": "Maximum bonus",
+        "val1": "5,000% (417 stacks)",
+        "notes": "Stacks additively with itself and other offensive damage modifiers affecting Tyrande's Basic Attack damage."
+      },
+      "_raw_fields": [
+        "Darnassian Archery",
+        "6",
+        "3",
+        "Basic Attacks against enemy Heroes grant a stacking 12% increased Attack Damage bonus for 4 seconds.",
+        "File:Darnassian_Archery_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Eyes of the Huntress",
+      "tier": "7",
+      "slot": "1",
+      "icon": "Eyes_of_the_Huntress_Icon.png",
+      "description": "Shadowstalk reveals all enemy Heroes for 10 seconds and heals for 75% more.",
+      "fields": {
+        "type": "Healing dealt modifier / Status effect",
+        "scaling": "-",
+        "affects": "Ability / Enemy Heroes",
+        "props": "Revealed",
+        "notes": "Stacks additively with healing modifiers that affect Shadowstalk 's healing output and multiplicatively with modifiers that affect healing received by the target."
+      },
+      "_raw_fields": [
+        "Eyes of the Huntress",
+        "7",
+        "1",
+        "Shadowstalk reveals all enemy Heroes for 10 seconds and heals for 75% more.",
+        "File:Eyes_of_the_Huntress_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Celestial Wrath",
+      "tier": "7",
+      "slot": "2",
+      "icon": "Celestial_Wrath_Icon.png",
+      "description": "Increase the Slow of Starfall to 60% and cause it to apply Hunter's Mark to enemy Heroes while inside its area of effect.",
+      "fields": {},
+      "_raw_fields": [
+        "Celestial Wrath",
+        "7",
+        "2",
+        "Increase the Slow of Starfall to 60% and cause it to apply Hunter's Mark to enemy Heroes while inside its area of effect.",
+        "File:Celestial_Wrath_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Commander of Sentinels",
+      "tier": "7",
+      "slot": "3",
+      "icon": "Ranger_Icon.png",
+      "description": "Sentinel gains a 2nd charge.",
+      "fields": {
+        "affects": "Ability"
+      },
+      "_raw_fields": [
+        "Commander of Sentinels",
+        "7",
+        "3",
+        "Sentinel gains a 2nd charge.",
+        "File:Ranger_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Iceblade Arrows",
+      "tier": "7",
+      "slot": "4",
+      "icon": "Iceblade_Arrows_Icon.png",
+      "description": "Increase Attack Speed by 20%. Basic Attacks against enemy Heroes reduce their damage dealt by 8% for 3 seconds. This effect stacks up to 5 times.",
+      "fields": {
+        "affects": "Self / Enemy Heroes",
+        "props": "Attack Modifier, Attack Speed",
+        "notes": "Stacks additively with itself and other offensive damage modifiers affecting the target's damage output."
+      },
+      "_raw_fields": [
+        "Iceblade Arrows",
+        "7",
+        "4",
+        "Increase Attack Speed by 20%. Basic Attacks against enemy Heroes reduce their damage dealt by 8% for 3 seconds. This effect stacks up to 5 times.",
+        "File:Iceblade_Arrows_Icon.png"
+      ],
+      "level": "20"
+    }
+  ],
+  "other": [],
+  "_unparsed_count": 0
+}

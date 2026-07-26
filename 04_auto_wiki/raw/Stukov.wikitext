@@ -1,0 +1,228 @@
+{{hero data
+| name = Stukov
+| date = July 11, 2017
+| price = 10000
+| title = Infested Admiral
+| role = Healer
+| franchise = Starcraft
+| info = A Healer who brings high amounts of disruption from long range.
+| lore = Alexei Stukov had a hard life, and an even harder death. He has been betrayed, shot into space, resurrected and infested, almost cured, and then experimented upon as the infestation returned. Now, his infestation spreads within the Nexus...
+| difficulty = Medium
+| melee = True
+| health = 1835
+| healthRegen = 3.8242
+| resource = 500
+| resourceType = Mana
+| armor = 0 
+| attackSpeed = 0.67
+| attackRange = 1.5
+| attackDamage = 261
+| healthScaling = 0.04
+| regenScaling = 0.04
+| adamageScaling = 0.04
+| unitRadius = 0.6875
+| icon = 
+| skills = 
+Bio-Kill Switch;D;File:Bio-Kill_Switch_Icon.png;Activate to detonate all of Stukov's Viruses. Each Healing Pathogen heals its target for 435 health, and each Weighted Pustule does 100 damage and Slows its target by 70% for 2 seconds.<p>Can be cast while channeling Lurking Arm.<!--
+-->{{undoc-x|type=Spell Damage, Crowd Control / Healing<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemy Heroes / Allied Heroes, Self<!--
+-->|target=No target<!--
+-->|props=[[Slow]]<!--
+-->|cast=Instant<!--
+-->|range=Global<!--
+-->|notes=<li>Healing pathogens and pustules that are in flight when ''Bio-Kill Switch'' is activated are not affected.<li><i>Bio-Kill Switch</i>'s damage is dealt in addition to <i>Weighted Pustule</i>'s expiration damage in a separate instance.<li>''Healing Pathogen''s remain on the target until 0.0625 seconds after casting this Ability.<li>''Healing Pathogen''s placed on [[Medivh]] are not detonated by this Ability during ''Raven Form''.<li>If multiple Stukovs are on a team, ''Bio-Kill Switch'' only affects viruses placed by the activator.}};16;;False;
+
+Healing Pathogen;Q;File:Healing_Pathogen_Icon.png;Infest an allied Hero with a Healing Pathogen that heals the target for 222 Health over 4.5 seconds. Healing Pathogens can spread to a nearby allied Hero every 0.75 seconds.<p>Each cast of Healing Pathogen can only spread to each allied Hero 1 time.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=4.00%<!--
+-->|affects=Allied Heroes, Self<!--
+-->|target=Unit target<!--
+-->|props=[[Bounce]], [[Heal over Time]]<!--
+-->|cast=Instant<!--
+-->|range=7.0<!--
+-->|missile=18<!--
+-->|tickrate=1.33 per second (x6)<!--
+-->|prop1=Heal per Tick|val1=37<!--
+-->|prop2=Spread radius|val2=6.0<!--
+-->|notes=<li>Can cast on self, and spread to self.<li>''Healing Pathogen'' can be cast on a Hero with an active Pathogen, overwriting its effect. However, it cannot spread to Heroes already affected by it. This also applies if multiple Stukovs are in a team.}};10;40;False;
+
+Weighted Pustule;W;File:Weighted_Pustule_Icon.png;Hurl a pustule that impacts all enemy Heroes in its path, dealing 20 damage and Slowing by 5%, increasing to 50% over 3 seconds. Deals an additional 88 damage upon expiring or being removed.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemy Heroes<!--
+-->|target=Point target<!--
+-->|props=[[Clamping]], Piercing [[Skillshot]]<!--
+-->|cast=0.125 + 0.125 seconds<!--
+-->|range=11.5<!--
+-->|hitbox=1.0 x 0.9<!--
+-->|missile=15<!--
+-->|notes=<li>[[Unstoppable]] negates the Slow effect of ''Weighted Pustule'', but does not prevent applying or remove a Pustule. Pustules can, however, be fully removed from units by Abilities which specifically remove Slows.<li>If ''Weighted Pustule'' hits an enemy already affected by one, the previous Pustule is overwritten. This also applies if multiple Stukovs are in a team.}};10;50;False;
+
+Lurking Arm;E;File:Lurking_Arm_Icon.png;Channel at a target location, creating an area that deals 136 damage per second to non-Structure enemies and Silences them. Deals 50% reduced damage to non-Heroes.<p>Does not cost Mana while Channeling, and lasts until canceled or interrupted.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=non-Structure Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Silence]]<!--
+-->|cast=0.75 + CH + 0 seconds<!--
+-->|range=11.5<!--
+-->|aoe=Circle<!--
+-->|radius=2.5<!--
+-->|tickrate=4.0 per second<!--
+-->|prop1=Damage per tick|val1=34<!--
+-->|notes=<li>Each tick applies 0.3 seconds Silence.}};10;60;heroic;False
+
+Flailing Swipe;R;File:Flailing_Swipe_Icon.png;Swipe 3 times in front of Stukov over 1.75 seconds, dealing 48 damage to enemies hit and knocking them away. Each swipe is larger than the previous.<!--
+-->{{undoc-x|type=Spell Damage, Crowd Control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Knockback]], [[Stationary channel]]<!--
+-->|cast=0 + CH + 0 seconds<!--
+-->|aoe=Radial<!--
+-->|radius=<br>- First: 5.0<br>- Second: 8.0<br>- Third: 11<!--
+-->|arc=180 degrees <sup>(1</sup><!--
+-->|prop1=Swipe delay|val1=<br>- First: 0.1875 seconds<br>- Second: 0.25 seconds<br>- Third: 0.5625 seconds<!--
+-->|prop2=Knockback duration|val2=0.125 seconds<!--
+-->|prop3=Knockback speed|val3=42<!--
+-->|notes=<li><sup>1)</sup> Target search is performed in three rotating 60 degree sections over three successive ticks. First and third swipes rotate clockwise, and second rotates counter-clockwise.<li>Completing the three swipes only takes 1.375 seconds, but Stukov will remain locked in animation for the remaining 0.375 seconds of the 1.75 second channel.}};60;60;False;
+
+Massive Shove;R;File:Massive_Shove_Icon.png;Extend Stukov's arm. If it hits an enemy Hero, they are rapidly shoved until they collide with terrain, dealing 190 damage and Stunning them for 0.5 seconds. Stukov gains 50 Armor while shoving an enemy.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control, Status effect / Defensive damage modifier<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemy Heroes / Self<!--
+-->|target=Point target<!--
+-->|props=[[Armor]], [[Clamping]], [[Knockback]], [[Revealed]], [[Skillshot]], [[Stationary channel]], [[Stun]]<!--
+-->|cast=0.125 + CH + 0 seconds<!--
+-->|range=11<!--
+-->|hitbox=2.0 x 1.0<!--
+-->|missile=22<!--
+-->|notes=<li>Enemy Heroes are Revealed as long as they are being shoved.<li>Massive Shove is canceled if the arm collides with terrain before hitting a Hero.<li>Does not stack with other positive Armor effects. Other defensive damage modifiers may stack.}};20;50;False;
+
+| talents = <!-- LEVEL 1 -->
+Fetid Touch;1;1;Basic Attacks become ranged and Slow enemies by 20% for 1.5 seconds, but deal 35% less damage. This effect can be toggled.<p>{{Quest|Hit Heroes with Weighted Pustule.|After hitting 15 Heroes, reduce the cooldown of Weighted Pustule by 5 seconds and remove its Mana cost.}}<!--
+-->{{undoc-x|type=Offensive damage modifier / Crowd control<!--
+-->|affects=Self / Enemies<!--
+-->|target=No target (toggle)<!--
+-->|props=[[Attack Modifier]], [[Slow]]<!--
+-->|range=5.5<!--
+-->|prop1=Toggle cooldown|val1=0.5 seconds}};File:Fetid_Touch_Icon.png;
+
+Reactive Ballistospores;1;2;While below 50% Health, the cooldown of Bio-Kill Switch refreshes 100% faster.<p>Activate to instantly spread a Weighted Pustule to all nearby enemy Heroes and reset the cooldown of Bio-Kill Switch.<p>This effect has a 75 second cooldown.<!--
+-->{{undoc-x|target=No target<!--
+-->|cast=Instant<!--
+-->|props=[[Area of Effect]]<!--
+-->|aoe=Circle<!--
+-->|radius=5.5<!--
+-->|notes=<li>Can be activated while channeling ''Lurking Arm'' without interrupting it.<li>While below 50% Health, reduces the cooldown of Bio-Kill Switch by 0.125 seconds every 0.125 seconds.<li>The Talent's cooldown is unaffected by any cooldown reduction effects.<li>''Bio-Kill Switch'' cannot be activated again for 0.0625 seconds (1 game loop) after the last activation even when using the reset from this Ability.}};File:Reactive_Ballistospores_Icon.png;
+
+Low Blow;1;3;Lurking Arm deals 100% more damage to enemy Heroes below 50% Health and persists for 1 second after it is canceled.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|notes=<li>Damage bonus stacks additively with other offensive damage modifiers that can affect <i>Lurking Arm</i>'s damage.}};File:Low_Blow_Icon.png;
+
+<!-- LEVEL 4 -->
+One Good Spread...;2;1;After a Healing Pathogen infests 3 targets, restore 10 Mana and reduce the cooldown of Healing Pathogen by 2 seconds.<!--
+-->{{undoc-x|type=Mana restoration<!--
+-->|scaling=-<!--
+-->|affects=Self}};File:One_Good_Spread..._Icon.png;
+
+Biotic Armor;2;2;Healing Pathogen grants 10 Physical Armor to its targets while active on them. Detonating Bio-Kill Switch increases this bonus to 50 for 2.5 seconds.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Allied Heroes, Self<!--
+-->|props= [[Physical Armor]]<!--
+-->|notes=<li>Does not stack with other positive Physical Armor effects. Other defensive damage modifiers may stack.}};File:Biotic_Armor_Icon.png;
+
+Vigorous Reuptake;2;3;Bio-Kill Switch heals for 30% more when detonating 3 or more Healing Pathogens.<!--
+-->{{undoc-x|type=Healing dealt modifier<!--
+-->|affects=Ability<!--
+-->|notes=<li>Bonus healing stacks additively with other healing dealt modifiers that can affect <i>Bio-Kill Switch</i>'s healing.}};File:Vigorous_Reuptake_Icon.png;
+
+<!-- LEVEL 7 -->
+The Long Pitch;3;1;Increase the range of Weighted Pustule by 50%. Detonating 2 or more Weighted Pustules causes Stukov's Bio-Kill Switch and Basic Ability cooldowns to recharge 100% faster for 4 seconds.<!--
+-->{{undoc-x|prop1=Bonus radius|val1=5.75<!--
+-->|notes=<li>While active, reduces Stukov's Basic Ability cooldowns by 0.0625 seconds every 0.0625 seconds.}};File:The_Long_Pitch_Icon.png;
+
+Growing Infestation;3;2;Lurking Arm's area expands by 50% over 2.5 seconds, but it cannot be channeled for longer than 3 seconds.<!--
+-->{{undoc-x|prop1=Bonus radius|val1=1.25<!--
+-->|notes=<li>If ''Low Blow'' has been picked, the area will continue growing even after Stukov stops channeling if ''Lurking Arm'' still hasn't reached its maximum radius.}};File:Growing_Infestation_Icon.png;
+
+Targeted Excision;3;3;Detonating exactly 1 Weighted Pustule (but any number of Healing Pathogens) with Bio-Kill Switch reduces the cooldown of Bio-Kill Switch to 7 seconds and other Basic Abilities by 1.5 seconds.;File:Targeted_Excision_Icon.png;
+
+<!-- LEVEL 10 -->
+Flailing Swipe;4;1;{{Cooldown|60}}<br>Swipe 3 times in front of Stukov over 1.75 seconds, dealing 48 damage to enemies hit and knocking them away. Each swipe is larger than the previous.;File:Flailing_Swipe_Icon.png;
+Massive Shove;4;2;{{Cooldown|20}}<br>Extend Stukov's arm. If it hits an enemy Hero, they are rapidly shoved until they collide with terrain, dealing 190 damage and Stunning them for 0.5 seconds. Stukov gains 50 Armor while shoving an enemy.;File:Massive_Shove_Icon.png;
+
+<!-- LEVEL 13 -->
+It Hungers;5;1;Increase the range of Lurking Arm by 30%. If Lurking Arm damages enemy Heroes 8 times, its cooldown is reset and its Mana cost is refunded.<!--
+-->{{undoc-x|prop1=Bonus range|val1=3.45<!--
+-->|notes=<li>Sets cooldown to 0.5s if the reset triggers (beginning once the Ability stops being channeled).<li>Counter is reset every time ''Lurking Arm'' is cast.}};File:It_Hungers_Icon.png;
+
+Virulent Reaction;5;2;Detonating a Weighted Pustule on an enemy who is inside of Lurking Arm Roots them for 1.5 seconds.<!--
+-->{{undoc-x|type=Crowd control<!--
+-->|affects=Non-Structure enemies<!--
+-->|props=[[Root]]<!--
+-->|notes=}};File:Virulent_Reaction_Icon.png;
+
+Poppin' Pustules;5;3;Detonating a Weighted Pustule with Bio-Kill Switch within 1.5 seconds of its expiration increases its damage by 150% and applies its damage and Slow in an area. Enemy Heroes hit have a Weighted Pustule applied to them.<!--
+-->{{undoc-x|type=Offensive damage modifier / Spell Damage, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Ability / Enemies<!--
+-->|props=[[Area of Effect]], [[Slow]]<!--
+-->|aoe=Circle<!--
+-->|radius=3.75<!--
+-->|notes=<li>Also causes the Pustule to last an additional 0.0625s after detonation with ''Bio-Kill Switch''.<li>Late detonation damage increase only affects the expiration damage of active ''Weighted Pustules''.<li>Only the activation damage from <i>Bio-Kill Switch</i> is dealt in an area.<li>Enemies can be damaged by multiple area explosions, but only one instance of ''Weighted Pustule'' will be applied to them.<li>A new ''Weighted Pustule'' will not be applied to the Hero that was initially carrying the ''Weighted Pustule'' before the area detonation. However, they can have one applied to them from the area detonation of other Heroes.<li>''Weighted Pustules'' from ''Poppin' Pustules'' interact with other all other Talents affecting ''Weighted Pustule''. However, applying them in this way does not deal the impact damage of ''Weighted Pustule'' and cannot grant progress toward the ''Fetid Touch'' quest.<li>Damage bonus stacks additively with other offensive damage modifiers that can affect <i>Bio-Kill Switch</i>'s pustule detonation damage.}};File:Poppin'_Pustules_Icon.png;
+
+<!-- LEVEL 16 -->
+Superstrain;6;1;Whenever an ally with Healing Pathogen is Stunned or Rooted, they are instantly healed for 300 Health.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=4.00%<!--
+-->|affects=Allied Heroes<!--
+-->|notes=}};File:Superstrain_Icon.png;
+
+Universal Carrier;6;2;Healing Pathogen can continually spread through Stukov, but its healing is reduced by 25%.<!--
+-->{{undoc-x|type=Healing dealt modifier<!--
+-->|affects=Ability<!--
+-->|notes=<li>Only affects Pathogen's heal over time component.<li>Healing penalty stacks additively with other healing dealt modifiers affecting <i>Healing Pathogen</i>'s healing.}};File:Universal_Carrier_Icon.png;
+
+Pox Populi;6;3;Bio-Kill Switch no longer removes Healing Pathogen but instead sets its duration to 3 seconds.;File:Pox_Populi_Icon.png;
+
+<!-- LEVEL 20 -->
+Controlled Chaos;7;1;Flailing Swipe gains 2 additional charges, but each use only swings 1 time, at maximum range. Additionally, its cooldown is decreased to 25 seconds, and its Mana cost is reduced from 60 to 25.<!--
+-->{{undoc-x|prop1=Charge cooldown|val1=2.0 seconds<!--
+-->|notes=<li>When picked, ''Controlled Chaos'' instantly grants two ready charges, even if the ability was on cooldown at that moment.<li><i>Controlled Chaos</i>'s swipe has the same properties as the third swipe, except its initial delay is reduced to 0.125 seconds and total channel time to 0.75 seconds.}};File:Controlled_Chaos_Icon.png;
+
+Push Comes To Shove;7;2;Massive Shove Slows its target by 50% for 4 seconds upon colliding with terrain. If Massive Shove pushes a target for more than 1.25 seconds, its cooldown is reduced by 15 seconds.<!--
+-->{{undoc-x|type=Crowd Control<!--
+-->|affects=Enemies<!--
+-->|props=[[Slow]]}};File:Push_Comes_To_Shove_Icon.png;
+
+Top Off;7;3;Healing Pathogen's heal over time is increased by 30% while its target is above 60% Health.<!--
+-->{{undoc-x|type=Healing dealt modifier<!--
+-->|affects=Ability<!--
+-->|notes=<li>Stacks additively with other Healing dealt modifiers that can affect <i>Healing Pathogen</i>'s healing.}};File:Top_Off_Icon.png;
+
+Bio-Explosion Switch;7;4;Bio-Kill Switch now also detonates Lurking Arm, dealing 230 damage, applying a Weighted Pustule and Silencing enemy Heroes inside for 2.5 seconds.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Area of Effect]], [[Silence]]<!--
+-->|notes=<li>Detonation instantly removes Lurking Arm, even if affected by the ''Low Blow'' Talent.<li>''Weighted Pustule''s from ''Bio-Explosion Switch'' interact with other all other Talents affecting ''Weighted Pustule''. However, applying them in this way does not deal the impact damage of ''Weighted Pustule'' and cannot grant progress toward the ''Fetid Touch'' quest.}};File:Bio-Explosion_Switch_Icon.png;
+}}
+
+<noinclude>
+{{Scaling table/start|{{#var:health}}|{{#var:health scaling}}|{{#var:health regen}}|{{#var:health regen scaling}}|{{#var:attack damage}}|{{#var:attack damage scaling}}}}
+{{Scaling table/slot|Bio-Kill Switch (heal)|435|0.04}}
+{{Scaling table/slot|Bio-Kill Switch (damage)|100|0.04}}
+{{Scaling table/slot|Healing Pathogen|222|0.04}}
+{{Scaling table/slot|Healing Pathogen (per second)|49.33|0.04}}
+{{Scaling table/slot|Weighted Pustule (initial)|20|0.04}}
+{{Scaling table/slot|Weighted Pustule (expiration)|88|0.04}}
+{{Scaling table/slot|Lurking Arm (single)|34|0.04}}
+{{Scaling table/slot|Lurking Arm (per second)|136|0.04}}
+{{Scaling table/slot|Flailing Swipe (single)|48|0.04|10}}
+{{Scaling table/slot|Massive Shove|190|0.04|10}}
+{{Scaling table/slot|Superstrain|300|0.04|16}}
+{{Scaling table/slot|Bio-Explosion Switch|230|0.04|20}}
+{{Scaling table/end}}
+</noinclude>

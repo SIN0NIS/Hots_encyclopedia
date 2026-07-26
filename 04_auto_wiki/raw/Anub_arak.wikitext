@@ -1,0 +1,258 @@
+{{hero data
+| name = Anub'arak
+| date = October 7, 2014
+| price = 4000
+| title = Traitor King
+| role = Tank
+| franchise = Warcraft
+| info = A Tank who specializes against [[Mage|Mages]].
+| lore = Once a proud Nerubian king, Anub'arak dared to stand against the Lich King's invasion, but despite his bravery, he too fell to the unrelenting Scourge. Resurrected into undeath, the Traitor King now serves as a towering weapon of destruction.
+| difficulty = Medium
+| melee = True
+| health = 2150
+| healthRegen = 4.4804
+| resource = 500
+| resourceType = Mana
+| armor = 0
+| attackSpeed = 1
+| attackRange = 1.5
+| attackDamage = 81
+| healthScaling = 0.04
+| regenScaling = 0.04
+| adamageScaling = 0.04
+| unitRadius = 1.0625
+| icon = File:Anubarak_Icon.png
+| skills = Scarab Host;Trait;File:Scarab_Host_Icon.png;Using an Ability spawns a [[Beetle]] which lasts for 8 seconds, attacking nearby enemies for 20 damage.<!--
+-->{{undoc-x|type=Summon<!--
+-->|target=No target}}<!--
+--><small>'''Beetle'''</small>{{undoc-x|nohr=true<!--
+-->|type=Active<!--
+-->|scaling=4.00% (damage & Health)<!--
+-->|target=Automatic<!--
+-->|prop1=Health|val1=285<!--
+-->|prop2=Basic Attack damage|val2=20<!--
+-->|prop3=Attack speed|val3=1.00<!--
+-->|prop4=Attack range|val4=0.75<!--
+-->|prop5=Movement Speed|val5=4.0<!--
+-->|prop6=Sight radius|val6=7.0<!--
+-->|notes=<li>Beetles spawn randomly in one of eight possible locations around Anub'arak.<li>If Anub'arak is attacking an enemy when a Beetle is spawned, the Beetle will also attempt to attack that target.<li>If Anub'arak is not attacking anything when a Beetle is spawned, the Beetle will attempt to find a nearby target to attack. If an enemy Hero is close enough it will be prioritized.<li>Beetles will then attack and pursue a target found this way until that enemy dies, or the Beetles lose track of the target (through teleporting away, for example). Only then will the Beetles return to a lane.}};;;trait;False
+
+Impale;Q;File:Impale_Icon.png;Deals 90 damage. Stuns for 1 second.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Clamping]], Piercing [[Skillshot]], [[Stun]]<!--
+-->|cast=0 + 0.25 seconds<!--
+-->|range=12.5<!--
+-->|hitbox=1.5 x 2.0<!--
+-->|missile=10<!--
+-->|prop1=Initial delay|val1=0.25 seconds<!--
+-->|prop2=Search delay|val2=0.125 seconds<!--
+-->|notes=}};12;65;;False
+
+Harden Carapace;W;File:Harden_Carapace_Icon.png;Gain a Shield that grants 40 Spell Armor and absorbs 340 damage over 3 seconds.<!--
+-->{{undoc-x|type=Shield, Defensive damage modifier<!--
+-->|scaling=4.00%<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|props=[[Spell Armor]]<!--
+-->|cast=Instant<!--
+-->|notes=<li>Damage is dealt to shield after modifications.<li>Spell Armor ends immediately if the shield breaks.<li>Does not stack with other positive Spell Armor effects. Other defensive damage modifiers may stack.}};7;25;;False
+
+Burrow Charge;E;File:Burrow_Charge_Icon.png;Burrow to the target location, dealing 91 damage and briefly Stunning enemies in a small area upon surfacing, Slowing them by 25% for 2.5 seconds.<p>Burrow Charge can be reactivated to surface early.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control / Movement: [[Launch]], Status effect<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies / Self<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Clamping]], [[Slow]], [[Stun]], [[Unstoppable]]<!--
+-->|cast=0.0625 + 0.15 seconds<!--
+-->|range=12.5<!--
+-->|aoe=Circle<!--
+-->|radius=1.75<!--
+-->|missile=12<!--
+-->|prop1=Stun duration|val1=0.5 seconds<!--
+-->|notes=<li>''Burrow Charge'' grants Anub'arak Unstoppable for its duration. However, like other [[Movement Ability|Movement Abilities]] ''Burrow Charge'' cannot be cast while [[Root]]ed.<li>''Scarab Host'' spawns the Beetle after Anub'arak resurfaces.<li>The stun area is a circle, flush with the back of Anub'arak's hitbox, and extending in front of him.}};14 / 0.5;65;;False
+
+Locust Swarm;R;File:Locust_Swarm_Icon.png;Deal 68 damage per second to nearby enemies. Each enemy damaged restores 24 Health. Lasts 6 seconds.<!--
+-->{{undoc-x|type=Spell Damage / Healing<!--
+-->|scaling=4.00% (both)|affects=Enemies / Self<!--
+-->|target=No target<!--
+-->|props=[[Area of Effect]]<!--
+-->|cast=Instant<!--
+-->|aoe=Circle<!--
+-->|radius=5.125<!--
+-->|tickrate=1.0 per second (x6)<!--
+-->|notes=}};100;75;heroic;False
+
+Cocoon;R;File:Cocoon_Icon.png;Wraps target enemy Hero in a cocoon, rendering them unable to act or be targeted for 7 seconds. Allies of the Hero can attack the cocoon to break it and free them early.<!--
+-->{{undoc-x|type=Summon, Status effect<!--
+-->|target=Unit target<!--
+-->|affects=Enemy Heroes<!--
+-->|cast=0.2 + 0 seconds<!--
+-->|props=[[Stasis]]<!--
+-->|range=6.0<!--
+-->|missile=20<!--
+-->|notes=<li>The cast is interrupted if the target moves farther than 4.5 units beyond the Ability's cast range during the windup.<li>''Cocoon'' missile can only be disjointed if the target dies, is removed from the plane (certain [[Stasis]] effects) or instantly teleports farther than 30 units from its previous location. When disjointed, the missile expires upon reaching the target's location before the event. Otherwise, the missile will keep redirecting to the target unit.<li>Enemies inside the Cocoon are put in debuff [[Stasis]], preventing interaction with them until they are freed.}}<!--
+--><small>'''Cocoon'''</small>{{undoc-x|nohr=true<!--
+-->|type=Passive<!--
+-->|scaling=- (health)<!--
+-->|prop1=Health|val1=28 <sup>(1</sup><!--
+-->|prop2=Health regeneration|val2=-4 per second <sup>(1</sup><!--
+-->|prop3=Basic Attack damage|val3=-<!--
+-->|prop5=Movement Speed|val5=-<!--
+-->|prop6=Sight radius|val6=8.0<!--
+-->|notes=<li><sup>1)</sup> Coccoon degenerates its Health over time, effectively giving it a 7 second duration.<li>Cocoon only takes 2 damage for every instance of damage dealt, effectively reducing its remaining duration by 0.5 seconds.<li>Minions, Structures and friendly Mercenaries do not attack the cocoon.}};70;70;heroic;True
+
+| talents = 
+<!-- LEVEL 1-->
+Nerubian Armor;1;1;Increase Hardened Carapace's Spell Armor by 25.;File:Nerubian Armor Icon.png;
+
+Legion of Beetles;1;2;[[Beetle]]s have 30 Spell Armor. Automatically spawn a Beetle every 12 seconds. Can be toggled on and off.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Beetles<!--
+-->|props=[[Spell Armor]]<!--
+-->|notes=<li/>Beetles do not spawn when Anub'arak is [[Mount]]ed.}};File:Legion_of_Beetles_Icon.png;
+
+Regeneration Master;1;3;{{quest|Gathering a [[Regeneration Globe]] increases your Health Regeneration by 1 per second, up to 30.|After gathering 25 Regeneration Globes, you also gain 500 Health.}}<!--
+-->{{undoc-x|type=Bonus regeneration / Bonus Health<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|props=[[Regeneration Master]]<!--
+-->|notes=<li>Bonus Health gained from completing ''Regeneration Master'' does not benefit effects granting Health based on percentage of maximum Health.}};File:Regeneration_Master_Icon.png;
+
+<!-- LEVEL 4 -->
+Bed of Barbs;2;1;Create a bed of spikes along Impale's path that Slows enemies by 25% and deals 21 damage per second. Spikes persist for 3.5 seconds.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|props=[[Area of Effect]], [[Slow]]<!--
+-->|tickrate=1.0 per second (x4)<!--
+-->|notes=}};File:Bed_of_Barbs_Icon.png
+
+Shed Exoskeleton;2;2;Hardened Carapace grants 30% increased Movement Speed for 3 seconds.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|props=[[Movement speed]]}};File:Shed_Exoskeleton_Icon.png;
+
+Underking;2;3;Increases Burrow Charge range by 20% and damage by 100%.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|prop1=Bonus range|val1=2.0<!--
+-->|notes=<li>Range increase is actually 16%, not 20%.<li>Stacks additively with other offensive damage modifiers that can affect <i>Burrow Charge</i>'s damage.}};File:Underking_Icon.png;
+
+<!-- LEVEL 7 -->
+Chitinous Plating;3;1;While Harden Carapace is active, taking damage from enemy Abilities reduces its cooldown by 1 seconds, up to 3 seconds.;File:Urticating_Spines_Icon.png
+
+Subterranean Shield;3;2;Burrow Charge also grants a 400 point Shield for 5 seconds.<!--
+-->{{undoc-x|type=[[Shield]]<!--
+-->|scaling=4.00%<!--
+-->|affects=Self}};File:Underking_Icon.png;
+
+Leeching Scarabs;3;4;[[Beetle]]s gain 30% bonus attack damage and they heal Anub'arak for 50% of their damage with each attack if he is nearby.<!--
+-->{{undoc-x|type=Offensive damage modifier / Healing<!--
+-->|scaling=-<!--
+-->|affects=Self (Beetles) / Self<!--
+-->|props=[[Attack Modifier]], [[Lifesteal]]<!--
+-->|radius=12<!--
+-->|notes=<li>Actually heals for a fixed amount, 50% of the <i>Beetle</i>s' Basic Attack damage, regardless of how much damage is actually done. <li>Damage bonus stacks additively with other offensive damage modifiers that can affect Beetles' attack damage.}};File:Leeching_Scarabs_Icon.png;
+
+<!-- LEVEL 10 -->
+Locust Swarm;4;1;{{Cooldown|100}}<br/>Deal 68 damage per second to nearby enemies. Each enemy damaged restores 24 Health. Lasts 6 seconds.;File:Locust_Swarm_Icon.png;
+Cocoon;4;2;{{Cooldown|70}}<br/>Wraps target enemy Hero in a cocoon, rendering them unable to act or be targeted for 7 seconds. Allies of the Hero can attack the cocoon to break it and free them early.;File:Cocoon_Icon.png;
+
+<!-- LEVEL 13 -->
+Urticating Spines;5;1;Casting Harden Carapace will also deal 90 damage to nearby enemies. Deals double damage against Heroes.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|props=[[Area of Effect]]<!--
+-->|radius=3.5}};File:Shed_Exoskeleton_Icon.png;
+
+Burning Beetles;5;2;Deal 21 damage per second to nearby enemies. Beetles deal 6 damage per second to nearby enemies.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|props=[[Area of Effect]], [[Burning Rage]]<!--
+-->|radius=2.5<!--
+-->|tickrate=1.0 per second<!--
+-->|notes=<li>''Burning Beetles'' is inactive while Mounted.<li>''Burning Beetles'' does not affect unaggroed neutral Mercenaries.<li>Damaging enemy Heroes with ''Burning Beetles'' does not trigger tower aggro.<li>Damage from ''Burning Beetles'' is affected by offensive damage modifiers, unlike other Heroes' ''Burning Rage'' effects.<li>Damage from multiple auras stacks.}};File:Burning_Beetles_Icon.png;
+
+Acid Drenched Mandibles;5;3;Attacking a Hero who is Slowed, Rooted, or Stunned increases Anub'arak's Basic Attack damage by 80% for 4 seconds.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Attack Modifier]]<!--
+-->|notes=<li>Damage bonus stacks additively with other offensive damage modifiers that can affect Anub'arak's Basic Attack damage.}};File:Follow Through Icon.png;
+
+<!-- LEVEL 16 -->
+Epicenter;6;1;Increases Burrow Charge impact area by 60% and lowers the cooldown by 1 second for each Hero hit.<!--
+-->{{undoc-x|prop1=Bonus radius|val1=1.05<!--
+-->|notes=<li>60% increase in radius, so actually a 156% increase in impact area.}};File:Epicenter_Icon.png;
+
+Debilitation;6;2;Enemy Heroes hit by Burrow Charge or Impale have their Spell Power reduced by 50% for 4 seconds.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Spell Power]]<!--
+-->|notes=<li>''Debilitation'' does not stack with itself. Subsequent applications refresh the duration.<li>Spell Power debuff from ''Debilitation'' stacks additively with other sources of Spell Power and other offensive damage and healing modifiers affecting target Heroes' Spell Damage or healing output.}};File:Debilitation_Icon.png;
+
+Beetle, Juiced;6;3;{{Passive}} Beetles gain 30% increased Health.<p>Every 4th Basic Attack spawns a [[Beetle]].<!--
+-->{{undoc-x|type=Bonus Health<!--
+-->|scaling=-<!--
+-->|affects=Self (Beetles)<!--
+-->|props=[[Attack Modifier]]<!--
+-->|notes=<li>The counter is reset 3 seconds after the last successful Basic Attack.}};File:Beetle,_Juiced_Icon.png;
+
+<!-- LEVEL 20 -->
+Hive Master;7;1;Gain a permanent Vampire Locust that attacks a nearby enemy every 3 seconds. The Vampire Locust deals 165 damage and returns to heal you for 80 health.<!--
+-->{{undoc-x|type=Spell Damage / Healing<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies / Self<!--
+-->|target=Automatic<!--
+-->|props=Invulnerable summon<!--
+-->|prop3=Target search radius|val3=7.0<!--
+-->|notes=<li>Vampire Locust may aggro neutral Mercenaries while Anub'arak is not [[Mount]]ed.<li>Does not attack when Anub'arak is Mounted.}};File:Hive_Master_Icon.png;
+
+Cryptweave;7;2;Staying near the Cocoon allows Anub'arak to extend the duration by up to 6 seconds per Cocoon. Upon exiting the Cocoon enemies take 60 damage over 4 seconds. This damage is increased by 100% for each second that they were inside.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|props=[[Damage over Time]]<!--
+-->|radius=4.5<!--
+-->|tickrate=1.0 per second (x4)<!--
+-->|prop1=Damage per tick|val1=15<!--
+-->|notes=<li>While below 30 Health and within 4.0 range of Anub'arak, the Cocoon is healed at a rate of 2 Health every 0.5 seconds, for up to 24 Health.<li>Damage bonus stacks up to 13 times to a maximum of 1300% bonus.<li>Damage bonus stacks additively with itself and offensive [[damage modifier]]s that can affect <i>Cryptweave</i>'s damage.}};File:Cryptweave_Icon.png;
+
+The Traitor King;7;3;{{cooldown|60}}<br />Gain 10% bonus maximum Health and 20 Spell Armor.<p>Activate to gain 75 Armor for 4 seconds.<!--
+-->{{undoc-x|type=Bonus Health, Defensive damage modifier<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|props=[[Armor]]<!--
+-->|cast=Instant<!--
+-->|notes=<li>Does not benefit from the flat Health bonus from completed ''Regeneration Master'' quest.<li>Does not stack with itself or other positive Armor effects. Other defensive damage modifiers may stack.}};File:The_Traitor_King_Icon.png;
+
+Rewind;7;4;{{cooldown|60}}<br />{{Active}} Activate to reset the cooldowns of your Basic Abilities.<!--
+-->{{undoc-x|affects=Basic Abilities<!--
+-->|target=No target<!--
+-->|props=[[Rewind]]<!--
+-->|cast=Instant}};File:Rewind_Icon.png;
+
+}}
+
+<noinclude>
+{{Scaling table/start|{{#var:health}}|{{#var:health scaling}}|{{#var:health regen}}|{{#var:health regen scaling}}|{{#var:attack damage}}|{{#var:attack damage scaling}}}}
+{{Scaling table/slot|Scarab Host - Beetle (health)|285|0.04}}
+{{Scaling table/slot|Scarab Host - Beetle (damage)|20|0.04}}
+{{Scaling table/slot|Impale|90|0.04}}
+{{Scaling table/slot|Carapace|340|0.04}}
+{{Scaling table/slot|Burrow Charge|91|0.04}}
+{{Scaling table/slot|Locust Swarm (damage)|68|0.04|10}}
+{{Scaling table/slot|Locust Swarm (healing)|24|0.04|10}}
+{{Scaling table/slot|Bed of Barbs|21|0.04|4}}
+{{Scaling table/slot|Subterranean Shield|400|0.04|7}}
+{{Scaling table/slot|Burning Rage|23|0.04|13}}
+{{Scaling table/slot|Utricating Spines|90|0.04|13}}
+{{Scaling table/slot|Hive Master (damage)|165|0.04|20}}
+{{Scaling table/slot|Hive Master (healing)|80|0.04|20}}
+{{Scaling table/slot|Cryptweave|60|0.04|20}}
+{{Scaling table/slot|Cryptweave (per second)|15|0.04|20}}
+{{Scaling table/end}}
+</noinclude>

@@ -1,0 +1,245 @@
+{{hero data
+| name = Valla
+| date = March 13, 2014
+| price = 2000
+| title = Demon Hunter
+| role = Ranged
+| franchise = Diablo
+| info = A well-rounded Assassin who's [[Mobility|mobile]] and can deal high [[sustain]]ed damage.
+| lore = Valla witnessed the ferocity of hellspawn firsthand as the demons ravaged her village and left her for dead. Now, with no people to call her own, her only allegiance is to her cause: to rid Sanctuary of the demonic filth corrupting its lands.
+| difficulty = Easy
+| melee = False
+| health = 1340
+| healthRegen = 2.7930
+| resource = 500
+| resourceType = Mana
+| armor = 0
+| attackSpeed = 1.67
+| attackRange = 5.5
+| attackDamage = 70
+| healthScaling = 0.04
+| regenScaling = 0.04
+| adamageScaling = 0.04
+| unitRadius = 0.625
+| icon = File:Valla_Icon.png
+| skills =
+Hatred;Trait;File:Hatred_Icon.png;Basic Attacks grant a stack of Hatred, up to 10. Each Hatred stack increases Basic Attack damage by 8% and Movement Speed by 1%. Lasts 5 seconds.<!--
+-->{{undoc-x|type=Offensive damage modifier, Status effect<!--
+-->|affects=Self<!--
+-->|props=[[Attack modifier]], [[Movement Speed]]<!--
+-->|notes=<li>Damage bonus stacks additively with itself and other offensive damage modifiers that can affect Valla's Basic Attack damage.<li>Movement Speed stacks additively with itself, but not with other Movement Speed effects.}};;;trait;False
+
+Hungering Arrow;Q;File:Hungering_Arrow_Icon.png;Fire an arrow that deals 140 damage to the first target hit, then seeks up to 2 additional enemies, prioritizing Heroes, dealing 80 damage. Can hit an enemy multiple times.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Bounce]], [[Clamping]], [[Skillshot]]<!--
+-->|cast=0.0625 + 0 seconds<!--
+-->|range=11.5<!--
+-->|hitbox=1.25 x 1.25<!--
+-->|missile=<br/>- Initial: 20<br/>- Bounce: 8.0<!--
+-->|prop1=Bounce radius|val1=3.0<!--
+-->|notes=<li>Bounces prioritize targets within the target groups that have gone the longest time without being hit by a bounce from the current cast of ''Hungering Arrow''. Heroes are still prioritized over anything else.<li>Enemies that are immune to skillshots can still be hit by the bounces, but not by the initial projectile.<li>Bounce projectiles can be disjointed via Teleports, but only by Teleporting more than 3 units from the previous hit before it connects.}};10;60;;False
+
+Multishot;W;File:Multishot_Icon.png;Deal 159 damage to enemies within the target area.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Clamping]]<!--
+-->|cast=0.1 + 0 seconds<!--
+-->|aoe=Radial<!--
+-->|radius=<br/>- Initial: 3.0<br/>- Maximum: 8.75 <sup>(1</sup><!--
+-->|arc=50 degrees<!--
+-->|notes=<li><sup>1)</sup> Area grows to its maximum radius over 0.375 seconds in increments of 1.15.}};13;75;;False
+
+Vault;E;File:Vault_Icon.png;Dash to the target area. Valla's next Basic Attack within 2 seconds deals 6% increased damage per stack of Hatred.<!--
+-->{{undoc-x|type=Offensive damage modifier, Movement: [[Dash]]<!--
+-->|affects=Self<!--
+-->|target=Point target<!--
+-->|props=[[Attack Modifier]]<!--
+-->|cast=Instant<!--
+-->|range=5.0<!--
+-->|missile=14<!--
+-->|notes=<li>Damage bonus stacks additively with itself and '''multiplicatively''' with other offensive damage modifiers that can affect Valla's Basic Attack damage.<li> ''Vault'' is unhindered, which means Valla can move through all units with it.<li>Affects the next Basic Attack that fires after finishing casting ''Vault'', even if another Basic Attack was still in flight before casting Vault.}};10;50;;False
+
+Strafe;R;File:Strafe_Icon.png;Rapidly attack enemies within 10 range for 70 damage per hit, prioritizing Heroes over Minions. Valla is able to move and use Vault while strafing. Lasts for 4 seconds.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=No target (automatic)<!--
+-->|props=[[Mobile channel]]<!--
+-->|cast=Instant<!--
+-->|radius=10.0<!--
+-->|missile=50<!--
+-->|tickrate=8.0 per second (x33)<!--
+-->|notes=<li>''Strafe'' prioritizes the closest enemies within the target group.<li>Does not affect unaggroed neutral Mercenaries.<li>''Strafe'' can hit the same target only once per 0.3125 seconds, making it possible to hit a single enemy only a maximum of 11 times.<li>Valla retains current stacks of ''Hatred'' during ''Strafe'' and their duration is refreshed when ''Strafe'' ends.<li>Valla cannot [[Mount]], use [[Healing Fountain]]s or channel objectives while ''Strafe'' is active.}};60;60;heroic;False
+
+Rain of Vengeance;R;File:Rain_of_Vengeance_Icon.png;Launch a wave of Shadow Beasts that deals 250 damage and Stuns enemies in the target area for 0.5 seconds.<p>Stores up to 2 charges.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Clamping]], [[Stun]]<!--
+-->|cast=0.25 + 0.35 seconds<!--
+-->|aoe=Rectangle<!--
+-->|width=2.8<!--
+-->|height=9.8 <sup>(1</sup><!--
+-->|prop1=Initial delay|val1=0.25 seconds<!--
+-->|notes=<li><sup>1)</sup> Area consists of six overlapping 2.8 x 2.8 sub-areas that impact one by one over 0.5 seconds. Enemies cannot be hit more than once.}};50;50;heroic;False
+
+| talents = <!-- LEVEL 1 -->
+Puncturing Arrow;1;1;Increase the number of Hungering Arrow bounces by 1.<p>{{questonly|Hitting an enemy Hero with the initial impact of Hungering Arrow refunds 40 Mana and permanently increases the damage of its initial impact by 6.}}<!--
+-->{{undoc-x|type=Bonus damage / Mana restoration<!--
+-->|scaling=-<!--
+-->|affects=Ability / Self<!--
+-->|prop1=Maximum bonus|val1=6,000 (x1,000)<!--
+-->|notes=}};File:Puncturing_Arrow_Icon.png;
+
+Fire at Will;1;2;{{Quest|Hitting a Hero with Multishot grants 2 Hatred and permanently increases its damage by 2.|After hitting 20 Heroes with Multishot, increase its damage by 40.}}<!--
+-->{{undoc-x|type=Bonus damage<!--
+-->|scaling=-<!--
+-->|affects=Ability<!--
+-->|prop1=Maximum bonus|val1=32,000 (x16,000)<!--
+-->|notes=<li>Continues to gain stacks after the quest is completed.}};File:Fire_at_Will_Icon.png;
+
+Creed of the Hunter;1;3;{{questonly|Every 50 Basic Attacks against Heroes increases Hatred's damage bonus per stack by 1%, up to 6%.}}<p>{{Gambitonly|Gain 25% bonus Attack Speed. Every death reduces this bonus by 5%.}}<p><!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|props=[[Attack Speed]]<!--
+-->|notes=<li>Attack Speed loss on death only affects the bonus gained from the Gambit (and cannot go below 0%).<li>Attack Speed from ''Creed of the Hunter'' stacks additively with other effects that can affect Attack Speed.}};File:Creed_of_the_Hunter_Icon.png;
+
+<!-- LEVEL 4 -->
+Arsenal;2;1;Increase the range of Multishot by 20%. Multishot also fires 3 grenades that deal 100 damage and refund 25 Mana after hitting enemy Heroes.<!--
+-->{{undoc-x|type=Spell Damage, Mana restoration<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Skillshot]]<!--
+-->|range=11.5 (grenades)<!--
+-->|radius=0.5 (hitbox)<!--
+-->|prop1=Bonus Multishot radius|val1=2.3<!--
+-->|notes=<li>Increases the time Multishot takes to expand to its new maximum radius by 0.125 seconds.<li>Grenades are launced at the very middle and both edges of the AoE.<li>Grenades are unaffected by <i>Fire at Will</i>'s damage bonus.<li>A Hero cannot be hit by any of the grenades more than once.<li>Grenades take 0.5 seconds to reach their maximum distance.}};File:Arsenal_Icon.png;
+
+Death Dealer;2;2;Increase Vault's Basic Attack damage bonus from 6% to 15% per stack of Hatred. If this attack kills its victim within 1.5 seconds, the Mana cost and cooldown of Vault are refunded.<p>{{Passive}} Reduce the cooldown of Vault by 5 seconds.<!--
+-->{{undoc-x|nohr=true<!--
+-->|notes=<li>Any unit killing the target triggers the reset.}};File:Death_Dealer_Icon.png;
+
+Repeating Arrow;2;3;Vault no longer has a Mana cost. Casting Vault resets the cooldown of Hungering Arrow.;File:Repeating_Arrow_Icon.png;
+
+<!-- LEVEL 7 -->
+Monster Hunter;3;1;Hungering Arrow deals 150% additional damage to Minions, Mercenaries, and Monsters.<!--
+-->{{undoc-x||type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|notes=<li>Damage bonus stacks additively with other offensive damage modifiers that can affect <i>Hungering Arrow</i>'s damage.}};File:Monster_Hunter_Icon.png;
+
+Frost Shot;3;2;Multishot Slows enemies by 20% for 2.5 seconds. Hungering Arrow deals 25% more damage to Slowed enemies.<!--
+-->{{undoc-x|type=Crowd control / Offensive damage modifier<!--
+-->|affects=Enemies / Ability<!--
+-->|props=[[Slow]]<!--
+-->|notes=<li>Damage bonus stacks additively with other offensive damage modifiers that can affect <i>Multishot</i>'s damage.}};File:Frost_Shot_Icon.png;
+
+Hot Pursuit;3;3;Increase the Movement Speed bonus of each stack of Hatred to 2%.;File:Hot_Pursuit_Icon.png;
+
+<!-- LEVEL 10 -->
+
+Strafe;4;1;{{Cooldown|60}}<br/>Rapidly attack enemies within 10 range for 70 damage per hit, prioritizing Heroes over Minions. Valla is able to move and use Vault while strafing. Lasts for 4 seconds.;File:Strafe_Icon.png;
+
+Rain of Vengeance;4;2;{{Charge Cooldown|50}}<br/>Launch a wave of Shadow Beasts that deals 250 damage and Stuns enemies in the target area for 0.5 seconds.<p>Stores up to 2 charges.;File:Rain_of_Vengeance_Icon.png;
+
+<!-- LEVEL 13 -->
+
+Siphoning Arrows;5;1;Hitting a Hero with Hungering Arrow heals Valla for 4% of her maximum Health, and Multishot heals for 2%.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|notes=<li>''Hungering Arrow'' triggers healing for the initial hit and each bounce (provided they hit a Hero) and ''Multishot'' for each enemy Hero hit.}};File:Siphoning_Arrows_Icon.png;
+
+Tempered by Discipline;5;2;Basic Attacks heal for 10% of the damage dealt, increased by 2% per Hatred stack.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|props=[[Attack Modifier]], [[Lifesteal]]<!--
+-->|notes=<li>Lifesteal bonus stacks additively with itself and other lifesteal effects.}};File:Tempered_by_Discipline_Icon.png;
+
+Gloom;5;3;{{Cooldown|5}}<br/>Activate to consume all Hatred, granting 3 Spell Armor per Hatred consumed for 5 seconds.<p>{{Passive}} Gain 15 Spell Armor, and each stack of Hatred heals for 1.2 Health per second.<!--
+-->{{undoc-x|type=Defensive damage modifier, Healing<!--
+-->|scaling=4.00%<!--
+-->|affects=Self<!--
+-->|props=[[Spell Armor]]<!--
+-->|tickrate=1.0 per second<!--
+-->|notes=<li>Actually heals for 1.25 Health per second, but there is a tooltip error.<li>Spell Armor from active component stacks additively with itself and the passive component.<li>Does not stack with other positive Spell Armor effects. Other defensive damage modifiers may stack.}};File:Gloom_Icon.png;
+
+<!-- LEVEL 16 -->
+Punishment;6;1;While at max Hatred, Multishot's cooldown recharges 50% faster.<p>{{Passive}} Reduce Multishot's Mana cost from 75 to 55.<!--
+-->{{undoc-x|nohr=1<!--
+-->|notes=<li>While active, reduces the cooldown of ''Multishot'' by 0.125 seconds every 0.25 seconds.}};File:Punishment_Icon.png;
+
+Seething Hatred;6;2;While at max Hatred, increase all damage dealt by 10%.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Self<!--
+-->|notes=<li>Damage bonus stacks additively with other offensive damage modifiers affecting Valla's damage output.}};File:Seething_Hatred_Icon.png;
+
+Manticore;6;3;Every 3rd Basic Attack against the same Hero deals an additional 4% of their maximum Health as damage.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=-<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Attack Modifier]], [[Percent Damage]]<!--
+-->|notes=<li>Bonus damage is dealt in a separate instance.<li>Stacks toward bonus last for up to 5 minutes and persist after that Hero's death. The first stacks applied to any Hero start being replaced if the total stack count across all Hero units reaches 20 (possible against certain team compositions with high Heroic unit counts, including [[Hallucination]]s).}};File:Manticore_Icon.png;
+
+<!-- LEVEL 20 -->
+
+Death Siphon;7;1;Hitting an enemy Hero with Strafe increases its duration by 0.125 seconds. Strafe also fires penetrating bolts in a line for 34 damage every 0.25 seconds.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Automatic<!--
+-->|props=[[Area of Effect]]<!--
+-->|range=12.0<!--
+-->|aoe=Rectangle<!--
+-->|width=0.75<!--
+-->|height=11.0<!--
+-->|tickrate=4.0 per second (x13)<!--
+-->|notes=<li><i>Death Siphon</i>'s piercing bolts can target the same enemy only once every 0.375 seconds.<li>''Death Siphon'' bolts do not prioritize Heroes or closer enemies. Targets are chosen at random from all valid targets in the area.<li>Only regular bolts increase the duration.}};File:Vengeance_Icon.png;
+
+Storm of Vengeance;7;2;Basic Attacks against Heroes reduce the cooldown of Rain of Vengeance by 5 seconds.<p>{{Passive}} Each stack of Hatred increases your Attack Speed by 2%. While at max Hatred, gain an additional 30% Attack Speed.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|props=[[Attack Modifier]], [[Attack Speed]]<!--
+-->|notes=<li>Attack Speed from ''Storm of Vengeance'' stacks additively with itself and other Attack Speed effects.}};File:Storm_of_Vengeance_Icon.png;
+
+Acrobat;7;3;Gain 2 additional charges of Vault. Drop 3 Caltrops while Vaulting that deal 60 damage and Slow enemies by 40% for 1 second.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|props=[[Area of Effect]], [[Slow]], Summon figment<!--
+-->|prop1=Vault charge cooldown|val1=0.5 seconds<!--
+-->|prop3=Caltrops spacing|val3=1.75 <sup>(1</sup>}}<!--
+
+--><br><small>'''Caltrop'''</small>{{undoc-x|nohr=1<!--
+-->|prop2=Radius|val2=1.0<!--
+-->|prop4=Arming delay|val4=0.5 seconds<!--
+-->|prop5=Duration|val5=10 seconds<!--
+-->|prop6=Vision radius|val6=3.0<!--
+-->|notes=<li><sup>1)</sup> Caltrops are dropped at 0.125 second intervals during ''Vault''.}};File:Caltrops_Icon.png;
+
+Farflight Quiver;7;4;Gain 20% Basic Attack range. While at max Hatred, gain an additional 30% Basic Attack range.<!--
+-->{{Undoc-x|prop1=Base attack range bonus|val1=1.1<!--
+-->|prop2=Hatred attack range bonus|val2=1.65}};File:Farflight_Quiver_Icon.png;
+
+}}
+
+<noinclude>
+{{Scaling table/start|{{#var:health}}|{{#var:health scaling}}|{{#var:health regen}}|{{#var:health regen scaling}}|{{#var:attack damage}}|{{#var:attack damage scaling}}}}
+{{Scaling table/slot|Hungering Arrow (initial)|140|0.04}}
+{{Scaling table/slot|Hungering Arrow (bounce)|80|0.04}}
+{{Scaling table/slot|Multishot|159|0.04}}
+{{Scaling table/slot|Strafe|60|0.04|10}}
+{{Scaling table/slot|Strafe (per second)|480|0.04|10}}
+{{Scaling table/slot|Rain of Vengeance|250|0.04|10}}
+{{Scaling table/slot|Arsenal|100|0.04|4}}
+{{Scaling table/slot|Gloom (per stack)|1.25|0.04|13}}
+{{Scaling table/slot|Death Siphon|34|0.04|20}}
+{{Scaling table/slot|Acrobat (caltrops)|60|0.04|20}}
+{{Scaling table/end}}
+</noinclude>

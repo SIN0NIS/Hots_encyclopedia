@@ -1,0 +1,580 @@
+{
+  "hero": "Zarya",
+  "abilities": [
+    {
+      "name": "Energy",
+      "hotkey": "TRAIT",
+      "icon": "Energy_Icon.png",
+      "description": "Each time Zarya's Personal Barrier or Shield Ally absorbs 9 damage, her Energy is increased by 1. Each point of Energy increases Zarya's damage by 2%. After 0.5 seconds, Energy decays by 3 per second. Particle Cannon",
+      "fields": {
+        "type": "Physical Damage",
+        "affects": "Enemies",
+        "notes": "Zarya's Basic Attacks Splash to all enemies in a 1.0 x 6.25 rectangle in front of her. Her main target must still be within her attack range. Splash cannot hit more than 4 times per second (even if Zarya's Attack Speed is increased). Splash hits 62.5ms (1 server tick) after the primary target is hit and does not happen if the primary target is killed by that Basic Attack.",
+        "props": "Attack Modifier, Splash"
+      }
+    },
+    {
+      "name": "Particle Grenade",
+      "hotkey": "Q",
+      "icon": "Particle_Grenade_Icon.png",
+      "description": "Launch a particle grenade that deals 80 damage to enemies within the area. Deals 50% damage to Structures. Stores up to 4 charges.; 8 / 0.75",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "target": "Point target",
+        "props": "Area of Effect, Clamping",
+        "cast": "0.1875 + 0 seconds",
+        "range": "13",
+        "aoe": "Circle",
+        "radius": "2.25",
+        "missile": "26",
+        "notes": "Structure damage penalty stacks additively with other offensive damage modifiers that can affect Particle Grenade 's damage."
+      }
+    },
+    {
+      "name": "Personal Barrier",
+      "hotkey": "W",
+      "icon": "Personal_Barrier_Icon.png",
+      "description": "Gain a Shield that absorbs 560 damage for 3 seconds.",
+      "fields": {
+        "type": "Shield",
+        "scaling": "4.00%",
+        "affects": "Self",
+        "target": "No target",
+        "cast": "Instant",
+        "cooldown": "10"
+      }
+    },
+    {
+      "name": "Shield Ally",
+      "hotkey": "E",
+      "icon": "Shield_Ally_Icon.png",
+      "description": "Grants an allied Hero a Shield that absorbs 420 damage for 3 seconds.",
+      "fields": {
+        "type": "Shield",
+        "scaling": "4.00%",
+        "affects": "Allied Heroes",
+        "target": "Unit target",
+        "cast": "Instant",
+        "range": "10",
+        "cooldown": "12"
+      }
+    },
+    {
+      "name": "Graviton Surge",
+      "hotkey": "R",
+      "icon": "Graviton_Surge_Icon.png",
+      "description": "Launch a gravity bomb that detonates after 1 second and draws enemy Heroes toward the center for 2.5 seconds. Affected Heroes take 30 damage a second.; 60; Heroic",
+      "fields": {
+        "type": "Crowd control",
+        "affects": "Enemy Heroes",
+        "target": "Point target",
+        "props": "Area of Effect, Clamping, Knockback",
+        "cast": "0.15 + 0.225 seconds",
+        "range": "10",
+        "aoe": "Circle",
+        "radius": "- Impact: 4.0 - Periodic: 3.0",
+        "tickrate": "2.0 per second (x5)",
+        "prop1": "Damage per tick",
+        "val1": "15",
+        "notes": "Graviton Surge pulls affected Heroes to within 1 radius of its center point and sets their Movement Speed to 0%. Affected Heroes can still attack and use their Abilities. Heroes can get out of Graviton Surge using Movement Abilities."
+      }
+    },
+    {
+      "name": "Expulsion Zone",
+      "hotkey": "R",
+      "icon": "Expulsion_Zone_Icon.png",
+      "description": "Launch a gravity bomb that deals 124 damage and creates an expulsion zone for 3.5 seconds. Enemies who enter the affected area are knocked back and have their Movement Speed reduced by 50% for 1 second.; 45; Heroic",
+      "fields": {
+        "type": "Spell Damage, Crowd control",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "target": "Point target",
+        "props": "Area of Effect, Clamping, Knockback, Slow",
+        "cast": "0.1 + 0 seconds",
+        "range": "10",
+        "aoe": "Circle",
+        "radius": "3.3",
+        "tickrate": "2.0 per second (x7)",
+        "prop1": "Impact delay",
+        "val1": "0.75 seconds"
+      }
+    }
+  ],
+  "talents": [
+    {
+      "name": "Demolitions Expert",
+      "tier": "1",
+      "slot": "1",
+      "icon": "Demolitions_Expert_Icon.png",
+      "description": "quest For every 5 enemy Heroes hit by Particle Grenade, its recharge rate lowers by 0.4375 seconds, up to 3.5 seconds. Once Particle Grenade has hit 40 enemy Heroes, its radius is increased by 15%.",
+      "fields": {
+        "prop1": "Bonus radius",
+        "val1": "0.3375"
+      },
+      "_raw_fields": [
+        "Demolitions Expert",
+        "1",
+        "1",
+        "quest For every 5 enemy Heroes hit by Particle Grenade, its recharge rate lowers by 0.4375 seconds, up to 3.5 seconds. Once Particle Grenade has hit 40 enemy Heroes, its radius is increased by 15%.",
+        "File:Demolitions_Expert_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Together We Are Strong",
+      "tier": "1",
+      "slot": "2",
+      "icon": "Together_We_Are_Strong_Icon.png",
+      "description": "For 3 seconds after gaining Shield Ally, every 5.35 damage done by the bearer contributes 1 Energy to Zarya, up to 40 Energy per Shield.",
+      "fields": {
+        "scaling": "4.00% (damage requirement)"
+      },
+      "_raw_fields": [
+        "Together We Are Strong",
+        "1",
+        "2",
+        "For 3 seconds after gaining Shield Ally, every 5.35 damage done by the bearer contributes 1 Energy to Zarya, up to 40 Energy per Shield.",
+        "File:Together_We_Are_Strong_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Feel the Heat",
+      "tier": "1",
+      "slot": "3",
+      "icon": "Feel_the_Heat_Icon.png",
+      "description": "Zarya's Basic Attack deals 50% additional damage to enemies in melee range. While above 40 Energy, Zarya's Basic Attack size is increased by 35%.",
+      "fields": {
+        "type": "Bonus damage",
+        "scaling": "-",
+        "affects": "Self",
+        "prop1": "Range threshold",
+        "val1": "3.0",
+        "prop2": "Extended Attack area",
+        "val2": "1.35 x 8.4375",
+        "notes": "Feel the Heat uses its own base damage value, which is 50% higher than the original, causing the given percentage to stack multiplicatively with offensive damage modifiers."
+      },
+      "_raw_fields": [
+        "Feel the Heat",
+        "1",
+        "3",
+        "Zarya's Basic Attack deals 50% additional damage to enemies in melee range. While above 40 Energy, Zarya's Basic Attack size is increased by 35%.",
+        "File:Feel_the_Heat_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Maximum Charge",
+      "tier": "1",
+      "slot": "4",
+      "icon": "Maximum_Charge_Icon.png",
+      "description": "Regen Globes now instantly grant 20 Energy. quest Spend 150 seconds at or above 50 Energy. Gain an additional 20 maximum Energy.",
+      "fields": {},
+      "_raw_fields": [
+        "Maximum Charge",
+        "1",
+        "4",
+        "Regen Globes now instantly grant 20 Energy. quest Spend 150 seconds at or above 50 Energy. Gain an additional 20 maximum Energy.",
+        "File:Maximum_Charge_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "I Am the Strongest",
+      "tier": "2",
+      "slot": "1",
+      "icon": "I_Am_the_Strongest_Icon.png",
+      "description": "Personal Barrier absorbs an additional 140 damage. Passive Damage absorbed by Zarya's Shields contributes 20% more Energy.",
+      "fields": {
+        "type": "Bonus Shield",
+        "scaling": "4.00%",
+        "affects": "Ability"
+      },
+      "_raw_fields": [
+        "I Am the Strongest",
+        "2",
+        "1",
+        "Personal Barrier absorbs an additional 140 damage. Passive Damage absorbed by Zarya's Shields contributes 20% more Energy.",
+        "File:I_Am_the_Strongest_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Give Me Twenty",
+      "tier": "2",
+      "slot": "2",
+      "icon": "Give_Me_Twenty_Icon.png",
+      "description": "quest Regeneration Globes increase Shield Ally value by 15, up to 300 permanently. After collecting 20 Regen Globes, permanently reduce the cooldown of Shield Ally by 2 seconds.",
+      "fields": {
+        "type": "Bonus Shield",
+        "scaling": "-",
+        "affects": "Ability"
+      },
+      "_raw_fields": [
+        "Give Me Twenty",
+        "2",
+        "2",
+        "quest Regeneration Globes increase Shield Ally value by 15, up to 300 permanently. After collecting 20 Regen Globes, permanently reduce the cooldown of Shield Ally by 2 seconds.",
+        "File:Give_Me_Twenty_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Speed Barrier",
+      "tier": "2",
+      "slot": "3",
+      "icon": "Speed_Barrier_Icon.png",
+      "description": "Shield Ally increases the allied Hero's Movement Speed by 50% for the duration.",
+      "fields": {
+        "type": "Status effect",
+        "affects": "Allied Heroes",
+        "props": "Movement Speed"
+      },
+      "_raw_fields": [
+        "Speed Barrier",
+        "2",
+        "3",
+        "Shield Ally increases the allied Hero's Movement Speed by 50% for the duration.",
+        "File:Speed_Barrier_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Defensive Shielding",
+      "tier": "2",
+      "slot": "4",
+      "icon": "Defensive_Shielding_Icon.png",
+      "description": "Upon expiration or breaking, Personal Barrier and Shield Ally grant 75 Physical Armor against the next 2 Hero Basic Attacks for 6 seconds, reducing the damage taken by 75%.",
+      "fields": {
+        "type": "Defensive damage modifier",
+        "affects": "Allied Heroes, Self",
+        "props": "Block, Physical Armor",
+        "notes": "Does not stack with itself or other positive Armor effects. Other defensive damage modifiers may stack. If the target has certain Talents which give Block stacks (those Talents being Illidan with Reflexive Block, The Lost Vikings with Olaf the Stout, Muradin with Dwarf Block, Rexxar or Misha with Grizzled Fortitude), the Block stacks will be shared and capped at a maximum of 4. Additionally the duration of all Block stacks from either Talent will all be set to that of the most recently applied Block stacks."
+      },
+      "_raw_fields": [
+        "Defensive Shielding",
+        "2",
+        "4",
+        "Upon expiration or breaking, Personal Barrier and Shield Ally grant 75 Physical Armor against the next 2 Hero Basic Attacks for 6 seconds, reducing the damage taken by 75%.",
+        "File:Defensive_Shielding_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Pinpoint Accuracy",
+      "tier": "3",
+      "slot": "1",
+      "icon": "Pinpoint_Accuracy_Icon.png",
+      "description": "Particle Grenade deals 30 more damage and Slows Movement Speed by 25% for 2 seconds to enemies hit by the center of the blast.",
+      "fields": {
+        "type": "Bonus damage / Crowd control",
+        "scaling": "4.00%",
+        "affects": "Ability / Enemies",
+        "props": "Slow",
+        "prop1": "Center radius",
+        "val1": "0.75",
+        "notes": "Center radius is unaffected by Demolitions Expert bonus."
+      },
+      "_raw_fields": [
+        "Pinpoint Accuracy",
+        "3",
+        "1",
+        "Particle Grenade deals 30 more damage and Slows Movement Speed by 25% for 2 seconds to enemies hit by the center of the blast.",
+        "File:Pinpoint_Accuracy_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Deep Burn",
+      "tier": "3",
+      "slot": "2",
+      "icon": "Deep_Burn_Icon.png",
+      "description": "Hitting a Hero with Particle Grenade causes Basic Attacks against them to generate 2 Energy. Lasts 4 seconds.",
+      "fields": {
+        "nohr": "1",
+        "notes": "If multiple Zaryas are on a team, they can all benefit from Deep Burn applied by another Zarya regardless of if they have the Talent or not."
+      },
+      "_raw_fields": [
+        "Deep Burn",
+        "3",
+        "2",
+        "Hitting a Hero with Particle Grenade causes Basic Attacks against them to generate 2 Energy. Lasts 4 seconds.",
+        "File:Deep_Burn_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Explosive Barrier",
+      "tier": "3",
+      "slot": "3",
+      "icon": "Explosive_Barrier_Icon.png",
+      "description": "Upon expiration or breaking, Personal Barrier explodes, dealing 110 damage to nearby enemies.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "props": "Area of Effect",
+        "aoe": "Circle",
+        "radius": "3.25"
+      },
+      "_raw_fields": [
+        "Explosive Barrier",
+        "3",
+        "3",
+        "Upon expiration or breaking, Personal Barrier explodes, dealing 110 damage to nearby enemies.",
+        "File:Explosive_Barrier_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Graviton Surge",
+      "tier": "4",
+      "slot": "1",
+      "icon": "Graviton_Surge_Icon.png",
+      "description": "cooldown 60 Launch a gravity bomb that detonates after 1 second and draws enemy Heroes toward the center for 2.5 seconds. Affected Heroes take 30 damage a second.",
+      "fields": {},
+      "_raw_fields": [
+        "Graviton Surge",
+        "4",
+        "1",
+        "cooldown 60 Launch a gravity bomb that detonates after 1 second and draws enemy Heroes toward the center for 2.5 seconds. Affected Heroes take 30 damage a second.",
+        "File:Graviton_Surge_Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Expulsion Zone",
+      "tier": "4",
+      "slot": "2",
+      "icon": "Expulsion_Zone_Icon.png",
+      "description": "cooldown 45 Launch a gravity bomb that deals 124 damage and creates an expulsion zone for 3.5 seconds. Enemies who enter the affected area are knocked back and have their Movement Speed reduced by 50% for 1 second.",
+      "fields": {},
+      "_raw_fields": [
+        "Expulsion Zone",
+        "4",
+        "2",
+        "cooldown 45 Launch a gravity bomb that deals 124 damage and creates an expulsion zone for 3.5 seconds. Enemies who enter the affected area are knocked back and have their Movement Speed reduced by 50% for 1 second.",
+        "File:Expulsion_Zone_Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Unstoppable Competitor",
+      "tier": "5",
+      "slot": "1",
+      "icon": "Unstoppable_Competitor_Icon.png",
+      "description": "Personal Barrier makes you Unstoppable for up to 2 seconds.",
+      "fields": {
+        "type": "Status effect",
+        "affects": "Self",
+        "props": "Unstoppable"
+      },
+      "_raw_fields": [
+        "Unstoppable Competitor",
+        "5",
+        "1",
+        "Personal Barrier makes you Unstoppable for up to 2 seconds.",
+        "File:Unstoppable_Competitor_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Spell Barrier",
+      "tier": "5",
+      "slot": "2",
+      "icon": "Spell_Barrier_Icon.png",
+      "description": "Upon expiration or breaking, Personal Barrier grants Zarya 75 Spell Armor for 3 Seconds, reducing the damage taken from Abilities by 75%.",
+      "fields": {
+        "type": "Defensive damage modifier",
+        "affects": "Self",
+        "props": "Spell Armor",
+        "notes": "Does not stack with other positive Spell Armor effects. Other defensive damage modifiers may stack."
+      },
+      "_raw_fields": [
+        "Spell Barrier",
+        "5",
+        "2",
+        "Upon expiration or breaking, Personal Barrier grants Zarya 75 Spell Armor for 3 Seconds, reducing the damage taken from Abilities by 75%.",
+        "File:Spell_Barrier_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Endurance Training",
+      "tier": "5",
+      "slot": "3",
+      "icon": "Endurance_Training_Icon.png",
+      "description": "While at or above 75 Energy, Zarya gains 20 Armor, reducing all damage taken by 20%.",
+      "fields": {
+        "type": "Defensive damage modifier",
+        "affects": "Self",
+        "props": "Armor"
+      },
+      "_raw_fields": [
+        "Endurance Training",
+        "5",
+        "3",
+        "While at or above 75 Energy, Zarya gains 20 Armor, reducing all damage taken by 20%.",
+        "File:Endurance_Training_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Pain is Temporary",
+      "tier": "5",
+      "slot": "4",
+      "icon": "Pain_is_Temporary_Icon.png",
+      "description": "cooldown 30 Activate to consume all Energy and gain a Shield that absorbs 0.8% of Zarya's maximum Health per Energy consumed and lasts for 3 seconds. Zarya may only have one personal Shield active on herself at a time.",
+      "fields": {
+        "type": "Shield",
+        "scaling": "-",
+        "affects": "Self",
+        "target": "No target",
+        "cast": "Instant"
+      },
+      "_raw_fields": [
+        "Pain is Temporary",
+        "5",
+        "4",
+        "cooldown 30 Activate to consume all Energy and gain a Shield that absorbs 0.8% of Zarya's maximum Health per Energy consumed and lasts for 3 seconds. Zarya may only have one personal Shield active on herself at a time.",
+        "File:Pain_is_Temporary_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Cleansing Shield",
+      "tier": "6",
+      "slot": "1",
+      "icon": "Cleansing_Shield_Icon.png",
+      "description": "Causes Shield Ally to remove all disabling effects and reduces its cooldown by 3 seconds.",
+      "fields": {
+        "type": "CC removal",
+        "affects": "Allied Heroes"
+      },
+      "_raw_fields": [
+        "Cleansing Shield",
+        "6",
+        "1",
+        "Causes Shield Ally to remove all disabling effects and reduces its cooldown by 3 seconds.",
+        "File:Cleansing_Shield_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Gain Train",
+      "tier": "6",
+      "slot": "2",
+      "icon": "Gain_Train_Icon.png",
+      "description": "Shield Ally now grants an untalented shield to a nearby ally upon impact.",
+      "fields": {
+        "type": "Shield",
+        "scaling": "4.00%",
+        "affects": "Allied Heroes",
+        "props": "Bounce",
+        "radius": "8.0",
+        "notes": "Prioritizes the closest allied Hero to the primary target of Shield Ally ."
+      },
+      "_raw_fields": [
+        "Gain Train",
+        "6",
+        "2",
+        "Shield Ally now grants an untalented shield to a nearby ally upon impact.",
+        "File:Gain_Train_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Born in Battle",
+      "tier": "6",
+      "slot": "3",
+      "icon": "Born_in_Battle_Icon.png",
+      "description": "While at or above 75 Energy, Zarya's cooldowns regenerate 25% faster.",
+      "fields": {},
+      "_raw_fields": [
+        "Born in Battle",
+        "6",
+        "3",
+        "While at or above 75 Energy, Zarya's cooldowns regenerate 25% faster.",
+        "File:Born_in_Battle_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Gravity Kills",
+      "tier": "7",
+      "slot": "1",
+      "icon": "Gravity_Kills_Icon.png",
+      "description": "Increases Graviton Surge's duration by 1 second and it Silences Heroes caught in its area.",
+      "fields": {
+        "type": "Crowd control",
+        "affects": "Enemy Heroes",
+        "props": "Silence"
+      },
+      "_raw_fields": [
+        "Gravity Kills",
+        "7",
+        "1",
+        "Increases Graviton Surge's duration by 1 second and it Silences Heroes caught in its area.",
+        "File:Gravity_Kills_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Clear Out",
+      "tier": "7",
+      "slot": "2",
+      "icon": "Clear_Out_Icon.png",
+      "description": "Reduce Expulsion Zone's cooldown by 25 seconds and increase its duration by 1.5 seconds.",
+      "fields": {},
+      "_raw_fields": [
+        "Clear Out",
+        "7",
+        "2",
+        "Reduce Expulsion Zone's cooldown by 25 seconds and increase its duration by 1.5 seconds.",
+        "File:Clear_Out_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Grenadier",
+      "tier": "7",
+      "slot": "3",
+      "icon": "Grenadier_Icon.png",
+      "description": "All Particle Grenade charges are returned at once.",
+      "fields": {},
+      "_raw_fields": [
+        "Grenadier",
+        "7",
+        "3",
+        "All Particle Grenade charges are returned at once.",
+        "File:Grenadier_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Unyielding Defender",
+      "tier": "7",
+      "slot": "4",
+      "icon": "Unyielding_Defender_Icon.png",
+      "description": "cooldown 60 Activate to reset the cooldowns of Personal Barrier and Shield Ally.",
+      "fields": {
+        "type": "Active",
+        "affects": "Abilities",
+        "target": "No target",
+        "cast": "Instant"
+      },
+      "_raw_fields": [
+        "Unyielding Defender",
+        "7",
+        "4",
+        "cooldown 60 Activate to reset the cooldowns of Personal Barrier and Shield Ally.",
+        "File:Unyielding_Defender_Icon.png"
+      ],
+      "level": "20"
+    }
+  ],
+  "other": [],
+  "_unparsed_count": 0
+}

@@ -1,0 +1,235 @@
+{{hero data
+| name = Tracer
+| date = April 19, 2016
+| price = 10000
+| title = Agent of Overwatch
+| role = Ranged
+| franchise = Overwatch
+| info = A [[Mobility|mobile]] Assassin who picks off straggling enemies, finishing them off.  
+| lore = Lena Oxton (call sign: "Tracer"), is both an adventurer and an irrepressible force for good. With the ability to alter her own time at will, she fights the good fight wherever she goes--even the Nexus. Don't worry, loves. The cavalry's finally here.
+| difficulty = Hard
+| melee = False
+| health = 1330
+| healthRegen = 2.707
+| resource = 10
+| resourceType = Ammo
+| armor = 0
+| attackSpeed = 8.0
+| attackRange = 5.0
+| attackDamage = 23
+| healthScaling = 0.0400390625
+| regenScaling = 0.0400390625
+| adamageScaling = 0.0400390625
+| unitRadius = 0.625
+| icon =  File:Tracer_Icon.png
+| skills = 
+Reload;D;File:Reload_Icon.png;Tracer can Basic Attack while moving, and after attacking 10 times she needs to reload over 0.8125 seconds. Tracer can manually reload early by activating Reload.<p>Basic Attacks heal Tracer for 10% of the damage dealt.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|cast=Instant<!--
+-->|notes=<li>Reload cannot be interrupted.<!--
+--><li>Tracer's effective Attack Speed with ''Reload'' is 5.16 per second (Tracer's Basic Attack is available immediately when Reload finishes).<!--
+--><li>Reload activates automatically when Tracer successfully Mounts or Hearths at a partially loaded clip.}};1;;Trait;False;
+
+Blink;Q;File:Blink_(Tracer)_Icon.png;{{Charge CooldownW|9 / 0.125}}<br/>Dash toward an area. Stores up to 3 charges.<!--
+-->{{undoc-x<!--
+-->|type=Movement: [[Dash]]<!--
+-->|affects=Self<!--
+-->|target=Point target<!--
+-->|props=[[Clamping]]<!--
+-->|cast=Instant<!--
+-->|range=6.0<!--
+-->|missile=60<!--
+-->|notes=}};;;;False;
+
+Melee;W;File:Melee_Icon.png;Deal 220 damage to a nearby enemy, prioritizing Heroes. Gain 5% Pulse Bomb charge when using Melee against an enemy, and 10% against Heroes.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00390625%<!--
+-->|affects=Enemies<!--
+-->|target=Automatic (closest)<!--
+-->|cast=Instant<!--
+-->|range=2.35<!--
+-->|prop1=Impact delay|val1=0.125 seconds<!--
+-->|notes=<li>Cannot be activated if there is no targetable enemy within the cast range.<li>Cannot target enemies that are not visible.<li>Stops Tracer from Basic Attacking for 0.375 seconds upon activation.}};8;;;False;
+
+Recall;E;File:Recall_Icon.png;After 1.25 seconds, Tracer returns to the position she was at 2 seconds prior to casting, refilling her ammo and removing all negative status effects from herself.<!--
+-->{{undoc-x|type=Status effect, Movement: [[Teleport]]<!--
+-->|scaling=<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|props=[[Stasis]]<!--
+-->|notes=<li>Can be cast while Rooted.<li>Tracer is put in [[Stasis]] for 1.25 seconds before reappearing, removing most [[debuffs]] and making her [[untargetable]] and immune to damage.<li>Teleport to end location takes place 0.1875 seconds after the Ability is cast.<li>The destination of Recall is visible to enemy Heroes.}};20;;;False;
+
+Pulse Bomb;R;File:Pulse_Bomb_Icon.png;Fire a short range bomb that can attach to an enemy if it hits them. The bomb explodes after 2 seconds, dealing 298 damage to them and 149 damage to other nearby enemies.<p>This Ability is slowly charged over time by dealing damage to enemies with Basic Attacks and Melee.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=6.00585938%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Clamping]], [[Skillshot]]<!--
+-->|cast=Instant<!--
+-->|range=3.6<!--
+-->|aoe=Circle<!--
+-->|radius=<br/>- Center: 0.75 (ground only)<br/>- Outer: 2.5<!--
+-->|hitbox=1.25 x 1.0<!--
+-->|missile=32<!--
+-->|notes=<li>The Ability is available from the start of the game with 0% charge.<li>Basic Attacks grant 0.75% charge each. This amount is unaffected by any damage modifiers on Tracer or her target.<li>Enemies that walk over the center of the bomb while it's on the ground are considered primary targets and take the same damage as if the bomb were attached to them.<li>Pulse Bomb will not attach to Structures, and will instead go through or land under them.}};;;;Heroic;False;
+
+| talents =
+<!-- LEVEL 1 -->
+One-Two Punch;1;1;Reduce the cooldown of Melee by 1 second and it gains an additional charge.<!--
+-->{{undoc-x|prop1=Cooldown between charges|val1=3.0 seconds}};File:One-Two_Punch_Icon.png;
+
+Parting Gift;1;2;Recall leaves behind 6 bombs that deal 240 damage each to different targets. Heroes hit with these bombs are Slowed by 50% for 0.75 seconds and grant 7% Pulse Bomb charge.<!--
+-->{{undoc-x|type=Spell Damage|<!--
+-->scaling=4.00390625%<!--
+-->|affects=Enemies<!--
+-->|target=<!--
+-->|props=[[Skillshot]]<!--
+-->|range=4.0<!--
+-->|aoe=Circle<!--
+-->|radius=0.5 (hitbox)<!--
+-->|missile=6.0<!--
+-->|notes=<li>The bombs are spread evenly in 60 degree intervals, one of them launched toward the direction Tracer was facing when casting ''Recall''.<li>Enemies cannot get hit by any of the bombs more than once.<li>Bombs expire after 1 second.}};File:Parting_Gift_Icon.png;
+
+Tracer Rounds;1;3;Increase Basic Attack range by 10%. Basic Attacks against Heroes reveal a small area around them for 3 seconds.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Attack Modifier]], [[Revealed]]<!--
+-->|notes=<li>Reveal is not applied in an area. Only the Heroes directly afflicted by ''Tracer Rounds'' receive the Revealed debuff.}};File:Tracer_Rounds_Icon.png;
+
+<-- LEVEL 4 -->
+Leeching Rounds;2;1;Increase the healing from Basic Attacks by up to 200%, based on the amount of Health Tracer is missing.<!--
+-->{{undoc-x|nohr=1<!--
+-->|notes=<li>The bonus increases linearly based on the percentage of Health Tracer is missing.<li>The bonus stacks multiplicatively with the lifesteal percentage.}};File:Leeching_Rounds_Icon.png;
+
+Pulse Generator;2;2;Successfully sticking a Pulse Bomb to an enemy Hero heals Tracer for 12% of her maximum Health over 1.5 seconds and refunds a charge of Blink.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|props=[[Heal over Time]]<!--
+-->|tickrate=4.0 per second (x6)<!--
+-->|notes=}};File:Pulse_Generator_Icon.png;
+
+Is That a Health Pack?!;2;3;Collecting a Regeneration Globe instantly heals Tracer for 15% of her maximum Health and reduces the cooldown of Healing Fountain by 15 seconds.<p>Drinking from a Healing Fountain instantly heals for 20% of Tracer's maximum Health.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|notes=<li>These effects are granted in addition to the basic benefits of [[Regeneration Globe]]s and [[Healing Fountain]]s.}};File:Is_That_a_Health_Pack_Icon.png;
+
+<!-- LEVEL 7 -->
+Sleight of Hand;3;1;Reduces Reload time by 50%. This equals 20% more damage per second.<!--
+-->{{undoc-x|<hr/><!--
+-->|notes=<li>Reload time is actually reduced by only 46%, or if accounting for Tracer's Basic Attack being available immediately after reloading with or without this Talent, effectively a 55% reduction.<li>The DPS increase from this talent is actually 24% rather than the given tooltip's listed 20%.<li>Increases Tracer's effective Attack Speed to roughly 6.40 per second.}};File:Sleight_of_Hand_Icon.png;
+
+Focus Fire;3;2;If an entire ammo magazine is unloaded on an enemy, the last bullet will deal 80 bonus damage. This is equal to 35% of the total magazine.<!--
+-->{{undoc-x|type=Physical Damage<!--
+-->|scaling=4.00390625%<!--
+-->|affects=Self<!--
+-->|notes=<li>''Focus Fire'' doesn't activate if Tracer hasn't attacked the target for 2 seconds, even if the clip is the same.<li>Bonus damage can be affected by attack and damage modifiers, like ''Untouchable'' and lifesteal.<li>Bonus damage from ''Focus Fire'' is dealt in a separate instance from the final Basic Attack, meaning that it cannot benefit from ''Ricochet''.<li>Bonus damage activates if the target was hit 10 times in a row instead of firing the last bullet, meaning ''Chrono Trigger'' won't trigger ''Focus Fire'' on the last bullet continuously.}};File:Focus_Fire_Icon.png;
+
+Locked and Loaded;3;3;Reactivate Reload within the last 50% of its cast time to increase Tracer's Basic Attack damage by 40% for that magazine.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Attack Modifier]]<!--
+-->|notes=<li>Does not stack with itself.<li>Damage bonus stacks additively with other offensive damage modifiers that can affect Tracer's Basic Attack damage.<li>Can be activated while mounted without dismounting Tracer.}};File:Locked_and_Loaded_Icon.png;
+
+<!-- LEVEL 10 -->
+Sticky Bomb;4;1;Increases Pulse Bomb's radius by 50% and enemies hit are Slowed by 70% for 3 seconds.<!--
+-->{{undoc-x|type=Crowd control<!--
+-->|affects=Enemies<!--
+-->|props=[[Slow]]<!--
+-->|prop1=Bonus radius|val1=<br/>- Center: 0.375<br/>- Outer: 1.25<!--
+-->|notes=}};File:Sticky_Bomb_Icon.png
+
+Quantum Spike;4;2;Pulse Bomb deals an additional 6% of maximum Health as damage to Heroes.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=-<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Percent Damage]]<!--
+-->|notes=<li>Bonus damage from ''Quantum Spike'' is dealt in a separate instance.}};File:Quantum_Spike_Icon.png;
+
+Pulse Rounds;4;3;Increases Pulse Bomb's range and charge rate from Basic Attacks against Heroes by 100%.<!--
+-->{{undoc-x|prop1=Bonus range|val1=3.6<!--
+-->|notes=}};File:Pulse_Rounds_Icon.png;
+
+<!-- LEVEL 13 -->
+Untouchable;5;1;{{Passive}} After Blinking, gain 20% Movement Speed for 1.25 seconds.<p>{{questonly|Takedowns increase Tracer's Basic Attack damage by 5%, up to 25%. These bonuses are lost on death.}}<!--
+-->{{undoc-x|type=Offensive damage modifier, Status effect<!--
+-->|affects=Self<!--
+-->|props=[[Attack Modifier]], [[Movement Speed]]<!--
+-->|notes=<li>Damage bonus stacks additively with itself and other offensive damage modifiers that can affect Tracer's Basic Attack damage.}};File:Untouchable_Icon.png;
+
+Jumper;5;2;{{Passive}} When Blink has no charges remaining, its cooldown charges 100% faster.<p>Casting Blink grants Tracer a Shield equal to 6% of her maximum Health for 3 seconds. This Shield stacks up to 3 times.<!--
+-->{{undoc-x|type=Shield<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|notes=}};File:Jumper_Icon.png;
+
+Telefrag;5;3;{{Passive}} Basic Attacks against enemy Heroes reduce the cooldown of Recall by 0.1875 seconds.<p>When Tracer arrives at her Recall location she becomes Unkillable for 1 second and nearby enemies take 175 damage and are knocked back.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control / Status effect, Cooldown reduction<!--
+-->|scaling=4.00390625%<!--
+-->|affects=Enemies / Self<!--
+-->|props=[[Area of Effect]], [[Knockback]], [[Unkillable]]<!--
+-->|aoe=Circle<!--
+-->|radius=3.0<!--
+-->|prop1=Knockback duration|val1=0.1274 seconds<!--
+-->|prop2=Knockback speed|val2=20<!--
+-->|notes=}};File:Telefrag_Icon.png;
+
+<!-- LEVEL 16 -->
+Bullet Spray;6;1;Increases the radius of Melee by 30%, and causes it to damage all enemies in range.<!--
+-->{{undoc-x|prop1=Bonus radius|val1=0.7<!--
+-->|notes=<li>Additional enemies hit do not generate ''Pulse Bomb'' charge.}};File:Bullet_Spray_Icon.png;
+
+Heavy Handed;6;2;Heroes hit by Melee have their Armor reduced by 15 for 4 seconds.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Armor reduction]]<!--
+-->|notes=<li>Armor reduction is applied after the damage from ''Melee'' and any instantly detonated ''Pulse Bomb''s through ''Get Stuffed'' have been dealt.<li>Does not stack with itself or other negative Armor effects. Other defensive damage modifiers may stack.}};File:Heavy_Handed_Icon.png;
+
+Ricochet;6;3;Tracer's Basic Attacks have a 60% chance to hit another nearby enemy, prioritizing Heroes.<!--
+-->{{undoc-x|type=Physical Damage<!--
+-->|scaling=-<!--
+-->|affects=Enemies<!--
+-->|props=[[Attack Modifier]], [[Bounce]]<!--
+-->|radius=5.0 (bounce)<!--
+-->|notes=<li>The chance to trigger and selection of targets is random.<li>Ricocheting bullets can only bounce to visible targets.<li>Ricocheting bullets interact with ''Tracer Rounds'' and ''Telefrag'' talents and benefit from damage modifier and lifesteal effects.<li>Ricocheting bullets do not generate additional ''Pulse Bomb'' charge.<li>Will not bounce to unaggroed Mercenaries.}};File:Ricochet_Icon.png;
+
+<!-- LEVEL 20 -->
+Chrono Triggers;7;1;Casting Blink causes Basic Attacks to not consume ammo for 1 second.;File:Chrono_Triggers_Icon.png;
+
+Get Stuffed!;7;2;Increases Melee's Pulse Bomb charge against Heroes from 10% to 20%. Hitting an enemy with Melee who is stuck with a Pulse Bomb causes the bomb to instantly explode and knock the target away.<!--
+-->{{undoc-x|type=Crowd control<!--
+-->|affects=Enemies<!--
+-->|props=[[Knockback]]<!--
+-->|prop1=Knockback duration|val1=0.375 seconds<!--
+-->|prop2=Knockback speed|val2=24.375<!--
+-->|notes=<li>If there are multiple Tracers on a team, any Tracer with the ''Get Stuffed!'' Talent can cause the knockback effect on a target affected by any Tracer's ''Pulse Bomb''. The instant explosion effect, however, cannot be triggered in this way.<li>Knockback can still be activated even if melee was applied after the ''Pulse Bomb'' damage for a very short moment.}};File:Get_Stuffed!_Icon.png;
+
+Total Recall;7;3;Recall heals Tracer equal to the amount of Health she lost during that time.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|notes=<li>Tracer is healed after the Stasis from Recall ends for the difference between the Health she had 3.25 seconds earlier (i.e. at the time being "rewound to") and the Health she currently has.}};File:Total_Recall_Icon.png;
+
+Composition B;7;4;Successfully sticking a Pulse Bomb to an enemy Hero also drops another one at their feet that deals 50% damage and explodes slightly earlier.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=6.00585938%<!--
+-->|affects=Enemies<!--
+-->|notes=<li>Secondary bomb also has the effects of <i>Pulse Bomb</i>'s Heroic upgrade.<li>Secondary bomb has its own base damage values (which are half of the originals), causing the damage reduction to stack multiplicatively with offensive damage modifiers.<li>The bonus damage from ''Quantum Spike'' is also exceptionally halved in the secondary bomb.}};File:Composition_B_Icon.png;
+
+}}
+<noinclude>
+{{Scaling table/start|{{#var:health}}|{{#var:health scaling}}|{{#var:health regen}}|{{#var:health regen scaling}}|{{#var:attack damage}}|{{#var:attack damage scaling}}}}
+{{Scaling table/slot|Melee|220|0.0400390625}}
+{{Scaling table/slot|Pulse Bomb (primary)|298|0.0600585938}}
+{{Scaling table/slot|Pulse Bomb (secondary)|149|0.0600585938}}
+{{Scaling table/slot|Parting Gift|240|0.0400390625|1}}
+{{Scaling table/slot|Focus Fire|84|0.0400390625|7}}
+{{Scaling table/slot|Telefrag|175|0.0400390625|13}}
+{{Scaling table/slot|Composition B (primary)|149|0.0600585938|20}}
+{{Scaling table/slot|Composition B (secondary)|79.5|0.0600585938|20}}
+{{Scaling table/end}}
+</noinclude>

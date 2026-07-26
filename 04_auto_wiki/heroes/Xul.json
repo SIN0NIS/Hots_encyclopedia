@@ -1,0 +1,588 @@
+{
+  "hero": "Xul",
+  "abilities": [
+    {
+      "name": "Raise Skeleton",
+      "hotkey": "TRAIT",
+      "icon": "Raise_Skeleton_Icon.png",
+      "description": "When a nearby enemy Minion dies, it becomes a Skeletal Warrior with 240 Health that attacks for 21 damage and lasts up to 12 seconds. Upon death, Skeletal Warriors deal 40 damage to nearby enemies. Up to 3 Skeletal Warriors can be active at once when spawned in this way. Skeletal Warrior Corpse Explosion ; Trait",
+      "fields": {
+        "type": "Spell Damage",
+        "affects": "Enemies",
+        "radius": "1.5",
+        "scaling": "4.00%",
+        "prop1": "Health",
+        "val1": "240",
+        "prop2": "Health regen",
+        "val2": "-20",
+        "prop3": "Basic Attack damage",
+        "val3": "21",
+        "prop4": "Attack Speed",
+        "val4": "1.0",
+        "prop5": "Attack range",
+        "val5": "0.5",
+        "prop6": "Movement speed",
+        "val6": "4.0",
+        "prop7": "Sight radius",
+        "val7": "8.0",
+        "prop8": "Leash radius",
+        "val8": "-",
+        "prop9": "Spawn delay",
+        "val9": "0.65 seconds",
+        "props": "Area of Effect",
+        "notes": "This explosion damage will not trigger A Call For Help, i.e. Structure aggro onto Xul, if Xul and an enemy Hero hit by the explosion are in range of that enemy's Fort, Keep or Core."
+      }
+    },
+    {
+      "name": "Spectral Scythe",
+      "hotkey": "Q",
+      "icon": "Spectral_Scythe_Icon.png",
+      "description": "Summon a scythe that travels to Xul after 1 second, dealing 190 damage to enemies and spawning a Skeletal Warrior when hitting Enemy Heroes. These do not count toward Xul's Raise Skeleton maximum.",
+      "fields": {
+        "type": "Spell Damage / Summon",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "target": "Point Target",
+        "props": "Area of Effect, Skillshot",
+        "cast": "0.125 + 0 seconds",
+        "range": "8.1",
+        "radius": "1.5",
+        "prop1": "Missile speed",
+        "val1": "12",
+        "notes": "The scythe persists up to 5 seconds.",
+        "cooldown": "8",
+        "cost": "55"
+      }
+    },
+    {
+      "name": "Cursed Strikes",
+      "hotkey": "W",
+      "icon": "Cursed_Strikes_Icon.png",
+      "description": "Xul's Basic Attack deals damage in a wide area and reduces the Attack Speed of Heroes and Summons by 40% for 2 seconds. Lasts 4 seconds once triggered.",
+      "fields": {
+        "type": "Physical Damage / Status effect",
+        "affects": "Enemies (damage) / Enemy Heroes and Summons (Attack Slow)",
+        "target": "No target",
+        "props": "Area of Effect, Attack Modifier, Attack Slow, Cleave, Primed",
+        "cast": "Instant",
+        "aoe": "Radial",
+        "radius": "5.75",
+        "arc": "180 degrees",
+        "notes": "Cooldown and duration start once the ability is triggered by attacking an enemy. Partial Basic Attack reset if timed correctly (sets Basic Attack timer to 0.25s).",
+        "cooldown": "16",
+        "cost": "50"
+      }
+    },
+    {
+      "name": "Bone Prison",
+      "hotkey": "E",
+      "icon": "Bone_Prison_Icon.png",
+      "description": "After a 2 second delay, deal 80 damage and root the target enemy Hero for 1.75 seconds. All nearby Skeletal Warriors will fixate on the target for their duration.",
+      "fields": {
+        "type": "Spell Damage / Crowd control",
+        "scaling": "4.00%",
+        "affects": "Enemy Heroes",
+        "target": "Unit target",
+        "props": "Root, Revealed",
+        "cast": "0.125 + 0 seconds",
+        "range": "3.5",
+        "radius": "16 (target focus)",
+        "notes": "The target becomes Revealed once the ability is cast until the Root wears off.",
+        "cooldown": "10",
+        "cost": "70"
+      }
+    },
+    {
+      "name": "Poison Nova",
+      "hotkey": "R",
+      "icon": "Poison_Nova_Icon.png",
+      "description": "After 0.5 seconds, release poisonous missiles that deal 630 damage to all enemies hit over 10 seconds.; 90; 100; Heroic",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "target": "No target",
+        "props": "Damage over Time, Skillshot (piercing)",
+        "cast": "0.5 + 0.125 seconds",
+        "range": "16",
+        "prop1": "Tickrate",
+        "val1": "1.0 per second (x10)",
+        "prop2": "Damage per Tick",
+        "val2": "63",
+        "prop3": "Missile count",
+        "val3": "12",
+        "prop4": "Missile speed",
+        "val4": "5",
+        "prop5": "Missile radius",
+        "val5": "0.625"
+      }
+    },
+    {
+      "name": "Skeletal Mages",
+      "hotkey": "R",
+      "icon": "Skeletal_Mages_Icon.png",
+      "description": "Summon 4 Frost Mages in a line that attack nearby enemies for 47 damage a second and Slow them by 30% for 2 seconds. Lasts up to 15 seconds. Frost Mage ; 90; 80; Heroic",
+      "fields": {
+        "type": "Active",
+        "target": "Vector targeting",
+        "range": "10.5",
+        "prop1": "Health",
+        "val1": "700",
+        "notes": "First point determines the center point and second the direction of the line of summoned units.",
+        "scaling": "4.00% (Health & damage)",
+        "prop3": "Basic Attack damage",
+        "val3": "46.875",
+        "prop4": "Attack Speed",
+        "val4": "1.00",
+        "prop5": "Attack range",
+        "val5": "5.5",
+        "prop6": "Movement speed",
+        "val6": "-",
+        "prop7": "Unit radius",
+        "val7": "0.375",
+        "prop8": "Sight radius",
+        "val8": "5.5"
+      }
+    },
+    {
+      "name": "Bone Armor",
+      "hotkey": "1",
+      "icon": "Bone_Armor_Icon.png",
+      "description": "Activate to gain a Shield equal to 25% of Xul's maximum Health for 3 seconds.",
+      "fields": {
+        "type": "Shield",
+        "scaling": "-",
+        "affects": "Self",
+        "target": "No target",
+        "cast": "Instant",
+        "cooldown": "30"
+      }
+    }
+  ],
+  "talents": [
+    {
+      "name": "Backlash",
+      "tier": "1",
+      "slot": "1",
+      "icon": "Backlash_Icon.png",
+      "description": "When Bone Armor expires, nearby enemy Heroes take damage equal to 12% of their maximum Health.",
+      "fields": {
+        "type": "Percent damage",
+        "affects": "Enemy Heroes",
+        "props": "Area of Effect, Percent damage",
+        "aoe": "Circle",
+        "radius": "3.75"
+      },
+      "_raw_fields": [
+        "Backlash",
+        "1",
+        "1",
+        "When Bone Armor expires, nearby enemy Heroes take damage equal to 12% of their maximum Health.",
+        "File:Backlash_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Shackler",
+      "tier": "1",
+      "slot": "2",
+      "icon": "Shackler_Icon.png",
+      "description": "While Bone Armor is active, nearby enemies are Slowed by 35% for 1 Second. Basic Attacks against Heroes that are Stunned, Rooted, or Slowed reduce the cooldown of Bone Armor by 2 seconds.",
+      "fields": {
+        "type": "Crowd control",
+        "affects": "Enemies",
+        "props": "Area of Effect, Attack Modifier (cdr), Slow",
+        "radius": "3.0",
+        "notes": "Cleaving Basic Attacks from Cursed Strikes can also apply the cooldown reduction."
+      },
+      "_raw_fields": [
+        "Shackler",
+        "1",
+        "2",
+        "While Bone Armor is active, nearby enemies are Slowed by 35% for 1 Second. Basic Attacks against Heroes that are Stunned, Rooted, or Slowed reduce the cooldown of Bone Armor by 2 seconds.",
+        "File:Shackler_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Shade",
+      "tier": "1",
+      "slot": "3",
+      "icon": "Shade_Icon.png",
+      "description": "While Bone Armor is active, Xul evades all Basic Attacks, but increases the cooldown of Bone Armor by 10 seconds.",
+      "fields": {
+        "type": "Status effect",
+        "affects": "Self",
+        "props": "Evade"
+      },
+      "_raw_fields": [
+        "Shade",
+        "1",
+        "3",
+        "While Bone Armor is active, Xul evades all Basic Attacks, but increases the cooldown of Bone Armor by 10 seconds.",
+        "File:Shade_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Reaper's Toll",
+      "tier": "2",
+      "slot": "1",
+      "icon": "Reaper's_Toll_Icon.png",
+      "description": "Reduce the cooldown of Spectral Scythe by 2 seconds and its Mana cost by 15.",
+      "fields": {},
+      "_raw_fields": [
+        "Reaper's Toll",
+        "2",
+        "1",
+        "Reduce the cooldown of Spectral Scythe by 2 seconds and its Mana cost by 15.",
+        "File:Reaper's_Toll_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Grim Scythe",
+      "tier": "2",
+      "slot": "2",
+      "icon": "Grim_Scythe_Icon.png",
+      "description": "Increase Xul's Basic Attack damage by 15%. Each enemy hit by Cursed Strikes reduces its cooldown by 1 second, up to 12 seconds.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Self",
+        "props": "Attack Modifier",
+        "notes": "Stacks additively with other offensive damage modifiers that can affect Xul's Basic Attack damage."
+      },
+      "_raw_fields": [
+        "Grim Scythe",
+        "2",
+        "2",
+        "Increase Xul's Basic Attack damage by 15%. Each enemy hit by Cursed Strikes reduces its cooldown by 1 second, up to 12 seconds.",
+        "File:Grim_Scythe_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Jailors",
+      "tier": "2",
+      "slot": "3",
+      "icon": "Trag'Oul's_Essence_Icon.png",
+      "description": "Bone Prison spawns 2 Skeletal Warriors. These do not count toward Xul's Raise Skeleton maximum. Quest Spawn 80 Skeletal Warriors. While fixating on an enemy, Skeletal Warriors gain 25% Movement and Attack Speed.",
+      "fields": {
+        "type": "Summon / Status effect",
+        "affects": "- / Skeletons",
+        "props": "Attack Speed, Movement speed"
+      },
+      "_raw_fields": [
+        "Jailors",
+        "2",
+        "3",
+        "Bone Prison spawns 2 Skeletal Warriors. These do not count toward Xul's Raise Skeleton maximum. Quest Spawn 80 Skeletal Warriors. While fixating on an enemy, Skeletal Warriors gain 25% Movement and Attack Speed.",
+        "File:Trag'Oul's_Essence_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Harvest Vitality",
+      "tier": "3",
+      "slot": "1",
+      "icon": "Harvest_Vitality_Icon.png",
+      "description": "Cursed Strikes heals for 70% of the damage dealt to Heroes.",
+      "fields": {
+        "type": "Healing",
+        "scaling": "-",
+        "affects": "Self",
+        "props": "Attack Modifier (heroes), Lifesteal"
+      },
+      "_raw_fields": [
+        "Harvest Vitality",
+        "3",
+        "1",
+        "Cursed Strikes heals for 70% of the damage dealt to Heroes.",
+        "File:Harvest_Vitality_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Trag'Oul's Essence",
+      "tier": "3",
+      "slot": "2",
+      "icon": "Trag'Oul's_Essence_Icon.png",
+      "description": "Every time a Skeletal Warrior attacks an enemy, restore 0.2% of Xul's maximum Health and 0.5% of his maximum Mana.",
+      "fields": {
+        "type": "Healing, Mana Restoration",
+        "scaling": "-",
+        "affects": "Self",
+        "props": "Attack Modifier"
+      },
+      "_raw_fields": [
+        "Trag'Oul's Essence",
+        "3",
+        "2",
+        "Every time a Skeletal Warrior attacks an enemy, restore 0.2% of Xul's maximum Health and 0.5% of his maximum Mana.",
+        "File:Trag'Oul's_Essence_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Wall Of Bones",
+      "tier": "3",
+      "slot": "3",
+      "icon": "Wall_Of_Bones_Icon.png",
+      "description": "Increase the Shield amount of Bone Armor to 35% of Xul's maximum Health, and Xul gains 20 Spell Armor for its duration.",
+      "fields": {
+        "type": "Bonus Shield, Defensive damage modifier",
+        "affects": "Self",
+        "props": "Spell Armor",
+        "notes": "Does not stack with other positive Spell Armor effects. Other defensive damage modifiers may stack."
+      },
+      "_raw_fields": [
+        "Wall Of Bones",
+        "3",
+        "3",
+        "Increase the Shield amount of Bone Armor to 35% of Xul's maximum Health, and Xul gains 20 Spell Armor for its duration.",
+        "File:Wall_Of_Bones_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Poison Nova",
+      "tier": "4",
+      "slot": "1",
+      "icon": "Poison_Nova_Icon.png",
+      "description": "cooldown 90 After 0.5 seconds, release poisonous missiles that deal 630 damage to all enemies hit over 10 seconds.",
+      "fields": {},
+      "_raw_fields": [
+        "Poison Nova",
+        "4",
+        "1",
+        "cooldown 90 After 0.5 seconds, release poisonous missiles that deal 630 damage to all enemies hit over 10 seconds.",
+        "File:Poison_Nova_Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Skeletal Mages",
+      "tier": "4",
+      "slot": "2",
+      "icon": "Skeletal_Mages_Icon.png",
+      "description": "cooldown 70 Summon 4 Frost Mages in a line that attack nearby enemies for 47 damage a second and Slow them by 30% for 2 seconds. Lasts up to 15 seconds.",
+      "fields": {},
+      "_raw_fields": [
+        "Skeletal Mages",
+        "4",
+        "2",
+        "cooldown 70 Summon 4 Frost Mages in a line that attack nearby enemies for 47 damage a second and Slow them by 30% for 2 seconds. Lasts up to 15 seconds.",
+        "File:Skeletal_Mages_Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Echoes of Death",
+      "tier": "5",
+      "slot": "1",
+      "icon": "Echoes_of_Death_Icon.png",
+      "description": "Spectral Scythe spawns 2 additional scythes next to the first after 1.5 seconds, dealing 40% damage.",
+      "fields": {
+        "type": "Spell Damage / Offensive damage modifier",
+        "scaling": "-",
+        "affects": "Enemies / Ability",
+        "prop1": "Offset",
+        "val1": "5.0",
+        "notes": "Scythes are spawned on the same y-coordinates as the initial scythe, which makes their range slightly longer. Damage penalty stacks additively with offensive damage modifiers that can affect Spectral Scythe 's damage."
+      },
+      "_raw_fields": [
+        "Echoes of Death",
+        "5",
+        "1",
+        "Spectral Scythe spawns 2 additional scythes next to the first after 1.5 seconds, dealing 40% damage.",
+        "File:Echoes_of_Death_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Rapid Harvest",
+      "tier": "5",
+      "slot": "2",
+      "icon": "Rapid_Harvest_Icon.png",
+      "description": "Gain 5% Attack Speed for 3 seconds each time Cursed Strikes hits an enemy, up to 75%.",
+      "fields": {
+        "type": "Status effect",
+        "affects": "Self",
+        "props": "Attack Speed"
+      },
+      "_raw_fields": [
+        "Rapid Harvest",
+        "5",
+        "2",
+        "Gain 5% Attack Speed for 3 seconds each time Cursed Strikes hits an enemy, up to 75%.",
+        "File:Rapid_Harvest_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Amplify Damage",
+      "tier": "5",
+      "slot": "3",
+      "icon": "Amplify_Damage_Icon.png",
+      "description": "Increase the Root duration of Bone Prison by 0.25 seconds. Enemies Rooted by Bone Prison lose 25 Armor for 2 seconds.",
+      "fields": {
+        "type": "Defensive damage modifier",
+        "affects": "Enemy Heroes",
+        "props": "Armor reduction",
+        "notes": "Does not stack with other negative Armor effects. Other defensive damage modifiers may stack."
+      },
+      "_raw_fields": [
+        "Amplify Damage",
+        "5",
+        "3",
+        "Increase the Root duration of Bone Prison by 0.25 seconds. Enemies Rooted by Bone Prison lose 25 Armor for 2 seconds.",
+        "File:Amplify_Damage_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Decrepify",
+      "tier": "6",
+      "slot": "1",
+      "icon": "Decrepify_Icon.png",
+      "description": "Enemy Heroes who are damaged by Spectral Scythe or Skeletal Warriors are Slowed by 30% for 2.5 seconds.",
+      "fields": {
+        "type": "Crowd control",
+        "affects": "Enemy Heroes",
+        "props": "Slow"
+      },
+      "_raw_fields": [
+        "Decrepify",
+        "6",
+        "1",
+        "Enemy Heroes who are damaged by Spectral Scythe or Skeletal Warriors are Slowed by 30% for 2.5 seconds.",
+        "File:Decrepify_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Weaken",
+      "tier": "6",
+      "slot": "2",
+      "icon": "Weaken_Icon.png",
+      "description": "Enemy Heroes who are damaged by Cursed Strikes or Skeletal Warriors deal 35% less damage for 3 seconds.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Enemy Heroes",
+        "notes": "Stacks additively with other offensive damage modifiers that affect the target Hero's damage output."
+      },
+      "_raw_fields": [
+        "Weaken",
+        "6",
+        "2",
+        "Enemy Heroes who are damaged by Cursed Strikes or Skeletal Warriors deal 35% less damage for 3 seconds.",
+        "File:Weaken_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Bone Spear",
+      "tier": "6",
+      "slot": "3",
+      "icon": "Bone_Spear_Icon.png",
+      "description": "cooldown 12 Deal 230 damage to enemies in a line.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "target": "Point Target",
+        "props": "Skillshot (piercing)",
+        "cast": "0.125 + 0",
+        "range": "11.9",
+        "hitbox": "1.5 x 1.8",
+        "prop1": "Missile speed",
+        "val1": "15"
+      },
+      "_raw_fields": [
+        "Bone Spear",
+        "6",
+        "3",
+        "cooldown 12 Deal 230 damage to enemies in a line.",
+        "File:Bone_Spear_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Andariel's Visage",
+      "tier": "7",
+      "slot": "1",
+      "icon": "Andariel's_Visage_Icon.png",
+      "description": "Poison Nova heals for 50% of the damage dealt and its duration is increased by 50%.",
+      "fields": {
+        "type": "Healing",
+        "affects": "Self",
+        "props": "Lifesteal"
+      },
+      "_raw_fields": [
+        "Andariel's Visage",
+        "7",
+        "1",
+        "Poison Nova heals for 50% of the damage dealt and its duration is increased by 50%.",
+        "File:Andariel's_Visage_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Cold Hand of Death",
+      "tier": "7",
+      "slot": "2",
+      "icon": "Cold_Hand_of_Death_Icon.png",
+      "description": "Increase the Slow of Frost Mages by 20%. Every 5th Spectral Scythe that hits enemy Heroes spawns a Frost Mage instead of a Skeletal Warrior in their location.",
+      "fields": {
+        "type": "Summon",
+        "affects": "Enemy Heroes"
+      },
+      "_raw_fields": [
+        "Cold Hand of Death",
+        "7",
+        "2",
+        "Increase the Slow of Frost Mages by 20%. Every 5th Spectral Scythe that hits enemy Heroes spawns a Frost Mage instead of a Skeletal Warrior in their location.",
+        "File:Cold_Hand_of_Death_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Mortal Wound",
+      "tier": "7",
+      "slot": "3",
+      "icon": "Mortal_Wound_Icon.png",
+      "description": "Enemies hit by Spectral Scythe receive 75% less healing for 4 seconds.",
+      "fields": {
+        "type": "Healing received modifier",
+        "affects": "Enemies",
+        "notes": "Stacks additively with modifiers that affect healing received and multiplicatively with modifiers that affect healing dealt."
+      },
+      "_raw_fields": [
+        "Mortal Wound",
+        "7",
+        "3",
+        "Enemies hit by Spectral Scythe receive 75% less healing for 4 seconds.",
+        "File:Mortal_Wound_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Kalan's Edict",
+      "tier": "7",
+      "slot": "4",
+      "icon": "Kalan's_Edict_Icon.png",
+      "description": "Each time Skeletal Warriors deal damage reduce the cooldown of Bone Armor and Xul's Heroic Ability by 1.5%.",
+      "fields": {},
+      "_raw_fields": [
+        "Kalan's Edict",
+        "7",
+        "4",
+        "Each time Skeletal Warriors deal damage reduce the cooldown of Bone Armor and Xul's Heroic Ability by 1.5%.",
+        "File:Kalan's_Edict_Icon.png"
+      ],
+      "level": "20"
+    }
+  ],
+  "other": [],
+  "_unparsed_count": 0
+}

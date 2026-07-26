@@ -1,0 +1,248 @@
+{{hero data
+| name = Gul'dan
+| date = July 12, 2016
+| price = 7000
+| title = Darkness Incarnate
+| role = Ranged
+| franchise = Warcraft
+| info =  A sustained damage [[Mage]] who uses his Health as fuel but can steal life from his enemies. 
+| lore = Abandoning the ways of Shamanism, Gul'dan entered a pact with the demon lord Kil'jaeden and betrayed his people in exchange for limitless power. With the Orcish Horde under his master's thrall, both Draenor and Azeroth nearly fell into his grasp.
+| difficulty =  Medium
+| melee = False
+| health = 1700
+| healthRegen = 3.543
+| resource = 500
+| resourceType = Mana
+| armor = 0
+| attackSpeed = 1
+| attackRange = 5.5
+| attackDamage = 60
+| healthScaling = 0.04
+| regenScaling = 0.04
+| adamageScaling = 0.04
+| unitRadius = 0.8125
+| icon =  icon = File:Gul'dan_Icon.png
+| skills =
+Life Tap;D;File:Life_Tap_Icon.png;<span style="color:red">222 Life</span></span><br/>Gul'dan does not regenerate Mana. Activate to restore 25% of Gul'dan's Mana.<!--
+-->{{undoc-x|type=Resource<!--
+-->|scaling=4.00% (Health cost)<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|props=Self-damage<!--
+-->|cast=Instant<!--
+-->|notes=<li>Cannot be used if Gul'dan is at maximum Mana or if using it would be lethal.<li>Does not dismount.}};0.5;;;False;
+
+Fel Flame;Q;File:Fel_Flame_Icon.png;Release a wave of flame, dealing 210 damage to enemies.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.4921875%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Clamping]]<!--
+-->|cast=0.125 + 0.125 seconds<!--
+-->|aoe=Radial<!--
+-->|radius=10.5 <sup>(1</sup><!--
+-->|arc=24 degrees<!--<!--
+-->|notes=<li><sup>1)</sup> Area grows from 1.0 to its maximum radius over 0.5625 seconds in 1.04 increments.<li>Casting ''Fel Flame'' sets Gul'dan's Basic Attack cooldown to 0.5 seconds.}};1.5;75;False;
+
+Drain Life;W;File:Drain_Life_Icon.png;Drain the life from an enemy over 3 seconds, dealing 132 damage per second and healing Gul'dan for 188 Health per second.<!--
+-->{{undoc-x|type=Spell Damage / Healing<!--
+-->|scaling=4.00% (both)<!--
+-->|affects=Non-Structure Enemies / Self<!--
+-->|target=Unit target<!--
+-->|props=[[Stationary channel]]<!--
+-->|cast=Instant<!--
+-->|cast range=7<!--
+-->|channel range=10.5<!--
+-->|tickrate=4.0 per second (x12)<!--
+-->|prop1=Damage per tick|val1=33<!--
+-->|prop2=Healing per tick|val2=47<!--
+-->|notes=<li>Ability is interrupted if the target moves 3.5 units past its cast range.<li>Can be canceled after 0.5 seconds by reactivating the Ability, or issuing a ''move'' or ''stop'' command.}};10 / 0.5;;False;
+
+Corruption;E;File:Corruption (Gul'dan) Icon.png;Call forth three bursts of shadow energy, dealing 204 damage over 6 seconds. Corruption can stack up to 3 times on an enemy.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.4921875%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Clamping]], [[Damage over Time]]<!--
+-->|cast=0.125 + 0.0625 seconds<!--
+-->|range=7.0<!--
+-->|aoe=Circle (x3)<!--
+-->|radius=1.5<!--
+-->|tickrate=1.0 per second (x6)<!--
+-->|prop1=Damage per tick|val1=34<!--
+-->|prop2=Burst spacing|val2=3.0 (from center)<!--
+-->|prop3=Burst interval|val3=0.4375 seconds<!--
+-->|notes=<li>Cast point marks the center of the first burst.<li>Can only stack up to 3 times per target (cannot be modified by any Talents). <li>Damage over time ticks individually for each burst. Each hit extends the duration of all stacks to 6 seconds (because the tick rate is only once per second, this only matters for each full second the stack has been extended by).}};14;90;False;
+
+Horrify;R;File:Horrify_Icon.png;After 0.5 seconds deal 120 damage to enemy Heroes in an area and Fear them for 2 seconds. While Feared, Heroes are Silenced and forced to run away from Horrify's center.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemy Heroes<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Fear]]<!--
+-->|cast=0 + 0.3125 seconds<!--
+-->|range=10<!--
+-->|aoe=Circle<!--
+-->|radius=3.5<!--
+-->|notes=}};90;80;Heroic;False;
+
+Rain of Destruction;R;File:Rain_of_Destruction_Icon.png;After 1.5 seconds, summon a rain of meteors in an area for 7 seconds. Each meteor deals 165 damage in a small area.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Channeled cast]] (stationary)<!--
+-->|cast=1.5(ch) seconds<!--
+-->|range=10<!--
+-->|radius=<br/>- Meteor: 1.75<br/>- Area: 9.0<sup>(1</sup><!--
+-->|tickrate=8.0 per second (x56)<!--
+-->|notes=<li><sup>1)</sup>Meteors' spawn locations are randomly chosen (allowing repetitions) from 44 predetermined locations: 1 in the center, 8 locations are spaced evenly on a 3 radius circle, 15 locations are spaced evenly on a 6 radius circle and the remaining 20 locations are spaced evenly on a 9 radius circle.<li>Interrupting the cast in any way puts it on a 10-second cooldown. Gul'dan can interrupt the channel by issuing a "move" or "stop" command.}};70;80;Heroic;False;
+
+| talents =
+<!-- LEVEL 1 -->
+Pursuit of Flame;1;1;{{quest|Hit 30 enemy Heroes with Fel Flame.|Permanently increase Fel Flame's area by 33%.}}<!--
+-->{{undoc-x|prop1=Bonus radius|val1=1.19<!--
+-->|notes=<li>Increases the radius growth rate to 1.14 per tick.}};File:Pursuit_of_Flame_Icon.png;
+
+Chaotic Energy;1;2;Increases the cast range of Drain Life by 25% and the healing provided by Regen Globes by 50%.<p>{{quest|Gather 15 Regen Globes.|Basic Ability Mana costs are permanently reduced by 20.}}<!--
+-->{{undoc-x|prop1=Bonus cast range|val1=1.5<!--
+-->|prop2=Bonus channel range|val1=1.75<!--
+-->|notes=}};File:Chaotic_Energy_Icon.png;
+
+Echoed Corruption;1;3;{{quest|Hit enemy Heroes with Corruption.|After hitting 40 Heroes, Corruption gains new functionality. After the third strike, Corruption strikes 3 times in the opposite direction.}}<p>{{Reward|After 85 hits, Corruption heals for 100% of the damage dealt.}}<!--
+-->{{undoc-x|nohr=1<!--
+-->|notes=<li>A target can still only have up to 3 stacks of ''Corruption'' on it (see notes under that Basic Ability). Because of the length of the delay between impacts, all hits above 3 from ''Corruption'' once this Talent reward is earned will add 1 second to 1 stack of ''Corruption'' each (in other words 1 damage tick).}};File:Echoed_Corruption_Icon.png;
+
+<!-- LEVEL 4 -->
+Health Funnel;2;1;Drain Life's cooldown recharges 100% faster while it is channeling. If an enemy dies while under the effect of Drain Life, the cooldown is instantly refreshed.<!--
+-->{{undoc-x|nohr=1<!--
+-->|notes=<li>Cooldown gets reset if the enemy dies from anything within 1.5 seconds after being affected by ''Drain Life'' ([[Summon]] timed life expiration does not apply cooldown reset).}};File:Health_Funnel_Icon.png;
+
+Improved Life Tap;2;2;Increase the Mana restored by Life Tap to 40%.;File:Improved_Life_Tap_Icon.png;
+
+Consume Soul;2;3;{{Cooldown|25}}<br/>{{Active}} Instantly kill an enemy Minion and heal for 365 Health.<p>Stores 3 charges.<!--
+-->{{undoc-x|type=Instant kill / Healing<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemy [[Minion]]s / Self<!--
+-->|target=Unit target<!--
+-->|cast=Instant<!--
+-->|range=5.5<!--
+-->|notes=}};File:Consume_Soul_Icon.png;
+
+<!-- LEVEL 7 -->
+Bound by Shadow;3;1;Each enemy Hero hit with Fel Flame reduces the cooldown of Corruption by 1.75 seconds.;File:Bound_by_Shadow_Icon.png;
+
+Curse of Exhaustion;3;2;Drain Life deals 50% more damage and Slows the target's Movement Speed by 40%.<!--
+-->{{undoc-x|type=Offensive damage modifier / Crowd control<!--
+-->|affects=Ability / Enemies<!--
+-->|props=[[Slow]]<!--
+-->|notes=<li>Stacks additively with other offensive damage modifiers affecting <i>Drain Life</i>'s damage.}};File:Curse_of_Exhaustion_Icon.png;
+
+Hunger for Power;3;3;Increases Spell Power by 15% but reduces healing received from allies by 25%.<!--
+-->{{undoc-x|type=Offensive damage modifier, Healing dealt modifier, Healing received modifier<!--
+-->|affects=Self<!--
+-->|props=[[Spell Power]]<!--
+-->|notes=<li>Healing from [[Healing Fountain]]s, [[Regeneration Globe]]s and [[Biotic Emitter]]s is also reduced.<li>Self-healing from Gul'dan's Abilities and Talents is not reduced, and is in fact increased due to Spell Power.<li>Spell Power from ''Hunger for Power'' stacks additively with itself and other sources of Spell Power as well as other offensive damage modifiers and healing dealt modifiers affecting Gul'dan.}};File:Hunger_for_Power_Icon.png;
+
+<!-- LEVEL 10 -->
+Horrify;4;1;{{Cooldown|80}}<br/>After a short delay, deal 120 damage and fear enemy Heroes in the area for 2 seconds.;File:Horrify_Icon.png;
+Rain of Destruction;4;2;{{Cooldown|70}}<br/>After 1.5 seconds, summon a rain of meteors in an area for 7 seconds. Each meteor deals 165 damage in a small area.;File:Rain_of_Destruction_Icon.png;
+
+<!-- LEVEL 13 -->
+Fel Armor;5;1;Hitting an enemy Hero with Fel Flame grants 50 Spell Armor for 2.5 seconds, reducing Ability Damage taken by 50%.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Spell Armor]]<!--
+-->|notes=<li>Does not stack with itself or other positive Armor effects.}};File:Fel_Armor_Icon.png;
+
+Harvest Life;5;2;Drain Life heals for 75% more Health when used on Heroes.<!--
+-->{{undoc-x|type=Healing dealt modifier<!--
+-->|affects=Ability<!--
+-->|notes=<li>Stacks additively with effects that affect healing dealt, and multiplicatively with effects that affect healing received by Gul'dan.}};File:Harvest_Life_Icon.png;
+
+Dark Bargain;5;3;Guldan's maximum Health is permanently increased by 40% but his Death Respawn time is increased by 10 seconds.<!--
+-->{{undoc-x|type=Bonus Health<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|notes=}};File:Dark_Bargain_Icon.png;
+
+Healthstone;5;4;{{Cooldown|45}}<br/>{{Active}} Activate to heal for 25% of Gul'dan's maximum Health.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|cast=Instant<!--
+-->|notes=<li>Cannot be used when Gul'dan is at maximum Health.}};File:Healthstone_Icon.png;
+
+<!-- LEVEL 16 -->
+Rampant Hellfire;6;1;Fel Flame's damage is increased by 12% for 5 seconds when hitting an enemy Hero. This can stack up to 5 times.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|notes=<li>Stacks additively with itself and other offensive damage modifiers affecting <i>Fel Flame</i>'s damage.}};File:Rampant_Hellfire_Icon.png;
+
+Ruinous Affliction;6;2;Corruption deals an additional 70 damage on impact. If the enemy is hit by all three strikes, the third strike deals 242 damage.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|notes=<li>Three hit damage is dealt instead of the initial damage of the third hit.}};File:Ruinous_Affliction_Icon.png;
+
+Darkness Within;6;3;Dealing 600 damage to enemy Heroes causes the next cast of Life Tap to cost no Health and grant Gul'dan 25% Spell Power for 5 seconds.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|scaling=4.00% (threshold)<!--
+-->|affects=Self<!--
+-->|props=[[Spell Power]]<!--
+-->|notes=<li>Stored damage does not scale upon level up, but fully charged effect remains activatable.<li>Spell Power from ''Darkness Within'' stacks additively with itself and other sources of Spell Power as well as other offensive damage modifiers and healing dealt modifiers affecting Gul'dan.}};File:Darkness_Within_Icon.png;
+
+Haunt;7;1;Increases the duration of Horrify by 1 second, and while Feared, enemies lose 20 Armor, causing them to take 20% increased damage.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Armor]]<!--
+-->|notes<li>Does not stack with itself or other negative Armor effects. Other defensive damage modifiers may stack.}};File:Haunt_Icon.png;
+
+Deep Impact;7;2;Rain of Destruction Slows enemies' Movement Speed by 90% for 0.5 seconds.<!--
+-->{{undoc-x|type=Crowd control<!--
+-->|affects=Enemies<!--
+-->|props=[[Slow]]<!--
+-->|notes=}};File:Deep_Impact_Icon.png;
+
+Demonic Circle;7;3;{{Cooldown|60}}<br/>{{Active}} Summon a Demonic Circle at your location. Activate to teleport to the Demonic Circle.<!--
+-->{{undoc-x|nohr=True<!--
+-->|notes=<li>Grants two active abilities: ''Summon Demonic Circle'' for setting up the circle and ''Teleport to Demonic Circle'' for teleporting to it.}}<!--
+
+--><hr/><small>'''Summon Demonic Circle'''</small><!--
+-->{{undoc-x|nohr=1<!--
+-->|type=Active<!--
+-->|target=No target<!--
+-->|props=[[Channeled cast]] (stationary)<!--
+-->|cast=1.0 (ch) + 0 seconds<!--
+-->|prop1=Cooldown|val1=1.0 seconds<!--
+-->|notes=<li>Only one Demonic Circle may be active at a time.<li>Demonic Circle is removed, if Gul'dan dies.}}<!--
+
+--><hr/><small>'''Teleport to Demonic Circle'''</small><!--
+-->{{undoc-x|nohr=1<!--
+-->|type=Movement: [[Teleport]]<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|cast=Instant<!--
+-->|range=Global<!--
+-->|notes=<li>Requires an active Demonic Circle.<li>Active Demonic Circles are removed when ''Teleport to Demonic Circle'' is used.}};File:Demonic_Circle_Icon.png;
+}}
+
+<noinclude>
+{{Scaling table/start|{{#var:health}}|{{#var:health scaling}}|{{#var:health regen}}|{{#var:health regen scaling}}|{{#var:attack damage}}|{{#var:attack damage scaling}}}}
+{{Scaling table/slot|Life Tap (cost)|222|0.04}}
+{{Scaling table/slot|Fel Flame|210|0.044921875}}
+{{Scaling table/slot|Drain Life (damage, per second)|132|0.04}}
+{{Scaling table/slot|Drain Life (damage, single)|33|0.04}}
+{{Scaling table/slot|Drain Life (healing, per second)|188|0.04}}
+{{Scaling table/slot|Drain Life (healing, single)|47|0.04}}
+{{Scaling table/slot|Corruption (per hit, per second)|204|0.044921875}}
+{{Scaling table/slot|Corruption (per hit, single)|34|0.04}}
+{{Scaling table/slot|Horrify|120|0.04|10}}
+{{Scaling table/slot|Rain of Destruction|165|0.04|10}}
+{{Scaling table/slot|Consume Soul|365|0.04|4}}
+{{Scaling table/slot|Ruinous Affliction (initial)|70|0.04|16}}
+{{Scaling table/slot|Ruinous Affliction (triple)|242|0.04|16}}
+{{Scaling table/slot|Darkness Within (threshold)|600|0.04|16}}
+{{Scaling table/end}}
+</noinclude>

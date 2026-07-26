@@ -1,0 +1,235 @@
+{{hero data
+| name = Sonya
+| date = March 13, 2014
+| price = 4000
+| title = Wandering Barbarian
+| role = Bruiser
+| franchise = Diablo
+| info = A Bruiser who's great at capturing Mercenary camps and likes to dive into the enemy team.
+| lore = From the frozen Dreadlands of the north come the mighty Barbarian warriors. After surviving the destruction of her home and death of her tribe, Sonya wanders Sanctuary in search of battle and a better life for her people.
+| difficulty = Medium
+| melee = True
+| health = 2450
+| healthRegen = 5.1054
+| armor = 0
+| resource = 100
+| resourceType = Fury
+| attackSpeed = 1.25
+| attackRange = 1.5
+| attackDamage = 84
+| healthScaling = 0.04
+| regenScaling = 0.04
+| adamageScaling = 0.04
+| unitRadius = 0.75
+| icon = File:Sonya_Icon.png
+| skills = 
+Fury;Trait;File:Fury_Icon.png;Use Fury instead of Mana, which is gained by taking damage or dealing Basic Attack damage. Using a Basic or Heroic Ability grants 10% Movement Speed for 4 seconds.<!--
+-->{{undoc-x|type=Resource, Status effect<!--
+-->|affects=Self<!--
+-->|props=[[Movement Speed]]<!--
+-->|notes=<li>Sonya starts at 0 Fury when she respawns.<li>Basic Attacks generate 6 Fury each and every instance of damage Sonya takes generates 2 Fury.<li>Movement Speed bonus does not stack, but instead refreshes the duration.}};;;trait;False
+
+Ancient Spear;Q;File:Ancient_Spear_Icon.png;Throw out a spear that pulls Sonya to the first enemy hit, dealing 173 damage and briefly Stunning them. If this hits an enemy, generate 40 Fury.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control / Movement: [[Launch]]<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies / Self<!--
+-->|target=Point target<!--
+-->|props=[[Clamping]], [[Skillshot]], [[Stun]]<!--
+-->|cast=0.15 + 0 seconds<!--
+-->|range=6.5<!--
+-->|hitbox=1.25 x 2.25<!--
+-->|missile=<br>- Initial: 25 (spear & leap)<br>- Minimum: 5.0<br>- Acceleration: -5.0<!--
+-->|notes=<li>''Ancient Spear'' can be used while ''Rooted'', damaging the enemy and stunning them upon hit, but it will not cause Sonya to be pulled to them.<li><i>Ancient Spear</i>'s Stun has variable duration and lasts until Sonya reaches her target (5 server ticks, or .3125s, at max range. 1 server tick, or .0625s, at point blank.)<li>If the enemy dies from the impact or while Sonya is being pulled to them, the pull will continue until Sonya reaches their location.<li>Hitting an enemy with ''Ancient Spear'' will reset Sonya's Basic Attack cooldown.}};13;;;False
+
+Seismic Slam;W;File:Seismic_Slam_Icon.png;Deals 176 damage to the target enemy and 44 to enemies behind the target.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Unit target<!--
+-->|props=[[Splash]]<!--
+-->|cast=0.15 + 0 seconds<!--
+-->|range=2.25<!--
+-->|aoe=Rectangle <sup>(1</sup><!--
+-->|width=3.0<!--
+-->|height=6.0<!--
+-->|notes=<li><sup>1)</sup> Splash search is done in three 3x2 areas, impacting at 0.15 intervals behind the target. The first search takes place at the same time as the initial impact.<li>Primary target cannot be hit by the splash damage of the same cast.}};1;25;;False
+
+Whirlwind;E;File:Whirlwind_Icon.png;Deals 138 damage a second to nearby enemies for 3 seconds, healing for 25% of damage dealt. Healing tripled versus Heroes.<!--
+-->{{undoc-x|type=Spell Damage / Healing<!--
+-->|scaling=4.00% / -<!--
+-->|affects=Enemies / Self<!--
+-->|target=No target<!--
+-->|props=[[Area of Effect]], [[Lifesteal]], [[Mobile channel]]<!--
+-->|cast=Instant<!--
+-->|aoe=Circle<!--
+-->|radius=2.5<!--
+-->|tickrate=2.0 per second (x7)<!--
+-->|prop1=Damage per tick|val1=69<!--
+-->|notes=<li>Really averages 161 DPS over 3 seconds, because there are 7 ticks including one immediately and one at the end of the 3 seconds.<li>''Whirlwind'' can be reactivated after 0.75 seconds to end its effect early.<li>Lifesteal value against Heroes is set to 75% of damage dealt.<li>Sonya ignores collision with Heroes, Minions, Mercenaries and Monsters while Whirlwinding.<li>While Whirlwinding, Sonya attempts to closely follow behind the target of the last attack command issued to her.}};5 / 0.75;40;;False
+
+Leap;R;File:Leap_Icon.png;Leap into the air, dealing 135 damage to nearby enemies and Stunning them for 1.25 seconds.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control / Movement: [[Launch]], Status Effect<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies / Self<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Clamping]], [[Stun]], [[Unstoppable]]<!--
+-->|cast=Instant<!--
+-->|range=10<!--
+-->|aoe=Circle<!--
+-->|radius=3.0 <sup>(1</sup><!--
+-->|missile=30<!--
+-->|tickrate=<!--
+-->|notes=<li><sup>1)</sup> Extended by Sonya's unit radius.<li>Sonya becomes Unstoppable while in the air.<li>Targeting Leap less than 0.65 units from Sonya's location causes her to land in place after 0.2 seconds' delay.<li>Regardless, Leap is a Movement Ability and cannot be cast while Rooted.}};60;;heroic;False
+
+Wrath of the Berserker;R;File:Wrath_of_the_Berserker_Icon.png;Increase damage dealt by 40%. Reduce the duration of Stuns, Slows, and Roots against you by 50%. Lasts 15 seconds, and extends by 1 second for every 10 Fury gained.<!--
+-->{{undoc-x|type=Offensive damage modifier, Crowd control reduction<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|cast=Instant<!--
+-->|notes=<li>Cooldown starts when the Ability is cast.<li>Does not stack with itself.<li>Damage bonus stacks additively with other offensive damage modifiers affecting Sonya's damage output.}};60;;heroic;False
+
+| talents = <!-- LEVEL 1 -->
+Furious Blow;1;1;Every 4th cast of Seismic Slam deals 40% more damage to the primary target and costs no Fury.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|notes=<li>Damage bonus stacks additively with other offensive damage modifiers that can affect <i>Seismic Slam</i>'s primary damage.}};File:Furious_Blow_Icon.png;
+
+War Paint;1;2;Sonya's Basic Attacks heal for 30% of the damage dealt.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|props=[[Attack Modifier]], [[Lifesteal]]<!--
+-->|notes=}};File:War_Paint_Icon.png;
+
+Tough As Nails;1;3;Every 16 seconds, gain 60 Physical Armor against the next enemy Hero Basic Attack, reducing the damage taken by 60%.<p>Stores up to 3 charges. Charges refresh 200% faster while Fury's Movement Speed bonus is active.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Block]], [[Physical Armor]]<!--
+-->|notes=<li>Does not stack with itself or other positive Physical Armor effects. Other defensive damage modifiers may stack.}};File:Tough_As_Nails_Icon.png;
+
+<!-- LEVEL 4 -->
+Shattered Ground;2;1;Increase Seismic Slam's splash damage by 250%. Targeting a Hero with Seismic Slam further increases its splash damage by 250%, while targeting other enemies instead increases the length of Seismic Slam's splash by 66%.<!--
+-->{{undoc-x|type=Bonus damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Ability<!--
+-->|prop1=Bonus splash length|val1=4.0<!--
+-->|prop2=Bonus damage|val2=110<!--
+-->|notes=<li>Damage bonuses stack additively with themselves and any other offensive damage modifiers that can affect <i>Seismic Slam</i>'s splash damage. This value is still separate from the primary damage and does not benefit from damage modifiers that only affect the primary damage.}};File:Shattered_Ground_Icon.png;
+
+Hurricane;2;2;Reduces the cooldown of Whirlwind by 2 seconds. Casting Whirlwind removes all Slows and Roots from Sonya.;File:Hurricane_Icon.png;
+
+Shot of Fury;2;3;{{Cooldown|40}}<br/>{{Active}} Activate to gain 50 Fury. Usable while Whirlwinding.<p>{{Passive}} After casting Seismic Slam, your next Basic Attack deals 40% more damage.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|props=[[Attack Modifier]]<!--
+-->|cast=Instant<!--
+-->|notes=<li>Damage bonus does not stack with itself and does not store charges.<li>Damage bonus stacks additively with other offensive damage modifiers that can affect Sonya's Basic Attack damage.}};File:Shot_of_Fury_Icon.png;
+
+<-- LEVEL 7 -->
+Poisoned Spear;3;1;Ancient Spear deals an additional 100% damage over 6 seconds.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|tickrate=1.0 per second (x6)<!--
+-->|prop1=Damage per tick|val1=28.83<!--
+-->|notes=}};File:Poisoned_Spear_Icon.png;
+
+Life Funnel;3;2;Increases the healing of Whirlwind to 35% of damage dealt.<!--
+-->{{undoc|<hr><li>Increases Hero-based lifesteal from 75% to 105%.}};File:Life_Funnel_Icon.png;
+
+Battle Rage;3;3;{{Charge Cooldown|30}}<br/>{{Active}} Activate to instantly restore 10% of Sonya's maximum Health. Stores up to 2 charges. Usable while Whirlwinding.<p>{{Passive}} Sonya deals 25% more damage to Mercenaries.<!--
+-->{{undoc-x|type=Healing / Offensive damage modifier<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|cast=Instant<!--
+-->|notes=<li>Damage bonus stacks additively with other offensive damage modifiers that can affect Sonya's damage against Mercenaries.}};File:Battle_Rage_Icon.png;
+
+<!-- LEVEL 10 -->
+Leap;4;1;{{Cooldown|60}}<br/>Leap into the air, dealing 135 damage to nearby enemies and Stunning them for 1.25 seconds.;File:Leap_Icon.png;
+Wrath of the Berserker;4;2;{{Cooldown|60}}<br/>Increase damage dealt by 40%. Reduce the duration of Stuns, Slows, and Roots against you by 50%. Lasts 15 seconds, and extends by 1 second for every 10 Fury gained.;File:Wrath_of_the_Berserker_Icon.png;
+
+<!-- LEVEL 13 -->
+Mystical Spear;5;1;Ancient Spear always pulls Sonya to the target location even if it doesn't hit an enemy. When used this way, Ancient Spear's cooldown is reduced by 5 seconds.;File:Mystical_Spear_Icon.png;
+
+Ruthless;5;2;Whirlwind deals an additional 50 damage per second to Heroes below 50% Health. Does not generate additional healing.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemy Heroes<!--
+-->|notes=<li>Damage is dealt in a separate instance from <i>Whirlwind</i>'s damage.}};File:Ruthless_Icon.png;
+
+No Escape;5;3;Increases the Movement Speed bonus from using Basic and Heroic Abilities to 20%.;File:No_Escape_Icon.png;
+
+<!-- LEVEL 16 -->
+Giant Slammer;6;1;Basic Attacks and Seismic Slam deal an additional 1.5% of Heroes' maximum Health as damage and heal Sonya for 60% of the damage dealt by this effect.<!--
+-->{{undoc-x|type=Percent damage / Healing<!--
+-->|scaling=-<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Attack Modifier]], [[Lifesteal]], [[Percent damage]]<!--
+-->|notes=<li>Damage is dealt in a separate instance.<li>Damage bonus is applied to both primary and secondary damage of ''Seismic Slam''.}};File:Giant_Slammer_Icon.png;
+
+Rampage;6;2;Increase Basic Attack damage by 25%. Basic Attacks reduce the cooldown of Ancient Spear by 1.5 seconds.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Attack Modifier]]<!--
+-->|notes=<li>Damage bonus stacks additively with other offensive damage modifiers that can affect Sonya's Basic Attack damage.}};File:Rampage_Icon.png;
+
+Nerves of Steel;6;3;{{cooldown|60}}<br /> {{Active}} Activate to gain 25% of your maximum Health as a Shield for 3 seconds. Usable while Whirlwinding.<!--
+-->{{undoc-x|type=Shield<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|cast=Instant<!--
+-->|notes=}};File:Nerves_of_Steel_Icon.png;
+
+<!-- LEVEL 20 -->
+Arreat Crater;7;1;Leap leaves behind an impassable crater for 5 seconds. Reduces Leap's cooldown by 20 seconds.<!--
+-->{{undoc-x|type=Pathing Blocker<!--
+-->|affects=All units<!--
+-->|aoe=Circle <sup>(1</sup><!--
+-->|radius=3.25<!--
+-->|notes=<li><sup>1)</sup> The wall consists of 40 smaller blocker units, with 0.625 radius, spread around the area.<li>''Leap'' can be reactivated after 1.5 seconds to end this effect early.}};File:Arreat_Crater_Icon.png;
+
+Striding Giant;7;2;{{cooldown|30}}<br />Wrath of the Berserker increases maximum Health by 10% and grants Striding Giant, which can be activated to become Unstoppable for 2 seconds.<!--
+-->{{undoc-x|type=Bonus Health<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|notes=}}<br/>Striding Giant (active)<hr/>{{cooldown|30}}<br/>{{active}} Activate to become Unstoppable for 2 seconds. Usable only when Wrath of the Berserker is active.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|props=[[Unstoppable]]<!--
+-->|cast=Instant<!--
+-->|notes=<li>Usable while Whirlwinding.}};File:Striding_Giant_Icon.png;
+
+Composite Spear;7;3;Increases Ancient Spear's range by 50%. Hitting an enemy Hero with Ancient Spear grants 25 Armor for 4 seconds.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Armor]]<!--
+-->|prop1=Bonus range|val1=3.25<!--
+-->|notes=<li>Still Stuns until target is reached, so if used at the max new range of 9.75, Stuns for 7 server ticks, or 0.4375s.<li>Does not stack with other positive Armor effects. Other defensive damage modifiers may stack.}};File:Composite_Spear_Icon.png;
+
+Ignore Pain;7;4;{{cooldown|60}}<br /> Activate to gain 60 Armor for 4 seconds, taking 60% less damage. Usable while Whirlwinding.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|props=[[Armor]]<!--
+-->|cast=Instant<!--
+-->|notes=<li>Does not stack with other positive Armor effects. Other defensive damage modifiers may stack.}};File:Ignore_Pain_Icon.png;
+}}
+
+<noinclude>
+{{Scaling table/start|{{#var:health}}|{{#var:health scaling}}|{{#var:health regen}}|{{#var:health regen scaling}}|{{#var:attack damage}}|{{#var:attack damage scaling}}}}
+{{Scaling table/slot|Ancient Spear|173|0.04}}
+{{Scaling table/slot|Seismic Slam (primary)|176|0.04}}
+{{Scaling table/slot|Seismic Slam (splash)|44|0.04}}
+{{Scaling table/slot|Seismic Slam (splash, Shattered Ground)|220|0.04|4}}
+{{Scaling table/slot|Whirlwind (single)|69|0.04}}
+{{Scaling table/slot|Whirlwind (per second)|138|0.04}}
+{{Scaling table/slot|Leap|135|0.04|10}}
+{{Scaling table/slot|Poisoned Spear|172.98|0.04|7}}
+{{Scaling table/slot|Poisoned Spear (per second)|28.83|0.04|7}}
+{{Scaling table/slot|Ruthless|50|0.04|13}}
+{{Scaling table/end}}
+</noinclude>

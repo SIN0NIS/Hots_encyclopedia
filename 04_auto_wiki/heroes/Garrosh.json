@@ -1,0 +1,563 @@
+{
+  "hero": "Garrosh",
+  "abilities": [
+    {
+      "name": "Armor Up",
+      "hotkey": "TRAIT",
+      "icon": "Armor_Up_Icon.png",
+      "description": "Garrosh gains 1 Armor for every 2% of maximum Health missing.",
+      "fields": {
+        "type": "Defensive damage modifier",
+        "affects": "Self",
+        "props": "Armor",
+        "notes": "Only updates every 187.5ms (3 server ticks). Armor Up stacks with other sources of Armor."
+      }
+    },
+    {
+      "name": "Groundbreaker",
+      "hotkey": "Q",
+      "icon": "Groundbreaker_Icon.png",
+      "description": "Deal 81 damage to enemies in an area. Heroes hit on the outer edge are Stunned for 0.5 seconds and then Slowed by 40% for 2 seconds.",
+      "fields": {
+        "type": "Spell damage, Crowd control",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "targeting": "Point target",
+        "props": "Area of Effect, Clamping, Slow, Stun",
+        "cast": "0.5 + 0.125 seconds",
+        "radius": "-Inner: 6.25 - Outer: 7.25",
+        "arc": "45 degrees",
+        "cooldown": "8",
+        "cost": "40"
+      }
+    },
+    {
+      "name": "Bloodthirst",
+      "hotkey": "W",
+      "icon": "Bloodthirst_Icon.png",
+      "description": "Deal 156 damage to an enemy and heal for 10% of Garrosh's missing Health. Healing is increased by 100% against Heroes.",
+      "fields": {
+        "type": "Spell damage / Healing",
+        "scaling": "4.00% / -",
+        "affects": "Non-Structure enemies / Self",
+        "target": "Unit target",
+        "cast": "0 + 0.125 seconds",
+        "range": "2.5",
+        "notes": "Healing bonus to Heroes directly increases the base healing amount, causing the given percentage to stack multiplicatively with healing modifiers.",
+        "cooldown": "12",
+        "cost": "55"
+      }
+    },
+    {
+      "name": "Wrecking Ball",
+      "hotkey": "E",
+      "icon": "Wrecking_Ball_Icon.png",
+      "description": "Throw a nearby enemy Hero, Minion, or Mercenary to the target location, dealing 91 damage to enemies near the impact and Slowing them by 30% for 2.5 seconds.",
+      "fields": {
+        "type": "Spell damage, Crowd control",
+        "scaling": "4.00%",
+        "affects": "Enemies (impact) / Enemy Heroes, Minions & Mercenaries (throw)",
+        "target": "Point target (impact) / Automatic (throw)",
+        "props": "Clamping Impact - Area of Effect, Slow Throw - Displacement, Daze, Stun",
+        "cast": "Instant",
+        "range": "6.0",
+        "prop1": "Throw search radius",
+        "val1": "2.25",
+        "prop2": "Impact radius",
+        "val2": "2.5",
+        "prop3": "Throw duration",
+        "val3": "0.3125 seconds",
+        "notes": "Automatically selects the enemy closest to Garrosh to be thrown, indicated by a red marker above the unit. Does not prioritize Heroes. Enemy Structures and Summons (that are not Heroic Pets) and Monsters can be damaged, but not thrown. The thrown enemy is briefly Stunned, interrupting channeled abilities, and then Dazed for the remainder of the flight. The thrown enemy also receives the impact effects upon landing.",
+        "cooldown": "16",
+        "cost": "65"
+      }
+    },
+    {
+      "name": "Warlord's Challenge",
+      "hotkey": "R",
+      "icon": "Warlord's_Challenge_Icon.png",
+      "description": "Silence nearby Heroes and force them to attack Garrosh for 2 seconds.",
+      "fields": {
+        "type": "Crowd control",
+        "scaling": "-",
+        "affects": "Enemy Heroes",
+        "target": "No target",
+        "props": "Area of Effect, Taunt",
+        "cast": "0.125 + 0 seconds",
+        "radius": "3.5",
+        "notes": "The effect ends immediately if Garrosh dies. Taunt counts as a Silence.",
+        "cooldown": "50",
+        "cost": "40"
+      }
+    },
+    {
+      "name": "Decimate",
+      "hotkey": "R",
+      "icon": "Decimate_Icon.png",
+      "description": "Deal 50 damage to nearby enemies and Slow them by 40% for 1.5 seconds. Deals 100% more damage to Heroes, and each Hero hit reduces the cooldown by 1 second. Stores up to 3 charges.; 8 / 1.0",
+      "fields": {
+        "type": "Spell damage",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "target": "No target",
+        "props": "Area of Effect, Slow",
+        "cast": "Instant",
+        "radius": "5.0",
+        "notes": "Damage bonus to Heroes stacks additively with offensive damage modifiers that can affect Decimate 's damage.",
+        "cooldown": "25"
+      }
+    },
+    {
+      "name": "Into the Fray",
+      "hotkey": "1",
+      "icon": "Into_the_Fray_Icon.png",
+      "description": "Activate to throw a nearby ally and grant them 20 Armor for 3 seconds. Deals 91 damage to nearby enemies upon impact and Slows them by 30% for 2.5 seconds. While in flight, allied Heroes are Unstoppable.",
+      "fields": {
+        "type": "Spell damage, Crowd control (impact) / Crowd control, Defensive damage modifier, Status effect",
+        "scaling": "4.00%",
+        "affects": "Enemies (impact) / Allied Heroes, Minions & Mercenaries (throw)",
+        "target": "Point target (impact) / Automatic (throw)",
+        "props": "Clamping Impact - Area of Effect, Slow Throw - Armor, Displacement, Daze, Unstoppable",
+        "cast": "Instant",
+        "range": "9.0",
+        "prop1": "Throw search radius",
+        "val1": "2.5",
+        "prop2": "Impact radius",
+        "val2": "2.5",
+        "prop3": "Throw duration",
+        "val3": "0.3125 seconds",
+        "notes": "Automatically selects the ally closest to Garrosh to be thrown, indicated by a blue marker above the unit. Does not prioritize Heroes. The thrown ally is Dazed during the flight, interrupting stationary channeled abilities. Into the Fray cannot target Unstoppable or Invulnerable allies, Structures or Summons that are not Heroic Pets. Into the Fray does not benefit from any Talents affecting Wrecking Ball.",
+        "cooldown": "45"
+      }
+    }
+  ],
+  "talents": [
+    {
+      "name": "Warbreaker",
+      "tier": "1",
+      "slot": "1",
+      "icon": "Warbreaker_Icon.png",
+      "description": "Quest Stun Heroes with Groundbreaker. After Stunning 5 Heroes, Groundbreaker deals an additional 165 damage over 3 seconds to Heroes. Reward After Stunning 15 Heroes, permanently reduce Groundbreaker's cooldown by 2 seconds.",
+      "fields": {
+        "type": "Spell damage",
+        "scaling": "4.00%",
+        "affects": "Enemy Heroes",
+        "props": "Damage over Time",
+        "tickrate": "1.0 per second (x3)",
+        "prop1": "Damage per tick",
+        "val1": "50",
+        "notes": "Actually gives Quest stacks any time it hits a Hero, even if the Hero is Unstoppable (including but not limited to Deathwing and Vehicles)."
+      },
+      "_raw_fields": [
+        "Warbreaker",
+        "1",
+        "1",
+        "Quest Stun Heroes with Groundbreaker. After Stunning 5 Heroes, Groundbreaker deals an additional 165 damage over 3 seconds to Heroes. Reward After Stunning 15 Heroes, permanently reduce Groundbreaker's cooldown by 2 seconds.",
+        "File:Warbreaker_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Unrivaled Strength",
+      "tier": "1",
+      "slot": "2",
+      "icon": "Unrivaled_Strength_Icon.png",
+      "description": "Increase Wrecking Ball's throw range by 15% and its damage by 120%.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Ability",
+        "prop1": "Bonus range",
+        "val1": "0.9",
+        "notes": "Damage bonus stacks additively with other offensive damage modifiers that can affect Wrecking Ball 's damage."
+      },
+      "_raw_fields": [
+        "Unrivaled Strength",
+        "1",
+        "2",
+        "Increase Wrecking Ball's throw range by 15% and its damage by 120%.",
+        "File:Unrivaled_Strength_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Body Check",
+      "tier": "1",
+      "slot": "3",
+      "icon": "Body_Check_Icon.png",
+      "description": "Cooldown 15 Active Activate to deal 111 damage to a target enemy and Slow them by 35% for 3 seconds. Enemy Heroes hit receive 30% reduced healing for 3 seconds.",
+      "fields": {
+        "type": "Spell damage, Crowd control / Healing received modifier",
+        "scaling": "4.00%",
+        "affects": "Enemies / Enemy Heroes",
+        "target": "Unit target",
+        "props": "Slow",
+        "cast": "0.125 + 0 seconds",
+        "range": "3.0",
+        "notes": "Healing reduction stacks additively with other healing received modifiers affecting the target."
+      },
+      "_raw_fields": [
+        "Body Check",
+        "1",
+        "3",
+        "Cooldown 15 Active Activate to deal 111 damage to a target enemy and Slow them by 35% for 3 seconds. Enemy Heroes hit receive 30% reduced healing for 3 seconds.",
+        "File:Body_Check_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "In For the Kill",
+      "tier": "2",
+      "slot": "1",
+      "icon": "In_For_The_Kill_Icon.png",
+      "description": "Increase Bloodthirst's damage against non-Heroes by 70%. Killing enemies with Bloodthirst resets its cooldown and refunds its Mana cost.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Ability",
+        "notes": "Cooldown is reset if the target enemy is killed within 0.5 seconds of being affected by Bloodthirst."
+      },
+      "_raw_fields": [
+        "In For the Kill",
+        "2",
+        "1",
+        "Increase Bloodthirst's damage against non-Heroes by 70%. Killing enemies with Bloodthirst resets its cooldown and refunds its Mana cost.",
+        "File:In_For_The_Kill_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Thirst for Battle",
+      "tier": "2",
+      "slot": "2",
+      "icon": "Thirst_for_Battle_Icon.png",
+      "description": "Basic Attacks against Heroes reduce the cooldown of Bloodthirst by 2 seconds.",
+      "fields": {
+        "props": "Attack Modifier"
+      },
+      "_raw_fields": [
+        "Thirst for Battle",
+        "2",
+        "2",
+        "Basic Attacks against Heroes reduce the cooldown of Bloodthirst by 2 seconds.",
+        "File:Thirst_for_Battle_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Indomitable",
+      "tier": "2",
+      "slot": "3",
+      "icon": "Indomitable_Icon.png",
+      "description": "Cooldown 40 Active Activate to become Unstoppable for 1.5 seconds.",
+      "fields": {
+        "type": "Status effect",
+        "affects": "Self",
+        "target": "No target",
+        "props": "Unstoppable",
+        "cast": "Instant"
+      },
+      "_raw_fields": [
+        "Indomitable",
+        "2",
+        "3",
+        "Cooldown 40 Active Activate to become Unstoppable for 1.5 seconds.",
+        "File:Indomitable_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Intimidation",
+      "tier": "3",
+      "slot": "1",
+      "icon": "Intimidation_Icon.png",
+      "description": "Groundbreaker reduces the Attack Speed of Heroes hit by 30% for 4 seconds.",
+      "fields": {
+        "type": "Status effect",
+        "affects": "Enemy Heroes",
+        "props": "Attack Slow"
+      },
+      "_raw_fields": [
+        "Intimidation",
+        "3",
+        "1",
+        "Groundbreaker reduces the Attack Speed of Heroes hit by 30% for 4 seconds.",
+        "File:Intimidation_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Oppressor",
+      "tier": "3",
+      "slot": "2",
+      "icon": "Oppressor_Icon.png",
+      "description": "Basic Attacks and Bloodthirst against Heroes reduce the target's Spell Power by 30% for 2.5 seconds.",
+      "fields": {
+        "type": "Healing dealt modifier, Offensive damage modifier",
+        "affects": "Enemy Heroes",
+        "props": "Attack modifier, Spell Power reduction",
+        "notes": "Does not stack with itself. Subsequent applications refresh the duration. Spell Power debuff from Oppressor stacks additively with other sources of Spell Power as well as other offensive damage modifiers and healing dealt modifiers affecting the target Hero."
+      },
+      "_raw_fields": [
+        "Oppressor",
+        "3",
+        "2",
+        "Basic Attacks and Bloodthirst against Heroes reduce the target's Spell Power by 30% for 2.5 seconds.",
+        "File:Oppressor_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Lok-tar ogar!",
+      "tier": "3",
+      "slot": "3",
+      "icon": "Lok-tar_Ogar!_Icon.png",
+      "description": "Increase Into the Fray's Armor by 20. Hitting enemy Heroes with Into the Fray reduces its cooldown by 12 seconds.",
+      "fields": {
+        "nohr": "1",
+        "notes": "Cooldown reduction may trigger multiple times per cast."
+      },
+      "_raw_fields": [
+        "Lok-tar ogar!",
+        "3",
+        "3",
+        "Increase Into the Fray's Armor by 20. Hitting enemy Heroes with Into the Fray reduces its cooldown by 12 seconds.",
+        "File:Lok-tar_Ogar!_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Warlord's Challenge",
+      "tier": "4",
+      "slot": "1",
+      "icon": "Warlord's_Challenge_Icon.png",
+      "description": "Cooldown 50 Silence nearby Heroes and force them to attack Garrosh for 2 seconds.",
+      "fields": {},
+      "_raw_fields": [
+        "Warlord's Challenge",
+        "4",
+        "1",
+        "Cooldown 50 Silence nearby Heroes and force them to attack Garrosh for 2 seconds.",
+        "File:Warlord's_Challenge_Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Decimate",
+      "tier": "4",
+      "slot": "2",
+      "icon": "Decimate_Icon.png",
+      "description": "Cooldown 8 Deal 50 damage to nearby enemies and Slow them by 40% for 1.5 seconds. Deals 100% more damage to Heroes, and each Hero hit reduces the cooldown by 1 second. Stores up to 3 charges.",
+      "fields": {},
+      "_raw_fields": [
+        "Decimate",
+        "4",
+        "2",
+        "Cooldown 8 Deal 50 damage to nearby enemies and Slow them by 40% for 1.5 seconds. Deals 100% more damage to Heroes, and each Hero hit reduces the cooldown by 1 second. Stores up to 3 charges.",
+        "File:Decimate_Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Defensive Measures",
+      "tier": "5",
+      "slot": "1",
+      "icon": "Defensive_Measures_Icon.png",
+      "description": "If Groundbreaker Stuns a Hero, Garrosh gains a 350 point Shield for 6 seconds.",
+      "fields": {
+        "type": "Shield",
+        "scaling": "4.00%",
+        "affects": "Self",
+        "props": "Area of Effect",
+        "notes": "Does not stack with itself. Subsequent applications refresh the Shield and duration."
+      },
+      "_raw_fields": [
+        "Defensive Measures",
+        "5",
+        "1",
+        "If Groundbreaker Stuns a Hero, Garrosh gains a 350 point Shield for 6 seconds.",
+        "File:Defensive_Measures_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Bloodcraze",
+      "tier": "5",
+      "slot": "2",
+      "icon": "Bloodcraze_Icon.png",
+      "description": "When hitting a Hero, Bloodthirst heals for an additional 15% of Garrosh's maximum Health over 3 seconds.",
+      "fields": {
+        "type": "Healing",
+        "scaling": "-",
+        "affects": "Self",
+        "props": "Heal over Time",
+        "tickrate": "1.0 per second (x4)",
+        "prop1": "Healing per tick",
+        "val1": "3.75%",
+        "notes": "Heal over Time from Bloodcraze does not stack with itself. Subsequent applications refresh the duration."
+      },
+      "_raw_fields": [
+        "Bloodcraze",
+        "5",
+        "2",
+        "When hitting a Hero, Bloodthirst heals for an additional 15% of Garrosh's maximum Health over 3 seconds.",
+        "File:Bloodcraze_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Double Up",
+      "tier": "5",
+      "slot": "3",
+      "icon": "Double_Up_Icon.png",
+      "description": "cooldown 30 active Armor Up can be activated to increase its Armor bonus by 100% for 3 seconds.",
+      "fields": {
+        "type": "Defensive damage modifier",
+        "affects": "Self",
+        "target": "No target",
+        "props": "Armor",
+        "notes": "Stacks additively with other sources of Armor."
+      },
+      "_raw_fields": [
+        "Double Up",
+        "5",
+        "3",
+        "cooldown 30 active Armor Up can be activated to increase its Armor bonus by 100% for 3 seconds.",
+        "File:Double_Up_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Mortal Combo",
+      "tier": "6",
+      "slot": "1",
+      "icon": "Defensive_Measures_Icon.png",
+      "description": "Hitting a Hero with Groundbreaker's Stun and throwing them with Wrecking Ball within 3 seconds reduces Wrecking Ball's cooldown by 10 seconds, regardless of order.",
+      "fields": {
+        "nohr": "1",
+        "notes": "Comboing multiple units with the level 20 talent Titanic Might allows an immediate full cooldown reset on Wrecking Ball, since the 10 second CDR is per Hero affected."
+      },
+      "_raw_fields": [
+        "Mortal Combo",
+        "6",
+        "1",
+        "Hitting a Hero with Groundbreaker's Stun and throwing them with Wrecking Ball within 3 seconds reduces Wrecking Ball's cooldown by 10 seconds, regardless of order.",
+        "File:Defensive_Measures_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Earthshaker",
+      "tier": "6",
+      "slot": "2",
+      "icon": "Unrivaled_Strength_Icon.png",
+      "description": "Wrecking Ball Stuns enemies near the impact area for 0.5 seconds.",
+      "fields": {
+        "type": "Crowd control",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "props": "Stun"
+      },
+      "_raw_fields": [
+        "Earthshaker",
+        "6",
+        "2",
+        "Wrecking Ball Stuns enemies near the impact area for 0.5 seconds.",
+        "File:Unrivaled_Strength_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Seasoned Soldier",
+      "tier": "6",
+      "slot": "3",
+      "icon": "Bloodcraze_Icon.png",
+      "description": "Gain 5% maximum Health, increase Groundbreaker's Slow duration by 1 second, and Bloodthirst gains an additional charge.",
+      "fields": {
+        "type": "Bonus Health",
+        "scaling": "-",
+        "affects": "Self"
+      },
+      "_raw_fields": [
+        "Seasoned Soldier",
+        "6",
+        "3",
+        "Gain 5% maximum Health, increase Groundbreaker's Slow duration by 1 second, and Bloodthirst gains an additional charge.",
+        "File:Bloodcraze_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Death Wish",
+      "tier": "7",
+      "slot": "1",
+      "icon": "Death_Wish_Icon.png",
+      "description": "Increase the duration of Warlord's Challenge by 0.5 seconds. If an enemy Hero is killed while affected by Warlord's Challenge, its cooldown is reduced by 45 seconds.",
+      "fields": {},
+      "_raw_fields": [
+        "Death Wish",
+        "7",
+        "1",
+        "Increase the duration of Warlord's Challenge by 0.5 seconds. If an enemy Hero is killed while affected by Warlord's Challenge, its cooldown is reduced by 45 seconds.",
+        "File:Death_Wish_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Deadly Calm",
+      "tier": "7",
+      "slot": "2",
+      "icon": "Deadly_Calm_Icon.png",
+      "description": "Heroes hit by Decimate deal 40% less damage for 3 seconds.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Enemy Heroes",
+        "notes": "Damage reduction stacks additively with other offensive damage modifiers affecting the target hero's damage output."
+      },
+      "_raw_fields": [
+        "Deadly Calm",
+        "7",
+        "2",
+        "Heroes hit by Decimate deal 40% less damage for 3 seconds.",
+        "File:Deadly_Calm_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Titanic Might",
+      "tier": "7",
+      "slot": "3",
+      "icon": "Titanic_Might_Icon.png",
+      "description": "Wrecking Ball now throws the 2 closest enemies.",
+      "fields": {},
+      "_raw_fields": [
+        "Titanic Might",
+        "7",
+        "3",
+        "Wrecking Ball now throws the 2 closest enemies.",
+        "File:Titanic_Might_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Inner Rage",
+      "tier": "7",
+      "slot": "4",
+      "icon": "Inner_Rage_Icon.png",
+      "description": "Body Check gains an additional charge and its healing reduction is increased by an additional 45%.",
+      "fields": {
+        "prop1": "Charge cooldown",
+        "val1": "1.0 seconds",
+        "notes": "Requires Body Check."
+      },
+      "_raw_fields": [
+        "Inner Rage",
+        "7",
+        "4",
+        "Body Check gains an additional charge and its healing reduction is increased by an additional 45%.",
+        "File:Inner_Rage_Icon.png"
+      ],
+      "level": "20"
+    }
+  ],
+  "other": [],
+  "_unparsed_count": 0
+}

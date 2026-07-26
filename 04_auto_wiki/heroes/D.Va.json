@@ -1,0 +1,646 @@
+{
+  "hero": "D.Va",
+  "abilities": [
+    {
+      "name": "Mech Mode",
+      "hotkey": "TRAIT",
+      "icon": "Mech_Mode_Icon.png",
+      "description": "When D.Va's Mech dies, she is ejected out after 0.75 seconds and can continue to fight. D.Va's Mech only awards 50% of a normal Hero's XP upon dying. Fusion Cannons D.Va's Mech Basic Attacks deal 22 damage in a large area every 0.25 seconds. Deals 40% bonus damage against enemies very close to the Mech.; Trait",
+      "fields": {
+        "type": "Physical damage",
+        "affects": "Enemies",
+        "notes": "1) Primary target must be within 3.75 range while secondary targets can be hit up to 5.0 range. Upon issuing an attack command on an enemy unit, D.Va attempts to move to a range where the target enemy can be hit by bonus damage. D.Va's Basic Attacks can hit secondary targets even if the primary target is Evading. Bonus damage stacks additively with other offensive damage modifiers that can affect D.Va's Basic Attack damage.",
+        "scaling": "4.00%",
+        "props": "Area of Effect, Attack Modifier",
+        "range": "3.75 (1",
+        "aoe": "Rectangle",
+        "width": "2.0",
+        "height": "5.0 (1",
+        "prop1": "Bonus damage range",
+        "val1": "1.75"
+      }
+    },
+    {
+      "name": "Boosters",
+      "hotkey": "Q",
+      "icon": "Boosters_Icon.png",
+      "description": "Increases D.Va's Movement Speed by 115% for 1.75 seconds. Enemies that are hit take 135 damage and are knocked away. D.Va cannot be Slowed while Boosters are active, and each enemy can only be hit once per use.; 10 / 0.5",
+      "fields": {
+        "type": "Spell damage, Crowd control / Status effect",
+        "scaling": "4.00%",
+        "affects": "Enemies / Self",
+        "target": "No target",
+        "props": "Area of Effect, Movement speed, Mobile channel, Knockback",
+        "cast": "Instant",
+        "aoe": "Circle",
+        "radius": "1.375",
+        "prop1": "Knockback duration",
+        "val1": "0.1875 seconds",
+        "prop2": "Knockback speed",
+        "val2": "12",
+        "notes": "Boosters cannot be activated while Rooted. The Ability can be reactivated after 0.5 seconds to end its effect early. Not affected by cooldown reduction granted by allies."
+      }
+    },
+    {
+      "name": "Defense Matrix",
+      "hotkey": "W",
+      "icon": "Defense_Matrix_Icon.png",
+      "description": "Project a defensive field in the target direction for 3 seconds, reducing damage dealt by enemy Heroes inside it by 60%. Activate again to change the angle of the projection. Damage dealt to the Mech from enemies within Defense Matrix still grants the same amount of Self-Destruct Charge.; 10 / 0.5",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Enemy Heroes",
+        "target": "Point target",
+        "props": "Area of Effect, Clamping, Mobile channel",
+        "cast": "0.125 + CH + 0 seconds",
+        "range": "0.5 (1",
+        "aoe": "Trapezoid",
+        "height": "6.5",
+        "width": "- Inner: 2.0 - Outer: 6.0",
+        "tickrate": "16 per second",
+        "prop1": "Debuff duration",
+        "val1": "0.3125 seconds",
+        "prop2": "Retarget cooldown",
+        "val2": "0.5 seconds",
+        "notes": "1) Offset to the start of the area. Defense Matrix can be canceled using the trait button to end its effect early. Damage reduction from Defense Matrix stacks multiplicatively with other offensive damage modifiers affecting the target Heroes' damage output."
+      }
+    },
+    {
+      "name": "Self-Destruct",
+      "hotkey": "E",
+      "icon": "Self_Destruct_Icon.png",
+      "description": "Requires Mech Mode. Eject from the Mech, setting it to self-destruct after 4 seconds. Deals 400 to 1100 damage in a large area, depending on distance from center. Deals 50% damage against Structures. Gain 1% Charge for every 2 seconds spent Basic Attacking, and 25% Charge per 100% of Mech Health lost.",
+      "fields": {
+        "type": "Spell damage, Crowd control",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "target": "No target",
+        "props": "Area of Effect, Knockback",
+        "cast": "Instant",
+        "aoe": "Circle",
+        "radius": "10",
+        "prop1": "Knockback duration",
+        "val1": "0.1875 seconds",
+        "prop2": "Knockback speed",
+        "val2": "16",
+        "notes": "Each Basic Attack grants 0.125% Self-Destruct Charge (even if the attack misses due to being Blinded or the target Evading). Hitting multiple enemies does not increase the Charge gained. Charge gained from damage taken is calculated after all damage modifications, excluding Defense Matrix. Self-Destruct can be activated while Boosters can be deactivated after leaving the Mech to stop it in its place. If Mech has taken fatal damage Self-Destruct cannot be used. Upon cast D.Va is ejected from the back of the Mech and the Mech itself becomes Unkillable and turns into a Heroic Pet, allowing it to be hit by Abilities that can target Heroes. Exploding Mech can be afflicted and moved with crowd control and Stasis effects, like Stitches's Gorge, but these effects cannot suppress the Mech's explosion. Explosion can only be delayed by placing the Mech in Time Stop. Using Self-Destruct to eject from the Mech awards no experience or Takedown credit to enemies. If the Mech is Rooted prior to D.Va ejecting and the root expires before it explodes, it will move toward the location of the last move order issued while D.Va was in the Mech. At certain Hero levels, explodes immediately when hit by Malthael's Throwing Shade."
+      }
+    },
+    {
+      "name": "Bunny Hop",
+      "hotkey": "R",
+      "icon": "Bunny_Hop_Icon.png",
+      "description": "D.Va's Mech becomes Unstoppable and stomps every 0.5 seconds, dealing 78 damage in a large area. Every 4th consecutive hit on a Hero deals 80% more damage and Stuns them for 0.5 seconds. Lasts 4 seconds. Requires Mech Mode.; 70 / 1.0",
+      "fields": {
+        "type": "Spell damage / Crowd control / Status effect",
+        "scaling": "4.00%",
+        "affects": "Enemies / Enemy Heroes / Self",
+        "target": "No target",
+        "props": "Area of Effect, Mobile channel, Stun, Unstoppable",
+        "cast": "Instant",
+        "aoe": "Circle",
+        "radius": "4.5",
+        "tickrate": "2.0 per second (x8)",
+        "notes": "Bunny Hop can be canceled after 1 second to end its effect early."
+      }
+    },
+    {
+      "name": "Micro Missiles",
+      "hotkey": "R",
+      "icon": "Micro_Missiles_Icon.png",
+      "description": "After 0.375 seconds Channel to launch a volley of 12 missiles in a target direction. Each missile impacts the first enemy in its path, dealing 40 damage in a small area and Slowing by 30% for 2 seconds. Stores 2 charges with a 3 second cooldown between each use. Requires Mech Mode.",
+      "fields": {
+        "type": "Spell damage, Crowd control",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "target": "Point target",
+        "props": "Clamping, Mobile channel, Skillshot, Splash, Slow",
+        "cast": "0.0625 + CH + 0 seconds",
+        "range": "12",
+        "aoe": "Circle",
+        "radius": "1.25",
+        "hitbox": "1.0 x 1.0",
+        "tickrate": "5.33 per second (x6)",
+        "prop1": "Initial delay",
+        "val1": "0.3125 seconds",
+        "notes": "The launch location of left and right missile are each chosen at random from three possible horizontal offsets from the center: x=[±0.2, ±0.95, ±1.2]. Missiles splash in an area upon hitting a target or upon reaching the end location.",
+        "cooldown": "20"
+      }
+    },
+    {
+      "name": "Mechanized Walker",
+      "hotkey": "TRAIT",
+      "icon": "Mechanized_Walker_Icon.png",
+      "description": "D.Va's Mech can shoot while moving. While shooting or channeling an Ability the Mech's Movement Speed is quickly reduced by 25%.; Trait",
+      "fields": {
+        "tickrate": "8.0 per second (x4)",
+        "prop1": "Movement speed per tick",
+        "val1": "0.2968 (6.25%)",
+        "notes": "Mechanized Walker directly affects D.Va's base Movement Speed, causing the reduction to stack multiplicatively with Slows and Movement Speed buffs. D.Va does not suffer the Movement Speed penalty from Mechanized Walker while using Boosters. Activating Boosters also immediately removes the reduction."
+      }
+    },
+    {
+      "name": "Pilot Mode",
+      "hotkey": "TRAIT",
+      "icon": "Pilot_Mode_Icon.png",
+      "description": "Basic Attacks reduce the cooldown of Call Mech by 0.5 seconds. As a Pilot, D.Va only awards 50% of a normal Hero's XP upon dying.; Trait",
+      "fields": {
+        "props": "Attack Modifier",
+        "notes": "D.Va can Mount normally while in Pilot Mode"
+      }
+    },
+    {
+      "name": "Torpedo Dash",
+      "hotkey": "Q",
+      "icon": "Torpedo_Dash_Icon.png",
+      "description": "Dash toward the target location, passing through enemies along the way. yellowtext This Ability becomes available with the Good To Go talent at level 13",
+      "fields": {
+        "type": "Movement: Dash",
+        "affects": "Self",
+        "target": "Point target",
+        "props": "Clamping",
+        "cast": "Instant",
+        "range": "4.5",
+        "missile": "14",
+        "notes": "Torpedo Dash has a 0.75 second coolup after exiting Mech. D.Va's Basic Attack is placed on a 0.25 second cooldown when Torpedo Dash ends. Abilities can be used immediately. Benefits from cooldown reduction granted by allies.",
+        "cooldown": "10"
+      }
+    },
+    {
+      "name": "Concussive Pulse",
+      "hotkey": "W",
+      "icon": "Concussive_Pulse_Icon.png",
+      "description": "Deal 120 damage to enemies in a cone and knock them back. yellowtext This Ability becomes available with the Good To Go talent at level 13",
+      "fields": {
+        "type": "Spell damage, Crowd control",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "target": "Point target",
+        "props": "Area of Effect, Clamping, Knockback",
+        "cast": "0.0625 + 0.4375 seconds",
+        "aoe": "Radial",
+        "radius": "6.0",
+        "arc": "60 degrees",
+        "prop1": "Knockback duration",
+        "val1": "0.1875 seconds (1",
+        "prop2": "Knockback speed",
+        "val2": "14",
+        "notes": "1) Knockback happens in three 0.0625 second long pulses. Benefits from cooldown reduction granted by allies.",
+        "cooldown": "10"
+      }
+    },
+    {
+      "name": "Call Mech",
+      "hotkey": "E",
+      "icon": "Call_Mech_Icon.png",
+      "description": "Call a new Mech and enter Mech Mode. Basic Attacks lower this cooldown by 0.5 seconds each.",
+      "fields": {
+        "type": "Transformation",
+        "affects": "Self",
+        "target": "No target",
+        "props": "Channeled cast (stationary)",
+        "cast": "0.5 (ch) + 0 seconds",
+        "notes": "This Ability has no cooldown if Self-Destruct was used to enter Pilot Mode. However, it remains disabled until the Mech has exploded. Entering the Mech successfully fully heals D.Va's Pilot form,removes most debuffs, and resets the cooldown of Defense Matrix. Interrupting Call Mech during its cast puts it on a 4 second cooldown.",
+        "cooldown": "45"
+      }
+    },
+    {
+      "name": "Big Shot",
+      "hotkey": "R",
+      "icon": "Big_Shot_Icon.png",
+      "description": "Deal 150 damage to all enemies in a line. Heroes hit have their Movement Speed reduced by 25% for 1.5 seconds. The cooldown of Call Mech is reduced by 5 seconds for each enemy Hero hit. Requires Pilot Mode.",
+      "fields": {
+        "type": "Spell damage / Crowd contrl",
+        "scaling": "4.00%",
+        "affects": "Enemies / Enemy Heroes",
+        "target": "Point target",
+        "props": "Area of Effect, Channeled cast (stationary), Clamping",
+        "cast": "0.5 (ch) + 0 seconds",
+        "aoe": "Rectangle",
+        "width": "1.5",
+        "height": "15",
+        "notes": "This Ability occupies the Heroic Ability slot in Pilot Mode, but is available from the start of the game. Interrupting Big Shot during its windup puts it on full cooldown.",
+        "cooldown": "6"
+      }
+    }
+  ],
+  "talents": [
+    {
+      "name": "Full Metal",
+      "tier": "1",
+      "slot": "1",
+      "icon": "Full_Metal_Icon.png",
+      "description": "D.Va's Mech gains 10% increased Health and its Fusion Cannons heal for 16% of the damage dealt to enemies in its bonus area.",
+      "fields": {
+        "type": "Bonus Health, Healing",
+        "scaling": "-",
+        "affects": "Self",
+        "props": "Lifesteal",
+        "notes": "Does not reduce the amount of Self-Destruct Charge gained."
+      },
+      "_raw_fields": [
+        "Full Metal",
+        "1",
+        "1",
+        "D.Va's Mech gains 10% increased Health and its Fusion Cannons heal for 16% of the damage dealt to enemies in its bonus area.",
+        "File:Full_Metal_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Pro Moves",
+      "tier": "1",
+      "slot": "2",
+      "icon": "Pro_Moves_Icon.png",
+      "description": "D.Va's Mech gains 2% Movement Speed and 2 Armor every time it takes damage, stacking up to 15 times. Stacks of this effect decay every 0.5 seconds. Basic Attacks against enemy Heroes in Pilot Mode reduce the cooldown of Call Mech by 1 additional second.",
+      "fields": {
+        "type": "Status effect, Defensive damage modifier",
+        "affects": "Self",
+        "props": "Armor, Movement Speed",
+        "notes": "Stacks additively with itself, but not with other positive Armor effects. Other defensive damage modifiers may stack."
+      },
+      "_raw_fields": [
+        "Pro Moves",
+        "1",
+        "2",
+        "D.Va's Mech gains 2% Movement Speed and 2 Armor every time it takes damage, stacking up to 15 times. Stacks of this effect decay every 0.5 seconds. Basic Attacks against enemy Heroes in Pilot Mode reduce the cooldown of Call Mech by 1 additional second.",
+        "File:Pro_Moves_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Liquid Cooling",
+      "tier": "1",
+      "slot": "3",
+      "icon": "Liquid_Cooling_Icon.png",
+      "description": "cooldown 50 Activate to gain the effects of a Healing Fountain. Requires Mech Mode. passive While in Mech Mode, Healing Fountain's cooldown is reduced to 50 seconds and its effects last 50% longer.",
+      "fields": {
+        "type": "Healing",
+        "scaling": "-",
+        "target": "No Target",
+        "affects": "Self",
+        "props": "Heal over Time",
+        "cast": "Instant",
+        "tickrate": "1.0 per second",
+        "notes": "Shares cooldown with Healing Fountain. Disabled while at full Health."
+      },
+      "_raw_fields": [
+        "Liquid Cooling",
+        "1",
+        "3",
+        "cooldown 50 Activate to gain the effects of a Healing Fountain. Requires Mech Mode. passive While in Mech Mode, Healing Fountain's cooldown is reduced to 50 seconds and its effects last 50% longer.",
+        "File:Liquid_Cooling_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Rush-down",
+      "tier": "2",
+      "slot": "1",
+      "icon": "Rush-down_Icon.png",
+      "description": "Boosters deals an additional 2% of maximum Health as damage to Heroes and heals D.Va's Mech for the damage dealt. Boosters deals 50% increased damage to non-Heroic enemies.",
+      "fields": {
+        "type": "Spell damage / Healing / Offensive damage modifier",
+        "scaling": "-",
+        "affects": "Enemy Heroes / Self / Ability",
+        "props": "Percent damage, Lifesteal",
+        "notes": "Bonus damage to Heroes is dealt in a separate instance from Boosters damage. Healing is based only on bonus damage dealt to Heroes. Bonus damage to non-Heroes stacks additively with other offensive damage modifiers that can affect Boosters 's damage."
+      },
+      "_raw_fields": [
+        "Rush-down",
+        "2",
+        "1",
+        "Boosters deals an additional 2% of maximum Health as damage to Heroes and heals D.Va's Mech for the damage dealt. Boosters deals 50% increased damage to non-Heroic enemies.",
+        "File:Rush-down_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Aggression Matrix",
+      "tier": "2",
+      "slot": "2",
+      "icon": "Aggression_Matrix_Icon.png",
+      "description": "Enemy Heroes within your Defense Matrix receive 35% less healing. passive Basic Attacks against Heroes lower the cooldown of Defense Matrix by 0.1875 seconds.",
+      "fields": {
+        "type": "Healing received modifier",
+        "affects": "Enemy Heroes",
+        "props": "Attack Modifier",
+        "notes": "Cooldown reduction triggers from every enemy Hero hit by Fusion Cannons. Stacks additively with other healing modifiers that affect the target's healing received."
+      },
+      "_raw_fields": [
+        "Aggression Matrix",
+        "2",
+        "2",
+        "Enemy Heroes within your Defense Matrix receive 35% less healing. passive Basic Attacks against Heroes lower the cooldown of Defense Matrix by 0.1875 seconds.",
+        "File:Aggression_Matrix_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Nuclear Option",
+      "tier": "2",
+      "slot": "3",
+      "icon": "Nuclear_Option_Icon.png",
+      "description": "Hitting your self-destructing Mech with Big Shot causes it to explode 40% faster. Passive When Fusion Cannons deal bonus damage to an enemy Hero, gain 0.25% Self Destruct Charge.",
+      "fields": {
+        "nohr": "1"
+      },
+      "_raw_fields": [
+        "Nuclear Option",
+        "2",
+        "3",
+        "Hitting your self-destructing Mech with Big Shot causes it to explode 40% faster. Passive When Fusion Cannons deal bonus damage to an enemy Hero, gain 0.25% Self Destruct Charge.",
+        "File:Nuclear_Option_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Get On The Point!",
+      "tier": "3",
+      "slot": "1",
+      "icon": "Get_On_The_Point!_Icon.png",
+      "description": "Casting Boosters grants nearby allies 20% Movement Speed for 3 seconds. Passive If D.Va hasn't taken damage in the last 2 seconds, Boosters's cooldown refreshes 100% faster.",
+      "fields": {
+        "type": "Status effect",
+        "affects": "Allies",
+        "props": "Area of Effect, Movement speed",
+        "range": "7"
+      },
+      "_raw_fields": [
+        "Get On The Point!",
+        "3",
+        "1",
+        "Casting Boosters grants nearby allies 20% Movement Speed for 3 seconds. Passive If D.Va hasn't taken damage in the last 2 seconds, Boosters's cooldown refreshes 100% faster.",
+        "File:Get_On_The_Point!_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Hit the Nitrous",
+      "tier": "3",
+      "slot": "2",
+      "icon": "Hit_the_Nitrous_Icon.png",
+      "description": "The initial speed bonus of Boosters is increased to 300%, then decays to normal boost speed over 0.5 seconds. During this time Boosters Stuns for 0.5 seconds.",
+      "fields": {
+        "type": "Crowd control",
+        "affects": "Enemies",
+        "props": "Area of Effect, Stun"
+      },
+      "_raw_fields": [
+        "Hit the Nitrous",
+        "3",
+        "2",
+        "The initial speed bonus of Boosters is increased to 300%, then decays to normal boost speed over 0.5 seconds. During this time Boosters Stuns for 0.5 seconds.",
+        "File:Hit_the_Nitrous_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Fusion Generator",
+      "tier": "3",
+      "slot": "3",
+      "icon": "Fusion_Generator_Icon.png",
+      "description": "Every time an enemy deals damage while inside Defense Matrix, D.Va's Self-Destruct Charge increases by 1%. Max of 20% Charge gained per use. Passive While at full Self-Destruct Charge, Fusion Cannons's bonus damage is increased to 100%.",
+      "fields": {},
+      "_raw_fields": [
+        "Fusion Generator",
+        "3",
+        "3",
+        "Every time an enemy deals damage while inside Defense Matrix, D.Va's Self-Destruct Charge increases by 1%. Max of 20% Charge gained per use. Passive While at full Self-Destruct Charge, Fusion Cannons's bonus damage is increased to 100%.",
+        "File:Fusion_Generator_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Bunny Hop",
+      "tier": "4",
+      "slot": "1",
+      "icon": "Bunny_Hop_Icon.png",
+      "description": "Cooldown 70 D.Va's Mech becomes Unstoppable and stomps every 0.5 seconds, dealing 78 damage in a large area. Every 4th consecutive hit on a Hero deals 80% more damage and Stuns them for 0.5 seconds. Lasts 4 seconds. Requires Mech Mode.",
+      "fields": {},
+      "_raw_fields": [
+        "Bunny Hop",
+        "4",
+        "1",
+        "Cooldown 70 D.Va's Mech becomes Unstoppable and stomps every 0.5 seconds, dealing 78 damage in a large area. Every 4th consecutive hit on a Hero deals 80% more damage and Stuns them for 0.5 seconds. Lasts 4 seconds. Requires Mech Mode.",
+        "File:Bunny_Hop_Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Micro Missiles",
+      "tier": "4",
+      "slot": "2",
+      "icon": "Micro_Missiles_Icon.png",
+      "description": "Cooldown 19 After 0.375 seconds Channel to launch a volley of 12 missiles in a target direction. Each missile impacts the first enemy in its path, dealing 40 damage in a small area and Slowing by 30% for 2 seconds. Stores 2 charges with a 3 second cooldown between each use. Requires Mech Mode.",
+      "fields": {},
+      "_raw_fields": [
+        "Micro Missiles",
+        "4",
+        "2",
+        "Cooldown 19 After 0.375 seconds Channel to launch a volley of 12 missiles in a target direction. Each missile impacts the first enemy in its path, dealing 40 damage in a small area and Slowing by 30% for 2 seconds. Stores 2 charges with a 3 second cooldown between each use. Requires Mech Mode.",
+        "File:Micro_Missiles_Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Target Locked",
+      "tier": "5",
+      "slot": "1",
+      "icon": "Target_Locked_Icon.png",
+      "description": "Enemy Heroes that remain in your Defense Matrix for 0.75 seconds have their Armor reduced by 15 and their Movement Speed reduced by 25% for 3 seconds.",
+      "fields": {
+        "type": "Defensive damage modifier, Crowd control",
+        "affects": "Enemy Heroes",
+        "props": "Armor reduction, Slow",
+        "notes": "Target must remain continuously within Defense Matrix to receive the debuff. The timer starts again immediately after the target receives the debuff, allowing it to be applied multiple times within the same cast of Defense Matrix. Does not stack with other negative Armor effects. Other defensive damage modifiers may stack."
+      },
+      "_raw_fields": [
+        "Target Locked",
+        "5",
+        "1",
+        "Enemy Heroes that remain in your Defense Matrix for 0.75 seconds have their Armor reduced by 15 and their Movement Speed reduced by 25% for 3 seconds.",
+        "File:Target_Locked_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Good To Go",
+      "tier": "5",
+      "slot": "2",
+      "icon": "Good_To_Go_Icon.png",
+      "description": "Pilot Mode Unlocks the Torpedo Dash and Concussive Pulse abilities. Torpedo Dash: Dash a short distance. 10 second cooldown. Concussive Pulse: Deal 120 damage to enemies in a cone and knock them back. 10 second cooldown.",
+      "fields": {},
+      "_raw_fields": [
+        "Good To Go",
+        "5",
+        "2",
+        "Pilot Mode Unlocks the Torpedo Dash and Concussive Pulse abilities. Torpedo Dash: Dash a short distance. 10 second cooldown. Concussive Pulse: Deal 120 damage to enemies in a cone and knock them back. 10 second cooldown.",
+        "File:Good_To_Go_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Pew! Pew! Pew!",
+      "tier": "5",
+      "slot": "3",
+      "icon": "Pew!_Pew!_Pew!_Icon.png",
+      "description": "Pilot Mode Instead of a single shot, Big Shot fires 3 shots over 0.5 seconds. Each shot deals 75% damage.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Ability",
+        "notes": "Damage reduction stacks additively with other offensive damage modifiers that can affect Big Shot 's damage."
+      },
+      "_raw_fields": [
+        "Pew! Pew! Pew!",
+        "5",
+        "3",
+        "Pilot Mode Instead of a single shot, Big Shot fires 3 shots over 0.5 seconds. Each shot deals 75% damage.",
+        "File:Pew!_Pew!_Pew!_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "In For The Kill",
+      "tier": "6",
+      "slot": "1",
+      "icon": "In_For_The_Kill_(DVa)_Icon.png",
+      "description": "Casting Boosters grants a Shield equal to 10% of maximum life for 2.5 seconds. Each enemy Hero hit by Boosters increases D.Va's Mech's Basic Attack damage by 10% for 5 seconds, stacking up to 5 times.",
+      "fields": {
+        "type": "Shield, Offensive damage modifier",
+        "scaling": "-",
+        "affects": "Self",
+        "notes": "Damage bonus stacks additively with itself and other offensive damage modifiers that can affect D.Va's Mech's Basic Attack damage."
+      },
+      "_raw_fields": [
+        "In For The Kill",
+        "6",
+        "1",
+        "Casting Boosters grants a Shield equal to 10% of maximum life for 2.5 seconds. Each enemy Hero hit by Boosters increases D.Va's Mech's Basic Attack damage by 10% for 5 seconds, stacking up to 5 times.",
+        "File:In_For_The_Kill_(DVa)_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Diverting Power",
+      "tier": "6",
+      "slot": "2",
+      "icon": "Diverting_Power_Icon.png",
+      "description": "Defense Matrix's area grows drastically in size and each time it reduces damage dealt to Heroes D.Va's Mech is healed for 31 Health.",
+      "fields": {
+        "type": "Healing",
+        "scaling": "4.00%",
+        "affects": "Self",
+        "prop1": "Bonus Height",
+        "val1": "1.75",
+        "prop2": "Bonus outer width",
+        "val2": "3.0"
+      },
+      "_raw_fields": [
+        "Diverting Power",
+        "6",
+        "2",
+        "Defense Matrix's area grows drastically in size and each time it reduces damage dealt to Heroes D.Va's Mech is healed for 31 Health.",
+        "File:Diverting_Power_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Emergency Shielding",
+      "tier": "6",
+      "slot": "3",
+      "icon": "Emergency Shielding_Icon.png",
+      "description": "When D.Va's Mech would be destroyed, it instead gains a Shield that absorbs 290 damage over 8 seconds. This effect has a 30 second cooldown.",
+      "fields": {
+        "type": "Shield",
+        "scaling": "4.00%",
+        "affects": "Self",
+        "notes": "Damage from the instance that would have dealt fatal damage does not overflow to the Shield."
+      },
+      "_raw_fields": [
+        "Emergency Shielding",
+        "6",
+        "3",
+        "When D.Va's Mech would be destroyed, it instead gains a Shield that absorbs 290 damage over 8 seconds. This effect has a 30 second cooldown.",
+        "File:Emergency Shielding_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Stop and Pop",
+      "tier": "7",
+      "slot": "1",
+      "icon": "Stop_and_Pop_Icon.png",
+      "description": "Increase Bunny Hop's duration by 4 seconds, and it does not decay while D.Va's Mech is stationary.",
+      "fields": {},
+      "_raw_fields": [
+        "Stop and Pop",
+        "7",
+        "1",
+        "Increase Bunny Hop's duration by 4 seconds, and it does not decay while D.Va's Mech is stationary.",
+        "File:Stop_and_Pop_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Timing Attack",
+      "tier": "7",
+      "slot": "2",
+      "icon": "Timing_Attack_Icon.png",
+      "description": "Micro Missiles gains an additional charge. Each time Micro Missiles hits an enemy Hero reduce its cooldown by 0.5 seconds and charge cooldown by 0.25 seconds.",
+      "fields": {},
+      "_raw_fields": [
+        "Timing Attack",
+        "7",
+        "2",
+        "Micro Missiles gains an additional charge. Each time Micro Missiles hits an enemy Hero reduce its cooldown by 0.5 seconds and charge cooldown by 0.25 seconds.",
+        "File:Timing_Attack_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Headshot!",
+      "tier": "7",
+      "slot": "3",
+      "icon": "Headshot!_Icon.png",
+      "description": "Pilot Mode Increase Big Shot's damage by 75% and reduce its cooldown by 2 seconds.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Ability",
+        "notes": "Damage bonus stacks additively with other offensive damage modifiers that can affect Big Shot 's damage."
+      },
+      "_raw_fields": [
+        "Headshot!",
+        "7",
+        "3",
+        "Pilot Mode Increase Big Shot's damage by 75% and reduce its cooldown by 2 seconds.",
+        "File:Headshot!_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Ablative Armor",
+      "tier": "7",
+      "slot": "4",
+      "icon": "MEKAfall_Icon.png",
+      "description": "45% of Spell Damage dealt to D.Va's Mech is returned as Healing over 4 seconds.",
+      "fields": {
+        "type": "Healing",
+        "scaling": "-",
+        "affects": "Self",
+        "props": "Heal over Time",
+        "tickrate": "1.0 per second",
+        "notes": "Healing amount is calculated from final damage taken, after all damage modifications. Healing gained can be affected by healing dealt and healing received modifiers. Spell Damage dealt to D.Va's Shields will not grant Healing."
+      },
+      "_raw_fields": [
+        "Ablative Armor",
+        "7",
+        "4",
+        "45% of Spell Damage dealt to D.Va's Mech is returned as Healing over 4 seconds.",
+        "File:MEKAfall_Icon.png"
+      ],
+      "level": "20"
+    }
+  ],
+  "other": [],
+  "_unparsed_count": 0
+}

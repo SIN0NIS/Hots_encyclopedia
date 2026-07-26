@@ -1,0 +1,291 @@
+{{hero data
+| name = Rehgar
+| date = July 23, 2014
+| price = 7000
+| title = Shaman of the Earthen Ring
+| role = Healer
+| franchise = Warcraft
+| info = A well-rounded Healer who pairs well with Melee allies.
+| lore = Rehgar Earthfury has seen his share of combat, both as a gladiator, and a master of his own team. Now, having put that life aside, he serves as a simple shaman of the Earthen Ring, earning his redemption by healing the lands of Azeroth.
+| difficulty = Medium
+| melee = True
+| health = 1900
+| healthRegen = 3.957
+| resource = 500
+| resourceType = Mana
+| armor = 0
+| attackSpeed = 1.11
+| attackRange = 1.5
+| attackDamage = 110
+| healthScaling = 0.04
+| regenScaling = 0.04
+| adamageScaling = 0.04
+| unitRadius = 0.75
+| icon = File:Rehgar_Icon.png
+| skills =
+Purge;D;File:Purge_Icon.png;When used on an allied Hero, make them Unstoppable for 0.5 seconds. When used on an enemy Hero, Slow them by 80% decaying over 2 seconds.<p>Cannot be cast on yourself.<!--
+-->{{undoc-x|type=Status effect / Crowd control<!--
+-->|affects=Allied Heroes / Enemy Heroes<!--
+-->|target=Unit target<!--
+-->|props=[[Unstoppable]], [[Slow]]<!--
+-->|cast=Instant<!--
+-->|range=6.0<!--
+-->|notes=<li>Cannot be used on self.<li>Slow on enemy Heroes decays additively by 2.5% per 62.5ms (each server tick) over the 2 second duration.<li>''Purge'' cannot be used on Unstoppable enemies.}};60;;trait;False
+
+Chain Heal;Q;File:Chain_Heal_Icon.png;Heal an ally with a wave of healing for 260 Health. The wave then bounces 2 times to nearby allies within 7 range, restoring 260 Health to them.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=4.00%<!--
+-->|affects=Allied Heroes, Minions & Summons, Self<!--
+-->|target=Unit Target<!--
+-->|props=[[Bounce]]<!--
+-->|cast=Instant<!--
+-->|range=6.0<!--
+-->|prop1=Bounce radius|val1=7.0 <sup>(1</sup><!--
+-->|prop2=Bounce delay|val2=0.25 seconds<!--
+-->|notes=<li><sup>1)</sup> Extended by the radius of the unit the bounce originated from.<li>Can only affect the same unit once per cast.<li>Prioritizes lowest percent Health Hero within bounce range.<li>''Chain Heal'' can bounce to non-Heroes, if there are no Heroes (including those at full Health) in range that it hasn't yet hit during this cast.}};8;60;;False
+
+Lightning Shield;W;File:Lightning_Shield_Icon.png;Imbue an ally with lightning, dealing 64 damage a second to nearby enemies. Each enemy hit restores 1 Mana to Rehgar. Lasts 5 seconds.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Non-Structure Allies, Self (cast) / Enemies (damage)<!--
+-->|target=Unit Target<!--
+-->|props=[[Area of Effect]]<!--
+-->|cast=0 + 0.15 seconds<!--
+-->|range=7.0<!--
+-->|aoe=Circle<!--
+-->|radius=2.5<!--
+-->|tickrate=2.0 per second (x10)<!--
+-->|prop1=Damage per tick|val1=32<!--
+-->|notes=<li>Damage is dealt simultaneously to all targets in the area. The animation is just for show.<li>Casting ''Lightning Shield'' on a unit already affected by it refreshes its duration.}};8;50;;False
+
+Earthbind Totem;E;File:Earthbind_Totem_Icon.png;Create a totem that Slows nearby enemies by 35%. The totem has 260 Health and lasts for 6 seconds.<!--
+-->{{undoc-x|type=Summon<!--
+-->|target=Point target<!--
+-->|cast=0 + 0.15<!--
+-->|range=4.0}}<!--
+
+--><hr/><small>'''Earthbind Totem'''</small>{{undoc-x|nohr=true<!--
+-->|type=Passive<!--
+-->|scaling=4.00% (Health)<!--
+-->|prop1=Health|val1=260<!--
+-->|prop2=Basic Attack damage|val2=-<!--
+-->|prop6=Sight radius|val6=-<!--
+
+-->|notes=}}<hr/><small>'''Earthbind Aura'''</small>{{undoc-x|nohr=true<!--
+-->|type=Crowd Control<!--
+-->|props=[[Area of Effect]], [[Slow]]<!--
+-->|radius=3.5<!--
+-->|tickrate=4.0 per second (x32)<!--
+-->|notes=}};15;50;;False
+
+Ancestral Healing;R;File:Ancestral_Healing_Icon.png;After 1 second, heal an allied Hero for 1180 Health.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=4.00%<!--
+-->|affects=Allied  Heroes, Self<!--
+-->|target=Unit target<!--
+-->|props=Delayed heal<!--
+-->|cast=0 + 0.15 seconds<!--
+-->|range=6.0<!--
+-->|notes=<li>If the target dies before ''Ancestral Healing'' goes off, it is put on a 10 second cooldown.<li>Hostile [[Stasis]] effects, like [[Anub'arak|Cocoon]], prevent ''Ancestral Healing'' from resolving and put it on full cooldown. Friendly Stases (e.g. [[Ice Block]]) allow the heal to resolve normally.<li>Cannot be cast on a target who is at full Health.}};100;80;heroic;False
+
+Bloodlust;R;File:Bloodlust_Icon.png;Grant nearby allied Heroes 40% Attack Speed and 35% Movement Speed and cause them to heal for 30% of the Basic Attack damage to their primary target. Lasts for 6 seconds.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=-<!--
+-->|affects=Allied Heroes, Self<!--
+-->|target=No target<!--
+-->|props=[[Area of Effect]], [[Attack Modifier]], [[Lifesteal]]<!--
+-->|cast=0 + 0.15 seconds<!--
+-->|aoe=Circle<!--
+-->|radius=12 <sup>(1</sup><!--
+-->|notes=<li>Casting does not cancel ''Ghost Wolf'' form for Rehgar.<li><sup>1)</sup> Extended by Rehgar's unit radius.}};90;70;heroic;False
+
+Ghost Wolf;Z;File:Ghost_Wolf_Icon.png;Instead of using a mount, Rehgar transforms into a Ghost Wolf with 20% increased Movement Speed. Basic Attacks in Ghost Wolf form cause him to lunge at his target and deal 60% bonus damage. Dealing damage, using Abilities, and channeling cancels Ghost Wolf form.<!--
+-->{{undoc-x|type=Movement: [[Launch]], Offensive damage modifier, Status effect<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|props=[[Attack Modifier]], [[Movement Speed]]<!--
+-->|cast=Instant<!--
+-->|range=<br>- Minimum: 1.5<br>- Maximum: 4.0<!--
+-->|missile=20<!--
+-->|notes=<li>Transforming into ''Ghost Wolf'' form resets Rehgar's Basic Attack cooldown.<li>The lunge will not happen if the target of the attack is within the minimum range.<li>The Ability can be activated and Rehgar can attack enemies in range from Ghost Wolf Form while [[Root]]ed, but the lunge will not happen.<li>Damage bonus stacks additively with other offensive damage modifiers that can affect Rehgar's Basic Attack damage.<li>If the lunge is triggered, it will follow an enemy who moves away during its duration so long as it is not disjointed with a [[Teleport]].<li>Using Active Abilities gained from Talents will also cancel this form.<li>Can also be canceled by pressing the Mount button again (which goes on a 1 second cooldown after entering this form).}};4 / 1.5;;mount;False
+
+| talents =
+<!-- LEVEL 1 -->
+Stormcaller;1;1;Increase the radius of Lightning Shield by 25%.<p>{{Questonly|Each time Lightning Shield damages an enemy Hero, permanently increase Rehgar's Health by 2 and Mana by 1, stacking up to 200 times.}}<!--
+-->{{undoc-x|type=Bonus Health, Bonus Mana<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|props=<!--
+-->|prop2=Bonus radius|val2=0.625<!--
+-->|notes=}};File:Stormcaller_Icon.png;
+
+Colossal Totem;1;2;Reactivate Earthbind Totem to move an existing totem to a new location once. This can be used once per cast.<p>{{Passive}} Increase the Area and duration of Earthbind Totem by 50%, and Health by 25%.<!--
+-->{{undoc-x|type=Bonus Health<!--
+-->|scaling=-<!--
+-->|affects=Earthbind Totem<!--
+-->|prop2=Bonus radius|val2=1.75<!--
+-->|prop3=Bonus duration|val3=3.0 seconds<!--
+-->|notes=<li>50% increase to ''Totem'' radius, therefore the area increase is actually 125%.<li>There is an initial 0.5 second cooldown to move ''Earthbind Totem''.}};File:Colossal_Totem_Icon.png;
+
+Feral Heart;1;3;Ghost Wolf's Movement Speed bonus is increased to 40% for the first second, then falls to 30%. Entering or exiting Ghost Wolf form grants 15 Armor for 1 second.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|props=[[Attack Modifier]]<!--
+-->|notes=<li>Does not stack with other positive Armor effects. Other defensive [[damage modifier]]s stack.}};File:Feral_Heart_Icon.png;
+
+
+<!-- LEVEL 4 -->
+Earthliving Enchant;2;1;When Chain Heal heals a Hero below 50% Health, they are healed an additional 160 Health over 4 seconds.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=4.00%<!--
+-->|affects=Allied Heroes, Self<!--
+-->|props=[[Heal over Time]]<!--
+-->|tickrate=1.0 per second (x4)<!--
+-->|prop1=Heal per tick|val1=40<!--
+-->|notes=}};File:Earthliving_Enchant_Icon.png;
+
+Electric Charge;2;2;The bearer of Lightning Shield Heals for 20% of the damage it deals to enemy Heroes, doubled if the bearer is Rehgar.<p>While Lightning Shield is damaging an enemy, its bearer gains 10% increased Movement Speed.<!--
+-->{{undoc-x|type=Healing, Status effect<!--
+-->|scaling=-<!--
+-->|affects=Allies, Self<!--
+-->|props=[[Lifesteal]], [[Movement Speed]]<!--
+-->|notes=<li>Hitting an enemy Hero with ''Lightning Shield'' grants the Movement Speed buff for 0.5625 seconds. Subsequent hits refresh the duration.}};File:Electric_Charge_Icon.png;
+
+Healing Totem;2;3;{{cooldown|30}}<br/>Activate to place a Totem that heals allies in an area for 2% of their maximum Health every second. This Totem has 125 Health and lasts for 10 seconds.<!--
+-->{{undoc-x|type=Summon<!--
+-->|target=Point target<!--
+-->|cast=Instant<!--
+-->|range=7.0}}<!--
+
+--><hr/><small>'''Healing Totem'''</small>{{undoc-x|nohr=true<!--
+-->|type=Passive<!--
+-->|scaling=4.00% (Health)<!--
+-->|prop1=Health|val1=125<!--
+-->|prop2=Basic Attack damage|val2=-<!--
+-->|prop5=Movement Speed|val5=-<!--
+-->|prop6=Sight radius|val6=8.0}}<!--
+
+--><hr/><small>'''Healing Aura'''</small>{{undoc-x|nohr=true<!--
+-->|type=Healing<!--
+-->|scaling=-<!--
+-->|props=[[Area of Effect]]<!--
+-->|radius=8.0<!--
+-->|tickrate=1.0 per second (x10)<!--
+-->|notes=}};File:Healing_Totem_Icon.png;
+
+
+<!-- LEVEL 7 -->
+Grounded Totem;3;1;Enemy Heroes in Earthbind Totem's area also have their Attack Speed Slowed by 15% and their Spell Power reduced by 15%.<p>{{passive}} Increase Earthbind Totem's range by 50%.<!--
+-->{{undoc-x|type=Offensive damage modifier, Healing dealt modifier, Status effect<!--
+-->|affects=Enemy Heroes<!--
+-->|prop1=Bonus cast range|val1=1.75<!--
+-->|notes=<li>Debuff lasts 125ms and is refreshed every server tick (every 62.5ms).<li>Spell Power reduction from ''Grounded Totem'' stacks additively with other sources of Spell Power as well as other offensive [[damage modifier]]s and healing dealt modifiers affecting the target Hero.}};File:Grounded_Totem_Icon.png;
+
+Purification;3;2;If Purge removes a Slow, Stun, Root or Silence effect from an ally, heal them for 220.<p>Using Purge on an enemy Hero deals up to 330 damage to Shields and reduces Healing received by 40% for 2 seconds.<p>{{Passive}} Reduce Purge's cooldown by 15 seconds.<!--
+-->{{undoc-x|type=Healing / Spell Damage / Healing received modifier<!--
+-->|scaling=4.00%<!--
+-->|affects=Allied Heroes / Enemy Shields / Enemy Heroes<!--
+-->|notes=<li>Healing reduction from ''Purification'' stacks additively with other healing received modifiers.}};File:Purification_Icon.png;
+
+Blood and Thunder;3;3;Ghost Wolf attacks reduce Basic Ability cooldowns by 1.5 seconds and restore 4% of Rehgar's maximum Mana.<!--
+-->{{undoc-x|type=Mana restoration<!--
+-->|scaling=-<!--
+-->|affects=-Self<!--
+-->|props=[[Attack modifier]]<!--
+-->|notes=}};File:Blood_and_Thunder_Icon.png;
+
+
+<!-- LEVEL 10 -->
+Ancestral Healing;4;1;{{cooldown|100}}<br/>After 1 second, heal an allied Hero for 1180 Health.;File:Ancestral_Healing_Icon.png;
+Bloodlust;4;2;{{cooldown|90}}<br/>Grant nearby allied Heroes 40% Attack Speed and 35% Movement Speed and cause them to heal for 30% of the Basic Attack damage to their primary target. Lasts for 6 seconds.;File:Bloodlust_Icon.png;
+
+<!-- LEVEL 13 -->
+Tidal Waves;5;1;Reduces Chain Heal's cooldown by 1 second for each Hero healed, and reduces its Mana cost from 60 to 40.<!--
+-->{{undoc-x|type=Cooldown reduction<!--
+-->|scaling=-<!--
+-->|affects=Allied Heroes, Self<!--
+-->|notes=}};File:Tidal_Waves_Icon.png;
+
+Earth Shield;5;2;Lightning Shield gives Heroes a Shield that absorbs damage equal to 14% of their maximum Health for 3 seconds.<!--
+-->{{undoc-x|type=Shield<!--
+-->|scaling=-<!--
+-->|affects=Allied Heroes, Self<!--
+-->|notes=}};File:Earth_Shield_Icon.png;
+
+Wellspring;5;3;Every 2 seconds, Earthbind Totem will cast an untalented Chain Heal at the nearest allied Hero with lowest Health. This Chain Heal heals for 35% of its normal amount.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=4.00%<!--
+-->|affects=Allied Heroes, Minions & Summons, Self<!--
+-->|prop1=Healing per bounce|val1=91<!--
+-->|notes=<li>The initial instance can only be cast on Heroes, but bounces can target other allied units as well. Otherwise, it has the same properties as the base version of ''Chain Heal''.<li><i>Wellspring</i>'s ''Chain Heal'' uses a separate base value from the original, requiring the given percentage to be calculated multiplicatively with healing dealt modifiers.}};File:Wellspring_Icon.png;
+
+<!-- LEVEL 16 -->
+Rising Storm;6;1;Each time a Lightning Shield damages an enemy Hero, increase its damage by 10%. Stacks up to 15 times.<p>{{passive}} Increase the duration of Lightning Shield by 3 seconds.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|notes=<li>Stacks additively with itself and other offensive damage modifiers that can affect <i>Lightning Shield</i>'s damage.}};File:Rising_Storm_Icon.png;
+
+Earthgrasp Totem;6;2;When Earthbind Totem is first cast, it deals 90 damage and Slows nearby enemies by 90% for 1 second.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|props=[[Area of Effect]]<!--
+-->|notes=<li>Cannot damage Structures.}};File:Earthgrasp_Totem_Icon.png;
+
+Hunger of the Wolf;6;3;Ghost Wolf attacks against Heroes deal an additional 6% of the target's maximum Health and heal Rehgar for 6% of his maximum Health.<!--
+-->{{undoc-x|type=[[Percent damage]] / Healing<!--
+-->|scaling=-<!--
+-->|affects=Enemy Heroes (damage) / Self (healing)<!--
+-->|notes=}};File:Hunger_of_the_Wolf_Icon.png;
+
+<!-- LEVEL 20 -->
+Farseer's Blessing;7;1;After 1.5 seconds Ancestral Healing is cast a second time on the same target. Allies near the target are healed for 590.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=4.00%<!--
+-->|affects=Non-Structure Allies, Self<!--
+-->|props=[[Area of Effect]], [[Splash]]<!--
+-->|aoe=Circle<!--
+-->|radius=5.0<!--
+-->|notes=<li>Area healing triggers on both casts and also heals Summons, non-Boss Mercenaries, and Minions.<li>The second cast is independent of Rehgar's status and goes off even if he is dead.}};File:Farseer's_Blessing_Icon.png;
+
+Gladiator's War Shout;7;2;Increase the duration and range of Bloodlust by 100%.<!--
+-->{{undoc-x|prop1=Bonus radius|val1=12<!--
+-->|prop2=Bonus duration|val2=6.0 seconds}};File:Gladiator's_War_Shout_Icon.png;
+
+Elemental Conduit;7;3;{{cooldown|70}}<br/>Activate to gain Lightning Shield and grant all nearby allied Heroes a Shield equal to 10% of their maximum Health for 5 seconds.<p>For up to 5 seconds after activating, hitting an enemy Hero with this effect's Lightning Shield gives nearby allies a Shield equal to 1.5% of their maximum Health for 5 seconds.<!--
+-->{{undoc-x|type=Shield<!--
+-->|scaling=-<!--
+-->|affects=Allied Heroes, Self<!--
+-->|target=No target<!--
+-->|props=[[Area of Effect]]<!--
+-->|cast=Instant<!--
+-->|aoe=Circle<!--
+-->|radius=8.0<!--
+-->|notes=<li>The duration additional Shields can be gained is indicated by an additional pair of lightning balls circling around Rehgar.<li>Heroes can only gain additional Shields if they received the base Shields.<li>In order to gain additional Shields, affected allies must be within 8 radius of an enemy Hero that is hit by Rehgar's ''Lightning Shield'' from this Ability.<li>Every time additional Shields are gained, the duration of the base Shields is set to 4 seconds and the duration of additional Shields to 5 seconds.<li>''Lightning Shield'' from ''Elemental Conduit'' benefits from all Talents affecting ''Lightning Shield''.}};File:Elemental_Conduit_(Rehgar)_Icon.png;
+
+Pit Fighter;7;4;Gain 10% increased Attack Damage and 3 Spell Power. Each nearby ally Hero grants an additional stack of this effect, up to 5 stacks. While at 2 or more stacks, Purge's cooldown refreshes 50% faster.<!--
+-->{{undoc-x|type=Offensive damage modifier, Healing dealt modifier<!--
+-->|affects=Self<!--
+-->|radius=8.5<!--
+-->|notes=<li>Bonus to Rehgar himself counts as a stack of ''Pit Fighter''.<li>Heroes in [[Time Stop]], [[Stasis]] or special death state do not grant stacks of ''Pit Fighter''.<li>[[Deathwing]] does not grant a stack of ''Pit Fighter''.<li><i>Pit Fighter</i>'s effects are refreshed every 0.25 seconds.<li>''Pit Fighter'' reduces the cooldown of ''Purge'' by 0.125 seconds every time it ticks.<li>Attack damage bonus stacks additively with itself and other offensive damage modifiers affecting Rehgar's Basic Attack damage.<li>Spell Power from ''Pit Fighter'' stacks additively with itself and other sources of Spell Power as well as other offensive damage modifiers and healing dealt modifiers affecting the target Hero.}};File:Pit_Fighter_Icon.png;
+
+}}
+
+<noinclude>
+{{Scaling table/start|{{#var:health}}|{{#var:health scaling}}|{{#var:health regen}}|{{#var:health regen scaling}}|{{#var:attack damage}}|{{#var:attack damage scaling}}}}
+{{Scaling table/slot|Chain Heal|260|0.04}}
+{{Scaling table/slot|Lightning Shield (single)|32|0.04}}
+{{Scaling table/slot|Lightning Shield (per second)|64|0.04}}
+{{Scaling table/slot|Earthbind Totem (Health)|260|0.04}}
+{{Scaling table/slot|Ancestral Healing|1180|0.04|10}}
+{{Scaling table/slot|Earthliving Enchant|160|0.04|4}}
+{{Scaling table/slot|Earthliving Enchant (per second)|40|0.04|4}}
+{{Scaling table/slot|Healing Totem (Health)|125|0.04|4}}
+{{Scaling table/slot|Purification (healing)|220|0.04|7}}
+{{Scaling table/slot|Purification (Shield damage)|330|0.04|7}}
+{{Scaling table/slot|Wellspring|91|0.04|13}}
+{{Scaling table/slot|Earthgrasp Totem|115|0.04|16}}
+{{Scaling table/slot|Farseer's Blessing (AoE)|590|0.04|20}}
+{{Scaling table/end}}
+</noinclude>

@@ -1,0 +1,106 @@
+name: 백과사전 빌드
+
+# 1·2 단계(게임 데이터 추출)는 여기서 돌지 않는다. 게임이 설치돼 있어야 하고,
+# 파서의 online 모드는 "Not a valid Win32 FileTime" 으로 죽는다. 그래서 그 두
+# 단계의 결과물만 저장소에 커밋해 두고, Action 은 3단계부터 돌린다.
+on:
+  push:
+    branches: [main]
+    paths:
+      - '00_manual/**'
+      - '00_scripts/**'
+      - '01_auto_casc/**'
+      - '02_auto_herodata/**'
+      - '.github/workflows/build.yml'
+  workflow_dispatch:
+    inputs:
+      refresh_wiki:
+        description: 'Fandom 위키를 다시 긁는다 (90번 호출, 약 3분)'
+        type: boolean
+        default: false
+  schedule:
+    # 매주 월요일 새벽. 위키가 패치를 반영했는지 확인하는 용도다.
+    - cron: '0 18 * * 0'
+
+permissions:
+  # 봇이 04_auto_wiki 와 archive 를 되커밋하므로 쓰기가 필요하다
+  contents: write
+  pages: write
+  id-token: write
+
+# 빌드가 겹치면 뒤엣것만 남긴다. 앞엣것을 끝까지 돌릴 이유가 없다.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: 준비물 점검
+        run: python 00_scripts/pipeline.py --from analysis --check
+
+      - name: 빌드 (위키 캐시 사용)
+        if: github.event.inputs.refresh_wiki != 'true'
+        run: python 00_scripts/pipeline.py --only analysis,profile,build,kr,verify
+
+      - name: 빌드 (위키 다시 긁기)
+        if: github.event.inputs.refresh_wiki == 'true'
+        run: python 00_scripts/pipeline.py --from analysis
+
+      - name: 새로 긁은 위키 데이터 되돌려 놓기
+        if: github.event.inputs.refresh_wiki == 'true'
+        run: |
+          git config user.name  'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add 04_auto_wiki
+          git diff --staged --quiet || git commit -m '위키 수집분 갱신 (자동)'
+          git push
+
+      - name: 이번 판 보관
+        run: python 00_scripts/archive_build.py
+
+      - name: 보관함을 결과물 폴더에 함께 담기
+        # Pages 는 output/ 만 올린다. 보관함은 저장소 루트에 두고 올릴 때만 넣는다.
+        run: cp -r archive output/archive
+
+      - name: 보관함·변경 기록 되돌려 놓기
+        run: |
+          git config user.name  'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add archive CHANGELOG.md
+          git diff --staged --quiet || git commit -m '이번 판 보관 (자동)'
+          git push
+
+      - name: 리포트 남기기
+        # 실패해도 결과물은 올린다. 리포트는 사람이 볼 참고 자료지 통과 조건이 아니다.
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: 리포트
+          path: |
+            07_auto_localized/xml_check.md
+            07_auto_localized/wiki_inventory.md
+            07_auto_localized/no_aoe.html
+            07_auto_localized/report.md
+          if-no-files-found: warn
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: output
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,576 @@
+{
+  "hero": "Lúcio",
+  "abilities": [
+    {
+      "name": "Push Off",
+      "hotkey": "TRAIT",
+      "icon": "Push Off_Icon.png",
+      "description": "While moving alongside terrain, activate to slide toward a targeted location. Enemies hit take 100 damage and are Slowed by 75% for 1 second.; 20; D",
+      "fields": {
+        "type": "Spell Damage, Crowd control / Movement: Dash",
+        "scaling": "4.00%",
+        "affects": "Enemies / Self",
+        "target": "Point target",
+        "props": "Skillshot, Slow",
+        "cast": "Instant",
+        "range": "7.0",
+        "hitbox": "1.5 x 2.25",
+        "missile": "20",
+        "prop1": "Dash duration",
+        "val1": "0.375 seconds",
+        "notes": "Lúcio's Basic Attack fires 4 pulses 0.125s apart, each doing the full amount of damage listed in his base stats. Push Off is disabled when Lúcio has not had a proper contact with a wall within the last 0.25 seconds (see note on Wall Ride)."
+      }
+    },
+    {
+      "name": "Soundwave",
+      "hotkey": "Q",
+      "icon": "Soundwave_Icon.png",
+      "description": "Deal 105 damage to enemies in an area and knock them back.",
+      "fields": {
+        "type": "Spell Damage, Crowd Control",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "target": "Point target",
+        "props": "Area of Effect, Knockback",
+        "cast": "Instant",
+        "aoe": "Radial",
+        "radius": "4.5",
+        "arc": "80 degrees",
+        "prop2": "Knockback duration",
+        "val2": "0.25 seconds",
+        "prop3": "Knockback speed",
+        "val3": "16.5",
+        "cooldown": "8",
+        "cost": "45"
+      }
+    },
+    {
+      "name": "Crossfade",
+      "hotkey": "W",
+      "icon": "Crossfade_Icon.png",
+      "description": "Play one of two music tracks for Lúcio and his allies. Healing Boost: Passively heal Lúcio and nearby allied Heroes for 15 Health per second. Speed Boost: Increase the Movement Speed of Lúcio and nearby allied Heroes by 10%.",
+      "fields": {
+        "type": "Healing",
+        "scaling": "4.00%",
+        "affects": "Allied Heroes, Self",
+        "target": "Toggle (no target)",
+        "props": "Area of Effect",
+        "cast": "Instant",
+        "aoe": "Circle",
+        "radius": "7.425",
+        "tickrate": "8.0 per second",
+        "prop1": "Healing per tick",
+        "val1": "1.875",
+        "cooldown": "0.5"
+      }
+    },
+    {
+      "name": "Amp It Up",
+      "hotkey": "E",
+      "icon": "Amp_It_Up_Icon.png",
+      "description": "Raise Lucio's Crossfade track volume for 3 seconds, amping Healing Boost to 112 Health per second and Speed Boost to 30% increased Movement Speed.",
+      "fields": {
+        "type": "Healing",
+        "scaling": "4.00%",
+        "affects": "Allied Heroes, Self",
+        "target": "No target",
+        "cast": "Instant",
+        "tickrate": "8.0 per second",
+        "prop1": "Healing per tick",
+        "val1": "14",
+        "cooldown": "13",
+        "cost": "90"
+      }
+    },
+    {
+      "name": "Sound Barrier",
+      "hotkey": "R",
+      "icon": "Sound_Barrier_Icon.png",
+      "description": "After a 1 second delay, grant yourself and all nearby allied Heroes a 1296 point Shield that rapidly decays over 6 seconds.",
+      "fields": {
+        "type": "Shield",
+        "scaling": "4.00%",
+        "affects": "Allied Heroes, Self",
+        "target": "No target",
+        "props": "Area of Effect, Channeled cast (mobile)",
+        "cast": "1.0(ch) + 0 seconds",
+        "aoe": "Circle",
+        "radius": "7.0",
+        "prop1": "Decay tickrate",
+        "val1": "8.0 per second (x48)",
+        "prop2": "Decay per tick",
+        "val2": "27 (216 per second)",
+        "notes": "Interrupting the Ability during its windup puts it on a 10 second cooldown.",
+        "cooldown": "80",
+        "cost": "100"
+      }
+    },
+    {
+      "name": "High Five",
+      "hotkey": "R",
+      "icon": "High Five_Icon.png",
+      "description": "Allied CooldownW 25 Quickly skate to an allied Hero. Upon arrival, the ally is healed for 230, Lúcio is healed for 80 and both gain Unstoppable for 1 second.",
+      "fields": {
+        "type": "Healing, Status effect / Movement: Dash",
+        "scaling": "4.00%",
+        "affects": "Allied Heroes, Self / Self",
+        "target": "Unit target",
+        "props": "Unstoppable",
+        "cast": "Instant",
+        "range": "6.5",
+        "missile": "15",
+        "notes": "Lúcio himself has no limit to how often he can be affected by the effects of this Ability. The Ability is interrupted if Lúcio cannot reach the target within 1.5 seconds or if the target moves farther than 12 units from Lúcio. Ally cooldown starts immediately when the Ability is used. The cooldown will not be refunded if the Ability gets interrupted.",
+        "cost": "30"
+      }
+    },
+    {
+      "name": "Wall Ride",
+      "hotkey": "TRAIT",
+      "icon": "Wall Ride_Icon.png",
+      "description": "While moving alongside terrain, Lúcio begins to Wall Ride for 2 seconds. While Wall Ride is active, Lúcio can walk through units and gains 20% Movement Speed that stacks with other bonuses.; mount",
+      "fields": {
+        "nohr": "1",
+        "notes": "To (re)apply Wall Ride Lúcio must have proper contact with a wall: - Lúcio must be within 1.4 distance of proper terrain. - Lúcio's Movement Speed must be above 2.5. (This equates to being above ~52% of his base Movement Speed.) - Lúcio may not be Stunned, Dazed or Polymorphed. Once applied, Wall Ride and associated bonuses last for the given duration, even if Lúcio loses contact with a wall."
+      }
+    }
+  ],
+  "talents": [
+    {
+      "name": "Party Mix",
+      "tier": "1",
+      "slot": "1",
+      "icon": "Party_Mix_Icon.png",
+      "description": "quest Play Lúcio's Crossfade tracks to nearby allies. Multiple allies provide additional time. For every 1 minute played, permanently increase Lúcio's maximum Mana by 10. reward Once you have played for 8 minutes or more, permanently increase Crossfade's radius by 20%.",
+      "fields": {
+        "prop1": "Bonus radius",
+        "val1": "1.7",
+        "prop2": "Maximum Mana bonus",
+        "val2": "5,000 (x500)",
+        "notes": "Actually a 23% radius increase. Allies affected by Boombox also generate stacks for the quest, though they cannot give double credit from both auras simultaneously. Boombox also gains bonus radius from quest completion."
+      },
+      "_raw_fields": [
+        "Party Mix",
+        "1",
+        "1",
+        "quest Play Lúcio's Crossfade tracks to nearby allies. Multiple allies provide additional time. For every 1 minute played, permanently increase Lúcio's maximum Mana by 10. reward Once you have played for 8 minutes or more, permanently increase Crossfade's radius by 20%.",
+        "File:Party_Mix_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Accelerando",
+      "tier": "1",
+      "slot": "2",
+      "icon": "Accelerando_Icon.png",
+      "description": "Wall Ride's Movement Speed bonus gradually increases to 40% over 6 seconds while Lúcio maintains its effect.",
+      "fields": {
+        "nohr": "True",
+        "notes": "Wallride speed bonus is updated every 0.2 seconds in 1% increments."
+      },
+      "_raw_fields": [
+        "Accelerando",
+        "1",
+        "2",
+        "Wall Ride's Movement Speed bonus gradually increases to 40% over 6 seconds while Lúcio maintains its effect.",
+        "File:Accelerando_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Smooth Moves",
+      "tier": "1",
+      "slot": "3",
+      "icon": "Smooth_Moves_Icon.jpg",
+      "description": "While Wall Ride is active, Basic Attacks heal for 30% of the damage dealt and restore 0.5 Mana. Passive Increase Wall Ride's duration by 1 second.",
+      "fields": {
+        "type": "Healing, Mana restoration",
+        "scaling": "-",
+        "affects": "Self",
+        "props": "Attack Modifier, Lifesteal"
+      },
+      "_raw_fields": [
+        "Smooth Moves",
+        "1",
+        "3",
+        "While Wall Ride is active, Basic Attacks heal for 30% of the damage dealt and restore 0.5 Mana. Passive Increase Wall Ride's duration by 1 second.",
+        "File:Smooth_Moves_Icon.jpg"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Subwoofer",
+      "tier": "2",
+      "slot": "1",
+      "icon": "Subwoofer_Icon.png",
+      "description": "Enemies within the first half of Soundwave's range are knocked back 75% farther. quest Hit 3 enemy Heroes with a single Soundwave. Increase Soundwave's arc by 50% and its range by 20%.",
+      "fields": {
+        "prop1": "Bonus knockback duration",
+        "val1": "0.1875 seconds",
+        "prop2": "Bonus radius",
+        "val2": "0.9",
+        "prop3": "Bonus arc",
+        "val3": "40 degrees",
+        "notes": "Knockback speed remains unchanged. Bonus radius from completing the quest does not affect knockback distance. Quest reward increases the radius of the inner area in proportion, but not the arc."
+      },
+      "_raw_fields": [
+        "Subwoofer",
+        "2",
+        "1",
+        "Enemies within the first half of Soundwave's range are knocked back 75% farther. quest Hit 3 enemy Heroes with a single Soundwave. Increase Soundwave's arc by 50% and its range by 20%.",
+        "File:Subwoofer_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Off the Wall",
+      "tier": "2",
+      "slot": "2",
+      "icon": "Off_the_Wall_Icon.png",
+      "description": "Hitting an enemy with Soundwave while Wall Ride is active sets its cooldown to 5 seconds and refunds 15 Mana.",
+      "fields": {},
+      "_raw_fields": [
+        "Off the Wall",
+        "2",
+        "2",
+        "Hitting an enemy with Soundwave while Wall Ride is active sets its cooldown to 5 seconds and refunds 15 Mana.",
+        "File:Off_the_Wall_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Supersonic",
+      "tier": "2",
+      "slot": "3",
+      "icon": "Supersonic_Icon.png",
+      "description": "While Wall Ride is active, Push Off's cooldown recharges 100% faster.",
+      "fields": {
+        "nohr": "1",
+        "notes": "Reduces the cooldown of Push Off by 0.125 seconds for every 0.125 seconds that Wall Ride is active."
+      },
+      "_raw_fields": [
+        "Supersonic",
+        "2",
+        "3",
+        "While Wall Ride is active, Push Off's cooldown recharges 100% faster.",
+        "File:Supersonic_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Good Vibrations",
+      "tier": "3",
+      "slot": "1",
+      "icon": "Good Vibrations_Icon.png",
+      "description": "Hitting an enemy with Soundwave grants Lúcio a 38 point Shield for 8.5 seconds. Hitting enemy Heroes grants 3 times this amount.",
+      "fields": {
+        "type": "Shield",
+        "scaling": "4.00%",
+        "affects": "Self",
+        "notes": "Shields from subsequent applications stack and refresh the duration."
+      },
+      "_raw_fields": [
+        "Good Vibrations",
+        "3",
+        "1",
+        "Hitting an enemy with Soundwave grants Lúcio a 38 point Shield for 8.5 seconds. Hitting enemy Heroes grants 3 times this amount.",
+        "File:Good Vibrations_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Reverse Amp",
+      "tier": "3",
+      "slot": "2",
+      "icon": "Reverse_Amp_Icon.png",
+      "description": "Blast Lúcio's Crossfade track at enemy Heroes. While Amp It Up is active, Healing Boost deals 50 damage per second and Speed Boost Slows by 20%. This Ability is unaffected by Crossfade talents.",
+      "fields": {
+        "type": "Spell Damage, Status effect",
+        "scaling": "4.00%",
+        "affects": "Enemy Heroes",
+        "target": "No target",
+        "props": "Area of Effect, Slow",
+        "cast": "Instant",
+        "aoe": "Circle",
+        "radius": "7.0",
+        "tickrate": "8.0 per second (x28)",
+        "prop1": "Damage per tick",
+        "val1": "6.25"
+      },
+      "_raw_fields": [
+        "Reverse Amp",
+        "3",
+        "2",
+        "Blast Lúcio's Crossfade track at enemy Heroes. While Amp It Up is active, Healing Boost deals 50 damage per second and Speed Boost Slows by 20%. This Ability is unaffected by Crossfade talents.",
+        "File:Reverse_Amp_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Boombox",
+      "tier": "3",
+      "slot": "3",
+      "icon": "Boombox_Icon.png",
+      "description": "Cooldown 20 Active Place a boombox that plays Lúcio's active Crossfade track. Its volume adjusts with Amp It Up. Allied Heroes near the boombox gain 5 Armor. Crossfade tracks do not stack. Boombox Boombox Aura",
+      "fields": {
+        "type": "Healing",
+        "target": "Point target",
+        "cast": "Instant",
+        "range": "10",
+        "nohr": "true",
+        "scaling": "4.00%",
+        "prop1": "Health",
+        "val1": "600",
+        "prop2": "Basic Attack damage",
+        "val2": "-",
+        "prop6": "Sight radius",
+        "val6": "7.25",
+        "radius": "7.0",
+        "notes": "Only 1 Boombox can be active at a time. Boombox aura has the same properties as Crossfade and benefits from healing modifiers affecting it. Boombox fully interacts with Party Mix, Rejuvenescência and Up to Eleven talents. Boombox healing is increased by the House Party talent, but allies in its aura do not generate stacks for it. Boombox does not interact with All Together or Summer Anthem talents."
+      },
+      "_raw_fields": [
+        "Boombox",
+        "3",
+        "3",
+        "Cooldown 20 Active Place a boombox that plays Lúcio's active Crossfade track. Its volume adjusts with Amp It Up. Allied Heroes near the boombox gain 5 Armor. Crossfade tracks do not stack. Boombox Boombox Aura",
+        "File:Boombox_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Sound Barrier",
+      "tier": "4",
+      "slot": "1",
+      "icon": "Sound_Barrier_Icon.png",
+      "description": "Cooldown 80 After a 1 second delay, grant yourself and all nearby allied Heroes a 1296 point Shield that rapidly decays over 6 seconds.",
+      "fields": {},
+      "_raw_fields": [
+        "Sound Barrier",
+        "4",
+        "1",
+        "Cooldown 80 After a 1 second delay, grant yourself and all nearby allied Heroes a 1296 point Shield that rapidly decays over 6 seconds.",
+        "File:Sound_Barrier_Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "High Five",
+      "tier": "4",
+      "slot": "2",
+      "icon": "High Five Icon.png",
+      "description": "Allied Cooldown 25 Quickly skate to an allied Hero. Upon arrival, the ally is healed for 230, Lúcio is healed for 80 and both gain Unstoppable for 1 second.",
+      "fields": {},
+      "_raw_fields": [
+        "High Five",
+        "4",
+        "2",
+        "Allied Cooldown 25 Quickly skate to an allied Hero. Upon arrival, the ally is healed for 230, Lúcio is healed for 80 and both gain Unstoppable for 1 second.",
+        "File:High Five Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "All Together",
+      "tier": "5",
+      "slot": "1",
+      "icon": "All Together Icon.png",
+      "description": "For each ally affected by Crossfade, Lúcio gains 5% Movement Speed that stacks with other bonuses.",
+      "fields": {},
+      "_raw_fields": [
+        "All Together",
+        "5",
+        "1",
+        "For each ally affected by Crossfade, Lúcio gains 5% Movement Speed that stacks with other bonuses.",
+        "File:All Together Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Heavy Casters",
+      "tier": "5",
+      "slot": "2",
+      "icon": "Heavy Casters Icon.png",
+      "description": "Push Off no longer Slows the first Hero hit, and instead Stuns them for 0.5 seconds.",
+      "fields": {
+        "prop1": "Changed property",
+        "val1": "Slow -> Stun"
+      },
+      "_raw_fields": [
+        "Heavy Casters",
+        "5",
+        "2",
+        "Push Off no longer Slows the first Hero hit, and instead Stuns them for 0.5 seconds.",
+        "File:Heavy Casters Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Slip",
+      "tier": "5",
+      "slot": "3",
+      "icon": "Slip_Icon.png",
+      "description": "While Wall Ride is active, passing near an enemy Hero increases its Movement Speed bonus to 40%, and grants 15 Armor, for 1 second.",
+      "fields": {
+        "type": "Defensive damage modifier, Movement Speed",
+        "affects": "Self",
+        "props": "Armor",
+        "prop1": "Enemy search radius",
+        "val1": "1.4",
+        "notes": "Does not stack with other positive Armor effects. Other defensive damage modifiers may stack."
+      },
+      "_raw_fields": [
+        "Slip",
+        "5",
+        "3",
+        "While Wall Ride is active, passing near an enemy Hero increases its Movement Speed bonus to 40%, and grants 15 Armor, for 1 second.",
+        "File:Slip_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Rejuvenescência",
+      "tier": "6",
+      "slot": "1",
+      "icon": "Rejuvenescência_Icon.png",
+      "description": "While Amp It Up is active, Crossfade's Healing Boost heals for an additional 2.5% of the target's maximum Health per second.",
+      "fields": {
+        "type": "Bonus Healing",
+        "scaling": "-",
+        "affects": "Allied Heroes, Self"
+      },
+      "_raw_fields": [
+        "Rejuvenescência",
+        "6",
+        "1",
+        "While Amp It Up is active, Crossfade's Healing Boost heals for an additional 2.5% of the target's maximum Health per second.",
+        "File:Rejuvenescência_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Up the Frequency",
+      "tier": "6",
+      "slot": "2",
+      "icon": "Up_the_Frequency_Icon.png",
+      "description": "Hitting enemy Heroes with Basic Attacks reduces the cooldown of Amp It Up by 0.3 seconds. Passive Wall Ride increases Basic Attack range by 2.2.",
+      "fields": {
+        "props": "Attack Modifier",
+        "notes": "Every Basic Attack projectile that hits an enemy Hero grants cooldown reduction."
+      },
+      "_raw_fields": [
+        "Up the Frequency",
+        "6",
+        "2",
+        "Hitting enemy Heroes with Basic Attacks reduces the cooldown of Amp It Up by 0.3 seconds. Passive Wall Ride increases Basic Attack range by 2.2.",
+        "File:Up_the_Frequency_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Up to Eleven",
+      "tier": "6",
+      "slot": "3",
+      "icon": "Up to Eleven Icon.png",
+      "description": "Hitting an enemy Hero with Soundwave or Push Off increases the duration of Amp It Up. Soundwave grants 0.5 seconds and Push Off grants 1 second. If Amp It Up is not active, these bonuses are granted to its next activation, up to 3 seconds. Passive Increase the duration of Amp It Up by 1 second.",
+      "fields": {},
+      "_raw_fields": [
+        "Up to Eleven",
+        "6",
+        "3",
+        "Hitting an enemy Hero with Soundwave or Push Off increases the duration of Amp It Up. Soundwave grants 0.5 seconds and Push Off grants 1 second. If Amp It Up is not active, these bonuses are granted to its next activation, up to 3 seconds. Passive Increase the duration of Amp It Up by 1 second.",
+        "File:Up to Eleven Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Bossa Nova",
+      "tier": "7",
+      "slot": "1",
+      "icon": "Bossa_Nova_Icon.png",
+      "description": "Reduce the cooldown of Sound Barrier to 30 seconds, but the Shield now decays over 4 seconds (from 6).",
+      "fields": {
+        "prop1": "Decay tickrate",
+        "val1": "8.0 per second (x32)",
+        "prop2": "Decay per tick",
+        "val2": "43.5 (348 per second)"
+      },
+      "_raw_fields": [
+        "Bossa Nova",
+        "7",
+        "1",
+        "Reduce the cooldown of Sound Barrier to 30 seconds, but the Shield now decays over 4 seconds (from 6).",
+        "File:Bossa_Nova_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Mixing Fire",
+      "tier": "7",
+      "slot": "2",
+      "icon": "Mixing Fire Icon.png",
+      "description": "High Five can now be cast on enemy Heroes, dealing 160 damage and reducing all healing received by 50% for 3 seconds. Passive Reduce the Mana cost by 30% and cooldown of High Five by 30%.",
+      "fields": {
+        "type": "Spell Damage, Healing received modifier",
+        "scaling": "4.00%",
+        "affects": "Enemy Heroes",
+        "target": "Unit target",
+        "notes": "Lúcio does not gain the self-benefits of High Five when it is cast on an enemy Hero."
+      },
+      "_raw_fields": [
+        "Mixing Fire",
+        "7",
+        "2",
+        "High Five can now be cast on enemy Heroes, dealing 160 damage and reducing all healing received by 50% for 3 seconds. Passive Reduce the Mana cost by 30% and cooldown of High Five by 30%.",
+        "File:Mixing Fire Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "House Party",
+      "tier": "7",
+      "slot": "3",
+      "icon": "House Party_Icon.png",
+      "description": "For each ally affected by Crossfade, Lúcio gains 8% increased healing.",
+      "fields": {
+        "type": "Healing dealt modifier",
+        "affects": "Self",
+        "notes": "Lúcio also generates a stack for this bonus."
+      },
+      "_raw_fields": [
+        "House Party",
+        "7",
+        "3",
+        "For each ally affected by Crossfade, Lúcio gains 8% increased healing.",
+        "File:House Party_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Summer Anthem",
+      "tier": "7",
+      "slot": "4",
+      "icon": "Summer Anthem Icon.png",
+      "description": "Cooldown 60 Active Activate for all allies affected by Crossfade to become Unkillable for 1.5 seconds.",
+      "fields": {
+        "type": "Status effect",
+        "scaling": "-",
+        "affects": "Allied Heroes, Self",
+        "target": "No target",
+        "props": "Unkillable",
+        "cast": "Instant",
+        "aoe": "Circle",
+        "radius": "7.0 (1",
+        "notes": "1) Benefits from talents increasing Crossfade 's radius."
+      },
+      "_raw_fields": [
+        "Summer Anthem",
+        "7",
+        "4",
+        "Cooldown 60 Active Activate for all allies affected by Crossfade to become Unkillable for 1.5 seconds.",
+        "File:Summer Anthem Icon.png"
+      ],
+      "level": "20"
+    }
+  ],
+  "other": [],
+  "_unparsed_count": 0
+}

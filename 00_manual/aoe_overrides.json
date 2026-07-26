@@ -1,0 +1,463 @@
+{
+  "_comment": [
+    "손으로 관리하는 범위 그림. 위키 데이터만으로는 못 그리거나, 뽑아낸 값이 실제와",
+    "다른 스킬을 여기에 적는다. 파이프라인은 이 파일을 건드리지 않으므로 게임이",
+    "패치돼도 그대로 남는다. 자동으로 뽑은 것 위에 덮어쓴다.",
+    "",
+    "키는 gamestring 버튼 ID (백과사전의 buttonId 와 같다).",
+    "붙일 곳을 못 찾으면 빌드가 경고하므로 오타는 바로 드러난다.",
+    "",
+    "  shape   circle | radial | rectangle | square | ring | triangle | skillshot",
+    "  circle    radius",
+    "  radial    radius, arc            부채꼴. 꼭짓점이 시전자에 붙는다",
+    "  ring      inner, outer           arc 를 더하면 고리 부채꼴",
+    "  rectangle width, height          width=폭, height=시전 방향 길이",
+    "  square    width, height",
+    "  triangle  side",
+    "  skillshot width, depth           관통 경로",
+    "  공통      range, note, parts[]",
+    "",
+    "parts 를 쓰면 한 스킬에 여러 도형을 겹쳐 그린다.",
+    "note 는 그림 아래에 그대로 나온다. 왜 손으로 넣었는지 남기는 자리다."
+  ],
+  "_attackAoe": {
+    "_comment": [
+      "기본 공격 자체가 광역인 영웅. 스킬이 아니라 평타의 성질이므로 범위 그림이",
+      "아니라 능력치의 '공격 유형' 줄에 붙는다. 키는 백과사전 hyperlinkId."
+    ],
+    "Malthael": {
+      "shape": "radial",
+      "radius": 3.25,
+      "arc": 170,
+      "label": "사신의 징표",
+      "note": "특질이 평타를 광역화한다. 기본 공격이 이 부채꼴 안의 적에게 징표를 남긴다."
+    },
+    "LostVikings": {
+      "shape": "rectangle",
+      "width": 1.0,
+      "height": 3.4,
+      "unit": "밸로그",
+      "label": "밸로그의 검",
+      "note": "밸로그의 기본 공격만 광역이다. 앞으로 베어 관통한다."
+    }
+  },
+  "HanzoDragonstrike": {
+    "parts": [
+      {
+        "shape": "rectangle",
+        "width": 9.0,
+        "height": 24,
+        "label": "바깥"
+      },
+      {
+        "shape": "rectangle",
+        "width": 3.0,
+        "height": 24,
+        "label": "중심"
+      }
+    ],
+    "range": 8.0,
+    "note": "폭 9.0 인 바깥 구역 안에 폭 3.0 인 중심 구역이 겹쳐 있다. 중심에 맞으면 더 아프다."
+  },
+  "MaievFanOfKnives": {
+    "shape": "polygon",
+    "points": [
+      [
+        -0.93,
+        3.33
+      ],
+      [
+        0,
+        3.5
+      ],
+      [
+        1.3393,
+        3.2336
+      ],
+      [
+        2.4748,
+        2.4748
+      ],
+      [
+        3.2336,
+        1.3393
+      ],
+      [
+        3.5,
+        0
+      ],
+      [
+        3.2336,
+        -1.3393
+      ],
+      [
+        2.4748,
+        -2.4748
+      ],
+      [
+        1.3393,
+        -3.2336
+      ],
+      [
+        0,
+        -3.5
+      ],
+      [
+        -0.93,
+        -3.33
+      ],
+      [
+        0,
+        -3.0
+      ],
+      [
+        0.75,
+        -2.4
+      ],
+      [
+        1.4,
+        -1.5
+      ],
+      [
+        1.7,
+        0
+      ],
+      [
+        1.4,
+        1.5
+      ],
+      [
+        0.75,
+        2.4
+      ],
+      [
+        0,
+        3.0
+      ]
+    ],
+    "range": 7.25,
+    "note": "위키가 Crescent 라고만 적고 치수를 비운 모양이다. 게임 XML 의 MaievFanOfKnivesSearchArea 에 꼭짓점 18개가 그대로 있어 그 좌표로 그렸다 — 어림한 부채꼴이 아니라 실제 판정 그대로다. 바깥은 반지름 3.5 인 호이고 안쪽은 앞으로 1.7 까지 파고들어, 앞이 두껍고 양옆으로 갈수록 얇아지는 칼날 모양이 된다."
+  },
+  "ZuljinTwinCleave": {
+    "parts": [
+      {
+        "shape": "ring",
+        "inner": 9.25,
+        "outer": 10.75,
+        "at": 10.0,
+        "label": "도끼가 지나가는 자리"
+      }
+    ],
+    "noRange": "unstated",
+    "note": "줄진이 고리의 한쪽 끝에 서고, 반대쪽 끝을 고르는 방식이다. 경로 반지름이 10.0 이라 고리 중심은 앞으로 10, 반대쪽 끝은 20 에 놓인다. 도끼 2개가 이 자리를 돌아 나갔다 돌아오며, 굵기 0.75 를 더해 고리 폭을 9.25~10.75 로 잡았다. 도끼는 시전한 자리를 기준으로 돌기 때문에 줄진이 움직여도 고리는 그대로 남는다."
+  },
+  "AzmodanDemonicInvasion": {
+    "shape": "circle",
+    "radius": 2.8,
+    "range": 13.5,
+    "note": "이 원 안에 하수인이 떨어진다. 하수인 한 마리의 낙하 충격 반경은 1.5 다."
+  },
+  "HanzoSonicArrow": {
+    "parts": [
+      {
+        "shape": "skillshot",
+        "width": 0.5,
+        "depth": 0.5,
+        "range": 20,
+        "label": "화살",
+        "at": 0
+      },
+      {
+        "shape": "circle",
+        "radius": 7.0,
+        "label": "시야",
+        "at": 20
+      }
+    ],
+    "note": "굵기 0.5 인 화살이 날아가 꽂힌 자리에 반경 7.0 시야가 생긴다. 시야는 피해 범위가 아니다."
+  },
+  "KaelthasPhoenix": {
+    "parts": [
+      {
+        "shape": "skillshot",
+        "width": 1.25,
+        "depth": 1.25,
+        "range": 10.0,
+        "label": "돌진",
+        "at": 0
+      },
+      {
+        "shape": "circle",
+        "radius": 2.0,
+        "label": "광역",
+        "at": 10.0
+      }
+    ],
+    "note": "굵기 1.25 로 날아가며 맞히고, 자리 잡은 뒤 반경 2.0 으로 광역 공격한다. 공격 사거리는 5.75."
+  },
+  "OrpheaChomp": {
+    "shape": "radial",
+    "radius": 4.5,
+    "arc": 180,
+    "note": "앞쪽 반원. 위키에는 꼭짓점 좌표로 적혀 있어 반원으로 어림했다 (안쪽 폭 6.0 / 바깥 폭 3.0 / 길이 5.0)."
+  },
+  "TyraelSmite": {
+    "parts": [
+      {
+        "shape": "circle",
+        "radius": 1.5,
+        "at": -0.66,
+        "across": -2,
+        "color": "#ff5f5f",
+        "label": "1번째 자국"
+      },
+      {
+        "shape": "circle",
+        "radius": 1.5,
+        "at": -0.33,
+        "across": -1,
+        "color": "#ff5f5f",
+        "label": "2번째 자국"
+      },
+      {
+        "shape": "circle",
+        "radius": 1.5,
+        "at": 0,
+        "across": 0,
+        "color": "#ff5f5f",
+        "label": "3번째 자국"
+      },
+      {
+        "shape": "circle",
+        "radius": 1.5,
+        "at": -0.33,
+        "across": 1,
+        "color": "#ff5f5f",
+        "label": "4번째 자국"
+      },
+      {
+        "shape": "circle",
+        "radius": 1.5,
+        "at": -0.66,
+        "across": 2,
+        "color": "#ff5f5f",
+        "label": "5번째 자국"
+      }
+    ],
+    "range": 5.5,
+    "note": "위키가 Custom 이라고만 적은 모양이다. 게임 XML 의 TyraelSmitePersistent 가 반지름 1.5 짜리 판정을 0.0625초 간격으로 5번 돌리고, 그 자리가 좌우로 ±2 벌어지며 양 끝이 0.66 만큼 시전자 쪽으로 당겨진다. 그래서 가운데가 가장 멀리 나가는 > 모양이 되고, 전체로는 폭 7.0 인 사각형에 가깝되 앞뒤가 둥글다."
+  },
+  "AnduinChastise": {
+    "shape": "sweep",
+    "arc": 19.995,
+    "thickness": 1.25,
+    "from": 1.25,
+    "to": 10.85,
+    "noRange": "self",
+    "note": "두께 1.25 인 부채꼴 띠가 시전자에게서 밖으로 퍼져 나간다. 게임 XML 의 AnduinChastiseSearch 가 반경 1.25 에서 0.0625초마다 0.5334 씩 18번 커져 10.85 에 닿는다. 안쪽 반경도 같은 속도로 커지므로 어느 한 순간에는 얇은 띠 하나뿐이고, 점선은 다 지나간 자리다. 처음 맞은 적 하나만 걸린다."
+  },
+  "_skip": {
+    "_comment": [
+      "여기 적은 스킬은 범위를 그리지 않는다. 위키에 수치가 있어도",
+      "실제 동작이 무작위거나 지형을 따라가 그림이 거짓말을 하는 경우다."
+    ],
+    "MurkyMarchOfTheMurlocs": "멀록이 무작위로 흩어져 나아간다. 한 줄기 경로로 그리면 실제와 다르다.",
+    "RagnarosLavaWaveTargetPoint": "길을 따라 끝까지 흘러간다. 직선 범위로 그릴 수 없다.",
+    "MedivhPortal": "차원문은 통로를 여는 것이라 피해 범위가 아니다. 0.5 는 문 자체 크기.",
+    "ProbiusPhotonCannon": "건물을 세우는 스킬이라 위키의 Circle 은 설치 지점이지 피해 범위가 아니다."
+  },
+  "GuldanRainOfDestruction": {
+    "parts": [
+      {
+        "shape": "circle",
+        "radius": 9.0,
+        "label": "떨어지는 구역"
+      },
+      {
+        "shape": "circle",
+        "radius": 1.75,
+        "label": "운석 하나"
+      }
+    ],
+    "range": 10,
+    "note": "9.0 짜리 구역 안에 운석이 무작위로 떨어진다. 미리 정해둔 44곳 중에서 고른다."
+  },
+  "WizardArcaneOrb": {
+    "parts": [
+      {
+        "shape": "grow",
+        "from": 0.25,
+        "to": 1.69,
+        "over": 9.0,
+        "travel": 13.5,
+        "at": 0,
+        "label": "날아가며 커지는 판정"
+      },
+      {
+        "shape": "circle",
+        "radius": 3.0,
+        "at": 13.5,
+        "label": "터질 때 광역"
+      }
+    ],
+    "noRange": "self",
+    "note": "몸에서 출발해 날아가며 판정이 커진다. 반경 0.25 로 시작해 0.0625초마다 0.09 씩 16번 늘어 1.69 가 되고, 그 지점이 사거리 9.0 이다. 거기서부터 13.5 까지는 크기가 그대로다. 무언가에 맞으면 반경 3.0 으로 터진다. 멀리 갈수록 피해도 함께 커진다."
+  },
+  "GarroshGroundbreaker": {
+    "parts": [
+      {
+        "shape": "radial",
+        "radius": 7.25,
+        "arc": 45,
+        "label": "먼 쪽 — 기절 + 둔화"
+      },
+      {
+        "shape": "radial",
+        "radius": 6.25,
+        "arc": 45,
+        "label": "가까운 쪽 — 피해만"
+      }
+    ],
+    "note": "가까운 쪽은 피해만 준다. 바깥 가장자리(6.25~7.25)에 맞은 영웅만 0.5초 기절 후 40% 둔화된다."
+  },
+  "StitchesSlam": {
+    "parts": [
+      {
+        "shape": "radial",
+        "radius": 9.5,
+        "arc": 70,
+        "label": "바깥 — 기본 피해"
+      },
+      {
+        "shape": "radial",
+        "radius": 5.25,
+        "arc": 70,
+        "label": "안쪽 — 피해 +50% · 둔화"
+      }
+    ],
+    "note": "안쪽 5.25 안에 맞으면 피해가 50% 늘고 45% 둔화가 붙는다."
+  },
+  "TassadarBlackHole": {
+    "parts": [
+      {
+        "shape": "circle",
+        "radius": 3.25,
+        "label": "바깥 — 끌어당김"
+      },
+      {
+        "shape": "circle",
+        "radius": 0.75,
+        "label": "중심 — 기절"
+      }
+    ],
+    "range": 24,
+    "note": "바깥 범위의 적을 중심으로 끌어당기고, 중심에 닿으면 기절시킨다. 블랙홀은 긴 직선을 따라 이동한다."
+  },
+  "AmazonLightningFury": {
+    "parts": [
+      {
+        "shape": "skillshot",
+        "width": 0.6,
+        "depth": 1.25,
+        "at": 0,
+        "range": 11.1,
+        "label": "창 (관통 경로)"
+      },
+      {
+        "shape": "skillshot",
+        "width": 0.6,
+        "depth": 1.0,
+        "at": 11.1,
+        "range": 8.95,
+        "rotate": -45,
+        "label": "갈라진 번개 (왼쪽)"
+      },
+      {
+        "shape": "skillshot",
+        "width": 0.6,
+        "depth": 1.0,
+        "at": 11.1,
+        "range": 8.95,
+        "rotate": 45,
+        "label": "갈라진 번개 (오른쪽)"
+      }
+    ],
+    "note": "첫 적을 맞히면 번개 둘로 갈라진다. 갈라지는 각도는 위키에 없어 45도로 손수 잡았고, 갈라지는 자리는 최대 사거리(11.1)에 맞혔다고 가정해 그렸다. 실제로는 처음 맞은 적이 선 자리에서 갈라진다. 처음 맞은 적은 갈라진 번개에 다시 맞지 않는다."
+  },
+  "FenixPlanetCracker": {
+    "shape": "rectangle",
+    "width": 2.0,
+    "height": 22.0,
+    "openEnded": true,
+    "noRange": "self",
+    "note": "맵 어디든 한 점을 찍으면 시전자에서 그곳까지 직선으로 훑는다. 폭 2.0 은 위키에 없어 게임 XML 에서 읽었다 (FenixPlanetCrackerSearch / RectangleWidth). 그림의 길이는 보기용이다."
+  },
+  "AnaEyeOfHorusActivate": {
+    "shape": "rectangle",
+    "width": 1.0,
+    "height": 22.0,
+    "openEnded": true,
+    "noRange": "self",
+    "note": "실제로 쏘는 것은 하위 스킬 '고성능 탄환' 이다. 폭 1.0 짜리 직선이 조준한 곳까지 나가며, 길이 제한이 없다. 그림의 길이는 보기용이다."
+  },
+  "GenjiXStrike": {
+    "parts": [
+      {
+        "shape": "blade",
+        "width": 1.0,
+        "height": 16.0,
+        "flat": 6.0,
+        "at": 0,
+        "rotate": -45,
+        "label": "첫 베기 (뒤 왼쪽 → 앞 오른쪽)"
+      },
+      {
+        "shape": "blade",
+        "width": 1.0,
+        "height": 16.0,
+        "flat": 6.0,
+        "at": 0,
+        "rotate": 45,
+        "label": "둘째 베기"
+      }
+    ],
+    "range": 8.0,
+    "note": "두 번 베어 X 자를 긋고, 1.25초 뒤 그어 놓은 자리가 그대로 터진다. 터지는 범위가 따로 있는 게 아니라 이 X 자 안이 다시 맞는다. 베기 하나는 가운데 1.0 × 6.0 직사각형에 양 끝 1.0 × 5.0 삼각형이 붙어 총 길이 16 이고, 겐지가 보는 방향에서 좌우 45도로 엇갈린다. 치수와 각도는 위키가 비고에 글로만 적어 둬 손으로 옮겼다."
+  },
+  "WizardMagicMissiles": {
+    "parts": [
+      {
+        "shape": "skillshot",
+        "width": 0.5,
+        "depth": 1.6,
+        "at": 0,
+        "range": 12.0,
+        "color": "#ff5f5f",
+        "across": -3.0,
+        "label": "왼쪽"
+      },
+      {
+        "shape": "skillshot",
+        "width": 0.5,
+        "depth": 1.6,
+        "at": 0,
+        "range": 12.0,
+        "color": "#ff5f5f",
+        "across": 0.0,
+        "label": "가운데"
+      },
+      {
+        "shape": "skillshot",
+        "width": 0.5,
+        "depth": 1.6,
+        "at": 0,
+        "range": 12.0,
+        "color": "#ff5f5f",
+        "across": 3.0,
+        "label": "오른쪽"
+      }
+    ],
+    "noRange": "self",
+    "note": "세 발이 3.0 간격으로 나란히 날아간다. 게임 XML 의 WizardMagicMissilesCreatePersistents 가 세 갈래(Left·Center·Right)를 간격 3.0 으로 만든다. 위키도 '처음 간격 3.0' 이라고만 적어 두어 나란한 세 줄로 그렸다 - 커서 쪽으로 모이는지까지는 데이터에 없다."
+  }
+}

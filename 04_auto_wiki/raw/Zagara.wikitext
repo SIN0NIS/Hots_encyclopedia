@@ -1,0 +1,285 @@
+{{hero data
+| name = Zagara
+| date = June 26, 2014
+| price = 4000
+| title = Broodmother of the Swarm
+| role = Ranged
+| franchise = Starcraft
+| info = A [[Summoner]] who provides lots of vision of the [[battleground]].
+| lore = If Kerrigan is the Queen of the Zerg, then Zagara is the mother of the brood. Cunning and tenacious, she commands her minions on the field of battle. Encounter her brood and beware: Mess with her children, and you answer to mama.
+| difficulty = Medium
+| melee = False
+| health = 1550
+| healthRegen = 3.2304
+| resource = 500
+| resourceType = Mana
+| armor = 0
+| attackSpeed = 1.25
+| attackRange = 6.6
+| attackDamage = 83
+| healthScaling = 0.04
+| regenScaling = 0.04
+| adamageScaling = 0.04
+| unitRadius = 1.125
+| icon = File:Zagara_Icon.png
+| skills = 
+Creep Tumor;D;File:Creep_Tumor_Icon.png;Lay a [[Creep Tumor]] that generates Creep. While on Creep, Zagara moves 20% faster and her summons move 30% faster. Tumors last 240 seconds and reveal the surrounding area while active.<p>Stores up to 3 charges.<!--
+-->{{undoc-x|type=Summon<!--
+-->|target=Point target<!--
+-->|cast=0.2 + 0 seconds<!--
+-->|range=2.5<!--
+-->|prop1=Bonus attack range|val1=1.1}}<hr/><!--
+
+--><small>'''Creep Tumor'''</small>{{undoc-x|nohr=true<!--
+-->|type=Passive<!--
+-->|scaling=4.00% (Health)<!--
+-->|props=[[Stealth]]<!--
+-->|prop1=Health|val1=125<!--
+-->|prop2=Basic Attack damage|val2=-<!--
+-->|prop5=Movement Speed|val5=-<!--
+-->|prop6=Unit radius|val6=0.5<!--
+-->|prop7=Sight radius|val7=7.0<!--
+-->|prop8=Leash radius|val8=-<!--
+-->|prop9=Creep buff radius|val9=6.0<!--
+-->|notes=<li>Creep grows to its maximum radius over 6 seconds.<li>Creep areas can overlap, but Creep Tumors cannot be placed exactly on top of each other.<li>Creep Tumors become [[Invisible]] after 2 seconds of being placed.<li>Damaging Creep Tumors reveals them for 2 seconds.<li>Sight radius increases to 8.5 when the Creep Tumor turns invisible.<li>Creep Tumors are permanently Unstoppable, immune to skillshots and friendly Abilities and do not draw Minion aggro.<li>In the event there are multiple Zagaras in a team, they can fully interact with Creep placed by each other.}};18 / 3;;trait;False
+
+Baneling Barrage;Q;File:Baneling_Barrage_Icon.png;Launch 2 Banelings that deal 80 damage to the enemies they hit.<p>Stores up to 2 charges.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=No target<!--
+-->|props=[[Clamping]], Summon figment, [[Skillshot]], [[Splash]]<!--
+-->|cast=Instant<!--
+-->|range=15.75<!--
+-->|aoe=Circle<!--
+-->|radius=<br/>- Hitbox: 1.0<br/>- Explosion: 2.75<!--
+-->|missile=6.0<!--
+-->|notes=<li>Banelings explode at the end of their range.<li>Banelings benefit from on-Creep Movement Speed bonus.<li>Enemies that are immune to skillshots can still be hit by the explosion damage.}};4 / 0.125;15;False
+
+Hunter Killer;W;File:Hunter_Killer_Icon.png;Summon a [[Hydralisk]] to attack a single target, dealing 71 damage per second. Lasts 8 seconds.<!--
+-->{{undoc-x|type=Summon<!--
+-->|target=Unit target<!--
+-->|cast=Instant<!--
+-->|range=7.0}}<hr/><!--
+
+--><small>'''Hydralisk'''</small>{{undoc-x|nohr=true<!--
+-->|type=Active<!--
+-->|scaling=<br/>- Health: 4.4921875%<br/>- Damage: 5.00%<!--
+-->|target=Automatic<!--
+-->|prop1=Health|val1=450<!--
+-->|prop2=Basic Attack damage|val2=71<!--
+-->|prop3=Attack speed|val3=1.00<!--
+-->|prop4=Attack range|val4=5.5<!--
+-->|prop5=Movement Speed|val5=4.0<!--
+-->|prop6=Unit radius|val6=0.625<!--
+-->|prop7=Sight radius|val7=9.0<!--
+-->|prop8=Leash radius|val8=-<!--
+-->|notes=}};16;75;;False
+
+Infested Drop;E;File:Infested_Drop_Icon.png;Bombard target area with a Zerg Drop Pod for 140 damage.<p>The pod spawns 2 [[Roachling]]s that deal 30 damage per second and last for 8 seconds.<!--
+-->{{undoc-x|type=Spell Damage / Summon<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]]<!--
+-->|cast=Instant<!--
+-->|range=10.0<!--
+-->|aoe=Circle<!--
+-->|radius=1.5}}<hr/><!--
+
+--><small>'''Roachling'''</small>{{undoc-x|nohr=true<!--
+-->|type=Active<!--
+-->|scaling=4.00% (damage & Health)<!--
+-->|target=Automatic<!--
+-->|prop1=Health|val1=328<!--
+-->|prop2=Basic Attack damage|val2=30<!--
+-->|prop3=Attack speed|val3=1.00<!--
+-->|prop4=Attack range|val4=5.5<!--
+-->|prop5=Movement Speed|val5=3.0<!--
+-->|prop6=Unit radius|val6=0.375<!--
+-->|prop7=Sight radius|val7=9.0<!--
+-->|prop8=Leash radius|val8=-<!--
+-->|notes=}};12;50;;False
+
+Devouring Maw;R;File:Devouring_Maw_Icon.png;Summon a Devouring Maw that devours enemies for 4 seconds. Devoured enemies cannot fight and take 94 damage per second.<p>{{yellowtext|Usable on Unstoppable enemies.}}<!--
+-->{{undoc-x|type=Spell Damage, Status effect / Pathing blocker<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies / All units<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], Invulnerable Summon, [[Stasis]] (debuff)<!--
+-->|cast=0 + 0.15 seconds<!--
+-->|range=8.0<!--
+-->|aoe=Circle<!--
+-->|radius=<br/>- Target search: 2.5<br/>- Collision: 2.75<!--
+-->|tickrate=1.0 per second<!--
+-->|prop1=Initial delay<!--
+-->|val1=1.25 seconds<!--
+-->|notes=<li>Enemies caught by ''Devouring Maw'' are put in hostile Stasis. In addition to usual effects of Stasis, the targets are also [[Stun]]ned, have no collision, do not receive the expanded debuff removal, and some delayed heals applied beforehand are prevented.<li>[[Vehicle]]s are completely unaffected by ''Devouring Maw''.<li>[[Deathwing]] cannot be devoured, but his pathing can be blocked by ''Devouring Maw''.}};80;70;heroic;False
+
+Nydus Network;R;File:Nydus_Network_Icon.png;{{Charge Cooldown|120}}<p>Summon a [[Nydus Worm]] on Creep anywhere that Zagara has vision. Zagara can enter a Nydus Worm and travel to any other Nydus Worm by right-clicking near it. While inside a Nydus Worm, Zagara regenerates 10% Health and Mana per second.<p>Stores up to 2 charges. Maximum of 4 Nydus Worms at a time.<p>{{passive}} Creep spreads 15% farther.<br />{{passive}} While on Creep, each Basic Attack reduces all of Zagara's cooldowns by 0.4 seconds.<!--
+-->{{undoc-x|type=Summon / Healing, Status effect<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|target=Point target target<!--
+-->|props=[[Attack modifier]], [[Stasis]]<!--
+-->|cast=Instant<!--
+-->|range=Global<!--
+-->|tickrate=5.0 per second<!--
+-->|prop1=Healing per tick|val1=1.95% (of max Health)<!--
+-->|prop2=Bonus Creep radius|val2=0.9<!--
+-->|prop3=Bonus Creep sight radius|val3=2.0}}<hr/><!--
+
+--><small>'''Nydus Worm'''</small>{{undoc-x|nohr=true|type=Passive<!--
+-->|scaling=4.00% (Health)<!--
+-->|target=Automatic<!--
+-->|prop1=Health|val1=550<!--
+-->|prop2=Basic Attack damage|val2=-<!--
+-->|prop5=Movement Speed|val5=-<!--
+-->|prop6=Unit radius|val6=0.75<!--
+-->|prop7=Sight radius|val7=10.0<!--
+-->|prop8=Leash radius|val8=-<!--
+-->|notes=<li>Zagara can cast ''Nydus Network'' while inside a Nydus Worm. Other Abilities are disabled.<li>Nydus Worms cannot be placed such that they overlap Structures or unpathable terrain or within 6 radius of an existing Nydus Worm.<li>Placing a fifth Nydus Worm causes the oldest one to be destroyed.<li>After being placed, Nydus Worm spreads Creep around it. This does not expire until the Nydus Worm is destroyed.<li>Nydus worm has collision, is Unstoppable and immune to friendly Abilities and does not draw Minion aggro.<li>Entering the Nydus Worm requires a 1.5 second [[Channeled Ability#Weak Channel|channel]] that is interrupted upon taking damage.<li>While inside a Nydus Worm, Zagara is put in Stasis. In addition to usual effects of Stasis, Zagara is removed from ground plane (disjoints certain projectiles), has no collision and cannot be seen on the minimap or revealed.<li>If all Nydus Worms are destroyed while Zagara is inside, she is ejected at the location of the last one.}};;50; 120 / 2;heroic;False
+
+| talents =
+<!-- LEVEL 1 -->
+Volatile Acid;1;1;Banelings can travel 50% farther before exploding.<!--
+-->{{undoc-x|prop1=Bonus range|val1=7.0<!--
+-->|notes=<li>Actually a 44.4~% increase in range.}};File:Volatile_Acid_Icon.png;
+
+Corpse Feeders;1;2;Reduces the cooldown of Infested Drop by 3 seconds and Roachlings have 30% more Health.<!--
+-->{{undoc-x|type=Cooldown Reduction, Bonus Health<!--
+-->|scaling=-<!--
+-->|affects=Roachlings<!--
+-->|notes=}};File:Corpse_Feeders_Icon.png;
+
+Infest;1;3;Nearby Ranged Minions deal an additional 100% damage, plus an additional 1% per 1000 Siege damage Zagara has dealt. Can be toggled on or off.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Allied Ranged Minions<!--
+-->|radius=8.0<!--
+-->|notes=<li>Damage bonus stacks additively with other offensive damage modifiers that can affect target units' Basic Attack damage.}};File:Infest_Icon.png;
+
+<!-- LEVEL 4 -->
+Envenomed Spines;2;1;{{cooldown|30}}<br/>Activate to have Zagara's next Basic Attack apply 230 damage over 5 seconds.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=No target<!--
+-->|props=[[Attack modifier]], [[Damage over Time]], Primed<!--
+-->|cast=Instant<!--
+-->|tickrate=1.0 per second (x5)<!--
+-->|prop1=Damage per tick|val1=46<!--
+-->|notes=}};File:Envenomed_Spines_Icon.png;
+
+Medusa Blades;2;2;Basic Attacks deal 33% damage to three nearby targets.<!--
+-->{{undoc-x|type=Physical Damage<!--
+-->|scaling=-<!--
+-->|affects=Enemies<!--
+-->|props=[[Attack modifier]]<!--
+-->|radius=9.5<!--
+-->|arc=45 degrees<!--
+-->|notes=<li>Additional Basic Attacks target enemies within the sector in front of Zagara.<li>Attacks prioritize enemy units that are closest to Zagara.<li>Additional Basic Attacks do not grand any cooldown reduction from ''Nydus Network''.<li>Damage reduction stacks additively with offensive damage modifiers that can affect Zagara's Basic Attack damage.}};File:Medusa_Blades_Icon.png;
+
+Serrated Spines;2;3;{{questonly|Each Basic Attack against a Hero increases Zagara's Attack Damage by 0.2%.}}<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Attack modifier]]<!--
+-->|notes=<li>Damage bonus stacks additively with itself and other offensive damage modifiers that can affect Zagara's Basic Attack damage.}};File:Serrated_Spines_Icon.png;
+
+<!-- LEVEL 7 -->
+Baneling Massacre;3;1;Gain 2 additional charges of Baneling Barrage, but increase its cooldown by 2 seconds.;File:Baneling_Massacre_Icon.png;
+
+Viscous Acid;3;2;Banelings Slow enemies by 25% for 2.5 seconds.<!--
+-->{{undoc-x|type=Crowd control<!--
+-->|affects=Enemies<!--
+-->|props=[[Slow]]<!--
+-->|notes=}};File:Viscous_Acid_Icon.png;
+
+Bile Drop;3;3;{{quest|Passively increases the radius of Infested Drop by 20%.|After hitting 12 Heroes with Infested Drop, it spawns an additional Roachling.}}<!--
+-->{{undoc-x|prop1=Bonus radius|val1=0.3<!--
+-->|notes=}};File:Bile_Drop_Icon.png;
+
+<!-- LEVEL 10 -->
+Devouring Maw;4;1;{{Cooldown|80}}<br/>Summon a Devouring Maw that devours enemies for 4 seconds. Devoured enemies cannot fight and take 94 damage per second.<p>{{yellowtext|Usable on Unstoppable enemies.}};File:Devouring_Maw_Icon.png;
+Nydus Network;4;2;{{Charge Cooldown|120}}<br/>Summon a Nydus Worm on Creep anywhere that Zagara has vision. Zagara can enter a Nydus Worm and travel to any other Nydus Worm by right-clicking near it. While inside a Nydus Worm, Zagara regenerates 10% Health and Mana per second.<p>Stores up to 2 charges. Maximum of 4 Nydus Worms at a time.<p>{{passive}} Creep spreads 15% farther.<br />{{passive}} While on Creep, each Basic Attack reduces all of Zagara's cooldowns by 0.4 seconds.;File:Nydus_Network_Icon.png;
+
+<!-- LEVEL 13 -->
+Hydralisk Transfusion;5;1;Zagara is healed for 60% of the damage dealt by Hunter Killers' Basic Attacks to Heroes.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|props=[[Attack modifier]], [[Lifesteal]]<!--
+-->|notes=}};File:Hydralisk_Transfusion_Icon.png;
+
+Protective Coating;5;2;While on Creep, Zagara gains 20 Armor, taking 20% less damage.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Armor]]<!--
+-->|notes=<li>Does not stack with itself or other positive Armor effects. Other defensive damage modifiers may stack.}};File:Protective_Coating_Icon.png;
+
+Spell Shield;5;3;Every 30 seconds, gain 50 Spell Armor against the next enemy Ability and subsequent Abilities for 3 seconds, reducing the damage taken by 50%.<p>Can be toggled to allow or prevent this talent from triggering automatically.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Self<!--
+-->|target=No target (toggle)<!--
+-->|props=[[Spell Armor]], [[Spell Shield]]<!--
+-->|cast=Instant<!--
+-->|prop1=Toggle cooldown|val1=0.5 seconds.<!--
+-->|notes=<li>Does not stack with other positive Spell Armor effects. Other damage modifiers may stack.}};File:Spell_Shield_Icon.png;
+
+<!-- LEVEL 16 -->
+Corrosive Saliva;6;1;When attacking Heroes, Hunter Killers and Roachlings deal additional damage equal to 1.5% of their maximum Health.<!--
+-->{{undoc-x|type=[[Percent damage]]<!--
+-->|scaling=-<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Attack modifier]]<!--
+-->|notes=<li>Damage is dealt in a separate instance.}};File:Corrosive_Saliva_Icon.png;
+
+Mutalisk;6;2;Reduce the cooldown of Hunter Killer by 4 seconds. Hunter Killer now spawns a Mutalisk. Mutalisks have a bounce attack and last for 30 seconds.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=-<!--
+-->|affects=Enemies<!--
+-->|props=[[Attack modifier]], [[Bounce]]<!--
+-->|radius=4.0 (bounce)<!--
+-->|notes=<li>Mutalisk's attacks bounce twice, dealing 50% less damage with each bounce.<li>Bounces are chained and attacks cannot bounce back to the initial target.<li>Bounces cannot target enemies that are not visible or to unaggroed Mercenaries.<li>Bounces prioritize the closest enemy unit to the target.<li>Bounce damage reduction stacks '''multiplicatively''' with offensive damage modifiers.}};File:Mutalisk_Icon.png;
+
+Jagged Barbs;6;3;While on Creep, Zagara gains 50% more Basic Attack damage and her Attack Range is increased by 1.1.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Self<!--
+-->|prop1=Bonus attack range|val1=1.1<!--
+-->|notes=<li>Damage bonus stacks additively with other damage modifiers that can affect Zagara's Basic Attack damage.}};File:Jagged_Barbs_Icon.png;
+
+<!-- LEVEL 20 -->
+Tyrant Maw;7;1;Devouring Maw deals 50% more damage. Takedowns reduce its cooldown by 25 seconds.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|notes=<li>Damage bonus stacks additively with other offensive damage modifiers that can affect <i>Devouring Maw</i>'s damage.}};File:Tyrant_Maw_Icon.png;
+
+Endless Creep;7;2;The cast range for Creep Tumor is increased by 2000%. Creep Tumors now last 600 seconds. While on Creep, Zagara gains an additional 10% Movement Speed.<!--
+-->{{undoc-x|prop1=Bonus range|val1=47.5<!--
+-->|notes=<li>Actually a 1900% increase in cast range.}};File:Broodling_Nest_Icon.png;
+
+Broodmother;7;3;Every 3rd Basic Attack also launches a Baneling towards the target.<p>{{passive}} Gain 20% bonus Attack Speed.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|props=[[Attack modifier]]<!--
+-->|notes=<li>''Broodmother'' Banelings have the same basic properties as the ones launched via ''Baneling Barrage''.<li>''Broodmother'' Banelings benefit from the <i>Viscous Acid</i> Slow and the damage bonus from <i>Volatile Acid</i> but not from <i>Volatile Acid</i>'s range increase.}};File:Broodmother_Icon.png;
+
+Pack Instinct;7;4;Zagara and her summons deal 20% more damage to enemies attacked by a Hunter Killer in the last 2 seconds.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Self, Summons<!--
+-->|notes=<li>Mutalisk's bouncing attacks do not apply the marker to secondary targets.<li>Only affects Zagara's (and her summons') damage from her Abilities and Basic Attacks.<li>Damage bonus does not stack with itself, but stacks additively with other offensive damage modifiers that can affect Zagara's damage.}};File:Pack_Instinct_Icon.png;
+}}
+
+<noinclude>
+{{Scaling table/start|{{#var:health}}|{{#var:health scaling}}|{{#var:health regen}}|{{#var:health regen scaling}}|{{#var:attack damage}}|{{#var:attack damage scaling}}}}
+{{Scaling table/slot|Creep Tumor (health)|125|0.04}}
+{{Scaling table/slot|Baneling Barrage|80|0.04}}
+{{Scaling table/slot|Hunter Killer - Hydralisk (health)|450|0.044921875}}
+{{Scaling table/slot|Hunter Killer - Hydralisk(damage)|71|0.05}}
+{{Scaling table/slot|Infested Drop|140|0.04}}
+{{Scaling table/slot|Infested Drop - Roachling (health)|328|0.04}}
+{{Scaling table/slot|Infested Drop - Roachling (damage)|30|0.04}}
+{{Scaling table/slot|Devouring Maw|94|0.04|10}}
+{{Scaling table/slot|Nydus Network - Nydus Worm (health)|550|0.04|10}}
+{{Scaling table/slot|Envenomed Spines|230|0.04|4}}
+{{Scaling table/slot|Envenomed Spines (per second)|46|0.04|4}}
+{{Scaling table/end}}
+</noinclude>

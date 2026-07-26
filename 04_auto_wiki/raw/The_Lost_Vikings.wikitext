@@ -1,0 +1,293 @@
+{{hero data
+| name = The Lost Vikings
+| date = February 10, 2015
+| price = 10000
+| title = Triple Trouble
+| role = Support
+| franchise = Vikings
+| info = Three Heroes in one! Can gather experience from multiple locations.
+| lore = The Lost Vikings are back! While they briefly considered retirement after defeating the emperor Tomator, there were only so many polar bears they could wrestle before falling into a Nexus portal seemed like a solid life decision. 
+| difficulty = Very Hard
+| icon = File:LostVikings_Icon.png
+| skills =
+Viking Hoard;Trait;File:Viking_Hoard_Icon.png;Gathering a Regeneration Globe with a Viking permanently increases all their Health Regeneration by 0.5 per second.<!--
+-->{{undoc-x|type=Bonus Health Regeneration<!--
+-->|scaling=-<!--
+-->|affects=Self (Vikings)<!--
+-->|notes=<li>Each [[Regeneration Globe]] only counts as 1 stack, even if it's collected by multiple Vikings.}};;;trait;False
+
+Select Olaf;1;File:Select_Olaf_Icon.png;Olaf can charge enemies and Slow their Movement Speed by 30% for 3 seconds by right-clicking on them. 8 second cooldown.<p>Olaf gains increased Health Regeneration when out of combat for 4 seconds.<!--
+--><hr/><small>'''Charge'''</small>{{undoc-x|type=Crowd control / Movement: [[Dash]]<!--
+-->|affects=Enemies / Self (Olaf)<!--
+-->|target=Unit target<!--
+-->|props=[[Slow]]<!--
+-->|cast=Instant<!--
+-->|range=<br/>- Minimum: 1.75<br/>- Maximum: 5.0<!--
+-->|missile=20<!--
+-->|notes=<li>Targeting an enemy below the minimum range will not initiate Charge, and causes Olaf to Basic Attack them normally.<li>Attack orders issued while Silenced will never trigger the charge, Olaf will simply walk all the way up and Basic Attack normally instead.<li>If Olaf is mid-charge when ''Play Again'' triggers from another Viking, he will continue his charge globally, either flying all the way to and hitting his target or returning to the start location of the charge, depending on the part of the animation he is in when ''Play Again'' completes.}}<!--
+--><hr/><small>'''Stoutness'''</small>{{undoc-x|type=Healing<!--
+-->|scaling=-<!--
+-->|affects=Self (Olaf)<!--
+-->|tickrate=1.0 per second<!--
+-->|prop1=Healing per tick|val1=5.07% (of max Health)<!--
+-->|notes=}};;;False
+
+Select Baleog;2;File:Select_Baelog_Icon.png;Baleog's Basic Attacks deal 50% splash damage to enemies behind his attack target.<!--
+-->{{undoc-x|type=Physical Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|props=[[Splash]]<!--
+-->|radius=5.0<!--
+-->|arc=65 degrees<!--
+-->|notes=}};;;False
+
+Select Erik;3;File:Select_Erik_Icon.png;Erik moves faster than the other Vikings and has increased Basic Attack range.<!--
+-->{{undoc-x|prop1=Movement speed|val1=5.5664<!--
+-->|prop2=Vision radius|val2=13<!--
+-->|notes=}};;;False
+
+Select All Vikings;4;File:Select_All_Vikings_Icon.png;The Lost Vikings can be controlled individually or as a group. Each Viking has particular strengths.;;;False
+
+Longboat Raid!;R;File:Longboat_Raid!_Icon.png;Hop into an Unstoppable Longboat that fires at nearby enemies for 128 damage per second and can fire a mortar that deals 228 damage in an area. The boat has increased Health for each Viking inside. If the boat is destroyed by enemies, all Vikings are Stunned for 1 second. Lasts 15 seconds.<p>{{yellowtext|Requires all surviving Vikings to be nearby.}}<!--
+-->{{undoc-x|type=Summon<!--
+-->|target=No target<!--
+-->|props=[[Stasis]]<!--
+-->|cast=Instant<!--
+-->|notes=<li>''Longboat Raid!'' cannot be cast unless all alive Vikings are within 20 radius.<li>If a single Viking is being controlled, <i>Longboat</i> will be summoned at their location.<li>If multiple Vikings are controlled, Baleog's location will be prioritized, then Olaf's, if Baleog is dead.<li>While ''Longboat Raid!'' is active, Vikings inside are put in Stasis. In addition to the usual effects of Stasis, the Vikings are removed from ground plane (disjoints certain projectiles), have no collision, cannot regenerate Health, Mana, Energy or Shields and cannot be seen on the minimap or revealed.}}<!--
+
+--><hr/><small>'''Longboat'''</small>{{undoc-x|nohr=true<!--
+-->|type=[[Heroic Pet]]<!--
+-->|scaling=4.00% (damage & Health)<!--
+-->|target=Automatic<!--
+-->|prop1=Health|val1=750 + 185 per Viking<!--
+-->|prop2=Basic Attack damage|val2=64<!--
+-->|prop3=Attack speed|val3=2.00<!--
+-->|prop4=Attack range|val4=11.5<!--
+-->|prop5=Movement Speed|val5=3.3<!--
+-->|notes=<li>Longboat's attacks are siege attacks that deal Spell Damage.<li>Longboat's attacks prioritize Heroes, then the closest enemy.}};90;;;False
+
+Longboat Raid! - Mortar;Q;File:Mortar_Icon.png;Fires a mortar at the targeted location, dealing 228 damage in a large area.<!--
+-->{{undoc-x|type=Spell Damage|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]]<!--
+-->|cast=Instant<!--
+-->|range=12<!--
+-->|aoe=Circle<!--
+-->|radius=2.5<!--
+-->|notes=<li>Available during <i>Longboat Raid!</i>.<li><i>Mortar</i> projectile has a flight time of 0.3, 1.0 or 1.5 seconds, depending on the distance to the target point.}};3;;;False
+
+Play Again!;R;File:Play_Again!_Icon.png;Summon, fully heal, and revive all Lost Vikings at target location after a Viking channels for 2 seconds.<p>{{yellowtext|Only one Viking may attempt to summon at a time.}}<!--
+-->{{undoc-x|type=Healing, Resurrection<!--
+-->|affects=Self<!--
+-->|target=Point target<!--
+-->|props=[[Channeled cast]] (stationary)<!--
+-->|cast=2.0(ch) + 0 seconds<!--
+-->|range=2.5<!--
+-->|radius=Global<!--
+-->|notes=<li>Placed on a 10 second cooldown if interrupted.<li>Vikings in [[Stasis]] at the end of the channel will not be healed or teleported to the cast location.}};100;;;False
+
+Go Go Go!;Z;File:Go-go-go.png; The Vikings gain 30% increased Movement Speed for 4 seconds.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|props=[[Movement Speed]]<!--
+-->|notes=}};30;;False
+
+| talents =
+<!-- LEVEL 1 -->
+Olaf the Stout;1;1;{{Passive}} Olaf gains 20% bonus maximum Health.<p>Every 5 seconds, Olaf gains 75 Physical Armor against the next enemy Hero Basic Attack, reducing the damage taken by 75%.<p>Stores up to 2 charges.<!--
+-->{{undoc-x|type=Defensive damage modifier, Bonus Health<!--
+-->|scaling=-<!--
+-->|affects=Self (Olaf)<!--
+-->|props=[[Block]], [[Physical Armor]]<!--
+-->|notes=<li>Does not stack with other positive Armor effects. Other defensive damage modifiers may stack.}};File:Olaf_the_Stout_Icon.png;
+
+Spy Games;1;2;After standing still for 3 seconds, Erik gains Stealth and his Sight Radius is increased by 75%. The Stealth persists for 3 seconds after moving and once removed, Erik gains 75% bonus Basic Attack damage for 6 seconds.<!--
+-->{{undoc-x|type=Offensive damage modifier, Status effect<!--
+-->|affects=Self (Erik)<!--
+-->|props=[[Stealth]]<!--
+-->|prop1=Bonus sight radius<!--
+-->|val1=10<!--
+-->|notes=<li>Stacks additively with other offensive damage modifiers that can affect Erik's Basic Attack damage.}};File:Spy_Games_Icon.png;
+
+Explosive Attacks;1;3;Increases Baleog’s splash damage against non-Heroes to 100%.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|scaling=|affects=Ability<!--
+-->|notes=<li>Stacks additively with other offensive damage modifiers that can affect Baleog's Basic Attack damage.}};File:Explosive_Attacks_Icon.png;
+
+Viking Bribery;1;4;Enemy Minions or captured Mercenaries killed near The Lost Vikings grant stacks of Bribe. Use 40 stacks to bribe target Mercenary, instantly defeating them. Does not work on Elite Mercenaries. Maximum stacks available: 200.<!--
+-->{{undoc-x|type=Instant kill<!--
+-->|affects=Neutral Non-Elite Mercenaries<!--
+-->|target=Unit target<!--
+-->|props=[[Bribe]]<!--
+-->|cast=Instant<!--
+-->|range=6.0<!--
+-->|notes=<li>Players from either team can see the exact number of stacks for this Talent currently available by hovering over the icon on the Talents screen.}};File:Viking_Bribery_Icon.png;
+
+<!-- LEVEL 4 -->
+Pain Don't Hurt;2;1;Baleog's Basic Attacks and splash damage heal for 20% of the damage dealt. Healing is doubled against Heroes.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=-<!--
+-->|affects=Enemies / Self (Baleog)<!--
+-->|props=[[Attack Modifier]], [[Lifesteal]]<!--
+-->|notes=}};File:Pain_Don't_Hurt_Icon.png;
+
+Erik The Swift;2;2;Permanently increases Erik's base Movement Speed by 10%, and as long as Erik is moving he heals 34 Health per second.<!--
+-->{{undoc-x|type=Healing, Status effect<!--
+-->|scaling=4.00%<!--
+-->|props=[[Movement Speed]]<!--
+-->|affects=Self (Erik)<!--
+-->|tickrate=1.0 per second<!--
+-->|prop1=Bonus Movement Speed|val1=0.5562<!--
+-->|notes=<li>You can use shift to queue up Erik to run back and forth in a small area and therefore passively heal while you control another Viking.<li>Movement Speed bonus is an increase to Erik's base Movement Speed, causing it to stack '''multiplicatively''' with the highest Movement Speed buff affecting him.}};File:Erik_The_Swift_Icon.png;
+
+It's a Sabotage!;2;3;Erik's Basic Attacks against Structures light them on fire for 3 seconds, causing 225 damage.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemy Structures<!--
+-->|props=[[Damage over Time]]<!--
+-->|tickrate=1.0 per second<!--
+-->|prop1=Damage per tick|val1=75<!--
+-->|notes=<li>Does not stack with itself. Reapplying the effect refreshes the duration.}};File:Its_a_Sabotage!_Icon.png;
+
+Mercenary Lord;2;4;Friendly non-Boss Mercenaries near your Hero deal 50% more damage. Gain 50 Armor against Minions and Mercenaries, reducing the damage taken by 50%.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Self (Vikings), Mercenaries<!--
+-->|props=[[Area of Effect]], [[Mercenary Lord]]<!--
+-->|aoe=Circle<!--
+-->|radius=9.0<!--
+-->|tickrate=2.0 per second<!--
+-->|notes=<li>Damage bonus does not stack with other Mercenary Lord auras and its derivatives.<li>Does not stack with other positive Armor effects against Minions and Mercenaries. Other defensive damage modifiers may stack.}};File:Mercenary_Lord_Icon.png;
+
+<!-- LEVEL 7 -->
+Baleog the Fierce;3;1;Increase Baleog’s attack range by 2.5. While near Olaf and Erik, he becomes inspired by the power of teamwork and his Attack Speed is increased by 50%.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self (Baleog)<!--
+-->|props=[[Attack Speed]]<!--
+-->|radius=16<!--
+-->|notes=}};File:Baleog_the_Fierce_Icon.png;
+
+Spin To Win!;3;2;{{cooldown|10}}<br />Activate to have each Viking deal 85 damage to nearby enemies. Deals 100% bonus damage to enemy Heroes.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=No target<!--
+-->|props=[[Area of Effect]]<!--
+-->|cast=Instant<!--
+-->|aoe=Circle<!--
+-->|radius=2.0<!--
+-->|notes=<li>Hero bonus stacks additively with offensive damage modifiers that can affect <i>Spin To Win!</i>'s damage.}};File:Spin_To_Win_Icon.png;
+
+Norse Force;3;3;{{cooldown|15}}<br />All Vikings gain a 140 to 308 point Shield, increasing in strength for each Viking alive. Lasts 4 seconds.<!--
+-->{{undoc-x|type=Shield<!--
+-->|scaling=4.00%<!--
+-->|affects=Self (Vikings)<!--
+-->|target=No target<!--
+-->|cast=Instant<!--
+-->|prop1=Bonus Shield per Viking|val1=84<!--
+-->|notes=}};File:Norse_Force_Icon.png;
+
+<!-- LEVEL 10 -->
+Longboat Raid!;4;1;{{cooldown|90}}<br/>Hop into an Unstoppable Longboat that fires at nearby enemies for 128 damage per second and can fire a mortar that deals 228 damage in an area. The boat has increased Health for each Viking inside. If the boat is destroyed by enemies, all Vikings are Stunned for 1 second. Lasts 15 seconds.<p>{{yellowtext|Requires all surviving Vikings to be nearby.}};File:Longboat_Raid_Icon.png;
+Play Again!;4;2;{{cooldown|100}}<br/>Summon, fully heal, and revive all Lost Vikings at target location after a Viking channels for 2 seconds.<p>{{yellowtext|Only one Viking may attempt to summon at a time.}};File:Play_Again!_Icon.png;
+
+<!-- LEVEL 13 -->
+Hunka' Burning Olaf;5;1;Olaf deals 34 damage every second to nearby enemies.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|props=[[Area of Effect]]<!--
+-->|aoe=Circle<!--
+-->|radius=2.5<!--
+-->|tickrate=1.0 seconds<!--
+-->|notes=}};File:Hunka'_Burning_Olaf_Icon.png;
+
+Jump!;5;2;{{cooldown|30}}<br />Makes all Vikings Invulnerable and able to pass over enemies for 1.5 seconds.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self (Vikings)<!--
+-->|target=No target<!--
+-->|props=[[Invulnerable]]<!--
+-->|cast=Instant<!--
+-->|notes=<li>Cannot be activated if Stunned, Silenced, or in Stasis, except you can select a Viking which isn't so impaired and press W to immediately free all 3 Vikings with this Talent.}};File:Jump!_Icon.png;
+
+Nordic Attack Squad;5;3;While Olaf, Baleog, and Erik are near each of the other Vikings, their Basic Attacks deal bonus damage equal to 1.25% maximum Health to enemy Heroes.<!--
+-->{{undoc-x|type=Percent Damage<!--
+-->|scaling=-<!--
+-->|affects=Enemy Heroes<!--
+-->|target=No target<!--
+-->|props=[[Percent Damage]]<!--
+-->|radius=16<!--
+-->|notes=}};File:Nordic_Attack_Squad_Icon.png;
+
+<!-- LEVEL 10 -->
+Large and In Charge;6;1;When Olaf charges enemies, they are Stunned for 1 second.<!--
+-->{{undoc-x|type=Crowd control<!--
+-->|affects=Enemies<!--
+-->|props=[[Stun]]<!--
+-->|notes=}};File:Large_and_In_Charge_Icon.png;
+
+Impatience Is a Virtue;6;2;Enemies damaged by a Viking's Basic Attack reduce the cooldown of all Viking Abilities by 0.3125 seconds.<!--
+-->{{undoc-x|props=[[Attack Modifier]]<!--
+-->|notes=}};File:Impatience_Is_a_Virtue_Icon.png;
+
+64 KB Marathon;6;3;Activating Go Go Go! grants an additional 40% Movement Speed and breaks the Vikings out of Roots and Slows.<!--
+-->{{undoc-x|type=CC removal<!--
+-->|affects=Self<!--
+-->|notes=<li>Stacks additively with baseline <i>Go Go Go!</i> Movement Speed bonus, but not with other Movement Speed bonuses.}};File:64_KB_Marathon_Icon.png;
+
+Executioner;6;4;Attacking a Hero who is Slowed, Rooted, or Stunned increases your Basic Attack damage by 30% for 3 seconds.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Attack Modifier]]<!--
+-->|notes=<li>The effect triggers separately on each Viking.<li>Stacks additively with other offensive damage modifiers that can affect Vikings' Basic Attack damage.}};File:Executioner_Icon.png;
+
+<!-- LEVEL 20 -->
+Ragnarok 'n' Roll!;7;1;The Longboat can attack two targets at once and the range of its Mortar is increased by 100%. Reduce Longboat Raid!'s cooldown by 30 seconds.<!--
+-->{{undoc-x|prop1=Bonus range|val1=6.0}};File:Ragnarok_'n'_Roll!_Icon.png;
+
+Checkpoint Reached;7;2;10 seconds after using Play Again!, any dead Vikings are revived and summoned again, and all are healed to full.;File:Checkpoint_Reached_Icon.png;
+
+The Sequel!;7;3;Reduces The Lost Vikings' death timer by 50%.;File:The_Sequel!_Icon.png;
+
+Fury of the Storm;7;4;Every 5 seconds, the next Basic Attack will deal an additional 41 damage to the target, and 105 damage to all nearby Minions, Mercenaries and Monsters. Each Viking has their own cooldown.{{undoc-x|type=Bonus damage / Physical Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies (primary) / Enemy Minions and Mercenaries (splash)<!--
+-->|props=[[Splash]]<!--
+-->|aoe=Circle<!--
+-->|radius=6.0<!--
+-->|notes=}};File:Fury_of_the_Storm_Icon.png;
+
+}}
+
+<noinclude>
+{{Scaling table/start|0|0|0|0|0|0}}
+{{Scaling table/slot|Longboat Raid! (Health, base)|750|0.04|10}}
+{{Scaling table/slot|Longboat Raid! (Health, per viking)|185|0.04|10}}
+{{Scaling table/slot|Longboat Raid! (damage)|64|0.04|10}}
+{{Scaling table/slot|Longboat Raid! (damage, per second)|128|0.04|10}}
+{{Scaling table/slot|Longboat Raid! - Mortar|228|0.04|10}}
+{{Scaling table/slot|Erik the Swift|34|0.04|4}}
+{{Scaling table/slot|It's a Sabotage!|225|0.04|4}}
+{{Scaling table/slot|It's a Sabotage! (per second)|75|0.04|4}}
+{{Scaling table/slot|Spin to Win!|85|0.04|7}}
+{{Scaling table/slot|Norse Force (1 Viking)|140|0.04|7}}
+{{Scaling table/slot|Norse Force (2 Vikings)|224|0.04|7}}
+{{Scaling table/slot|Norse Force (3 Vikings)|308|0.04|7}}
+{{Scaling table/slot|Hunka' Burning Olaf|34|0.04|13}}
+{{Scaling table/slot|Fury of the Storm (primary)|41|0.04|20}}
+{{Scaling table/slot|Fury of the Storm (splash)|105|0.04|20}}
+{{Scaling table/end}}
+
+===Olaf===
+{{Scaling table/start|1482|0.04|3.086|0.04|54|0.04}}
+{{Scaling table/end}}
+
+===Baleog===
+{{Scaling table/start|1130|0.04|2.3554|0.04|75|0.04}}
+{{Scaling table/end}}
+
+===Erik===
+{{Scaling table/start|804|0.04|1.6757|0.04|62|0.04}}
+{{Scaling table/end}}
+</noinclude>

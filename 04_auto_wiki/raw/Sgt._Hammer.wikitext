@@ -1,0 +1,228 @@
+{{hero data
+| name = Sgt. Hammer
+| date = March 13, 2014
+| price = 7000
+| title = Siege Tank Operator
+| role = Ranged
+| franchise = Starcraft
+| info = A long-range [[Physical Damage]] dealer who needs protection from allies.
+| lore = Sergeant Bama "the Hammer" Kowalski has served some of the toughest tours around the Koprulu sector. The roar of her siege tank's shock cannon strikes fear right into the heart of the toughest of warriors... including some of her allies.
+| difficulty = Hard
+| melee = False
+| health = 1720
+| healthRegen = 3.582
+| resource = 500
+| resourceType = Mana
+| armor = 0
+| attackSpeed = 1
+| attackRange = 5.5
+| attackDamage = 140
+| healthScaling = 0.04
+| regenScaling = 0.04
+| adamageScaling = 0.04
+| unitRadius = 1.1875
+| icon = File:SgtHammer_Icon.png
+| skills =
+Siege Mode;D;File:Siege_Mode_Icon.png;Activate to enter Siege Mode. While in Siege Mode, Basic Attacks deal 20% more damage, have 100% increased range, and deal 25% of their damage as splash damage around the target.<!--
+-->{{undoc-x|type=Physical Damage / Offensive damage modifier<!--
+-->|affects=Enemeis / Self<!--
+-->|target=No target (toggle)<!--
+-->|props=[[Attack Modifier]], [[Splash]]<!--
+-->|cast=0 + 1.0 seconds<!--
+-->|prop1=Bonus attack range|val1=5.5<!--
+-->|prop2=Splash radius|val2=2.0<!--
+-->|notes=<li>Sgt. Hammer cannot use her Abilities while switching into or out of Siege Mode.<li>During Siege Mode, the casts of all Abilities are clamped at maximum range.<li>''Siege Mode'' can be activated or deactivated while [[Silence]]d.<li>Polymorphs cancel Siege Mode if active, although as they are a type of Silence, Siege Mode can still be activated during the Polymorph.<li>Damage bonus from Siege Mode stacks additively with other offensive damage modifiers that can affect Sgt. Hammer's Basic Attack damage.<li>Splash damage penalty stacks '''multiplicatively''' with other offensive damage modifiers, including Siege Mode damage bonus, that can affect Sgt. Hammer's Basic Attack damage.}};2;;trait;False
+
+Spider Mines;Q;File:Spider_Mines_Icon.png;Create 3 mines that arm after 1.25 seconds. Mines detonate when an enemy comes in range, dealing 96 damage to nearby enemies and Slowing them by 25% for 1.5 seconds.<p>{{yellowtext|Siege Mode:}} Cast range increased by 100%.<!--
+-->{{undoc-x|type=Spell Damage / Summon<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]]<!--
+-->|cast=Instant<!--
+-->|range=<br/>- Tank Mode: 5.5<br/>- Siege Mode: 11.0<!--
+-->|aoe=Circle<!--
+-->|radius=<br/>- Acquisition: 4.0<br/>- Damage: 1.75<!--
+-->|notes=<li>''Spider Mines'' will chase and explode on [[Invulnerable]] targets, dealing no damage to them.}}<hr/><!--
+
+--><small>'''Spider Mine'''</small>{{undoc-x|nohr=true<!--
+-->|type=Active<!--
+-->|scaling=4.00% (damage & Health)<!--
+-->|target=Automatic<!--
+-->|prop1=Health|val1=25<!--
+-->|prop5=Movement Speed|val5=6.0<!--
+-->|prop6=Unit radius|val6=0.3125<!--
+-->|prop7=Sight radius|val7=3.0<!--
+-->|prop8=Leash radius|val8=-<!--
+-->|notes=<li>Spider Mines are [[Unstoppable]] and immune to [[Skillshot]]s and [[Area of Effect|AoE]].<li>Spider Mines are placed at the same (~1.2) distance from each other regardless of range.<li>Spider Mines last 35 seconds after arming.}};14;50;;False
+
+Concussive Blast;W;File:Concussive_Blast_Icon.png;Deal 141 damage to enemies in front of Sgt. Hammer and knock them back.<p>{{yellowtext|Siege Mode:}} Radius increased by 50%.<!--
+-->{{undoc-x|type=Spell Damage, Crowd Control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Clamping]]<!--
+-->|cast=Instant<!--
+-->|aoe=Radial<!--
+-->|radius=<br/>- Tank Mode: 6.0<br/>- Siege Mode: 9.0<!--
+-->|arc=45 degrees<!--
+-->|prop1=Knockback duration|val1=0.375 seconds<!--
+-->|prop2=Knockback speed|val2=14.0<!--
+-->|notes=}};12;80;;False
+
+Neosteel Plating;E;File:Neosteel_Plating_Icon.png;Gain 25 Armor for 2 seconds.<p>{{Yellowtext|Siege Mode:}} Grants 100% more Armor.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|props=[[Armor]]<!--
+-->|cast=Instant<!--
+-->|notes=<li>Does not stack with other positive Armor effects. Other defensive damage modifiers may stack.}};16;60;;False
+
+Napalm Strike;R;File:Napalm_Strike_Icon.png;Deals 164 damage on impact, and leaves a napalm area that deals 50 damage per second. Lasts for 4 seconds.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]]<!--
+-->|cast=Instant<!--
+-->|range=12.0<!--
+-->|aoe=Circle<!--
+-->|radius=2.5<!--
+-->|tickrate=1.0 per second (x4)<!--
+-->|notes=}};6;35;heroic;False
+
+Blunt Force Gun;R;File:Blunt_Force_Gun_Icon.png;Fire a missile across the battlefield, dealing 500 damage to non-Structure enemies in its path.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=3.00%<!--
+-->|affects=Non-Structure enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Channeled cast]] (stationary)<!--
+-->|cast=0.75 + 0 seconds<!--
+-->|range=Global<!--
+-->|hitbox=4.0 x 4.0<!--
+-->|missile=20<!--
+-->|tickrate=<!--
+-->|notes=}};70;100;heroic;False
+
+Siege Thrusters;Z;File:Siege_Thrusters_Icon.png;Increase Movement Speed by 60% for 4 seconds. Thrusters are always active while at the Altar. Activating Thrusters cancels Siege Mode.<!--
+-->{{undoc-x|nohr=true<!--
+-->|notes=<li>There is no cast time when using ''Siege Thrusters'' to leave Siege Mode.}};30
+
+| talents = <!-- LEVEL 1 -->
+Ambush;1;1;Gain Stealth when entering Siege Mode or after not taking or dealing damage for 3 seconds while in Siege Mode. Basic Attacks while Stealthed deal 125% more damage.<p>Remaining stationary for at least 1.5 seconds while Stealthed grants Invisible.<!--
+-->{{undoc-x|type=Offensive damage modifier, Status effect<!--
+-->|scaling=4.00%<!--
+-->|affects=Self<!--
+-->|props=[[Attack Modifier]], [[Stealth]]<!--
+-->|notes=<li>''Ambush'' has a 0.1875 second grace time after leaving Stealth to benefit from the damage bonus.<li>Does not benefit from other sources of Stealth.<li>Damage bonus stacks additively with other offensive damage modifiers that can affect Sgt. Hammer's Basic Attack damage.}};File:Ambush_Icon.png;
+
+Advanced Artillery;1;2;Increase Siege Mode's splash damage to 60% of Basic Attack damage, and increase its splash radius by 25%.<!--
+-->{{undoc-x|prop1=Bonus radius|val1=0.5<!--
+-->|notes=}};File:Advanced_Artillery_Icon.png;
+
+Maelstrom Rounds;1;3;{{cooldown|80 / 5.0}}<br />Activate to increase Basic Attack damage dealt by 30% for 5 seconds. Hitting Enemy Heroes or Structures with Basic Attacks while in Siege Mode reduces the cooldown of Maelstrom Rounds by 5 seconds.<p>Stores up to 3 charges.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|props=[[Attack Modifier]]<!--
+-->|cast=Instant<!--
+-->|notes=<li>Targets hit by the splash of ''Siege Mode'' Basic Attacks also trigger the cooldown reduction.<li>Damage bonus stacks additively with other offensive damage modifiers affecting Sgt. Hammer's Basic Attack damage.}};File:Maelstrom_Rounds_Icon.png;
+
+<!-- LEVEL 4 -->
+Barricade;2;1;Reduce Concussive Blast's cooldown by 4 seconds, its Mana cost by 40, and when cast create an impassable wall in front of Sgt. Hammer for 4 seconds.<!--
+-->{{undoc-x|type=Pathing blocker<!--
+-->|affects=All units<!--
+-->|target=Point target<!--
+-->|range=5.0<!--
+-->|width=5.75 <sup>(1</sup><!--
+-->|height=1.75 <sup>(1</sup><!--
+-->|notes=<li><sup>1)</sup> Wall consists of five circular blocking units with 0.875 radius.<li>''Concussive Blast'' can be reactivated after 1.5 seconds to end the effect early.}};File:Barricade_Icon.png;
+
+Siege Tactics;2;2;Using Neosteel Plating while in Siege Mode grants Unstoppable for 2 seconds.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|props=[[Unstoppable]]<!--
+-->|notes=<li>The effect is removed immediately upon leaving Siege Mode.}};File:Siege_Tactics_Icon.png;
+
+Regenerative Bio-Steel;2;3;Basic Attacks while in Siege Mode heal for 10% of the damage dealt.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|props=[[Attack Modifier]], [[Lifesteal]]<!--
+-->|notes=<li>Targets hit by the splash of ''Siege Mode'' Basic Attacks also trigger the effect.}};File:Regenerative_Bio-Steel_Icon.png;
+
+<!-- LEVEL 7 -->
+Pulse Detonation Core;3;1;Spider Mines detonate 3 times over 3 seconds. Basic Attacks against enemy Heroes grant 5 Mana and reduce the cooldown of Spider Mines by 1.5 seconds. Increase this bonus to 2.5 seconds while in Siege Mode.<!--
+-->{{undoc|<hr/><li>Targets hit by the splash of ''Siege Mode'' Basic Attacks also trigger the effects.}};File:Pulse_Detonation_Core_Icon.png;
+
+Hover Siege Mode;3;2;Sgt. Hammer can move at 50% Movement Speed while in Siege Mode.;File:Hover_Siege_Mode_Icon.png;
+
+Graduating Range;3;3;While in Siege Mode, Basic Attack range is increased by 1 every 1.5 seconds, up to 3.;File:Graduating_Range_Icon.png;
+
+<!-- LEVEL 10 -->
+Blunt Force Gun;4;1;{{Cooldown|70}}<br />Fire a missile across the battlefield, dealing 500 damage to non-Structure enemies in its path.;File:Blunt_Force_Gun_Icon.png;
+Napalm Strike;4;2;{{Cooldown|6}}<br />Deals 164 damage on impact, and leaves a napalm area that deals 50 damage per second. Lasts for 4 seconds.;File:Napalm_Strike_Icon.png;
+
+<!-- LEVEL 13 -->
+Tactical Mine Deployment;5;1;Moving while Thrusters is active leaves a trail of up to 5 Spider Mines. Additionally, increase the Slow of Spider Mines by 15%.<!--
+-->{{undoc-x|nohr=true<!--
+-->|notes=<li>Mines are dropped at 0.5 second intervals, if Sgt. Hammer is moving at the time.}};File:Tactical_Mine_Deployment_Icon.png;
+
+Entrenched;5;2;While in Siege Mode, Concussive Blasts's damage and knockback distance are increased by 75%.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|prop1=Bonus knockback speed|val1=10.5<!--
+-->|notes=<li>Damage bonus stacks additively with other offensive damage modifiers that can affect <i>Concussive Blast</i>'s damage.}};File:Entrenched_Icon.png;
+
+Hyper-Cooling Engines;5;3;While in Siege Mode, hitting Heroes with Basic Attacks reduces the cooldown of Thrusters by 5 seconds.<!--
+-->{{undoc-x|props=[[Attack Modifier]]<!--
+-->|notes=<li>Targets hit by the splash of ''Siege Mode'' Basic Attacks also trigger the effect.}};File:Hyper-Cooling_Engines_Icon.png;
+
+<!-- LEVEL 16 -->
+Mechanical Know-how;6;1;Neosteel Plating grants 20% maximum Health as a Shield for 2 seconds and increases Basic Attack damage by 30% for 5 seconds.<!--
+-->{{undoc-x|type=Shield, Offensive damage modifier<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|props=[[Attack Modifier]]<!--
+-->|notes=<li>Damage bonus stacks additively with other offensive damage modifiers affecting Sgt. Hammer's Basic Attack damage.}};File:Mechanical_Know-how_Icon.png;
+
+Executioner;6;2;Attacking a Hero who is Slowed, Rooted, or Stunned increases your Basic Attack damage by 30% for 3 seconds.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Attack Modifier]]<!--
+-->|notes=<li>Damage bonus stacks additively with other offensive damage modifiers affecting Sgt. Hammer's Basic Attack damage.}};File:Executioner_Icon.png;
+
+Giant Killer;6;3;Basic Attacks against enemy Heroes deal bonus damage equal to 1.5% of the Hero's maximum Health.<!--
+-->{{undoc-x|type=[[Spell Damage]]<!--
+-->|scaling=-<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Attack Modifier]], [[Percent Damage]]<!--
+-->|notes=<li>Only affects the primary target of the attack.}};File:Giant_Killer_Hammer_Icon.png;
+
+<!-- LEVEL 20 -->
+Orbital BFG;7;1;Blunt Force Gun's missile orbits the planet every 5 seconds. Only the last missile fired orbits.;File:Orbital_BFG_Icon.png;
+
+Advanced Lava Strike;7;2;Napalm Strike's range is increased by 75% and its impact does 50% more damage.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|prop1=Bonus range|val1=9.0<!--
+-->|notes=<li>Damage bonus stacks additively with other offensive damage modifiers affecting <i>Napalm Strike</i>'s damage.}};File:Advanced_Lava_Strike_Icon.png;
+
+Shrapnel Mines;7;3;Upon detonating, Spider Mines reduce the Armor of enemy Heroes hit by 10, up to 50, for 4 seconds.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Armor]] reduction<!--
+-->|notes=<li>Stacks additively with itself, but not with other negative Armor effects. Other defensive damage modifiers may stack.}};File:Shrapnel_Mines_Icon.png;
+
+Ultra Capacitors;7;4;Hitting enemy Heroes with Basic Attacks while in Siege Mode grants 10% Attack Speed for 5 seconds, up to 60%.;File:Ultra Capacitors_Icon.png;
+
+}}
+<noinclude>
+{{Scaling table/start|{{#var:health}}|{{#var:health scaling}}|{{#var:health regen}}|{{#var:health regen scaling}}|{{#var:attack damage}}|{{#var:attack damage scaling}}}}
+{{Scaling table/slot|Spider Mines|96|0.04}}
+{{Scaling table/slot|Concussive Blast|141|0.04}}
+{{Scaling table/slot|Napalm Strike (impact)|164|0.04|10}}
+{{Scaling table/slot|Napalm Strike (periodic)|50|0.04|10}}
+{{Scaling table/slot|Blunt Force Gun|500|0.03|10}}
+{{Scaling table/end}}
+</noinclude>

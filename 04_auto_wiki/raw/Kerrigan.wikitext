@@ -1,0 +1,277 @@
+{{hero data
+| name = Kerrigan
+| date = March 13, 2014
+| price = 4000
+| title = Queen of Blades
+| role = Melee
+| franchise = Starcraft
+| info = A [[combo]] Assassin who goes all in, [[Dive|diving]] into the enemy team.
+| lore = Once a Terran Ghost with formidable psionic abilities, Sarah Kerrigan was betrayed by her allies and transformed into the Queen of Blades. Now freed of the dark one's corruption, Kerrigan faces a threat that could destroy the galaxy itself.
+| difficulty = Hard
+| melee = True
+| health = 1764
+| healthRegen = 3.6757
+| resource = 500
+| resourceType = Mana
+| armor = 0
+| attackSpeed = 1.25
+| attackRange = 2
+| attackDamage = 115
+| healthScaling = 0.04
+| regenScaling = 0.04
+| adamageScaling = 0.04
+| unitRadius = 0.6875
+| icon = File:Kerrigan_Icon.png
+| skills =
+Assimilation;Trait;File:Assimilation_Icon.png;Gain 20% of damage dealt from Basic Attacks and 10% from Abilities as Shields for 6 seconds. Shield amount gained doubled against Heroes.<p>{{Yellowtext|Current maximum:}} 1004<!--
+-->{{undoc-x|type=Shield<!--
+-->|scaling=- (gain) / 4.00% (maximum)<!--
+-->|affects=Self<!--
+-->|props=[[Lifesteal]] (shields)<!--
+-->|notes=<li>Benefits from all damage from Basic and Heroic Abilities and Talents.<li>Duration is refreshed every time more Shields are gained through Assimilation.<li>Shields gained are calculated from the final damage dealt after all [[damage modifier]]s.<li>Hero bonus stacks multiplicatively with all bonuses from talents affecting <i>Assimilation</i>'s baseline Shield gain.}};;;trait;False
+
+Ravage;Q;File:Ravage_Icon.png;{{Charge CooldownW|8 / 0.25}}<p>Leap at a target, dealing 115 damage. If the enemy dies within 1.5 seconds, restore 1 charge and refund 20 Mana.<p>{{Quest|Kill enemies within 1.5 seconds of being hit by Ravage. Minions grant 1 stack and Heroes grant 7 stacks.|After reaching 85 stacks, Ravage gains 125 additional damage.}}<p>{{Reward|After reaching 150 stacks, Ravage deals a further 200 additional damage.}}<!--
+-->{{undoc-x|type=Spell Damage / Movement: [[Launch]]<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies / Self<!--
+-->|target=Unit target<!--
+-->|cast=Instant<!--
+-->|range=5.5<!--
+-->|missile=21<!--
+-->|notes=}};;20;;False
+
+Impaling Blades;W;File:Impaling_Blades_Icon.png;After 1.25 seconds, deal 140 damage to enemies within the target area, Stunning them for 0.75 seconds.<!--
+-->{{undoc-x|type=Spell Damage / Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Stun]]<!--
+-->|cast=0.1 + 0 seconds<!--
+-->|range=6.0<!--
+-->|aoe=Circle<!--
+-->|radius=1.65<!--
+-->|notes=}};9;80;;False
+
+Primal Grasp;E;File:Primal_Grasp_Icon.png;Pulls enemies within the target area towards Kerrigan, dealing 40 damage. After 2.5 seconds, an explosion occurs around Kerrigan, dealing 165 damage to nearby enemies.<!--
+-->{{undoc-x|type=Spell Damage / Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Clamping]]<!--
+-->|cast=0 + 0.5 seconds<!--
+-->|aoe=<br/>- Pull: Radial<br/>- Explosion: Circle<!--
+-->|radius=<br/>- Pull: 8.2<br/>- Explosion: 2.5<!--
+-->|arc=35 degrees (pull)<!--
+-->|prop1=Knockback duration|val1=0.3125 seconds<!--
+-->|prop2=Knockback speed|val2=18<!--
+-->|notes=<li>Both pull and explosion trigger talents affecting <i>Primal Grasp</i>.<li>Removes active knockbacks on hit.}};8;65;;False
+
+Maelstrom;R;File:Maelstrom_Icon.png;Deals 74 damage per second to nearby enemies. Lasts for 7 seconds.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=No target<!--
+-->|props=[[Area of Effect]]<!--
+-->|cast=Instant<!--
+-->|aoe=Circle<!--
+-->|radius=4.5<!--
+-->|tickrate=2.0 per second (x14)<!--
+-->|prop1=Damage per tick|val1=37<!--
+-->|notes=<li>Kerrigan can't mount while Maelstrom is active.}};90;80;heroic;False
+
+Summon Ultralisk;R;File:Summon_Ultralisk_Icon.png;After 0.5 seconds, summon an Ultralisk that rushes foward upon spawning, dealing 250 damage to the first enemy Hero hit and Stunning them for 0.5 seconds.<p>The Ultralisk's Basic Attacks deal 50% of their damage in an area around their target. Reactivate to retarget the Ultralisk.<!--
+-->{{undoc-x|type=Summon<!--
+-->|target=Point target<!--
+-->|props=[[Clamping]]<!--
+-->|cast=0.125 + 0 seconds<!--
+-->|range=12<!--
+
+-->|notes=}}<hr/><small>'''Ultralisk'''</small>{{undoc-x|nohr=true<!--
+-->|type=Active<!--
+-->|scaling=4.00% (damage & Health)<!--
+-->|target=Retargetable<!--
+-->|props[[Splash]]<!--
+-->|prop1=Health|val1=1369<!--
+-->|prop2=Basic Attack damage|val2=100<!--
+-->|prop3=Attack speed|val3=1.0<!--
+-->|prop4=Attack range|val4=1.5<!--
+-->|prop5=Movement Speed|val5=5.5<!--
+-->|prop6=Unit radius|val6=1.25<!--
+-->|prop7=Sight radius|val7=9.0<!--
+-->|prop8=Leash radius|val8=-<!--
+-->|prop9=Splash radius|val9=2.0<!--
+-->|notes=<li>Upon summon, Ultralisk spawns in front of Kerrigan and casts <i>Charge</i> to the target direction.<li>Kerrigan gains Assimilation Shields from all damage dealt by Ultralisk.}}<!--
+
+--><hr/><small>'''Charge'''</small>{{undoc-x|nohr=True<!--
+-->|type=Spell Damage, Crowd control / Movement: [[Dash]]<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemy Heroes / Ultralisk<!--
+-->|target=Point target<!--
+-->|props=[[Skillshot]], [[Stun]]<!--
+-->|cast=0.5 + 0 seconds<!--
+-->|range=12<!--
+-->|hitbox=2.25 x 4.5<!--
+-->|missile=19<!--
+-->|notes=}};80;75;heroic;False
+
+| talents = <!-- LEVEL 1 -->
+Siphoning Impact;1;1;Hitting an enemy Hero with Ravage grants 100 points of Assimilation Shields.<!--
+-->{{undoc-x|type=Shield<!--
+-->|scaling=4.00%<!--
+-->|affects=Self<!--
+-->|notes=}};File:Siphoning_Impact_Icon.png;
+
+Assimilation Mastery;1;2;Regeneration Globe healing grants 50 points of Assimilation Shields per second while active. While Assimilation is active, Kerrigan's Health and Mana regeneration is increased by 150%.<!--
+-->{{undoc-x|type=Shield<!--
+-->|scaling=4.00%<!--
+-->|affects=Self<!--
+-->|tickrate=1.0 per second (x5)<!--
+-->|notes=}};File:Assimilation_Mastery_Icon.png;
+
+Fury of the Swarm;1;3;After casting Ravage, Kerrigan's next Basic Attack within 3 seconds splashes for 100% damage around the target.<!--
+-->{{undoc-x|type=Physical Damage / Shield<!--
+-->|scaling=-<!--
+-->|affects=Enemies / Self<!--
+-->|props=[[Attack Modifier]], [[Splash]]<!--
+-->|radius=2.5}};File:Fury_of_the_Swarm_Icon.png;
+
+<!-- LEVEL 4 -->
+Ravaging Ferocity;2;1;Ravage grants Kerrigan 25% Attack Speed for 3 seconds.<!--
+-->{{undoc-x|type=Attack Speed modifier<!--
+-->|scaling=-<!--
+-->|affects=Ability}};File:Sharpened_Blades_Icon.png;
+
+Kinetic Fulmination;2;2;Damaging an enemy increases the damage of Kerrigan's next Impaling Blades within 10 seconds by 10%, up to 100%.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|notes=<li>Damage bonus stacks additively with itself and other offensive [[damage modifier]]s affecting <i>Impaling Blades</i>' damage output.}};File:Kinetic_Fulmination_Icon.png;
+
+Psionic Pulse;2;3;Primal Grasp explodes a second time 2 seconds after its first explosion.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|props=[[Area of Effect]]<!--
+-->|aoe=Circle<!--
+-->|radius=2.5<!--
+-->|notes=<li>Secondary explosion interacts with all talents affecting <i>Primal Grasp</i>.}};File:Psionic_Pulse_Icon.png;
+
+<!-- LEVEL 7 -->
+Queen of Blades;3;1;Reduce the cooldown of Ravage by 4 seconds and increase its damage to Minions and Mercenaries by 100%.<!--
+-->{{undoc-x|type=Offensive damage modifier, Cooldown reduction<!--
+-->|affects=Ability<!--
+-->|notes=<li>Damage bonus stacks additively with other offensive [[damage modifier]]s that can affect <i>Ravage</i>'s damage.}};File:Queen of Blades_Icon.png;
+
+Boundless Fury;3;2;Hitting an enemy Hero with Ravage grants a charge of Ravage. Can only occur once every 12 seconds per Hero.;File:Boundless Fury_Icon.png;
+
+Bladed Momentum;3;4;Basic Attacks against enemy Heroes reduce the cooldown of Kerrigan's Basic Abilities by 0.75 seconds.<!--
+-->{{undoc-x|props=[[Attack Modifier]], Cooldown reduction<!--
+-->|notes=}};File:Bladed_Momentum_Icon.png;
+
+<!-- LEVEL 10 -->
+Maelstrom;4;1;{{Cooldown|90}}<br>Deals 74 damage per second to nearby enemies. Lasts for 7 seconds.;File:Maelstrom_Icon.png;
+Summon Ultralisk;4;2;{{Cooldown|80}}<br>After 0.5 seconds, summon an Ultralisk that rushes foward upon spawning, dealing 225 damage to the first enemy Hero hit and Stunning them for 0.5 seconds.<p>The Ultralisk's Basic Attacks deal 50% of their damage in an area around their target. Reactivate to retarget the Ultralisk.;File:Summon_Ultralisk_Icon.png;
+
+<!-- LEVEL 13 -->
+Psionic Barrier;5;1;Each enemy Hero hit by Primal Grasp grants 20 Spell Armor and 4% Movement Speed for 4 seconds, stacking up to 20% Movement Speed.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Spell Armor]], [[Movement Speed]]<!--
+-->|notes=<li>Armor stacks up to 10 times (cannot bypass the Armor cap of 75 after subtracting the largest Armor debuff active on ''Kerrigan'').<li>Both effects stack additively with themselves, but not with other positive Spell Armor or Movement Speed effects.<li>Consecutive applications refresh the duration of existing stacks.}};File:Psionic Barrier_Icon.png;
+
+Volatile Power;5;2;Increase the amount of Assimilation Shields granted from damage dealt by 10%, but reduce duration of Assimilation by 3 seconds.<!--
+-->{{undoc-x|type=Shield<!--
+-->|affects=Self<!--
+-->|notes=<li>Stacks additively with other talents affecting baseline Shield gain.}};File:Volatile Power_Icon.png;
+
+Chrysalis;5;3;{{Cooldown|90}}<p>Activate to place Kerrigan in a Chrysalis with 650 Health for 5 seconds. While inside, Kerrigan regenerates 4% of her maximum Health per second.<p>Enemies can destroy the Chrysalis to end its effects early.<!--
+-->{{undoc-x|type=Status effect, Healing / Summon<!--
+-->|scaling=4.00%<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|props=[[Stasis]]<!--
+-->|cast=Instant<!--
+-->|tickrate=4.0 per second (x20)<!--
+-->|prop1=Healing per tick|val1=1.24%<!--
+-->|notes=<li><i>Chrysalis</i> can be reactivated after 0.5 seconds to end its effect early.<li><i>Chrysalis</i> places Kerrigan in [[Stasis]], removing most negative effects from her.}}<!--
+
+--><hr/><small>'''Chrysalis'''</small>{{undoc-x|nohr=true<!--
+-->|type=Passive<!--
+-->|scaling=4.00% (Health)<!--
+-->|prop1=Health|val1=750<!--
+-->|prop5=Movement Speed|val5=-<!--
+-->|prop6=Unit radius|val6=0.6875<!--
+-->|prop7=Sight radius|val7=8.0<!--
+-->|notes=}};File:Chrysalis_Icon.png;
+
+<!-- LEVEL 16 -->
+Mounting Potency;6;1;Ravage grants 5% Spell Power for 5 seconds, up to 40%.<!--
+-->{{undoc-x|type=Offensive damage modifier, Healing modifier<!--
+-->|affects=Self<!--
+-->|props=[[Spell Power]]<!--
+-->|notes=<li>Spell Power increase applies after the damage from ''Ravage'' is dealt.<li>Consecutive applications refresh the duration of existing stacks.<li>Spell Power from <i>Mounting Potency</i> stacks additively with itself and other sources of Spell Power as well as other offensive damage and healing modifiers affecting Kerrigan's Spell Damage or healing output.}};File:Mounting Potency_Icon.png;
+
+Painful Spikes;6;2;Enemies hit by Impaling Blades take an additional 60 damage the next 6 times Kerrigan damages them within 5 seconds.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|notes=<li>Damage dealt by ''Ultralisk'' does not count as dealt by Kerrigan for the purposes of this Talent.}};File:Painful Spikes_Icon.png;
+
+Unbridled Energy;6;3;Damaging a Hero with a Heroic Ability grants 35% Spell Power for 4 seconds.<!--
+-->{{undoc-x|type=Offensive damage modifier, Healing modifier<!--
+-->|affects=Self<!--
+-->|props=[[Spell Power]]<!--
+-->|notes=<li>Does not stack with itself. Subsequent applications refresh the duration of the effect.<li>Spell Power  from <i>Unbridled Energy</i> stacks additively with other sources of Spell Power and other offensive damage and healing modifiers affecting Kerrigan's Spell Damage or healing output.}};File:Unbridled Energy_Icon.png;
+
+<!-- LEVEL 20 -->
+Omegastorm;7;1;Maelstrom's duration is increased by 0.4 seconds every time it damages a Hero.;File:Omegastorm_Icon.png;
+
+Torrasque;7;2;Increase the Health and Basic Attack damage of the Ultralisk by 20%. The Ultralisk morphs into an egg when it dies. If the egg isn't killed within 4 seconds, a new Ultralisk is born.<!--
+-->{{undoc-x|type=Summon<!--
+-->|notes=}}<hr/><small>'''Torrasque'''</small>{{undoc-x|nohr=true<!--
+-->|type=Passive<!--
+-->|scaling=4.00% (Health)<!--
+-->|prop1=Health|val1=594<!--
+-->|prop5=Movement Speed|val5=-<!--
+-->|prop6=Unit radius|val6=0.75<!--
+-->|prop7=Sight radius|val7=6.0<!--
+-->|prop8=Leash radius|val8=-<!--
+-->|notes=<li>There is no limit to how many times Ultralisk can respawn this way.<li>Egg is spawned regardless of Ultralisk dying from its duration expiring or being killed by the enemy.}};File:Torrasque_Icon.png;
+
+Assimilation Blades;7;3;Damaging an enemy increases Basic Attack damage by 2% for 5 seconds, up to 40%.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Self<!--
+-->|notes=<li>Stacks additively with itself and other offensive [[damage modifier]]s affecting Kerrigan's Basic Attack damage.<li>Consecutive applications refresh the duration of existing stacks.}};File:Assimilation Blades_Icon.png;
+
+Psionic Shift;7;4;{{Cooldown|70}}<Br />{{Active}} Activate to teleport to a nearby location, dealing 50 damage to nearby enemies. Generates 300% increased Assimilation Shields from the damage dealt.<!--
+-->{{undoc-x|type=Spell Damage / Shields, Movement: [[Teleport]]<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies / Self<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Clamping]]<!--
+-->|cast=Instant<!--
+-->|range=7.2<!--
+-->|aoe=Circle<!--
+-->|radius=2.0<!--
+-->|notes=<li>Stacks additively with other talents affecting baseline Shield gain.}};File:Psionic Shift_Icon.png;
+}}
+
+<noinclude>
+{{Scaling table/start|{{#var:health}}|{{#var:health scaling}}|{{#var:health regen}}|{{#var:health regen scaling}}|{{#var:attack damage}}|{{#var:attack damage scaling}}}}
+{{Scaling table/slot|Assimilation (max)|1004|0.04}}
+{{Scaling table/slot|Ravage|115|0.04}}
+{{Scaling table/slot|Impaling Blades|140|0.04}}
+{{Scaling table/slot|Primal Grasp (pull)|40|0.04}}
+{{Scaling table/slot|Primal Grasp (explosion)|165|0.04}}
+{{Scaling table/slot|Maelstrom (single)|37|0.04|10}}
+{{Scaling table/slot|Maelstrom (per second)|74|0.04|10}}
+{{Scaling table/slot|Ultralisk (health)|1369|0.04|10}}
+{{Scaling table/slot|Ultralisk (damage)|100|0.04|10}}
+{{Scaling table/slot|Ultralisk (charge)|225|0.04|10}}
+{{Scaling table/slot|Siphoning Impact|90|0.04|1}}
+{{Scaling table/slot|Assimilation Mastery|45|0.04|1}}
+{{Scaling table/slot|Chrysalis (health)|650|0.04|13}}
+{{Scaling table/slot|Painful Spikes|60|0.04|16}}
+{{Scaling table/slot|Torrasque (health)|594|0.04|20}}
+{{Scaling table/slot|Psionic Shift|50|0.04|20}}
+{{Scaling table/end}}
+</noinclude>

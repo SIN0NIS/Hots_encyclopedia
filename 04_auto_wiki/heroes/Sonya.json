@@ -1,0 +1,544 @@
+{
+  "hero": "Sonya",
+  "abilities": [
+    {
+      "name": "Fury",
+      "hotkey": "TRAIT",
+      "icon": "Fury_Icon.png",
+      "description": "Use Fury instead of Mana, which is gained by taking damage or dealing Basic Attack damage. Using a Basic or Heroic Ability grants 10% Movement Speed for 4 seconds.; trait",
+      "fields": {
+        "type": "Resource, Status effect",
+        "affects": "Self",
+        "props": "Movement Speed",
+        "notes": "Sonya starts at 0 Fury when she respawns. Basic Attacks generate 6 Fury each and every instance of damage Sonya takes generates 2 Fury. Movement Speed bonus does not stack, but instead refreshes the duration."
+      }
+    },
+    {
+      "name": "Ancient Spear",
+      "hotkey": "Q",
+      "icon": "Ancient_Spear_Icon.png",
+      "description": "Throw out a spear that pulls Sonya to the first enemy hit, dealing 173 damage and briefly Stunning them. If this hits an enemy, generate 40 Fury.",
+      "fields": {
+        "type": "Spell Damage, Crowd control / Movement: Launch",
+        "scaling": "4.00%",
+        "affects": "Enemies / Self",
+        "target": "Point target",
+        "props": "Clamping, Skillshot, Stun",
+        "cast": "0.15 + 0 seconds",
+        "range": "6.5",
+        "hitbox": "1.25 x 2.25",
+        "missile": "- Initial: 25 (spear & leap) - Minimum: 5.0 - Acceleration: -5.0",
+        "notes": "Ancient Spear can be used while Rooted, damaging the enemy and stunning them upon hit, but it will not cause Sonya to be pulled to them. Ancient Spear 's Stun has variable duration and lasts until Sonya reaches her target (5 server ticks, or .3125s, at max range. 1 server tick, or .0625s, at point blank.) If the enemy dies from the impact or while Sonya is being pulled to them, the pull will continue until Sonya reaches their location. Hitting an enemy with Ancient Spear will reset Sonya's Basic Attack cooldown.",
+        "cooldown": "13"
+      }
+    },
+    {
+      "name": "Seismic Slam",
+      "hotkey": "W",
+      "icon": "Seismic_Slam_Icon.png",
+      "description": "Deals 176 damage to the target enemy and 44 to enemies behind the target.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "target": "Unit target",
+        "props": "Splash",
+        "cast": "0.15 + 0 seconds",
+        "range": "2.25",
+        "aoe": "Rectangle (1",
+        "width": "3.0",
+        "height": "6.0",
+        "notes": "1) Splash search is done in three 3x2 areas, impacting at 0.15 intervals behind the target. The first search takes place at the same time as the initial impact. Primary target cannot be hit by the splash damage of the same cast.",
+        "cooldown": "1",
+        "cost": "25"
+      }
+    },
+    {
+      "name": "Whirlwind",
+      "hotkey": "E",
+      "icon": "Whirlwind_Icon.png",
+      "description": "Deals 138 damage a second to nearby enemies for 3 seconds, healing for 25% of damage dealt. Healing tripled versus Heroes.; 5 / 0.75",
+      "fields": {
+        "type": "Spell Damage / Healing",
+        "scaling": "4.00% / -",
+        "affects": "Enemies / Self",
+        "target": "No target",
+        "props": "Area of Effect, Lifesteal, Mobile channel",
+        "cast": "Instant",
+        "aoe": "Circle",
+        "radius": "2.5",
+        "tickrate": "2.0 per second (x7)",
+        "prop1": "Damage per tick",
+        "val1": "69",
+        "notes": "Really averages 161 DPS over 3 seconds, because there are 7 ticks including one immediately and one at the end of the 3 seconds. Whirlwind can be reactivated after 0.75 seconds to end its effect early. Lifesteal value against Heroes is set to 75% of damage dealt. Sonya ignores collision with Heroes, Minions, Mercenaries and Monsters while Whirlwinding. While Whirlwinding, Sonya attempts to closely follow behind the target of the last attack command issued to her.",
+        "cooldown": "40"
+      }
+    },
+    {
+      "name": "Leap",
+      "hotkey": "R",
+      "icon": "Leap_Icon.png",
+      "description": "Leap into the air, dealing 135 damage to nearby enemies and Stunning them for 1.25 seconds.; 60; heroic",
+      "fields": {
+        "type": "Spell Damage, Crowd control / Movement: Launch, Status Effect",
+        "scaling": "4.00%",
+        "affects": "Enemies / Self",
+        "target": "Point target",
+        "props": "Area of Effect, Clamping, Stun, Unstoppable",
+        "cast": "Instant",
+        "range": "10",
+        "aoe": "Circle",
+        "radius": "3.0 (1",
+        "missile": "30",
+        "notes": "1) Extended by Sonya's unit radius. Sonya becomes Unstoppable while in the air. Targeting Leap less than 0.65 units from Sonya's location causes her to land in place after 0.2 seconds' delay. Regardless, Leap is a Movement Ability and cannot be cast while Rooted."
+      }
+    },
+    {
+      "name": "Wrath of the Berserker",
+      "hotkey": "R",
+      "icon": "Wrath_of_the_Berserker_Icon.png",
+      "description": "Increase damage dealt by 40%. Reduce the duration of Stuns, Slows, and Roots against you by 50%. Lasts 15 seconds, and extends by 1 second for every 10 Fury gained.; 60; heroic",
+      "fields": {
+        "type": "Offensive damage modifier, Crowd control reduction",
+        "affects": "Self",
+        "target": "No target",
+        "cast": "Instant",
+        "notes": "Cooldown starts when the Ability is cast. Does not stack with itself. Damage bonus stacks additively with other offensive damage modifiers affecting Sonya's damage output."
+      }
+    }
+  ],
+  "talents": [
+    {
+      "name": "Furious Blow",
+      "tier": "1",
+      "slot": "1",
+      "icon": "Furious_Blow_Icon.png",
+      "description": "Every 4th cast of Seismic Slam deals 40% more damage to the primary target and costs no Fury.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Ability",
+        "notes": "Damage bonus stacks additively with other offensive damage modifiers that can affect Seismic Slam 's primary damage."
+      },
+      "_raw_fields": [
+        "Furious Blow",
+        "1",
+        "1",
+        "Every 4th cast of Seismic Slam deals 40% more damage to the primary target and costs no Fury.",
+        "File:Furious_Blow_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "War Paint",
+      "tier": "1",
+      "slot": "2",
+      "icon": "War_Paint_Icon.png",
+      "description": "Sonya's Basic Attacks heal for 30% of the damage dealt.",
+      "fields": {
+        "type": "Healing",
+        "scaling": "-",
+        "affects": "Self",
+        "props": "Attack Modifier, Lifesteal"
+      },
+      "_raw_fields": [
+        "War Paint",
+        "1",
+        "2",
+        "Sonya's Basic Attacks heal for 30% of the damage dealt.",
+        "File:War_Paint_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Tough As Nails",
+      "tier": "1",
+      "slot": "3",
+      "icon": "Tough_As_Nails_Icon.png",
+      "description": "Every 16 seconds, gain 60 Physical Armor against the next enemy Hero Basic Attack, reducing the damage taken by 60%. Stores up to 3 charges. Charges refresh 200% faster while Fury's Movement Speed bonus is active.",
+      "fields": {
+        "type": "Defensive damage modifier",
+        "affects": "Self",
+        "props": "Block, Physical Armor",
+        "notes": "Does not stack with itself or other positive Physical Armor effects. Other defensive damage modifiers may stack."
+      },
+      "_raw_fields": [
+        "Tough As Nails",
+        "1",
+        "3",
+        "Every 16 seconds, gain 60 Physical Armor against the next enemy Hero Basic Attack, reducing the damage taken by 60%. Stores up to 3 charges. Charges refresh 200% faster while Fury's Movement Speed bonus is active.",
+        "File:Tough_As_Nails_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Shattered Ground",
+      "tier": "2",
+      "slot": "1",
+      "icon": "Shattered_Ground_Icon.png",
+      "description": "Increase Seismic Slam's splash damage by 250%. Targeting a Hero with Seismic Slam further increases its splash damage by 250%, while targeting other enemies instead increases the length of Seismic Slam's splash by 66%.",
+      "fields": {
+        "type": "Bonus damage",
+        "scaling": "4.00%",
+        "affects": "Ability",
+        "prop1": "Bonus splash length",
+        "val1": "4.0",
+        "prop2": "Bonus damage",
+        "val2": "110",
+        "notes": "Damage bonuses stack additively with themselves and any other offensive damage modifiers that can affect Seismic Slam 's splash damage. This value is still separate from the primary damage and does not benefit from damage modifiers that only affect the primary damage."
+      },
+      "_raw_fields": [
+        "Shattered Ground",
+        "2",
+        "1",
+        "Increase Seismic Slam's splash damage by 250%. Targeting a Hero with Seismic Slam further increases its splash damage by 250%, while targeting other enemies instead increases the length of Seismic Slam's splash by 66%.",
+        "File:Shattered_Ground_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Hurricane",
+      "tier": "2",
+      "slot": "2",
+      "icon": "Hurricane_Icon.png",
+      "description": "Reduces the cooldown of Whirlwind by 2 seconds. Casting Whirlwind removes all Slows and Roots from Sonya.",
+      "fields": {},
+      "_raw_fields": [
+        "Hurricane",
+        "2",
+        "2",
+        "Reduces the cooldown of Whirlwind by 2 seconds. Casting Whirlwind removes all Slows and Roots from Sonya.",
+        "File:Hurricane_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Shot of Fury",
+      "tier": "2",
+      "slot": "3",
+      "icon": "Shot_of_Fury_Icon.png",
+      "description": "Cooldown 40 Active Activate to gain 50 Fury. Usable while Whirlwinding. Passive After casting Seismic Slam, your next Basic Attack deals 40% more damage.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Self",
+        "target": "No target",
+        "props": "Attack Modifier",
+        "cast": "Instant",
+        "notes": "Damage bonus does not stack with itself and does not store charges. Damage bonus stacks additively with other offensive damage modifiers that can affect Sonya's Basic Attack damage."
+      },
+      "_raw_fields": [
+        "Shot of Fury",
+        "2",
+        "3",
+        "Cooldown 40 Active Activate to gain 50 Fury. Usable while Whirlwinding. Passive After casting Seismic Slam, your next Basic Attack deals 40% more damage.",
+        "File:Shot_of_Fury_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Poisoned Spear",
+      "tier": "3",
+      "slot": "1",
+      "icon": "Poisoned_Spear_Icon.png",
+      "description": "Ancient Spear deals an additional 100% damage over 6 seconds.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "tickrate": "1.0 per second (x6)",
+        "prop1": "Damage per tick",
+        "val1": "28.83"
+      },
+      "_raw_fields": [
+        "Poisoned Spear",
+        "3",
+        "1",
+        "Ancient Spear deals an additional 100% damage over 6 seconds.",
+        "File:Poisoned_Spear_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Life Funnel",
+      "tier": "3",
+      "slot": "2",
+      "icon": "Life_Funnel_Icon.png",
+      "description": "Increases the healing of Whirlwind to 35% of damage dealt.",
+      "fields": {},
+      "_raw_fields": [
+        "Life Funnel",
+        "3",
+        "2",
+        "Increases the healing of Whirlwind to 35% of damage dealt.",
+        "File:Life_Funnel_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Battle Rage",
+      "tier": "3",
+      "slot": "3",
+      "icon": "Battle_Rage_Icon.png",
+      "description": "Charge Cooldown 30 Active Activate to instantly restore 10% of Sonya's maximum Health. Stores up to 2 charges. Usable while Whirlwinding. Passive Sonya deals 25% more damage to Mercenaries.",
+      "fields": {
+        "type": "Healing / Offensive damage modifier",
+        "scaling": "-",
+        "affects": "Self",
+        "target": "No target",
+        "cast": "Instant",
+        "notes": "Damage bonus stacks additively with other offensive damage modifiers that can affect Sonya's damage against Mercenaries."
+      },
+      "_raw_fields": [
+        "Battle Rage",
+        "3",
+        "3",
+        "Charge Cooldown 30 Active Activate to instantly restore 10% of Sonya's maximum Health. Stores up to 2 charges. Usable while Whirlwinding. Passive Sonya deals 25% more damage to Mercenaries.",
+        "File:Battle_Rage_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Leap",
+      "tier": "4",
+      "slot": "1",
+      "icon": "Leap_Icon.png",
+      "description": "Cooldown 60 Leap into the air, dealing 135 damage to nearby enemies and Stunning them for 1.25 seconds.",
+      "fields": {},
+      "_raw_fields": [
+        "Leap",
+        "4",
+        "1",
+        "Cooldown 60 Leap into the air, dealing 135 damage to nearby enemies and Stunning them for 1.25 seconds.",
+        "File:Leap_Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Wrath of the Berserker",
+      "tier": "4",
+      "slot": "2",
+      "icon": "Wrath_of_the_Berserker_Icon.png",
+      "description": "Cooldown 60 Increase damage dealt by 40%. Reduce the duration of Stuns, Slows, and Roots against you by 50%. Lasts 15 seconds, and extends by 1 second for every 10 Fury gained.",
+      "fields": {},
+      "_raw_fields": [
+        "Wrath of the Berserker",
+        "4",
+        "2",
+        "Cooldown 60 Increase damage dealt by 40%. Reduce the duration of Stuns, Slows, and Roots against you by 50%. Lasts 15 seconds, and extends by 1 second for every 10 Fury gained.",
+        "File:Wrath_of_the_Berserker_Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Mystical Spear",
+      "tier": "5",
+      "slot": "1",
+      "icon": "Mystical_Spear_Icon.png",
+      "description": "Ancient Spear always pulls Sonya to the target location even if it doesn't hit an enemy. When used this way, Ancient Spear's cooldown is reduced by 5 seconds.",
+      "fields": {},
+      "_raw_fields": [
+        "Mystical Spear",
+        "5",
+        "1",
+        "Ancient Spear always pulls Sonya to the target location even if it doesn't hit an enemy. When used this way, Ancient Spear's cooldown is reduced by 5 seconds.",
+        "File:Mystical_Spear_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Ruthless",
+      "tier": "5",
+      "slot": "2",
+      "icon": "Ruthless_Icon.png",
+      "description": "Whirlwind deals an additional 50 damage per second to Heroes below 50% Health. Does not generate additional healing.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "4.00%",
+        "affects": "Enemy Heroes",
+        "notes": "Damage is dealt in a separate instance from Whirlwind 's damage."
+      },
+      "_raw_fields": [
+        "Ruthless",
+        "5",
+        "2",
+        "Whirlwind deals an additional 50 damage per second to Heroes below 50% Health. Does not generate additional healing.",
+        "File:Ruthless_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "No Escape",
+      "tier": "5",
+      "slot": "3",
+      "icon": "No_Escape_Icon.png",
+      "description": "Increases the Movement Speed bonus from using Basic and Heroic Abilities to 20%.",
+      "fields": {},
+      "_raw_fields": [
+        "No Escape",
+        "5",
+        "3",
+        "Increases the Movement Speed bonus from using Basic and Heroic Abilities to 20%.",
+        "File:No_Escape_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Giant Slammer",
+      "tier": "6",
+      "slot": "1",
+      "icon": "Giant_Slammer_Icon.png",
+      "description": "Basic Attacks and Seismic Slam deal an additional 1.5% of Heroes' maximum Health as damage and heal Sonya for 60% of the damage dealt by this effect.",
+      "fields": {
+        "type": "Percent damage / Healing",
+        "scaling": "-",
+        "affects": "Enemy Heroes",
+        "props": "Attack Modifier, Lifesteal, Percent damage",
+        "notes": "Damage is dealt in a separate instance. Damage bonus is applied to both primary and secondary damage of Seismic Slam."
+      },
+      "_raw_fields": [
+        "Giant Slammer",
+        "6",
+        "1",
+        "Basic Attacks and Seismic Slam deal an additional 1.5% of Heroes' maximum Health as damage and heal Sonya for 60% of the damage dealt by this effect.",
+        "File:Giant_Slammer_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Rampage",
+      "tier": "6",
+      "slot": "2",
+      "icon": "Rampage_Icon.png",
+      "description": "Increase Basic Attack damage by 25%. Basic Attacks reduce the cooldown of Ancient Spear by 1.5 seconds.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Self",
+        "props": "Attack Modifier",
+        "notes": "Damage bonus stacks additively with other offensive damage modifiers that can affect Sonya's Basic Attack damage."
+      },
+      "_raw_fields": [
+        "Rampage",
+        "6",
+        "2",
+        "Increase Basic Attack damage by 25%. Basic Attacks reduce the cooldown of Ancient Spear by 1.5 seconds.",
+        "File:Rampage_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Nerves of Steel",
+      "tier": "6",
+      "slot": "3",
+      "icon": "Nerves_of_Steel_Icon.png",
+      "description": "cooldown 60 Active Activate to gain 25% of your maximum Health as a Shield for 3 seconds. Usable while Whirlwinding.",
+      "fields": {
+        "type": "Shield",
+        "scaling": "-",
+        "affects": "Self",
+        "target": "No target",
+        "cast": "Instant"
+      },
+      "_raw_fields": [
+        "Nerves of Steel",
+        "6",
+        "3",
+        "cooldown 60 Active Activate to gain 25% of your maximum Health as a Shield for 3 seconds. Usable while Whirlwinding.",
+        "File:Nerves_of_Steel_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Arreat Crater",
+      "tier": "7",
+      "slot": "1",
+      "icon": "Arreat_Crater_Icon.png",
+      "description": "Leap leaves behind an impassable crater for 5 seconds. Reduces Leap's cooldown by 20 seconds.",
+      "fields": {
+        "type": "Pathing Blocker",
+        "affects": "All units",
+        "aoe": "Circle (1",
+        "radius": "3.25",
+        "notes": "1) The wall consists of 40 smaller blocker units, with 0.625 radius, spread around the area. Leap can be reactivated after 1.5 seconds to end this effect early."
+      },
+      "_raw_fields": [
+        "Arreat Crater",
+        "7",
+        "1",
+        "Leap leaves behind an impassable crater for 5 seconds. Reduces Leap's cooldown by 20 seconds.",
+        "File:Arreat_Crater_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Striding Giant",
+      "tier": "7",
+      "slot": "2",
+      "icon": "Striding_Giant_Icon.png",
+      "description": "cooldown 30 Wrath of the Berserker increases maximum Health by 10% and grants Striding Giant, which can be activated to become Unstoppable for 2 seconds. Striding Giant (active) cooldown 30 active Activate to become Unstoppable for 2 seconds. Usable only when Wrath of the Berserker is active.",
+      "fields": {
+        "type": "Status effect",
+        "scaling": "-",
+        "affects": "Self",
+        "target": "No target",
+        "props": "Unstoppable",
+        "cast": "Instant",
+        "notes": "Usable while Whirlwinding."
+      },
+      "_raw_fields": [
+        "Striding Giant",
+        "7",
+        "2",
+        "cooldown 30 Wrath of the Berserker increases maximum Health by 10% and grants Striding Giant, which can be activated to become Unstoppable for 2 seconds. Striding Giant (active) cooldown 30 active Activate to become Unstoppable for 2 seconds. Usable only when Wrath of the Berserker is active.",
+        "File:Striding_Giant_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Composite Spear",
+      "tier": "7",
+      "slot": "3",
+      "icon": "Composite_Spear_Icon.png",
+      "description": "Increases Ancient Spear's range by 50%. Hitting an enemy Hero with Ancient Spear grants 25 Armor for 4 seconds.",
+      "fields": {
+        "type": "Defensive damage modifier",
+        "affects": "Self",
+        "props": "Armor",
+        "prop1": "Bonus range",
+        "val1": "3.25",
+        "notes": "Still Stuns until target is reached, so if used at the max new range of 9.75, Stuns for 7 server ticks, or 0.4375s. Does not stack with other positive Armor effects. Other defensive damage modifiers may stack."
+      },
+      "_raw_fields": [
+        "Composite Spear",
+        "7",
+        "3",
+        "Increases Ancient Spear's range by 50%. Hitting an enemy Hero with Ancient Spear grants 25 Armor for 4 seconds.",
+        "File:Composite_Spear_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Ignore Pain",
+      "tier": "7",
+      "slot": "4",
+      "icon": "Ignore_Pain_Icon.png",
+      "description": "cooldown 60 Activate to gain 60 Armor for 4 seconds, taking 60% less damage. Usable while Whirlwinding.",
+      "fields": {
+        "type": "Defensive damage modifier",
+        "affects": "Self",
+        "target": "No target",
+        "props": "Armor",
+        "cast": "Instant",
+        "notes": "Does not stack with other positive Armor effects. Other defensive damage modifiers may stack."
+      },
+      "_raw_fields": [
+        "Ignore Pain",
+        "7",
+        "4",
+        "cooldown 60 Activate to gain 60 Armor for 4 seconds, taking 60% less damage. Usable while Whirlwinding.",
+        "File:Ignore_Pain_Icon.png"
+      ],
+      "level": "20"
+    }
+  ],
+  "other": [],
+  "_unparsed_count": 0
+}

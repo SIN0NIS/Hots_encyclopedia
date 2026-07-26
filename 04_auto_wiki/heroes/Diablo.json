@@ -1,0 +1,553 @@
+{
+  "hero": "Diablo",
+  "abilities": [
+    {
+      "name": "Black Soulstone",
+      "hotkey": "D",
+      "icon": "Black_Soulstone_Icon.png",
+      "description": "Repeatable Quest Gain 10 Souls per Hero killed and 1 Soul per Minion, up to 100. For each Soul, gain 0.3% maximum Health. If Diablo has 100 Souls upon dying, he will resurrect in 5 seconds but lose 100 Souls. After reaching level 10, Diablo only consumes 75 souls when resurrecting.; trait",
+      "fields": {
+        "type": "Bonus Health",
+        "scaling": "-",
+        "affects": "Self",
+        "notes": "Grants a Soul if Diablo is within 13.125 range of an enemy Minion as it dies or if the Minion is killed by Diablo."
+      }
+    },
+    {
+      "name": "Shadow Charge",
+      "hotkey": "Q",
+      "icon": "Shadow_Charge_Icon.png",
+      "description": "Charge an enemy, knocking them back, dealing 40 damage and gaining 15% Movement Speed for 2 seconds. If the enemy hits terrain, they are Stunned for 1 second and take an additional 130 damage.",
+      "fields": {
+        "type": "Spell Damage, Crowd control / Movement: Launch, Status effect",
+        "scaling": "4.00%",
+        "affects": "Enemies / Self",
+        "target": "Unit target",
+        "props": "Knockback, Movement Speed, Stun",
+        "cast": "Instant",
+        "range": "7.0",
+        "missile": "- Initial: 0 - Final: 300 - Acceleration: 175",
+        "prop1": "Knockback duration",
+        "val1": "0.1875 seconds",
+        "prop2": "Knockback speed",
+        "val2": "27",
+        "notes": "Diablo is able to see collision edges of terrain in 18 radius. Target enemy is considered hit when Diablo is within 2.5 range of them. If the target is not within 30 degrees of the direction Diablo is traveling upon impact, the Ability is interrupted, and if Diablo hasn't moved more than 2 units from the cast location, its cooldown and Mana cost are refunded.",
+        "cooldown": "12",
+        "cost": "65"
+      }
+    },
+    {
+      "name": "Fire Stomp",
+      "hotkey": "W",
+      "icon": "Fire_Stomp_Icon.png",
+      "description": "Unleashes fire waves toward the targeted area that deal 12 damage each. Once they reach maximum range, they return, dealing an additional 36 damage. Diablo heals for 130% of the damage dealt to Heroes.",
+      "fields": {
+        "type": "Spell Damage / Healing",
+        "scaling": "4.00% / -",
+        "affects": "Enemies / Self",
+        "target": "Point target",
+        "props": "Area of Effect, Clamping, Lifesteal",
+        "cast": "0.2 + 0 seconds",
+        "range": "10.5",
+        "radius": "0.66 (hitbox)",
+        "missile": "- Initial: 15 (launch) / 11.25 (return) - Final: 11.25 (launch) / 45 (return) - Acceleration: -5.0 (launch) / 22.5 (return)",
+        "prop1": "Wave spacing",
+        "val1": "20 degrees",
+        "notes": "Sends 5 waves. Each wave can hit an enemy once on launch and once on return. Fire Stomp waves return toward Diablo's current location.",
+        "cooldown": "8",
+        "cost": "35"
+      }
+    },
+    {
+      "name": "Overpower",
+      "hotkey": "E",
+      "icon": "Overpower_Icon.png",
+      "description": "Grabs the target and slams it behind Diablo, dealing 73 damage and Stunning for 0.25 seconds.",
+      "fields": {
+        "type": "Spell Damage, Crowd control",
+        "scaling": "4.00%",
+        "affects": "Non-Structure enemies",
+        "target": "Unit target",
+        "props": "Displacement, Daze, Stationary channel, Stun",
+        "cast": "0.0625 + CH + 0 seconds",
+        "range": "1.0",
+        "prop1": "Channel time",
+        "val1": "0.5625 seconds",
+        "prop2": "Displacement range",
+        "val2": "2.0",
+        "notes": "Cannot target Unstoppable enemies. Activating this Ability during Shadow Charge on a valid, in-range target automatically queues up the Ability to attempt to cast immediately at the end of the Charge.",
+        "cooldown": "12",
+        "cost": "35"
+      }
+    },
+    {
+      "name": "Apocalypse",
+      "hotkey": "R",
+      "icon": "Apocalypse_Icon.png",
+      "description": "Create a demonic rune under each enemy Hero on the battleground. After 1.75 seconds the rune explodes, dealing 137 damage and Stunning for 1.75 seconds.; 90; 50; heroic",
+      "fields": {
+        "type": "Spell Damage, Crowd control",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "target": "No target",
+        "props": "Area of Effect, Stun",
+        "cast": "0.2 + 0 seconds",
+        "range": "Global",
+        "aoe": "Circle",
+        "radius": "2.5"
+      }
+    },
+    {
+      "name": "Lightning Breath",
+      "hotkey": "R",
+      "icon": "Lightning_Breath_Icon.png",
+      "description": "After 0.5 seconds, become Unstoppable and Channel for up to 4 seconds, dealing 50 damage every 0.25 seconds to enemies in front of Diablo. Enemies affected are Slowed by 4% for 2 seconds, up to 40%. Lightning Breath's direction changes with your mouse cursor position.; 90 / 1.5; 80; heroic",
+      "fields": {
+        "type": "Spell Damage, Crowd control / Status effect",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "target": "Point target, Cursor tracking",
+        "props": "Area of Effect, Channeled cast (stationary) Clamping, Slow, Stationary channel, Unstoppable",
+        "cast": "0.5625 (ch) + CH + 0 seconds",
+        "aoe": "Rectangle",
+        "width": "3.0",
+        "height": "12.5",
+        "tickrate": "2.0 per second (x16)",
+        "notes": "Unstoppable is granted immediately. Damage and Slow start after the windup of 0.5625 seconds. If Diablo dies or is put in Stasis during the windup, Lightning Breath is put on a 10 second cooldown. Lightning Breath can be reactivated after the windup of 0.5625 seconds to end its effect early."
+      }
+    }
+  ],
+  "talents": [
+    {
+      "name": "Feast on Fear",
+      "tier": "1",
+      "slot": "1",
+      "icon": "Feast on Fear Icon.png",
+      "description": "Stunning an enemy Hero with Shadow Charge or Overpower heals Diablo for 10% of his maximum Health over 3 seconds.",
+      "fields": {
+        "type": "Healing",
+        "scaling": "-",
+        "affects": "Self",
+        "props": "Heal over Time",
+        "tickrate": "1.0 per second (x4)",
+        "prop1": "Healing per tick",
+        "val1": "2.5%",
+        "notes": "Triggering the Talent while already under its effect only refreshes its duration."
+      },
+      "_raw_fields": [
+        "Feast on Fear",
+        "1",
+        "1",
+        "Stunning an enemy Hero with Shadow Charge or Overpower heals Diablo for 10% of his maximum Health over 3 seconds.",
+        "File:Feast on Fear Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Devil's Due",
+      "tier": "1",
+      "slot": "2",
+      "icon": "Devil's_Due_Icon.png",
+      "description": "Black Soulstone increases the effects of Regen Globes and Healing Fountains by 2.25% per Soul.",
+      "fields": {
+        "type": "Bonus Healing, Bonus Mana",
+        "scaling": "-",
+        "affects": "Self",
+        "notes": "Stack additively with itself. Bonus directly increases the base Healing from Healing Fountains and Regeneration Globes causing the percentage to stack multiplicatively with healing modifiers."
+      },
+      "_raw_fields": [
+        "Devil's Due",
+        "1",
+        "2",
+        "Black Soulstone increases the effects of Regen Globes and Healing Fountains by 2.25% per Soul.",
+        "File:Devil's_Due_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Soul Shield",
+      "tier": "1",
+      "slot": "3",
+      "icon": "Soul_Shield_Icon.png",
+      "description": "Cooldown 45 Active Activate to gain 25 plus 50% of Diablo's current Souls as Spell Armor for 4 seconds. Every time Diablo damages an enemy Hero reduce this cooldown by 1 second.",
+      "fields": {
+        "type": "Defensive damage modifier",
+        "affects": "Self",
+        "target": "No target",
+        "props": "Spell Armor",
+        "cast": "Instant",
+        "notes": "Does not stack with other positive Spell Armor effects. Other defensive damage modifiers may stack."
+      },
+      "_raw_fields": [
+        "Soul Shield",
+        "1",
+        "3",
+        "Cooldown 45 Active Activate to gain 25 plus 50% of Diablo's current Souls as Spell Armor for 4 seconds. Every time Diablo damages an enemy Hero reduce this cooldown by 1 second.",
+        "File:Soul_Shield_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Sacrificial Soul",
+      "tier": "2",
+      "slot": "1",
+      "icon": "Sacrificial Soul Icon.png",
+      "description": "Stunning a Hero with Shadow Charge grants 10 Souls and 20 Armor for 3 seconds. While at 100 Souls, increase this Armor to 40.",
+      "fields": {
+        "type": "Defensive damage modifier",
+        "affects": "Self",
+        "props": "Armor",
+        "notes": "Does not stack with other positive Armor effects. Other defensive damage modifiers may stack."
+      },
+      "_raw_fields": [
+        "Sacrificial Soul",
+        "2",
+        "1",
+        "Stunning a Hero with Shadow Charge grants 10 Souls and 20 Armor for 3 seconds. While at 100 Souls, increase this Armor to 40.",
+        "File:Sacrificial Soul Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Souls to the Flame",
+      "tier": "2",
+      "slot": "2",
+      "icon": "Souls to the Flame Icon.png",
+      "description": "Fire Stomp grants 1 Soul every 3 times it damages an enemy Hero, and heals for an additional 1.3% of its damage dealt per Soul.",
+      "fields": {
+        "type": "Bonus healing",
+        "scaling": "-",
+        "affects": "Ability",
+        "notes": "Stacks additively with baseline lifesteal and other lifesteal effects affecting Fire Stomp."
+      },
+      "_raw_fields": [
+        "Souls to the Flame",
+        "2",
+        "2",
+        "Fire Stomp grants 1 Soul every 3 times it damages an enemy Hero, and heals for an additional 1.3% of its damage dealt per Soul.",
+        "File:Souls to the Flame Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Life Leech",
+      "tier": "2",
+      "slot": "3",
+      "icon": "Life_Leech_Icon.png",
+      "description": "Diablo gains 1 Soul and heals 1.75% of his maximum Health when Basic Attacking an enemy Hero. While at 100 Souls, increase this healing to 3.5% of his maximum Health.",
+      "fields": {
+        "type": "Healing",
+        "scaling": "-",
+        "affects": "Self",
+        "props": "Attack Modifier"
+      },
+      "_raw_fields": [
+        "Life Leech",
+        "2",
+        "3",
+        "Diablo gains 1 Soul and heals 1.75% of his maximum Health when Basic Attacking an enemy Hero. While at 100 Souls, increase this healing to 3.5% of his maximum Health.",
+        "File:Life_Leech_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Eternal Flames",
+      "tier": "3",
+      "slot": "1",
+      "icon": "Eternal Flames Icon.png",
+      "description": "Reduce the cooldown of Fire Stomp by 1 second. When Diablo Stuns an enemy Hero with Shadow Charge or Overpower, reset the cooldown of Fire Stomp and restore 45 Mana.",
+      "fields": {},
+      "_raw_fields": [
+        "Eternal Flames",
+        "3",
+        "1",
+        "Reduce the cooldown of Fire Stomp by 1 second. When Diablo Stuns an enemy Hero with Shadow Charge or Overpower, reset the cooldown of Fire Stomp and restore 45 Mana.",
+        "File:Eternal Flames Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Malevolence",
+      "tier": "3",
+      "slot": "2",
+      "icon": "Malevolence Icon.png",
+      "description": "Basic Abilities cause Diablo's next Basic Attack within 6 seconds to deal an additional 100 Spell Damage. Stores up to 2 charges.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "props": "Attack Modifier",
+        "notes": "Bonus Spell Damage is dealt in a separate instance after Diablo's Basic Attack damage. This Talent will miss, wasting a charge, if Diablo is Blinded, or if the target is Evading."
+      },
+      "_raw_fields": [
+        "Malevolence",
+        "3",
+        "2",
+        "Basic Abilities cause Diablo's next Basic Attack within 6 seconds to deal an additional 100 Spell Damage. Stores up to 2 charges.",
+        "File:Malevolence Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Diabolical Momentum",
+      "tier": "3",
+      "slot": "3",
+      "icon": "Diabolical_Momentum_Icon.png",
+      "description": "When Diablo's Basic Attacks damage enemies, reduce the cooldown of Shadow Charge and Overpower by 1.5 second.",
+      "fields": {
+        "props": "Attack Modifier"
+      },
+      "_raw_fields": [
+        "Diabolical Momentum",
+        "3",
+        "3",
+        "When Diablo's Basic Attacks damage enemies, reduce the cooldown of Shadow Charge and Overpower by 1.5 second.",
+        "File:Diabolical_Momentum_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Apocalypse",
+      "tier": "4",
+      "slot": "1",
+      "icon": "Apocalypse_Icon.png",
+      "description": "cooldown 90 Create a demonic rune under each enemy Hero on the battleground. After 1.75 seconds the rune explodes, dealing 137 damage and stunning for 1.75 seconds.",
+      "fields": {},
+      "_raw_fields": [
+        "Apocalypse",
+        "4",
+        "1",
+        "cooldown 90 Create a demonic rune under each enemy Hero on the battleground. After 1.75 seconds the rune explodes, dealing 137 damage and stunning for 1.75 seconds.",
+        "File:Apocalypse_Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Lightning Breath",
+      "tier": "4",
+      "slot": "2",
+      "icon": "Lightning_Breath_Icon.png",
+      "description": "cooldown 90 After 0.5 seconds, become Unstoppable and Channel for up to 4 seconds, dealing 50 damage every 0.25 seconds to enemies in front of Diablo. Enemies affected are Slowed by 4% for 2 seconds, up to 40%. Lightning Breath's direction changes with your mouse cursor position.",
+      "fields": {},
+      "_raw_fields": [
+        "Lightning Breath",
+        "4",
+        "2",
+        "cooldown 90 After 0.5 seconds, become Unstoppable and Channel for up to 4 seconds, dealing 50 damage every 0.25 seconds to enemies in front of Diablo. Enemies affected are Slowed by 4% for 2 seconds, up to 40%. Lightning Breath's direction changes with your mouse cursor position.",
+        "File:Lightning_Breath_Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Devastating Charge",
+      "tier": "5",
+      "slot": "1",
+      "icon": "Devastating_Charge_Icon.png",
+      "description": "Increase Shadow Charge's terrain collision damage by 50%. quest Hit an enemy Hero against terrain 5 times. Hitting enemy Heros against terrain reduces their Armor by 20 for 4 seconds.",
+      "fields": {
+        "type": "Offensive damage modifier / Defensive damage modifier",
+        "affects": "Ability / Enemy Heroes",
+        "props": "Armor reduction",
+        "notes": "Damage bonus stacks additively with other offensive damage modifiers that can affect Shadow Charge 's damage."
+      },
+      "_raw_fields": [
+        "Devastating Charge",
+        "5",
+        "1",
+        "Increase Shadow Charge's terrain collision damage by 50%. quest Hit an enemy Hero against terrain 5 times. Hitting enemy Heros against terrain reduces their Armor by 20 for 4 seconds.",
+        "File:Devastating_Charge_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Hellfire",
+      "tier": "5",
+      "slot": "2",
+      "icon": "Hellfire_Icon.png",
+      "description": "Each enemy Hero hit by Fire Stomp grants 3% Spell Power for 10 seconds, up to 30%. While at maximum stacks, Diablo deals 33 damage per second to nearby enemies.",
+      "fields": {
+        "type": "Offensive damage modifier, Healing dealt modifier / Spell Damage",
+        "scaling": "4.00%",
+        "affects": "Self / Enemies",
+        "props": "Area of Effect, Spell Power",
+        "aoe": "Circle",
+        "radius": "2.5 (1",
+        "tickrate": "1.0 per second",
+        "notes": "1) Burn radius is extended by Diablo's unit radius. Burn damage from Hellfire is unaffected by offensive damage modifiers (including Spell Power from this talent), doesn't trigger lifesteal effects and doesn't draw tower aggro from A Call For Help. Spell Power stacks additively with itself and other offensive damage and healing modifiers affecting Diablo's Spell damage or healing output."
+      },
+      "_raw_fields": [
+        "Hellfire",
+        "5",
+        "2",
+        "Each enemy Hero hit by Fire Stomp grants 3% Spell Power for 10 seconds, up to 30%. While at maximum stacks, Diablo deals 33 damage per second to nearby enemies.",
+        "File:Hellfire_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Cruelty",
+      "tier": "5",
+      "slot": "3",
+      "icon": "Cruelty Icon.png",
+      "description": "Stunning an enemy with Shadow Charge or Overpower increases Diablo's Attack Speed by 50% for 7 seconds, up to 100%.",
+      "fields": {
+        "type": "Status effect",
+        "affects": "Self",
+        "props": "Attack Speed",
+        "notes": "Subsequent applications do not refresh the duration of existing Attack Speed stacks. Attack speed stacks additively with itself and other sources of Attack Speed."
+      },
+      "_raw_fields": [
+        "Cruelty",
+        "5",
+        "3",
+        "Stunning an enemy with Shadow Charge or Overpower increases Diablo's Attack Speed by 50% for 7 seconds, up to 100%.",
+        "File:Cruelty Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Domination",
+      "tier": "6",
+      "slot": "1",
+      "icon": "Domination_Icon.png",
+      "description": "Casting Overpower resets the cooldown of Shadow Charge.",
+      "fields": {},
+      "_raw_fields": [
+        "Domination",
+        "6",
+        "1",
+        "Casting Overpower resets the cooldown of Shadow Charge.",
+        "File:Domination_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Debilitating Flames",
+      "tier": "6",
+      "slot": "2",
+      "icon": "Debilitating_Flames_Icon.png",
+      "description": "Enemy Heroes hit by Fire Stomp are Slowed by 6% for 4 seconds, up to 60%. Heroes Slowed by 24% or more by Debilitating Flames deal 50% less damage.",
+      "fields": {
+        "type": "Crowd control, Offensive damage modifier",
+        "affects": "Enemy Heroes",
+        "props": "Slow",
+        "notes": "Damage reduction stacks additively with other offensive damage modifiers affecting the target Hero's damage output."
+      },
+      "_raw_fields": [
+        "Debilitating Flames",
+        "6",
+        "2",
+        "Enemy Heroes hit by Fire Stomp are Slowed by 6% for 4 seconds, up to 60%. Heroes Slowed by 24% or more by Debilitating Flames deal 50% less damage.",
+        "File:Debilitating_Flames_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Overpowering Nightmare",
+      "tier": "6",
+      "slot": "3",
+      "icon": "Overpowering Nightmare Icon.png",
+      "description": "Gain 2 additional charges of Overpower, with a 2 second cooldown between uses.",
+      "fields": {
+        "nohr": "1",
+        "notes": "Charge cooldown is unaffected by cooldown reduction from Diabolical Momentum ."
+      },
+      "_raw_fields": [
+        "Overpowering Nightmare",
+        "6",
+        "3",
+        "Gain 2 additional charges of Overpower, with a 2 second cooldown between uses.",
+        "File:Overpowering Nightmare Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Dying Breath",
+      "tier": "7",
+      "slot": "1",
+      "icon": "Dying_Breath_Icon.png",
+      "description": "Apocalypse's cooldown is reduced by 25 seconds for every enemy Hero hit (to a minimum of 5 seconds) and is cast for free when Diablo dies.",
+      "fields": {},
+      "_raw_fields": [
+        "Dying Breath",
+        "7",
+        "1",
+        "Apocalypse's cooldown is reduced by 25 seconds for every enemy Hero hit (to a minimum of 5 seconds) and is cast for free when Diablo dies.",
+        "File:Dying_Breath_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Hellstorm",
+      "tier": "7",
+      "slot": "2",
+      "icon": "Hellstorm_Icon.png",
+      "description": "Lightning Breath lasts 200% longer.",
+      "fields": {
+        "prop1": "Bonus duration",
+        "val1": "8 seconds"
+      },
+      "_raw_fields": [
+        "Hellstorm",
+        "7",
+        "2",
+        "Lightning Breath lasts 200% longer.",
+        "File:Hellstorm_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Lord of Terror",
+      "tier": "7",
+      "slot": "3",
+      "icon": "Lord_of_Terror_Icon.png",
+      "description": "cooldown 60 Active Activate to steal 10% of the maximum Health of nearby enemy Heroes and gain 5 Souls per Hero hit.",
+      "fields": {
+        "type": "Spell Damage / Healing",
+        "scaling": "-",
+        "affects": "Enemy Heroes / Self",
+        "target": "No target",
+        "props": "Area of Effect, Lifesteal, Percent damage",
+        "cast": "Instant",
+        "aoe": "Circle",
+        "radius": "6.0"
+      },
+      "_raw_fields": [
+        "Lord of Terror",
+        "7",
+        "3",
+        "cooldown 60 Active Activate to steal 10% of the maximum Health of nearby enemy Heroes and gain 5 Souls per Hero hit.",
+        "File:Lord_of_Terror_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Hellgate",
+      "tier": "7",
+      "slot": "4",
+      "icon": "Hellgate_Icon.png",
+      "description": "cooldown 90 Teleport and place a demonic rune at target location. After 1.75 seconds the rune explodes, dealing 137 damage and Stunning enemies for 1.75 seconds.",
+      "fields": {
+        "type": "Spell Damage, Crowd control / Movement: Teleport",
+        "scaling": "4.00%",
+        "affects": "Enemies / Self",
+        "target": "Point target",
+        "props": "Area of Effect, Clamping, Stun",
+        "cast": "Instant",
+        "range": "7.2",
+        "aoe": "Circle",
+        "radius": "2.5"
+      },
+      "_raw_fields": [
+        "Hellgate",
+        "7",
+        "4",
+        "cooldown 90 Teleport and place a demonic rune at target location. After 1.75 seconds the rune explodes, dealing 137 damage and Stunning enemies for 1.75 seconds.",
+        "File:Hellgate_Icon.png"
+      ],
+      "level": "20"
+    }
+  ],
+  "other": [],
+  "_unparsed_count": 0
+}

@@ -1,0 +1,218 @@
+{{hero data
+| name = The Butcher
+| date = June 30, 2015
+| price = 7000
+| title = Flesh Carver
+| role = Melee
+| franchise = Diablo
+| info = An Assassin who starts slow, but deals extreme damage after collecting enough Meat.
+| lore = An unrelenting hacking echoed off the walls of the Cathedral and as Prince Aiden made his way through its depths, the sound only grew louder. There were no screams; just that dreadful sound... over and over.
+| difficulty = Medium
+| melee = True
+| health = 2154
+| healthRegen = 4.4882
+| resource = 500
+| resourceType = Mana
+| armor = 0
+| attackSpeed = 1.11
+| attackRange = 1.5
+| attackDamage = 130
+| healthScaling = 0.044921875
+| regenScaling = 0.044921875
+| adamageScaling = 0.04
+| unitRadius = 0.9375
+| icon = File:Butcher_Icon.png
+| skills =
+Fresh Meat;Trait;File:Fresh_Meat_Icon.png;Upon dying, nearby enemy Minions drop 1 Fresh Meat and enemy Heroes drop 20 Fresh Meat. Fresh Meat can be picked up to gain 0.5 Attack Damage per Meat. The Butcher loses 15 Fresh Meat upon dying.<p>{{quest|Collect 200 Fresh Meat.|Gain an additional 125 Attack Damage and 25% increased Attack Speed. Heroes continue to drop 10 Fresh Meat, Minions no longer drop Fresh Meat, and Fresh Meat is no longer lost on death.}}<!--
+-->{{undoc-x|type=Bonus damage, Status effect<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|props=[[Attack Speed]]<!--
+-->|radius=<br/>- Drop: 13.125 (Minions) / upon [[takedown]] (Heroes)<br/>- Collect: 0.125<!--
+-->|prop1=Pickup duration|val1=15 seconds<!--
+-->|notes=<li>Attack Speed stacks additively with other effects affecting the Butcher's Attack Speed.<li>Bonus Attack Damage from ''Fresh Meat'' is added to <i>The Butcher</i>'s base Attack Damage before multiplying by the sum of any damage modifiers, such as ''Brutal Strike'' and ''Nexus Blades''.}};;;False;
+
+Hamstring;Q;File:Hamstring_Icon.png;Deal 110 damage and Slow enemies by 50% fading over 2 seconds. The Butcher's next Basic Attack will strike immediately.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=AA reset, [[Area of Effect]]<!--
+-->|cast=0.1875 + 0 seconds<!--
+-->|aoe=Rectangle<!--
+-->|width=2.5<!--
+-->|height=7.0<!--
+-->|notes=}};4;40;False;
+
+Butcher's Brand;W;File:Butcher's_Brand_Icon.png;Deal 37 damage to an enemy and Brand them for 4 seconds. The Butcher's Basic Attacks against the Branded target heal him for 75% of the damage done.<p>Basic Attacks against Branded Heroes heal for double and extend the duration of the Brand by 0.5 seconds.<!--
+-->{{undoc-x|type=Spell Damage / Healing<!--
+-->|scaling=4.00%<!--
+-->|affects=Non-Structure enemies / Self<!--
+-->|target=Unit target<!--
+-->|props=[[Attack Modifier]], [[Lifesteal]]<!--
+-->|cast=0.125 + 0 seconds<!--
+-->|range=1.5<!--
+-->|notes=<li>Resets The Butcher's Basic Attack timer.}};14;60;False;
+
+Ruthless Onslaught;E;File:Ruthless_Onslaught_Icon.png;Charge at an enemy, becoming Unstoppable and gaining Movement Speed. If The Butcher reaches the target, they are Stunned for 1 second and take 119 damage.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control / Status effect<!--
+-->|scaling=4.00%<!--
+-->|affects=Non-Structure enemies / Self<!--
+-->|target=Unit target<!--
+-->|props=[[Mobile channel]], [[Movement speed]], [[Stun]], [[Unstoppable]]<!--
+-->|cast=0.5 + CH + 0 seconds<!--
+-->|range=12<!--
+-->|notes=<li>The Butcher is not Unstoppable until the cast time is complete, meaning that, like other Abilities, it can interrupted by enemy crowd control during its windup, refunding its cooldown and Mana cost.<li><i>Ruthless Onslaught</i> can be reactivated after 0.75 seconds to interrupt the charge, placing it on full cooldown. Otherwise The Butcher is uncontrollable during the charge.<li>Charge is automatically canceled if it has been active for 4 seconds without hitting the target or if the target becomes [[untargetable]] or, for its windup, if the target moves farther than 5 units from its maximum cast range.}};15;50;False;
+
+Furnace Blast;R;File:Furnace_Blast_Icon.png;After a 3 second delay, fire explodes around The Butcher dealing 500 damage to enemies.<p>Can be cast while using Ruthless Onslaught.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=No target<!--
+-->|props=[[Area of Effect]]<!--
+-->|cast=Instant<!--
+-->|aoe=Circle<!--
+-->|radius=4.0<!--
+-->|notes=}};60;75;False;
+
+Lamb to the Slaughter;R;File:Lamb_to_the_Slaughter_Icon.png;Throw a hitching post that attaches to the nearest enemy Hero after a 1 second delay. This deals 171 damage and causes the enemy to be chained to the post and Silenced for 3 seconds.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemy Heroes<!--
+-->|target=Point target<!--
+-->|props=[[Knockback]], [[Silence]]<!--
+-->|cast=Instant<!--
+-->|range=14<!--
+-->|aoe=Circle<!--
+-->|radius=4.0 (target search)<!--
+-->|notes=<li>'Nearest enemy' refers to the one closest to the center of the search area.<li>Chained enemies will be pulled to the center if they try to escape the area.}};90;75;False;
+
+| talents = <!-- LEVEL 1 -->
+Invigoration;1;1;If Hamstring hits a Hero, half of the Mana cost is refunded and the cooldown is reduced by 1 second.<!--
+-->{{undoc-x|type=Mana restoration, Cooldown reduction<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|notes=}};File:Invigoration_Icon.png;
+
+Block;1;2;Every 5 seconds, gain 75 Physical Armor against the next enemy Hero Basic Attack, reducing the damage taken by 75%.<p>Stores up to 2 charges.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Block]], [[Physical Armor]]<!--
+-->|notes=<li>Does not stack with itself or other positive Physical Armor effects. Other defensive damage modifiers may stack.}};File:Block_Icon.png;
+
+Chop Meat;1;3;Increases Hamstring damage by 100% to [[Minions]], [[Mercenaries]], and [[Monster]]s.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|notes=<li>Damage bonus stacks additively with other offensive damage modifiers affecting <i>Hamstring</i>'s damage.}};File:Chop_Meat_Icon.png;
+
+<!-- LEVEL 4 -->
+Flail Axe;2;1;Increases the length of Hamstring by 40%.<!--
+-->{{undoc-x|prop1=Bonus height|val1=2.8}};File:Flail_Axe_Icon.png;
+
+Unrelenting Pursuit;2;2;Reduces the cooldown of Ruthless Onslaught by 33% upon impact.<!--
+-->{{Undoc-x|prop1=Cooldown reduction|val1=5 seconds}};File:Unrelenting_Pursuit_Icon.png;
+
+Cheap Shot;2;3;Hamstring does 100% more damage to targets affected by [[Slow]], [[Root]], or [[Stun]].<!--
+-->{{undoc-x|type=Damage modifier<!--
+-->|affects=Ability<!--
+-->|notes=<li>Does not benefit from <i>Hamstring</i>'s Slow, as the damage is dealt before the Slow is applied.<li>Damage bonus stacks additively with other offensive damage modifiers affecting <i>Hamstring</i>'s damage output.}};File:Cheap_Shot_Icon.png;
+
+<!-- LEVEL 7 -->
+Insatiable Blade;3;1;While facing the branded enemy, The Butcher's Movement Speed is increased by 25%.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|props=[[Movement Speed]]<!--
+-->|radius=12<!--
+-->|arc=10 degrees<!--
+-->|notes=}};File:Insatiable_Blade_Icon.png;
+
+Victuals;3;2;Every time a nearby enemy Minion dies, The Butcher heals 5% of his maximum Health.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|radius=13.125<!--
+-->|notes=}};File:Victuals_Icon.png;
+
+Meat Shield;3;3;When Ruthless Onslaught impacts an enemy Hero, The Butcher gains 50 Spell Armor for 2.5 seconds, reducing Spell Damage taken by 50%.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Spell Armor]]<!--
+-->|notes=<li>Does not stack with itself or other positive Spell Armor effects. Other defensive damage modifiers may stack.}};File:Meat_Shield_Icon.png;
+
+<!-- LEVEL 10 -->
+Furnace Blast;4;1;{{Cooldown|60}}<br/>After a 3 second delay, fire explodes around The Butcher dealing 500 damage to enemies.<p>Can be cast while using Ruthless Onslaught.;File:Furnace_Blast_Icon.png;
+Lamb to the Slaughter;4;2;{{Cooldown|90}}<br/>Throw a hitching post that attaches to the nearest enemy Hero after a 1 second delay. This deals 171 damage and causes the enemy to be chained to the post and Silenced for 3 seconds.;File:Lamb_to_the_Slaughter_Icon.png;
+
+<!-- LEVEL 13 -->
+Cleaver;5;1;Basic Attacks deal 35% of The Butcher's Basic Attack Damage in an area around the target.<!--
+-->{{undoc-x|type=Physical Damage<!--
+-->|scaling=-<!--
+-->|affects=Enemies<!--
+-->|props=[[Attack Modifier]], [[Splash]]<!--
+-->|aoe=Circle<!--
+-->|radius=2.0<!--
+-->|notes=<li><i>Cleaver</i> benefits from the bonus damage from <i>Fresh Meat</i>.<li>Splash damage does not grant lifesteal when damaging enemies affected by <i>Butcher's Brand</i>.<li>Damage reduction stacks additively with offensive damage modifiers affecting The Butcher's Basic Attack damage.}};File:Cleaver_Icon.png;
+
+Savage Charge;5;2;Ruthless Onslaught deals bonus damage to Heroes equal to 10% of their maximum Health.<!--
+-->{{undoc-x|type=Percent damage<!--
+-->|scaling=-<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Percent Damage]]<!--
+-->|notes=}};File:Savage_Charge_Icon.png;
+
+Brutal Strike;5;3;After using Hamstring, The Butcher's next 3 Basic Attacks within 5 seconds deal an additional 15% damage.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Attack Modifier]]<!--
+-->|notes=<li>Does not stack with itself.<li>Charges from previous casts are not stored.<li>Damage bonus stacks additively with other damage modifiers affecting The Butcher's Basic Attack damage.}};File:Brutal_Strike_Icon.png;
+
+<!-- LEVEL 16 -->
+Crippling Slam;6;1;Hamstring's Slow no longer fades out, and the duration is increased by 30%.;File:Crippling_Slam_Icon.png;
+
+Enraged;6;2;While below 50% of his maximum Health, taking damage causes The Butcher to become Enraged for 10 seconds, gaining 40% Attack Speed and 25 Armor, reducing damage taken by 25%.<p>This effect has a 25 second cooldown.<!--
+-->{{undoc-x|type=Defensive damage modifier, Status effect<!--
+-->|affects=Self<!--
+-->|props=[[Armor]], [[Attack Speed]]<!--
+-->|notes=<li>Attack Speed stacks additively with other effects affecting The Butcher's Attack Speed.<li>Does not stack with other positive Armor effects. Other defensive damage modifiers may stack.}};File:Enraged_Icon.png;
+
+Blood Frenzy;6;3;Basic Attacks against enemy Heroes grant 5% increased Attack and Movement Speed for 3 seconds, up to 25%.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|props=[[Attack Modifier]], [[Attack Speed]], [[Movement Speed]]<!--
+-->|notes=<li>Attack Speed bonus stacks additively with itself and other effects affecting The Butcher's Attack Speed.<li>Movement Speed bonus stacks additively with itself, but not with other sources of Movement Speed.}};File:Blood_Frenzy_Icon.png;
+
+<!-- LEVEL 20 -->
+Fires of Hell;7;1;Furnace Blast explodes a second time 3 seconds after the initial explosion.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|notes=<li>Secondary explosion has the same properties as the first.}};File:Fires_of_Hell_Icon.png;
+
+Slaughterhouse;7;2;Lamb to the Slaughter now chains all enemy Heroes in range.<!--
+-->{{undoc-x|props=[[Area of Effect]]}};File:Slaughterhouse_Icon.png;
+
+Nexus Blades;7;3;Basic Attacks deal 20% more damage and Slow enemy Movement Speed by 20% for 1 second.<!--
+-->{{undoc-x|type=Offensive damage modifier, Crowd control<!--
+-->|affects=Self<!--
+-->|props=[[Attack Modifier]], [[Slow]]<!--
+-->|notes=<li>Damage bonus stacks additively with other damage modifiers affecting The Butcher's Basic Attack damage. The sum of these bonuses is multiplied by The Butcher's Attack Damage (which includes his bonus Attack Damage from ''Fresh Meat'').}};File:Nexus_Blades_Icon.png;
+
+Bolt of the Storm;7;4;{{Cooldown|70}}<p>Activate to teleport to a nearby location.<!--
+-->{{undoc-x|type=Movement: [[Teleport]]<!--
+-->|affects=Self<!--
+-->|target=Point target<!--
+-->|props=[[Clamping]]<!--
+-->|cast=Instant<!--
+-->|range=7.2<!--
+-->|notes=}};File:Bolt_of_the_Storm_Icon.png;
+}}
+
+<noinclude>
+{{Scaling table/start|{{#var:health}}|{{#var:health scaling}}|{{#var:health regen}}|{{#var:health regen scaling}}|{{#var:attack damage}}|{{#var:attack damage scaling}}}}
+{{Scaling table/slot|Hamstring|110|0.04}}
+{{Scaling table/slot|Butcher's Brand|37|0.04}}
+{{Scaling table/slot|Ruthless Onslaugth|119|0.04}}
+{{Scaling table/slot|Furnace Blast|500|0.04|10}}
+{{Scaling table/slot|Lamb to the Slaughter|171|0.04|10}}
+{{Scaling table/end}}
+</noinclude>

@@ -1,0 +1,243 @@
+{{hero data
+| name = Sylvanas
+| date = March 24, 2015
+| price = 7000
+| title = The Banshee Queen
+| role = Ranged
+| franchise = Warcraft
+| info = An Assassin who can shut down enemy [[Fort]]s and [[Keep]]s.
+| lore = Sylvanas Windrunner was not always the Dark Lady of the Forsaken. In another life, she was the Ranger-General of Silvermoon. But that was before the Death Knight Arthas slew her and her people and raised her as the first Banshee.
+| difficulty = Medium
+| melee = False
+| health = 1650
+| healthRegen = 3.4414
+| resource = 500
+| resourceType = Mana
+| armor = 0
+| attackSpeed = 1.67
+| attackRange = 5.5
+| attackDamage = 81
+| healthScaling = 0.04
+| regenScaling = 0.04
+| adamageScaling = 0.04
+| unitRadius = 0.625
+| icon = File:Sylvanas_Icon.png
+| skills =
+Black Arrows;Trait;File:Black_Arrows_Icon.png;Basic Attacks infect enemies with Black Arrows for 3 seconds, stacking up to 3 times. Sylvanas deals 15% more damage to enemies with 3 stacks.<p>{{Quest|Damage Heroes and Structures with 3 stacks of Black Arrows.|Upon damaging enemies 250 times, increase the damage bonus of Black Arrows to 50%.}}<p>{{Reward|Upon damaging enemies 400 times, Black Arrows now heals Sylvanas for 25% of damage dealt at 3 stacks, doubled against Heroes.}}<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Attack Modifier]]<!--
+-->|notes=<li>Walls do not give stacks for the quest.<li>The effects of ''Black Arrows'' are applied before the damage is dealt.<li>Damage bonus stacks additively with other offensive damage modifiers that can affect Sylvanas's damage.<li>The stack count of ''Black Arrows'' is shared among all Sylvanases in the team, and they can all refresh it, increment it and interact with it regardless of who placed it.}};40;;trait;False
+
+Withering Fire;Q;File:Withering_Fire_Icon.png;Shoot the closest enemy up to 5 times over 1.5 seconds for 39 damage, prioritizing Heroes. Cooldown is reset on getting a Takedown.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling= 4.00%<!--
+-->|target=Automatic (closest)<!--
+-->|affects=Enemies<!--
+-->|cast=Instant<!--
+-->|radius=8.0<!--
+-->|missile=45<!--
+-->|tickrate=2.67 per second<!--
+-->|notes=<li>Can only be activated if an enemy is within the radius. The Ability can not be activated again until all shots are used.<li>If no enemy is in radius (while the Ability is active), a shot is consumed and the Ability continues until the end of its duration.<li>Prioritizes the closest enemy in target groups of Heroes and non-Heroes.<li>Other Structures are prioritized over Gates and Walls.}};8;25;;False
+
+Shadow Dagger;W;File:Shadow_Dagger_Icon.png;Throw a dagger at a target enemy that deals 30 damage and an additional 150 damage over 2.5 seconds. Damage dealt by Sylvanas to the initial target spreads Shadow Dagger to all nearby enemies.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|target=Unit target<!--
+-->|affects=Enemies<!--
+-->|props=[[Damage over Time]]<!--
+-->|cast=0.1875 + 0 seconds<!--
+-->|range=8.0<!--
+-->|radius=3.5 <sup>(1</sup><!--
+-->|missile=25<!--
+-->|tickrate=2.0 per second (x5, excl. initial)<!--
+-->|prop1=Damage per tick|val1=30<!--
+-->|notes=<li><sup>1)</sup> Spread radius is extended by the main target's unit radius.<li>Cast is interrupted if the target moves at least 4 units past its range during its windup.<li>Initial target is displayed by a unique icon overhead.<li>Cannot spread to [[Stealth]]ed enemy units, Walls, or enemy targets that are already affected by Shadow Dagger from the same Sylvanas.<li>The initial damage instance is not classified as DoT and is dealt to secondary targets as well when ''Shadow Dagger'' spreads to them.}};11;50;;False
+
+Haunting Wave;E;File:Haunting_Wave_Icon.png;Send forth a wave of banshees, dealing 114 damage to all targets. Reactivate to teleport to the banshees' location.<!--
+-->{{undoc-x|type=Spell Damage / Movement: [[Launch]], Status effect<!--
+-->|scaling=4.00%<!--
+-->|target=Point target<!--
+-->|affects=Enemies / Self<!--
+-->|props=[[Area of Effect]], [[Clamping]], [[Unstoppable]]<!--
+-->|cast=0.1 + 0 seconds<!--
+-->|range=14<!--
+-->|aoe=Radial<!--
+-->|radius=<br/>- Initial: 1.0 <sup>(1</sup><br/>- Maximum: 13.96<!--
+-->|arc=24 degrees<!--
+-->|missile=<br/>- Wave: 9.0<br/>- Launch: 50<!--
+-->|tickrate=2.0 per second<!--
+-->|notes=<li><sup>1)</sup>Search area expands to its maximum radius over 1.5 seconds in increments of 0.54.<li>After the cast, the Ability can be reactivated for 1.75 seconds to launch to the wave's location.<li>Sylvanas gains Unstoppable while she is traveling to the wave's location.}};11;75;;False
+
+Wailing Arrow;R;File:Wailing_Arrow_Icon.png;Shoot an arrow that can be reactivated to deal 228 damage and Silence enemies in an area for 2.5 seconds. The arrow detonates automatically if it reaches maximum range.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Clamping]], [[Silence]]<!--
+-->|cast=0.1 + 0 seconds<!--
+-->|range=18<!--
+-->|aoe=Circle<!--
+-->|radius=3.5<!--
+-->|missile=13<!--
+-->|notes=}};90;100;heroic;False
+
+Mind Control;R;File:Mind_Control_Icon.png;After 0.25 seconds, fire a missile that Mind Controls the first enemy Hero hit. Heroes hit are Silenced, Slowed by 30%, have 3 stacks of Black Arrows applied to them, and are forced to walk toward Sylvanas for 1.75 seconds.<!--
+-->{{undoc-x|type=Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemy Heroes<!--
+-->|target=Point target<!--
+-->|props=[[Clamping]], [[Skillshot]], [[Mind Control]], [[Slow]]<!--
+-->|cast=0.25 + 0 seconds<!--
+-->|range=13.0<!--
+-->|hitbox=2.0 x 1.0<!--
+-->|missile=12<!--
+-->|notes=<li>Mind Control is treated as a [[Silence]] effect. Abilities that interact with Silences also interact with ''Mind Control''.<li>Mind Controlled Heroes cannot attack and have no control of their movement.}};40;50;heroic;False;
+
+Possession;1;File:Possession_Icon.png;;{{Charge Cooldown|25}}<p>Activate to force an enemy Minion to fight for Sylvanas's team. Catapults require 3 charges. Stores up to 3 charges.<!--
+-->{{undoc-x|type=Instant kill / Summon<!--
+-->|target= Unit target<!--
+-->|affects=Enemy Minions (incl. Catapults)<!--
+-->|cast=0.1 + 0 seconds<!--
+-->|range=10<!--
+-->|notes=<li>''Possession'' awards experience from the Minion kill (or the appropriate [[Regeneration Globe]] if the target unit is a [[Wizard Minion]]).<li>Possessed Minions are restored to full Health and have negative effects removed from them, including the raven curse on [[Cursed Hollow]].<li>The enemy team does not get experience, Regeneration Globes or stacks from killing a possessed Minion and they cannot be ''repossessed'' by the opposing team's Sylvanas.}};
+
+| talents = <!-- LEVEL 1 -->
+Might of the Banshee Queen;1;1;Hitting an enemy Hero with Withering Fire increases Sylvanas's Attack Speed and Spell Power by 5% for 6 seconds, stacking up to 5 times.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Spell Power]]<!--
+-->|notes=<li>Spell Power from ''Might of the Banshee Queen'' stacks additively with itself and other sources of Spell Power as well as other offensive damage and healing modifiers affecting Sylvanas's Spell Damage.}};File:Might of the Banshee Queen Icon.png;
+
+Unrelenting Torment;1;2;Increase the damage of Shadow Dagger by 20% and increase its duration by 1 second.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|notes=<li>Affects both the initial damage and the damage over time.<li>Damage bonus stacks additively with itself and other offensive damage modifiers affecting <i>Shadow Dagger</i>'s damage.}};File:Unfurling Shadows Icon.png;
+
+Overwhelming Affliction;1;3;Enemy Heroes with 3 stacks of Black Arrows are Slowed by 15%. Sylvanas's Basic Attacks against Slowed enemy Heroes deal 1% of their maximum Health as damage.<!--
+-->{{undoc-x|type=[[Spell Damage]], Crowd control<!--
+-->|scaling=-<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Slow]], [[Attack Modifier]]<!--
+-->|notes=<li>Slow is applied to the target for 3 seconds. This effect and its duration are separate from ''Black Arrows''.<li>Damage is dealt in a separate instance along with Basic Attack damage.}};File:Overwhelming_Affliction_Icon.png;
+
+<!-- LEVEL 4 -->
+Unstable Poison;2;1;Minions that die under the effects of Shadow Dagger or Sylvanas's Traits explode, dealing 150 damage to nearby Minions, Mercenaries, and Summons.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemy Minions, Mercenaries & Summons<!--
+-->|props=[[Area of Effect]]<!--
+-->|aoe=Circle<!--
+-->|radius=2.5<!--
+-->|notes=<li>If multiple Sylvanases are on a team, ''Unstable Poison'' only triggers from the effects placed by Sylvanases with this Talent. Activation through ''Black Arrows'' uses a separate counter that requires 3 stacks to be applied or refreshed by the same Hero.}};File:Unstable_Poison_Icon.png;
+
+Mercenary Queen;2;2;Friendly non-Elite Mercenaries near Sylvanas deal 60% more damage.<p>Sylvanas's Basic Attacks Stun and instantly apply 3 stacks of Black Arrows to laning Mercenaries. Sylvanas deals 30% additional damage to Mercenaries with 3 stacks of Black Arrows.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Self / Allied non-Elite Mercenaries<!--
+-->|props=[[Area of Effect]], [[Mercenary Lord]]<!--
+-->|radius=9.0<!--
+-->|tickrate=2.0 per second<!--
+-->|notes=<li>The Stun is applied for 3 seconds when attacking a [[Mercenary]] with 3 stacks of ''Black Arrows''. This effect and its duration is separate from ''Black Arrows''.<li>Damage aura does not stack with other Mercenary Lord derivated damage auras.<li>Otherwise, damage bonuses stack addtively with other offensive damage bonuses that can affect the target units' damage output.}};File:Mercenary_Queen_Icon.png;
+
+Haunting Arrows;2;3;{{Cooldown|40}}Black Arrows can now be activated to cause all Basic Attacks and Abilities to Stun Minions and Structures for 3 seconds. Lasts for 10 seconds. Basic Attacks against Structures reduce this cooldown by 3 seconds.<!--
+-->{{undoc-x|type=<!--
+-->|affects=Self<!--
+-->|props=[[Attack Modifier]]<!--
+-->|notes=}};File:Black_Arrows_Icon.png;
+
+<!-- LEVEL 7 -->
+Barbed Shot;3;1;Hitting the same enemy with 5 shots of Withering Fire causes the 5th shot to deal 400% bonus damage.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|notes=<li>Damage bonus stacks additively with other offensive damage modifiers that can affect <i>Withering Fire</i>'s damage.}};File:Barbed_Shot_Icon.png;
+
+Lost Soul;3;2;Basic Attacks against Heroes and Structures with 3 stacks of Black Arrows reduce the cooldown of Shadow Dagger by 0.75 seconds, doubled against Heroes.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|props=[[Attack Modifier]]<!--
+-->|notes=<li>Affects both the initial damage and the damage over time.<li>Stacks additively with other offensive damage modifiers that can affect <i>Shadow Dagger</i>'s damage.}};File:Lost_Soul_Icon.png;
+
+Festering Wounds;3;3;Increase Haunting Wave's damage by 15%. Haunting Wave applies 3 stacks of Black Arrows.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|notes=<li>Damage bonus stacks additively with other damage modifiers that can affect <i>Haunting Wave</i>'s damage.}};File:Festering Wounds Icon.png;
+
+<!-- LEVEL 10 -->
+Wailing Arrow;4;1;{{Cooldown|90}}<p>Shoot an arrow that can be reactivated to deal 228 damage and Silence enemies in an area for 2.5 seconds. The arrow detonates automatically if it reaches maximum range.;File:Wailing_Arrow_Icon.png;
+Mind Control;4;2;{{Cooldown|40}}<p>After 0.25 seconds, fire a missile that Mind Controls the first enemy Hero hit. Heroes hit are Silenced, Slowed by 30%, have 3 stacks of Black Arrows applied to them, and are forced to walk toward Sylvanas for 1.75 seconds.;File:Mind_Control_Icon.png;
+
+<!-- LEVEL 13 -->
+Cold Embrace;5;1;Shadow Dagger reduces the Armor of the initial target by 25 and any enemy it spreads to by 10 for 2.5 seconds.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Enemies<!--
+-->|props=[[Armor reduction]]<!--
+-->|notes=<li>Does not stack with other negative Armor effects. Other defensive damage modifiers may stack.}};File:Cold_Embrace_Icon.png;
+
+Windrunner;5;2;Haunting Wave can be cast a second time for free within 4 seconds after teleporting. Teleporting with Haunting Wave resets the cooldown of Withering Fire.;File:Windrunner_Icon.png;
+
+Remorseless;5;3;Increase Sylvanas's Basic Attack range by 1. Sylvanas's Basic Attacks against enemy Heroes with 3 stacks of Black Arrows shoot an untalented shot of Withering Fire. This shot of Withering Fire applies Black Arrows.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|props=[[Attack Modifier]]<!--
+-->|radius=8.0<!--
+-->|notes=<li><i>Remorseless</i>'s ''Withering Fire'' shots are fired from the target of the Basic Attack upon impact and prioritize the closest unit to the target.<li>''Withering Fire'' shot will not bounce to unaggroed Mercenaries.}};File:Remorseless_Icon.png;
+
+<!-- LEVEL 16 -->
+Evasive Fire;6;1;Hitting an enemy with Withering Fire grants 6% Movement Speed for 2 seconds, up to 30%. Basic Attacks refresh this duration.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|props=[[Movement speed]]<!--
+-->|notes=<li>Stacks additively with itself, but not with other sources of bonus Movement Speed.}};File:Evasive_Fire_Icon.png;
+
+Life Drain;6;2;Heal for 15% of damage dealt by Sylvanas to enemies with 3 stacks of Black Arrows. Healing is doubled against Heroes.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|target=Point target<!--
+-->|props=[[Attack Modifier]], [[Lifesteal]]<!--
+-->|notes=<li>Stacks additively with other sources of lifesteal.}};File:Life_Drain_Icon.png;
+
+Will of the Forsaken;6;3;{{Cooldown|60}}<br />Activate to become Unstoppable and gain 40% Movement Speed for 3 seconds.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|props=[[Unstoppable]]<!--
+-->|cast=Instant<!--
+-->|notes=}};File:Will_of_the_Forsaken_Icon.png;
+
+<!-- LEVEL 20 -->
+Deafening Blast;7;1;Enemies at the center of Wailing Arrow's explosion take 50% more damage and are Silenced for twice as long.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|prop1=Center radius<!--
+-->|val1=1.75<!--
+-->|notes=<li>Damage bonus stacks additively with other offensive damage modifiers that can affect <i>Wailing Arrow</i>'s damage.}};File:Deafening_Blast_Icon.png;
+
+Dark Lady's Call;7;2;Heroes hit by Mind Control have their vision radius greatly reduced for 5 seconds. Mind Control's cooldown is reduced by 25 seconds.<!--
+-->{{undoc-x|prop1=Sight radius|val1=3.5<!--
+-->|notes=}};File:Dark_Lady's_Call_Icon.png;
+
+Withering Barrage;7;3;Withering Fire applies Black Arrows, and Heroes hit by Withering Fire reduce its cooldown by 0.75 seconds.<!--
+-->{{undoc|<hr/><li>Each shot applies 1 stack.}};File:Withering_Barrage_Icon.png;
+
+Bolt of the Storm;7;4;{{Cooldown|70}}<Br />Activate to teleport to a nearby location.<!--
+-->{{undoc-x|type=Movement: [[Teleport]]<!--
+-->|affects=Self<!--
+-->|target=Point target<!--
+-->|props=[[Bolt of the Storm]]<!--
+-->|cast=Instant<!--
+-->|range=7.2<!--
+-->|notes=}};File:Bolt_of_the_Storm_Icon.png;
+}}
+
+<noinclude>
+{{Scaling table/start|{{#var:health}}|{{#var:health scaling}}|{{#var:health regen}}|{{#var:health regen scaling}}|{{#var:attack damage}}|{{#var:attack damage scaling}}}}
+{{Scaling table/slot|Withering Fire|39|0.04}}
+{{Scaling table/slot|Shadow dagger (initial)|30|0.04}}
+{{Scaling table/slot|Shadow dagger (secondary)|150|0.04}}
+{{Scaling table/slot|Shadow dagger (secondary, per second)|30|0.04}}
+{{Scaling table/slot|Haunting Wave|114|0.04}}
+{{Scaling table/slot|Wailing Arrow|228|0.04|10}}
+{{Scaling table/slot|Unstable Poison|130|0.04|4}}
+{{Scaling table/end}}
+</noinclude>

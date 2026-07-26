@@ -1,0 +1,528 @@
+{
+  "hero": "Kael'thas",
+  "abilities": [
+    {
+      "name": "Verdant Spheres",
+      "hotkey": "D",
+      "icon": "Verdant_Spheres_Icon.png",
+      "description": "Activate to make your next Basic Ability more powerful.; 6; trait",
+      "fields": {
+        "affects": "Ability",
+        "target": "No target",
+        "props": "Primed",
+        "cast": "Instant",
+        "notes": "Cooldown starts when the effect is triggered by casting a Basic Ability."
+      }
+    },
+    {
+      "name": "Flamestrike",
+      "hotkey": "Q",
+      "icon": "Flamestrike_Icon.png",
+      "description": "After 1 second, deal 345 damage in an area. Verdant Spheres increases the radius by 50%.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "target": "Point target",
+        "props": "Area of Effect",
+        "cast": "0.25 + 0.0625 seconds",
+        "range": "10.75",
+        "aoe": "Circle",
+        "radius": "- Base: 2.0 - Verdant Spheres: 3.0",
+        "notes": "Delay starts after the cast goes through, making the total time after initiating cast to damage being dealt 1.25 seconds.",
+        "cooldown": "7",
+        "cost": "70"
+      }
+    },
+    {
+      "name": "Living Bomb",
+      "hotkey": "W",
+      "icon": "Living_Bomb_Icon.png",
+      "description": "Deal 126 damage over 3 seconds to an enemy, then they explode dealing 215 damage to all nearby enemies. Other Heroes damaged by this explosion are also affected by Living Bomb, though the secondary explosions cannot spread. Verdant Spheres makes this Ability cost no Mana and have no cooldown.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "target": "Unit target",
+        "props": "Area of Effect, Damage over Time",
+        "cast": "0.125 + 0 seconds",
+        "range": "5.5",
+        "aoe": "Circle",
+        "radius": "3.3",
+        "tickrate": "1.0 per second (x3)",
+        "prop1": "Damage per tick",
+        "val1": "42",
+        "notes": "Casting Living Bomb will prevent Basic Attacks for 0.25 seconds Living Bomb cannot spread to targets already affected by another Living Bomb. Main target takes damage from both periodic and explosion damage. Explosion damage is displayed in the target unit's Health bar as if it were a DoT, but does not count as one, allowing it to interrupt Weak Channels (e.g. Mounting & Hearthing). If the target dies while affected by Living Bomb, it explodes immediately. Effects that remove DoTs prevent Living Bomb from exploding.",
+        "cooldown": "10",
+        "cost": "50"
+      }
+    },
+    {
+      "name": "Gravity Lapse",
+      "hotkey": "E",
+      "icon": "Gravity_Lapse_Icon.png",
+      "description": "Stun the first enemy hit for 1 seconds. Verdant Spheres causes Gravity Lapse to stun the first 3 enemies hit and increases the stun duration by 50%.",
+      "fields": {
+        "type": "Crowd control",
+        "affects": "Non-Structure enemies",
+        "target": "Point target",
+        "props": "Clamping, Skillshot, Stun",
+        "cast": "0.15+0 seconds",
+        "range": "9.5",
+        "hitbox": "1.75 x 0.8",
+        "missile": "13",
+        "cooldown": "12",
+        "cost": "90"
+      }
+    },
+    {
+      "name": "Phoenix",
+      "hotkey": "R",
+      "icon": "Phoenix_Icon.png",
+      "description": "Launch a Phoenix to an area, dealing 84 damage to enemies along the way. The Phoenix persists for 7 seconds, attacking enemies for 84 damage and splashing for 42 damage.; 60; 80; heroic",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "target": "Point target",
+        "props": "Area of Effect, Summon figment, Splash",
+        "cast": "0.1 + 0 seconds",
+        "range": "10.0",
+        "radius": "- Launch hitbox: 1.25 - 5.75 (attack) - Splash: 2.0",
+        "missile": "- Launch: 12.0 - Attack: 25",
+        "tickrate": "2.0 per second (x13)",
+        "notes": "Phoenix will prioritize attacking the last enemy Hero hit during its launch. If no Hero is hit, or the target leaves its Attack Range, Phoenix will attack the nearest enemy to the center, prioritizing Heroes."
+      }
+    },
+    {
+      "name": "Pyroblast",
+      "hotkey": "R",
+      "icon": "Pyroblast_Icon.png",
+      "description": "After 1.5 seconds, cast a slow-moving fireball that deals 810 damage to an enemy Hero and 405 damage to enemies nearby.; 100; 80; heroic",
+      "fields": {
+        "type": "Spell Damage, Status effect",
+        "scaling": "5.00488281%",
+        "affects": "Enemy Heroes (initial) / Enemies (AoE)",
+        "target": "Unit target",
+        "props": "Area of Effect, Channeled cast (stationary), Revealed",
+        "cast": "1.5 + 0 seconds",
+        "range": "15.0",
+        "aoe": "Circle",
+        "radius": "3.0",
+        "missile": "- Initial: 5.0 - Maximum: 9.0 - Acceleration: 1.0",
+        "notes": "Interrupting the Ability during its windup puts it on a 10 second cooldown. The cast is interrupted, if the target moves 5 units past its range during windup, or if Kael'thas issues a \"move\" or \"stop\" command. Pyroblast missile can only be disjointed if the target dies, is removed from the plane (certain Stasis effects) or instantly teleports farther than 30 units from its previous location. When disjointed, the missile expires upon reaching the target's location before the event. Otherwise, the missile will keep redirecting to the target unit. Pyroblast always explodes, applying its area effects upon reaching the end location, regardless of being able to hit its original target. Main target does not take area damage."
+      }
+    }
+  ],
+  "talents": [
+    {
+      "name": "Convection",
+      "tier": "1",
+      "slot": "1",
+      "icon": "Convection_Icon.png",
+      "description": "Repeatable Quest Hit 20 enemy Heroes with Flamestrike without dying. Reward Permanently increases Flamestrike damage by 150, and Kael'thas's maximum Health by 50.",
+      "fields": {
+        "type": "Bonus damage, Bonus Health",
+        "scaling": "-",
+        "affects": "Ability",
+        "notes": "Can trigger multiple times per cast."
+      },
+      "_raw_fields": [
+        "Convection",
+        "1",
+        "1",
+        "Repeatable Quest Hit 20 enemy Heroes with Flamestrike without dying. Reward Permanently increases Flamestrike damage by 150, and Kael'thas's maximum Health by 50.",
+        "File:Convection_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Fel Infusion",
+      "tier": "1",
+      "slot": "2",
+      "icon": "Fel_Infusion_Icon.png",
+      "description": "Increases Kael'thas's Spell Power by 4%. Kael'thas heals for 94 Health when activating Verdant Spheres.",
+      "fields": {
+        "type": "Healing, Offensive damage modifier",
+        "scaling": "4.00%",
+        "affects": "Self",
+        "props": "Spell Power",
+        "notes": "Spell Power is permanent. Spell Power from Fel Infusion stacks additively with other sources of Spell Power as well as other offensive damage and healing dealt modifiers affecting Kael'thas's Spell Damage or healing output."
+      },
+      "_raw_fields": [
+        "Fel Infusion",
+        "1",
+        "2",
+        "Increases Kael'thas's Spell Power by 4%. Kael'thas heals for 94 Health when activating Verdant Spheres.",
+        "File:Fel_Infusion_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Mana Addict",
+      "tier": "1",
+      "slot": "3",
+      "icon": "Mana_Addict_Icon.png",
+      "description": "quest Gathering a Regeneration Globe increases Kael'thas's maximum Mana by 15. After gathering 20 Globes, Kael'thas can activate Arcane Barrier to gain a Shield equal to 100% of his maximum Mana for 4 seconds. 45 second cooldown. Arcane Barrier Cooldown 45 Activate to gain a Shield for 100% of Kael'thas's maximum Mana for 4 seconds.",
+      "fields": {
+        "type": "Resource, Shield",
+        "scaling": "-",
+        "affects": "Self",
+        "target": "No target",
+        "cast": "Instant",
+        "notes": "Continues to gain stacks even after the quest is complete. Kael'thas's current Mana is also increased by 15 when a Regeneration Globe is collected."
+      },
+      "_raw_fields": [
+        "Mana Addict",
+        "1",
+        "3",
+        "quest Gathering a Regeneration Globe increases Kael'thas's maximum Mana by 15. After gathering 20 Globes, Kael'thas can activate Arcane Barrier to gain a Shield equal to 100% of his maximum Mana for 4 seconds. 45 second cooldown. Arcane Barrier Cooldown 45 Activate to gain a Shield for 100% of Kael'thas's maximum Mana for 4 seconds.",
+        "File:Mana_Addict_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Nether Wind",
+      "tier": "2",
+      "slot": "1",
+      "icon": "Nether_Wind_Icon.png",
+      "description": "Increases Gravity Lapse's range by 30%. When Gravity Lapse hits an enemy Hero, refund 80 Mana.",
+      "fields": {
+        "prop1": "Bonus range",
+        "val1": "2.5",
+        "notes": "Can only trigger once per cast."
+      },
+      "_raw_fields": [
+        "Nether Wind",
+        "2",
+        "1",
+        "Increases Gravity Lapse's range by 30%. When Gravity Lapse hits an enemy Hero, refund 80 Mana.",
+        "File:Nether_Wind_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Energy Roil",
+      "tier": "2",
+      "slot": "2",
+      "icon": "Energy_Roil_Icon.png",
+      "description": "Reduce the Mana cost of Gravity Lapse by 70. When Gravity Lapse hits a Hero, reduce its cooldown by 8 seconds.",
+      "fields": {
+        "nohr": "1",
+        "notes": "Can only trigger once per cast."
+      },
+      "_raw_fields": [
+        "Energy Roil",
+        "2",
+        "2",
+        "Reduce the Mana cost of Gravity Lapse by 70. When Gravity Lapse hits a Hero, reduce its cooldown by 8 seconds.",
+        "File:Energy_Roil_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Mana Tap",
+      "tier": "2",
+      "slot": "3",
+      "icon": "Mana_Tap_Icon.png",
+      "description": "Activating Verdant Spheres restores 5% of Kael'thas's maximum Mana.",
+      "fields": {
+        "type": "Resource",
+        "scaling": "-",
+        "affects": "Self"
+      },
+      "_raw_fields": [
+        "Mana Tap",
+        "2",
+        "3",
+        "Activating Verdant Spheres restores 5% of Kael'thas's maximum Mana.",
+        "File:Mana_Tap_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Burned Flesh",
+      "tier": "3",
+      "slot": "1",
+      "icon": "Burned_Flesh_Icon.png",
+      "description": "When Flamestrike damages 2 or more Heroes, they take additional damage equal to 8% of their maximum Health.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "-",
+        "affects": "Enemy Heroes",
+        "props": "Percent Damage",
+        "notes": "The damage from Burned Flesh is dealt in a separate instance of damage."
+      },
+      "_raw_fields": [
+        "Burned Flesh",
+        "3",
+        "1",
+        "When Flamestrike damages 2 or more Heroes, they take additional damage equal to 8% of their maximum Health.",
+        "File:Burned_Flesh_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Sun King's Fury",
+      "tier": "3",
+      "slot": "2",
+      "icon": "Sun_Kings_Fury_Icon.png",
+      "description": "Living Bombs that spread to enemy Heroes deal 35% more damage.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Ability",
+        "notes": "Affects both periodic and explosion damage. Stacks additively with other offensive damage modifiers affecting Living Bomb 's damage."
+      },
+      "_raw_fields": [
+        "Sun King's Fury",
+        "3",
+        "2",
+        "Living Bombs that spread to enemy Heroes deal 35% more damage.",
+        "File:Sun_Kings_Fury_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Sunfire Enchantment",
+      "tier": "3",
+      "slot": "3",
+      "icon": "Sunfire_Enchantment_Icon.png",
+      "description": "Activating Verdant Spheres causes Kael'thas's next 2 Basic Attacks to instead deal 115 Spell Damage. If both of them hit enemy Heroes, gain 15% Spell Power for 10 seconds.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Self",
+        "props": "Spell Power",
+        "notes": "Empowered attacks last until consumed. Using Verdant Spheres refreshes charges. Does not stack with itself. Subsequent applications refresh the duration of Spell Power buff. Spell Power from Sunfire Enchantment stacks additively with other sources of Spell Power as well as other offensive damage and healing dealt modifiers affecting Kael'thas's Spell Damage or healing output."
+      },
+      "_raw_fields": [
+        "Sunfire Enchantment",
+        "3",
+        "3",
+        "Activating Verdant Spheres causes Kael'thas's next 2 Basic Attacks to instead deal 115 Spell Damage. If both of them hit enemy Heroes, gain 15% Spell Power for 10 seconds.",
+        "File:Sunfire_Enchantment_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Phoenix",
+      "tier": "4",
+      "slot": "1",
+      "icon": "Phoenix_Icon.png",
+      "description": "Cooldown 60 Launch a Phoenix to an area, dealing 78 damage to enemies along the way. The Phoenix persists for 7 seconds, attacking enemies for 78 damage and splashing for 39 damage.",
+      "fields": {},
+      "_raw_fields": [
+        "Phoenix",
+        "4",
+        "1",
+        "Cooldown 60 Launch a Phoenix to an area, dealing 78 damage to enemies along the way. The Phoenix persists for 7 seconds, attacking enemies for 78 damage and splashing for 39 damage.",
+        "File:Phoenix_Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Pyroblast",
+      "tier": "4",
+      "slot": "2",
+      "icon": "Pyroblast_Icon.png",
+      "description": "Cooldown 100 After 1.5 seconds, cast a slow-moving fireball that deals 810 damage to an enemy Hero and 405 damage to enemies nearby.",
+      "fields": {},
+      "_raw_fields": [
+        "Pyroblast",
+        "4",
+        "2",
+        "Cooldown 100 After 1.5 seconds, cast a slow-moving fireball that deals 810 damage to an enemy Hero and 405 damage to enemies nearby.",
+        "File:Pyroblast_Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Pyromaniac",
+      "tier": "5",
+      "slot": "1",
+      "icon": "Pyromaniac_Icon.png",
+      "description": "Each time Living Bomb deals periodic damage, Kael'thas's Basic Ability cooldowns are reduced by 0.5 seconds.",
+      "fields": {
+        "nohr": "1",
+        "notes": "Affects both initial and secondary targets' Living Bombs."
+      },
+      "_raw_fields": [
+        "Pyromaniac",
+        "5",
+        "1",
+        "Each time Living Bomb deals periodic damage, Kael'thas's Basic Ability cooldowns are reduced by 0.5 seconds.",
+        "File:Pyromaniac_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Backdraft",
+      "tier": "5",
+      "slot": "2",
+      "icon": "Backdraft_Icon.png",
+      "description": "Living Bomb's explosion Slows enemy Movement Speed by 30% for 2 seconds.",
+      "fields": {
+        "type": "Crowd control",
+        "affects": "Enemies",
+        "props": "Slow",
+        "notes": "Affects both initial and secondary targets' Living Bombs."
+      },
+      "_raw_fields": [
+        "Backdraft",
+        "5",
+        "2",
+        "Living Bomb's explosion Slows enemy Movement Speed by 30% for 2 seconds.",
+        "File:Backdraft_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Fission Bomb",
+      "tier": "5",
+      "slot": "3",
+      "icon": "Fission_Bomb_Icon.png",
+      "description": "Increases Living Bomb's explosion radius by 20%.",
+      "fields": {
+        "prop1": "Bonus explosion radius",
+        "val1": "0.66",
+        "notes": "Affects both initial and secondary targets' Living Bombs."
+      },
+      "_raw_fields": [
+        "Fission Bomb",
+        "5",
+        "3",
+        "Increases Living Bomb's explosion radius by 20%.",
+        "File:Fission_Bomb_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Fury of the Sunwell",
+      "tier": "6",
+      "slot": "1",
+      "icon": "Fury_of_the_Sunwell_Icon.png",
+      "description": "Flamestrike will explode a second time 1.5 seconds later.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "-",
+        "affects": "Enemies",
+        "notes": "Secondary Flamestrike has the same properties as baseline and benefits from all Talents affecting it."
+      },
+      "_raw_fields": [
+        "Fury of the Sunwell",
+        "6",
+        "1",
+        "Flamestrike will explode a second time 1.5 seconds later.",
+        "File:Fury_of_the_Sunwell_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Ignite",
+      "tier": "6",
+      "slot": "2",
+      "icon": "Ignite_Icon.png",
+      "description": "Flamestrike applies Living Bomb to the enemy Hero closest to its center who is not currently affected by Living Bomb.",
+      "fields": {},
+      "_raw_fields": [
+        "Ignite",
+        "6",
+        "2",
+        "Flamestrike applies Living Bomb to the enemy Hero closest to its center who is not currently affected by Living Bomb.",
+        "File:Ignite_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Twin Spheres",
+      "tier": "6",
+      "slot": "3",
+      "icon": "Twin_Spheres_Icon.png",
+      "description": "Verdant Spheres gains a second charge. Passive Kael'thas benefits from all of his level 7 talents.",
+      "fields": {
+        "nohr": "true",
+        "notes": "Verdant Spheres cannot be activated again before the previous charge has been triggered."
+      },
+      "_raw_fields": [
+        "Twin Spheres",
+        "6",
+        "3",
+        "Verdant Spheres gains a second charge. Passive Kael'thas benefits from all of his level 7 talents.",
+        "File:Twin_Spheres_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Rebirth",
+      "tier": "7",
+      "slot": "1",
+      "icon": "Rebirth_Icon.png",
+      "description": "Increases Phoenix duration by 100%. While alive, the Phoenix may be ordered to move to a different location. Stores 3 charges.",
+      "fields": {},
+      "_raw_fields": [
+        "Rebirth",
+        "7",
+        "1",
+        "Increases Phoenix duration by 100%. While alive, the Phoenix may be ordered to move to a different location. Stores 3 charges.",
+        "File:Rebirth_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Presence Of Mind",
+      "tier": "7",
+      "slot": "2",
+      "icon": "Presence_Of_Mind_Icon.png",
+      "description": "Increases Pyroblast's explosion radius by 50%. Heroes who are hit by Flamestrike or have Living Bomb spread to them reduce the cooldown of Pyroblast by 10 seconds.",
+      "fields": {
+        "prop1": "Bonus radius",
+        "val1": "1.5"
+      },
+      "_raw_fields": [
+        "Presence Of Mind",
+        "7",
+        "2",
+        "Increases Pyroblast's explosion radius by 50%. Heroes who are hit by Flamestrike or have Living Bomb spread to them reduce the cooldown of Pyroblast by 10 seconds.",
+        "File:Presence_Of_Mind_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Master of Flames",
+      "tier": "7",
+      "slot": "3",
+      "icon": "Master_of_Flames_Icon.png",
+      "description": "Living Bomb's spread from explosions can now also spread Living Bomb.",
+      "fields": {},
+      "_raw_fields": [
+        "Master of Flames",
+        "7",
+        "3",
+        "Living Bomb's spread from explosions can now also spread Living Bomb.",
+        "File:Master_of_Flames_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Flamethrower",
+      "tier": "7",
+      "slot": "4",
+      "icon": "Flamestrike_Icon.png",
+      "description": "Increases the cast range of Flamestrike by 40%. If you hit 2 or more Heroes, Flamestrike's cooldown is reduced by 4 seconds.",
+      "fields": {
+        "prop1": "Bonus range",
+        "val1": "4.3",
+        "notes": "Can only trigger once per cast."
+      },
+      "_raw_fields": [
+        "Flamethrower",
+        "7",
+        "4",
+        "Increases the cast range of Flamestrike by 40%. If you hit 2 or more Heroes, Flamestrike's cooldown is reduced by 4 seconds.",
+        "File:Flamestrike_Icon.png"
+      ],
+      "level": "20"
+    }
+  ],
+  "other": [],
+  "_unparsed_count": 0
+}

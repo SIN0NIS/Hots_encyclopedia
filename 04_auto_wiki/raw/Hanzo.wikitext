@@ -1,0 +1,221 @@
+{{hero data
+| name = Hanzo
+| date = December 12, 2017
+| price = 10000
+| title = Master Assassin
+| role = Ranged
+| franchise = Overwatch
+| info = A ranged Assassin who specializes in scouting and taking out enemies from a distance.
+| lore = Once heir to the Shimada clan's criminal empire, Hanzo abandoned his birthright after he almost killed his younger brother. He now strives to perfect his skills as a warrior, and sees the Nexus and its endless conflict as the ideal training ground.
+| difficulty = Easy
+| melee = False
+| health = 1375
+| healthRegen = 2.8632
+| resource = 500
+| resourceType = Mana
+| armor = 0
+| attackSpeed = 0.67
+| attackRange = 6.5
+| attackDamage = 198
+| healthScaling = 0.04
+| regenScaling = 0.04
+| adamageScaling = 0.04
+| unitRadius = 0.6875
+| icon = File:Hanzo_Icon.png
+| skills =
+Natural Agility;D;File:Natural_Agility_Icon.png;Jump over unpathable terrain or Structures, up to a maximum range.<!--
+-->{{undoc-x|type=Movement: [[Launch]]<!--
+-->|affects=Self<!--
+-->|target=Point target<!--
+-->|props=[[Clamping]]<!--
+-->|cast=Instant<!--
+-->|range=9.0<!--
+-->|prop1=Leap duration|val1=0.6875 seconds<!--
+-->|notes=<li>''Natural Agility'' cannot be used if there is no unpathable [[terrain]] between Hanzo and target point, or if there are no viable landing spots in range.<li>Hanzo cannot use ''Natural Agility'' to jump over [[pathing blocker]]s or friendly [[Gate]]s.<li>Hanzo always lands at 2 range from the edge of the terrain, regardless of its width.}};25;;trait;False
+
+Storm Bow;Q;File:Storm_Bow_Icon.png;Activate to charge an arrow that deals 291 damage to the first enemy hit. Storm Bow's range increases the longer it is Channeled.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|afects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Mobile channel]], [[Clamping]], [[Skillshot]]<!--
+-->|cast=0 + CH + 0 seconds<!--
+-->|range=<br/>- Minimum: 6.0<br/>- Maximum: 13<!--
+-->|prop1=Maximum channel|val1=1.25 seconds<!--
+-->|notes=<li>''Storm Bow'' can be channeled indefinitely, but its range stops increasing after 1.25 seconds.<li>Cooldown starts once ''Storm Bow'' is reactivated.<li>Timing a Basic Attack right before <i>Storm Bow</i> ignores the cooldown of the first Basic Attack, which will cause a second Basic Attack to be launched right after <i>Storm Bow</i> is cast.}};4;20
+
+Scatter Arrow;W;File:Scatter_Arrow_Icon.png;Fire an arrow that deals 88 to the first enemy Hero hit. Scatter Arrow can collide with terrain and [[Structure]]s, splitting into 5 arrows that travel extra distance, ricochet up to 4 additional times, and deal 88 damage each to the first enemy hit.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemy Heroes (initial projectile) / Non-Structure enemies (bounces)<!--
+-->|target=Point target<!--
+-->|props=[[Clamping]], [[Skillshot]]<!--
+-->|cast=Instant<!--
+-->|range=16<!--
+-->|missile=34<!--
+-->|prop1=Bounce range|val1=16<!--
+-->|prop2=Scatter spacing|val2=9.0 degrees<!--
+-->|notes=<li>Neither initial projectile nor the ricocheting arrows can ever damage Structures, but only bounce off of them.<li>Hanzo is able to see the collision edges of terrain in 16 radius.<li>''Scatter Arrow'' does not bounce off of [[pathing blocker]]s or friendly [[Gate]]s.}};8;50
+
+Sonic Arrow;E;File:Sonic_Arrow_Icon.png;Fire an arrow that grants vision in a large area for 5 seconds. Enemies inside are revealed for 1 second. If Sonic Arrow lands directly on an enemy, it deals 165 damage to them and follows them as they move.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Revealed]]<!--
+-->|cast=Instant<!--
+-->|range=20<!--
+-->|prop1=Flight time|val1=1.5 seconds<!--
+-->|radius=<br/>- Hitbox: 0.5<br/>- Vision: 7.0<!--
+-->}};20;50
+
+Dragonstrike;R;File:Dragonstrike_Icon.png;After 1.5 seconds, summon a pair of Spirit Dragons which travel forward, dealing 84 damage every 0.25 seconds to enemy Heroes in its area. Enemies in the center take 75% increased damage.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Channeled cast]] (stationary), [[Clamping]]<!--
+-->|cast=1.5 (ch) + 0 seconds<!--
+-->|prop1=Initial delay|val1=1.0 seconds<!--
+-->|range=<br/>- Initial: 8.0<br/>- Final: 36<!--
+-->|height=24<!--
+-->|width=<br/>- Full: 9.0<br/>- Center: 3.0<!--
+-->|missile=10<!--
+-->|notes=<li>Interrupting ''Dragonstrike'' in its cast period puts the Ability on a 10 second cooldown.<li>Arrow shot at the end of cast animation is purely visual and deals no damage.<li>Center damage bonus stacks additively with offensive damage modifiers that can affect <i>Dragonstrike</i>'s damage.}};60;60
+
+Dragon's Arrow;R;File:Dragon's_Arrow_Icon.png;Fire a missile that travels across the battleground. Explodes upon hitting an enemy Hero, dealing 130 damage to all nearby enemies and Stunning them for 0.5 seconds.<p>After traveling a medium distance, the damage is increased to 260 and the Stun duration to 1.25 seconds.<p>After traveling a long distance, the damage is increased to 390 and the Stun duration to 2 seconds.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemy Heroes (initial) / Enemies (splash)<!--
+-->|target=Point target<!--
+-->|props=[[Skillshot]], [[Splash]], [[Stun]]<!--
+-->|cast=0.125 + 0 seconds<!--
+-->|range=Global<!--
+-->|radius=4.0<!--
+-->|missile=20<!--
+-->|prop1=Middle threshold distance|val1=11<!--
+-->|prop2=Long threshold distance|val2=23<!--
+-->|notes=<li>Distance is measured from the distance traveled rather than the difference from Hanzo's current location.<li>Enemies that are immune to Skillshots cannot be hit by the initial projectile, but can still be affected by the splash, as long as they are not also immune to AoE.}};70;90
+
+| talents =
+<!-- LEVEL 1 -->
+Target Practice;1;1;{{Quest|Hit every enemy Hero with Storm Bow.|After hitting every enemy Hero once with Storm Bow, its range is increased by 30%.}}<p>{{Reward|After hitting every enemy Hero 3 times with Storm Bow, its damage is increased by 100.}}<!--
+-->{{undoc-x|type=Bonus damage<!--
+-->|scaling=-<!--
+-->|affects=Ability<!--
+-->|prop1=Bonus range|val1=4.9<!--
+-->|notes=<li>Only affects maximum range.<li>Channel time for maximum range remains the same.}};File:Target_Practice_Icon.png;
+
+Simple Geometry;1;2;{{Quest|Hit a Hero with multiple arrows from the same Scatter Arrow cast 20 times. Each arrow hit after the second grants additional progress.|Upon hitting terrain for the first time, Scatter Arrow creates 2 additional arrows.}};File:Simple_Geometry_Icon.png;
+
+Redemption;1;3;{{Quest|Every 2 Basic Attacks against the same Hero within 10 seconds grants 1 Redemption, stacking up to 12. Dying decreases Redemption by 3, and Redemption can be lost even at maximum stacks.|At 12 Redemption, gain 50% Attack Speed.}}<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|props=[[Attack Modifier]] (stacking), [[Attack Speed]]<!--
+-->|notes=<li>If there are multiple Hanzos on a team, the attack counter per Hero is shared among all of them and only the one who triggers the second attack on the target gains the stack. While at full stacks attacks do not increment the counter.<li>Attack Speed bonus stacks additively with other effects that can affect Hanzo's Attack Speed.}};File:Redemption_Hanzo_Icon.png;
+
+<!-- LEVEL 4 -->
+Explosive Arrows;2;1;Upon hitting a Minion or Monster, Storm Bow deals 60% of its damage to enemies around its target.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=-<!--
+-->|affects=Enemies (splash)<!--
+-->|props=[[Splash]]<!--
+-->|radius=3.0<!--
+-->|notes=<li>The splash damage affects all enemies, but is only triggered when ''Storm Bow'' hits a [[Minion]] or [[Monster]].<li>The splash does not trigger other Talents that interact with ''Storm Bow'', but can benefit from damage increases that affect Hanzo or ''Storm Bow'' specifically.}};File:Explosive_Arrows_Icon.png;
+
+Serrated Arrows;2;2;Scatter Arrow deals 100% more damage to Minions, Mercenaries, and Monsters.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Enemy Minions, Mercenaries, Monsters<!--
+-->|notes=<li>Stacks additively with other offensive damage modifiers that can affect <i>Scatter Arrow</i>'s damage.}};File:Serrated_Arrows_Icon.png;
+
+Ignore All Distractions;2;3;Basic Attacks instantly kill Minions and increase Hanzo's Basic Attack range by 2 for 3 seconds.<!--
+-->{{undoc-x|type=Instant kill<!--
+-->|affects=Enemy Minions<!--
+-->|props=[[Attack Modifier]]<!--
+-->|notes=<li>Bonus Basic Attack range is only granted or refreshed by Basic Attacking a Minion.}};File:Ignore_All_Distractions_Icon.png;
+
+<!-- LEVEL 7 -->
+The Dragon Hungers;3;1;Hitting a Hero with Storm Bow grants 5% Spell Power for 12 seconds, stacking up to 20%.<!--
+-->{{undoc-x|type=Offensive damage modifier, Healing dealt modifier<!--
+-->|affects=Self<!--
+-->|props=[[Spell Power]]<!--
+-->|notes=<li>Spell Power from ''The Dragon Hungers'' stacks additively with itself and other sources of Spell Power as well as other offensive damage and healing dealt modifiers affecting Hanzo's Spell Damage or healing output.}};File:The_Dragon_Hungers_Icon.png;
+
+Never Outmatched;3;2;Reduce Scatter Arrow's Mana cost from 50 to 30. Basic Attacks against Heroes lower the cooldown of Scatter Arrow by 3 seconds.;File:Never_Outmatched_Icon.png;
+
+Sharpened Arrowheads;3;3;Hitting a Hero with Storm Bow or Basic Attacks reduces their Armor by 3 for 3 seconds, up to a maximum reduction of 20 Armor.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Armor reduction]], [[Attack Modifier]]<!--
+-->|notes=<li>Stacks additively with itself but not with other negative Armor effects. Other defensive damage modifiers may stack.}};File:Sharpened_Arrowheads_Icon.png;
+
+<!-- LEVEL 10 -->
+Dragonstrike;4;1;{{Cooldown|60}}<br>After 1.5 seconds, summon a pair of Spirit Dragons which travel forward, dealing 84 damage every 0.25 seconds to enemy Heroes in its area. Enemies in the center take 75% increased damage.;File:Dragonstrike_Icon.png;
+Dragon's Arrow;4;2;{{Cooldown|90}}<br>Fire a missile that travels across the battleground. Explodes upon hitting an enemy Hero, dealing 130 damage to all nearby enemies and Stunning them for 0.5 seconds.<p>After traveling a medium distance, the damage is increased to 260 and the Stun duration to 1.25 seconds.<p>After traveling a long distance, the damage is increased to 390 and the Stun duration to 2 seconds.;File:Dragon's_Arrow_Icon.png;
+
+<!-- LEVEL 13 -->
+Fleet of Foot;5;1;Hitting a Hero with Storm Bow grants 10% Movement Speed for 6 seconds, up to 30%.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|props[[Movement Speed]]<!--
+-->|notes=<li>Consecutive hits refresh the duration.}};File:Fleet_of_Foot_Icon.png;
+
+Ninja Assassin;5;2;Hitting Heroes with Storm Bow lowers Natural Agility's cooldown by 10 seconds. Additionally, Hero Takedowns reset Natural Agility's cooldown.;File:Ninja_Assassin_Icon.png;
+
+Mounted Archery;5;3;Reduce the cooldown of Summon Mount by 2 seconds. Upon mounting, gain 25% additional Movement Speed for 5 seconds. Using Natural Agility instantly mounts.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|props=[[Movement Speed]]<!--
+-->|notes=<li>Stacks additively with Mounted Movement Speed bonus, but not with other sources of Movement Speed.}};File:Mounted_Archery_Icon.png;
+
+<!-- LEVEL 16 -->
+Flawless Technique;6;1;Hitting Heroes with Storm Bow increases the damage of Hanzo's next Basic Attack within 5 seconds by 40%. Basic Attacks against Heroes increase the damage of Hanzo's next Storm Bow within 5 seconds by 40%.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Self, Ability<!--
+-->|props=[[Attack Modifier]]<!--
+--><li>Damage bonuses stack additively with other offensive damage modifiers.}};File:Flawless_Technique_Icon.png;
+
+Piercing Arrows;6;2;Storm Bow and Scatter Arrow pierce, hitting an additional enemy. Additionally, Scatter Arrow can pierce through 1 enemy each time it ricochets.;File:Piercing_Arrows_Icon.png;
+
+Giant Slayer;6;3;Enemy Heroes hit by Scatter Arrow and Basic Attacks take a bonus 1.6% of their maximum Health as damage.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Attack Modifier]], [[Percent Damage]]<!--
+-->}};File:Giant_Slayer_Icon.png;
+
+<!-- LEVEL 10 -->
+The Dragon Awakens;7;1;Hitting a Hero with Storm Bow, Scatter Arrow, or Basic Attacks reduces the cooldown of Dragonstrike by 4 seconds.;File:The_Dragon_Awakens_Icon.png;
+
+Play of the Game;7;2;While in flight or for up to 2 seconds after impacting a target, Dragon's Arrow can be reactivated to teleport to its location and jump backwards. If used after impact, Hanzo shoots arrows that deal 132 damage to each target hit by the impact.<p>Hanzo is Unstoppable during Play of the Game.<!--
+-->{{undoc-x|type=Spell Damage / Movement: [[Teleport]], [[Launch]], [[Unstoppable]]<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=No target (automatic)<!--
+-->|cast=Instant<!--
+-->|range=<br/>- Teleport: Global<br/>- Launch: 12<!--
+-->|prop1=Leap duration|val1=0.75 seconds<!--
+-->|notes=}};File:Play_of_the_Game_Icon.png;
+
+Bullseye;7;4;Increase Sonic Arrow's speed and center radius by 100%. Additionally, Heroes hit by Sonic Arrow's center are Stunned for 1 second.<!--
+-->{{undoc-x|type=Crowd control<!--
+-->|affects=Enemies<!--
+-->|props=[[Stun]]<!--
+-->|prop1=Bonus radius|val1=0.5<!--
+-->|prop2=Flight time reduction|val2=0.75 seconds}};File:Bullseye_Hanzo_Icon.png;
+
+Perfect Agility;7;3;Natural Agility gains a 2nd charge and its cooldown is reduced by 10 seconds.;File:Perfect_Agility_Icon.png;
+
+}}
+<noinclude>
+{{Scaling table/start|{{#var:health}}|{{#var:health scaling}}|{{#var:health regen}}|{{#var:health regen scaling}}|{{#var:attack damage}}|{{#var:attack damage scaling}}}}
+{{Scaling table/slot|Storm Bow|291|0.04}}
+{{Scaling table/slot|Scatter Arrow|88|0.04}}
+{{Scaling table/slot|Sonic Arrow|150|0.04}}
+{{Scaling table/slot|Dragonstrike (single)|84|0.04|10}}
+{{Scaling table/slot|Dragonstrike (per second)|336|0.04|10}}
+{{Scaling table/slot|Dragon's Arrow (short)|100|0.04|10}}
+{{Scaling table/slot|Dragon's Arrow (mid)|200|0.04|10}}
+{{Scaling table/slot|Dragon's Arrow (long)|350|0.04|10}}
+{{Scaling table/slot|Play of the Game|263|0.04|20}}
+{{Scaling table/end}}
+</noinclude>

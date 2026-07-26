@@ -1,0 +1,228 @@
+ {{hero data
+| name = Maiev
+| date = February 6, 2018
+| price = 10000
+| title = The Warden
+| role = Melee
+| franchise = Warcraft
+| info =  A mobile Assassin who excels against clustered enemies and prevents their escape.
+| lore = Maiev Shadowsong stood watch over the imprisoned Betrayer for ten thousand years, and hunted him relentlessly after he was released. Some say she's determined; others say she's obsessed. Either way, she will stop at nothing to ensure the security of her world.
+| difficulty = Hard
+| melee = True
+| health = 2021
+| healthRegen = 4.211
+| resource = 500
+| resourceType = Mana
+| armor = 0
+| attackSpeed = 1.11
+| attackRange = 1.5
+| attackDamage = 145
+| icon = 
+| healthScaling = 0.04
+| regenScaling = 0.04
+| adamageScaling = 0.04
+| unitRadius = 0.75
+| skills = 
+Vault of the Wardens;Trait;File:Vault of the Wardens_Icon.png;Leap into the air, becoming immune to all hostile effects for 0.75 seconds.<p>After reaching level 20, Vault of the Wardens gain an additional charge.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|props=[[Protected]], [[Unstoppable]], Untargetable by AoE, Untargetable by Skillshots<!--
+-->|cast=Instant<!--
+-->|notes=<li>Maiev is able to move normally, but cannot attack or use her Abilities during ''Vault of the Wardens''.<li>Unit targeted Abilities can target and hit Maiev during ''Vault of the Wardens''.<li>Blinds do not get removed, even though there is an Unstoppable flag.<li>Slows get removed.<li>Basic Attacks can target Maiev, but will miss on impact due to the [[Evasion]] provided by Protected status.}};13 / 0.75;;trait;False
+
+Fan of Knives;Q;File:Fan of Knives_Icon.png;Deal 152 damage to enemies in a crescent area.<p> Hitting at least 2 enemy Heroes with Fan of Knives reduces its cooldown to 0.5 seconds, and refunds its Mana cost.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point Target<!--
+-->|props=[[Area of Effect]], [[Clamping]]<!--
+-->|cast=0.1 + 0 seconds<!--
+-->|range=7.25<!--
+-->|aoe=Crescent <sup>(1</sup><!--
+-->|radius=3.5<!--
+-->|prop1=Offset|val1=1.8<!--
+-->|notes=<li><sup>1)</sup> Crescent is created by overlapping two circles of the same radius. The one drawing the outer edge is centered on the target point and the inner one is offset toward Maiev.}};4;30;;False
+
+Umbral Bind;W;File:Umbral Bind_Icon.png;Maiev's next Basic Attack cleaves and applies a tether to enemy Heroes hit for 2.5 seconds. If a tethered Hero moves too far from Maiev, they are pulled toward her, dealing 110 damage and breaking the tether.<!--
+-->{{undoc-x|type=Physical Damage (splash) / Spell Damage (pull), Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies / Enemy Heroes<!--
+-->|target=No target<!--
+-->|props=[[Attack Modifier]], Primed, [[Pull]], [[Splash]], [[Stun]]<!--
+-->|cast=Instant<!--
+-->|aoe=Radial<!--
+-->|radius=<br/>- Cleave: 4.25<br/>- Tether: 5.125<!--
+-->|arc=220 degrees (cleave)<!--
+-->|prop1=Pull duration|val1=0.25 seconds<!--
+-->|prop2=Pull speed|val2=35<!--
+-->|notes=<li>Cleave damages all enemies, but only Heroes are tethered.<li>Affected Heroes are always pulled a set distance upon the tether breaking, regardless of Maiev's position.<li>Pulled Heroes are Stunned for 0.25 seconds after the pull ends.<li>Cooldown starts once the Ability is triggered by attacking an enemy.<li>Activating <i>Umbral Bind</i> immediately resets Maiev's Basic Attack cooldown.}};14;55;;False
+
+Spirit of Vengeance;E;File:Spirit of Vengeance_Icon.png;Send a shadow of Maiev outward that will return to its cast location, dealing 150 damage to enemies along both paths. If an enemy Hero is hit, reduce the cooldown by 4 seconds.<!--
+-->{{undoc-x|type=Spell Damage / Movement: [[Teleport]]<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies / Self<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Clamping]]<!--
+-->|cast=0.1 + 0 seconds<!--
+-->|range=11<!--
+-->|hitbox=3.0 x 1.5<!--
+-->|missile=10.5<!--
+-->|prop1=Reactivate|val1=''Blink'' - Teleport to the Spirit of Vengeance, consuming it.<!--
+-->|notes=<li>Cooldown reduction can trigger only once per cast.}};13 / 0.1;50;;False
+
+Containment Disc ;R;File:Containment Disc_Icon.png;Throw a glaive in the target direction. If an enemy Hero is hit, Containment Disc can be reactivated to remove their vision and Time Stop them for 4 seconds. Leaving containment Silences the enemy Hero for 1.5 seconds.<p>Containment Disc automatically activates 6 seconds after hitting a Hero.<!--
+-->{{undoc-x|type=Crowd control, Status effect<!--
+-->|affects=Enemy Heroes<!--
+-->|target=Point target<!--
+-->|props=[[Clamping]], [[Time Stop]], [[Silence]], [[Skillshot]]<!--
+-->|cast=0.1 + 0 seconds<!--
+-->|range=11<!--
+-->|hitbox=2.0 x 1.5<!--
+-->|missile=13.5<!--
+-->|prop1=Reactivate|val1=''Contain'' - Activate to remove the target's vision and Time Stop them for 4 seconds.<!--
+-->|notes=}};40;50;heroic;False
+
+Warden's Cage;R;File:Warden's Cage_Icon.png;Summon 8 Warden Avatars as a cage around Maiev. After 1.5 seconds, enemy Heroes that come in contact with an Avatar consume it and are knocked to the center of the cage.<p> Warden Avatars last 5 seconds.<!--
+-->{{undoc-x|type=Crowd control<!--
+-->|affects=Enemy Heroes<!--
+-->|target=No target<!--
+-->|props=[[Knockback]]<!--
+-->|cast=Instant<!--
+-->|aoe=Circle<!--
+-->|radius=5.5<!--
+-->|notes=<li>Warden avatars have no collision.<li>Affected Heroes are pushed until they are within 0.1 range of the cage's center.}};100;80;heroic;False;
+
+| talents = <!-- LEVEL 1 -->
+Bonds of Justice;1;1;{{quest|Each tether applied to a secondary target of Umbral Bind permanently increases Umbral Bind's pull damage by 15.|After applying 5 tethers to secondary targets, increase Umbral Bind's pull damage by 75.}}<p>{{Reward|After applying 10 tethers to secondary targets, increase Umbral Bind's cleave damage by 30%.}}<!--
+-->{{undoc-x|type=Bonus damage (pull) / Offensive damage modifier (cleave)<!--
+-->|scaling=-<!--
+-->|affects=Enemy Heroes / Enemies<!--
+-->|notes=<li>Cleave damage bonus stacks additively with other offensive damage modifiers affecting Maiev's Basic Attack damage.<li>Continues granting bonus damage after achieving all quest rewards.}};File:Bonds_of_Justice_Icon.png;
+
+Pursuit of Vengeance;1;2;Each Hero tethered by Umbral Bind reduces the cooldown of Spirit of Vengeance by 2.5 seconds and each Hero hit by Spirit of Vengeance reduces the cooldown of Umbral Bind by 1 second.<!--
+-->{{undoc-x|nohr=1<!--
+-->|notes=<li><i>Spirit of Vengeance</i> triggers cooldown reduction on both paths for each Hero.}};File:Pursuit_of_Vengeance_Icon.png;
+
+Naisha's Memento;1;3;{{Active}} Activate to make primary Basic Attacks bounce between nearby enemies up to 2 times. Lasts 8 seconds.<p>Recharge Naisha's Memento by hitting at least 2 Heroes with a single Fan of Knives.<!--
+-->{{undoc-x|type=Physical Damage<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|props=[[Attack Modifier]], [[Bounce]]<!--
+-->|cast=Instant<!--
+-->|radius=4.25 (bounce)<!--
+-->|missile=18.75<!--
+-->|notes=<li>Basic Attacks empowered by <i>Naisha's Memento</i> will not bounce if Maiev is [[Blind]]ed or if the primary target is [[evasion|Evading]].<li><i>Naisha's Memento</i> can only bounce to visible enemies.<li>Bounces prioritize Heroes, then the closest enemies.<li>Attacks can bounce back to the initial target, but only if no other valid targets are within their range.<li>Attacks will not bounce to unaggroed Mercenaries.}};File:Naisha's_Memento_Icon.png;
+
+<!-- LEVEL 4 -->
+Pin Down;2;1;{{quest|Hit 3 enemy Heroes with a single Fan of Knives.|Increase Fan of Knives's damage by 35%.}}<p>{{Reward|Each additional time 3 enemy Heroes are hit by a single Fan of Knives, gain an additional 5% damage, up to 50%.}}<p>{{Reward|Hit 4 enemy Heroes with a single Fan of Knives to instantly gain all Rewards.}}<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|notes=<li>Damage bonus stacks additively with itself and other offensive damage modifiers that can affect <i>Fan of Knives</i>'s damage.}};File:Pin_Down_Icon.png;
+
+Blade Dance;2;2;Using Fan of Knives deals 50 Physical Damage to enemies around Maiev.<!--
+-->{{undoc-x|type=Physical Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|props=[[Area of Effect]]<!--
+-->|aoe=Circle<!--
+-->|radius=3.5<!--
+-->|notes=<li><i>Blade Dance</i>'s damage is dealt after all other immediate effects of <i>Fan of Knives</i>.}};File:Blade_Dance_Icon.png;
+
+Sudden Vengeance;2;3;After Blinking with Spirit of Vengeance the shadow explodes, damaging all nearby enemy Heroes for 6% of their maximum Health.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=-<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Area of Effect]], [[Percent Damage]]<!--
+-->|radius=3.5<!--
+-->|notes=<li>Bonus damage is dealt in a separate instance.}};File:Sudden_Vengeance_Icon.png;
+
+<!-- LEVEL 7 -->
+Elune's Wrath;3;1;Hitting at least 2 Heroes with a single Fan of Knives causes the next Fan of Knives to drop a star on targets that deals 77 damage when it impacts.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|prop1=Delay|val1=0.4375 seconds <sup>(1</sup><!--
+-->|notes=<li><sup>1)</sup> Delay is increased by a random value from 0 to 0.1875 seconds.<li><i>Elune's Wrath</i> does not interact with talents specifically affecting <i>Fan of Knives</i>.}};File:Elune's_Wrath_Icon.png;
+
+Bonds of Corruption;3;2;Enemy Heroes pulled by Umbral Bind have their Armor reduced by 15 and are Slowed by 25% for 3 seconds.<!--
+-->{{undoc-x|type=Crowd control, Defensive damage modifier<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Armor reduction]], [[Slow]]<!--
+-->|notes=<li>Does not stack with other negative Armor effects. Other defensive damage modifiers may stack.}};File:Bonds_of_Corruption_Icon.png;
+
+Ruthless Spirit;3;3;Each enemy Hero hit by Spirit of Vengeance increases all of Maiev's damage by 15% for 4 seconds, stacking up to 30%.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Self<!--
+-->|notes=<li>Damage bonus stacks additively with itself and other offensive damage modifiers that can affect damage from Maiev's Abilities, Talents and Basic Attacks.}};File:Ruthless_Spirit_Icon.png;
+
+<!-- LEVEL 10 -->
+Containment Disc;4;1;{{Cooldown|40}}<br>Throw a glaive in the target direction. If an enemy Hero is hit, Containment Disc can be reactivated to remove their vision and Time Stop them for 4 seconds. Leaving containment Silences the enemy Hero for 1.5 seconds.<p>Containment Disc automatically activates 6 seconds after hitting a Hero.;File:Containment_Disc_Icon.png;
+Warden's Cage;4;2;{{Cooldown|100}}<br>Summon 8 Warden Avatars as a cage around Maiev. After 1.5 seconds, enemy Heroes that come in contact with an Avatar consume it and are knocked to the center of the cage.<p> Warden Avatars last 5 seconds.;File:Warden's_Cage_Icon.png;
+
+<!-- LEVEL 13 -->
+Bladed Armor;5;1;Each enemy Hero hit by Fan of Knives grants 5 Armor for 5 seconds, up to 20 Armor.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Armor]]<!--
+-->|notes=<li>Stacks additively with itself, but not with other positive Armor effects. Other defensive damage modifiers may stack.}};File:Bladed_Armor_Icon.png;
+
+Chain Gang;5;2;Tethering at least 2 enemy Heroes with Umbral Bind grants 35 Armor for 4 seconds.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Armor]]<!--
+-->|notes=<li>Does not stack with other positive Armor effects. Other defensive damage modifiers may stack.}};File:Chain_Gang_Icon.png;
+
+Shadow Armor;5;3;Blink grants 20 Armor for 3.5 seconds. Maiev's Basic Attacks against enemy Heroes refresh this duration.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Armor]]<!--
+-->|notes=<li>Does not stack with other positive Armor effects. Other defensive damage modifiers may stack.}};File:Shadow_Armor_Icon.png;
+
+<!-- LEVEL 16 -->
+Vengeful Knives;6;1;Dealing damage to enemy Heroes causes the next cast of Fan of Knives that hits enemy Heroes to deal 1% maximum Health as bonus damage, up to 5%.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=-<!--
+-->|props=[[Percent Damage]]<!--
+-->|affects=Enemy Heroes<!--
+-->|notes=<li>Effect triggers and consumes gathered stacks only when ''Fan of Knives'' hits an enemy Hero.<li>Bonus damage is dealt in a separate instance. Regardless, <i>Vengeful Knives</i> does not grant double benefit for enemies hit by both the base and bonus damage. After <i>Fan of Knives</i> has been cast, Maiev gains stacks equal to the number of enemy Heroes affected.<li>Only damage from Maiev's Basic Attacks, Abilities or Talents grants stacks of <i>Vengeful Knives</i>.<li>''Blade Dance'' does not give any progress for this Talent, if any enemy Heroes were hit with ''Fan of Knives'' in the same cast.}};File:Vengenful_Knives_Icon.png;
+
+Cruel Chain;6;2;Umbral Bind grants 25% Movement Speed for 2.5 seconds. In addition, each time Maiev deals damage to tethered targets, Umbral Bind’s pull damage to all targets is increased by 30%, up to 150%.<!--
+-->{{undoc-x|type=Status effect / Offensive damage modifier<!--
+-->|affects=Self / Ability<!--
+-->|props=[[Movement Speed]]<!--
+-->|notes=<li>Stacks are reset each cast.<li>Only damage from Maiev's attacks, Abilities or Talents grants stacks of <i>Cruel Chain</i>.<li>Damage bonus stacks additively with itself and other offensive damage modifiers that can affect <i>Umbral Bind</i>'s pull damage.}};File:Cruel_Chain_Icon.png;
+
+Armored Assault;6;3;While Maiev has Armor of any kind, all Physical Damage dealt is increased by 25%.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Self<!--
+-->|notes=<li>Maiev's total Physical or Spell Armor has to be above 0 to trigger the effect.<li>Damage bonus stacks additively with other offensive damage modifiers that can affect Physical Damage from Maiev's Abilities, Talents and Basic Attacks.}};File:Armored_Assault_Icon.png;
+
+<!-- LEVEL 20 -->
+Shadow Orb: Vengeance;7;1;{{Active}} Activate to reset the cooldown of Spirit of Vengeance.<p>Recharge Shadow Orb by damaging enemy Heroes with Spirit of Vengeance 5 times.<!--
+-->{{undoc-x|type=Active<!--
+-->|affects=Ability<!--
+-->|target=No target<!--
+-->|cast=Instant<!--
+-->|notes=}};File:Shadow_Orb_Vengeance_Icon.png;
+
+Shadow Orb: Huntress;7;2;{{Active}} Activate to increase Movement Speed and Attack Speed by 40% for 5 seconds.<p>Recharge Shadow Orb by dealing Physical Damage to enemy Heroes 10 times.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|props=[[Attack Speed]], [[Movement Speed]]<!--
+-->|cast=Instant<!--
+-->|notes=<li>Attack Speed bonus stacks additively with other effects that can affect Maiev's Attack Speed.}};File:Shadow_Orb_Huntress_Icon.png;
+
+Shadow Orb: Shadow Strike;7;3;{{Active}} Activate to deal 75 damage to an enemy Hero, Slowing them by 30% and reducing their Armor by 20 for 4 seconds.<p>Recharge Shadow Orb by dealing Spell Damage to enemy Heroes 10 times.<!--
+-->{{undoc-x|type=Spell Damage, Defensive damage modifier, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemy Heroes<!--
+-->|target=Unit target<!--
+-->|props=[[Armor reduction]], [[Slow]]<!--
+-->|cast=0.1 + 0 seconds<!--
+-->|range=6.0<!--
+-->|missile=21<!--
+-->|notes=<li>Damage from <i>Shadow Orb: Shadow Strike</i> itself grants one stack toward its recharge counter.<li>Bonus damage instances from <i>Vengeful Knives</i> do grant recharge progress.<li>Does not stack with other negative Armor effects. Other defensive damage modifiers may stack.}};File:Shadow_Orb_Shadow_Strike_Icon.png;
+}}

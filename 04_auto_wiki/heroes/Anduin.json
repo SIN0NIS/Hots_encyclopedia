@@ -1,0 +1,604 @@
+{
+  "hero": "Anduin",
+  "abilities": [
+    {
+      "name": "Leap of Faith",
+      "hotkey": "TRAIT",
+      "icon": "Leap of Faith Icon.png",
+      "description": "Faith instantly pulls an allied Hero to Anduin's location, granting them Unstoppable while they travel. Pursued By Grace Basic Attacks against enemy Heroes heal the lowest Health allied Hero near Anduin for 32.; 70; trait",
+      "fields": {
+        "type": "Healing",
+        "affects": "Allied Heroes",
+        "target": "Automatic (lowest Health)",
+        "props": "Pull, Unstoppable",
+        "cast": "0.05 + 0.05 seconds",
+        "range": "10",
+        "prop1": "Pull speed",
+        "val1": "37",
+        "notes": "Pulled allied Heroes are Dazed for 0.125 seconds, interrupting stationary channeled abilities, dashes and launches. If the pulled ally gets Time Stopped, they will continue to be pulled to the cast location of Leap of Faith once the debuff expires.",
+        "scaling": "4.00%",
+        "aoe": "Circle",
+        "radius": "6.5"
+      }
+    },
+    {
+      "name": "Flash Heal",
+      "hotkey": "Q",
+      "icon": "Flash Heal Icon.png",
+      "description": "Cast for 0.75 seconds to heal an allied Hero for 280.",
+      "fields": {
+        "type": "Healing",
+        "scaling": "4.00%",
+        "affects": "Allied Heroes, Self",
+        "target": "Unit target",
+        "cast": "0.75 + 0 seconds",
+        "range": "9.0",
+        "notes": "Flash Heal does not go on cooldown if it is interrupted during its cast time. Cast is interrupted if target ally moves more than 4.5 units past Flash Heal 's cast range. Anduin can cancel the cast by issuing a 'stop' or 'move' command.",
+        "cooldown": "5",
+        "cost": "20"
+      }
+    },
+    {
+      "name": "Divine Star",
+      "hotkey": "W",
+      "icon": "Divine Star Icon.png",
+      "description": "Send light that deals 140 damage to enemies and then returns to Anduin, healing allied Heroes for 130 in a wider path. Healing increases by 25% per enemy Hero hit.",
+      "fields": {
+        "type": "Spell Damage (initial) / Healing (return)",
+        "scaling": "4.00% (both)",
+        "affects": "Enemies (initial)/ Allied Heroes, Self (return)",
+        "target": "Point target",
+        "props": "Piercing Skillshot",
+        "cast": "0.1 + 0 seconds",
+        "range": "10.25",
+        "aoe": "- Initial: Square - Return: Circle",
+        "radius": "3.5 (return)",
+        "hitbox": "2.25 x 2.25 (initial)",
+        "missile": "- Initial: 15 - Return: 12",
+        "notes": "Allies can be hit by the returning missile of Divine Star multiple times within the same cast as long as there is at least 1.5 seconds between the hits. If Anduin dies or teleports (e.g. using a portal), Divine Star returns to Anduin's location before the event.",
+        "cooldown": "10",
+        "cost": "50"
+      }
+    },
+    {
+      "name": "Chastise",
+      "hotkey": "E",
+      "icon": "Chastise Icon.png",
+      "description": "Shove a swell of light forward, dealing 175 damage to the first enemy Hero hit and Rooting them for 1.25 seconds.",
+      "fields": {
+        "type": "Spell Damage, Crowd control",
+        "scaling": "4.00%",
+        "affects": "Enemy Heroes",
+        "target": "Point target",
+        "props": "Root, Skillshot",
+        "cast": "0.2 + 0.05 seconds",
+        "range": "10.85",
+        "aoe": "Arc (hitbox)",
+        "width": "1.25",
+        "arc": "20 degrees",
+        "missile": "5.0",
+        "cooldown": "9",
+        "cost": "40"
+      }
+    },
+    {
+      "name": "Holy Word: Salvation",
+      "hotkey": "R",
+      "icon": "Holy Word- Salvation Icon.png",
+      "description": "After 0.5 seconds, channel to invoke the Light for 3 seconds. While nearby, allied Heroes heal for up to 30% of their max Health and are Protected.; 80; 70; heroic",
+      "fields": {
+        "type": "Healing, Status Effect",
+        "scaling": "-",
+        "affects": "Allied Heroes, Self",
+        "target": "No target",
+        "props": "Area of Effect, Channeled cast (stationary), Stationary channel, Protected",
+        "cast": "0.5 (ch)+ Ch + 0 seconds",
+        "aoe": "Circle",
+        "radius": "6.25",
+        "tickrate": "- Ally search: 16.0 per second (x48) - Protected: 8.0 per second (x24) - Healing: 4.0 per second (x12)",
+        "prop1": "Healing per tick",
+        "val1": "2.5%",
+        "notes": "Interrupting the Ability during its windup puts it on a 10-second cooldown. Anduin can reactivate the ability after 0.5 seconds to end its effect early."
+      }
+    },
+    {
+      "name": "Lightbomb",
+      "hotkey": "R",
+      "icon": "Lightbomb Icon.png",
+      "description": "Imbue an allied Hero with the Light. After 1.5 seconds, it explodes, dealing 150 damage to enemies and Stunning them for 1.25 seconds. The target gains a Shield that absorbs 165 damage per enemy Hero hit. Lasts for 5 seconds.; 60; 70; heroic",
+      "fields": {
+        "type": "Spell Damage, Crowd control / Shield",
+        "scaling": "4.00% (both)",
+        "affects": "Enemies / Allied Heroes",
+        "target": "Unit target",
+        "props": "Area of Effect, Stun",
+        "cast": "Instant",
+        "range": "8.0",
+        "aoe": "Circle",
+        "radius": "4.5",
+        "notes": "Lightbomb is canceled and put on full cooldown if the Hero carrying it dies before it triggers. If the Hero carrying Lightbomb is put in Stasis or removed from the battleground it will go off at their tracked location. Lightbomb 's timer is paused if the Hero carrying it is put in Time Stop."
+      }
+    }
+  ],
+  "talents": [
+    {
+      "name": "Evenhanded Blessings",
+      "tier": "1",
+      "slot": "1",
+      "icon": "Evenhanded Blessings Icon.png",
+      "description": "If Flash Heal is cast on a different target from its last, increase its healing by 15% and refund 40% of its cooldown.",
+      "fields": {
+        "type": "Healing dealt modifier",
+        "affects": "Ability",
+        "notes": "Bonus stacks additively with other healing dealt modifiers that can affect Flash Heal and multiplicatively with modifiers that affect healing received by the target."
+      },
+      "_raw_fields": [
+        "Evenhanded Blessings",
+        "1",
+        "1",
+        "If Flash Heal is cast on a different target from its last, increase its healing by 15% and refund 40% of its cooldown.",
+        "File:Evenhanded Blessings Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Power Word: Shield",
+      "tier": "1",
+      "slot": "2",
+      "icon": "Power World- Shield Icon.png",
+      "description": "While Divine Star is traveling out, allies in its path gain a Shield that absorbs 128 damage over 4 seconds. If Divine Star hits an enemy Hero, Anduin gains a Shield that absorbs 185 damage for 4 seconds.",
+      "fields": {
+        "type": "Shield",
+        "scaling": "4.00%",
+        "affects": "Self",
+        "notes": "Multiple hits do not grant more Shields. Shields do not stack with themselves."
+      },
+      "_raw_fields": [
+        "Power Word: Shield",
+        "1",
+        "2",
+        "While Divine Star is traveling out, allies in its path gain a Shield that absorbs 128 damage over 4 seconds. If Divine Star hits an enemy Hero, Anduin gains a Shield that absorbs 185 damage for 4 seconds.",
+        "File:Power World- Shield Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Lightwell",
+      "tier": "1",
+      "slot": "3",
+      "icon": "Lightwell Icon.png",
+      "description": "Cooldown 75 Summon a Lightwell that periodically heals a nearby allied Hero for 50. The well only fades after healing 15 times or when recast. This cooldown is reduced by 1 second each time Anduin heals an allied Hero.",
+      "fields": {
+        "type": "Healing",
+        "scaling": "4.00%",
+        "affects": "Allied Heroes, Self",
+        "target": "Point target",
+        "props": "Summon figment",
+        "cast": "0.1 + 0 seconds",
+        "range": "8.0",
+        "radius": "3.75",
+        "tickrate": "5.33 per second (x15)",
+        "prop1": "Spawn delay",
+        "val1": "0.25 seconds",
+        "notes": "Lightwell 's healing cannot target the same ally more frequently than once every 0.875 seconds. Lightwell 's cooldown reduction also triggers from self-healing, including healing from Regeneration Globes and Healing Fountains."
+      },
+      "_raw_fields": [
+        "Lightwell",
+        "1",
+        "3",
+        "Cooldown 75 Summon a Lightwell that periodically heals a nearby allied Hero for 50. The well only fades after healing 15 times or when recast. This cooldown is reduced by 1 second each time Anduin heals an allied Hero.",
+        "File:Lightwell Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Moral Compass",
+      "tier": "2",
+      "slot": "1",
+      "icon": "Moral Compass Icon.png",
+      "description": "Divine Star fires Basic Attacks at Heroes close to its apex. passive Increase Attack Range by 1.1.",
+      "fields": {
+        "type": "Physical Damage",
+        "scaling": "4.00%",
+        "affects": "Enemy Heroes",
+        "target": "Automatic",
+        "aoe": "Circle",
+        "radius": "3.0",
+        "notes": "Moral Compass interacts with all Talents affecting Anduin's Basic Attacks. Moral Compass Basic Attacks will miss if Anduin is Blinded or if the target is Evading."
+      },
+      "_raw_fields": [
+        "Moral Compass",
+        "2",
+        "1",
+        "Divine Star fires Basic Attacks at Heroes close to its apex. passive Increase Attack Range by 1.1.",
+        "File:Moral Compass Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Surge of Light",
+      "tier": "2",
+      "slot": "2",
+      "icon": "Surge_of_Light_(Anduin)_Icon.png",
+      "description": "Basic Attacks reduce the cooldown of Chastise by 0.75 seconds. Basic Attacks against Heroes Rooted by Chastise launch an additional Basic Attack and restore 25 Mana.",
+      "fields": {
+        "type": "Physical Damage / Mana restoration",
+        "scaling": "-",
+        "affects": "Enemies / Self",
+        "props": "Attack Modifier",
+        "notes": "The additional Basic Attack is fired at the Rooted target. The additional Basic Attack has the same properties as Anduin's regular Basic Attack."
+      },
+      "_raw_fields": [
+        "Surge of Light",
+        "2",
+        "2",
+        "Basic Attacks reduce the cooldown of Chastise by 0.75 seconds. Basic Attacks against Heroes Rooted by Chastise launch an additional Basic Attack and restore 25 Mana.",
+        "File:Surge_of_Light_(Anduin)_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Piercing Light",
+      "tier": "2",
+      "slot": "3",
+      "icon": "Piercing_Light_Icon.png",
+      "description": "Chastise pierces to hit an additional Hero. questonly Hitting two Heroes with a single Chastise permanently increases Spell Power by 1%, to a maximum of 10%.",
+      "fields": {
+        "type": "Healing dealt modifier, Offensive damage modifier",
+        "affects": "Self",
+        "props": "Spell Power",
+        "notes": "Spell Power from Piercing Light stacks additively with itself and other sources of Spell Power as well as other offensive damage modifiers and healing dealt modifiers affecting Anduin."
+      },
+      "_raw_fields": [
+        "Piercing Light",
+        "2",
+        "3",
+        "Chastise pierces to hit an additional Hero. questonly Hitting two Heroes with a single Chastise permanently increases Spell Power by 1%, to a maximum of 10%.",
+        "File:Piercing_Light_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Binding Heal",
+      "tier": "3",
+      "slot": "1",
+      "icon": "Binding Heal Icon.png",
+      "description": "Casting Flash Heal on an ally heals Anduin for 135.",
+      "fields": {
+        "type": "Healing",
+        "scaling": "4.00%",
+        "affects": "Self",
+        "notes": "This heal does not benefit from Talents affecting Flash Heal."
+      },
+      "_raw_fields": [
+        "Binding Heal",
+        "3",
+        "1",
+        "Casting Flash Heal on an ally heals Anduin for 135.",
+        "File:Binding Heal Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Blessed Recovery",
+      "tier": "3",
+      "slot": "2",
+      "icon": "Blessed Recovery Icon.png",
+      "description": "If Anduin loses more than 8% of his maximum Health at once, recover 15% Health over 3 seconds. This effect has a 10 second cooldown. Current Health required: 133",
+      "fields": {
+        "type": "Healing",
+        "scaling": "-",
+        "affects": "Self",
+        "props": "Heal over Time",
+        "tickrate": "1.0 per second (x3)"
+      },
+      "_raw_fields": [
+        "Blessed Recovery",
+        "3",
+        "2",
+        "If Anduin loses more than 8% of his maximum Health at once, recover 15% Health over 3 seconds. This effect has a 10 second cooldown. Current Health required: 133",
+        "File:Blessed Recovery Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Desperate Prayer",
+      "tier": "3",
+      "slot": "3",
+      "icon": "Desperate Prayer Icon.png",
+      "description": "Cooldown 35 Activate to instantly heal an allied Hero for 375, but kneel for 2 seconds, unable to act.",
+      "fields": {
+        "type": "Healing",
+        "scaling": "4.00%",
+        "affects": "Allied Heroes, Self",
+        "target": "Unit target",
+        "cast": "0 + 2.0 seconds",
+        "range": "9.0"
+      },
+      "_raw_fields": [
+        "Desperate Prayer",
+        "3",
+        "3",
+        "Cooldown 35 Activate to instantly heal an allied Hero for 375, but kneel for 2 seconds, unable to act.",
+        "File:Desperate Prayer Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Holy Word: Salvation",
+      "tier": "4",
+      "slot": "1",
+      "icon": "Holy Word- Salvation Icon.png",
+      "description": "Cooldown 80 After 0.5 seconds, channel to invoke the Light for 3 seconds. While nearby, allied Heroes heal for up to 30% of their max Health and are Protected.",
+      "fields": {},
+      "_raw_fields": [
+        "Holy Word: Salvation",
+        "4",
+        "1",
+        "Cooldown 80 After 0.5 seconds, channel to invoke the Light for 3 seconds. While nearby, allied Heroes heal for up to 30% of their max Health and are Protected.",
+        "File:Holy Word- Salvation Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Lightbomb",
+      "tier": "4",
+      "slot": "2",
+      "icon": "Lightbomb Icon.png",
+      "description": "Cooldown 60 Imbue an allied Hero with the Light. After 1.5 seconds, it explodes, dealing 150 damage to enemies and Stunning them for 1.25 seconds. The target gains a Shield that absorbs 165 damage per enemy Hero hit. Lasts for 5 seconds.",
+      "fields": {},
+      "_raw_fields": [
+        "Lightbomb",
+        "4",
+        "2",
+        "Cooldown 60 Imbue an allied Hero with the Light. After 1.5 seconds, it explodes, dealing 150 damage to enemies and Stunning them for 1.25 seconds. The target gains a Shield that absorbs 165 damage per enemy Hero hit. Lasts for 5 seconds.",
+        "File:Lightbomb Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Speed of the Pious",
+      "tier": "5",
+      "slot": "1",
+      "icon": "Speed of the Pious Icon.png",
+      "description": "While Divine Star is traveling, gain 30% Movement Speed. Each allied Hero healed by Divine Star on its return to Anduin reduces its cooldown by 1 second.",
+      "fields": {
+        "type": "Status effect",
+        "affects": "Self",
+        "props": "Movement Speed",
+        "notes": "Anduin himself does not trigger the cooldown reduction."
+      },
+      "_raw_fields": [
+        "Speed of the Pious",
+        "5",
+        "1",
+        "While Divine Star is traveling, gain 30% Movement Speed. Each allied Hero healed by Divine Star on its return to Anduin reduces its cooldown by 1 second.",
+        "File:Speed of the Pious Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Push Forward!",
+      "tier": "5",
+      "slot": "2",
+      "icon": "Push_Forward!_Icon.png",
+      "description": "Damaging an enemy Hero increases Movement Speed by 2.5% and the amount healed by Pursued by Grace by 5% for 6 seconds. These effects stack up to 8 times.",
+      "fields": {
+        "type": "Status effect, Healing dealt modifier",
+        "affects": "Self",
+        "props": "Movement Speed",
+        "notes": "Healing bonus stacks additively with other healing dealt modifiers that can affect Pursued by Grace."
+      },
+      "_raw_fields": [
+        "Push Forward!",
+        "5",
+        "2",
+        "Damaging an enemy Hero increases Movement Speed by 2.5% and the amount healed by Pursued by Grace by 5% for 6 seconds. These effects stack up to 8 times.",
+        "File:Push_Forward!_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Enchanted Boots - Lion's Speed",
+      "tier": "5",
+      "slot": "3",
+      "icon": "Enchanted Boots - Lion's Speed Icon.png",
+      "description": "Gain 5% Movement Speed. This bonus is quadrupled while Leap of Faith's cooldown is available. Allies pulled by Leap of Faith are healed for 280 over 4 seconds.",
+      "fields": {
+        "type": "Status effect / Healing",
+        "scaling": "4.00%",
+        "affects": "Self / Allied Heroes",
+        "props": "Heal over Time, Movement Speed",
+        "tickrate": "1.0 per second (x4)",
+        "prop1": "Healing per tick",
+        "val1": "70",
+        "notes": "Heal over time is applied upon cast."
+      },
+      "_raw_fields": [
+        "Enchanted Boots - Lion's Speed",
+        "5",
+        "3",
+        "Gain 5% Movement Speed. This bonus is quadrupled while Leap of Faith's cooldown is available. Allies pulled by Leap of Faith are healed for 280 over 4 seconds.",
+        "File:Enchanted Boots - Lion's Speed Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Renew",
+      "tier": "6",
+      "slot": "1",
+      "icon": "Renew Icon.png",
+      "description": "Flash Heal heals for an additional 180 over 6 seconds. The duration of this heal is refreshed each time Anduin hits an enemy Hero with a Basic Attack.",
+      "fields": {
+        "type": "Healing",
+        "scaling": "4.00%",
+        "props": "Heal over time, Attack Modifier",
+        "tickrate": "1.0 per second (x5)",
+        "prop1": "Healing per tick",
+        "val1": "30"
+      },
+      "_raw_fields": [
+        "Renew",
+        "6",
+        "1",
+        "Flash Heal heals for an additional 180 over 6 seconds. The duration of this heal is refreshed each time Anduin hits an enemy Hero with a Basic Attack.",
+        "File:Renew Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Holy Nova",
+      "tier": "6",
+      "slot": "2",
+      "icon": "Holy Nova Icon.png",
+      "description": "After Anduin catches Divine Star, it explodes, healing nearby allied Heroes for 105 and damaging enemies for 150.",
+      "fields": {
+        "type": "Spell Damage / Healing",
+        "scaling": "4.00% (both)",
+        "affects": "Enemies / Allied Heroes, Self",
+        "props": "Area of Effect",
+        "aoe": "Circle",
+        "radius": "4.0"
+      },
+      "_raw_fields": [
+        "Holy Nova",
+        "6",
+        "2",
+        "After Anduin catches Divine Star, it explodes, healing nearby allied Heroes for 105 and damaging enemies for 150.",
+        "File:Holy Nova Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Glyph of Faith",
+      "tier": "6",
+      "slot": "3",
+      "icon": "Glyph of Faith Icon.png",
+      "description": "Leap of Faith gains a 2nd charge.",
+      "fields": {
+        "prop1": "Cooldown between charges",
+        "val1": "0.5 seconds"
+      },
+      "_raw_fields": [
+        "Glyph of Faith",
+        "6",
+        "3",
+        "Leap of Faith gains a 2nd charge.",
+        "File:Glyph of Faith Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Inner Focus",
+      "tier": "6",
+      "slot": "4",
+      "icon": "Inner Focus Icon.png",
+      "description": "Cooldown 20 Active Activate to reset the cooldown of Flash Heal and cause its next cast to heal for 25% more. Damaging enemy Heroes reduces this cooldown by 1 second.",
+      "fields": {
+        "type": "Healing dealt modifier",
+        "affects": "Ability",
+        "target": "No target",
+        "props": "Primed",
+        "cast": "Instant",
+        "notes": "Inner Focus 's cooldown starts immediately upon activation. Inner Focus cannot be activated again until the current buff is triggered by casting Flash Heal. Activating Inner Focus does not dismount. Bonus stacks additively with healing dealt modifiers that can affect Flash Heal and multiplicatively with modifiers that affect healing received by the target."
+      },
+      "_raw_fields": [
+        "Inner Focus",
+        "6",
+        "4",
+        "Cooldown 20 Active Activate to reset the cooldown of Flash Heal and cause its next cast to heal for 25% more. Damaging enemy Heroes reduces this cooldown by 1 second.",
+        "File:Inner Focus Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Light of Stormwind",
+      "tier": "7",
+      "slot": "1",
+      "icon": "Light of Stormwind Icon.png",
+      "description": "Holy Word: Salvation grants allies Invulnerability instead of Protected. This does not affect Anduin. Channeling Holy Word: Salvation for its full duration reduces its cooldown by 60 seconds.",
+      "fields": {
+        "type": "Status effect",
+        "affects": "Allied Heroes",
+        "props": "Invulnerable"
+      },
+      "_raw_fields": [
+        "Light of Stormwind",
+        "7",
+        "1",
+        "Holy Word: Salvation grants allies Invulnerability instead of Protected. This does not affect Anduin. Channeling Holy Word: Salvation for its full duration reduces its cooldown by 60 seconds.",
+        "File:Light of Stormwind Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Inner Fire",
+      "tier": "7",
+      "slot": "2",
+      "icon": "Inner_Fire_Icon.png",
+      "description": "The target of Lightbomb gains 40% Movement Speed and 50 Armor for 3 seconds.",
+      "fields": {
+        "type": "Defensive damage modifier, Status effect",
+        "affects": "Allied Heroes, Self",
+        "props": "Armor, Movement Speed",
+        "notes": "Bonuses are applied immediately upon cast. Does not stack with other positive Armor effects. Other defensive damage modifiers may stack."
+      },
+      "_raw_fields": [
+        "Inner Fire",
+        "7",
+        "2",
+        "The target of Lightbomb gains 40% Movement Speed and 50 Armor for 3 seconds.",
+        "File:Inner_Fire_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Censure",
+      "tier": "7",
+      "slot": "3",
+      "icon": "Censure_Icon.png",
+      "description": "Chastise Stuns for 0.75 seconds and its Root duration is increased by 0.5 seconds.",
+      "fields": {
+        "type": "Crowd control",
+        "affects": "Enemy Heroes",
+        "props": "Stun, Root",
+        "notes": "Stun is applied in addition to Root for the first 0.75 seconds of the duration."
+      },
+      "_raw_fields": [
+        "Censure",
+        "7",
+        "3",
+        "Chastise Stuns for 0.75 seconds and its Root duration is increased by 0.5 seconds.",
+        "File:Censure_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Varian's Legacy",
+      "tier": "7",
+      "slot": "4",
+      "icon": "Varian's Legacy Icon.png",
+      "description": "Basic Attacks burn enemies for 87 damage over 3 seconds and Anduin heals for 50% of the damage dealt.",
+      "fields": {
+        "type": "Spell Damage / Healing",
+        "scaling": "4.00% (damage) / - (heal)",
+        "affects": "Enemies / Self",
+        "props": "Damage over Time, Lifesteal",
+        "tickrate": "1.0 per second (x3)",
+        "prop1": "Damage per tick",
+        "val1": "29",
+        "notes": "The burn DoT does not activate Pursued by Grace."
+      },
+      "_raw_fields": [
+        "Varian's Legacy",
+        "7",
+        "4",
+        "Basic Attacks burn enemies for 87 damage over 3 seconds and Anduin heals for 50% of the damage dealt.",
+        "File:Varian's Legacy Icon.png"
+      ],
+      "level": "20"
+    }
+  ],
+  "other": [],
+  "_unparsed_count": 0
+}

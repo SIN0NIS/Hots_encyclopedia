@@ -1,0 +1,234 @@
+{{hero data
+| name = Medivh
+| date = June 14, 2016 
+| price = 10000
+| title = The Last Guardian
+| role = Support
+| franchise = Warcraft
+| info =  A Support who can negate burst damage and allow his allies to teleport.
+| lore = Under the demon lord Sargeras's influence, Medivh opened the Dark Portal and unleashed the Horde upon Azeroth. To atone for this sin, he rallied a new generation of Heroes to stand against the Burning Legion. Now, he takes this place amongst legends.
+| difficulty = Very Hard
+| melee = False
+| health = 1470
+| healthRegen = 3.0625
+| resource = 500
+| resourceType = Mana
+| armor = 0
+| attackSpeed = 1.11
+| attackRange = 5.5
+| attackDamage = 80
+| healthScaling = 0.044921875
+| regenScaling =  0.044921875
+| adamageScaling = 0.04
+| unitRadius = 0.875
+| icon = File:Medivh_Icon.png
+| skills =
+Raven Form;Trait;File:Raven_Form_Icon.png;Instead of mounting, Medivh can transform into a raven, increasing Movement Speed by 20%. While transformed, Medivh can see and fly over all terrain and is immune to all effects.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|props=Immune to damage, [[Movement Speed]], Untargetable<!--
+-->|prop1=Sight radius|val1=7.0<!--
+-->|notes=<li>Medivh has reduced sight radius during <i>Raven Form</i>.<li>Medivh cannot be targeted by allied or enemy effects while Mounted, but any effects applied beforehand persist for their duration.<li>Using Abilities causes Medivh to leave Raven Form. Medivh cannot leave Raven Form, and thus also cannot use Abilities, while above unpathable [[terrain]].<li>Medivh can pick up and receive [[Regeneration Globe]]s and use [[Healing Fountain]] in <i>Raven Form</i>.<li>Medivh can collect [[Experience Globe]]s while in <i>Raven Form</i>.<li>''Raven Form'' removes Medivh from the ground plane, disjointing certain projectiles.}};;;;False;
+
+Arcane Rift;Q;File:Arcane_Rift_Icon.png;Launch a rift that deals 170 damage to enemies in its path. If an enemy Hero is hit, reduce its cooldown by 5 seconds and refund 50 Mana.<p>{{quest|Hit 40 enemy Heroes with Arcane Rift without dying.|Permanently increases the damage dealt by 75 and cooldown reduction for hitting a Hero by 1 second.}}<!--
+-->{{undoc-x|type=Spell Damage / Bonus damage<!--
+-->|scaling=4.00% (base) / - (quest)<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]]<!--
+-->|cast=0.125 + 0 seconds<!--
+-->|range=10<!--
+-->|hitbox=2.25 x 1.5<!--
+-->|missile=27<!--
+-->|notes=}};7;50;False;
+
+Force of Will;W;File:Force_of_Will_Medivh_Icon.png;Protect an allied Hero from all damage for 1.5 seconds. Upon expiration, Force of Will heals the target 20% of the damage it absorbed.<!--
+-->{{undoc-x|type=Status effect, Healing<!--
+-->|scaling=-<!--
+-->|affects=Allied Heroes, Self<!--
+-->|target=Unit target<!--
+-->|props=[[Protected]]<!--
+-->|cast=Instant<!--
+-->|range=13<!--
+-->|notes=<li>Healing is calculated from the final damage taken, after all [[damage modifier]]s.}};9;60;False;
+
+Portal;E;File:Portal_Icon.png;Create a set of portals between you and the target location, allowing allies to teleport between both. The portals last 6 seconds.<!--
+-->{{undoc-x|type=Invulnerable Summon<!--
+-->|affects=Allied Heroes, Self<!--
+-->|target=Point target<!--
+-->|cast=0.125 + 0.1 seconds<!--
+-->|range=<br/>- Min: 7.0<br/>- Max: 16<!--
+-->|radius=0.5<!--
+-->|notes=<li>Allied Heroes have to perform a 0.25 second [[Channeled Ability#Waygate Channel|Waygate Channel]] to enter the ''Portal''. The channel is interrupted if the target is [[Stun]]ned, [[Root]]ed, [[Daze]]d, put in [[Stasis]] or killed.<li>Active ''Portal''s grant vision in 3.0 radius.<li>If a Hero dies from Area of Effect damage during the Waygate Channel, but it is not otherwise interrupted, the Channel will still complete, which is relevant for Heroes with Special Death States (e.g. Leoric, Uther, Tyrael, Gall if taking ''Psychotic Break'').}};16;65;False;
+
+Poly Bomb;R;File:Poly_Bomb_Icon.png;Polymorph an enemy Hero for 2 seconds, Silencing them and making them unable to attack. On expiration, Poly Bomb spreads to other nearby enemy Heroes.<!--
+-->{{undoc-x|type=Crowd control<!--
+-->|affects=Enemy Heroes<!--
+-->|target=Unit target<!--
+-->|props=[[Area of Effect]], [[Polymorph]]<!--
+-->|cast=0.15 + 0 seconds<!--
+-->|range=7.0<!--
+-->|aoe=Circle<!--
+-->|radius=3.5<!--
+-->|notes=<li><i>Poly Bomb</i> can spread to the same target multiple times, but it cannot spread to enemies that were already carrying it.<li>Polymorph counts as a [[Silence]] effect. Effects that interact with Silences also interact with <i>Poly Bomb</i>.}};40;75;Heroic;False;
+
+Ley Line Seal;R;File:Ley_Line_Seal_Icon.png;After 0.5 seconds, unleash a wave of energy that places enemy Heroes in Time Stop for 3 seconds.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Enemy Heroes<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Channeled cast]] (stationary), [[Time Stop]]<!--
+-->|cast=0.5 (ch) + 0 seconds<!--
+-->|range=14.5<!--
+-->|hitbox=4.0 x 2.9<!--
+-->|missile=9.0<!--
+-->|notes=<li>Interrupting the Ability during its windup puts it on a 10 second cooldown.}};80;75;Heroic;False;
+
+Raven Form (Activate);Z;File:Raven_Form_(Activate)_Icon.png;Transform into a raven, increasing Movement Speed by 20%. While Transformed, Medivh can see and fly over terrain and is immune to all effects.<!--
+-->{{undoc-x|target=No target<!--
+-->|props=[[Channeled Ability#Weak Channel|Weak Channel]] (stationary), Special Mount<!--
+-->|cast=1.5 (ch) + 0 seconds<!--
+-->|notes=<li><i>Raven Form</i> can be reactivated after 1 second to exit it manually.}};4;;Heroic;False;
+
+| talents = <!-- LEVEL 1 -->
+Winds of Celerity;1;1;Increases Raven Form's Movement Speed bonus by 50%.<!--
+-->{{undoc-x|nohr=1<!--
+-->|notes=<li>Increases <i>Raven Form</i>'s Movement Speed bonus to 30%.}};File:Winds_of_Celerity_Icon.png;
+
+Raven's Intellect;1;2;Raven Form increases Medivh's Mana and Health Regeneration by 75%.<!--
+-->{{undoc-x|Bonus Health Regeneration, Bonus Mana regeneration<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|notes=}};File:Raven's_Intellect_Icon.png;
+
+Portal Mastery;1;3;{{Active}}Medivh can manually place both Portal locations and it no longer breaks Raven Form.<p>{{yellowtext|Activate Medivh's Trait to cancel an unliked Portal.}}<!--
+-->{{undoc-x|type=Active<!--
+-->|target=Point target<!--
+-->|cast=Instant<!--
+-->|range=16<!--
+-->|notes=<li>Portals must be placed 7.5 units from each other. Medivh can't place a Portal past its maximum range.<li>Using the Basic Ability to cast the first portal still places the second at Medivh's location.<li>The second portal can be cast at the desired location using either Basic or Active Ability key, but casting with the Active has no cast time. Additionally, the first portal marker remains indefinitely, and Medivh can place the second portal globally so long as it is within the max range of the first indicator.}};File:Portal_Mastery_Icon.png
+
+<!-- LEVEL 4 -->
+Mage Armor;2;1;The first time an Ally uses a Portal, they gain 40 Armor for 5 seconds, reducing the damage taken by 40%.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Allied Heroes, Self<!--
+-->|props=[[Armor]]<!--
+-->|notes=<li>Does not stack with itself nor other positive Armor effects. Other defensive damage modifiers may stack.}};File:Mage_Armor_Icon.png;
+
+Raven Familiar;2;2;A Raven Familiar joins allies each time they use a Portal. The Raven will dive at the ally's next Basic Attack against a Hero within 5 seconds, dealing 114 damage and Slowing them by 30% for 2.5 seconds.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|props=[[Slow]]<!--
+-->|missile=25<!--
+-->|notes=<li>''Raven Familiar'' will not be sent by [[Zul'jin]] if he has the Talent ''No Mercy'' and Basic Attacks a target marked by ''Grievous Throw''.<li>This damage is dealt by the Hero who Basic Attacks, ans therefore subject to their own modifiers on their damage.}};File:Raven_Familiar_Icon.png;
+
+Dust of Appearance;2;3;{{Cooldown|45}}<br>{{Active}} Activate to greatly increase sight range for 5 seconds and reveal enemy Heroes in the area for 8 seconds. Does not cancel Raven Form.<p>{{Passive}} Increase Medivh's sight range while in Raven Form by 25%.<!--
+-->{{undoc-x|type=Vision / Status effect<!--
+-->|scaling=|affects=Self / Enemies<!--
+-->|target=No target<!--
+-->|props=[[Area of Effect]], [[Revealed]]<!--
+-->|cast=Instant<!--
+-->|aoe=Circle<!--
+-->|radius=18<!--
+-->|prop1=Passive bonus vision|val1=1.75<!--
+-->|notes=}};File:Dust_of_Appearance_Icon.png;
+
+<!-- LEVEL 7 -->
+Mystic Assault;3;1;If Arcane Rift hits an enemy Hero, Medivh's next Basic Attack within 6 seconds deals 50% more damage and heals for 50% of the damage dealt.<!--
+-->{{undoc-x|type=Offensive damage modifier, Healing<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|props=[[Attack Modifier]], [[Lifesteal]]<!--
+-->|notes=<li>Can only trigger once per cast.<li>Does not stack with itself.<li>Damage bonus stacks additively with other offensive damage modifiers that can affect Medivh's Basic Attack damage.}};File:Mystic_Assault_Icon.png;
+
+Arcane Explosion;3;2;When Force of Will expires, it deals 80 damage to nearby enemies, plus 50% of the damage it prevented, up to 315 additional damage.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00% (base & cap)<!--
+-->|affects=Enemies<!--
+-->|props=[[Area of Effect]]<!--
+-->|aoe=Circle<!--
+-->|radius=3.5<!--
+-->|notes=}};File:Arcane_Explosion_Icon.png;
+
+Force of Magic;3;3;Preventing at least 268 damage with a single cast of Force of Will grants 30% Spell Power for 15 seconds. Stacks up to 2 times.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|scaling=4.00% (threshold)<!--
+-->|affects=Self<!--
+-->|notes=<li>Can only trigger once per cast.}};File:Force_of_Magic_Icon.png;
+
+<!-- LEVEL 10 -->
+Poly Bomb;4;1;{{Cooldown|40}}<br>Polymorph an enemy Hero for 2 seconds, Silencing them and making them unable to attack. On expiration, Poly Bomb spreads to other nearby enemy Heroes.;File:Poly_Bomb_Icon.png;
+Ley Line Seal;4;2;{{Cooldown|80}}<br>After 0.5 seconds, unleash a wave of energy that places enemy Heroes in Time Stop for 3 seconds.;File:Ley_Line_Seal_Icon.png;
+
+<!-- LEVEL 13 -->
+Circle of Protection;5;1;Force of Will also applies to allies near the target, but its cooldown is increased by 2 seconds.<!--
+-->{{undoc-x|props=[[Area of Effect]]<!--
+-->|aoe=Circle<!--
+-->|radius=3.0<!--
+-->|notes=<li>Each barrier benefits from talents affecting ''Force of Will'' and has its own damage counter.}};File:Circle_of_Protection_Icon.png;
+
+Enduring Will;5;2;Preventing at least 268 damage with Force of Will reduces its cooldown to 4 seconds.<!--
+-->{{undoc-x|scaling=4.00% (threshold)<!--
+-->|notes=}};File:Enduring_Will_Icon.png;
+
+Reabsorption;5;3;Increase the amount of healing from Force of Will to 70% of the damage it absorbed.<!--
+-->{{undoc-x|notes=<li>If an ''Ultimate Evolution'' Clone of Medivh, or another Medivh (e.g. in ARAM) casts ''Force of Will'' on another Medivh, the target Medivh inherits the ''Force of Will'' healing percentage possessed by the source Medivh (that is, according to whether or not they have this Talent, which answer is always no for an ''Ultimate Evolution'' Clone).}};File:Reabsorption_Icon.png;
+
+<!-- LEVEL 16 -->
+Arcane Charge;6;1;When Arcane Rift damages an enemy Hero, the next Arcane Rift deals 15% more damage.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|notes=<li>Can only trigger once per cast.<li>Does not stack with itself.<li>Damage bonus stacks additively with other offensive damage modifiers that can affect <i>Arcane Rift's</i> damage.}};File:Arcane_Charge_Icon.png;
+
+Temporal Flux;6;2;Basic Attacks reduce Medivh's Heroic Ability cooldown by 3%. Each enemy Hero hit by Arcane Rift reduces Medivh's Heroic Ability cooldown by 9%.<!--
+-->{{undoc-x|props=[[Attack Modifier]], Cooldown reduction<!--
+-->|notes=}};File:Temporal_Flux_Medivh_Icon.png;
+
+Stable Portal;6;3;Decrease Portal cooldown by 25% and increase Portal duration by 50%.<!--
+-->{{undoc-x|prop1=Cooldown reduction|val1=4 seconds<!--
+-->|prop2=Bonus duration|val2=3 seconds}};File:Stable_Portal_Icon.png;
+
+<!-- LEVEL 20 -->
+Glyph of Poly Bomb;7;1;Poly Bomb now hits an area, instantly polymorphing enemy Heroes, hitting the same area again 1 second later.<p>Polybomb's duration is reduced to 1 second, and the spread radius is increased by 25%.<!--
+-->{{undoc-x|prop1=Bonus radius|val1=0.875<!--
+-->|range=7.0<!--
+-->|radius=4.5<!--
+-->|notes=}};File:Glyph_of_Poly_Bomb_Icon.png;
+
+Medivh Cheats!;7;2;Increase the duration of the Time Stop by 33% and gain the ability to redirect the wave once while it's active.<!--
+-->{{undoc-x|prop1=Bonus duration|val1=1 second}};File:Medivh_Cheats!_Icon.png
+
+Guardian of Tirisfal;7;3;Minions and Catapults hit by Arcane Rift are instantly killed.<!--
+-->{{undoc-x|type=Instant kill<!--
+-->|affects=Enemy Minions & Catapults}};File:Guardian_of_Tirisfal_Icon.png;
+
+Arcane Brilliance;7;4;{{cooldown|60}}<br />{{Active}} Activate to instantly restore 200 Mana to all nearby allied Heroes and grant them 15% Spell Power for 10 seconds.<!--
+-->{{undoc-x|type=Healing dealt modifier, Offensive damage modifier, Mana restoration<!--
+-->|scaling=-<!--
+-->|affects=Allied Heroes, Self<!--
+-->|target=No target<!--
+-->|props=[[Area of Effect]], [[Spell Power]]<!--
+-->|cast=Instant<!--
+-->|aoe=Circle<!--
+-->|radius=8.0<!--
+-->|notes=<li>Spell Power from <i>Arcane Brilliance</i> stacks additively with other sources of Spell Power as well as other offensive damage modifiers and healing dealt modifiers affecting the target Hero.}};File:Arcane_Brilliance_Icon.png;
+
+Dust of Disappearance;7;5;{{cooldown|10}}<br />{{Active}} Stealth an allied Hero for 40 seconds, making them Unrevealable for the first 0.5 seconds. Remaining stationary for at least 1.5 seconds while Stealthed grants Invisible.<p>Stores up to 2 charges.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Allied Heroes, Self<!--
+-->|target=Unit targe<!--
+-->t|props=[[Stealth]]<!--
+-->|cast=0.1 + 0 seconds<!--
+-->|range=9.0<!--
+-->|notes=<li>There is no cooldown between charges.}};File:Dust_of_Disappearance_Icon.png;
+}}
+
+<noinclude>
+{{Scaling table/start|{{#var:health}}|{{#var:health scaling}}|{{#var:health regen}}|{{#var:health regen scaling}}|{{#var:attack damage}}|{{#var:attack damage scaling}}}}
+{{Scaling table/slot|Arcane Rift (base)|170|0.04}}
+{{Scaling table/slot|Arcane Explosion (base)|80|0.04|7}}
+{{Scaling table/slot|Arcane Explosion (bonus cap)|315|0.04|7}}
+{{Scaling table/slot|Force of Magic (threshold)|268|0.04|7}}
+{{Scaling table/slot|Enduring Will (threshold)|268|0.04|13}}
+{{Scaling table/end}}
+</noinclude>

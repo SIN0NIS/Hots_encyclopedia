@@ -1,0 +1,258 @@
+{{hero data
+| name = Gazlowe
+| date = March 13, 2014
+| price = 2000
+| title = Boss of Ratchet
+| role = Bruiser
+| franchise = Warcraft
+| info = A [[Summoner]] who specializes in controlling key areas of the battleground.
+| lore = Few would consider Gazlowe a fighter, but what he lacks in height, he makes up in mechanical know-how. Besides, you don't get to be boss of a "boom"-town like Ratchet with just a charming personality, if you know what I mean.
+| difficulty = Medium
+| melee = True
+| health = 2275
+| healthRegen = 4.74
+| resource = 10
+| resourceType = Scrap
+| armor = 0
+| attackSpeed = 1.25
+| attackRange = 1.25
+| attackDamage = 100
+| healthScaling = 0.04
+| regenScaling = 0.04
+| adamageScaling = 0.04
+| unitRadius = 0.75
+| icon = File:Gazlowe_Icon.png
+| skills = 
+Reduce, Reuse, Recycle;D;File:Reduce,_Reuse,_Recycle_Icon.png;Regenerate 1 Scrap every 4 seconds. Destroyed Rock-It! Turrets drop 1 Scrap, which can be picked up.<p>Activate to destroy a target Rock-It! Turret.<!--
+-->{{undoc-x|type=Resource / Instant kill<!--
+-->|affects=Turrets<!--
+-->|target=Unit target<!--
+-->|cast=Instant<!--
+-->|range=7.0<!--
+-->|radius=1.5 (pickup)<!--
+-->|notes=<li>Scrap persists on the ground for 5 seconds.<li>Activating Reduce, Reuse, Recycle does not dismount.<li>If Gazlowe places a Rock-It! Turret when he is at full Scrap and Scrap regeneration is off-cooldown, he instantly regenerates 1 Scrap.}};0;;trait;False
+
+Rock-It! Turret;Q;File:Rock-It!_Turret_Icon.png;Create a [[Rock-It! Turret|turret]] that deals 43 damage. Loses Health over 20 seconds.<p>Turrets prioritize the nearest enemy Hero when first created.<!--
+-->{{undoc-x|type=Summon<!--
+-->|target=Point target<!--
+-->|cast=Instant<!--
+-->|range=3.0<!--
+-->|notes=}}<hr/><small>'''Turret'''</small>{{undoc-x|nohr=true<!--
+-->|type=Active<!--
+-->|scaling=<br>- Health: 5.00%<br>- Attack damage: 4.00%<!--
+-->|target=Automatic / Retargetable<!--
+-->|prop1=Health|val1=600<!--
+-->|prop2=Basic Attack damage|val2=43<!--
+-->|prop3=Attack speed|val3=1.00<!--
+-->|prop4=Attack range|val4=6.0<!--
+-->|prop5=Movement Speed|val5=-<!--
+-->|prop6=Unit radius|val6=0.75<!--
+-->|prop7=Sight radius|val7=8.0<!--
+-->|prop8=Leash radius|val8=-<!--
+-->|notes=<li>Turrets can be retargeted using ''Focus Turrets!''.<li>Turrets have no collision.}};0.5;4;;False
+
+Deth Lazor;W;File:Deth_Lazor_Icon.png;After 0.65 seconds, deal 175 damage to enemies in a line. Heal for 25% of the damage dealt, increased to 75% against enemy Heroes.<!--
+-->{{undoc-x|type=Spell Damage / Healing<!--
+-->|scaling=4.00% / -<!--
+-->|affects=Enemies / Self<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Clamping]], [[Lifesteal]]<!--
+-->|cast=0.65 + 0 seconds<!--
+-->|aoe=Rectangle<!--
+-->|width=2.5<!--
+-->|height=10<!--
+-->|notes=}};8;;;False
+
+Xplodium Charge;E;File:Xplodium_Charge_Icon.png;Place a bomb that deals 142 damage to enemies within the target area after 1.25 seconds. Enemies hit are also Stunned for 1 second.<!--
+-->{{undoc-x|type=Spell Damage / Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Stun]]<!--
+-->|cast=Instant<!--
+-->|range=8.0<!--
+-->|aoe=Circle<!--
+-->|radius=2.85<!--
+-->|notes=<li>Does not benefit from cooldown reduction.}};12;;;False
+
+Robo-Goblin;R;File:Robo-Goblin_Icon.png;Activate to become Unstoppable for 1.5 seconds.<p>{{Passive}} Basic Attacks deal 100 bonus damage over 5 seconds, stacking up to 3 times.<!--
+-->{{undoc-x|type=Spell Damage / Status effect<!--
+-->|scaling= 4.00%<!--
+-->|affects=Enemies / Self<!--
+-->|target=No target<!--
+-->|props=[[Attack Modifier]], [[Damage over Time]], [[Unstoppable]]<!--
+-->|cast=Instant<!--
+-->|tickrate=2.0 per second (x10)<!--
+-->|prop1=Damage per tick|val1=10<!--
+-->|notes=<li>Damage stacks additively. Subsequent applications refresh the duration.}};40;;heroic;False
+
+Grav-O-Bomb 3000;R;File:Grav-O-Bomb_3000_Icon.png;After a 1.5 second delay, pull enemies toward the center of an area and deal 220 damage. Basic Abilities deal 30% more damage for 5 seconds after casting Grav-O-Bomb 3000.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control, Offensive damage modifier<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Knockback]], [[Stun]]<!--
+-->|cast=0.15 + 0 seconds<!--
+-->|range=8.0<!--
+-->|aoe=Circle<!--
+-->|radius=5.0<!--
+-->|prop1=Knockback duration|val1=0.5 seconds<!--
+-->|prop2=Knockback speed|val2=28<!--
+-->|notes=<li>Affected enemies are also Stunned for the duration of the knockback. Removing this Stun (e.g. Brightwing's <i>Soothing Mist</i> active) stops the knockback as well.<li>Damage is dealt after the pull finishes.<li>Damage bonus to Basic Abilities stacks additively with other offensive damage modifiers.<li>''Grav-O-Bomb 3000'' can be seen by all players through Fog of War when cast.}};60;;heroic;False
+
+Focus Turrets!;1;File:Focus_Turrets!_Icon.png;Orders any nearby Rock-It! Turrets to focus the target.<!--
+-->{{undoc-x|type=Active<!--
+-->|affects=Enemies<!--
+-->|target=Unit target<!--
+-->|cast=Instant<!--
+-->|range=Global<!--
+-->|notes=<li>Disabled while no Rock-It! Turrets are active.}};1;;;False
+
+| talents = 
+<!-- LEVEL 1 -->
+Rocket Boots;1;1;Increase the cast range of Xplodium Charge by 30% and its damage by 35%. Hitting an enemy Hero increases Movement Speed by 20% for 3 seconds.<!--
+-->{{undoc-x|type=Offensive damage modifier / Status effect<!--
+-->|affects=Ability / Self<!--
+-->|props=[[Movement Speed]]<!--
+-->|prop1=Bonus range|val1=2.1<!--
+-->|notes=<li>Damage bonus stacks additively with other offensive damage modifiers that can affect <i>Xplodium Charge</i>'s damage.}};File:Rocket_Boots_Icon.png;
+
+Big Game Hunter;1;2;Increase maximum Scrap by 2. Basic Attacks against enemy Heroes, Mercenaries, or Monsters accelerates Reduce, Reuse, Recycle Scrap regeneration by 1.5 seconds.<!--
+-->{{undoc-x|
+-->|props=[[Attack Modifier]]<!--
+-->|notes=}};File:Big_Game_Hunter_Icon.png;
+
+One Man Wrecking Crew;1;3;Casting Basic Abilities causes Gazlowe’s next Basic Attack within 6 seconds to deal 75% more damage. Stores up to 2 charges.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Attack Modifier]]<!--
+-->|notes=<li>Damage bonus stacks additively with other offensive damage modifiers that can affect Gazlowe's Basic Attack damage.}};File:One_Man_Wrecking_Crew_Icon.png;
+
+<!-- LEVEL 4 -->
+Rock It Sock It;2;1;Casting Rock-It! Turret grants Gazlowe a Shield that absorbs up to 200 damage for 2.5 seconds.<!--
+-->{{undoc-x|type=Shield<!--
+-->|scaling=4.00%<!--
+-->|affects=Self<!--
+-->|notes=<li>Shield does not stack with itself. Subsequent applications refresh the shield amount and duration.}};File:Rock_It_Sock_It_Icon.png;
+
+Hyperfocus Coils;2;2;Heroes hit by Deth Lazor or Xplodium Charge take an additional 2% of their maximum Health in damage. Gazlowe is healed for 150% of the damage dealt.<!--
+-->{{undoc-x|type=Spell Damage / Healing<!--
+-->|scaling=-<!--
+-->|affects=Enemy Heroes / Self<!--
+-->|props=[[Percent damage]], [[Lifesteal]]<!--
+-->|notes=}};File:Hyperfocus_Coils_Icon.png;
+
+EZ-PZ Dimensional Ripper;2;3;{{cooldown|30}}<p>Activate to gain 40 Armor for 3 seconds, reducing damage taken by 40%, and reduce damage dealt by all nearby enemy Heroes and Summons by 50% for 3 seconds.<!--
+-->{{undoc-x|type=Defensive damage modifier / Offensive damage modifier<!--
+-->|affects=Self / Enemy Heroes & Summons<!--
+-->|target=No target<!--
+-->|props=[[Area of Effect]], [[Armor]]<!--
+-->|cast=Instant<!--
+-->|aoe=Circle<!--
+-->|radius=5.0<!--
+-->|notes=<li>Damage reduction stacks with other offensive damage modifiers affecting the target Hero's damage output.<li>Does not stack with other positive Armor effects. Other defensive damage modifiers may stack.}};File:EZ-PZ_Dimensional_Ripper_Icon.png;
+
+<!-- LEVEL 7 -->
+Goblin Fusion;3;1;Generate 3 Scrap for each Hero hit by Deth Lazor.;File:Goblin_Fusion_Icon.png;
+
+Overload;3;2;Deth Lazor can now store up to 2 charges. Each enemy Hero hit by Deth Lazor reduces its cooldown by 0.75 seconds.<!--
+-->{{undoc-x|prop1=Cooldown between charges|val1=1.0 seconds<!--
+-->|notes=}};File:Overload_Icon.png;
+
+Master Blaster;3;3;Deth Lazor and Xplodium Charge Slow enemies hit by 35% for 3 seconds. Rock-It! Turret Basic Attacks against enemies Slowed in this way extend the Slow duration by 0.5 seconds.<!--
+-->{{undoc-x|type=Crowd control<!--
+-->|affects=Enemies<!--
+-->|props=[[Slow]]<!--
+-->|notes=}};File:Master_Blaster_Icon.png;
+
+<!-- LEVEL 10 -->
+Robo-Goblin;4;1;{{Cooldown|40}}<p>Activate to become Unstoppable for 1.5 seconds.<p>{{Passive}} Basic Attacks deal 100 bonus damage over 5 seconds, stacking up to 3 times.;File:Robo-Goblin_Icon.png;
+Grav-O-Bomb 3000;4;2;{{Cooldown|60}}<p>After a 1.5 second delay, pull enemies toward the center of an area and deal 220 damage. Basic Abilities deal 30% more damage for 5 seconds after casting Grav-O-Bomb 3000.;File:Grav-O-Bomb_3000_Icon.png;
+
+<!-- LEVEL 13 -->
+Positive Reinforcement;5;1;Primary Rock-It! Turret attacks against Heroes increase Gazlowe's Attack Speed by 40% for 3 seconds.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|props=[[Attack Speed]]<!--
+-->|notes=<li>Does not stack with itself. Subsequent applications refresh the duration.}};File:Positive_Reinforcement_Icon.png;
+
+Superior Schematics;5;2;Rock-It! Turrets attack up to 2 additional enemies for 60% damage and have 30% increased Basic Attack range.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=-<!--
+-->|affects=Enemies<!--
+-->|prop1=Bonus range|val1=3.5<!--
+-->|prop2=Bonus sight radius|val2=3.0<!--
+-->|notes=<li>Secondary targets are chosen within an 80 degree cone around the main target, prioritizing the enemies closest to the Turret.<li>Secondary attacks benefit from <i>Grav-O-Bomb 3000</i>'s damage bonus.<li>Secondary attacks do not prioritize Heroes.<li>Secondary attack damage penalty stacks additively with offensive damage modifiers that can affect <i>Rock-It! Turret</i>s' damage.}};File:Superior_Schematics_Icon.png;
+
+Overcharged Capacitors;5;3;Gazlowe gains 5% Spell Power for each active Rock-It! Turret, up to a maximum of 15%. Dealing Basic Attack damage heals Rock-It! Turrets by 8% of their max health.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Spell Power]]<!--
+-->|notes=<li>Spell Power stacks additively with itself and other offensive damage and healing modifiers affecting Gazlowe's Spell damage or healing output.}};File:Overcharged_Capacitors_Icon.png;
+
+
+<!-- LEVEL 16 -->
+Firin' Mah Lazorz;6;1;Firing Deth Lazor causes all of Gazlowe's Rock-It! Turrets to fire a Deth Lazor of their own that deals 125 damage.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|aoe=Rectangle<!--
+-->|width=1.0<!--
+-->|height=12<!--
+-->|notes=<li>All lazorz are fired toward the target point.<li><i>Rock-It! Turret</i>s' lazorz do not interact with other talents affecting ''Deth Lazor''.<li>Turrets' lazorz do not benefit from <i>Grav-O-Bomb 3000</i>'s damage bonus.}};File:Firin_Mah_Lazorz_Icon.png;
+
+Ark Reaktor;6;2;Reduce the cooldown of Xplodium Charge by 2 seconds. Casting Xplodium Charge creates 3 miniature Rock-It! Turrets that last for 3 seconds.<p>These Turrets do not drop Scrap or benefit from other Talents.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|props=Invulnerable summon<!--
+-->|range=6.0<!--
+-->|notes=<li>Miniature Turrets spawn immediately upon cast.<li>Miniature Turrets also prioritize Heroes upon spawning and can be retargeted using ''Focus Turrets!''.<li>Miniature Turrets' attacks do not benefit from <i>Grav-O-Bomb 3000</i>'s damage bonus.}};File:Ark_Reaktor_Icon.png;
+
+Overklock;6;3;Basic Attacks grant Gazlowe 15% Movement Speed for 2 seconds.<p>Dealing Basic Attack damage to Heroes causes them to take an additional 2.5% of their maximum Health as damage.<!--
+-->{{undoc-x|type=Spell Damage / Status effect<!--
+-->|scaling=-<!--
+-->|affects=Enemy Heroes / Self<!--
+-->|target=<!--
+-->|props=[[Attack Modifier]], [[Movement Speed]], [[Percent damage]]<!--
+-->|notes=}};File:Overklock_Icon.png;
+
+<!-- LEVEL 20 -->
+Mecha-Lord;7;1;Basic Attacks increase Gazlowe's Armor by 10 for 10 seconds, up to a maximum of 30, and deal 50% bonus damage to Stunned or Slowed enemies.<!--
+-->{{undoc-x|type=Defensive damage modifier, Offensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Attack Modifier]], [[Armor]]<!--
+-->|notes=<li>Damage bonus stacks additively with other offensive damage modifiers that can affect Gazlowe's Basic Attack damage.<li>Does not stack with other positive Armor effects. Other defensive damage modifiers may stack.}};File:Mecha-Lord_Icon.png;
+
+Miniature Black Hole;7;2;Increases Grav-O-Bomb 3000's radius by 25% and its damage by 50%. Each enemy Hero pulled reduces its cooldown by 12 seconds.<!--
+-->{{undoc-x|type=Offensive damage modifier, Cooldown reduction<!--
+-->|affects=Ability<!--
+-->|prop1=Bonus radius|val1=1.25<!--
+-->|notes=<li>Damage bonus stacks additively with other offensive damage modifiers.}};File:Miniature_Black_Hole_Icon.png;
+
+It's Raining Scrap;7;3;Reduce the Scrap cost of Rock-It! Turrets by 1. Regain 2 Scrap for each Scrap pickup.;File:Its_Raining_Scrap_Icon.png;
+
+Bomb Toss;7;4;Xplodium Charge gains a 2nd charge with a 3 second cooldown between uses and launches 2 more bombs when it detonates.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=-<!--
+-->|affects=Enemies<!--
+-->|props=[[Area of Effect]], [[Stun]]<!--
+-->|range=6.0<!--
+-->|notes=<li>Additional bombs are launched at a 45 degree angle from the initial direction.<li>Additional bombs have the same impact properties as ''Xplodium Charge'', and interact with <i>Grav-O-Bomb 3000</i>'s damage bonus and all Talents affecting ''Xplodium Charge'', except ''Ark Reaktor''.}};File:Bomb_Toss_Icon.png;
+
+}}
+<noinclude>
+{{Scaling table/start|{{#var:health}}|{{#var:health scaling}}|{{#var:health regen}}|{{#var:health regen scaling}}|{{#var:attack damage}}|{{#var:attack damage scaling}}}}
+{{Scaling table/slot|Rock-It! Turret (health)|510|0.04}}
+{{Scaling table/slot|Rock-It! Turret (damage)|36|0.04}}
+{{Scaling table/slot|Deth Lazor|175|0.04}}
+{{Scaling table/slot|Xplodium Charge|142|0.04}}
+{{Scaling table/slot|Robo-Goblin|90|0.04|10}}
+{{Scaling table/slot|Robo-Goblin (single)|9|0.04|10}}
+{{Scaling table/slot|Robo-Goblin (per second)|18|0.04|10}}
+{{Scaling table/slot|Grav-O-Bomb 3000|220|0.04|10}}
+{{Scaling table/slot|Rock It Sock It|200|0.04|4}}
+{{Scaling table/slot|Firin' Mah Lazorz|125|0.04|16}}
+{{Scaling table/end}}
+</noinclude>

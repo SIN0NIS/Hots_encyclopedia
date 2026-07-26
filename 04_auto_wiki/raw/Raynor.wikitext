@@ -1,0 +1,230 @@
+{{hero data
+| name = Raynor
+| date = March 13, 2014
+| price = 2000
+| title = Renegade Commander
+| role = Ranged
+| franchise = Starcraft
+| info = A Physical Damage Assassin who can keep enemies away.
+| lore = Ex-Confederate Marshal James Raynor has stood against whatever the universe can throw at him and survived. He stands as a beacon of hope among enigmatic aliens and monsters, fighting for justice in a cold uncaring universe.
+| difficulty = Easy
+| melee = False
+| health = 1450
+| healthRegen = 3.0195
+| resource = 500
+| resourceType = Mana
+| armor = 0
+| attackSpeed = 1.25
+| attackRange = 6.5
+| attackDamage = 98
+| healthScaling = 0.04
+| regenScaling = 0.04
+| adamageScaling = 0.04
+| unitRadius = 0.8125
+| icon = File:Raynor_Icon.png
+| skills = 
+Give 'Em Some Pepper;Trait;File:Give 'Em Some Pepper Icon.png;Every 4th Basic Attack splashes in a small area and deals 125% more damage to the main target.<!--
+-->{{undoc-x|type=Physical Damage / Offensive damage modifier<!--
+-->|scaling=-<!--
+-->|affects=Enemies / Self<!--
+-->|props=[[Attack modifier]], [[Splash]]<!--
+-->|radius=2.25<!--
+-->|notes=<li>Damage bonus stacks additively with other offensive damage modifiers that can affect Raynor's Basic Attack damage.}};;;trait;False
+
+Penetrating Round;Q;File:Penetrating_Round_Icon.png;Deal 205 damage, knock back, and Slow enemies in a line by 20% for 2 seconds. Enemies close to Raynor are knocked back farther.<!--
+-->{{undoc-x|type=Spell Damage, Crowd Control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Knockback]], [[Slow]]<!--
+-->|cast=0.1 + 0 seconds<!--
+-->|range=9.5<!--
+-->|hitbox=0.8 x 1.0<!--
+-->|missile=40<!--
+-->|prop1=Knockback duration|val1=<br/>- Range 0 - 3.0: 0.3125 seconds<br/>- Range 3 - 5.5: 0.1875 seconds<br/>- Range 5.5+: 0.125 seconds<!--
+-->|prop2=Knockback speed|val2=15<!--
+-->|notes=<li>Effects are applied in this order: damage, Slow, Knockback.<li>}};9;60;;False
+
+Inspire;W;File:Inspire_Icon.png;Raynor and all nearby allied Minions and Mercenaries gain 30% Attack Speed and 10% Movement Speed for 4 seconds.<p>Casting Inspire resets Raynor's Basic Attack cooldown.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|scaling=|affects=Allied Minions & non-Elite Mercenaries, Self<!--
+-->|target=No target<!--
+-->|props=[[Area of Effect]], [[Attack Speed]], [[Movement Speed]]<!--
+-->|cast=Instant<!--
+-->|range=50<!--
+-->|aoe=Circle<!--
+-->|radius=8.0<!--
+-->|notes=<li>Does not affect Elite Mercenaries, such as Bosses.<li>Attack Speed from Inspire stacks additively with other effects that affect Attack Speed.}};12;50;;False
+
+Adrenaline Rush;E;File:Adrenaline_Rush_Icon.png;Heal Raynor for 25% of his maximum Health over 1 second. Raynor's Basic Attacks lower the cooldown of this by 0.5 seconds, doubled against Heroes.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|props=[[Heal over Time]]<!--
+-->|cast=Instant<!--
+-->|tickrate=4.0 per second (x4)<!--
+-->|prop1=Healing per tick|val1=6.25% (of maximum Health)<!--
+-->|notes=<li>Disabled while Raynor is at full Health.}};45;75;;False
+
+Hyperion;R;File:Hyperion_Icon.png;Order the Hyperion to make a strafing run for 12 seconds, hitting up to 4 enemies for 66 damage every second. Every 4 seconds, it can fire its Yamato Cannon at a Structure, dealing 794 damage.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%|affects=Enemies / Structures (cannon)<!--
+-->|target=Point target<!--
+-->|cast=0.1 + 0 seconds<!--
+-->|range=24<!--
+-->|radius=<br/>- Weapon: 8.75<br/>- Yamato Cannon: 12.0<!--
+-->|missile=2.0<!--
+-->|tickrate=<br/>- Weapon: 1.0 per second (x13)<br/>- Yamato Cannon: 0.25 per second (x3)<!--
+-->|notes=<li>Targets are chosen at random from all visible targets in the area.<li>Yamato Cannon does not target [[Wall]]s.<li>Hyperion grants vision in 8 radius.}};100;100;heroic;False
+
+Raynor's Raider;R;File:Raynor's_Raiders_Icon.png;Summon a [[Banshee]] that assists Raynor. The Banshee deals 84 damage per second and regenerates 75 Health per second if it hasn't taken damage in the last 4 seconds. Can reactivate to retarget or move the Banshee.<p>The Banshee respawns automatically after 45 seconds.<!--
+-->{{undoc-x|type=Summon<!--
+-->|target=Point target, Unit target}}<hr/><!--
+
+--><small>'''Banshee'''</small>{{undoc-x|nohr=true<!--
+-->|type=Active<!--
+-->|scaling=4.00% (damage,health & regen)<!--
+-->|target=Retargetable<!--
+-->|prop1=Health|val1=1000<!--
+-->|prop2=Basic Attack damage|val2=21<!--
+-->|prop3=Attack speed|val3=4.00<!--
+-->|prop4=Attack range|val4=6.5<!--
+-->|prop5=Movement Speed|val5=6.6015<!--
+-->|prop6=Unit radius|val6=1.0<!--
+-->|prop7=Sight radius|val7=7.0<!--
+-->|prop8=Leash radius|val8=14.0<!--
+-->|prop9=Health regeneration|val9=75 per second<!--
+-->|notes=<li>The Banshee Hearths back to base with Raynor.<li>Issuing orders to the Banshee interrupts channeling Mount, but once Mounted it can be given commands without dismounting.<li>Self-casting the Ability leashes the Banshee, causing to attempt to follow Raynor within 3 range. Issuing a Basic Attack in this state causes the Banshee to focus the same target as Raynor.}};45;;heroic;False
+
+| talents =
+<!-- LEVEL 1 -->
+Exterminator;1;1;Basic Attacks deal 50% more damage to Minions, Mercenaries, and Monsters. This is increased to 125% while Inspire is active.<p>{{Passive}} Inspire does not expire on friendly Minions and Mercenaries.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Self<!--
+-->|notes=<li>Damage bonus stacks additively with other damage modifiers that can affect Raynor's Basic Attack damage.}};File:Exterminator Icon.png;
+
+Veteran Marksman;1;2;{{Questonly|Every time the primary target of Give 'Em Some Pepper is a Hero, permanently increase its damage bonus by 0.75%.}}<p>{{Gambitonly|Gain 60% bonus Give 'Em Some Pepper damage. Every death reduces this bonus by 15%.}}<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Self<!--
+-->|prop1=Maximum Quest bonus<!--
+-->|val1=6,750.75% (x9,001)<!--
+-->|notes=<li>Damage bonuses stack additively with themselves, baseline damage bonus and other offensive damage modifiers.<li>Bonus damage loss on death only affects the bonus gained from the Gambit.}};File:Veteran Marksman Icon.png;
+
+Ace in the Hole;1;3;Deal 12% more damage to Stunned or Slowed Heroes.<p>Enemy Heroes hit by Give 'Em Some Pepper are Slowed by 10% for 2.5 seconds.<!--
+-->{{undoc-x|type=Offensive damage modifier / Crowd control<!--
+-->|affects=Self / Enemy Heroes<!--
+-->|props=[[Attack modifier]], [[Slow]]<!--
+-->|notes=<li>Slow is applied after damage is dealt.<li>Damage bonus stacks additively with other offensive damage modifiers that affect Raynor's damage.}};File:Ace in the Hole Icon.png;
+
+<!-- LEVEL 4 -->
+Fight or Flight;2;1;Reduce Adrenaline Rush's cooldown by 10 seconds. Casting Adrenaline Rush grants 25 Armor for 3 seconds.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Armor]]<!--
+-->|notes=<li>Does not stack with other positive Armor effects. Other defensive damage modifiers may stack.}};File:Fight_or_Flight_Icon.png;
+
+Sustaining Rounds;2;2;Give 'Em Some Pepper heals Raynor for 3% of his maximum Health, increased to 6% if the primary target is a Hero.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|props=[[Attack Modifier]]<!--
+-->|notes=}};File:Sustaining Rounds Icon.png;
+
+Behemoth Armor;2;3;Gain 200 bonus maximum Health.<p>{{Questonly|Every time Give 'Em Some Pepper's primary target is a Hero, gain an additional 8 maximum Health.}}<!--
+-->{{undoc-x|type=Bonus Health<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|prop1=Maximum bonus|val1=390,000 Health (x48,750)<!--
+-->|notes=}};File:Behemoth Armor Icon.png;
+
+<!-- LEVEL 7 -->
+Heavy Slugs;3;1;Increase Penetrating Round's Slow by 15% and its duration by 2 seconds.<!--
+-->{{undoc-x|nohr=1<!--
+-->|notes=<li>Slow increase stacks additively with baseline Slow.}};File:Heavy Slugs Icon.png;
+
+Fuel the Rush;3;2;Reduce the Mana cost of Adrenaline Rush from 75 to 45. While Inspire is active, increase Adrenaline Rush's cooldown reduction from Basic Attacks by 300%.<!--
+-->{{undoc-x|nohr=1<!--
+-->|notes=<li>Cooldown reduction against non-Heroes is increased to 2.25 seconds and against Heroes to 4.5 seconds, making the actual increase 350%.}};File:Fuel the Rush Icon.png;
+
+Unstable Compound;3;3;Increase the area of Give ‘Em Some Pepper by 15%. Each enemy Hero hit by Give 'Em Some Pepper grants Raynor 10 Mana and reduces the cooldown of Penetrating Round by 1.5 seconds.<!--
+-->{{undoc-x|prop1=Bonus radius|val1=0.3375<!--
+-->|notes=<li>Radius increases by 15%, therefore the Area actually increases by 32.25%.}};File:Unstable Compound Icon.png;
+
+<!-- LEVEL 10 -->
+Hyperion;4;1;{{Cooldown|100}}<br/>Order the Hyperion to make a strafing run for 12 seconds, hitting up to 4 enemies for 66 damage every second. Every 4 seconds, it can fire its Yamato Cannon at a Structure, dealing 794 damage.;File:Hyperion_Icon.png;
+Raynor's Raider;4;2;{{Cooldown|45}}<br/>Summon a [[Banshee]] that assists Raynor. The Banshee deals 84 damage per second and regenerates 75 Health per second if it hasn't taken damage in the last 4 seconds. Can reactivate to retarget or move the Banshee.<p>The Banshee respawns automatically after 45 seconds.;File:Raynor's_Raiders_Icon.png;
+
+<!-- LEVEL 13 -->
+Line 'Em Up;5;1;Reduce the cooldown of Penetrating Round by 3 seconds. Penetrating Round hitting two or more enemy Heroes reduces its cooldown by an additional 3 seconds.;File:Line_'Em_Up_Icon.png;
+
+Giddy-Up;5;2;Gain 10% Movement Speed while mounted and unmounted. Inspire grants 10% more Movement Speed.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|props=[[Movement Speed]]<!--
+-->|notes=<li>Inspire Movement Speed bonus stacks additively with itself.<li>Mounted Movement Speed bonus stacks additively with itself.<li>Inspire bonus, passive bonus and Mounted bonus do not stack with each other or other Movement Speed bonuses.}};File:Giddy-Up Icon.png;
+
+Give Me More!;5;3;Increase Adrenaline Rush healing by 50%. While Inspire is active, gain 1 Basic Attack range.<!--
+-->{{undoc-x|nohr=1<!--
+-->|notes=<li>Bonus healing is achieved by increasing the base duration of ''Adrenaline Rush'' by 0.5 seconds.}};File:Give_Me_More!_Icon.png;
+
+<!-- LEVEL 16 -->
+Paint Them Red;6;1;Increase the damage of Penetrating Round by 50% and heal for 90% of the damage Penetrating Round deals to Heroes.<!--
+-->{{undoc-x|type=Offensive damage modifier / Healing<!--
+-->|scaling=-<!--
+-->|affects=Ability / Self<!--
+-->|props=[[Lifesteal]] (heroes)<!--
+-->|notes=<li>Damage bonus stacks additively with other offensive damage modifiers that can affect <i>Penetrating Round</i>'s damage.<li>Lifesteal from ''Paint Them Red'' stacks additively with other lifesteal effects that can affect ''Penetrating Round''.}};File:Paint Them Red Icon.png;
+
+Rallying Cry;6;2;Increase the Attack Speed bonus of Inspire by 20%.<p>{{Passive}} After every 12 Basic Attacks, cast Inspire for free.;File:Rallying Cry Icon.png;
+
+Bounty Hunter;6;3;{{Cooldown|40}}<br/>If Give 'Em Some Pepper's target is a Hero, it deals an additional 3% of their maximum Health as damage and grants Raynor 10 Armor for 3 seconds.<p>Activate Give 'Em Some Pepper to apply it to Raynor's next Basic Attack.<!--
+-->{{undoc-x|type=Spell Damage / Defensive damage modifier<!--
+-->|scaling=-<!--
+-->|affects=Enemy Heroes / Self<!--
+-->|target=No target<!--
+-->|props=[[Armor]], [[Percent Damage]]<!--
+-->|cast=Instant<!--
+-->|notes=<li>Only affects the primary target of the Basic Attack.<li>Does not stack with itself or other positive Armor effects. Other defensive damage modifiers may stack.<li>Disabled while Raynor's next Basic Attack is going to be affected by ''Give 'Em Some Pepper''.}};File:Bounty Hunter Icon.png;
+
+<!-- LEVEL 20 -->
+Cavalry's Arrived;7;1;Give 'Em Some Pepper lowers the cooldown of Hyperion by 5 seconds if the primary target is a Hero. These Heroes are targeted by Hyperion for 100% increased damage for 6 seconds.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|prop1=Mark duration|val1=2.5 seconds<!--
+-->|notes=<li>Does not stack with itself, but stacks additively with other offensive damage modifiers that can affect <i>Hyperion</i>'s damage.}};File:Cavalry's_Arrived_Icon.png;
+
+Dusk Wing;7;2;Increase the Health and leash range of Raynor’s Raider by 100%. Its Basic Attack lowers enemy Hero Armor by 3 for 1 second, stacking up to 30.<!--
+-->{{undoc-x|type=Bonus Health / Defensive damage modifier<!--
+-->|scaling=-<!--
+-->|affects=Banshee / Enemy Heroes<!--
+-->|props=[[Armor reduction]]<!--
+-->|notes=<li>Armor reduction stacks additively with itself but not with other negative Armor effects. Other defensive damage modifiers may stack.}};File:Dusk_Wings_Icon.png;
+
+Raiders Roll;7;3;Adrenaline Rush grants Unstoppable and continues healing for an additional 2 seconds. The additional duration ends upon reaching 70% Health.<!--
+-->{{undoc-x|type=[[Status effect]]<!--
+-->|affects=Self<!--
+-->|props=[[Unstoppable]]<!--
+-->|notes=<li>Reaching 70% maximum Health during the base duration of ''Adrenaline Rush'' does not remove the effect.}};File:Raiders_Roll_Icon.png;
+
+Sergeant Pepper;7;4;Give 'Em Some Pepper now activates every 3 Basic Attacks.<!--
+-->{{undoc-x|notes=<li>If Talent is selected while at 0 <i>Give 'Em Some Pepper</i> stacks, does not take effect until after that passive is triggered one time.}};File:Sergeant_Pepper_Icon.png;
+
+Execute Orders;7;5;When Raynor is killed, the Hyperion is cast toward the closest enemy Hero. It lasts 12 seconds, hitting up to 4 enemy Heroes of the lowest Health in the area for 66 damage every second. Every 4 seconds, it will also fire its Yamato Cannon at the lowest Health enemy Hero, dealing 395 damage.<p>{{Passive}} Reduce Raynor's death timer by 35 seconds.<!--
+-->{{undoc-x|nohr=1<!--
+-->|notes=<li>Does not require selecting ''Hyperion'' at level 10.<li>Ability searches for the closest visible Hero within 20 range.<li>Multiple ''Hyperion''s may be active simultaneously.}};File:Execute_Orders_Icon.png;
+
+}}
+
+<noinclude>
+{{Scaling table/start|{{#var:health}}|{{#var:health scaling}}|{{#var:health regen}}|{{#var:health regen scaling}}|{{#var:attack damage}}|{{#var:attack damage scaling}}}}
+{{Scaling table/slot|Penetrating Round|205|0.04}}
+{{Scaling table/slot|(Adrenaline Rush)|{{#expr:{{#var:health}}*0.25}}|{{#var:health scaling}}}}
+{{Scaling table/slot|Hyperion (weapon)|66|0.04|10}}
+{{Scaling table/slot|Hyperion (Yamato Cannon)|794|0.04|10}}
+{{Scaling table/slot|Banshee (Health)|1000|0.04|10}}
+{{Scaling table/slot|Banshee (damage)|21|0.04|10}}
+{{Scaling table/slot|Banshee (damage, per second)|84|0.04|10}}
+{{Scaling table/slot|Banshee (health regen)|75|0.04|10}}
+{{Scaling table/end}}
+</noinclude>

@@ -1,0 +1,599 @@
+{
+  "hero": "Probius",
+  "abilities": [
+    {
+      "name": "Warp In Pylon",
+      "hotkey": "D",
+      "icon": "Warp_In_Pylon_Icon.png",
+      "description": "Warp in a Pylon that generates a Power Field and grants vision of the surrounding area. Probius only regenerates Mana while inside a Power Field. Enemy Heroes and Minions drop Minerals when killed. Gather Minerals to reduce the cooldown of Warp In Pylon by 0.75 seconds. Up to 2 Pylons can be active at a time. Pylon",
+      "fields": {
+        "type": "Passive",
+        "target": "Point target",
+        "props": "Unstoppable",
+        "cast": "0.15 + 0 seconds",
+        "range": "3.0",
+        "radius": "- Mineral drop: 12 (Minions) - Mineral collection: 0.125",
+        "prop1": "Mineral duration",
+        "val1": "15 seconds",
+        "notes": "Heroes drop minerals if Probius gets a Takedown regardless of distance.",
+        "nohr": "1",
+        "scaling": "5.00% (Health)",
+        "prop3": "Health",
+        "val3": "400",
+        "prop4": "Vision radius",
+        "val4": "8.5",
+        "prop5": "Unit radius",
+        "val5": "0.5",
+        "prop6": "Power field radius",
+        "val6": "9.25",
+        "cooldown": "14"
+      }
+    },
+    {
+      "name": "Disruption Pulse",
+      "hotkey": "Q",
+      "icon": "Disruption_Pulse_Icon.png",
+      "description": "Fire a burst of energy forward, dealing 142 damage to all enemies it passes through. Hitting the center of a Warp Rift will cause it to explode, dealing additional damage.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "5.00%",
+        "affects": "Enemies / Warp Rifts",
+        "target": "Point target",
+        "props": "Area of Effect",
+        "cast": "0.125 + 0 seconds",
+        "range": "10",
+        "hitbox": "1.0 x 1.7",
+        "missile": "20",
+        "notes": "Enemies cannot be hit by multiple Disruption Pulses too closely together, which can cause issues with multiple Probii on a team (e.g. an Abathur Ultimate Evolution Clone, or in ARAM), or even alone with the Shoot 'Em Up Talent.",
+        "cooldown": "3",
+        "cost": "75"
+      }
+    },
+    {
+      "name": "Warp Rift",
+      "hotkey": "W",
+      "icon": "Warp_Rift_Icon.png",
+      "description": "Charge Cooldown 6Open an unstable Warp Rift at a location that takes 1.25 seconds to arm, which then Slows nearby enemies by 25% lasting 3 seconds. Armed Warp Rifts explode when they expire or when hit by Disruption Pulse, dealing 261 damage to nearby enemies. Stores up to 2 charges.",
+      "fields": {
+        "type": "Spell damage / Crowd control",
+        "scaling": "5.00%",
+        "affects": "Enemies",
+        "target": "Point target",
+        "props": "Area of Effect, Slow, Self-castable",
+        "cast": "0.125 + 0.125 seconds",
+        "range": "7.0",
+        "radius": "- Inner: 1.0 - Outer: 3.0",
+        "notes": "A Warp Rift cannot be placed so that its center overlaps with a Structure, unpathable terrain, or another Warp Rift 's center. Warp Rifts provide vision within their radius.",
+        "cost": "150"
+      }
+    },
+    {
+      "name": "Photon Cannon",
+      "hotkey": "E",
+      "icon": "Photon_Cannon_Icon.png",
+      "description": "Warp in a Photon Cannon that deals 105 damage. Lasts for 13 seconds. While within a Pylon's Power Field, Photon Cannons gain 40% Attack Speed over 4 seconds and reveal nearby enemies. Photon Cannon",
+      "fields": {
+        "type": "Active",
+        "affects": "- / Enemies (reveal) / Self (Attack Speed)",
+        "target": "Point target",
+        "props": "Unstoppable",
+        "cast": "0.125 + 0 seconds",
+        "range": "3.0",
+        "aoe": "Circle",
+        "prop1": "Health",
+        "val1": "778",
+        "nohr": "1",
+        "scaling": "4.00% (Health and damage)",
+        "prop6": "Attack damage",
+        "val6": "105",
+        "prop4": "Attack speed",
+        "val4": "0.71",
+        "prop5": "Attack range",
+        "val5": "6.5",
+        "prop3": "Unit radius",
+        "val3": "1.0",
+        "prop2": "Sight radius",
+        "val2": "7.0",
+        "notes": "Photon Cannon prefers to acquire Heroic targets. However, it will not change to a Heroic unit from a previously acquired target as long as it remains valid. Attack Speed ramps up by 2.5% of base every 0.25 seconds, to the maximum of 40% bonus Attack Speed.",
+        "cooldown": "15"
+      }
+    },
+    {
+      "name": "Pylon Overcharge",
+      "hotkey": "R",
+      "icon": "Pylon_Overcharge_Icon.png",
+      "description": "For 8 seconds, increase the size of Pylon power fields and allow them to attack enemy Heroes within them for 96 damage per second. Pylons are Invulnerable for the duration.",
+      "fields": {
+        "type": "Spell Damage / Status effect",
+        "affects": "Enemy Heroes / Pylons",
+        "scaling": "4.00%",
+        "target": "No target",
+        "props": "Invulnerable",
+        "range": "Global",
+        "cast": "Instant",
+        "prop1": "Power field radius",
+        "val1": "14.75",
+        "prop2": "Attack speed",
+        "val2": "2.0",
+        "prop3": "Attack range",
+        "val3": "15",
+        "prop4": "Attack damage",
+        "val4": "48",
+        "cooldown": "80",
+        "cost": "100"
+      }
+    },
+    {
+      "name": "Null Gate",
+      "hotkey": "R",
+      "icon": "Null_Gate_Icon.png",
+      "description": "Project a barrier of negative energy in the target direction that lasts 4 seconds. Enemies who touch the barrier take 76 damage per second and are Slowed by 80% for as long as they remain in contact with it.",
+      "fields": {
+        "type": "Spell Damage / Crowd control",
+        "affects": "Enemies",
+        "scaling": "4.00%",
+        "target": "Vector Targeting",
+        "range": "9.5 (initial point)",
+        "cast": "0.125 seconds",
+        "props": "Slow",
+        "aoe": "Rectangle",
+        "width": "1.0",
+        "height": "8.0",
+        "tickrate": "4.0 per second",
+        "prop2": "Damage per tick",
+        "val2": "19",
+        "prop3": "Slow duration per tick",
+        "val3": "0.3125 seconds",
+        "notes": "First point of cast determines the location of the first end of the gate, and second the direction.",
+        "cooldown": "25",
+        "cost": "100"
+      }
+    },
+    {
+      "name": "Worker Rush",
+      "hotkey": "Z",
+      "icon": "Probius mount.png",
+      "description": "Activate to gain an additional 60% Movement Speed for 5 seconds. Taking damage ends this effect early. Passive Probius moves 10% faster by hovering over the ground.",
+      "fields": {
+        "type": "Status effect",
+        "affects": "Self",
+        "target": "No target",
+        "props": "Movement Speed",
+        "cast": "Instant",
+        "notes": "Movement Speed from Worker Rush stacks additively with other Movement Speed bonuses. Movement Speed bonus can be interrupted by damage over time ticks, even if applied before activating Worker Rush.",
+        "cooldown": "30"
+      }
+    }
+  ],
+  "talents": [
+    {
+      "name": "Echo Pulse",
+      "tier": "1",
+      "slot": "1",
+      "icon": "Echo_Pulse_Icon.png",
+      "description": "Disruption Pulse now returns to Probius 1.25 seconds after reaching its target, dealing 100% damage on the return trip.",
+      "fields": {
+        "type": "Spell Damage",
+        "affects": "Enemies",
+        "notes": "Returning pulse has the same properties as initial pulse, it can detonate Warp Rifts and interacts with all Talents affecting Disruption Pulse. Damage reduction stacks additively with offensive damage modifiers that can affect Disruption Pulse 's damage."
+      },
+      "_raw_fields": [
+        "Echo Pulse",
+        "1",
+        "1",
+        "Disruption Pulse now returns to Probius 1.25 seconds after reaching its target, dealing 100% damage on the return trip.",
+        "File:Echo_Pulse_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Warp Resonance",
+      "tier": "1",
+      "slot": "2",
+      "icon": "Warp_Resonance_Icon.png",
+      "description": "Quest Hit Heroes with Warp Rift explosions. After hitting 8 Heroes with Warp Rift explosions, increase the explosion damage by 120. Reward After hitting 16 Heroes with Warp Rift explosions, Warp Rift gains 1 additional charge.",
+      "fields": {
+        "type": "Bonus damage",
+        "scaling": "-",
+        "affects": "Ability"
+      },
+      "_raw_fields": [
+        "Warp Resonance",
+        "1",
+        "2",
+        "Quest Hit Heroes with Warp Rift explosions. After hitting 8 Heroes with Warp Rift explosions, increase the explosion damage by 120. Reward After hitting 16 Heroes with Warp Rift explosions, Warp Rift gains 1 additional charge.",
+        "File:Warp_Resonance_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Gather Minerals",
+      "tier": "1",
+      "slot": "3",
+      "icon": "Gather_Minerals_Icon.png",
+      "description": "Quest Gather Minerals to increase the Health of Photon Cannons by 8, up to 560. After collecting 70 Minerals, Photon Cannons deal 35% more damage.",
+      "fields": {
+        "type": "Bonus Health, Offensive damage modifier",
+        "scaling": "-",
+        "affects": "Photon Cannons",
+        "notes": "Damage bonus stacks additively with other offensive damage modifiers that can affect Photon Cannon 's damage."
+      },
+      "_raw_fields": [
+        "Gather Minerals",
+        "1",
+        "3",
+        "Quest Gather Minerals to increase the Health of Photon Cannons by 8, up to 560. After collecting 70 Minerals, Photon Cannons deal 35% more damage.",
+        "File:Gather_Minerals_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Photon Barrier",
+      "tier": "2",
+      "slot": "1",
+      "icon": "Photon_Barrier_Icon.png",
+      "description": "While a Photon Cannon is alive and powered, Probius gains 40 Spell Armor.",
+      "fields": {
+        "type": "Defensive damage modifier",
+        "affects": "Self",
+        "props": "Spell Armor",
+        "notes": "Does not stack with itself or other positive Spell Armor effects. Other defensive damage modifiers may stack."
+      },
+      "_raw_fields": [
+        "Photon Barrier",
+        "2",
+        "1",
+        "While a Photon Cannon is alive and powered, Probius gains 40 Spell Armor.",
+        "File:Photon_Barrier_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Turbo Charged",
+      "tier": "2",
+      "slot": "2",
+      "icon": "Turbo_Charged_Icon.png",
+      "description": "Worker Rush grants an additional 10% passive Movement Speed while in a Power Field, and its cooldown is reduced by 14 seconds.",
+      "fields": {},
+      "_raw_fields": [
+        "Turbo Charged",
+        "2",
+        "2",
+        "Worker Rush grants an additional 10% passive Movement Speed while in a Power Field, and its cooldown is reduced by 14 seconds.",
+        "File:Turbo_Charged_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Shield Capacitor",
+      "tier": "2",
+      "slot": "3",
+      "icon": "Shield_Capacitor_Icon.png",
+      "description": "Probius gains permanent Shields equal to 10% of his max Health. Shields regenerate quickly as long as he hasn't taken damage recently.",
+      "fields": {
+        "type": "Shield",
+        "affects": "Self",
+        "scaling": "4.00%",
+        "prop1": "Shield amount",
+        "val1": "126",
+        "prop2": "Shield regen cooldown",
+        "val2": "5 seconds",
+        "prop3": "Shield regen rate",
+        "val3": "60 per second"
+      },
+      "_raw_fields": [
+        "Shield Capacitor",
+        "2",
+        "3",
+        "Probius gains permanent Shields equal to 10% of his max Health. Shields regenerate quickly as long as he hasn't taken damage recently.",
+        "File:Shield_Capacitor_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Particle Accelerator",
+      "tier": "3",
+      "slot": "1",
+      "icon": "Particle_Accelerator_Icon.png",
+      "description": "After hitting 3 Heroes with Disruption Pulse the next Warp Rift detonated by a Disruption Pulse fires 4 additional pulses that deal 78 damage from the impact location in different directions. passive Reduce the cooldown of Disruption Pulse by 0.5 seconds.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "5.00%",
+        "affects": "Self",
+        "props": "Area of Effect",
+        "range": "10",
+        "hitbox": "1.0 x 1.5",
+        "missile": "20",
+        "notes": "Additional pulses are always fired relative to the direction from Probius's current location to the detonated Warp Rift. Pulses are aligned 30 degrees from the direction and perpendicular to it on both sides. Additional pulses can detonate Warp Rifts, but do not interact with Talents affecting Disruption Pulse, including itself."
+      },
+      "_raw_fields": [
+        "Particle Accelerator",
+        "3",
+        "1",
+        "After hitting 3 Heroes with Disruption Pulse the next Warp Rift detonated by a Disruption Pulse fires 4 additional pulses that deal 78 damage from the impact location in different directions. passive Reduce the cooldown of Disruption Pulse by 0.5 seconds.",
+        "File:Particle_Accelerator_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Rift Shock",
+      "tier": "3",
+      "slot": "2",
+      "icon": "Rift_Shock_Icon.png",
+      "description": "Hitting a Warp Rift with Disruption Pulse within 1 second of its arming deals 105 damage over 3 seconds.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "5.00%",
+        "affects": "Enemy Heroes",
+        "props": "Damage over Time",
+        "tickrate": "1.0 per second (x3)",
+        "prop1": "Damage per tick",
+        "val1": "35"
+      },
+      "_raw_fields": [
+        "Rift Shock",
+        "3",
+        "2",
+        "Hitting a Warp Rift with Disruption Pulse within 1 second of its arming deals 105 damage over 3 seconds.",
+        "File:Rift_Shock_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Tower Defense",
+      "tier": "3",
+      "slot": "3",
+      "icon": "Tower_Defense_Icon.png",
+      "description": "Reduce Photon Cannon's cooldown by 3.5 seconds when Disruption Pulse or Warp Rift damages an enemy Hero.",
+      "fields": {},
+      "_raw_fields": [
+        "Tower Defense",
+        "3",
+        "3",
+        "Reduce Photon Cannon's cooldown by 3.5 seconds when Disruption Pulse or Warp Rift damages an enemy Hero.",
+        "File:Tower_Defense_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Pylon Overcharge",
+      "tier": "4",
+      "slot": "1",
+      "icon": "Pylon_Overcharge_Icon.png",
+      "description": "Cooldown 80 Increase the size of Pylon power fields and allow them to attack enemies within it for 96 damage per second. Lasts 10 seconds.",
+      "fields": {},
+      "_raw_fields": [
+        "Pylon Overcharge",
+        "4",
+        "1",
+        "Cooldown 80 Increase the size of Pylon power fields and allow them to attack enemies within it for 96 damage per second. Lasts 10 seconds.",
+        "File:Pylon_Overcharge_Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Null Gate",
+      "tier": "4",
+      "slot": "2",
+      "icon": "Null_Gate_Icon.png",
+      "description": "Cooldown 25 Vector Targeting. Project a barrier of negative energy in the target direction that lasts 4 seconds. Enemies who touch the barrier take 76 damage per second and are slowed by 80% for as long as they remain in contact with it.",
+      "fields": {},
+      "_raw_fields": [
+        "Null Gate",
+        "4",
+        "2",
+        "Cooldown 25 Vector Targeting. Project a barrier of negative energy in the target direction that lasts 4 seconds. Enemies who touch the barrier take 76 damage per second and are slowed by 80% for as long as they remain in contact with it.",
+        "File:Null_Gate_Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Aggressive Matrix",
+      "tier": "5",
+      "slot": "1",
+      "icon": "Aggressive_Matrix_Icon.png",
+      "description": "Pylon's Power Field grants allied Heroes 35% increased Basic Attack damage.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Allied Heroes, Self",
+        "notes": "Damage bonus does not stack with itself, but stacks additively with other offensive damage modifiers that can affect the targets' Basic Attack damage."
+      },
+      "_raw_fields": [
+        "Aggressive Matrix",
+        "5",
+        "1",
+        "Pylon's Power Field grants allied Heroes 35% increased Basic Attack damage.",
+        "File:Aggressive_Matrix_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Power Overflowing",
+      "tier": "5",
+      "slot": "2",
+      "icon": "Power_Overflowing_Icon.png",
+      "description": "Pylon's Power Field grants allied Heroes 10% increased Spell Power and 2 Mana per second.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Allied Heroes, Self",
+        "props": "Spell Power",
+        "notes": "Spell Power from Power Overflowing does not stack with itself, but stacks additively with other sources of Spell Power and other offensive damage and healing modifiers affecting targets' Spell Damage or healing output."
+      },
+      "_raw_fields": [
+        "Power Overflowing",
+        "5",
+        "2",
+        "Pylon's Power Field grants allied Heroes 10% increased Spell Power and 2 Mana per second.",
+        "File:Power_Overflowing_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Shield Battery",
+      "tier": "5",
+      "slot": "3",
+      "icon": "Shield_Battery_Probius_Icon.png",
+      "description": "Pylon's Power Field grants allied Heroes 28 Shields per second, up to 112. Shields persist for 2 seconds after exiting a Pylon Power Field.",
+      "fields": {
+        "type": "Shield",
+        "scaling": "4.00%",
+        "affects": "Allied Heroes, Self",
+        "tickrate": "2.0 per second",
+        "prop1": "Shield per tick",
+        "val1": "14",
+        "notes": "Shield gain starts after the Hero has been in a Pylon's area for 0.5 seconds."
+      },
+      "_raw_fields": [
+        "Shield Battery",
+        "5",
+        "3",
+        "Pylon's Power Field grants allied Heroes 28 Shields per second, up to 112. Shields persist for 2 seconds after exiting a Pylon Power Field.",
+        "File:Shield_Battery_Probius_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Quantum Entanglement",
+      "tier": "6",
+      "slot": "1",
+      "icon": "Quantum_Entanglement_Icon.png",
+      "description": "Enemies continue to be Slowed for 3 seconds after their last contact with a Warp Rift.",
+      "fields": {
+        "type": "Crowd control",
+        "affects": "Enemies",
+        "props": "Slow"
+      },
+      "_raw_fields": [
+        "Quantum Entanglement",
+        "6",
+        "1",
+        "Enemies continue to be Slowed for 3 seconds after their last contact with a Warp Rift.",
+        "File:Quantum_Entanglement_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Gravity Well",
+      "tier": "6",
+      "slot": "2",
+      "icon": "Gravity_Well_Icon.png",
+      "description": "Enemies are Slowed more the closer they are to the center of the Warp Rift, up to a maximum Slow of 60%.",
+      "fields": {
+        "type": "Crowd control",
+        "affects": "Enemies",
+        "props": "Slow",
+        "notes": "Applies 40% Slow within 2.0 radius and 60% Slow within 1.0 radius of the center."
+      },
+      "_raw_fields": [
+        "Gravity Well",
+        "6",
+        "2",
+        "Enemies are Slowed more the closer they are to the center of the Warp Rift, up to a maximum Slow of 60%.",
+        "File:Gravity_Well_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Interference",
+      "tier": "6",
+      "slot": "3",
+      "icon": "Interference_Icon.png",
+      "description": "Enemy Heroes hit by Warp Rift detonations have their Spell Power reduced by 35% for 5 seconds. Additionally, enemies hit by Warp Rift explosions are knocked away from the center.",
+      "fields": {
+        "type": "Crowd control, Offensive damage modifier",
+        "affects": "Enemies",
+        "props": "Knockback, Spell Power",
+        "prop1": "Knockback duration",
+        "val1": "0.1875 seconds",
+        "prop2": "Knockback speed",
+        "val2": "12",
+        "prop3": "Knockback distance",
+        "val3": "2.25",
+        "notes": "Spell Power reduction from Interference does not stack with itself, but stacks additively with other sources of Spell Power and other offensive damage and healing modifiers affecting targets' Spell Damage or healing output."
+      },
+      "_raw_fields": [
+        "Interference",
+        "6",
+        "3",
+        "Enemy Heroes hit by Warp Rift detonations have their Spell Power reduced by 35% for 5 seconds. Additionally, enemies hit by Warp Rift explosions are knocked away from the center.",
+        "File:Interference_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Construct Additional Pylons",
+      "tier": "7",
+      "slot": "1",
+      "icon": "Construct Additional Pylons Icon.png",
+      "description": "Probius can now have up to 3 active Pylons, and increase the damage of Pylon Overcharge by 25%.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Ability",
+        "notes": "Damage bonus stacks additively with other offensive damage modifiers that can affect Pylon Overcharge 's damage."
+      },
+      "_raw_fields": [
+        "Construct Additional Pylons",
+        "7",
+        "1",
+        "Probius can now have up to 3 active Pylons, and increase the damage of Pylon Overcharge by 25%.",
+        "File:Construct Additional Pylons Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Gate Keeper",
+      "tier": "7",
+      "slot": "2",
+      "icon": "Gate_Keeper_Icon.png",
+      "description": "Null Gate lasts indefinitely if either end is within a Power Field.",
+      "fields": {},
+      "_raw_fields": [
+        "Gate Keeper",
+        "7",
+        "2",
+        "Null Gate lasts indefinitely if either end is within a Power Field.",
+        "File:Gate_Keeper_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Shoot 'Em Up",
+      "tier": "7",
+      "slot": "3",
+      "icon": "Shoot_'Em_Up_Icon.png",
+      "description": "Enemy Heroes hit by Disruption Pulse take a bonus 2.5% of their maximum Health as damage. Passive Reduce the cooldown of Disruption Pulse by 0.5 seconds.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "-",
+        "affects": "Enemy Heroes",
+        "props": "Percent Damage"
+      },
+      "_raw_fields": [
+        "Shoot 'Em Up",
+        "7",
+        "3",
+        "Enemy Heroes hit by Disruption Pulse take a bonus 2.5% of their maximum Health as damage. Passive Reduce the cooldown of Disruption Pulse by 0.5 seconds.",
+        "File:Shoot_'Em_Up_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Probius Loop",
+      "tier": "7",
+      "slot": "4",
+      "icon": "Probius_Loop_Icon.png",
+      "description": "Whenever a Rift explosion hits 1 or more enemy Heroes, create a new Warp Rift in the same location.",
+      "fields": {},
+      "_raw_fields": [
+        "Probius Loop",
+        "7",
+        "4",
+        "Whenever a Rift explosion hits 1 or more enemy Heroes, create a new Warp Rift in the same location.",
+        "File:Probius_Loop_Icon.png"
+      ],
+      "level": "20"
+    }
+  ],
+  "other": [],
+  "_unparsed_count": 0
+}

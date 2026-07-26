@@ -1,0 +1,223 @@
+{{hero data
+| name = Mephisto
+| date = September 4, 2018
+| price = 10000
+| title = Lord of Hatred 
+| role = Ranged
+| franchise = Diablo
+| info = A [[sustain]]ed Assassin who thrives in battle against groups of enemies.
+| lore = Dul'Mephistos, the Lord of Hatred, is said to be the most cunning among his brethren. Even while imprisoned in a Soulstone, his vile influence corrupted the Zakarum and manipulated them into breaking the seal, giving him free reign to reunite the Prime Evils and enslave humanity.
+| difficulty = Medium
+| melee = False
+| health = 1968
+| healthRegen = 4.1015
+| resource = 500
+| resourceType = Mana
+| armor = 0
+| attackSpeed = 1
+| attackRange = 4.5
+| attackDamage = 66
+| healthScaling = 0.04
+| regenScaling = 0.04
+| adamageScaling = 0.04
+| unitRadius = 0.75
+| icon = File:Mephisto_Icon.png
+| skills = 
+Lord Of Hatred;Trait;File:Lord_of_Hatred_Icon.png;Hitting enemy Heroes with Basic Abilities reduces Mephisto's Basic Ability cooldowns. Skull Missile and Shade of Mephisto grant 1.5 seconds of cooldown reduction per Hero hit, and Lightning Nova grants 0.3 seconds per Hero hit.;;;trait;
+
+Skull Missile;Q;File:Skull_Missile_Icon.png;Conjure a skull that travels in the target direction after 0.625 seconds, dealing 127 damage to enemies hit and Slowing Heroes hit by 25% for 2 seconds.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Skillshot]], [[Slow]]<!--
+-->|cast=0 + 0.125 seconds<!--
+-->|range=12.5<!--
+-->|hitbox=2 x 1.8<!--
+-->|missile=19}};8;20;;False
+
+Lightning Nova;W;File:Lightning_Nova_Icon.png;A ring of lightning appears around Mephisto for 2.5 seconds. Enemies within the ring take 43 damage every 0.25 seconds. Each time a cast of Lightning Nova hits a Hero, its damage is increased by 3%, up to 30%.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=No target<!--
+-->|props=[[Area of Effect]]<!--
+-->|cast=0.125 + 0 seconds<!--
+-->|aoe=Ring<!--
+-->|radius=<br/>- Inner: 4.5<br/>- Outer: 5.25<!--
+-->|tickrate=4.0 per second (x11)<!--
+-->|prop3=Damage per tick|val3=43<!--
+-->|notes=<li>Mephisto's 4.5 Basic Attack Range is the same as the Lightning Nova's inner radius, meaning that AA move puts him at the correct distance.<li>Damage bonus stacks additively with itself and other offensive damage modifiers that can affect <i>Lightning Nova</i>'s damage.}};14;50;;False
+
+Shade of Mephisto;E;File:Shade_of_Mephisto_Icon.png;Teleport to a location, dealing 78 damage to nearby enemies and leaving behind a Shade of Mephisto at Mephisto's original location. After 2.5 seconds, Mephisto is teleported back to the Shade's location.<!--
+-->{{undoc-x|type=Spell Damage / Movement: [[Teleport]] (primary cast)<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies / Self<!--
+-->|props=[[Area of Effect]], [[Clamping]], Self-castable<!--
+-->|cast=0.125 + 0 seconds<!--
+-->|radius=2.5<!--
+-->|range=7.5<!--
+-->|notes=<li>Does not deal damage on return.<li>The return always triggers regardless of any positive or negative status effects on Mephisto, with the exception of [[Stasis]].<li>The return teleport interrupts active displacements, but does not affect any other effects Mephisto may be afflicted by. However, with the right timing, certain displacements, such as [[Diablo]]'s ''Overpower'', may still continue their animation and snap Mephisto back to it after the return.<li>Teleporting back dis[[mount]]s and interrupts mounting, [[Hearthing]] and channeling objectives, but does not interrupt channeling Mephisto's Heroic Abilities or [[Warhead Junction]]'s Nukes.}};18;35;;False
+
+Consume Souls;R;File:Consume_Souls_Icon.png;Channel for 2.5 seconds, revealing all enemy Heroes. After the Channel completes, all enemy Heroes take 357 damage and are Slowed by 25% for 2.5 seconds.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemy Heroes<!--
+-->|target=No target<!--
+-->|props=[[Revealed]], [[Slow]], [[Stationary channel]]<!--
+-->|cast=0 + CH + 0 seconds<!--
+-->|range=Global<!--
+-->|notes=<li>Interrupting the cast puts the Ability on full cooldown.}};120;80;heroic;False
+
+Durance of Hate;R;File:Durance_of_Hate_Icon.png;After 1 second, unleash a wave of evil spirits that Root the first enemy Hero hit for 2.5 seconds and deal 250 damage to them over the same duration.<p>Durance of Hate spreads outward from its initial target, Rooting and damaging additional nearby enemy Heroes.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemy Heroes<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Channeled cast]] (stationary), [[Damage over Time]], [[Root]], [[Skillshot]]<!--
+-->|cast=1.0 (ch) + 0 seconds<!--
+-->|range=15<!--
+-->|aoe=Circle<!--
+-->|radius=<br>- Initial: 0.25<br>- Final: 5.5 <sup>(1</sup><!--
+-->|hitbox=2.0 x 1.25<!--
+-->|missile=22<!--
+-->|tickrate=4.0 per second (x8)<!--
+-->|prop3=Damage per tick|val3=25<!--
+-->|notes=<li><sup>1)</sup> The area grows in increments of 0.5625 radius every 0.1875 seconds, reaching its maximum radius after 2.0625 seconds.<li>Interrupting the Ability during its windup puts it on a 10 second cooldown.<li>If Mephisto teleports back with ''Shade of Mephisto'' during the cast time, the wave is unleashed in the direction of target point.<li>Enemies that are immune to skillshots cannot be hit by the initial missile, but can be affected by the spreading area, as long as they are not also immune to AoE.}};50;50;heroic;False
+
+| talents = <!-- LEVEL 1 -->
+Unyielding Power;1;1;{{Quest|Hit Heroes with Skull Missile.|After hitting 20 Heroes, increase Skull Missile's damage by 100.}}<p>{{Reward|After hitting 40 Heroes, Skull Missile gains an additional charge.}}<!--
+-->{{undoc-x|type=Bonus damage<!--
+-->|scaling=-<!--
+-->|affects=Ability<!--
+-->|prop1=Charge cooldown|val1=1.0 seconds<!--
+-->|notes=<li>Bonus damage is added to base damage and dealt in a single instance.}};File:Unyielding_Power_Icon.png;
+
+Furious Spark;1;2;Every 3rd hit from Lightning Nova against the same target deals 65 bonus damage and grants Mephisto 2 Mana.<!--
+-->{{undoc-x|type=Spell Damage, Mana<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|notes=<li>Bonus damage is dealt in an additional instance.<li>Damage from ''Furious Spark'' does not benefit from <i>Lightning Nova</i>'s innate damage multiplier nor create stacks for it.}};File:Furious_Spark_Icon.png;
+
+Malicious Intent;1;3;Shade of Mephisto grants 25% Spell Power while active and for 2.5 seconds after ending.<p>If Mephisto hits enemy Heroes at least 18 times with his Basic Abilities while Shade of Mephisto is active, then increase the duration of the Spell Power bonus to 10 seconds after it ends.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Spell Power]]<!--
+-->|notes=<li>Does not stack with itself. Subsequent applications refresh the duration if it is currently lower than 2.5 seconds.<li>Spell Power stacks additively with itself and other offensive damage and healing modifiers affecting Mephisto's Spell Damage or healing output.}};File:Malicious_Intent_Icon.png;
+
+<!-- LEVEL 4 -->
+Hateful Mending;2;1;Skull Missile grants 10 Mana and heals Mephisto for 70% of the damage it deals to Heroes.<!--
+-->{{undoc-x|type=Healing, Mana<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|props=[[Lifesteal]]<!--
+-->|notes=<li>Mana restoration triggers for each enemy Hero hit.}};File:Hateful_Mending_Icon.png;
+
+Static Barrier;2;2;At the end of its duration, Lightning Nova grants Mephisto a Shield equal to 40% of the damage it dealt to Heroes. Lasts 5 seconds.<!--
+-->{{undoc-x|type=[[Shield]]<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|notes=<li>Shield amount is calculated similarly to [[Lifesteal]] from final damage dealt.<li>Bonus damage from ''Furious Spark'', ''Static Field'', ''Aminosity'' and secondary Nova from ''Mimic'' all contribute to Shield amount gained.<li>Gaining a Shield from ''Static Barrier'' while already having one causes them to stack and refreshes the duration.}};File:Static_Barrier_Icon.png;
+
+Spite;2;3;Increase Regeneration Globe healing duration by 100%. Every tick of Regeneration Globe healing activates Lord of Hatred, reducing Basic Ability cooldowns by 1 second.<!--
+-->{{undoc-x|nohr=1<!--
+-->|notes=<li>Makes [[Regeneration Globe]]s tick an additional 5 times, healing Mephisto for an additional 9% of his maximum Health and an additional 7% of his maximum Mana over its duration.}};File:Spite_Icon.png;
+
+<!-- LEVEL 7 -->
+Ghastly Armor;3;1;Shade of Mephisto grants 25 Armor while active and for 2.5 seconds after it ends.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Self|props=[[Armor]]<!--
+-->|notes=<li>Does not stack with itself or other positive Armor effects. Other defensive damage modifiers may stack.}};File:Ghastly_Armor_Icon.png;
+
+Frost Storm;3;2;While Shade of Mephisto is active, enemies who are hit by Lightning Nova are Slowed by 15% for 1 second and the Slow from Skull Missile is increased to 50%.<!--
+-->{{undoc-x|type=Crowd control<!--
+-->|affects=Enemies<!--
+-->|props=[[Slow]]<!--
+-->|notes=<li>''Shade of Mephisto'' must be active the moment Lightning Nova or Skull Missile hits the target (not when the Ability is cast) to benefit from this talent.}};File:Frost_Storm_Icon.png;
+
+Trickery;3;3;Shade of Mephisto grants 20% Movement Speed while active and for 2.5 seconds after it ends.<p>If Mephisto hits enemy Heroes at least 18 times with his Basic Abilities while Shade of Mephisto is active, then reset the cooldown of Shade of Mephisto.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|props=[[Movement Speed]]<!--
+-->|notes=}};File:Trickery_Icon.png;
+
+<!-- LEVEL 10 -->
+Consume Souls;4;1;{{Cooldown|120}}<br>Channel for 2.5 seconds, revealing all enemy Heroes. After the Channel completes, all enemy Heroes take 357 damage and are Slowed by 25% for 2.5 seconds.;File:Consume_Souls_Icon.png;
+Durance of Hate;4;2;{{Cooldown|50}}<br>After 1 second, unleash a wave of evil spirits that Root the first enemy Hero hit for 2.5 seconds and deal 250 damage to them over the same duration.<p>Durance of Hate spreads outward from its initial target, Rooting and damaging additional nearby enemy Heroes.;File:Durance_of_Hate_Icon.png;
+
+<!-- LEVEL 13 -->
+Abhorred Skull;5;1;Hitting a Hero with Skull Missile grants 25% Spell Power for 6 seconds. Skull Missile deals 40% more damage to Heroes under 50% Health.<!--
+-->{{undoc-x|type=Offensive damage modifier, Healing dealt modifier / Offensive damage modifier<!--
+-->|affects=Self / Ability<!--
+-->|props=[[Spell Power]]<!--
+-->|notes=<li>Spell Power from ''Abhorred Skull'' does not stack with itself. Subsequent applications refresh the duration.<li>Spell Power from ''Abhorred Skull'' stacks additively with other sources of Spell Power and other offensive damage and healing modifiers affecting Mephisto's Spell Damage or healing output.<li>Damage bonus against low-Health Heroes stacks additively with other offensive damage modifiers that can affect <i>Skull Missile</i>'s damage.}};File:Abhorred_Skull_Icon.png;
+
+Hysteria;5;2;Lord of Hatred also reduces the cooldown of Mephisto's Heroic Ability. Mephisto is healed for 15% of his maximum Health and Mana when he casts his Heroic Ability.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|notes=}};File:Hysteria_Icon.png;
+
+Shard of Hate;5;3;Basic Attacks hit enemies near the primary target and activate Lord of Hatred against enemy Heroes, reducing Basic Ability cooldowns by 1 second per Hero hit.<!--
+-->{{undoc-x|type=Physical Damage<!--
+-->|scaling=-<!--
+-->|affects=Enemies<!--
+-->|props=[[Attack Modifier]], [[Splash]]<!--
+-->|prop1=Splash radius|val1=3.5|notes=}};File:Shard_of_Hate_Icon.png;
+
+<!-- LEVEL 16 -->
+Lightning Reaction;6;1;Skull Missile explodes on contact with Lightning Nova, dealing 120 damage to nearby enemies.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|affects=Enemies<!--
+-->|scaling=4.00%<!--
+-->|props=[[Area of Effect]]<!--
+-->|radius=3.0<!--
+-->|notes=<li>''Lightning Reaction'' can trigger multiple times on the same cast.}};File:Lightning_Reaction_Icon.png;
+
+Static Field;6;2;When Lightning Nova's damage bonus reaches 30%, enemy Heroes within its radius take damage equal to 10% of their maximum Health.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Percent Damage]]<!--
+-->|notes=<li>Bonus damage is dealt in an additional damage instance.}};File:Static_Field_Icon.png;
+
+Animosity;6;3;Increase the duration of Lightning Nova by 1 second and the maximum amount of bonus damage it can deal from 30% to 42%.;File:Animosity_Icon.png;
+
+<!-- LEVEL 20 -->
+Consumed by Hatred;7;1;Consume Souls deals bonus damage equal to 10% of the target's missing Health. If Consume Souls initial cast kills a Hero it will cast 1 additional time.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=-<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Percent Damage]]<!--
+-->|notes=<li>The bonus damage amount is calculated ''before'' the main damage is dealt.<li>Free cast does not require channeling.<li>Recast will trigger if a Hero (not including [[Hallucination]]s) dies to any source within 0.5s of being hit by ''Consume Souls''.}};File:Consumed_by_Hatred_Icon.png;
+
+Unspeakable Horror;7;2;Durance of Hate Silences enemies while they are Rooted and for 3 seconds after its Root expires.<!--
+-->{{undoc-x|type=Crowd control<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Silence]]<!--
+-->|notes=<li>If a target is hit by a [[Knockback]] while affected by this Ability, the Silence and Root are both temporarily removed, and then both reapplied when the Knockback applies. Because the target is necessarily [[Daze]]d during the Knockback, this rarely matters, but the reapplication of the Silence could matter for certain CC removal Abilities (e.g. [[Brightwing]]'s ''Soothing Mist'', [[Lunara]]'s ''Abolish Magic'').}};File:Unspeakable_Horror_Icon.png;
+
+Mimic;7;3;While both Shade of Mephisto and Lightning Nova are active, Lightning Nova also casts from the Shade's location.<!--
+-->{{undoc-x|nohr=1<!--
+-->|notes=<li>Shade's ''Lightning Nova'' interacts with all Talents that affect ''Lightning Nova''.}};File:Mimic_Icon.png;
+
+Shade Lord;7;4;{{Cooldown|20}}<br>Activate to swap locations with Shade of Mephisto and refresh its duration.<p>{{Passive}} Shade of Mephisto benefits from all of Mephisto's level 7 Talents.<!--
+-->{{undoc-x|type=Movement: [[Teleport]]<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|cast=Instant}};File:Shade_Lord_Icon.png;
+}}
+
+<noinclude>
+{{Scaling table/start|{{#var:health}}|{{#var:health scaling}}|{{#var:health regen}}|{{#var:health regen scaling}}|{{#var:attack damage}}|{{#var:attack damage scaling}}}}
+{{Scaling table/slot|Skull Missile|127|0.04}}
+{{Scaling table/slot|Lightning Nova|45|0.04}}
+{{Scaling table/slot|Lightning Nova (per second)|180|0.04}}
+{{Scaling table/slot|Shade of Mephisto|78|0.04}}
+{{Scaling table/slot|Consume Souls|357|0.04|10}}
+{{Scaling table/slot|Durance of Hate|250|0.04|10}}
+{{Scaling table/slot|Furious Spark|72|0.04|1}}
+{{Scaling table/slot|Lightning Reaction|120|0.04|16}}
+{{Scaling table/end}}
+</noinclude>
+
+<noinclude>{{DEFAULTSORT:Mephisto}}</noinclude>

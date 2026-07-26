@@ -1,0 +1,283 @@
+{{hero data
+| name = Hogger
+| date = December 1, 2020
+| price = 10000
+| title = Scourge of Elwynn
+| role = Bruiser
+| franchise = Warcraft
+| info = A chaotic Bruiser who deals heavy area damage and can create terrain.
+| lore = Once largely a threat to fledgling adventurers' egos in Elwynn Forest, the Riverpaw gnoll Hogger has finally found a realm vast enough to sate his hunger... which is expanding to fill the space.
+| difficulty = Medium
+| melee = True
+| health = 2260 
+| healthRegen = 4.711
+| resource = 100
+| resourceType = Rage
+| energyRegen = 
+| armor = 
+| attackSpeed =  0.73
+| attackRange = 2
+| attackDamage = 150
+| healthScaling = 0.04
+| regenScaling = 0.04
+| adamageScaling = 0.04
+| unitRadius = 0.875
+| icon =
+| skills = 
+Loot Hoard;D;File:Loot_Hoard_Icon.png;Throw a pile of junk onto the battlefield, dealing 102 damage in a small area, knocking enemies away and acting as terrain for up to 5 seconds. When the Loot Hoard expires or is destroyed, a chunk of Meat falls out that can be picked up to restore 3% of maximum Health every second for 4 seconds. Reactivate to destroy Loot Hoard.<!--
+-->{{undoc-x|type=Terrain / Spell Damage, Crowd control / Healing<!--
+-->|scaling=4.00% (damage)<!--
+-->|affects=All units / Enemies / Self<!--
+-->|props=[[Area of Effect]], [[Heal over Time]], [[Knockback]], Self-castable<!--
+-->|cast=0.125 + 0.0625 seconds<!--
+-->|range=8.75<!--
+-->|aoe=<br/>- Terrain: Square<br/>- Impact: Circle<!--
+-->|width=2.0 (terrain)<!--
+-->|height=2.0 (terrain)<!--
+-->|radius=2.5 (impact)<!--
+-->|missile=40<!--
+-->|tickrate=1.0 per second (x5)<!--
+-->|prop1=Meat pickup radius|val1=2.0<!--
+-->|prop2=Knockback duration|val2=0.0625 seconds<!--
+-->|prop3=Knockback speed|val3=12<!--
+-->|notes=<li>''Loot Hoard'' can be reactivated 0.5 seconds after it has spawned to end its effect early. This still spawns Meat.<li>Loot Hoard is aligned with the map grid and must be placed on a location, where it does not collide with Hogger's unit radius and its center does not collide with existing terrain.<li>Picking up Meat while under its effects adds to its total duration.<li>Meat stays on the ground for up to 8 seconds.}};20;
+
+Rage;Trait;File:Rage_Icon.png;Rage is gained by taking damage or dealing Basic Attack damage. Hogger’s Basic Ability cooldowns refresh 1% faster for every 2 points of Rage. After 3 seconds of not gaining Rage, it begins to quickly decay.<!--
+-->{{undoc-x|type=<!--
+-->|affects=Self<!--
+-->|props=[[Attack Modifier]]<!--
+-->|notes=<li>Hogger gains 5 Rage when landing a [[Basic Attack]] and 1 Rage each time he takes damage.<li>Decays by 0.8125 per 0.0625s (13 per second) after not gaining any Rage for 3 seconds.}};;
+
+Staggering Blow;Q;File:Staggering_Blow_Icon.png;Swing your chain in a wide arc, dealing 140 damage to enemies hit and knocking them away. If an enemy collides with terrain, deal an additional 150 damage, Stun for 0.75 seconds, and gain 15 Rage.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Clamping]],  [[Knockback]], [[Stationary channel]] <sup>(1</sup>, [[Stun]]<!--
+-->|cast=0.125 + 0.125 seconds<!--
+-->|aoe=Radial<!--
+-->|radius=5.75<!--
+-->|arc=120 degrees <sup>(1</sup><!--
+-->|prop1=Knockback duration|val1=0.1875 seconds<!--
+-->|prop2=Knockback speed|val2=17<!--
+-->|notes=<li><sup>1)</sup> The swing is channeled and the search is split in three 40 degree sections, rotating counter-clockwise over 0.1875 seconds.<li>Enemies are knocked away radially from Hogger.<li>Damage from terrain hit is dealt in a separate instance.<li>Hogger's Basic Attack is placed on a 0.375 second cooldown when Staggering Blow finishes casting.}};12;
+
+Ez-Thro Dynamite;W;File:Ez-Throw_Dynamite_Icon.png;Toss a bundle of Dynamite with a 1.5 second fuse. Upon detonation, enemies take 180 damage and are Slowed by 30% for 2 seconds. The Dynamite instantly detonates when landing directly on an enemy Hero and grants Hogger 10 Rage.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], Self-castable, [[Slow]]<!--
+-->|cast=0.125 + 0 seconds<!--
+-->|range=6.75<!--
+-->|aoe=Circle<!--
+-->|radius=<br/>- Timed: 3.0<br/>- Instant: 0.875<!--
+-->|notes=<li>Dynamite bundle takes 0.5 seconds to reach its end location regardless of distance.<li>Instant detonation only triggers on the enemy Hero closest to the dynamite's center, causing the Rage gain and talent bonuses only to be applied once per dynamite regardless of how many Heroes were hit.<li>Dynamite bundle grants vision over its area before detonating.}};8;
+
+Hogg Wild;E;File:Hogg_Wild_Icon.png;After 0.25 seconds, become Unstoppable and uncontrollably spin towards the target direction, ricocheting off terrain. Ricocheting off terrain refreshes the duration.<p>Every 0.125 seconds, deal 44 damage to nearby non-Structure enemies. Damage against Heroes is increased by 0.5% for each point of Rage.<!--
+-->{{undoc-x|type=Spell Damage / Movement: [[Dash]], Status effect<!--
+-->|scaling=4.00%<!--
+-->|affects=non-[[Structure]] enemies / Self<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Clamping]], Self-castable, [[Unstoppable]]<!--
+-->|cast=0.25 + 0 seconds<!--
+-->|aoe=Circle<!--
+-->|radius=2.625<!--
+-->|missile=<br/>- Initial: 0.2<br/>- Maximum: 13.5<br/>- Acceleration: 13<br/>- Bounces: 14.5 (constant)<!--
+-->|tickrate=8.0 per second<!--
+-->|prop1=Damage per tick|val1=36<!--
+-->|prop2=Duration|val2=<br/>- Initial: 1.5625 seconds<br/>- Bounces: 1.375 seconds<!--
+-->|notes=<li>''Hogg Wild'' can be reactivated after 0.5 seconds to end its effect early.<li>Bouncing off terrain instantly sets the speed to 14.5.<li>During ''Hogg Wild'' Hogger also bounces off of Structure units and his ''Loot Hoard'', but ignores collision with any other units, including [[pathing blocker]]s like [[Tassadar]]'s ''Force Wall''.<li>Contact with [[terrain]] is checked from the centerpoint of Hogger's hitbox.<li>Cooldown starts when the Ability ends.<li>Rage damage bonus stacks additively with other offensive [[damage modifier]]s that can affect <i>Hogg Wild</i>'s damage.}};14;
+
+Hoardapult;R;File:Hoardapult_Icon.png;Launch an empowered Loot Hoard with Hogger attached, dealing 100 damage and Slowing enemies by 50% for 2 seconds. Hoardapult’s Loot Hoard lasts for up to 20 seconds, decaying rapidly while not nearby. Every 10 seconds Hogger can take a chunk of Meat from the Loot Hoard.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control / Movement: [[Launch]], Status effect<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies, Self<!--
+-->|target=Vector targeting<!--
+-->|props=[[Area of Effect]], Self-castable, [[Slow]], [[Unstoppable]]<!--
+-->|cast=0.375 + 0.0625 seconds<!--
+-->|range=15<!--
+-->|aoe=Circle<!--
+-->|radius=2.5<!--
+-->|missile=40<!--
+-->|prop1=Meat pickup radius|val1=4.5<!--
+-->|prop2=Decay radius|val2=14<!--
+-->|notes=<li>''Hoardapult'' can be canceled after 0.75 seconds to end its effect early.<li>The initial point of vector targeting determines the location of the Loot Hoard unit and the second which direction Hogger will be positioned next to it.<li>''Hoardapult'' can exceptionally be cast while Rooted.<li>Hogger is Unstoppable while in the air.<li>In addition to <i>Hoardapult</i>'s damage, enemies also take damage from <i>Loot Hoard</i>'s impact.<li>Loot Hoards created by ''Hoardapult'' and Meat dropped by them have the same properties as their base version and interact with Talents affecting them, except that the initial Meat drop from ''Bones to Gnaw'' does not happen.<li>Hogger automatically consumes Meat if he is within the pickup radius and not at maximum Health. The first Meat can be collected instantly.<li>If Hogger is not within the decay radius, Hoardapult's duration is reduced by 0.5 seconds every 0.0625 seconds.}};60;
+
+Shockwave;R;File:Shockwave_Icon.png;After 0.5 seconds, slam the ground, sending out a shockwave that travels in a long line. Enemies hit by the initial slam take 335 damage and are Stunned for 1.5 seconds. Enemies only hit by the shockwave take 230 damage and are Stunned for 0.75 seconds.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Channeled cast]] (stationary), [[Clamping]], Piercing Skillshot, [[Stun]]<!--
+-->|cast=0.5 (ch) + 0.25 seconds<!--
+-->|range=<br>- Slam: 2.5<br/>- Shockwave: 17<!--
+-->|aoe=<br>- Slam: Circle<br/>- Shockwave: Rectangle<!--
+-->|radius=2.5 (slam)<!--
+-->|hitbox=2.5 x 1.5 (shockwave)<!--
+-->|missile=22<!--
+-->|notes=<li>Interrupting ''Shockwave'' during its windup puts it on a 10 second cooldown.<li>Enemies hit by the initial slam cannot be affected by the shockwave.}};70;
+
+| talents = 
+<!-- LEVEL 1 -->
+Journeyman Cooking;1;1;Each Hero hit by Ez-Thro Dynamite heals you for 8% of maximum Health.<p>{{Questonly|Hitting Heroes with Ez-Thro Dynamite permanently increases your maximum Health by 10, to a maximum of 750 bonus Health.<!--
+-->{{undoc-x|type=Healing / Bonus Health<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|notes=}}}};File:Journeyman_Cooking_Icon.png;
+
+Bones to Gnaw;1;2;Loot Hoard creates a chunk of Meat when it lands. While under the effects of Meat, gain 10 Armor.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Armor]]<!--
+-->|notes=<li>Does not stack with other positive Armor effects. Other defensive damage modifiers may stack.}};File:Bones_to_Gnaw_Icon.png;
+
+On The Prowl;1;3;{{Cooldown|40}}<br>{{Active}}Activate to gain 30 Rage over 8 seconds.<p>{{Passive}} You heal for 7 Health every second, increased by 2% per point of Rage.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=4.00%<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|cast=Instant<!--
+-->|tickrate=1.0 per second<!--
+-->|notes=<li>Rage healing bonus directly increases the base healing of the Ability, causing the bonus to stack '''multiplicatively''' with Healing modifiers.}};File:On_The_Prowl_Icon.png;
+
+<!-- LEVEL 4 -->
+Brute Force;2;1;Increase the range of Loot Hoard by 25% and its damage by 50%.<p>{{Questonly|Hitting Heroes with Staggering Blow permanently increases Basic Attack damage by 2, up to 150 bonus damage. Enemy Heroes that hit terrain grant an additional 6 damage.}}<!--
+-->{{undoc-x|type=Bonus damage<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|prop1=Bonus range|val1=2.1875<!--
+-->|notes=}};File:Brute_Strength_Icon.png;
+
+Aggro Range;2;2;Increase Hogg Wild’s radius by 20% and each enemy hit generates 0.5 Rage, increased to 2 against Heroes.<!--
+-->{{undoc-x|prop1=Bonus radius|val1=0.535<!--
+-->|notes=}};File:Aggro_Range_Icon.png;
+
+Hogger’s Joggers;2;3; While at or above 30 Rage, gain 10% increased Movement Speed and healing received.<p>While at or above 50 Rage, increase these bonuses to 15%.<!--
+-->{{undoc-x|type=Status effect, Healing received modifier<!--
+-->|affects=Self<!--
+-->|props=[[Movement Speed]]<!--
+-->|notes=<li>Stacks additively with other healing modifiers that affect healing received and multiplicatively with modifiers that affect healing dealt.}};File:Hogger's_Joggers_Icon.png;
+
+<!-- LEVEL 7 -->
+Dense Blasting Powder;3;1;Instant detonations of Ez-Thro Dynamite create an additional dynamite bundle behind the Hero hit.<p>Hitting the bundle of Ez-Thro Dynamite with Staggering Blow breaks it into 3 sticks and launches them forward in an arc.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|props=[[Area of Effect]], [[Slow]]<!--
+-->|prop1=Vertical offset|val1=5.25 (all)<!--
+-->|prop2=Horizontal offset|val2=<br/>- Center: 0<br/>- Sides: ±3.75<!--
+-->|notes=<li>Dynamites launched with ''Dense Blasting Powder'' have the same properties as base version and interact with all other talents affecting it.<li>Dynamites created from ''Dense Blasting Power'' cannot be split by hitting them with ''Staggering Blow''.<li>The original Ez-Thro Dynamite does not explode if split with ''Staggering Blow''.}};File:Dense_Blasting_Powder_Icon.png;
+
+Garbage Fire;3;2;Reduce the cooldown of Loot Hoard by 2 seconds. Every 0.5 seconds, enemies in a large area around Loot Hoard take 23 damage and are Slowed by 20%.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|props=[[Area of Effect]], [[Slow]]<!--
+-->|aoe=Circle<!--
+-->|radius=3.25<!--
+-->|tickrate=2.0 per second (x10)<!--
+-->|notes=<li>Enemies can be damaged by multiple ''Garbage Fire''s simultaneously.}};File:Garbage_Fire_Icon.png;
+
+Seeing Red;3;3;While above 50 Rage, gain 35% Attack Speed and the cooldowns of Staggering Blow and Hogg Wild refresh 30% faster.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|props=[[Attack Speed]]<!--
+-->|notes=}};File:Seeing_Red_Icon.png;
+
+<!-- LEVEL 10 -->
+Hoardapult;4;1;{{Cooldown|60}}<br>Launch an empowered Loot Hoard with Hogger attached, dealing 100 damage and Slowing enemies by 50% for 2 seconds. Hoardapult’s Loot Hoard lasts for up to 20 seconds, decaying rapidly while not nearby. Every 10 seconds Hogger can take a chunk of Meat from the Loot Hoard.;File:Hoardapult_Icon.png;
+
+Shockwave;4;2;{{Cooldown|70}}<br>After 0.5 seconds, slam the ground, sending out a shockwave that travels in a long line. Enemies hit by the initial slam take 335 damage and are Stunned for 1.5 seconds. Enemies only hit by the shockwave take 230 damage and are Stunned for 0.75 seconds.;File:Shockwave_Icon.png;
+
+<!-- LEVEL 13 -->
+Dust Devil;5;1;Gain 25 Armor while Hogg Wild is active and for 4 seconds afterward. While at or above 50 Rage, increase this Armor to 40.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Armor]]<!--
+-->|notes=<li>Does not stack with other positive Armor effects. Other defensive damage modifiers may stack.}};File:Dust_Devil_Icon.png;
+
+Pummel;5;2;Enemies hit by Hogg Wild are Slowed by 10% for 2 seconds, stacking up to 5 times.<p>Heroes hit have their Spell Power reduced by 30% for 2 seconds.<!--
+-->{{undoc-x|type=Crowd control, Offensive damage modifier, Healing dealt modifier<!--
+-->|affects=Enemies<!--
+-->|props=[[Spell Power]]<!--
+-->|notes=<li><i>Pummel</i>'s Spell Power reduction does not stack with itself.<li>Spell Power reduction stacks additively with other sources of Spell Power and other damage and healing modifiers affecting the target Hero's Spell Damage or healing output.}};File:Pummel_Icon.png;
+
+Bloodthirst;5;3;Damaging Heroes with Basic Attacks, Staggering Blow or Hogg Wild heals you for 33% of the damage dealt.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|props=[[Lifesteal]] (heroes)<!--
+-->|notes=}};File:Bloodthirst_(Hogger)_Icon.png;
+
+<!-- LEVEL 16 -->
+Headbanger;6;1;Enemy Heroes Stunned by Staggering Blow take an additional 8% of their maximum Health as damage and are Stunned for an additional 0.5 seconds.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Percent damage]]<!--
+-->|notes=<li>Bonus damage is dealt in a separate instance and does grant lifesteal with ''Bloodthirst''.}};File:Headbanger_Icon.png;
+
+Kablooie!;6;2;Instant Ez-Thro Dynamite detonations deal 50% more damage, reduce its cooldown by 1.5 seconds, and increase its Slow amount to 50%.<p>{{Passive}} Increase Ez-Thro Dynamite’s range by 25%.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|prop1=Bonus range|val1=1.6875<!--
+-->|notes=<li>Cooldown reduction and Slow increase only apply to the target of instant detonation.<li>Damage bonus stacks additively with other offensive damage modifiers that can affect <i>Ez-Thro Dynamite</i>'s damage.}};File:Kablooie!_Icon.png;
+
+Furzerker;6;3;Hitting Heroes with Staggering Blow or Ez-Thro Dynamite increases the damage of the next Basic Attack within 8 seconds by 50%, stacking up to 2 times.<p>When Hogg Wild ends, gain 30% Movement Speed for 2 seconds.<!--
+-->{{undoc-x|type=Offensive damage modifier, Status effect<!--
+-->|affects=Self<!--
+-->|props=[[Attack Modifier]], [[Movement speed]]<!--
+-->|notes=<li>Damage bonus stacks additively with itself and with other offensive damage modifiers that can affect Hogger's Basic Attack damage.}};File:Furzerker_Icon.png;
+
+<!-- LEVEL 20 -->
+Secret Stash;7;1;Every 2 seconds, Hoardapult’s Loot Hoard randomly launches Ez-Thro Dynamite, prioritizing nearby enemy Heroes.<p>Every 5 seconds, it also launches a chunk of Meat toward Hogger.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control / Healing<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=<!--
+-->|props=[[Area of Effect]]<!--
+-->|notes=<li>Dynamite bundles launch at a set 4.5 distance towards a random enemy Hero, if there are any within 7 radius. If no enemy Heroes are within the radius at the time, dynamite bundles are launched to one of 8 predetermined locations chosen randomly.<li>Dynamite bundles launched by ''Secret Stash'' have the same properties as the base version and interact with all talents affecting Ez-Thro Dynamite, except ''Dense Blasting Powder''.<li>Meat is launched at a set 4.0 distance in Hogger's direction.<li><i>Secret Stash</i>'s Meat launch cooldown is independent from Hoardapult's Meat pickup and does not require Hogger to be full Health. The first Meat is launched after 5 seconds.<li>Meat launched by ''Secret Stash'' interacts with all talents affecting Meat.}};File:Secret_Stash_Icon.png;
+
+Power Spike;7;2;Hitting Heroes with Shockwave reduces their Armor by 15 for 4 seconds and grants 20 Rage.<p>{{Passive}} Rage's cooldown reduction affects Shockwave's cooldown.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Armor reduction]]<!--
+-->|notes=<li>Does not stack with other negative Armor effects. Other defensive damage modifiers may stack.}};File:Power_Spike_Icon.png;
+
+No Control;7;3;{{Cooldown|60}}<br>{{Active}}Activate to cast an untalented Hogg Wild and begin chasing an enemy Hero. After reaching the Hero, bounce to a random nearby enemy Hero. Lasts up to 5 seconds, rapidly decaying if there are no other enemy Heroes nearby.<p>Cannot be canceled.<!--
+-->{{undoc-x|type=Spell Damage, Status effect<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Unit target<!--
+-->|props=[[Area of Effect]], [[Mobile channel]], [[Movement speed]], [[Unstoppable]]<!--
+-->|cast=0.25 + 0 seconds<!--
+-->|range=<br/>- Initial: 9.0<br/>- Bounce search: 10<!--
+-->|aoe=Circle<!--
+-->|radius=2.625<!--
+-->|tickrate=8.0 per second<!--
+-->|prop1=Damage per tick|val1=44<!--
+-->|notes=<li>''No Control'' increases Hogger's Movement Speed by 10% every 0.0625 seconds, stacking up to 24 times (~16.5 max speed). Hogger loses 2 stacks every 0.0625 seconds if the current target is within 1.75 range.<li>Bounces choose the farthest targetable Hero in the range that has not been targeted within the last 2 seconds.<li>The current target is revealed for 0.125 seconds every 0.0625 seconds while Hogger is traveling to them.<li>If Hogger has no viable bounce targets, the duration of ''No Control'' begins to decay by 0.1875 seconds every 0.0625 seconds.}};File:No_Control_Icon.png;
+
+Anger Management;7;4;Increase maximum Rage by 50, raising the maximum bonuses for its cooldown refresh rate to 75% and Hogg Wild's Hero damage to 75%.<p>{{Passive}} Basic Attacks grant 5 additional Rage.;File:Anger_Management_(Hogger)_Icon.png;
+
+}}<noinclude>
+{{Scaling table/start|{{#var:health}}|{{#var:health scaling}}|{{#var:health regen}}|{{#var:health regen scaling}}|{{#var:attack damage}}|{{#var:attack damage scaling}}}}
+{{Scaling table/slot|Loot Hoard|102|0.04}}
+{{Scaling table/slot|Staggering Blow (base)|140|0.04}}
+{{Scaling table/slot|Staggering Blow (terrain hit)|150|0.04}}
+{{Scaling table/slot|Ez-Thro Dynamite|180|0.04}}
+{{Scaling table/slot|Hogg Wild|44|0.04}}
+{{Scaling table/slot|Hogg Wild (per second)|352|0.04}}
+{{Scaling table/slot|Hoardapult|100|0.04|10}}
+{{Scaling table/slot|Shockwave (slam)|335|0.04|10}}
+{{Scaling table/slot|Shockwave (wave)|230|0.04|10}}
+{{Scaling table/slot|On the Prowl|8|0.04|1}}
+{{Scaling table/slot|Dense Blasting Powder|180|0.04|7}}
+{{Scaling table/slot|Garbage Fire|23|0.04|7}}
+{{Scaling table/slot|Garbage Fire (per second)|46|0.04|7}}
+{{Scaling table/slot|Secret Stash (dynamite)|180|0.04|20}}
+{{Scaling table/slot|No Control|44|0.04|20}}
+{{Scaling table/slot|No Control (per second)|352|0.04|20}}
+{{Scaling table/end}}
+</noinclude>

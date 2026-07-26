@@ -1,0 +1,252 @@
+{{hero data
+| name = Tyrael
+| date = March 13, 2014
+| price = 4000
+| title = Archangel of Justice
+| role = Tank
+| franchise = Diablo
+| info = A Tank who pairs well with allies that like to dive into the enemy team.
+| lore = Among the angels it is the Archangel of Justice Tyrael who is humanity's greatest defender. Wielding his sword El'druin against the Burning Hells, the Prime Evils would have enslaved humanity long ago if Tyrael had not intervened.
+| difficulty = Medium
+| melee = True
+| health = 2517
+| healthRegen = 5.2382
+| resource = 500
+| resourceType = Mana
+| armor = 0
+| attackSpeed = 1.25
+| attackRange = 1.5
+| attackDamage = 82
+| healthScaling = 0.04
+| regenScaling = 0.04
+| adamageScaling = 0.04
+| unitRadius = 0.75
+| icon = File:Tyrael_Icon.png
+| skills =
+Archangel's Wrath;Trait;File:Archangel's_Wrath_Icon.png;Upon dying, become Invulnerable and gain 20% Movement Speed for 4 seconds. Upon expiration, explode, dealing 450 damage and reducing Tyrael's death timer by 10% per enemy Hero hit.<p>Archangel's Wrath reduces nearby enemy Heroes' damage by 50% while active and for 3 seconds after it expires.<!--
+-->{{undoc-x|type=Spell Damage / Offensive damage modifier / Special death state, Status effect<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies / Enemy Heroes / Self<!--
+-->|props=[[Area of Effect]], [[Movement Speed]]<!--
+-->|aoe=Circle<!--
+-->|radius=4.0<!--
+-->|notes=<li>Tyrael ignores collision until he explodes.<li>During ''Archangel's Wrath'', Tyrael can move through pathing blockers and enemy Gates, but not through other unpassable terrain.<li>Damage debuff is removed immediately when the target leaves the radius of ''Archangel's Wrath''. Duration extension requires being hit by the explosion upon expiration.<li>Damage debuff stacks additively with other offensive damage modifiers affecting the target Hero's damage output.}};;;trait;False
+
+El'druin's Might;Q;File:El'Druin's_Might_Icon.png;Throw El'druin to the target area, dealing 110 damage to nearby enemies and Slowing them by 30% for 2.5 seconds. Reactivate within 5 seconds to teleport Tyrael to El'druin and Slow nearby enemies again.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control / Movement: [[Teleport]]<!--
+-->|scaling=4.00%<!--
+-->|affects=enemies / Self<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Clamping]], [[Slow]]<!--
+-->|cast=0.15 + 0 seconds<!--
+-->|range=9.0<!--
+-->|aoe=Circle<!--
+-->|radius=3.0<!--
+-->|missile=15<!--
+-->|notes=<li>''El'druin's Might'' cannot be cast on unpathable terrain.<li>Teleport on secondary cast has no range limit.<li>Reactivation has an initial 0.5 second cooldown, and it cannot be used before the thrown sword has reached the target location.<li>All reactivations of <i>El'druin's Might</i> are considered Basic Ability casts.<li>Cooldown starts when the Ability is activated for the first time.}};12 / 0.5;45;;False
+
+Righteousness;W;File:Righteousness_Icon.png;Shields Tyrael for 350 damage and nearby allies for 40% as much for 4 seconds.<!--
+-->{{undoc-x|type=Shield<!--
+-->|scaling=4.00%<!--
+-->|affects=Allies, Self<!--
+-->|target=No target<!--
+-->|props=[[Area of Effect]]<!--
+-->|cast=Instant<!--
+-->|aoe=Circle<!--
+-->|radius=5.0<!--
+-->|prop1=Ally shield amount|val1=134.4<!--
+-->|notes=<li>Damage dealt to allies shielded by ''Righteousness'' is shown in small pop-up numbers. Regardless of the real damage type of the attack, these numbers appear in orange, normally reserved for Physical Damage.}};9;45;;False
+
+Smite;E;File:Smite_Icon.png;Rake target area for 150 damage. For the next 3 seconds, allies moving through the targeted area gain 25% Movement Speed for 2 seconds.<!--
+-->{{undoc-x|type=Spell Damage / Status effect<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies / Allies, Self<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Clamping]]<!--
+-->|cast=Instant<!--
+-->|range=5.5<!--
+-->|aoe=Custom <sup>(1</sup><!--
+-->|radius=1.5<!--
+-->|width=7.0<!--
+-->|height=3.0<!--
+-->|notes=<li><sup>1)</sup> Area consists of 5 overlapping circles with 1.5 radius in a wide V-shape.<li>The ground effect lingers for 3 seconds, applying the buff to allies in the area every 0.25 seconds. Multiple instances of the buff only refresh the duration.}};6;45;;False
+
+Judgment;R;File:Judgment_Icon.png;After 0.75 seconds, charge an enemy Hero, dealing 150 damage and Stunning them for 1.5 seconds. Nearby enemies are knocked away and take 75 damage.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control / Movement: [[Launch]], Status effect<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemy Heroes (targeting), Enemies / Self<!--
+-->|target=Unit target<!--
+-->|props=[[Area of Effect]], [[Channeled cast]] (stationary), [[Knockback]], [[Splash]], [[Stun]], [[Unstoppable]]<!--
+-->|cast=0.75 (ch) + 0.35 seconds<!--
+-->|range=12.0<!--
+-->|aoe=Circle<!--
+-->|radius=5.0<!--
+-->|missile=<br>- Initial: 0<br>- Maximum: 100<br>- Acceleration: 80<!--
+-->|prop1=Knockback duration|val1=0.1875 seconds<!--
+-->|prop2=Knockback speed|val2=18<!--
+-->|notes=<li>Interrupting Tyrael during the cast puts the Ability on a 10-second cooldown.<li>Upon activation Tyrael gains vision of the target for the duration of the Ability.<li>The cast is also interrupted if the target becomes untargetable, gains [[Stealth]] or moves farther than 5 units past its maximum cast range during the windup.<li>Charging Tyrael can only be disjointed if the target dies, is removed from the plane (certain [[Stasis]] effects) or instantly teleports farther than 20 units from its previous location. When disjointed, the charge expires upon reaching the target's location before the event. Otherwise, the charge will keep redirecting to the target unit.<li>''Judgment'' always applies its area effects upon reaching the end location, regardless of being able to hit its original target.<li>Tyrael is Unstoppable while charging.}};70;80;heroic;False
+
+Sanctification;R;File:Sanctification_Icon.png;After 0.5 seconds create a field of holy energy that makes allied Heroes Invulnerable. Lasts 3 seconds.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Allied Heroes, Self<!--
+-->|target=No target<!--
+-->|props=[[Area of Effect]], [[Channeled cast]] (stationary), [[Invulnerable]]<!--
+-->|cast=0.5 (ch) + 0 seconds<!--
+-->|aoe=Circle<!--
+-->|radius=4.0<!--
+-->|tickrate=16 per second<!--
+-->|notes=<li>Interrupting <i>Sanctification</i> during its cast puts the Ability on a 10-second cooldown.}};90;75;heroic;False
+
+| talents =
+Salvation;1;1;Increase the Shield amount Tyrael gains from Righteousness by 35% and heal Tyrael for 150 Health if his Shield is destroyed. Does not increase the Shield amount gained by allies.<!--
+-->{{undoc-x|type=Healing, Shield<!--
+-->|scaling=4.00%<!--
+-->|affects=Self<!--
+-->|prop1=Bonus shield|val1=134.4<!--
+-->|notes=<li>Healing does not trigger if the Shield expires without breaking.}};File:Salvation_Icon.png;
+
+Justice for All;1;2;Increase the Shield applied to allies by Righteousness to 80% of the Shield gained by Tyrael.<!--
+-->{{undoc-x|type=Shield<!--
+-->|scaling=4.00%<!--
+-->|affects=Allies<!--
+-->|prop1=Total shield amount|val1=269<!--
+-->|notes=}};File:Justice_for_All_Icon.png;
+
+Ardent Restoration;1;3;Dealing damage to a Hero heals Tyrael for 20 over 5 seconds. Dealing damage resets this timer, and the heal amount stacks up to 10 times.<p>{{Questonly|Every Regeneration Globe gathered increases this heal amount by 1%.}}<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=4.00%<!--
+-->|affects=Self<!--
+-->|props=[[Heal over Time]]<!--
+-->|tickrate=1.0 per second (x5)<!--
+-->|prop1=Healing per tick|val1=4 (per stack)<!--
+-->|prop2=Maximum quest stacks|val2=35 000<!--
+-->|notes=<li>Quest healing bonus stacks additively with healing dealt modifiers that can affect healing from ''Ardent Restoration''.}};File:Ardent_Restoration_Icon.png;
+
+<!-- LEVEL 4 -->
+Stalwart Angel;2;1;Gain 25 Armor while El'druin's Might is active, and for 3 seconds after teleporting.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Armor]]<!--
+-->|notes=<li>Does not stack with itself or other positive Armor effects. Other defensive damage modifiers may stack.}};File:Stalwart_Angel_Icon.png;
+
+Reciprocate;2;2;When Tyrael's Shield from Righteousness expires or is destroyed, it deals 190 damage to nearby Heroes and Summons.<p>For each enemy Hero damaged by Reciprocate or El'druin's Might, Tyrael heals for 3% of his maximum Health.<!--
+-->{{undoc-x|type=Spell Damage, Healing <!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies, Self<!--
+-->|props=[[Area of Effect]]<!--
+-->|aoe=Circle<!--
+-->|radius=3.0<!--
+-->|notes=}};File:Reciprocate_Icon.png;
+
+Divine Vigor;2;3;If Smite hits an enemy, Tyrael's Basic Attacks within the next 4 seconds heal for 70% of the damage dealt.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|props=[[Attack Modifier]], [[Lifesteal]]<!--
+-->|notes=}};File: Divine_Vigor_Icon.png;
+
+<!-- LEVEL 7 -->
+Burning Halo;3;1;Both Tyrael and El'druin deal 15 damage per second to nearby enemies. Teleporting increases this damage from Tyrael by 125% for 2 seconds.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|props=[[Area of Effect]], [[Burning Rage]]<!--
+-->|aoe=Circle<!--
+-->|radius=2.5 <sup>(1</sup><!--
+-->|tickrate=1.0 per second<!--
+-->|notes=<li><sup>1)</sup> Extended by Tyrael's unit radius.<li>Enemies can take damage from both Tyrael's and El'druin's damage auras at the same time.<li>When ''Sword of Justice'' is picked, the first reactivation increases the damage around both Tyrael and El'druin. The second reactivation does not further increase the damage, but only reapplies or refreshes the effect.<li>Does not affect unaggroed neutral Mercenaries.<li>Does not draw tower aggro when damaging enemy Heroes under their Structures.<li>Damage from ''Burning Halo'' is unaffected by external offensive damage modifiers and lifesteal effects.<li>Disabled while Mounted, Stealthed or in Stasis.}};File:Burning_Halo_Icon.png;
+
+Purge Evil;3;2;Each enemy Hero hit by Smite increases Tyrael's Basic Attack damage by 60% for 4 seconds.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Attack Modifier]]<!--
+-->|prop1=Maximum bonus|val1=600% (x10)<!--
+-->|notes=<li>Subsequent applications refresh the duration. Stacks from previous casts carry over.<li>Damage bonus stacks additively with itself and other offensive damage modifiers that can affect Tyrael's Basic Attack damage.}};File:Purge_Evil_Icon.png;
+
+Swift Retribution;3;3;Smite grants 20% more Movement Speed and also grants 25% Attack Speed for 2 seconds.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Non-Structure Allies, Self<!--
+-->|props=[[Attack Speed]]<!--
+-->|notes=<li>Does not stack with itself. Subsequent applications refresh the duration.<li>Movement Speed bonus stacks additively with baseline bonus, but not with other sources of Movement Speed.<li>Attack Speed stacks additively with other effects that can affect the target's Attack Speed.}};File:Swift_Retribution_Icon.png;
+
+<!-- LEVEL 10 -->
+Judgment;4;1;{{Cooldown|70}}<br/>After 0.75 seconds, charge an enemy Hero, dealing 150 damage and Stunning them for 1.5 seconds. Nearby enemies are knocked away and take 75 damage.;File:Judgment_Icon.png;
+Sanctification;4;2;{{Cooldown|90}}<br/>After 0.5 seconds create a field of holy energy that makes allied Heroes Invulnerable. Lasts 3 seconds.;File:Sanctification_Icon.png;
+
+<!-- LEVEL 13 -->
+Sword of Justice;5;1;Upon teleporting using El'druin's Might, El'druin swaps places with Tyrael, and El'druin's Might can be reactivated to teleport an additional time.<!--
+-->{{undoc|<hr><li>Reactivations do not increase the time El'druin can stay on the ground.}};File:Sword_of_Justice_Icon.png;
+
+Holy Ground;5;2;Create a ring for 3 seconds that blocks enemies from entering the area teleported to using El'druin's Might.<!--
+-->{{undoc-x|type=Pathing blocker<!--
+-->|affects=Enemies<!--
+-->|props=[[Area of Effect]]<!--
+-->|aoe=Circle<!--
+-->|radius=3.0<!--
+-->|notes=<li>Displacement from the creation of ''Holy Ground'' doesn't apply [[Daze]].}};File:Holy_Ground_Icon.png;
+
+Law and Order;5;3;Each enemy Hero hit by Smite reduces the cooldown of Righteousness by 1 second. Each allied Hero Shielded by Righteousness increases the damage of the next Smite by 35%.<!--
+-->{{undoc-x|type=Cooldown reduction<!--
+-->|affects=Ability<!--
+-->|notes=}};File:Law_and_Order_Icon.png;
+
+<!-- LEVEL 16 -->
+Bound by Law;6;1;El'druin's Might's Slow is increased to 65% for 1 second, decaying to 30% over the remaining duration.<!--
+-->{{undoc-x|props=[[Slow]]}};File:Bound_by_Law_Icon.png;
+
+Horadric Reforging;6;2;Tyrael's Basic Attacks reduce the cooldown of El'druin's Might by 2 seconds.<!--
+-->{{undoc-x|props=[[Attack Modifier]]<!--
+-->|notes=}};File:Horadric_Reforging_Icon.png;
+
+Smite the Wicked;6;3;While El'druin's Might is active, and for 2 seconds after teleporting, Smite's cooldown recharges 125% faster.<!--
+-->{{undoc|<hr><li>Reduces the cooldown of ''Smite'' by 0.0781 seconds every 0.0625 seconds while active.}};File:Smite_the_Wicked_Icon.png;
+
+<!-- LEVEL 20 -->
+Angel of Justice;7;1;Increases the cast range of Judgment by 50%, and reduces the cooldown by 40 seconds.<!--
+-->{{undoc-x|prop1=Bonus cast range|val1=6.0<!--
+-->|notes=}};File:Angel_of_Justice_Icon.png;
+
+Holy Arena;7;2;Increases the duration of Sanctification by 1 second and increases the damage of allies inside by 25%.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Allied Heroes & Summons, Self<!--
+-->|notes=<li>Summons themselves must be inside ''Sanctification'' to gain the damage buff from ''Holy Arena''.<li>Summons are still unaffected by the baseline benefits of ''Sanctification''.<li>Damage bonus stacks additively with other offensive damage modifiers affecting the target's damage output.}};File:Holy_Arena_Icon.png;
+
+Seal of El'druin;7;3;Using a Basic Ability grants 50% Attack Speed for 3 seconds.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|props=[[Attack Speed]]<!--
+-->|notes=<li>Does not stack with itself. Subsequent applications refresh the duration.<li>Stacks additively with other effects that can affect Tyrael's Attack Speed.}};File:Seal_of_El'druin_Icon.png;
+
+Defense of the Angels;7;4;{{cooldown|60}}<br />Activate to gain 50 Armor for 3 seconds.<p>Each time Tyrael damages an enemy Hero with a Basic Attack or Basic Ability, increase the duration of this Armor bonus by 0.5 seconds.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|props=[[Armor]]<!--
+-->|notes=<li>Cooldown starts when the Ability is activated.}};File:Defense_of_the_Angels_Icon.png;
+
+Aspect of Justice;7;5;{{cooldown|90}}<br />After 1.5 seconds, gain the effects of Archangel's Wrath without dying. Cooldown is reduced by 10% for each enemy Hero hit by the explosion.<!--
+-->{{undoc-x|type=Spell Damage / Status effect / Offensive damage modifier<!--
+-->|affects=Enemies, Enemy Heroes, Self<!--
+-->|target=No target<!--
+-->|props=[[Area of Effect]], [[Movement Speed]], [[Invulnerability]]<!--
+-->|aoe=Circle<!--
+-->|radius=4.0<!--
+-->}};File:Archangel's_Wrath_Icon.png;
+
+}}
+<noinclude>
+{{Scaling table/start|{{#var:health}}|{{#var:health scaling}}|{{#var:health regen}}|{{#var:health regen scaling}}|{{#var:attack damage}}|{{#var:attack damage scaling}}}}
+{{Scaling table/slot|Archangel's Wrath|450|0.04}}
+{{Scaling table/slot|El'druin's Might|110|0.04}}
+{{Scaling table/slot|Righteousness (self)|336|0.04}}
+{{Scaling table/slot|Righteousness (ally)|134.4|0.04}}
+{{Scaling table/slot|Smite|150|0.04}}
+{{Scaling table/slot|Judgement|150|0.04}}
+{{Scaling table/slot|Salvation (heal)|140|0.04}}
+{{Scaling table/slot|Ardent Restoration (single)|20|0.04}}
+{{Scaling table/slot|Ardent Restoration (single, per second)|4|0.04}}
+{{Scaling table/slot|Reciprocate|190|0.04}}
+{{Scaling table/slot|Burning Halo|18|0.04}}
+{{Scaling table/slot|Burning Halo (empowered)|45|0.04}}
+{{Scaling table/end}}
+</noinclude>

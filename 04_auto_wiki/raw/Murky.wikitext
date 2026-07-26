@@ -1,0 +1,266 @@
+{{hero data
+| name = Murky
+| date = May 22, 2014
+| price = 7000
+| title = Baby Murloc
+| role = Melee
+| franchise = Warcraft
+| info = Not quite a full Hero, Murky can place an Egg to respawn quickly back into battle.
+| lore = Mrgglglbrlg rmrmgllg mrggggm. Mrrglglgy, mgllglgl mgggrrmgl? MRGGGLGLLM! Mrrggllgggllggll mrrglrlg mrrg mrrg mrrrg.
+| difficulty = Hard
+| melee = True
+| health = 730
+| healthRegen = 29.1992
+| resource = 0
+| resourceType = None
+| armor = 0
+| attackSpeed = 1.25
+| attackRange = 1.2
+| attackDamage = 60
+| healthScaling = 0.0400390625
+| regenScaling = 0.0400390625
+| adamageScaling = 0.0400390625
+| unitRadius = 0.625
+| icon = File:Murky_Icon.png
+| skills = 
+Spawn Egg;D;File:Spawn_Egg_Icon.png;Place an Egg at target location, revealing the nearby area. Upon dying, Murky respawns at the Egg after 8 seconds. Murky only grants 25% of a real Hero's experience upon dying.<p>If Murky's Egg is killed, he is revealed to enemies for 15 seconds, and Spawn Egg is placed on cooldown. Egg's Health regenerates by 42 per second, scaling by 4% per level, after a 5s delay.<p>Murky gains a 35% of maximum Health Shield for 10 seconds upon reviving from an Egg.<!--
+-->{{undoc-x|type=Summon / Status effect<!--
+-->|affects=Self<!--
+-->|target=Point target<!--
+-->|props=[[Revealed]]<!--
+-->|cast=1.5 (ch) + 0 seconds<!--
+-->|range=1.0}}<hr/><!--
+
+--><small>'''Respawn Egg'''</small>{{undoc-x|nohr=true<!--
+-->|type=Passive<!--
+-->|scaling=4.00390625% (Health)<!--
+-->|prop1=Health|val1=420<!--
+-->|prop2=Basic Attack damage|val2=-<!--
+-->|prop5=Movement Speed|val5=-<!--
+-->|prop6=Unit radius|val6=0.5<!--
+-->|prop7=Sight radius|val7=6.0<!--
+-->|notes=<li>Minions, Mercenaries and Monsters do not attack the Egg.<li>Enemy Structures can attack the Egg, dealing normal damage to it.<li>Egg remains killed until Murky places a new one.<li>Every time Murky respawns in the [[Hall of Storms]] (due to dying without an active Egg) a new Egg is automatically spawned in the Hall of Storms as well.}};15;;trait;False
+
+Slime;Q;File:Slime_Icon.png;Deal 86 damage and apply Slime on nearby enemies for 6 seconds, Slowing them by 20%.<p>Deal 210 damage to enemies who are already Slimed. Structures take 50% damage.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00390625%<!--
+-->|affects=Enemies<!--
+-->|target=No target<!--
+-->|props=[[Area of Effect]]<!--
+-->|cast=Instant<!--
+-->|aoe=Circle<!--
+-->|radius=3.0<!--
+-->|notes=<li>Subsequent applications refresh Slimed duration.<li>All Murkys on a team benefit from the "Slimed" debuff on enemies, regardless of who placed it on the target.}};4;;;False
+
+Pufferfish;W;File:Pufferfish_Icon.png;Spit out a Pufferfish with 225 Health at the target point. After 2.75 seconds, the fish will blow up for 310 damage. Deals 50% less damage to Structures.<p>{{Quest|Kill Slimed enemies, or hit them with Pufferfish. Minions give 1 stack. Heroes and Structures give 5 stacks.|At 200 stacks, Basic Abilities now deal full damage to Structures.}}<p>{{Reward|At 400 stacks, Murky gains 50% Health and increases in size.}}<!--
+--><!--
+-->{{undoc-x|type=Summon<!--
+-->|target=Point target<!--
+-->|cast=0.125 + 0 seconds<!--
+-->|range=7.0<!--
+-->|prop1=Flight time|val1=0.75 seconds}}<hr/><!--
+
+--><small>'''Pufferfish'''</small>{{undoc-x|nohr=true<!--
+-->|type=Passive<!--
+-->|scaling=5.4925002655% (Health)<!--
+-->|prop1=Health|val1=225<!--
+-->|prop2=Basic Attack damage|val2=-<!--
+-->|prop5=Movement Speed|val5=-<!--
+-->|prop6=Unit radius|val6=0.125<!--
+-->|prop7=Sight radius|val7=3.0<!--
+-->|notes=}}<hr/><!--
+
+--><small>'''Explode'''</small><!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00390625%<!--
+-->|affects=Enemies<!--
+-->|props=[[Area of Effect]]<!--
+-->|aoe=Circle<!--
+-->|radius=4.5<!--
+-->|notes=<li>The three-second detonation timer starts after Pufferfish has landed.<li>Self-casting ''Pufferfish'' causes the projectile phase to be omitted, leaving the Pufferfish at Murky's current location and instantly initiating the detonation timer.<li>Enemies can kill the Pufferfish to prevent it from exploding.<li>Pufferfish cannot be hit by skillshots.<li>The Pufferfish can be targeted and attacked by enemy [[Structures]].<li>[[Minion]]s, [[Mercenaries]] and [[Monster]]s do not attack Pufferfish.<li>Damage reduction to Structures stacks additively with offensive damage modifiers that can affect <i>Pufferfish</i>'s damage.}};15;;;False
+
+Safety Bubble;E;File:Safety_Bubble_Icon.png;Becomes Invulnerable for 2 seconds. While active, Murky cannot attack or use Abilities.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|props=[[Invulnerable]]<!--
+-->|cast=Instant<!--
+-->|notes=<li>''Safety Bubble'' cannot be manually canceled.}};14;;;False
+
+March of the Murlocs;R;File:March_of_the_Murlocs_Icon.png;After 0.75 seconds, Murky commands a legion of Murlocs to march in a target direction, each one leaping onto the first enemy Hero or Structure they find. Each Murloc deals 130 damage and Slows its target by 15% for 5 seconds. Murlocs deal 50% damage to Structures.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00390625%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Channeled cast]] (stationary), [[Damage over Time]], [[Skillshot]], [[Slow]]<!--
+-->|cast=0.75 + 0.75 seconds<!--
+-->|radius=0.5 (hitbox)<!--
+-->|width=16<!--
+-->|height=20<!--
+-->|missile=5<!--
+-->|tickrate=1.0 per second<!--
+-->|prop1=Damage per tick|val1=26<!--
+-->|notes=<li>Interrupting the Ability during its cast puts it on a 10 second cooldown.<li>Summons a total of 36 Invulnerable Murlocs over 6.75 seconds.<li>Murlocs spawn in one of 10 possible locations every 0.1875 seconds.<li>Each Murloc sticking to a target applies new instances of DoT and Slow that tick separately. New applications do not refresh the duration of pre-existing Slow and DoTs.<li>Slow stacks additively up to 5 times with itself, but not with other sources of Slows.<li>Minimum Movement Speed for affected targets is 0.4843, even in combination with self-Slows.<li>Damage reduction to Structures stacks additively with offensive damage modifiers that can affect <i>March of the Murlocs</i>'s damage.}};100;;heroic;False
+
+Octo-Grab;R;File:Octo-Grab_Icon.png;Murky becomes Unstoppable and Stuns target enemy Hero for 3 seconds while he hits them for 1 damage a second.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control / Movement: [[Launch]], Status effect<!--
+-->|scaling=-<!--
+-->|affects=Enemy Heroes / Self<!--
+-->|target=Unit target<!--
+-->|props=[[Stationary channel]], [[Stun]], [[Unstoppable]]<!--
+-->|cast=0.1 + CH + 0 seconds<!--
+-->|range=6.0<!--
+-->|missile=22<!--
+-->|tickrate=1.0 per second<!--
+-->|notes=<li>The cast is interrupted if the target moves more than 2 units past its maximum cast range, going on a 10 second cooldown.}};50;;heroic;False
+
+| talents = 
+Fish Eye;1;1;Spawning from his Egg increases Murky's mount speed to 45% for 5 seconds.<p>{{Passive}} Spawning from his Egg increases Murky's mount speed to 45% for 5 seconds.<!--
+-->{{undoc-x|type=Status effect / Bonus Health<!--
+-->|scaling=-<!--
+-->|affects=Enemies / Respawn Egg<!--
+-->|props=[[Revealed]]<!--
+-->|prop1=Bonus vision radius|val1=18<!--
+-->|notes=}};File:Fish_Eye_Icon.png;
+
+Shell Game;1;2;Murky can now place 2 Eggs, but randomly revives from one of them. Increases the cooldown of placing an Egg to 30 seconds and goes on cooldown if either Egg dies.<!--
+-->{{undoc-x|type=Summon / Status effect<!--
+-->|affects=Self}}
+
+--><small>'''Fake Egg'''</small>{{undoc-x|nohr=true<!--
+-->|type=Passive<!--
+-->|scaling=4.00390625% (Health)<!--
+-->|prop1=Health|val1=324<!--
+-->|prop2=Basic Attack damage|val2=-<!--
+-->|prop5=Movement Speed|val5=-<!--
+-->|prop6=Sight radius|val6=5.0<!--
+-->|notes=<li>Minions, Mercenaries and Monsters do not attack fake Eggs.}};File:Egg Hunt Icon.png;
+
+A Fishy Deal;1;3;Killing a Minion with Pufferfish grants a stack of Bribe. Use 8 stacks to bribe a Mercenary, instantly defeating them. Does not work on Elite Mercenaries.<p>Maximum of 32 stacks of Bribe.<!--
+-->{{undoc-x|type=Instant kill<!--
+-->|affects=Neutral non-Elite Mercenaries<!--
+-->|target=Unit target<!--
+-->|props=[[Bribe]]<!--
+-->|cast=Instant<!--
+-->|range=6.0<!--
+-->|notes=}};File:A_Fishy_Deal_Icon.png;
+
+<!-- LEVEL 4 -->
+Slime Time;2;1;{{Quest|Slime enemy Heroes who are already Slimed.|After Sliming 10 Heroes, increase Slime's bonus damage by 125.}}<p>{{Reward|After Sliming 20 Heroes, increase Slime's Slow amount to 30%.}}<!--
+-->{{undoc-x|type=Bonus damage, Crowd control<!--
+-->|scaling=-<!--
+-->|affects=Ability<!--
+-->|notes=}};File:Slime_Time_Icon.png;
+
+Tufferfish;2;2;Pufferfish gains 50 Spell Armor and deals 50% more damage to Slimed targets.<!--
+-->{{undoc-x|type=Offensive damage modifier, Defensive damage modifier<!--
+-->|affects=Ability<!--
+-->|props=[[Spell Armor]]<!--
+-->|notes=<li>Damage bonus stacks additively with other offensive damage modifiers affecting <i>Pufferfish</i>'s damage.<li>Does not stack with other positive Spell Armor effects. Other defensive damage modifiers may stack.}};File:Tufferfish_Icon.png;
+
+Living The Dream;2;3;{{Questonly|Every 15 seconds Murky is alive, he gains 5% Spell Power, up to 25%. This bonus is reset upon his death.}}<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Self<!--
+-->|notes=<li>Only grants increased Spell Damage, as opposed to [[Spell Power]].<li>Damage bonus stacks additively with itself and other offensive damage modifiers.}};File:Living_The_Dream_Icon.png;
+
+<!-- LEVEL 7 -->
+Black Lagoon;3;1;Increase Slime's radius by 30%.<!--
+-->{{undoc-x|prop1=Bonus radius|val1=0.9<!--
+-->|notes=}};File:Black_Lagoon_Icon.png;
+
+Slippery When Wet;3;2;Gain 50% Movement Speed and move through units while in Safety Bubble. Additionally, Safety Bubble's cooldown is reduced by 2 seconds.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|props=[[Movement Speed]]<!--
+-->|notes=}};File:Slippery_When_Wet_Icon.png;
+
+Time to Krill;3;3;Basic Attacks against Heroes deal an additional 7 damage a second and Slow the target by 7% for 4 seconds. This effect can stack up to 5 times.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00390625%<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Attack Modifier]] (Heroes), [[Damage over Time]], [[Slow]]<!--
+-->|tickrate=1.0 per second each (x4 each)<!--
+-->|notes=<li>Each stack of DoT ticks separately. Basic Attacks on already affected targets refresh the duration of existing DoTs and apply another instance of DoT.<li>Slow stacks additively with itself and its duration is refreshed with each Basic Attack. Does not stack with other sources of Slows.}};File:Time_to_Krill_Icon.png;
+
+<!-- LEVEL 10 -->
+March of the Murlocs;4;1;{{Cooldown|100}}<br/>After 0.75 seconds, Murky commands a legion of Murlocs to march in a target direction, each one leaping onto the first enemy Hero or Structure they find. Each Murloc deals 130 damage and Slows its target by 15% for 5 seconds. Murlocs deal 50% damage to Structures.;File:March_of_the_Murlocs_Icon.png;
+Octo-Grab;4;2;{{Cooldown|50}}<br/>Murky becomes Unstoppable and Stuns target enemy Hero for 3 seconds while he hits them for 1 damage a second.;File:Octo-Grab_Icon.png;
+
+<!-- LEVEL 13 -->
+Rejuvenating Bubble;5;1;Safety Bubble restores 40% of Murky's maximum Health.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|props=[[Heal over Time]]<!--
+-->|tickrate=1.0 per second<!--
+-->|prop1=Healing per tick|val1=10%<!--
+-->|notes=}};File:Rejuvenating_Bubble_Icon.png;
+
+Egg Shell;5;2;Spawning from his Egg or casting ''Spawn Egg'' grants Murky a Shield equal to 50% of his maximum Health.<!--
+-->{{undoc-x|type=Shield<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|notes=Shield lasts indefinitely.}};File:Egg_Shell_Icon.png;
+
+Fish Tank;5;3;Murky is healed for 20% of the damage he deals with Basic Attacks and Basic Abilities.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|props=[[Lifesteal]]<!--
+-->|notes=<li>Does not benefit from bonus damage from <i>Wrath of Cod</i>.}};File:Fish tank Icon.png;
+
+<!-- LEVEL 16 -->
+Toxic Buildup;6;1;Every 3rd consecutive Basic Attack against an enemy Hero causes a free Slime to be cast upon them.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00390625%%<!--
+-->|affects=Enemies<!--
+-->|props=[[Attack Modifier]] (Heroes)<!--
+-->|notes=<li><i>Toxic Buildup</i>'s ''Slime'' has the same properties as baseline ''Slime'' and interacts with all talents affecting ''Slime''.<li>Attacks while Murky is [[Blind]]ed or the target is Evading will progress through the 3-step cycle as if they had hit, except that the free Slime will not trigger (progress toward this Talent wasted).<li>Stacks toward the free ''Slime'' are tracked separately for every enemy Hero and all stacks on a particular Hero expire after 10 seconds without Murky Basic Attacking them.}};File:Toxic_Buildup_Icon.png;
+
+Fish Oil;6;2;The Pufferfish casts Slime at its location upon landing.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00390625%<!--
+-->|affects=Enemies<!--
+-->|notes=<li><i>Fish Oil</i>'s ''Slime'' has the same properties as baseline ''Slime'' and interacts with all talents affecting ''Slime''.}};File:Fish_Oil_Icon.png;
+
+Wrath of Cod;6;3;Heroes hit by Pufferfish take additional damage equal to 15% of their maximum Health over 4 seconds.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=-<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Damage over Time]], [[Percent Damage]]<!--
+-->|tickrate=1.0 per second<!--
+-->|prop1=Damage per tick|val1=3.75%<!--
+-->|notes=}};File:Wrath of cod Icon.png;
+
+Making Inky;7;1;Reduces the cooldown of Slime from 4 seconds to 2.5 seconds.;File:Making_Inky_Icon.png;
+
+... And A Shark Too!;7;2;Increase the damage of Octo-Grab by 13,700%.<!--
+-->{{undoc-x|type=Bonus damage<!--
+-->|scaling=4.00390625%<!--
+-->|affects=Enemy Heroes<!--
+-->|notes=<li>Increases <i>Octograb</i>'s base damage to 137.}};File:Octo-Grab_Icon.png;
+
+Never-Ending Murlocs;7;3;March of the Murlocs can be channeled, sending little Murlocs indefinitely. No longer deals reduced damage to Structures. Lasts a minimum of 7 seconds even if canceled.<!--
+-->{{undoc-x||props=[[Stationary channel]]<!--
+-->|notes=}};File:Never-Ending_Murlocs_Icon.png;
+
+Big Tuna Kahuna;7;4;Murky's maximum Health and Egg respawn time are doubled.<!--
+-->{{undoc-x|type=Bonus Health<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|notes=}};File:Big_Tuna_Kahuna_Icon.png;
+
+}}
+<noinclude>
+{{Scaling table/start|{{#var:health}}|{{#var:health scaling}}|{{#var:health regen}}|{{#var:health regen scaling}}|{{#var:attack damage}}|{{#var:attack damage scaling}}}}
+{{Scaling table/slot|Spawn Egg (Health)|324|0.0400390625}}
+{{Scaling table/slot|Slime|86|0.0400390625}}
+{{Scaling table/slot|Slime (slimed)|210|0.0400390625}}
+{{Scaling table/slot|Pufferfish (Health)|225|0.054925002655}}
+{{Scaling table/slot|Pufferfish (damage)|410|0.0400390625}}
+{{Scaling table/slot|March of the Murlocs|125|0.0400390625|10}}
+{{Scaling table/slot|March of the Murlocs (per second)|25|0.0400390625|10}}
+{{Scaling table/slot|Time to Krill (per second)|7|0.04003906255|7}}
+{{Scaling table/slot|...And A Shark Too!|137|0.0400390625|20}}
+{{Scaling table/end}}
+</noinclude>

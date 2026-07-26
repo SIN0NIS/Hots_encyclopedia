@@ -1,0 +1,252 @@
+{{hero data
+| name = Cassia
+| date = April 4, 2017
+| price = 10000
+| title = Amazon Warmatron
+| role = Ranged
+| franchise = Diablo
+| info = An Assassin who specializes against Physical Attackers.
+| lore = 
+| difficulty = Medium
+| melee = False
+| health = 1660
+| healthRegen = 3.46
+| resource = 500
+| resourceType = Mana
+| armor = 0
+| attackSpeed = 1.11
+| attackRange = 4.5
+| attackDamage = 125
+| healthScaling = 0.04
+| regenScaling = 0.04
+| adamageScaling = 0.04
+| unitRadius = 0.6875
+| icon = File:Cassia_Icon.png
+| skills =
+Avoidance;Trait;File:Avoidance_Icon.png;While moving, Cassia gradually gains up to 30 Armor over 3 seconds. After remaining stationary for 0.75 seconds the Armor is rapidly lost over 0.5 seconds.<p>Avoidance remains charged while Fending.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Armor]]<!--
+-->|tickrate=16 per second<!--
+-->|prop1=Duration|val1=0.6875 seconds<!--
+-->|notes=<li>Grants one stack of Avoidance every 0.0625 seconds, increasing Cassia's Armor by 0.625. While stationary, Cassia loses 6 stacks every 0.0625 seconds.<li>Does not stack with other positive Armor effects. Other defensive damage modifiers may stack.}};;;False;
+
+Lightning Fury;Q;File:Lightning_Fury_Icon.png;Hurl a lightning javelin that deals 158 damage to the first enemy hit and splits into two lightning bolts that deal 158 damage to enemies in their path.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Bounce]], [[Clamping]], [[Skillshot]]<!--
+-->|cast=0.125 + 0 seconds<!--
+-->|range=<br/>- Primary: 11.1<br/>- Secondary: 8.95<!--
+-->|hitbox=<br/>- Primary: 0.6 x 1.25<br/>- Secondary: 0.6 x 1.0<!--
+-->|missile=16<!--
+-->|notes=<li>Holds 2 charges.<li>Secondary projectiles do not split and can hit enemies that are immune to skillshots. Otherwise, they have the same on-hit properties as the initial missile and interact with all talents affecting ''Lightning Fury''.<li>Primary target cannot be hit by the splitting secondary bolts.}};5 / 1.0;20;False;
+
+Blinding Light;W;File:Blinding_Light_Icon.png;After 0.5 seconds, deal 50 damage and Blind enemies in the target area for 2 seconds.<p>{{Passive}} Cassia deals 15% increased damage to Blinded targets.<!--
+-->{{undoc-x|type=Spell Damage, Status effect / Offensive damage modifier<!--
+-->|scaling=4.00%|affects=Enemies / Self<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Blind]]<!--
+-->|cast=0.125 + 0 seconds<!--
+-->|range=8.0<!--
+-->|aoe=Circle<!--
+-->|radius=3.0<!--
+-->|notes=<li>Passive bonus triggers from all Blinds.<li>Passive bonus stacks additively with other offensive damage modifiers that can affect Cassia's Basic Attack damage.}};15;50;False;
+
+Fend;E;File:Fend_Icon.png;Charge at an enemy, and upon arriving channel for 1.5 seconds, dealing 64 damage to enemies in front of Cassia every 0.25 seconds. Deals 50% reduced damage to non-Heroes. Avoidance remains charged while Channeling.<!--
+-->{{undoc-x|type=Spell Damage / Movement: [[Dash]]<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Unit target<!--
+-->|props=[[Area of Effect]], [[Stationary channel]]<!--
+-->|cast=Instant<!--
+-->|range=6.0<!--
+-->|aoe=Radial<!--
+-->|radius=6.0<!--
+-->|arc=45 degrees<!--
+-->|missile=7.0 (dash)<!--
+-->|tickrate=8.0 per second (x12)<!--
+-->|prop1=Damage per tick|val1=32<!--
+-->|notes=<li>Structures cannot be directly targeted, but can take area damage from ''Fend''.<li>''Fend'' is interrupted if the target moves farther than 12 range from Cassia.<li><i>Fend</i>'s channel can be canceled after 0.5 seconds by reactivating the ability.<li>Damage penalty against non-Heroes stacks additively with other offensive damage modifiers that can affect <i>Fend</i>'s damage.}};10 / 0.5;50;False;
+
+Ball Lightning;R;File:Ball_Lightning_Icon.png;Throw a ball of lightning at an enemy Hero that bounces up to 6 times between nearby enemy Heroes and Cassia, dealing 180 damage to enemies hit.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemy Heroes<!--
+-->|target=Unit target<!--
+-->|props=[[Bounce]]<!--
+-->|cast=0.125 + 0 seconds<!--
+-->|range=5|radius=5.5 (bounce)<!--
+-->|tickrate=2.0 per second (x7)<!--
+-->|notes=<li>Initial cast is interrupted if the target moves more than 3 units beyond its maximum range.<li>Prioritizes the closest enemy Hero and only bounces back to Cassia if there are no enemy Heroes in its bounce range.<li>Ball Lightning going through Cassia consumes a bounce normally.<li>Cannot bounce to enemies out of vision.<li>''Ball Lightning'' grants vision in 4.0 radius around the projectile.}};60;60;heroic;False
+
+Valkyrie;R;File:Valkyrie_Icon.png;Summon a Valkyrie that rushes to Cassia after 0.75 seconds, pulling the first enemy Hero hit, dealing 225 damage and Stunning them for 0.5 seconds at the end of her path. The Valkyrie knocks back all other enemy Heroes in her way.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemy Heroes<!--
+-->|target=<!--
+-->|props=[[Knockback]], [[Skillshot]], [[Stun]]<!--
+-->|cast=0.125 + 0.25 seconds<!--
+-->|range=12<!--
+-->|hitbox=3.0x0.75<!--
+-->|missile=12<!--
+-->|prop1=Knockback duration|val1=<br/>- Primary: 1.0 seconds (max)<br/>- Secondary: 0.1875<!--
+-->|prop2=Knockback speed|val2=<br/>- Primary: 12<br/>- Secondary: 20<!--
+-->|notes=<li>Damage is dealt upon impact, and the Stun is applied when the impaled enemy Hero reaches the cast location.<li>The impaled enemy is [[Unstoppable]] while being pulled by ''Valkyrie''.<li>Secondary targets are knocked away perpendicular to <i>Valkyrie</i>'s direction.}};60;60;heroic;False
+
+| talents =
+<!-- LEVEL 1 -->
+Thunderstroke;1;1;Increase the damage of Lightning Fury by 20.<p>{{Questonly|Lightning Fury's damage is increased by 1.5 every time it hits a Hero.}}<!--
+-->{{undoc-x|type=Bonus damage<!--
+-->|scaling=-<!--
+-->|affects=Ability<!--
+-->|notes=}};File:Thunderstroke_Icon.png;
+
+Impale;1;2;Increase Fend's cast range and area of effect by 25%. It deals an additional 70% damage to enemies below 50% Health.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|prop1=Bonus cast range|val1=1.25<!--
+-->|prop2=Bonus radius|val2=1.5<!--
+-->|notes=<li>Stacks additively with other offensive damage modifiers that can affect <i>Fend</i>'s damage.}};File:Impale_Cassia_Icon.png;
+
+Charged Strikes;1;3;Gain 15% Attack Speed. Every 3rd Basic Attack deals 20% bonus damage and bounces to nearby enemy Heroes.<!--
+-->{{undoc-x|type=Physical Damage / Offensive damage modifier<!--
+-->|scaling=-<!--
+-->|affects=Enemy Heroes / Self<!--
+-->|target=No target<!--
+-->|props=[[Attack Modifier]] (non-Structures), [[Bounce]]<!--
+-->|cast=Instant<!--
+-->|radius=3.5<!--
+-->|notes=<li>Bounce radius is extended by the target's unit radius.<li>Stacks additively with other offensive damage modifiers that can affect Cassia's Basic Attack damage.<li>Still progresses through the 3-hit cycle if Cassia is [[Blind]]ed or the target is Evading, though the 3rd hit bonus will also miss entirely in that case.}};File:Charged_Strikes_Icon.png;
+
+<!-- LEVEL 4 -->
+Plate of the Whale;2;1;Regenerate 6 Health per second while Avoidance is active. If fully charged gain an additional 12 Health per second.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=4.00%<!--
+-->|affects=Self<!--
+-->|tickrate=1.0 per second<!--
+-->|notes=}};File:Plate_of_the_Whale_Icon.png;
+
+Ring of the Leech;2;2;Basic Attacks against your primary target heal you for 20% of their damage. If an enemy is Blinded, this also affects Lightning Fury and Fend.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|props=[[Attack Modifier]], [[Lifesteal]]<!--
+-->|notes=}};File:Ring_of_the_Leech_Icon.png;
+
+Inner Light;2;3;{{Cooldown|70}}<br/>Activate to heal for 25% of your maximum Health over 5 seconds. Enemy Heroes hit by Lightning Fury lower the cooldown of this ability by 10 seconds.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|props=[[Heal over Time]]<!--
+-->|cast=Instant<!--
+-->|tickrate=2.0 per second (x10)<!--
+-->|notes=}};File:Inner_Light_Icon.png;
+
+<!-- LEVEL 7 -->
+Grounding Rod;3;1;Enemies hit by Lightning Fury or Fend are Slowed by 20% for 2 seconds.<!--
+-->{{undoc-x|type=Crowd control<!--
+-->|affects=Enemies<!--
+-->|props=[[Slow]]<!--
+-->|notes=}};File:Grounding_Rod_Icon.png;
+
+Seraph's Hymn;3;2;Primary Basic Attacks against an enemy Hero grant 10 Mana and reduce the cooldown of Blinding Light by 2 seconds.<p>{{Passive}} Increase the passive damage bonus of Blinding Light from 15% to 30%.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Attack Modifier]]<!--
+-->|notes=<li>Stacks additively with other damage modifiers affecting Cassia's Basic Attack damage output, including baseline bonus damage against Blinded targets.}};File:Seraph's_Hymn_Icon.png;
+
+Surge of Light;3;3;{{cooldown|0.25}}<br />{{Active}}After taking 650 damage with Avoidance active, Cassia can activate Avoidance to deal 220 damage to enemies around her.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00% (damage & threshold)<!--
+-->|affects=Enemies<!--
+-->|target=No target<!--
+-->|props=[[Area of Effect]]<!--
+-->|cast=Instant<!--
+-->|aoe=Circle<!--
+-->|radius=5.5<!--
+-->|notes=}};File:Surge_of_Light_Icon.png;
+
+<!-- LEVEL 10 -->
+Ball Lightning;4;1;{{cooldown|60}}<br>Throw a ball of lightning at an enemy Hero that bounces up to 6 times between nearby enemy Heroes and Cassia, dealing 180 damage to enemies hit.;File:Ball_Lightning_Icon.png;
+
+Valkyrie;4;2;{{cooldown|60}}<br>Summon a Valkyrie that rushes to Cassia after 0.75 seconds, pulling the first enemy Hero hit, dealing 225 damage and Stunning them for 0.5 seconds at the end of her path. The Valkyrie knocks back all other enemy Heroes in her way.;File:Valkyrie_Icon.png;
+
+<!-- LEVEL 13 -->
+War Matron;5;1;Cassia becomes Protected while channeling Fend and for 1 additional second if the channel is completed.<!--
+-->{{undoc-x|type=Status effect|affects=Self|props=[[Protected]]<!--
+-->|notes=}};File:War_Matron_Icon.png;
+
+War Traveler;5;2;Gain 5% Movement Speed. While Avoidance is fully charged, gain an additional 10% Movement Speed and Mounting is instant.<!--
+-->{{undoc-x|type=Status effect|props=[[Movement Speed]] buff<!--
+-->|notes=}};File:War_Traveler_Icon.png;
+
+Gloves of Alacrity;5;3;Gain 1 Basic Attack range. While Avoidance is fully charged, gain an additional 1 Basic Attack range.;File:Gloves_of_Alacrity_Icon.png;
+
+<!-- LEVEL 16 -->
+Power Strike;6;1;Lightning Fury pierces, but only splits on Heroes. Enemy Heroes hit reduce its cooldown by 1 second and become marked for 15 seconds. Upon reaching 3 marks, remove the marks and cast a Blinding Light at their feet.<!--
+-->{{undoc-x|type=Spell Damage / Crowd control<!--
+-->|notes=<li>Reapplying a mark refreshes its duration.}};File:Power_Strike_Icon.png;
+
+Static Electricity;6;2;Gain 2 additional charges of Lightning Fury. Fend's impact launches a lightning bolt toward each nearby enemy Hero.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|affects=Enemies<!--
+-->|radius=6.5<!--
+-->|notes=<li>"Lightning bolts" have the same properties as secondary projectiles from ''Lightning Fury''.}};File:Static_Electricity_Icon.png;
+
+Martial Law;6;3;Basic attacks against enemy Heroes deal bonus damage equal to 1% of their maximum Health. Increase this to 3% if they are Stunned, Rooted, Slowed, or Blinded.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=-<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Attack Modifier]], [[Percent Damage]]<!--
+-->|notes=}};File:Martial_Law_Icon.png;
+
+<!-- LEVEL 20 -->
+Infinite Lightning;7;1;Ball Lightning can now bounce indefinitely. Every bounce reduces its cooldown by 4 seconds.<!--
+-->{{undoc|<hr/><li>It is possible to have multiple Ball Lightnings active simultaneously.}};File:Infinite_Lightning_Icon.png;
+
+Imprisoning Light;7;2;The impaled Hero is Blinded for 5 seconds. Upon impaling a Hero, Cassia's Valkyrie creates a wave of light that deals 200 damage to nearby enemies. The wave Silences and Roots them for 3 seconds.<!--
+-->{{undoc-x|type=Spell damage, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=<!--
+-->|props=[[Area of Effect]], [[Blind]], [[Root]], [[Silence]]<!--
+-->|aoe=Circle<!--
+-->|radius=4.0<!--
+-->|prop1=Wave delay|val1=0.0625 seconds<!--
+-->|notes=<li>Blind is applied when the target arrives at the end location.<li>The pull target takes the additional damage upon impact as well, but is not affected by the Root and Silence effects.}};File:Imprisoning_Light_Icon.png;
+
+Titan's Revenge;7;3;Cassia's Basic Attacks now ignore Armor and while Avoidance is fully charged they deal an additional 20% bonus damage.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Attack Modifier]]<!--
+-->|notes=<li>''Titan's Revenge'' empowered Basic Attacks only ignore positive Armor.<li>Bonus damage stacks additively with other offensive damage modifiers that can affect Cassia's Basic Attack damage.}};File:Titan's_Revenge_Icon.png;
+
+Rockstopper;7;4;{{Cooldown|30}}<br/>Activate to fully charge Avoidance and increase its Armor value to 60 for 4 seconds<p>Losing Avoidance removes this bonus.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Attack Modifier]]<!--
+-->|notes=<li>Does not stack with other positive Armor effects. Other defensive damage modifires may stack.}};File:Rockstopper_Icon.png;
+
+
+
+}}
+
+<noinclude>
+{{Scaling table/start|{{#var:health}}|{{#var:health scaling}}|{{#var:health regen}}|{{#var:health regen scaling}}|{{#var:attack damage}}|{{#var:attack damage scaling}}}}
+{{Scaling table/slot|Lightning Fury (primary)|158|0.04}}
+{{Scaling table/slot|Lightning Fury (secondary)|158|0.04}}
+{{Scaling table/slot|Blinding Light|50|0.04}}
+{{Scaling table/slot|Fend (single)|32|0.04}}
+{{Scaling table/slot|Fend (per second)|256|0.04}}
+{{Scaling table/slot|Plate of the Whale (base)|7|0.04|4}}
+{{Scaling table/slot|Plate of the Whale (empowered)|21|0.04|4}}
+{{Scaling table/slot|Ball Lightning|180|0.04|10}}
+{{Scaling table/slot|Valkyrie|225|0.04|10}}
+{{Scaling table/slot|Surge of Light (damage)|220|0.04|7}}
+{{Scaling table/slot|Surge of Light (threshold)|650|0.04|7}}
+{{Scaling table/slot|Imprisoning Light|200|0.04|20}}
+{{Scaling table/end}}
+</noinclude>

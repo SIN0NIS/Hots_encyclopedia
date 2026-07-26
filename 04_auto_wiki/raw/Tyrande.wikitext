@@ -1,0 +1,231 @@
+{{hero data
+| name = Tyrande
+| date = March 13, 2014
+| price = 4000
+| title = High Priestess of Elune
+| role = Healer
+| franchise = Warcraft
+| info = A Healer who helps her allies lockdown and finish off enemies.
+| lore = Tyrande Whisperwind strikes fear into all who wish ill of the Kaldorei. As the highest ranking Sentinel and High Priestess of Elune, she is not only the Night Elves' most deadly warrior, but also their most cunning leader.
+| difficulty = Medium
+| melee = False
+| health = 1511
+| healthRegen = 3.1484
+| resource = 500
+| resourceType = Mana
+| armor = 0
+| attackSpeed = 1.33
+| attackRange = 6
+| attackDamage = 55
+| healthScaling = 0.04
+| regenScaling = 0.04
+| adamageScaling = 0.04
+| unitRadius = 0.625
+| icon = File:Tyrande_Icon.png
+| skills =
+Hunter's Mark;D;File:Hunter's_Mark_Icon.png;Reveal a non-Structure enemy and reduce their Armor by 15 for 4 seconds.<p>{{passive}} Tyrande's Basic Attacks heal her for 1% of her maximum Health, doubled against targets with Hunter's Mark.<!--
+-->{{undoc-x|type=Defensive damage modifier, Status effect / Healing<!--
+-->|affects=Non-Structure enemies / Self<!--
+-->|target=Unit target<!--
+-->|props=[[Armor reduction]], [[Attack modifier]], [[Revealed]]<!--
+-->|cast=0.1 + 0 seconds<!--
+-->|range=6.0<!--
+-->|notes=<li>Does not stack with other negative Armor effects. Other defensive damage modifiers may stack.}};20;;trait;False
+
+Light of Elune;Q;File:Light_of_Elune_Icon.png;Heal an ally Hero for 270. Light of Elune's cooldown is reduced by 1.5 seconds every time Tyrande hits an enemy with a Basic Attack or damages an enemy Hero.<p>Stores up to 2 charges. Cooldown replenishes all charges at the same time.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=4.00%<!--
+-->|affects=Allied Heroes, Self<!--
+-->|target=Unit target<!--
+-->|props=[[Attack Modifier]]<!--
+-->|cast=Instant<!--
+-->|range=8.0<!--
+-->|notes=<li>Basic Attacks trigger cooldown reduction from both Heroic and non-Heroic targets. Ability Damage only triggers cooldown reduction from Heroes.<li>Casting <i>Light of Elune</i> sets the cooldown of Tyrande's next Basic Attack to 0.5 seconds, potentially causing it to come out slightly faster or slower depending on timing.}};16 / 0.5;15;;True
+
+Sentinel;W;File:Sentinel_Icon.png;Send an Owl across the battleground revealing its path, dealing 120 damage to the first Hero hit, and revealing them for 5 seconds. If a Hero revealed by Sentinel dies, refresh its cooldown.<!--
+-->{{undoc-x|type=Spell Damage, Status effect<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemy Heroes<!--
+-->|target=Point target<!--
+-->|props=[[Revealed]], [[Skillshot]]<!--
+-->|cast=0 + 0.1 seconds<!--
+-->|range=Global<!--
+-->|radius=8.0 (vision)<!--
+-->|hitbox=1.25 x 2.25<!--
+-->|missile=20<!--
+-->|notes=<li>As ''Sentinel'' travels, it grants vision in a 7.0 x 7.0 area (increased by its hitbox) around the projectile that lasts for 4 seconds.<li>Heroes hit by ''Sentinel'' grant vision in 8 radius around them for the duration of the revealed debuff.}};15;55;;
+
+Lunar Flare;E;File:Lunar_Flare_Icon.png;After 0.75 seconds, deal 150 damage and Stun enemies in the target area for 0.75 seconds. Restores 25 Mana per enemy hit.<p>{{quest|Hitting a Hero with Lunar Flare increases its damage by 4%, up to 160%.|After hitting 10 Heroes, increase Lunar Flare's range by 30%.}}<p>{{reward|After hitting 20 Heroes, Sentinel now pierces the first Hero hit.}}<p>{{reward|After hitting 40 Heroes, every 8th Basic Attack fires a Lunar Flare, prioritizing Heroes.}}<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Stun]]<!--
+-->|cast=0.1 + 0 seconds<!--
+-->|range=10.5<!--
+-->|aoe=Circle<!--
+-->|radius=1.5<!--
+-->|notes=}};13;65;;False
+
+Shadowstalk;R;File:Shadowstalk_Icon.png;Grant all allied Heroes Stealth for 10 seconds and heal them for 380 Health over 10 seconds. Remaining stationary for at least 1.5 seconds while Stealthed grants Invisible.<!--
+-->{{undoc-x|type=Healing, Status effect<!--
+-->|scaling=4.00%<!--
+-->|affects=Allied Heroes, Self<!--
+-->|target=No target<!--
+-->|props=[[Heal over Time]], [[Stealth]]<!--
+-->|cast=Instant<!--
+-->|range=Global<!--
+-->|tickrate=1.0 per second (x10)<!--
+-->|prop1=Heal per tick|val1=38<!--
+-->|notes=<li>Heal over time persists even after Stealth has been broken.}};90;85;heroic;False
+
+Starfall;R;File:Starfall_Icon.png;Deal 92 damage per second and Slow enemies by 20% in an area. Lasts 6 seconds.<!--
+-->{{undoc-x|type=Spell Damage, Crowd Control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Slow]]<!--
+-->|cast=0.1 + 0 seconds<!--
+-->|range=9.0<!--
+-->|aoe=Circle<!--
+-->|radius=5.0<!--
+-->|tickrate=1.0 per second (x7)<!--
+-->|notes=<li>Casting <i>Starfall</i> sets the cooldown of Tyrande's next Basic Attack to 0.5 seconds, potentially causing it to come out slightly faster or slower depending on timing.}};80;85;heroic;False
+
+| talents =
+<!-- LEVEL 1 -->
+Ranger;1;1;Sentinel width is increased by 25% and deals up to 250% more damage based on distance traveled.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|prop1=Bonus width|val1=0.3125<!--
+-->|notes=<li>''Ranger'' increases <i>Sentinel</i>'s damage by 10% for every 2 units traveled, reaching the maximum bonus at 50 units.<li>Damage bonus stacks additively with itself and other offensive damage modifiers that can affect <i>Sentinel</i>'s damage.}};File:Ranger_Icon.png;
+
+Moonlit Arrows;3;1;Basic Attacks decrease the cooldown of Light of Elune by an additional 0.5 seconds.;File:Moonlit_Arrows_Icon.png;
+
+Trueshot Aura;1;3;{{Cooldown|45}}<p>Activate to grant Tyrande and nearby allied Heroes 40% increased Attack Damage for 5 seconds, and to reset the cooldown of Hunter's Mark.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Allied Heroes / Self<!--
+-->|target=No target<!--
+-->|props=[[Area of Effect]]<!--
+-->|cast=Instant<!--
+-->|aoe=Circle<!--
+-->|radius=7.0<!--
+-->|notes=<li>Stacks additively with other offensive damage modifiers that can affect Tyrande's or her allies' Basic Attack damage.}};File:Trueshot_Aura_Icon.png;
+
+<!-- LEVEL 4 -->
+Everlasting Light;2;1;If Light of Elune's second charge is cast on a different target from the first, it heals for 80% more.<!--
+-->{{undoc-x|type=Healing dealt modifier<!--
+-->|scaling=-<!--
+-->|affects=Allied Heroes, Self<!--
+-->|notes=<li>Stacks additively with healing modifiers that affect <i>Light of Elune</i>'s healing output and multiplicatively with modifiers that affect healing received by the target.}};File:Everlasting_Light_Icon.png;
+
+Mark of Mending;2;2;Tyrande's Basic Attacks against Marked targets heal other allied Heroes near the enemy for 4% of their maximum Health.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=-<!--
+-->|affects=Allied Heroes<!--
+-->|props=[[Area of Effect]], [[Attack Modifier]]<!--
+-->|aoe=Circle<!--
+-->|radius=8.5<!--
+-->|notes=<li>Healing is based on the receiving ally's Health.}};File:Mark_of_Mending_Icon.png;
+
+Elune's Chosen;2;3;{{Cooldown|30}}<br>Activate to make Tyrande's Basic Attacks heal target allied Hero for 175% of the damage dealt. Lasts for 8 seconds.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=-<!--
+-->|affects=Allied Heroes<!--
+-->|target=Unit target<!--
+-->|props=[[Attack Modifier]], [[Lifesteal]]<!--
+-->|cast=Instant<!--
+-->|range=7.0<!--
+-->|notes=}};File:Elune's_Chosen_Icon.png;
+
+<!-- LEVEL 7 -->
+Elune's Gift;1;2;Hitting an enemy Hero with Lunar Flare grants 20% Spell Power for 10 seconds.<!--
+-->{{undoc-x|type=Spell Power modifier<!--
+-->|affects=Ability<!--
+-->|notes=}};File:Lunar_Blaze_Icon.png;
+
+Kaldorei Resistance;3;2;Light of Elune grants the target 10 Spell Armor for 2 seconds. This effect stacks up to 2 times.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Allied Heroes, Self<!--
+-->|props=[[Spell Armor]]<!--
+-->|notes=}};File:Kaldorei_Resistance_Icon.png;
+
+Huntress's Fury;3;3;Increase the cast range and duration of Hunter's Mark by 25%. Tyrande's Basic Attacks against targets with Hunter's Mark splash to nearby enemy Heroes.<!--
+-->{{undoc-x|type=Physical Damage<!--
+-->|scaling=-<!--
+-->|props=[[Attack Modifier]], [[Bounce]]<!--
+-->|prop1=Bonus range|val1=1.5<!--
+-->|prop2=Bonus duration|val2=1.0 second<!--
+-->|prop3=Splash radius|val3=7.0<!--
+-->|notes=<li>Splashing attacks grant cooldown reduction for ''Light of Elune''.<li>Splashing attacks do not interact with any of Tyrande's talents affecting her Basic Attacks, except the damage increase from ''Trueshot Aura''.}};File:Huntress'_Fury_Icon.png;
+
+<!-- LEVEL 10 -->
+Shadowstalk;4;1;{{Cooldown|90}}<br>Grant all allied Heroes Stealth for 10 seconds and heal them for 380 Health over 10 seconds. Remaining stationary for at least 1.5 seconds while Stealthed grants Invisible.;File:Shadowstalk_Icon.png;
+Starfall;4;2;{{Cooldown|80}}<br>Deal 92 damage per second and Slow enemies by 20% in an area. Lasts 6 seconds.;File:Starfall_Icon.png;
+
+<!-- LEVEL 13 -->
+Quickening Blessing;5;1;Gain 5% Movement Speed. Light of Elune increases the target's Movement Speed by 20% for 3 seconds.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Allied Heroes, Self<!--
+-->|props=[[Movement Speed]]<!--
+-->}};File:Quickening_Blessing_Icon.png;
+
+Harsh Moonlight;5;2;Sentinel Slows enemies hit by 35% and reduces their damage dealt by 35% for 3 seconds.<!--
+-->{{undoc-x|type=Offensive damage modifier, Crowd Control<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Slow]]<!--
+-->|notes=<li>Stacks additively with itself and other offensive damage modifiers that can affect the target's damage output.}};File:Harsh_Moonlight_Icon.png;
+
+Ranger's Mark;5;3;Basic Attacks reduce the cooldown of Hunter's Mark by 2 seconds. Basic Attacks against marked targets reduce the cooldown of Lunar Flare by 4 seconds.<!--
+-->{{undoc-x|props=[[Attack Modifier]]}};File:Ranger's_Mark_Icon.png;
+
+<!-- LEVEL 16 -->
+Celestial Attunement;6;1;Light of Elune removes Stuns, Silences, and Slows from its target.<!--
+-->{{undoc-x|type=CC removal<!--
+-->|affects=Allied Heroes, Self<!--
+-->|notes=}};File:Quickening_Blessing_Icon.png;
+
+Empower;6;2;Reduce Sentinel's cooldown by 3 seconds. Heroes hit by Sentinel take bonus damage equal to 6% of their maximum Health.<!--
+-->{{undoc-x|type=[[Percent damage]]<!--
+-->|scaling=-<!--
+-->|affects=Enemy Heroes<!--
+-->|notes=}};File:Empower_Icon.png;
+
+Darnassian Archery;6;3;Basic Attacks against enemy Heroes grant a stacking 12% increased Attack Damage bonus for 4 seconds.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Attack Modifier]]<!--
+-->|prop1=Maximum bonus|val1=5,000% (417 stacks)<!--
+-->|notes=<li>Stacks additively with itself and other offensive damage modifiers affecting Tyrande's Basic Attack damage.}};File:Darnassian_Archery_Icon.png;
+
+<!-- LEVEL 20 -->
+Eyes of the Huntress;7;1;Shadowstalk reveals all enemy Heroes for 10 seconds and heals for 75% more.<!--
+-->{{undoc-x|type=Healing dealt modifier / Status effect<!--
+-->|scaling=-<!--
+-->|affects=Ability / Enemy Heroes<!--
+-->|props=[[Revealed]]<!--
+-->|notes=<li>Stacks additively with healing modifiers that affect <i>Shadowstalk</i>'s healing output and multiplicatively with modifiers that affect healing received by the target.}};File:Eyes_of_the_Huntress_Icon.png;
+
+Celestial Wrath;7;2;Increase the Slow of Starfall to 60% and cause it to apply Hunter's Mark to enemy Heroes while inside its area of effect.;File:Celestial_Wrath_Icon.png;
+
+Commander of Sentinels;7;3;Sentinel gains a 2nd charge.<!--
+-->{{undoc-x|type=<!--
+-->|affects=Ability<!--
+-->|notes=}};File:Ranger_Icon.png;
+
+Iceblade Arrows;7;4;Increase Attack Speed by 20%. Basic Attacks against enemy Heroes reduce their damage dealt by 8% for 3 seconds. This effect stacks up to 5 times.<!--
+-->{{undoc-x|typeStatus effect / Offensive damage modifier<!--
+-->|affects=Self / Enemy Heroes<!--
+-->|props=[[Attack Modifier]], [[Attack Speed]]<!--
+-->|notes=<li>Stacks additively with itself and other offensive damage modifiers affecting the target's damage output.}};File:Iceblade_Arrows_Icon.png;
+}}
+
+<noinclude>
+{{Scaling table/start|{{#var:health}}|{{#var:health scaling}}|{{#var:health regen}}|{{#var:health regen scaling}}|{{#var:attack damage}}|{{#var:attack damage scaling}}}}
+{{Scaling table/slot|Light of Elune|270|0.04}}
+{{Scaling table/slot|Sentinel|120|0.04}}
+{{Scaling table/slot|Lunar Flare|150|0.04}}
+{{Scaling table/slot|Shadowstalk|380|0.04|10}}
+{{Scaling table/slot|Starfall|92|0.04|10}}
+{{Scaling table/end}}
+</noinclude>

@@ -1,0 +1,248 @@
+{{hero data
+| name = Rexxar
+| date = September 8, 2015
+| price = 4000
+| title = Champion of the Horde
+| role = Bruiser
+| franchise = Warcraft
+| info = A Bruiser who with his bear, Misha, expertly controls an area of the battleground.
+| lore = It was a strange twist of fate that led the wandering half-ogre Rexxar to the fledgling city of Orgrimmar. With his aid, Thrall and the Horde were able to secure their homeland and defend it from the invading forces of Lord Admiral Daelin Proudmoore.
+| difficulty = Hard
+| melee = False
+| health = 1810
+| healthRegen = 3.7695
+| resource = 500
+| resourceType = Mana
+| armor = 0
+| attackSpeed = 0.87
+| attackRange = 5.5
+| attackDamage = 134
+| healthScaling = 0.0400390625
+| regenScaling = 0.0400390625
+| adamageScaling = 0.0400390625
+| unitRadius = 0.875
+| icon = File:Rexxar_Icon.png
+| skills = 
+Misha, Focus!;D;File:Misha,_Focus!_Icon.png;{{Passive}} Misha gains 15% Movement Speed. <p>Command Misha to attack a specific enemy or move to a point and wait. <p>Targeting Rexxar commands Misha to retreat to his position, gaining 30% move speed until she reaches Rexxar. <p>Targeting Misha commands her to hold her current position.<!--
+-->{{undoc-x|type=Command, Summon<!--
+-->|target=Unit target / Point target<!--
+-->|props=[[Clamping]]<!--
+-->|cast=Instant<!--
+-->|range=Global<!--
+-->}}<br/>'''[[Misha]]'''{{undoc-x|nohr=true<!--
+-->|type=[[Heroic Pet]]<!--
+-->|scaling=4.00390625% (damage), 4.76% (Health)<!--
+-->|target=Retargetable<!--
+-->|prop7=Sight radius|val7=7.0<!--
+-->|prop8=Leash radius|val8=17.25<!--
+-->|notes=<li>Killing Misha rewards a [[Takedown]] credit and 0.25 Hero kills/XP.<li>When Misha is dead, killing Rexxar rewards a Takedown credit and 0.75 Hero kills/XP. If Misha is alive while Rexxar is killed, she dies as well, totaling a full Hero kill/XP and two Takedown credits.<li>Misha's death timer is 14s+.5s/level.<li>Rexxar becomes unable to control Misha while he is unable to act ([[Stun]]ned, [[Daze]]d or put in [[Time Stop]] or [[Stasis]], other than ''Feign Death'') or [[Silence]]d.<li>If Rexxar enters a Vehicle or is some other way removed from the battleground, Misha will be removed from the Battleground as well.<li>Issuing Move and Attack commands to Misha doesn't dismount or break [[objective]] channels, [[hearthstone]] or [[mount|dismount]], but using Abilities will.<li>Rexxar and Misha share the effects of [[Healing Fountain]]s.<li>Both Rexxar and Misha can pick up [[Regeneration Globes]], but their effect is not shared.<li>Misha's passive Movement Speed bonus does not stack with other Movement Speed bonuses, including the bonus from the 'return' command.<li>When Rexxar is Mounted, Misha's Movement Speed bonus is increased to 30% while she is within 6 radius.}};0.25;;;False
+
+Spirit Swoop;Q;File:Spirit_Swoop_Icon.png;Deal 141 damage to enemies in a line, Slowing them by 30% for 2 seconds.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00390625%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Clamping]], Piercing [[Skillshot]], [[Slow]]<!--
+-->|cast=0.125 + 0 seconds<!--
+-->|range=10.5<!--
+-->|hitbox=1.25 x 2.5<!--
+-->|missile=<br>- Initial: 25<br>- Final: 15<br>- Acceleration: -40<!--
+-->|notes=}};7;40;;False
+
+Misha, Charge!;W;File:Misha,_Charge!_Icon.png;Misha charges in a line, dealing 150 damage and Stunning enemies for 1.25 seconds.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control / Movement: [[Dash]]<!--
+-->|scaling=4.00390625%<!--
+-->|affects=Enemies / Misha<!--
+-->|target=Point target<!--
+-->|props=[[Clamping]], Piercing [[Skillshot]], [[Stun]]<!--
+-->|cast=Instant<!--
+-->|range=6.5<!--
+-->|hitbox=2.0 x 3.0<!--
+-->|missile=8.0<!--
+-->|notes=<li>Disabled while Misha is unable to act, dead, [[Silence]]d or [[Root]]ed.}};10;45;;False
+
+Mend Pet;E;File:Mend_Pet_Icon.png;Heal Misha for 714 Health over 5 seconds.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=4.00390625%<!--
+-->|affects=Misha<!--
+-->|target=No target<!--
+-->|props=[[Heal over time]]<!--
+-->|cast=Instant<!--
+-->|tickrate=1.0 per second (x6)<!--
+-->|prop1=Healing per tick|val1=119<!--
+-->|notes=<li>Disabled while Misha is dead.}};10;70;;False
+
+Bestial Wrath;R;File:Bestial_Wrath_Icon.png;Increases Misha's Basic Attack damage by 200% for 12 seconds.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Misha<!--
+-->|target=No target<!--
+-->|props=<!--
+-->|cast=Instant<!--
+-->|notes=}};50;75;heroic;False
+
+Unleash the Boars;R;File:Unleash_the_Boars_Icon.png;Release a herd of boars that track down all enemy Heroes in a direction, dealing 110 damage, Revealing, and Slowing enemies by 40% for 5 seconds.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control, Status effect<!--
+-->|scaling=4.00390625%<!--
+-->|affects=Enemy Heroes<!--
+-->|target=Point target<!--
+-->|props=Invulnerable summon, [[Revealed]], [[Slow]]<!--
+-->|cast=0.25 + 0 seconds<!--
+-->|aoe=Radial<!--
+-->|radius=25<!--
+-->|arc=50 degrees<!--
+-->|missile=10<!--
+-->|notes=<li>Can target enemy Heroes who are [[Stealth]]ed or inside [[Fog of War]].<li>The boars are Invulnerable Summons that can not travel through terrain or structures.<li>Boars can be disjointed by moving 15 range away from their maximum range.}};60;75;heroic;False
+
+| talents = <!-- LEVEL 1 -->
+Bird of Prey;1;1;Increases Spirit Swoop's damage by 150% to Minions.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|notes=<li>Stacks additively with other offensive damage modifiers that can affect <i>Spirit Swoop</i>'s damage.}};File:Crippling_Talons_Icon.png;
+
+Easy Prey;1;2;Increases Misha's Basic Attack damage to Minions and Mercenaries by 150%, and Misha gains 50 Armor against Minions and Mercenaries, reducing damage taken by 50%.<!--
+-->{{undoc-x|type=Offensive damage modifier, Defensive damage modifier<!--
+-->|affects=Misha<!--
+-->|props=[[Attack Modifier]], [[Armor]]<!--
+-->|notes=<li>Damage bonus stacks additively with other offensive damage modifiers that can affect Misha's Basic Attack damage.<li>While applied, does not stack with other positive Armor effects. Other defensive damage modifiers may stack.}};File:Hungry_Bear_Icon.png;
+
+Flare;1;3;{{cooldown|20}}<br/>Fire a flare at an area, revealing it for 20 seconds.<!--
+-->{{undoc-x|type=Status effect, Vision<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Revealed]]<!--
+-->|cast=0.0625 + 0.125 seconds<!--
+-->|range=25<!--
+-->|aoe=Circle<!--
+-->|radius=8.0<!--
+-->|missile=40<!--
+-->|notes=}};File:Flare_Icon.png;
+
+<!-- LEVEL 4 -->
+Hungry Bear;2;1;Misha's Basic Attacks heal her for 4.5% of her maximum Health.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=-<!--
+-->|affects=Misha<!--
+-->|props=[[Attack Modifier]]<!--
+-->|notes=}};File:Hungry_Bear_Icon.png;
+
+Hunter-Gatherer;2;2;{{quest|Gathering a Regeneration Globe increases Rexxar and Misha's Health Regeneration by 1 per second, up to 25 per second.|After gathering 25 Globes, Rexxar and Misha gain 15 Armor.}}<!--
+-->{{undoc-x|type=Bonus Health Regeneration, Defensive damage modifier (reward)<!--
+-->|scaling=-<!--
+-->|affects=Self (Rexxar & Misha)<!--
+-->|props=[[Armor]]<!--
+-->|notes=}};File:Hunter-Gatherer Icon.png;
+
+Grizzled Fortitude;2;3;Every 6 seconds, Rexxar and Misha gain 75 Physical Armor against the next enemy Hero Basic Attack, reducing the damage taken by 75%.<p>Stores up to 2 charges. Both Rexxar and Misha have their own charges.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Self (Rexxar & Misha)<!--
+-->|props=[[Block]]<!--
+-->|notes=<li>Does not stack with other positive Physical Armor effects. Other defensive damage modifiers may stack.}};File:Grizzled Bear Icon.png;
+
+Animal Husbandry;2;4;Rexxar and Misha gain 2 Maximum Health every second Rexxar remains alive. These bonuses are lost on Rexxar's death.<!--
+-->{{undoc-x|type=Bonus Health<!--
+-->|scaling=-<!--
+-->|affects=Self (Rexxar & Misha)<!--
+-->|prop1=Maximum Health bonus|val1=4000 (x2000)<!--
+-->|notes=}};File:Animal Husbandry Icon.png;
+
+<!-- LEVEL 7 -->
+Crippling Talons;3;1;Increases Spirit Swoop's Slow amount to 50% and its duration to 3.5 seconds.;File:Crippling_Talons_Icon.png;
+
+Taking Flight;3;2;Increases Spirit Swoop's range by 20%. If Spirit Swoop hits an enemy Hero, the Mana cost is refunded and its cooldown is reduced by 2 seconds.<!--
+-->{{undoc-x|prop1=Bonus range|val1=2.0}};File:Taking_Flight_Icon.png;
+
+Aspect of the Beast;3;3;Misha's Basic Attacks lower the cooldown of Misha, Charge! by 1 second.<!--
+-->{{undoc-x|props=[[Attack Modifier]]<!--
+-->|notes=}};File:Aspect_of_the_Beast_Icon.png;
+
+<!-- LEVEL 10 -->
+Bestial Wrath;4;1;{{Cooldown|50}}<br/>Increases Misha's Basic Attack damage by 200% for 12 seconds.;File:Bestial_Wrath_Icon.png;
+Unleash the Boars;4;2;{{Cooldown|60}}<br/>Release a herd of boars that track down all enemy Heroes in a direction, dealing 110 damage, Revealing, and Slowing enemies by 40% for 5 seconds.;File:Unleash_the_Boars_Icon.png;
+
+<!-- LEVEL 13 -->
+Aspect of the Hawk;5;1;When Spirit Swoop hits an enemy Hero, Rexxar gains 125% Attack Speed for 4 seconds. Misha's Basic Attacks increase the duration of this buff by 0.75 seconds.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self (Rexxar)<!--
+-->|props=[[Attack Speed]], [[Attack Modifier]]<!--
+-->|notes=}};File:Aspect_of_the_Hawk_Icon.png;
+
+Dire Beast;5;2;Rexxar and Misha's Basic Attacks increase the damage of the next Misha, Charge! by 15%, stacking up to a 150% bonus.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|props=[[Attack Modifier]] (stacking)<!--
+-->|notes=<li>Stack additively with other offensive damage modifiers that can affect <i>Misha, Charge!</i>'s damage.}};File:Dire-beast-icon.png;
+
+Wildfire Bear;5;3;Misha deals 28 damage per second to nearby enemies.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00390625%<!--
+-->|affects=Enemies<!--
+-->|props=[[Area of Effect]], [[Burning Rage]]<!--
+-->|aoe=Circle<!--
+-->|radius=3.5<!--
+-->|tickrate=1.0 per second<!--
+-->|notes=<li>''Wildfire Bear'' doesn't affect unaggroed Mercenaries.<li>Damaging enemies with ''Wildfire Bear'' does not trigger tower aggro.<li>Damage from ''Wildfire Bear'' is unaffected by offensive damage modifiers and lifesteal effects.}};File:Wildfire_Bear_Icon.png;
+
+<!-- LEVEL 13 -->
+Thrill of the Hunt;6;1;Rexxar's Basic Attacks increase both his and Misha's Movement Speed by 25% for 2 seconds.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self (Rexxar & Misha)<!--
+-->|props=[[Attack Modifier]], [[Movement speed]]<!--
+-->|notes=}};File:Thrill_of_the_Hunt_Icon.png;
+
+Primal Intimidation;6;2;{{cooldown|20}}<br/>Activate to slow the Attack Speed by 50% and Movement Speed by 20% of nearby Heroes and Summons near Rexxar and Misha for 2.5 seconds.<p>{{Passive}} Heroes and Summons that attack Rexxar or Misha have their Attack Speed slowed by 20% for 2.5 seconds.<!--
+-->{{undoc-x|type=Crowd control, Status effect<!--
+-->|affects=Enemy Heroes & Summons<!--
+-->|target=No target<!--
+-->|props=[[Area of Effect]], [[Attack Slow]], [[Slow]]<!--
+-->|cast=Instant<!--
+-->|aoe=Circle<!--
+-->|radius=5.0<!--
+-->|notes=<li>Passive is not applied if the enemy Basic Attack misses due to being [[Blind]]ed.<li>Passive Attack Slow does not stack with itself, nor the active component.<li>Slow effects originating from Rexxar and Misha do not stack with each other.<li>Passive and active Attack Slow stack additively with other effects that can affect the target Hero's Attack Speed.}};File:Primal_Intimidation_Icon.png;
+
+Feign Death;6;3;{{cooldown|35}}<p>Rexxar fakes his death, becoming Invulnerable and untargetable for 5 seconds. During this time you control Misha.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self (Rexxar)<!--
+-->|target=No target<!--
+-->|props=[[Stasis]]<!--
+-->|cast=Instant<!--
+-->|notes=<li>Removes most debuffs from Rexxar upon cast.<li>For the duration of ''Feign Death'' Misha can be controlled directly, without using the Trait key.}};File:Feign_Death_Icon.png;
+
+<!-- LEVEL 20 -->
+Spirit Bond;7;1;Increases the duration of Bestial Wrath by 50% and Misha's Basic Attacks heal Rexxar for 50% of her damage dealt during Bestial Wrath.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=-<!--
+-->|affects=Self (Rexxar)<!--
+-->|props=[[Attack Modifier]], [[Lifesteal]]<!--
+-->|notes=}};File:Spirit_Bond_Icon.png;
+
+Kill Command;7;2;Unleash the Boars deals 50% more damage and Roots for 1.5 seconds.<!--
+-->{{undoc-x|type=Offensive damage modifier / Crowd control<!--
+-->|affects=Ability / Enemy Heroes<!--
+-->|props=[[Root]]<!--
+-->|notes=<li>Damage bonus stacks additively with other offensive damage modifiers that can affect <i>Unleash the Boars</i>'s damage.}};File:Kill_Command_Icon.png;
+
+Frenzy of Kalimdor;7;3;Rexxar's Basic Attacks deal 10% more damage, and Misha's Basic Attacks Slow the target by 20% for 1.25 seconds.<!--
+-->{{undoc-x|type=Offensive damage modifier / Crowd control<!--
+-->|affects=Self (Rexxar) / Enemies<!--
+-->|props=[[Attack Modifier]], [[Slow]]<!--
+-->|notes=<li>Damage bonus stacks additively with other offensive damage modifiers that can affect Rexxar's Basic Attack damage.}};File:Frenzy_of_Kalimdor_Icon.png;
+
+Hardened Skin;7;4;{{cooldown|60}}<br/>Rexxar and Misha gain 75 Armor for 4 seconds, reducing damage taken by 75%.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Self (Rexxar & Misha)<!--
+-->|target=No target<!--
+-->|props=[[Armor]]<!--
+-->|cast=Instant<!--
+-->|notes=<li>Does not stack with other positive Armor effects. Other defensive damage modifiers may stack.}};File:Hardened_Skin_Icon.png;
+}}
+
+<noinclude>
+{{Scaling table/start|{{#var:health}}|{{#var:health scaling}}|{{#var:health regen}}|{{#var:health regen scaling}}|{{#var:attack damage}}|{{#var:attack damage scaling}}}}
+{{Scaling table/slot|Spirit Swoop|141|0.0400390625}}
+{{Scaling table/slot|Misha, Charge!|150|0.0400390625}}
+{{Scaling table/slot|Mend Pet|714|0.0400390625}}
+{{Scaling table/slot|Mend Pet (per second)|119|0.0400390625}}
+{{Scaling table/slot|Unleash the Boars|110|0.0400390625|10}}
+{{Scaling table/slot|Wildfire Bear|28|0.0400390625}}
+{{Scaling table/end}}
+</noinclude>

@@ -1,0 +1,231 @@
+{{hero data
+| name = Deckard
+| date = April 24, 2018
+| price = 10000
+| title = The Last Horadrim
+| role = Healer
+| franchise = Diablo
+| info = A burst Healer who excels at preparing the battlefield before a fight and can cripple enemies with crowd control.
+| lore = As an avid scholar, Deckard Cain has dedicated his life to the pursuit of knowledge. He has been an advisor, storyteller, and friend to Sanctuary's greatest heroes, guiding them through peril time and again. When Deckard speaks, it's wise to stay awhile and listen.
+| difficulty = Medium
+| melee = True
+| health = 1780
+| healthRegen = 3.7083
+| resource = 500
+| resourceType = Mana
+| armor = 0
+| attackSpeed = 0.91
+| attackRange = 1.5
+| attackDamage = 63
+| healthScaling = 0.04
+| regenScaling = 0.04
+| adamageScaling = 0.04
+| unitRadius = 0.625
+| icon = File:Deckard_Icon.png
+| skills = 
+Fortitude of the Faithful;Trait;File:Fortitude_of_the_Faithful_Icon.png;When at least 1 other allied Hero is nearby, Deckard gains 10 Armor and his Basic Abilities recharge 50% faster.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Self<!--
+-->|radius=6.5<!--
+-->|notes=<li>Stacks additively with other effects that can affect cooldown refresh rate.<li>Does not stack with other positive Armor effects. Other defensive damage modifiers may stack.}};;;trait;False
+
+Healing Potion;Q;File:Healing_Potion_Icon.png;Throw a Healing Potion on the ground that heals the first allied Hero who comes in contact with it for 285. Limit 5 active Potions.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=4.00%<!--
+-->|affects=Allied Heroes, Self<!--
+-->|target=Point target<!--
+-->|props=Self-castable<!--
+-->|cast=0.125 + 0 seconds<!--
+-->|range=8.0<!--
+-->|prop1=Pickup radius|val1=1.0<!--
+-->|prop2=Travel time|val2=<br>- Range 0 - 3.0: 0.125 seconds<br>- Range 3.0 - 6.0: 0.375 seconds<br>- Range 6.0+: 0.5 seconds<!--
+-->|notes=<li>''Healing Potion'' cannot be cast on unpathable terrain.<li>Healing Potions do not grant any vision.<li>Healing Potions cannot be picked up by Heroes at full health.<li>Allies can see the landing location of the potion while it's in the air.<li>Potions on the ground are also visible to the enemy.}};4;25
+
+Horadric Cube;W;File:Horadric_Cube_Icon.png;Release the Horadric Cube. After 0.5 seconds it explodes, dealing 80 damage to all enemies in the area and Slowing them by 35% for 2 seconds.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], Self-castable, [[Slow]]<!--
+-->|cast=0.125 + 0 seconds<!--
+-->|range=12<!--
+-->|aoe=Square<!--
+-->|width=8.0<!--
+-->|missile=20<!--
+-->|notes=}};12;35
+
+Scroll of Sealing;E;File:Scroll_of_Sealing_Icon.png;Unfurl an enchanted scroll over 2.25 seconds, forming a triangle that deals 150 damage to enemies inside and Roots them for 1.5 seconds.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]]<!--
+-->|cast=0.1875 + 0 seconds<!--
+-->|range=12<!--
+-->|aoe=Equilateral triangle<!--
+-->|width=12<!--
+-->|notes=}};16;40
+
+Stay Awhile and Listen;R;File:Stay_Awhile_and_Listen_Icon.png;After 1 second, Channel for 3 seconds, putting enemy Heroes in front of Deckard to Sleep while Channeling, and for 2 seconds after.<p>Enemies can only be put to Sleep once per cast, and Sleep's effects end instantly if they take damage.<!--
+-->{{undoc-x|type=Crowd control<!--
+-->|affects=Enemy Heroes<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Channeled cast]] (stationary), [[Stationary channel]], [[Sleep]]<!--
+-->|cast=1.0 (ch) + CH + 0 seconds<!--
+-->|aoe=Radial<!--
+-->|radius=10<!--
+-->|arc=150 degrees<!--
+-->|notes=<li>Interrupting the ability during its windup puts it on a 10 second cooldown.<li>Sleep cannot be interrupted for the first 0.5 seconds.<li>Sleep counts as a [[Stun]] effect and interacts with all effects that interact with Stuns.}};70;60
+
+Lorenado;R;File:Lorenado_Icon.png;After 1 second, create a swirling tome tornado that travels in the targeted direction, continually knocking away enemies that come into contact with it. Deals 20 damage to Heroes hit.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Vector targeting<!--
+-->|props=[[Area of Effect]], [[Knockback]]<!--
+-->|cast=0.1875 + 0 seconds<!--
+-->|range=14<!--
+-->|aoe=Circle<!--
+-->|radius=2.5<!--
+-->|missile=3.0<!--
+-->|prop1=Travel distance|val1=18<!--
+-->|prop2=Knockback duration|val2=0.1875<!--
+-->|prop3=Knockback speed|val3=18<!--
+-->|notes=<li>Removes existing knockback effects from the target.<li>Enemies cannot be hit by ''Lorenado'' while a knockback from it is still active on them.}};30;35
+
+| talents = <!-- LEVEL 1 -->
+Scroll of Identify;1;1;{{Quest|Hitting an enemy Hero with Scroll of Sealing permanently increases its damage by 2.|After hitting 15 Heroes, Scroll of Sealing reveals and reduces the Armor of Heroes hit by 10 for 4 seconds.}}<p>{{reward|After hitting 30 Heroes this Talent's Armor reduction effect is increased to 15 and its duration to 6 seconds.}}<!--
+-->{{undoc-x|type=Defensive damage modifier, Status effect / Bonus damage<!--
+-->|scaling=-<!--
+-->|affects=Enemy Heroes / Ability<!--
+-->|props=[[Armor reduction]], [[Revealed]]<!--
+-->|prop1=Maximum bonus damage|val1=2,000 (x1,000)<!--
+-->|notes=<li>Continues to gain stacks after the Quests have been completed.<li>Armor debuff and bonus damage is applied ''after'' the damage is dealt.<li>The second Quest Reward also increases the duration of the reveal.<li>Does not stack with other negative Armor effects. Other defensive [[damage modifier]]s may stack.}};File:Scroll_of_Identify_Icon.png;
+
+Field Study;1;2;Each enemy Hero hit by Scroll of Sealing grants 20% Spell Power for 16 seconds, up to 40%.<!--
+-->{{undoc-x|type=Healing dealt modifier, Offensive damage modifier<!--
+-->|scaling=4.00%<!--
+-->|affects=Self<!--
+-->|props=[[Spell Power]]<!--
+-->|notes=<li>Spell Power is calculated after damage is dealt.<li>Spell Power from ''Field Study'' stacks additively with itself and other sources of Spell Power as well as other offensive damage modifiers and healing dealt modifiers affecting Deckard.}};File:Field Study Icon.png;
+
+Sapphire;1;3;{{Cooldown|30}}<br/>{{Active}} Activate to increase the damage of the next Horadric Cube by 100% and its slow by 30%. Only 1 Gem may be active at a time.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|prop1=Gem swap cooldown|val1=0.5 seconds<!--
+-->|notes=<li>A Gem goes on cooldown once the Horadric Cube is cast.<li>An activated Gem can be deactivated only by activating another Gem.<li>Damage bonus stacks additively with other offensive damage modifiers.}};File:Sapphire Icon.png;
+
+<!-- LEVEL 4 -->
+Potion of Shielding;2;1;Whenever an ally is healed by a Healing Potion, they gain a 140 Shield for 6 seconds.<!--
+-->{{undoc-x|type=Shield<!--
+-->|scaling=4.00%<!--
+-->|affects=Allied Heroes, Self<!--
+-->|notes=<li>Shield from ''Potion of Healing'' does not stack with itself. Subsequent applications refresh the amount and duration.}};File:Potion of Shielding Icon.png;
+
+Rejuvenation Potion;2;2;Healing Potions restore 15 Mana and heal for an additional 114 over 3 seconds.<!--
+-->{{undoc-x|type=Healing / Mana<!--
+-->|scaling=4.00% / -<!--
+-->|affects=Allied Heroes, Self<!--
+-->|props=[[Heal over time]]<!--
+-->|tickrate=2.0 per second (x6)<!--
+-->|prop1=Healing per tick|val1=19<!--
+-->|notes=<li>Healing-over-time does not stack with itself. Subsequent applications refresh the duration.}};File:Rejuvenation Potion Icon.png;
+
+Ruby;2;3;{{Cooldown|20}}<br/>{{Active}} Activate to increase the next Horadric Cube's damage by 100% and it spawns 3 Lesser Healing Potions from each enemy Hero hit, healing allied Heroes for 250 when picked up. Lesser Healing Potions last for 10 seconds. Only 1 Gem may be active at a time.<!--
+-->{{undoc-x|type=Healing / Offensive damage modifier<!--
+-->|scaling=4.00%<!--
+-->|affects=Self, Allied Heroes / Ability<!--
+-->|prop1=Pickup radius|val1=1.0<!--
+-->|prop2=Gem swap cooldown|val2=0.5 seconds<!--
+-->|notes=<li>A Gem goes on cooldown once the Horadric Cube is cast.<li>An activated Gem can be deactivated only by activating another Gem.<li>Damage bonus stacks additively with other offensive damage modifiers.}};File:Ruby Icon.png;
+
+<!-- LEVEL 7 -->
+Cube Mastery;3;1;Reduce the Mana cost of Scroll of Sealing from 40 to 25. Each enemy Hero hit by Horadric Cube reduces the cooldown of Scroll of Sealing by 4 seconds.;File:Cube Mastery Icon.png;
+
+Kanai's Cube;3;2;Horadric Cube reduces Hero damage dealt by 30% for 4 seconds.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Enemy Heroes<!--
+-->|notes=<li>Damage debuff stacks additively with other offensive damage modifiers affecting the target Hero's damage output.}};File:Kanai's Cube Icon.png;
+
+Emerald;3;3;{{Cooldown|30}}<br/>{{Active}} Activate to make the next Horadric Cube reduce healing received by 75% for 4 seconds. Only 1 Gem may be active at a time.<!--
+-->{{undoc-x|type=Healing received modifier / Offensive damage modifier<!--
+-->|affects=Enemies / Ability<!--
+-->|prop1=Gem swap cooldown|val1=0.5 seconds<!--
+-->|notes=<li>A Gem goes on cooldown once the Horadric Cube is cast.<li>An activated Gem can be deactivated only by activating another Gem.<li>Damage bonus stacks additively with other offensive damage modifiers.<li>Healing reduction stacks additively with other healing received modifiers.}};File:Emerald_Icon.png;
+
+<!-- LEVEL 10 -->
+Stay Awhile and Listen;4;1;{{Cooldown|70}}<br>After 1 second, Channel for 3 seconds, putting enemy Heroes in front of Deckard to Sleep while Channeling, and for 2 seconds after. Enemies can only be put to Sleep once per cast, and Sleep's effects end instantly if they take damage.;File:Stay_Awhile_and_Listen_Icon.png;
+Lorenado;4;2;{{Cooldown|30}}<br>After 1 second, create a swirling tome tornado that travels in the targeted direction, continually knocking away enemies that come into contact with it. Deals 20 damage to Heroes hit.;File:Lorenado_Icon.png;
+
+<!-- LEVEL 13 -->
+Super Healing Potion;5;1;If a Healing Potion isn't picked up for at least 2 seconds, it heals for 100% more.<p>{{Passive}} Healing Potion heals for 25% more if the target is below 50% Health.<!--
+-->{{undoc-x|type=Healing dealt modifier<!--
+-->|affects=Ability<!--
+-->|notes=<li>Does not benefit the additional healing from ''Rejuvenation Potion''.<li>Bonuses stack additively with themselves and other healing dealt modifiers that can affect <i>Healing Potion</i>'s healing.}};File:Super Healing Potion Icon.png;
+
+Potion of Revival;5;2;When a Healing Potion is picked up, it also heals all nearby allied Heroes for 75% of the healing amount.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=4.00%<!--
+-->|affects=Allied Heroes, Self<!--
+-->|props=[[Splash]]<!--
+-->|aoe=Circle<!--
+-->|radius=3.0<!--
+-->|notes=<li>Only the primary target of ''Healing Potion'' benefits from additional effects from talents, such as ''Potion of Shielding'' and ''Rejuvenation Potion''.<li>Reduction to healing amount stacks additively with healing dealt modifiers that can affect <i>Healing Potion</i>'s healing.}};File:Potion of Revival Icon.png;
+
+Ancient Blessings;5;3;{{Cooldown|45}}<br/>Activate Fortitude of the Faithful to empower nearby allied Hero Basic Attacks for 8 seconds, causing them to deal an additional 62 damage in an area and heal for 90 for each Hero hit. This effect can only occur once per second.<!--
+-->{{undoc-x|type=Spell Damage / Healing<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemy Heroes / Allied Heroes, Self<!--
+-->|target=No target<!--
+-->|props=[[Area of Effect]], [[Attack Modifier]], [[Splash]]<!--
+-->|cast=0 + 0.125 seconds<!--
+-->|aoe=Circle<!--
+-->|radius=<br>- Cast: 7.0<br>- Splash damage: 2.5<!--
+-->|notes=<li>''Ancient Blessings'' is independent from <i>Fortitude of the Faithful</i>'s aura - The buff is applied one time upon cast to allies within the talent's radius for 8 seconds. The affected allies are not required to remain near Deckard to keep gaining its benefits.<li>The damage is dealt in a separate instance of [[Spell Damage]].<li>The damage and healing are affected by the offensive damage modifiers and healing dealt modifiers on the '''attacker'''. Deckard's modifiers only affects his own attacks.<li>The bonus damage is scored to the attacker, but the healing is scored to Deckard.}};File:Ancient Blessings Icon.png;
+
+<!-- LEVEL 16 -->
+Scroll of Stone Curse;6;1;Scroll of Sealing deals 200% more damage when hitting at least 2 Heroes.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|notes=<li>Bonus damage stacks additively with other offensive damage modifiers that can affect <i>Scroll of Sealing</i>'s damage.}};File:Scroll of Stone Curse_Icon.png;
+
+Safety in Numbers;6;2;If at least 2 allied Heroes are nearby, Fortitude of the Faithful grants an additional 10 Armor, 50% Mana regeneration per second, and causes Deckard's Basic Abilities to recharge an additional 50% faster.;File:Safety in Numbers Icon.png;
+
+Horadric Staff;6;3;Every 5 seconds, Deckard's next Basic Attack Stuns Heroes for 0.75 seconds.<!--
+-->{{undoc-x|type=Crowd control<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Attack Modifier]], [[Stun]]<!--
+-->|notes=}};File:Horadric Staff Icon.png;
+
+<!-- LEVEL 20 -->
+Respect the Elderly;7;1;Stay Awhile and Listen Silences and Blinds enemies for 3 seconds upon waking up from Sleep.<!--
+-->{{undoc-x|type=Crowd control<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Blind]], [[Silence]]<!--
+-->|notes=}};File:Respect the Elderly Icon.png;
+
+Morenados!;7;2;Lorenado gains an additional charge and its cooldown is reduced by 10 seconds every time an enemy Hero is knocked back. This effect can only occur once per 0.5 seconds.<!--
+-->{{undoc-x|prop1=Cooldown between charges|val1=1.0 seconds}};File:Morenados! Icon.png;
+
+Bottomless Flask;7;3;After use, Healing Potions recharge after 8 seconds.<!--
+-->{{undoc-x|nohr=1<!--
+-->|notes=<li>Recharged potions benefit from every talent affecting Healing Potion, including this talent.}};File:Bottomless Flask Icon.png;
+
+Perfect Gems;7;4;Reduce the cooldown of all Gems to 5 seconds and the cooldown of Horadric Cube by 6 seconds.<!--
+-->{{undoc|<hr /><li>This talent does not require any Gem talent to be picked.}};File:Perfect Gems Icon.png;
+}}
+
+<noinclude>
+{{Scaling table/start|{{#var:health}}|{{#var:health scaling}}|{{#var:health regen}}|{{#var:health regen scaling}}|{{#var:attack damage}}|{{#var:attack damage scaling}}}}
+{{Scaling table/slot|Healing Potion|285|0.04}}
+{{Scaling table/slot|Horadric Cube|80|0.04}}
+{{Scaling table/slot|Scroll of Sealing|150|0.04}}
+{{Scaling table/slot|Lorenado|140|0.04|10}}
+{{Scaling table/slot|Potion of Shielding|140|0.04|4}}
+{{Scaling table/slot|Rejuvenation Potion|114|0.04|4}}
+{{Scaling table/slot|Rejuvenation Potion (per second)|38|0.04|4}}
+{{Scaling table/slot|Ruby (Lesser Healing Potion)|250|0.04|4}}
+{{Scaling table/slot|Ancient Blessings (damage)|62|0.04|13}}
+{{Scaling table/slot|Ancient Blessings (healing)|90|0.04|13}}
+{{Scaling table/end}}
+</noinclude>

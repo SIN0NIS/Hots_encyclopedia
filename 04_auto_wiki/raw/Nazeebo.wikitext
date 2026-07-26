@@ -1,0 +1,304 @@
+{{hero data
+| name = Nazeebo
+| date = March 13, 2014
+| price = 4000
+| title = Heretic Witch Doctor
+| role = Ranged
+| franchise = Diablo
+| info = A sustained damage [[Mage]] who gains power when killing enemy [[Minion]]s.
+| lore = With cabalistic incantations and vestments of feather and bone, the Witch Doctor Nazeebo calls upon spirits from the Unformed Land to aid him. Few outlanders encounter a Witch Doctor in the flesh, without losing their own.
+| difficulty = Medium
+| melee = False
+| health = 1502
+| healthRegen = 3.129
+| resource = 500
+| resourceType = Mana
+| armor = 0
+| attackSpeed = 1.11
+| attackRange = 5.5
+| attackDamage = 88
+| healthScaling = 0.04
+| regenScaling = 0.04
+| adamageScaling = 0.04
+| unitRadius = 0.6875
+| icon = File:Nazeebo_Icon.png
+| skills = 
+Voodoo Ritual;Trait;File:Voodoo_Ritual_Icon.png;Nazeebo's Basic Attacks and Abilities poison non-Heroic enemies, causing them to take 66 additional damage over 6 seconds.<p>{{Questonly|If a Minion dies while poisoned by Voodoo Ritual, Nazeebo permanently gains 6 Health and 1 Mana.}}<!--
+-->{{undoc-x|type=Spell Damage / Bonus Health, Bonus Mana<!--
+-->|scaling=4.00% (damage) / - (bonuses)<!--
+-->|affects=Non-Heroic enemies / Self<!--
+-->|props=[[Attack Modifier]], [[Damage over Time]]<!--
+-->|tickrate=1.0 per second (x6)<!--
+-->|prop1=Damage per tick|val1=11<!--
+-->|notes=<li>If multiple Nazeebos are on a team, only one ''Voodoo Ritual'' can be active on a target. Any Nazeebo can refresh the duration of a ''Voodoo Ritual'' placed by other Nazeebos, but only the Nazeebo that last (re)applied it gains the stack.<li>Damage over Time effect does not stack. Subsequent applications refresh the duration.}};;;trait;False
+
+Corpse Spiders;Q;File:Corpse_Spiders_Icon.png;Hurl a jar of spiders that deals 50 damage. If it hits at least one enemy, create 3 Corpse Spiders that attack for 38 damage. Spiders last for 4 seconds.<!--
+-->{{undoc-x|type=Spell Damage / Summon<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]]<!--
+-->|cast=0.15 + 0 seconds<!--
+-->|range=8.0<!--
+-->|aoe=Circle<!--
+-->|radius=1.85<!--
+-->|missile=10}}<hr/><!--
+
+--><small>'''Corpse Spider'''</small>{{undoc-x|nohr=true<!--
+-->|type=Summon figment<!--
+-->|scaling=4.00% (damage)<!--
+-->|target=Automatic<!--
+-->|prop2=Basic Attack damage|val2=38<!--
+-->|prop3=Attack speed|val3=1.0<!--
+-->|prop4=Attack range|val4=0.5<!--
+-->|prop5=Movement Speed|val5=6.5<!--
+-->|prop6=Unit radius|val6=0.3125<!--
+-->|prop7=Sight radius|val7=4.0<!--
+-->|prop8=Leash radius|val8=-<!--
+-->|notes=<li>Corpse Spiders are untargetable.<li>Corpse Spiders follow the target until it dies or until they expire.<li>Corpse Spiders' Basic Attacks apply ''Voodoo Ritual''.<li>Corpse Spiders can collide with themselves, Structures and unpathable terrain, but not with other units.}};8;40;;False
+
+Zombie Wall;W;File:Zombie_Wall_Icon.png;After 1 second, create a ring of [[Zombie]]s surrounding the target area that deal 28 damage and last for 3 seconds.<!--
+-->{{undoc-x|type=Summon<!--
+-->|target=Point target<!--
+-->|cast=0.15 + 0 seconds<!--
+-->|range=7.0<!--
+-->|radius=2.262 <sup>(1</sup>}}<hr/><!--
+
+--><small>'''Zombie'''</small>{{undoc-x|nohr=true<!--
+-->|type=Active<!--
+-->|scaling=4.00% (damage & Health)<!--
+-->|target=Automatic<!--
+-->|prop1=Health|val1=225<!--
+-->|prop2=Basic Attack damage|val2=28<!--
+-->|prop3=Attack speed|val3=0.8<!--
+-->|prop4=Attack range|val4=0.4375<!--
+-->|prop5=Movement Speed|val5=-<!--
+-->|prop6=Unit radius|val6=0.8125<!--
+-->|prop7=Sight radius|val7=2.0<!--
+-->|notes=<li><sup>1)</sup> Approximate distance from center of the ring to the center of the Zombie units.<li>Summons 9 Zombies.<li>Zombies are treated as unpathable terrain.<li>''Zombie Wall'' can be canceled by reactivating the Ability.}};14;70;;False
+
+Plague of Toads;E;File:Plague_of_Toads_Icon.png;Create a wave of 3 Toads that explode on contact, dealing 126 damage over 6 seconds. This effect stacks.<p>Stores up to 2 charges.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Clamping]], [[Damage over time]], Summon figment, [[Skillshot]]<!--
+-->|cast=0.15 + 0 seconds<!--
+-->|range=12<!--
+-->|aoe=Circle<!--
+-->|radius=<br/>- Hitbox: 0.5<br/>- Explosion: 1.0<!--
+-->|missile=6.0<!--
+-->|tickrate=1.0 per second (x7)<!--
+-->|prop1=Damage per tick|val1=18<!--
+-->|notes=<li>Toads at the edges are aligned 18.4 degrees to both sides from the target point.<li>Each Toad applies 1 stack of DoT to all enemies hit by the explosion. Each enemy can be afflicted by a maximum of 20 stacks of DoT at a time.<li>Stacks of DoT tick independently and subsequent applications do not refresh the duration of existing DoTs.<li>Toads change direction upon coming into contact with unpathable terrain.<li>Toads explode upon reaching maximum range, even if they didn't come in contact with an enemy.}};8 / 0.5;30;;False
+
+Gargantuan;R;File:Gargantuan_Icon.png; Summon a [[Gargantuan]] to guard an area for 20 seconds. Deals 100 damage when summoned, attacks for 140 damage, and can be ordered to stomp nearby enemies. The Gargantuan's Stomp deals 140 damage and Slows by 30% for 2 seconds.<!--
+-->{{undoc-x|type=Spell Damage / Summon<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]]<!--
+-->|cast=0.15 + 0 seconds<!--
+-->|range=8.0<!--
+-->|aoe=Circle<!--
+-->|radius=2.0<!--
+-->|notes=<li>Gargantuan Stomp actually does 240 damage, wrong due to a tooltip error.}}<hr/><!--
+
+--><small>'''Gargantuan'''</small>{{undoc-x|nohr=true<!--
+-->|type=Active<!--
+-->|scaling=4.00% (damage & Health)<!--
+-->|target=Automatic<!--
+-->|prop1=Health|val1=2000<!--
+-->|prop2=Basic Attack damage|val2=140<!--
+-->|prop3=Attack speed|val3=0.59<!--
+-->|prop4=Attack range|val4=1.5<!--
+-->|prop5=Movement Speed|val5=4.0<!--
+-->|prop6=Unit radius|val6=1.0<!--
+-->|prop7=Sight radius|val7=9.0<!--
+-->|prop8=Leash radius|val8=7.0<!--
+-->|notes=<li>Cooldown starts when ''Gargantuan'' is cast.<li>''Gargantuan'' takes 50% less damage from Forts, Keeps, and Towers (but not Core). This damage reduction stacks multiplicatively with the 50% damage reduction these Structures have to all Summons, so Gargantuan takes 75% less damage from them than other units do.}};70;90;heroic;True
+
+Gargantuan Stomp;R;File:Gargantuan_Stomp_Icon.png;Order the Gargantuan to stomp, dealing 240 damage to nearby enemies and Slowing them by 30% for 2 seconds.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=No target<!--
+-->|props=[[Area of Effect]], [[Slow]]<!--
+-->|cast=0 + 0.25 seconds<!--
+-->|aoe=Circle<!--
+-->|radius=4.0<!--
+-->|prop1=Delay|val1=0.5625 seconds<!--
+-->|notes=<li>Replaces ''Gargantuan'' while Gargantuan is alive.<li>Can be activated while Nazeebo is dead.<li>The 0.25 second delay will stop all other commands Gargantuan does (premature cast will stop the Gargantuan's Basic Attack).}};5;;;False
+
+Ravenous Spirit;R;File:Ravenous_Spirit_Icon.png;Channel a Ravenous Spirit that deals 230 damage per second. Cannot move while channeling. Lasts for 8 seconds.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Stationary channel]]<!--
+-->|cast=Instant<!--
+-->|range=10.0<!--
+-->|aoe=Circle<!--
+-->|radius=2.75<!--
+-->|tickrate=2.0 per second (x17)<!--
+-->|prop1=Damage per tick|val1=115<!--
+-->|prop2=Movement speed|val2=4.0<!--
+-->|prop3=Sight radius|val3=5.0<!--
+-->|notes=<li>''Ravenous Spirit'' can be canceled after 1.5 seconds by reactivating the Ability.<li>While channeling, Nazeebo has direct control of Ravenous Spirit's movement.<li>Spirit can travel through unpathable terrain and Structures.}};90;100;heroic;False
+
+| talents = <!-- LEVEL 1 -->
+Widowmakers;1;1;Enemies hit by Corpse Spiders' jar are Slowed by 25% for 1 second.<p>{{reward|After Corpse Spiders attack Heroes 100 times, their Attack Damage is increased by 25% and their duration is increased by 1 second.}}<!--
+-->{{undoc-x|type=Crowd control, Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|props=[[Slow]]<!--
+-->|notes=<li>Stacks additively with other offensive damage modifiers that can affect <i>Corpse Spiders</i>'s damage.}};File:Widowmakers_Icon.png;
+
+Pandemic;1;2;{{Quest|Hit Heroes with Plague Toads.|After hitting 35 Heroes with Plague of Toads, it spawns 2 additional toads.}}<p>{{reward|After hitting 70 Heroes with Plague Toads, it reduces the damage Heroes deal by 5%, stacking up to 25%.}}<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Enemy Heroes<!--
+-->|notes=<li>Upon quest completion, alignment of the inner toads is changed to 14 degrees and outer to 26.6 degrees from the target direction.<li>Damage reduction stacks additively with itself and other offensive damage modifiers affecting the target Hero.}};File:Pandemic_Icon.png;
+
+Thing of the Deep;1;3;Increase the range of Nazeebo's Basic Abilities by 20%.<p>{{reward|After gaining 50 stacks of Voodoo Ritual, gain 5% Spell Power.}}<p>{{reward|After gaining 100 stacks of Voodoo Ritual, gain an additional 5% Spell Power.}}<!--
+-->{{undoc-x|type=Offensive damage modifier, Healing dealt modifier<!--
+-->|affects=Self<!--
+-->|props=[[Spell Power]]<!--
+-->|prop1=Bonus range|val1=<br/>- Corpse Spiders: 1.6<br/>- Zombie Wall: 1.4<br/>- Plague Toads: 2.4<!--
+-->|notes=<li>Spell Power from ''Thing of the Deep'' stacks additively with itself and other modifiers that can affect Nazeebo's Spell Power or healing output.}};File:Thing_of_the_Deep_Icon.png;
+
+<!-- LEVEL 4 -->
+Hexed Crawlers;2;1;Corpse Spiders restore 1% of Nazeebo's maximum Health and Mana when they attack an enemy Hero.<!--
+-->{{undoc-x|type=Healing, Mana restoration<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|notes=}};File:Hexed_Crawlers_Icon.png;
+
+Big Voodoo;2;2;Increases the Health and Mana bonuses from Voodoo Ritual by 100%.;File: Big_Voodoo_Icon.png;
+
+Blood Ritual;2;3;If an enemy dies while poisoned by Voodoo Ritual, restore 2% of Nazeebo's maximum Health and Mana.<p>{{Passive}} Takedowns grant 3 stacks of Voodoo Ritual.<!--
+-->{{undoc-x|type=Healing, Mana restoration<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|notes=}};File:Blood_Ritual_Icon.png;
+
+<!-- LEVEL 7 -->
+Spirit of Arachyr;3;1;The number of Corpse Spiders spawned is increased from 3 to 4. If Corpse Spiders' jar hits only one enemy, it creates an additional spider.;File: Spirit_of_Arachyr_Icon.png;
+
+Dead Rush;3;2;Zombie Wall deals 100% more damage. When it expires up to 5 remaining [[Zombie]]s uproot and attack nearby enemies for 3 seconds.<!--
+-->{{undoc-x|type=Offensive damage modifier / Summon<!--
+-->|affects=Ability}}<hr/><!--
+--><small>'''Dead Rush Zombie'''</small>{{undoc-x|nohr=true<!--
+-->|type=Active<!--
+-->|scaling=4.00% (damage & Health)<!--
+-->|target=Automatic<!--
+-->|prop1=Health|val1=183<!--
+-->|prop2=Basic Attack damage|val2=56<!--
+-->|prop3=Attack speed|val3=0.80<!--
+-->|prop4=Attack range|val4=0.4375<!--
+-->|prop5=Movement Speed|val5=5.0<!--
+-->|prop6=Unit radius|val6=0.8125<!--
+-->|prop7=Sight radius|val7=7.0<!--
+-->|prop8=Leash radius|val8=-<!--
+-->|notes=<li>Also activates when ''Zombie Wall'' is manually canceled.<li>Stacks additively with other damage modifiers that can affect Zombies' damage.}};File:Dead_Rush_Icon.png;
+
+Toads of Hugeness;3;3;Increase the damage and explosion radius of Plague of Toads by 25% after each hop, up to a maximum of 100%.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|notes=<li>Explosion radius increases in increments of 0.25 up to 1.0 bonus.<li>Damage bonus stack additively with itself and other offensive damage modifiers that can affect <i>Plague of Toads</i>'s damage.}};File:Toads_of_Hugeness_Icon.png;
+
+<!-- LEVEL 10 -->
+Gargantuan;4;1;{{Cooldown|70}}<br/> Summon a [[Gargantuan]] to guard an area for 20 seconds. Deals 100 damage when summoned, attacks for 140 damage, and can be ordered to stomp nearby enemies. The Gargantuan's Stomp deals 140 damage and Slows by 30% for 2 seconds.<!--
+-->{{undoc-x|notes=<li>Gargantuan Stomp actually does 240 damage, wrong due to a tooltip error.}};File:Gargantuan_Icon.png;
+Ravenous Spirit;4;2;{{Cooldown|90}}<br/>Channel a Ravenous Spirit that deals 230 damage per second. Cannot move while channeling. Lasts for 8 seconds.;File:Ravenous_Spirit_Icon.png;
+
+<!-- LEVEL 13 -->
+Guardian Toads;5;1;Hitting an enemy Hero with Plague of Toads grants 30 Armor for 3 seconds, stacking up to 6 seconds.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Armor]]<!--
+-->|notes=<li>Each enemy hit by the initial explosion applies the effect. Subsequent hits extend the duration by 1.5 seconds each.<li>Does not stack with itself or other positive Armor effects. Other defensive damage modifiers may stack.}};File:Guardian_Toads_Icon.png;
+
+Superstition;5;2;Gain 40 Spell Armor. Heroic Basic Attacks against Nazeebo remove this bonus for 3 seconds and spawn a Corpse Spider to attack the Hero.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Spell Armor]]<!--
+-->|notes=<li>Bonus is suppressed for 3 seconds even if the Spell Armor wasn't active when the Basic Attack hit.<li>Corpse Spider is only spawned if the Spell Armor buff was active at the time the Basic Attack hit.<li>Corpse Spider spawns by Nazeebo and then chases the target.<li>Does not stack with itself or other positive Armor effects. Other defensive damage modifiers may stack.}};File:Superstition_Icon.png;
+
+Ice Block;5;3;{{Cooldown|60}}<br/>Activate to place yourself in Stasis and gain Invulnerability for 3 seconds.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|props=[[Stasis]]|cast=Instant<!--
+-->|notes=<li>Can be reactivated to end the effect early.}};File:Ice_Block_Icon.png;
+
+<!-- LEVEL 16 -->
+Spider Colony;6;1;Corpse Spider Attacks against Heroes reduce the cooldowns of Nazeebo's Basic Abilities by 0.125 seconds.;File:Spider_Colony_Icon.png;
+
+Ring of Poison;6;2;Zombie Wall lasts 1 second longer, and the center is filled with poison that deals a total of 319 damage over 4 seconds. This damage starts small and increases over the duration.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|props=[[Area of Effect]]<!--
+-->|aoe=Circle<!--
+-->|radius=1.75<!--
+-->|tickrate=1.0 per second (x5)<!--
+-->|prop1=Damage per tick|val1=21.25 (initial) <sup>(1</sup><!--
+-->|notes=<li><sup>1)</sup> The damage of a tick is the initial damage multiplied by the number of the tick.<li>Damage is not affected by how long the target has been in the AoE.}};File:Ring_of_Poison_Icon.png;
+
+Soul Harvest;6;3;{{Cooldown|15}}<br/>Activate to increase Nazeebo's Health and Spell Power by 7% for each nearby enemy, up to a maximum of 35%. Lasts 15 seconds.<!--
+-->{{undoc-x|type=Offensive damage modifier, Bonus Health<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|props=[[Area of Effect]]<!--
+-->|cast=Instant<!--
+-->|aoe=Circle<!--
+-->|radius=4.0<!--
+-->|notes=<li>All Health gained from this Ability is lost when the 15 seconds expires (this is unlike most similar temporary Health buffs, e.g. [[Muradin]]'s ''Avatar'' and [[Alexstrasza]]'s ''Dragonqueen'').<li>Spell Power from ''Soul Harvest'' stacks additively with itself and other modifiers that can affect Nazeebo's Spell Damage or healing output.}};File:Soul_Harvest_Icon.png;
+
+<!-- LEVEL 20 -->
+Humongoid;7;1;Gargantuan Stomp's area is increased by 25% and its Slow amount is increased to 50%.<p>{{Passive}} Reduce Gargantuan's cooldown by 40 seconds and its Mana cost by 50%.<!--
+-->{{undoc-x|prop1=Bonus radius|val1=1.0<!--
+-->|notes=<li>Increases ''Stomp'' radius by 25%, so its area is actually increased by 56.25%.}};File:Humongoid_Icon.png;
+
+Annihilating Spirit;7;2;When Ravenous Spirit damages an enemy Hero, reduce their healing received by 50% for 1 second and increase Ravenous Spirit's damage by 5% for the rest of its duration.<p>{{Passive}} Increases the range of Ravenous Spirit by 50%.<!--
+-->{{undoc-x|type=Offensive damage modifier / Healing received modifier<!--
+-->|affects=Ability / Enemy Heroes<!--
+-->|prop1=Bonus range|val1=5.0<!--
+-->|notes=<li>Damage bonus stacks additively with itself and other offensive damage modifiers affecting <i>Ravenous Spirit</i>'s damage.<li>Healing reduction stacks additively with other healing received modifiers.}};File:Annihilating_Spirit_Icon.png;
+
+Vile Infection;7;3;{{Quest|Reach 175 stacks of Voodoo Ritual.|After reaching 175 stacks of Voodoo Ritual, it can also be applied to Heroes and its damage is increased from 67 to 165 over 6 seconds.}}<!--
+-->{{undoc-x|type=Bonus damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Ability<!--
+-->|notes=}};File:Vile_Infection_Icon.png;
+
+Bad Medicine;7;4;{{Cooldown|30}}<br>Consume 5 stacks of Voodoo Ritual to become Unstoppable, gain 20% increased Movement Speed, and 50 Armor for 2 seconds.<!--
+-->{{undoc-x|type=Defensive damage modifier, Status effect<!--
+-->|affects=Self<!--
+-->|props=[[Armor]], [[Movement Speed]], [[Unstoppable]]<!--
+-->|notes=<li>Does not stack with other positive Armor effects. Other defensive damage modifiers may stack.}};File:Bad_Medicine_Icon.png;
+}}
+
+<noinclude>
+{{Scaling table/start|{{#var:health}}|{{#var:health scaling}}|{{#var:health regen}}|{{#var:health regen scaling}}|{{#var:attack damage}}|{{#var:attack damage scaling}}}}
+{{Scaling table/slot|Voodoo Ritual|67|0.04}}
+{{Scaling table/slot|Voodoo Ritual (per second)|11|0.04}}
+{{Scaling table/slot|Corpse Spiders (jar)|50|0.04}}
+{{Scaling table/slot|Corpse Spiders (attack)|38|0.04}}
+{{Scaling table/slot|Zombie Wall (health)|225|0.04}}
+{{Scaling table/slot|Zombie Wall (attack)|28|0.04}}
+{{Scaling table/slot|Plague of Toads|126|0.04}}
+{{Scaling table/slot|Plague of Toads (per second)|18|0.04}}
+{{Scaling table/slot|Gargantuan (initial)|100|0.04|10}}
+{{Scaling table/slot|Gargantuan (health)|2000|0.04|10}}
+{{Scaling table/slot|Gargantuan (damage)|140|0.04|10}}
+{{Scaling table/slot|Gargantuan Stomp|240|0.04|10}}
+{{Scaling table/slot|Ravenous Spirit|115|0.04|10}}
+{{Scaling table/slot|Dead Rush (health)|183|0.04|7}}
+{{Scaling table/slot|Ring of Poison|319|0.04|16}}
+{{Scaling table/slot|Ring of Poison (base)|21.25|0.04|16}}
+{{Scaling table/slot|Fury of the Storm (primary)|91|0.04|20}}
+{{Scaling table/slot|Fury of the Storm (secondary)|228|0.04|20}}
+{{Scaling table/slot|Vile Infection|165|0.04|20}}
+{{Scaling table/slot|Vile Infection (per second)|27.5|0.04|20}}
+{{Scaling table/end}}
+</noinclude>

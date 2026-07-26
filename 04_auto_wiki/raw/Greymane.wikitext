@@ -1,0 +1,232 @@
+{{hero data
+| name = Greymane
+| date = January 12, 2016
+| price = 7000
+| title = Lord of the Worgen
+| role = Ranged
+| franchise = Warcraft
+| info = A high damage Assassin who wears down enemies from afar and dives in for the kill.
+| lore = Like most Gilneans, Genn Greymane is afflicted by the Worgen curse. Though he feels at fault for his people’s ill fate, he has embraced his inner beast without giving in to its feral nature. Now he leads his pack as both their Alpha and their King.
+| difficulty = Hard
+| melee = 
+| health = 1876
+| healthRegen = 3.9062
+| resource = 500
+| resourceType = Mana
+| armor =
+| attackSpeed = 1.00
+| attackRange = 5.5
+| attackDamage = 148
+| healthScaling = 0.044921875
+| regenScaling = 0.044921875
+| adamageScaling = 0.04
+| unitRadius = 0.6875
+| icon = File:Greymane_Icon.png
+| skills = 
+Curse of the Worgen (Trait);Trait;File:Curse_of_the_Worgen_Icon.png;Greymane can use certain Abilities to shapeshift between a {{Human}} and a {{Worgen}}.<p>While {{Human}}, Greymane's Basic Attacks are ranged.<p>While {{Worgen}}, Greymane gains 10 Armor, and his Basic Attacks become melee, but deal 40% more damage.<!--
+-->{{undoc-x|type=Defensive damage modifier, Bonus damage<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|props=[[Armor]]<!--
+-->|notes=<li>Successfully mounting in the Worgen form shapeshifts Greymane back into Human, placing ''Darkflight'' on cooldown.<li>Worgen bonus damage stacks additively with other offensive damage modifiers affecting Greymane's Basic Attack damage.<li>Does not stack with other positive Armor effects. Other defensive damage modifiers may stack.}};;;trait;False
+
+Gilnean Cocktail;Q;File:Gilnean_Cocktail_Icon.png;Hurl a flask that deals 55 damage to the first enemy hit and explodes for 220 damage to enemies in a cone behind them.<p>'''{{Worgen|: Razor Swipe}}'''<br/>Swipe forward, damaging enemies hit.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Clamping]], [[Skillshot]], [[Splash]]<!--
+-->|cast=0.125 + 0 seconds<!--
+-->|range=8.5<!--
+-->|aoe=Radial<!--
+-->|radius=6.0 <sup>(1</sup><!--
+-->|arc=65 degrees<!--
+-->|hitbox=0.75 x 1.25 (initial)<!--
+-->|missile=27.5<!--
+-->|notes=<li><sup>1)</sup> Splash radius grows from 1.5 to 6.0 over 0.3125 seconds in increments of 1.125.<li>Enemies who are immune to skillshots can be hit by the splash, but not by the initial projectile, as long as they are not also immune to AoE.}};9;55;;True
+
+Razor Swipe;Q;File:Razor_Swipe_Icon.png;Swipe in the targeted direction, dealing 126 damage to enemies hit.<p>'''{{Human|: Gilnean Cocktail}}'''<br/>Damage the first enemy hit and deal heavy damage behind them.<!--
+-->{{undoc-x|type=Spell Damage / Movement: [[Dash]]<!--
+-->|scaling=4.00%<!--
+-->|affects=Self<!--
+-->|target=Point target<!--
+-->|props=[[Clamping]], [[Area of Effect]]<!--
+-->|cast=Instant<!--
+-->|range=2.5<sup>(1</sup><!--
+-->|aoe=<br/>- Dash: Rectangle<br/>- End: Radial<!--
+-->|radius=2.5 (end)<!--
+-->|arc=180 degrees (end)<!--
+-->|width=5.0 (dash)<!--
+-->|height=2.5 (dash)<!--
+-->|missile=12<!--
+-->|notes=<li><sup>1)</sup> After dashing, Greymane swipes a half circle shaped area in front of him.<li>Greymane can move through units during ''Razor Swipe''.}};4;25;;False
+
+Inner Beast;W;File:Inner_Beast_Icon.png; Gain 50% Attack Speed for 3 seconds. Basic Attacks refresh this duration and reduce the cooldown of Inner Beast by 0.5 seconds.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|props=[[Attack Modifier]] (cdr), [[Attack Speed]]<!--
+-->|cast=Instant<!--
+-->|notes=<li>Cooldown starts when the effect ends.<li>Stacks additively with other effects that can affect Greymane's Attack Speed.}};20;70;;False
+
+Darkflight;E;File:Darkflight_Icon.png;Shapeshift into a {{Worgen}} and leap at an enemy, dealing 88 damage.<p>'''{{Worgen|: Disengage}}'''<br/>Roll away and shapeshift into a {{Human}}.<!--
+-->{{undoc-x|type=Spell Damage / Movement: [[Launch]]<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies / Self<!--
+-->|target=Unit target<!--
+-->|cast=Instant<!--
+-->|range=6.75<!--
+-->|missile=30<!--
+-->|notes=<li>Cooldown is shared with ''Disengage''.}};5;10;;True
+
+Disengage;E;File:Disengage_Icon.png;Roll away and shapeshift into a {{Human}}.<p>'''{{Human|: Darkflight}}'''<br/>Shapeshift into a {{Worgen}} and leap at an enemy.<!--
+-->{{undoc-x|type=Movement: [[Dash]]<!--
+-->|affects=Self<!--
+-->|target=Point target<!--
+-->|props=[[Clamping]]<!--
+-->|cast=Instant<!--
+-->|range=6.0<!--
+-->|missile=19<!--
+-->|notes=<li>Cooldown is shared with ''Darkflight''.}};5;;;False
+
+Go for the Throat;R;File:Go_for_the_Throat_Icon.png;Leap at an enemy Hero and shapeshift into a {{Worgen}}, slashing for 355 damage. If this kills them, the Ability can be used a second time within 10 seconds for free.<!--
+-->{{undoc-x|type=Spell Damage / Movement: [[Launch]], Status effect<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemy Heroes / Self<!--
+-->|target=Unit target<!--
+-->|props=[[Unstoppable]] <sup>(1</sup><!--
+-->|cast=Instant<!--
+-->|range=5.5<!--
+-->|missile=50.5<!--
+-->|notes=<li><sup>1)</sup> Greymane is Unstoppable during the leap until he reaches the target.<li>Enemy Heroes low enough on Health to be killed by ''Go for the Throat'' are indicated to the player by a red skull above the unit when the Ability is not on cooldown.<li>''Go for the Throat'' places ''Disengage'' on cooldown if it was cast from Human form.<li>The Ability is interrupted if the target moves 8.5 units past its range.<li>Recast is granted if the target dies to anything within 0.1875s of being hit by this Ability.}};80;90;heroic;False
+
+Cursed Bullet;R;File:Marked_for_the_Kill_Icon.png;Greymane shapeshifts into a {{Human}} and fires a bullet that hits the first enemy Hero in its path, dealing 35% of their current Health in damage.<p>Does not affect Vehicles.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=-<!--
+-->|affects=Non-[[Vehicle]] enemy Heroes<!--
+-->|target=Point target<!--
+-->|props=[[Percent Damage]], [[Skillshot]]<!--
+-->|cast=0.1 + 0 seconds<!--
+-->|range=12<!--
+-->|hitbox=1.0 x 1.97<!--
+-->|missile=26<!--
+-->|notes=<li>Casting ''Cursed Bullet'' from either form does not affect the cooldown of ''Darkflight'' or ''Disengage''.}};30;50;heroic;False
+
+| talents = 
+Wolfheart;1;1;Increase the cooldown reduction from Basic Attacks during Inner Beast from 0.5 to 1.2 seconds, and {{Worgen}} Form's Armor bonus from 10 to 15.;File:Wolfheart_Icon.png;
+
+Perfect Aim;1;2;Increases Gilnean Cocktail's range by 30% and refunds 45 Mana if it hits an enemy Hero.<!--
+-->{{undoc-x|prop1=Bonus range|val1=2.55<!--
+-->|notes=<li>Both initial projectile and splash count.<li>Multiple hits do not grant more Mana.}};File:Perfect_Aim_Icon.png;
+
+Viciousness;1;3;Increases Inner Beast's duration to 4 seconds, and causes Spell Damage to also refresh its duration.;File:Viciousness_Icon.png;
+
+<!-- LEVEL 4 -->
+Thick Skin;2;1;Using Darkflight grants 50 Physical Armor against the next 2 Hero Basic Attacks while in {{Worgen}} Form, reducing the damage taken by 50%.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Block]], [[Physical Armor]]<!--
+-->|notes=<li>Charges are lost immediately upon entering Human form.<li>Does not stack with itself or other positive Armor effects. Other defensive damage modifiers may stack.}};File:Thick_Skin_Icon.png;
+
+Eyes in the Dark;2;2;Disengage grants Stealth for 3 seconds.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|props=[[Stealth]]<!--
+-->|notes=<li>Greymane is unrevealable for the first 0.625 seconds of Stealth.<li>Basic Attacking or using Abilities instantly removes Stealth.}};File:Eyes_in_the_Dark_Icon.png;
+
+Insatiable;2;3;Inner Beast causes Basic Attacks to restore 10 Mana, and reduce the cooldown of Healing Fountain by 0.5 seconds.<!--
+-->{{undoc-x|type=Mana restoration<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|props=[[Attack Modifier]]<!--
+-->|notes=}};File:Insatiable_Icon.png;
+
+<!-- LEVEL 7 -->
+Quicksilver Bullets;3;1;Increases {{Human}} Basic Attack Range by 1.1.;File:Quicksilver_Bullets_Icon.png;
+
+Incendiary Elixir;3;2;{{quest|Reduce the cooldown of Gilnean Cocktail by 2 seconds. Every time Greymane hits an enemy Hero with the explosion damage from Gilnean Cocktail increase its explosion damage by 25, up to 375.|After hitting 15 Heroes, the cooldown is reduced by an additional 3 seconds.}}<!--
+-->{{undoc-x|type=Bonus damage<!--
+-->|scaling=-<!--
+-->|affects=Ability<!--
+-->|notes=}};File:Incendiary_Elixir_Icon.png;
+
+Wizened Duelist;3;3;{{questonly|Every 6 {{Human}} Basic Attacks against Heroes increase Basic Attack damage by 1%, up to 30%. {{Worgen}} Basic Attacks grant credit for 3 Basic Attacks. Half of this bonus is lost upon death.}}<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Attack Modifier]]<!--
+-->|notes=<li>Upon death, incomplete stacks are nullified. The remaining damage bonus from completed stacks is truncated after halving.<li>Stacks additively with itself and other offensive damage modifiers affecting Greymane's Basic Attack damage.}};File:Wizened_Duelist_Icon.png;
+
+<!-- LEVEL 10 -->
+Go for the Throat;4;1;{{Cooldown|80}}<br>Leap at an enemy Hero and shapeshift into a {{Worgen}}, slashing for 355 damage. If this kills them, the Ability can be used a second time within 10 seconds for free.;File:Go_for_the_Throat_Icon.png;
+Cursed Bullet;4;2;{{Cooldown|30}}<br>Greymane shapeshifts into a {{Human}} and fires a bullet that hits the first enemy Hero in its path, dealing 35% of their current Health in damage. Does not affect Vehicles.;File:Marked_for_the_Kill_Icon.png;
+
+<!-- LEVEL 13 -->
+Running Wild;5;1;Increases Darkflight and Disengage's range by 35%, and reduce their cooldowns by 1 second.<!--
+-->{{undoc-x|prop1=Bonus range|val1=<br/>- Darkflight: 2.3625<br/>- Disengage: 2.3625<!--
+-->|prop2=Bonus speed|val2=<br/>- Darkflight: -<br/>- Disengage: 6.336<!--
+-->|notes=}};File:Running_Wild_Icon.png;
+
+Unfettered Assault;5;2;Increases Razor Swipe's lunge distance by 60%, and {{Worgen}} Basic Attacks reduce Razor Swipe's cooldown by 1.5 second.<!--
+-->{{undoc-x|props=[[Attack Modifier]]<!--
+-->|prop1=Bonus range|val1=1.5<!--
+-->|notes=<li>End area size is unaffected by the distance bonus.}};File:Unfettered_Assault_Icon.png;
+
+On the Prowl;5;3;Inner Beast increases Movement Speed by 30% once it has been active for 3 seconds.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|props=[[Movement Speed]]}};File:On_the_Prowl_Icon.png;
+
+<!-- LEVEL 16 -->
+Eager Wolf;6;1;Increases the Attack Speed bonus of Inner Beast by an additional 40% after it has been active for 4 seconds.;File:Eager_Wolf_Icon.png;
+
+Lord of His Pack;6;2;Attacking a Hero who is Slowed, Rooted, or Stunned increases Greymane's Basic Attack damage by 25% for 3 seconds, increased to 50% while in Worgen Form.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Attack Modifier]]<!--
+-->|notes=<li>Stacks additively with other offensive damage modifiers affecting Greymane's Basic Attack damage.}};File:Executioner_Icon.png;
+
+Alpha Killer;6;3;{{Worgen}} Basic Attacks against Heroes deal bonus damage equal to 3% of the Hero's maximum Health.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Attack Modifier]] (Heroes), [[Percent Damage]]<!--
+-->|notes=}};File:Alpha_Killer_Icon.png;
+
+<!-- LEVEL 20 -->
+Unleashed;7;1;{{Passive}} Go For The Throat's damage is increased by 25%.<p>If Go For The Throat kills its target, reset the cooldowns of Greymane's Abilities.<!--
+-->{{undoc-x|type=Offensive damage modifer<!--
+-->|affects=Ability<!--
+-->|notes=<li>Stacks additively with other offensive damage modifiers that can affect <i>Go for the Throat</i>'s damage.<li>Reset is granted if the target dies to anything within 0.1875s of being hit by this Ability.}};File:Unleashed_Icon.png;
+
+Gilnean Roulette;7;2;Cursed Bullet's damage is reduced to 30% of the target's current Health, but its cooldown is reduced by 24 seconds.;File:Gilnean_Roulette_Icon.png;
+
+Hunter's Blunderbuss;7;3;{{Human}} Basic Attacks splash for 100% damage behind the target.<!--
+-->{{undoc-x|type=Physical Damage<!--
+-->|scaling=-<!--
+-->|affects=Enemies<!--
+-->|props=[[Attack Modifier]], [[Splash]]<!--
+-->|aoe=Radial<!--
+-->|radius=5.0<!--
+-->|arc=65 degrees<!--
+-->|notes=<li>Secondary targets of splashing attacks benefit from attack modifiers except ''Wizened Duelist''.}};File:Hunter's_Blunderbuss_Icon.png;
+
+Tooth and Claw;7;4;{{Worgen}} Basic Attacks cleave for 100% damage. Increase Razor Swipe's damage by 100%.<!--
+-->{{undoc-x|type=Physical Damage / Offensive damage modifier<!--
+-->|scaling=-<!--
+-->|affects=Enemies / Ability<!--
+-->|props=[[Attack Modifier]], [[Splash]]<!--
+-->|aoe=Radial<!--
+-->|radius=3.75<!--
+-->|arc=190 degrees<!--
+-->|notes=<li>Secondary targets of cleaving attacks benefit from attack modifiers except ''Wizened Duelist''.<li>Damage bonus stacks additively with other offensive damage modifiers that can affect <i>Razor Swipe</i>'s damage.}};File:Tooth_and_Claw_Icon.png;
+
+}}
+
+<noinclude>
+{{Scaling table/start|{{#var:health}}|{{#var:health scaling}}|{{#var:health regen}}|{{#var:health regen scaling}}|{{#var:attack damage}}|{{#var:attack damage scaling}}}}
+{{Scaling table/slot|Gilnean Cocktail (initial)|55|0.04}}
+{{Scaling table/slot|Gilnean Cocktail (splash)|220|0.04}}
+{{Scaling table/slot|Razor Swipe|126|0.04}}
+{{Scaling table/slot|Darkflight|88|0.04}}
+{{Scaling table/slot|Go for the Throat|355|0.04|10}}
+{{Scaling table/end}}
+</noinclude>

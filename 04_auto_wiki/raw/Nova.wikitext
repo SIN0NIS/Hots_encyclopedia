@@ -1,0 +1,219 @@
+{{hero data
+| name = Nova
+| date = March 13, 2014
+| price = 7000
+| title = Dominion Ghost
+| role = Ranged
+| franchise = Starcraft
+| info = A [[burst]] damage [[Mage]] who can ambush enemies from [[Stealth]]. 
+| lore = November "Nova" Terra is a ghost of the Terran Dominion and one of the most powerful psionic soldiers ever known. Nova is highly focused, determined, and extremely deadly. Even Jim Raynor wouldn't want to be caught in her crosshairs.
+| difficulty = Medium
+| melee = False
+| health = 1300
+| healthRegen =  2.711
+| resource = 500
+| resourceType = Mana
+| armor = 0
+| attackSpeed = 1
+| attackRange = 6.5
+| attackDamage = 105
+| healthScaling = 0.04
+| regenScaling = 0.04
+| adamageScaling = 0.04
+| unitRadius = 0.625
+| icon = File:Nova_Icon.png
+| skills = 
+Permanent Cloak;Trait;File:Permanent_Cloak,_Sniper_Icon.png;Gain Stealth when out of combat for 3 seconds. Taking damage, attacking, using Abilities, or Channeling ends Stealth. Remaining stationary for at least 1.5 seconds grants Invisible.<br/>{{Passive}} Gain 15% Movement Speed while Stealthed.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|props=[[Movement Speed]], [[Stealth]]<!--
+-->|notes=<li>Stealth can activate while [[Mount]]ed, but Mounting will break Stealth momentarily.}};3;;trait;False
+
+Snipe;Q;File:Snipe_Icon.png;Deals 230 damage to the first enemy hit.<p>{{passive}} Hitting an enemy Hero with Snipe permanently increases the damage of Snipe by 6%, stacking up to 30%. Gain an additional 25% damage bonus at maximum stacks. All stacks are lost if Snipe fails to hit an enemy.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Clamping]], [[Skillshot]]<!--
+-->|cast=0.1 + 0 seconds<!--
+-->|range=10.8725<!--
+-->|hitbox=0.75 x 0.75<!--
+-->|missile=50<!--
+-->|notes=<li>Damage bonus stacks additively with itself and offensive damage modifiers that can affect <i>Snipe</i>'s damage.}};6;50;;False
+
+Pinning Shot;W;File:Pinning_Shot_Icon.png;Deal 100 damage to an enemy and Slow them by 40% for 2.25 seconds.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Unit Target<!--
+-->|props=[[Slow]]<!--
+-->|cast=0.1 + 0 seconds<!--
+-->|range=6.5<!--
+-->|missile=50}};12;65;;False
+
+Holo Decoy;E;File:Holo_Decoy_Icon.png;Create a Decoy for 5 seconds with 100% of Nova's current Health that attacks enemies, dealing 10% of Nova's base damage. Whenever a Decoy takes damage it deals that amount to itself, effectively doubling the damage it takes. Using this Ability does not break Stealth.<!--
+-->{{undoc-x|type=Summon<!--
+-->|target=Point target<!--
+-->|range=8.0<!--
+-->|cast=Instant}}<!--
+
+--><small>'''Holo Decoy'''</small></hr><!--
+-->{{undoc-x|nohr=1|type=[[Hallucination]]<!--
+-->|prop3=Basic Attack damage|val3=10.5<!--
+-->|prop7=Snipe damage|val7=23<!--
+-->|prop8=Pinning Shot damage|val8=10<!--
+-->|prop9=Pinning Shot Slow|val9=5%<!--
+-->|notes=<li>Decoy can use ''Snipe'' and ''Pinning Shot'' with reduced damage and Slow values. Decoys only use their Abilities against Heroes.<li>If Nova is Stealthed while casting ''Holo Decoy'', the decoy will also be Stealthed and vice versa.<li>Stealthed ''Decoy''s only attack Heroes. Unstealthed decoys also attack Structures, Summons and aggroed Mercenaries, but not Minions, unless the ''Lethal Decoy'' Talent has been picked.<li>Decoys will immediately attack the closest visible enemy Hero when one comes in its range and mimics Nova's Basic Abilities in the following order: ''Pinning Shot'' > ''Snipe'' > Basic Attack.<li>Killing a ''Decoy'' grants no XP or [[Takedown]] credit.<li>''Decoy'' benefits from all of Nova's non-active Talents, unless otherwise noted.<li>Decoy has its own base damage values, causing the damage reduction percentage to stack multiplicatively with offensive damage modifiers, but displays the floating damage text as if it were from the real Nova (full damage value).}};15;50;;False
+
+Triple Tap;R;File:Triple_Tap_Icon.png;Locks in on the target Hero, then fires 3 shots that hit the first Hero or Structure they come in contact with for 372 damage each.<!--
+-->{{undoc-x|type=Spell Damage, Status effect<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemy Heroes (and Structures)<!--
+-->|target=Unit target<!--
+-->|props=[[Channeled cast]] (stationary), [[Revealed]], [[Skillshot]], [[Stationary channel]]<!--
+-->|cast=0.8 (ch) + CH + 0.5 seconds<!--
+-->|range=25<!--
+-->|hitbox=0.66 x 1.25<!--
+-->|missile=<br>- Initial: 35<br/>- Minimum: 20<br>- Acceleration: -30<!--
+-->|prop1=Channel time|val1=1.5 seconds<!--
+-->|prop2=Shot interval|val2=0.75 seconds<!--
+-->|notes=<li>''Triple Tap'' can hit Structures in their way but is only castable on Heroes.<li>Nova can't take any actions while channeling ''Triple Tap''.<li>''Triple Tap'' can't be manually canceled and only ends if its channeling is interrupted or if the target is killed, becomes untargetable, moves more than 50 units past its maximum range or once all 3 shots have been fired.<li>Interrupting the channel in any way before any shots have been fired puts ''Triple Tap'' on a 10 second cooldown, and otherwise on full cooldown.<li>The target is [[Revealed]] for the duration of the Ability and for 0.3 seconds afterward. Exceptionally, this Reveal persists through [[Unrevealable]] Stealth.}};100;100;heroic;False
+
+Precision Strike;R;File:Precision_Strike_Icon.png;After a 1.5 second delay, deals 435 damage to enemies within an area. Unlimited range.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]]<!--
+-->|cast=0 + 0.5 seconds<!--
+-->|range=[[Global]]<!--
+-->|aoe=Circle<!--
+-->|radius=4.0<!--
+-->|prop2=Vision radius|val2=5.0<!--
+-->|notes=<li>Grants vision over the area for 6 seconds when the Ability starts casting. At the moment of impact, vision radius is increased by 1 for 1 second.}};50;100;heroic;False
+
+Ghost Protocol;1;File:Ghost_Protocol_Icon.png;Activate to instantly grant Stealth to Nova and spawn a Holo Decoy at her location. Nova is Unrevealable for the first 0.5 seconds when Stealthed by Ghost Protocol.<!--
+-->{{undoc-x|type=Summon<!--
+-->|target=No Target<!--
+-->|cast=Instant<!--
+-->|props=[[Stealth]], [[Unrevealable]]<!--
+-->|notes=<li>The decoy has the same properties as those created by ''Holo Decoy''.}};60;;;False
+
+| talents =
+<!-- LEVEL 1 -->
+Longshot;1;1;Increases the cast range of Pinning Shot by 30%. Pinning Shot also increases the range of Nova's next Basic Attack by 2.<!--
+-->{{undoc-x|prop1=Bonus Pinning Shot range|val1=1.95}};File:Longshot_Icon.png;
+
+Covert Ops;1;2;After being Stealthed for 2 seconds, Pinning Shot's Slow is increased to 60% and costs no Mana. Bonus is lost after losing Stealth for 1 second.<!--
+-->{{undoc|<hr/><li>Decoy's ''Pinning Shot'' does not benefit from the increased Slow.}};File:Covert_Ops_Icon.png;
+
+Advanced Cloaking;1;3;After being Stealthed for 1 second, gain an additional 10% Movement Speed. While Stealthed, regenerate 3 Mana per second.<!--
+-->{{undoc-x|type=Status effect, Mana regeneration<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|props=[[Movement Speed]]<!--
+-->|tickrate=1.0 per second<!--
+-->|notes=}};File:Advanced_Cloaking_Icon.png;
+
+<!-- LEVEL 4 -->
+Rapid Projection;2;1;Reduces Holo Decoy's cooldown and Mana cost by 60%.;File:Rapid_Projection_Icon.png;
+
+Holo Stability;2;2;Increase the cast range of Holo Decoy by 100% and its duration by 120%.<p>{{Passive}} Reduce the cooldown of Ghost Protocol by 15 seconds.<!--
+-->{{undoc-x|prop1=Bonus cast range|val1=8.0<!--
+-->|prop2=Bonus duration|val2=6.0 seconds}};File:Holo_Stability_Icon.png;
+
+Covert Mission;2;3;{{Active}} Enemy Minions killed near Nova grant a stack of Bribe. Hero Takedowns grant 10 stacks of Bribe. Use 25 stacks to bribe a Mercenary, instantly defeating them. Does not work on Elite Mercenaries. Maximum of 100 stacks. If a camp is defeated entirely with Bribe, it respawns 50% faster.<!--
+-->{{undoc-x|type=Instant Kill<!--
+-->|affects=Neutral non-[[Elite Mercenaries]]<!--
+-->|cast=Instant<!--
+-->|target=Unit target<!--
+-->|props=[[Bribe]]<!--
+-->|range=6.0<!--
+-->|radius=12 (gathering)<!--
+-->|prop1=Charge cooldown|val1=0.25 seconds<!--
+-->|notes=<li>Minions generate a stack, if they die within 12 radius of Nova or are dealt a killing blow by her Abilities or Basic Attacks.<li>Decoys can collect stacks, if they dealt the finishing blow to the enemy, but not through presence.}};File:Bribe_Icon.png;
+
+<!-- LEVEL 7 -->
+Perfect Shot;3;1;Hitting an enemy with Snipe reduces the cooldown by 2 seconds and refunds half its Mana cost, doubled against Heroes.<!--
+-->{{undoc-x|nohr=1<!--
+-->|notes=<li>Both Mana refund and cooldown reduction are doubled upon hitting a Heroic target.}};File:Perfect_Shot_Icon.png;
+
+One in the Chamber;3;2;After using an Ability, Nova's next Basic Attack within 3 seconds deals 65% additional damage.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Self<!--
+-->|notes=<li>Does not stack with itself.<li>Damage bonus stacks additively with other offensive damage modifiers.}};File:One_in_the_Chamber_Icon.png;
+
+Anti-Armor Shells;3;3;Nova's Basic Attacks deal 250% damage and decrease the Physical Armor of Heroic targets by 15 for 4 seconds, but her Attack Speed is proportionally slower.<!--
+-->{{undoc-x|type=Bonus damage / Defensive damage modifier<!--
+-->|affects=Self (bonus damage) / Enemy Heroes (armor reduction)<!--
+-->|props=[[Attack Modifier]], [[Physical Armor]] reduction<!--
+-->|prop1=Modified Attack Speed|val1=0.4 per second (<nowiki>=</nowiki> 2.5 seconds per attack)<!--
+-->|notes=<li>Increases Nova's Base Attack damage, causing the damage bonus to stack '''multiplicatively''' with offensive damage modifiers.<li>Decoy's attacks also have modified base damage and base Attack Speed values, but do not apply the Armor reduction.<li>Does not stack with itself or other negative Physical Armor effects. Other defensive damage modifiers may stack.<li>If and only if Nova's Basic Attack is off cooldown, causes the damage text for ''Decoy'' Basic Attacks to differ (exposing the real, lowered value).}};File:Anti-Armor_Shells_Icon.png;
+
+<!-- LEVEL 10 -->
+Triple Tap;4;1;{{Cooldown|100}}<br />Locks in on the target Hero, then fires 3 shots that hit the first Hero or Structure they come in contact with for 372 damage each.;File:Triple_Tap_Icon.png;
+Precision Strike;4;2;{{Cooldown|50}}<br />After a 1.5 second delay, deals 456 damage to enemies within an area. Unlimited range.;File:Precision_Strike_Icon.png;
+
+<!-- LEVEL 13 -->
+Psionic Efficiency;5;1;Snipe's range is increased by 15% and hitting a Hero grants an additional stack of Precision Sniper.<!--
+-->{{undoc-x|prop1=Bonus range|val1=1.35}};File:Psionic_Efficiency_Icon.png;
+
+Double Tap;5;2;Pinning Shot now has 2 charges, but its cooldown is increased by 2 seconds.<!--
+-->{{undoc-x|prop1=Charge cooldown|val1=1.0 seconds}};File:Double_Tap_Icon.png;
+
+Ionic Force Field;5;3;Gain 25 Armor for 3 seconds after losing Stealth.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Armor]]<!--
+-->|notes=<li>Does not stack with other positive Armor effects. Other defensive damage modifiers may stack.}};File:Permanent_Cloak,_Sniper_Icon.png;
+
+<!-- LEVEL 16 -->
+Explosive Round;6;1;Snipe also deals 90% damage to enemies near the impact.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=-<!--
+-->|affects=Enemies<!--
+-->|props=[[Splash]]<!--
+-->|aoe=Circle<!--
+-->|prop1=Splash radius|val1=3.5<!--
+-->|notes=<li>Splash has its own base damage values for Nova and her decoys, causing the damage penalty to stack multiplicatively with offensive damage modifiers that can affect <i>Snipe</i>'s damage.}};File:Explosive_Round_Icon.png;
+
+Crippling Shot;6;2;Pinning Shot lowers a Hero's Armor by 20 for the duration of the Slow, causing them to take 20% increased damage.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Armor reduction]]<!--
+-->|notes=<li>Armor reduction is applied after the damage is dealt.<li>Decoys' ''Pinning Shot''s do not apply Armor reduction.<li>Does not stack with other negative Armor effects. Other defensive damage modifiers may stack.}};File:Crippling_Shot_Icon.png;
+
+Lethal Decoy;6;3;Increases the damage Holo Decoy deals to 30% of Nova's damage.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|notes=<li>Increases <i>Holo Decoy</i>'s damage output by 200%. This stacks additively with other offensive damage modifiers that can affect <i>Holo Decoy</i>'s damage.}};File:Double_Fake_Icon.png;
+
+<!-- LEVEL 20 -->
+Fast Reload;7;1;Triple Tap's cooldown is reset if it kills an enemy Hero.<!--
+-->{{undoc|<hr/><li>The cooldown is reset if the enemy dies within 0.625 seconds of getting hit by a shot from ''Triple Tap''.}};File:Fast_Reload_Icon.png;
+
+Precision Barrage;7;2;Precision Strike gains a 2nd charge and its cooldown is reduced by 25 seconds.<!--
+-->{{undoc-x|prop1=Charge cooldown|val1=3.0 seconds}};File:Precision_Barrage_Icon.png;
+
+Apollo Suit;7;3;Reduce the cooldown of Permanent Cloak by 2 seconds.;File:Permanent_Cloak,_Sniper_Icon.png;
+
+Rewind;7;4;{{Cooldown|60}}<Br />{{Active}} Activate to reset the cooldowns of your Basic Abilities.<!--
+-->{{undoc-x|affects=Self<!--
+-->|target=No target<!--
+-->|props=[[Rewind]]<!--
+-->|cast=Instant<!--
+-->|notes=<li>Also resets the cooldown of <i>Ghost Protocol.</i>}};File:Rewind_Icon.png;
+
+}}
+<noinclude>
+{{Scaling table/start|{{#var:health}}|{{#var:health scaling}}|{{#var:health regen}}|{{#var:health regen scaling}}|{{#var:attack damage}}|{{#var:attack damage scaling}}}}
+{{Scaling table/slot|Snipe|230|0.04}}
+{{Scaling table/slot|Pinning Shot|100|0.04}}
+{{Scaling table/slot|Holo Decoy - Basic Attack|10.5|0.04}}
+{{Scaling table/slot|Holo Decoy - Snipe|23|0.04}}
+{{Scaling table/slot|Holo Decoy - Pinning Shot|10|0.04}}
+{{Scaling table/slot|Triple Tap|372|0.04|10}}
+{{Scaling table/slot|Precision Strike|435|0.04|10}}
+{{Scaling table/slot|Anti-Armor Shells|262|0.04|7}}
+{{Scaling table/end}}
+</noinclude>

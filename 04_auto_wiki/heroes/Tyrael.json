@@ -1,0 +1,580 @@
+{
+  "hero": "Tyrael",
+  "abilities": [
+    {
+      "name": "Archangel's Wrath",
+      "hotkey": "TRAIT",
+      "icon": "Archangel's_Wrath_Icon.png",
+      "description": "Upon dying, become Invulnerable and gain 20% Movement Speed for 4 seconds. Upon expiration, explode, dealing 450 damage and reducing Tyrael's death timer by 10% per enemy Hero hit. Archangel's Wrath reduces nearby enemy Heroes' damage by 50% while active and for 3 seconds after it expires.; trait",
+      "fields": {
+        "type": "Spell Damage / Offensive damage modifier / Special death state, Status effect",
+        "scaling": "4.00%",
+        "affects": "Enemies / Enemy Heroes / Self",
+        "props": "Area of Effect, Movement Speed",
+        "aoe": "Circle",
+        "radius": "4.0",
+        "notes": "Tyrael ignores collision until he explodes. During Archangel's Wrath, Tyrael can move through pathing blockers and enemy Gates, but not through other unpassable terrain. Damage debuff is removed immediately when the target leaves the radius of Archangel's Wrath. Duration extension requires being hit by the explosion upon expiration. Damage debuff stacks additively with other offensive damage modifiers affecting the target Hero's damage output."
+      }
+    },
+    {
+      "name": "El'druin's Might",
+      "hotkey": "Q",
+      "icon": "El'Druin's_Might_Icon.png",
+      "description": "Throw El'druin to the target area, dealing 110 damage to nearby enemies and Slowing them by 30% for 2.5 seconds. Reactivate within 5 seconds to teleport Tyrael to El'druin and Slow nearby enemies again.; 12 / 0.5",
+      "fields": {
+        "type": "Spell Damage, Crowd control / Movement: Teleport",
+        "scaling": "4.00%",
+        "affects": "enemies / Self",
+        "target": "Point target",
+        "props": "Area of Effect, Clamping, Slow",
+        "cast": "0.15 + 0 seconds",
+        "range": "9.0",
+        "aoe": "Circle",
+        "radius": "3.0",
+        "missile": "15",
+        "notes": "El'druin's Might cannot be cast on unpathable terrain. Teleport on secondary cast has no range limit. Reactivation has an initial 0.5 second cooldown, and it cannot be used before the thrown sword has reached the target location. All reactivations of El'druin's Might are considered Basic Ability casts. Cooldown starts when the Ability is activated for the first time.",
+        "cooldown": "45"
+      }
+    },
+    {
+      "name": "Righteousness",
+      "hotkey": "W",
+      "icon": "Righteousness_Icon.png",
+      "description": "Shields Tyrael for 350 damage and nearby allies for 40% as much for 4 seconds.",
+      "fields": {
+        "type": "Shield",
+        "scaling": "4.00%",
+        "affects": "Allies, Self",
+        "target": "No target",
+        "props": "Area of Effect",
+        "cast": "Instant",
+        "aoe": "Circle",
+        "radius": "5.0",
+        "prop1": "Ally shield amount",
+        "val1": "134.4",
+        "notes": "Damage dealt to allies shielded by Righteousness is shown in small pop-up numbers. Regardless of the real damage type of the attack, these numbers appear in orange, normally reserved for Physical Damage.",
+        "cooldown": "9",
+        "cost": "45"
+      }
+    },
+    {
+      "name": "Smite",
+      "hotkey": "E",
+      "icon": "Smite_Icon.png",
+      "description": "Rake target area for 150 damage. For the next 3 seconds, allies moving through the targeted area gain 25% Movement Speed for 2 seconds.",
+      "fields": {
+        "type": "Spell Damage / Status effect",
+        "scaling": "4.00%",
+        "affects": "Enemies / Allies, Self",
+        "target": "Point target",
+        "props": "Area of Effect, Clamping",
+        "cast": "Instant",
+        "range": "5.5",
+        "aoe": "Custom (1",
+        "radius": "1.5",
+        "width": "7.0",
+        "height": "3.0",
+        "notes": "1) Area consists of 5 overlapping circles with 1.5 radius in a wide V-shape. The ground effect lingers for 3 seconds, applying the buff to allies in the area every 0.25 seconds. Multiple instances of the buff only refresh the duration.",
+        "cooldown": "6",
+        "cost": "45"
+      }
+    },
+    {
+      "name": "Judgment",
+      "hotkey": "R",
+      "icon": "Judgment_Icon.png",
+      "description": "After 0.75 seconds, charge an enemy Hero, dealing 150 damage and Stunning them for 1.5 seconds. Nearby enemies are knocked away and take 75 damage.; 70; 80; heroic",
+      "fields": {
+        "type": "Spell Damage, Crowd control / Movement: Launch, Status effect",
+        "scaling": "4.00%",
+        "affects": "Enemy Heroes (targeting), Enemies / Self",
+        "target": "Unit target",
+        "props": "Area of Effect, Channeled cast (stationary), Knockback, Splash, Stun, Unstoppable",
+        "cast": "0.75 (ch) + 0.35 seconds",
+        "range": "12.0",
+        "aoe": "Circle",
+        "radius": "5.0",
+        "missile": "- Initial: 0 - Maximum: 100 - Acceleration: 80",
+        "prop1": "Knockback duration",
+        "val1": "0.1875 seconds",
+        "prop2": "Knockback speed",
+        "val2": "18",
+        "notes": "Interrupting Tyrael during the cast puts the Ability on a 10-second cooldown. Upon activation Tyrael gains vision of the target for the duration of the Ability. The cast is also interrupted if the target becomes untargetable, gains Stealth or moves farther than 5 units past its maximum cast range during the windup. Charging Tyrael can only be disjointed if the target dies, is removed from the plane (certain Stasis effects) or instantly teleports farther than 20 units from its previous location. When disjointed, the charge expires upon reaching the target's location before the event. Otherwise, the charge will keep redirecting to the target unit. Judgment always applies its area effects upon reaching the end location, regardless of being able to hit its original target. Tyrael is Unstoppable while charging."
+      }
+    },
+    {
+      "name": "Sanctification",
+      "hotkey": "R",
+      "icon": "Sanctification_Icon.png",
+      "description": "After 0.5 seconds create a field of holy energy that makes allied Heroes Invulnerable. Lasts 3 seconds.; 90; 75; heroic",
+      "fields": {
+        "type": "Status effect",
+        "affects": "Allied Heroes, Self",
+        "target": "No target",
+        "props": "Area of Effect, Channeled cast (stationary), Invulnerable",
+        "cast": "0.5 (ch) + 0 seconds",
+        "aoe": "Circle",
+        "radius": "4.0",
+        "tickrate": "16 per second",
+        "notes": "Interrupting Sanctification during its cast puts the Ability on a 10-second cooldown."
+      }
+    }
+  ],
+  "talents": [
+    {
+      "name": "Salvation",
+      "tier": "1",
+      "slot": "1",
+      "icon": "Salvation_Icon.png",
+      "description": "Increase the Shield amount Tyrael gains from Righteousness by 35% and heal Tyrael for 150 Health if his Shield is destroyed. Does not increase the Shield amount gained by allies.",
+      "fields": {
+        "type": "Healing, Shield",
+        "scaling": "4.00%",
+        "affects": "Self",
+        "prop1": "Bonus shield",
+        "val1": "134.4",
+        "notes": "Healing does not trigger if the Shield expires without breaking."
+      },
+      "_raw_fields": [
+        "Salvation",
+        "1",
+        "1",
+        "Increase the Shield amount Tyrael gains from Righteousness by 35% and heal Tyrael for 150 Health if his Shield is destroyed. Does not increase the Shield amount gained by allies.",
+        "File:Salvation_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Justice for All",
+      "tier": "1",
+      "slot": "2",
+      "icon": "Justice_for_All_Icon.png",
+      "description": "Increase the Shield applied to allies by Righteousness to 80% of the Shield gained by Tyrael.",
+      "fields": {
+        "type": "Shield",
+        "scaling": "4.00%",
+        "affects": "Allies",
+        "prop1": "Total shield amount",
+        "val1": "269"
+      },
+      "_raw_fields": [
+        "Justice for All",
+        "1",
+        "2",
+        "Increase the Shield applied to allies by Righteousness to 80% of the Shield gained by Tyrael.",
+        "File:Justice_for_All_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Ardent Restoration",
+      "tier": "1",
+      "slot": "3",
+      "icon": "Ardent_Restoration_Icon.png",
+      "description": "Dealing damage to a Hero heals Tyrael for 20 over 5 seconds. Dealing damage resets this timer, and the heal amount stacks up to 10 times. Questonly Every Regeneration Globe gathered increases this heal amount by 1%.",
+      "fields": {
+        "type": "Healing",
+        "scaling": "4.00%",
+        "affects": "Self",
+        "props": "Heal over Time",
+        "tickrate": "1.0 per second (x5)",
+        "prop1": "Healing per tick",
+        "val1": "4 (per stack)",
+        "prop2": "Maximum quest stacks",
+        "val2": "35 000",
+        "notes": "Quest healing bonus stacks additively with healing dealt modifiers that can affect healing from Ardent Restoration."
+      },
+      "_raw_fields": [
+        "Ardent Restoration",
+        "1",
+        "3",
+        "Dealing damage to a Hero heals Tyrael for 20 over 5 seconds. Dealing damage resets this timer, and the heal amount stacks up to 10 times. Questonly Every Regeneration Globe gathered increases this heal amount by 1%.",
+        "File:Ardent_Restoration_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Stalwart Angel",
+      "tier": "2",
+      "slot": "1",
+      "icon": "Stalwart_Angel_Icon.png",
+      "description": "Gain 25 Armor while El'druin's Might is active, and for 3 seconds after teleporting.",
+      "fields": {
+        "type": "Defensive damage modifier",
+        "affects": "Self",
+        "props": "Armor",
+        "notes": "Does not stack with itself or other positive Armor effects. Other defensive damage modifiers may stack."
+      },
+      "_raw_fields": [
+        "Stalwart Angel",
+        "2",
+        "1",
+        "Gain 25 Armor while El'druin's Might is active, and for 3 seconds after teleporting.",
+        "File:Stalwart_Angel_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Reciprocate",
+      "tier": "2",
+      "slot": "2",
+      "icon": "Reciprocate_Icon.png",
+      "description": "When Tyrael's Shield from Righteousness expires or is destroyed, it deals 190 damage to nearby Heroes and Summons. For each enemy Hero damaged by Reciprocate or El'druin's Might, Tyrael heals for 3% of his maximum Health.",
+      "fields": {
+        "type": "Spell Damage, Healing",
+        "scaling": "4.00%",
+        "affects": "Enemies, Self",
+        "props": "Area of Effect",
+        "aoe": "Circle",
+        "radius": "3.0"
+      },
+      "_raw_fields": [
+        "Reciprocate",
+        "2",
+        "2",
+        "When Tyrael's Shield from Righteousness expires or is destroyed, it deals 190 damage to nearby Heroes and Summons. For each enemy Hero damaged by Reciprocate or El'druin's Might, Tyrael heals for 3% of his maximum Health.",
+        "File:Reciprocate_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Divine Vigor",
+      "tier": "2",
+      "slot": "3",
+      "icon": "Divine_Vigor_Icon.png",
+      "description": "If Smite hits an enemy, Tyrael's Basic Attacks within the next 4 seconds heal for 70% of the damage dealt.",
+      "fields": {
+        "type": "Healing",
+        "scaling": "-",
+        "affects": "Self",
+        "props": "Attack Modifier, Lifesteal"
+      },
+      "_raw_fields": [
+        "Divine Vigor",
+        "2",
+        "3",
+        "If Smite hits an enemy, Tyrael's Basic Attacks within the next 4 seconds heal for 70% of the damage dealt.",
+        "File: Divine_Vigor_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Burning Halo",
+      "tier": "3",
+      "slot": "1",
+      "icon": "Burning_Halo_Icon.png",
+      "description": "Both Tyrael and El'druin deal 15 damage per second to nearby enemies. Teleporting increases this damage from Tyrael by 125% for 2 seconds.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "props": "Area of Effect, Burning Rage",
+        "aoe": "Circle",
+        "radius": "2.5 (1",
+        "tickrate": "1.0 per second",
+        "notes": "1) Extended by Tyrael's unit radius. Enemies can take damage from both Tyrael's and El'druin's damage auras at the same time. When Sword of Justice is picked, the first reactivation increases the damage around both Tyrael and El'druin. The second reactivation does not further increase the damage, but only reapplies or refreshes the effect. Does not affect unaggroed neutral Mercenaries. Does not draw tower aggro when damaging enemy Heroes under their Structures. Damage from Burning Halo is unaffected by external offensive damage modifiers and lifesteal effects. Disabled while Mounted, Stealthed or in Stasis."
+      },
+      "_raw_fields": [
+        "Burning Halo",
+        "3",
+        "1",
+        "Both Tyrael and El'druin deal 15 damage per second to nearby enemies. Teleporting increases this damage from Tyrael by 125% for 2 seconds.",
+        "File:Burning_Halo_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Purge Evil",
+      "tier": "3",
+      "slot": "2",
+      "icon": "Purge_Evil_Icon.png",
+      "description": "Each enemy Hero hit by Smite increases Tyrael's Basic Attack damage by 60% for 4 seconds.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Self",
+        "props": "Attack Modifier",
+        "prop1": "Maximum bonus",
+        "val1": "600% (x10)",
+        "notes": "Subsequent applications refresh the duration. Stacks from previous casts carry over. Damage bonus stacks additively with itself and other offensive damage modifiers that can affect Tyrael's Basic Attack damage."
+      },
+      "_raw_fields": [
+        "Purge Evil",
+        "3",
+        "2",
+        "Each enemy Hero hit by Smite increases Tyrael's Basic Attack damage by 60% for 4 seconds.",
+        "File:Purge_Evil_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Swift Retribution",
+      "tier": "3",
+      "slot": "3",
+      "icon": "Swift_Retribution_Icon.png",
+      "description": "Smite grants 20% more Movement Speed and also grants 25% Attack Speed for 2 seconds.",
+      "fields": {
+        "type": "Status effect",
+        "affects": "Non-Structure Allies, Self",
+        "props": "Attack Speed",
+        "notes": "Does not stack with itself. Subsequent applications refresh the duration. Movement Speed bonus stacks additively with baseline bonus, but not with other sources of Movement Speed. Attack Speed stacks additively with other effects that can affect the target's Attack Speed."
+      },
+      "_raw_fields": [
+        "Swift Retribution",
+        "3",
+        "3",
+        "Smite grants 20% more Movement Speed and also grants 25% Attack Speed for 2 seconds.",
+        "File:Swift_Retribution_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Judgment",
+      "tier": "4",
+      "slot": "1",
+      "icon": "Judgment_Icon.png",
+      "description": "Cooldown 70 After 0.75 seconds, charge an enemy Hero, dealing 150 damage and Stunning them for 1.5 seconds. Nearby enemies are knocked away and take 75 damage.",
+      "fields": {},
+      "_raw_fields": [
+        "Judgment",
+        "4",
+        "1",
+        "Cooldown 70 After 0.75 seconds, charge an enemy Hero, dealing 150 damage and Stunning them for 1.5 seconds. Nearby enemies are knocked away and take 75 damage.",
+        "File:Judgment_Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Sanctification",
+      "tier": "4",
+      "slot": "2",
+      "icon": "Sanctification_Icon.png",
+      "description": "Cooldown 90 After 0.5 seconds create a field of holy energy that makes allied Heroes Invulnerable. Lasts 3 seconds.",
+      "fields": {},
+      "_raw_fields": [
+        "Sanctification",
+        "4",
+        "2",
+        "Cooldown 90 After 0.5 seconds create a field of holy energy that makes allied Heroes Invulnerable. Lasts 3 seconds.",
+        "File:Sanctification_Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Sword of Justice",
+      "tier": "5",
+      "slot": "1",
+      "icon": "Sword_of_Justice_Icon.png",
+      "description": "Upon teleporting using El'druin's Might, El'druin swaps places with Tyrael, and El'druin's Might can be reactivated to teleport an additional time.",
+      "fields": {},
+      "_raw_fields": [
+        "Sword of Justice",
+        "5",
+        "1",
+        "Upon teleporting using El'druin's Might, El'druin swaps places with Tyrael, and El'druin's Might can be reactivated to teleport an additional time.",
+        "File:Sword_of_Justice_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Holy Ground",
+      "tier": "5",
+      "slot": "2",
+      "icon": "Holy_Ground_Icon.png",
+      "description": "Create a ring for 3 seconds that blocks enemies from entering the area teleported to using El'druin's Might.",
+      "fields": {
+        "type": "Pathing blocker",
+        "affects": "Enemies",
+        "props": "Area of Effect",
+        "aoe": "Circle",
+        "radius": "3.0",
+        "notes": "Displacement from the creation of Holy Ground doesn't apply Daze."
+      },
+      "_raw_fields": [
+        "Holy Ground",
+        "5",
+        "2",
+        "Create a ring for 3 seconds that blocks enemies from entering the area teleported to using El'druin's Might.",
+        "File:Holy_Ground_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Law and Order",
+      "tier": "5",
+      "slot": "3",
+      "icon": "Law_and_Order_Icon.png",
+      "description": "Each enemy Hero hit by Smite reduces the cooldown of Righteousness by 1 second. Each allied Hero Shielded by Righteousness increases the damage of the next Smite by 35%.",
+      "fields": {
+        "type": "Cooldown reduction",
+        "affects": "Ability"
+      },
+      "_raw_fields": [
+        "Law and Order",
+        "5",
+        "3",
+        "Each enemy Hero hit by Smite reduces the cooldown of Righteousness by 1 second. Each allied Hero Shielded by Righteousness increases the damage of the next Smite by 35%.",
+        "File:Law_and_Order_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Bound by Law",
+      "tier": "6",
+      "slot": "1",
+      "icon": "Bound_by_Law_Icon.png",
+      "description": "El'druin's Might's Slow is increased to 65% for 1 second, decaying to 30% over the remaining duration.",
+      "fields": {
+        "props": "Slow"
+      },
+      "_raw_fields": [
+        "Bound by Law",
+        "6",
+        "1",
+        "El'druin's Might's Slow is increased to 65% for 1 second, decaying to 30% over the remaining duration.",
+        "File:Bound_by_Law_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Horadric Reforging",
+      "tier": "6",
+      "slot": "2",
+      "icon": "Horadric_Reforging_Icon.png",
+      "description": "Tyrael's Basic Attacks reduce the cooldown of El'druin's Might by 2 seconds.",
+      "fields": {
+        "props": "Attack Modifier"
+      },
+      "_raw_fields": [
+        "Horadric Reforging",
+        "6",
+        "2",
+        "Tyrael's Basic Attacks reduce the cooldown of El'druin's Might by 2 seconds.",
+        "File:Horadric_Reforging_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Smite the Wicked",
+      "tier": "6",
+      "slot": "3",
+      "icon": "Smite_the_Wicked_Icon.png",
+      "description": "While El'druin's Might is active, and for 2 seconds after teleporting, Smite's cooldown recharges 125% faster.",
+      "fields": {},
+      "_raw_fields": [
+        "Smite the Wicked",
+        "6",
+        "3",
+        "While El'druin's Might is active, and for 2 seconds after teleporting, Smite's cooldown recharges 125% faster.",
+        "File:Smite_the_Wicked_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Angel of Justice",
+      "tier": "7",
+      "slot": "1",
+      "icon": "Angel_of_Justice_Icon.png",
+      "description": "Increases the cast range of Judgment by 50%, and reduces the cooldown by 40 seconds.",
+      "fields": {
+        "prop1": "Bonus cast range",
+        "val1": "6.0"
+      },
+      "_raw_fields": [
+        "Angel of Justice",
+        "7",
+        "1",
+        "Increases the cast range of Judgment by 50%, and reduces the cooldown by 40 seconds.",
+        "File:Angel_of_Justice_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Holy Arena",
+      "tier": "7",
+      "slot": "2",
+      "icon": "Holy_Arena_Icon.png",
+      "description": "Increases the duration of Sanctification by 1 second and increases the damage of allies inside by 25%.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Allied Heroes & Summons, Self",
+        "notes": "Summons themselves must be inside Sanctification to gain the damage buff from Holy Arena. Summons are still unaffected by the baseline benefits of Sanctification. Damage bonus stacks additively with other offensive damage modifiers affecting the target's damage output."
+      },
+      "_raw_fields": [
+        "Holy Arena",
+        "7",
+        "2",
+        "Increases the duration of Sanctification by 1 second and increases the damage of allies inside by 25%.",
+        "File:Holy_Arena_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Seal of El'druin",
+      "tier": "7",
+      "slot": "3",
+      "icon": "Seal_of_El'druin_Icon.png",
+      "description": "Using a Basic Ability grants 50% Attack Speed for 3 seconds.",
+      "fields": {
+        "type": "Status effect",
+        "affects": "Self",
+        "props": "Attack Speed",
+        "notes": "Does not stack with itself. Subsequent applications refresh the duration. Stacks additively with other effects that can affect Tyrael's Attack Speed."
+      },
+      "_raw_fields": [
+        "Seal of El'druin",
+        "7",
+        "3",
+        "Using a Basic Ability grants 50% Attack Speed for 3 seconds.",
+        "File:Seal_of_El'druin_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Defense of the Angels",
+      "tier": "7",
+      "slot": "4",
+      "icon": "Defense_of_the_Angels_Icon.png",
+      "description": "cooldown 60 Activate to gain 50 Armor for 3 seconds. Each time Tyrael damages an enemy Hero with a Basic Attack or Basic Ability, increase the duration of this Armor bonus by 0.5 seconds.",
+      "fields": {
+        "type": "Defensive damage modifier",
+        "affects": "Self",
+        "target": "No target",
+        "props": "Armor",
+        "notes": "Cooldown starts when the Ability is activated."
+      },
+      "_raw_fields": [
+        "Defense of the Angels",
+        "7",
+        "4",
+        "cooldown 60 Activate to gain 50 Armor for 3 seconds. Each time Tyrael damages an enemy Hero with a Basic Attack or Basic Ability, increase the duration of this Armor bonus by 0.5 seconds.",
+        "File:Defense_of_the_Angels_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Aspect of Justice",
+      "tier": "7",
+      "slot": "5",
+      "icon": "Archangel's_Wrath_Icon.png",
+      "description": "cooldown 90 After 1.5 seconds, gain the effects of Archangel's Wrath without dying. Cooldown is reduced by 10% for each enemy Hero hit by the explosion.",
+      "fields": {
+        "type": "Spell Damage / Status effect / Offensive damage modifier",
+        "affects": "Enemies, Enemy Heroes, Self",
+        "target": "No target",
+        "props": "Area of Effect, Movement Speed, Invulnerability",
+        "aoe": "Circle",
+        "radius": "4.0"
+      },
+      "_raw_fields": [
+        "Aspect of Justice",
+        "7",
+        "5",
+        "cooldown 90 After 1.5 seconds, gain the effects of Archangel's Wrath without dying. Cooldown is reduced by 10% for each enemy Hero hit by the explosion.",
+        "File:Archangel's_Wrath_Icon.png"
+      ],
+      "level": "20"
+    }
+  ],
+  "other": [],
+  "_unparsed_count": 0
+}

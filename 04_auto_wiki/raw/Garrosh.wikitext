@@ -1,0 +1,232 @@
+{{hero data
+| name = Garrosh
+| date = August 8, 2017
+| price = 10000
+| title = Son of Hellscream
+| role = Tank
+| franchise = Warcraft
+| info = A frontline Tank who enters the fray, trying to isolate a single opponent for elimination.
+| lore = As the new warchief of the Horde, Garrosh is a proud and vicious warrior who rules with an iron fist. His hatred for the Alliance burns like wildfire, and he will stop at nothing to destroy them. By his axe, the orcs will reclaim their rightful glory.
+| difficulty = Medium
+| melee = True
+| health = 2060
+| healthRegen = 4.293
+| resource = 500
+| resourceType = Mana
+| armor = 0
+| attackSpeed = 0.83
+| attackRange = 1.2
+| attackDamage = 137
+| healthScaling = 0.04
+| regenScaling = 0.04
+| adamageScaling = 0.04
+| unitRadius = 0.875
+| icon = File:Garrosh_Icon.png
+| skills = 
+Armor Up;Trait;File:Armor_Up_Icon.png;Garrosh gains 1 Armor for every 2% of maximum Health missing.<!--
+-->{{undoc-x|type= Defensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Armor]]<!--
+-->|notes=<li>Only updates every 187.5ms (3 server ticks).<li>''Armor Up'' stacks with other sources of [[Armor]].}};;;False;
+
+Groundbreaker;Q;File:Groundbreaker_Icon.png;Deal 81 damage to enemies in an area. Heroes hit on the outer edge are Stunned for 0.5 seconds and then Slowed by 40% for 2 seconds.<!--
+-->{{undoc-x|type=Spell damage, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|targeting=Point target<!--
+-->|props=[[Area of Effect]], [[Clamping]], [[Slow]], [[Stun]]<!--
+-->|cast=0.5 + 0.125 seconds<!--
+-->|radius=<br>-Inner: 6.25<br>- Outer: 7.25<!--
+-->|arc=45 degrees}};8;40;False;
+
+Bloodthirst;W;File:Bloodthirst_Icon.png;Deal 156 damage to an enemy and heal for 10% of Garrosh's missing Health. Healing is increased by 100% against Heroes.<!--
+-->{{undoc-x|type=Spell damage / Healing<!--
+-->|scaling=4.00% / -<!--
+-->|affects=Non-Structure enemies / Self<!--
+-->|target=Unit target<!--
+-->|props=<!--
+-->|cast=0 + 0.125 seconds<!--
+-->|range=2.5<!--
+-->|notes=<li>Healing bonus to Heroes directly increases the base healing amount, causing the given percentage to stack '''multiplicatively''' with healing modifiers.}};12;55;False;
+
+Wrecking Ball;E;File:Wrecking_Ball_Icon.png;Throw a nearby enemy Hero, Minion, or Mercenary to the target location, dealing 91 damage to enemies near the impact and Slowing them by 30% for 2.5 seconds.<!--
+-->{{undoc-x|type=Spell damage, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies (impact) / Enemy Heroes, Minions & Mercenaries (throw)<!--
+-->|target=Point target (impact) / Automatic (throw)<!--
+-->|props=[[Clamping]]<br/>Impact - [[Area of Effect]], [[Slow]]<br/>Throw - [[Displacement]], [[Daze]], [[Stun]]<!--
+-->|cast=Instant<!--
+-->|range=6.0<!--
+-->|prop1=Throw search radius|val1=2.25<!--
+-->|prop2=Impact radius|val2=2.5<!--
+-->|prop3=Throw duration|val3=0.3125 seconds<!--
+-->|notes=<li>Automatically selects the enemy closest to Garrosh to be thrown, indicated by a red marker above the unit. Does not prioritize Heroes.<li>Enemy Structures and Summons (that are not [[Heroic Pet]]s) and [[Monster]]s can be damaged, but not thrown.<li>The thrown enemy is briefly Stunned, interrupting channeled abilities, and then [[Daze]]d for the remainder of the flight.<li>The thrown enemy also receives the impact effects upon landing.}};16;65;False;
+
+Warlord's Challenge;R;File:Warlord's_Challenge_Icon.png;Silence nearby Heroes and force them to attack Garrosh for 2 seconds.<!--
+-->{{undoc-x|type=Crowd control<!--
+-->|scaling=-<!--
+-->|affects=Enemy Heroes<!--
+-->|target=No target<!--
+-->|props=[[Area of Effect]], [[Taunt]]<!--
+-->|cast=0.125 + 0 seconds<!--
+-->|radius=3.5<!--
+-->|notes=<li>The effect ends immediately if Garrosh dies.<li>Taunt counts as a [[Silence]].}};50;40;False;
+
+Decimate;R;File:Decimate_Icon.png;Deal 50 damage to nearby enemies and Slow them by 40% for 1.5 seconds. Deals 100% more damage to Heroes, and each Hero hit reduces the cooldown by 1 second.<p>Stores up to 3 charges.<!--
+-->{{undoc-x|type=Spell damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=No target<!--
+-->|props=[[Area of Effect]], [[Slow]]<!--
+-->|cast=Instant<!--
+-->|radius=5.0<!--
+-->|notes=<li>Damage bonus to Heroes stacks additively with offensive damage modifiers that can affect <i>Decimate</i>'s damage.}};8 / 1.0;25;False;
+
+Into the Fray;1;File:Into_the_Fray_Icon.png;Activate to throw a nearby ally and grant them 20 Armor for 3 seconds. Deals 91 damage to nearby enemies upon impact and Slows them by 30% for 2.5 seconds.<p>While in flight, allied Heroes are Unstoppable.<!--
+-->{{undoc-x|type=Spell damage, Crowd control (impact) / Crowd control, Defensive damage modifier, Status effect<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies (impact) / Allied Heroes, Minions & Mercenaries (throw)<!--
+-->|target=Point target (impact) / Automatic (throw)<!--
+-->|props=[[Clamping]]<br/>Impact - [[Area of Effect]], [[Slow]]<br/>Throw - [[Armor]], [[Displacement]], [[Daze]], [[Unstoppable]]<!--
+-->|cast=Instant<!--
+-->|range=9.0<!--
+-->|prop1=Throw search radius|val1=2.5<!--
+-->|prop2=Impact radius|val2=2.5<!--
+-->|prop3=Throw duration|val3=0.3125 seconds<!--
+-->|notes=<li>Automatically selects the ally closest to Garrosh to be thrown, indicated by a blue marker above the unit. Does not prioritize Heroes.<li>The thrown ally is [[Daze]]d during the flight, interrupting stationary channeled abilities.<li>''Into the Fray'' cannot target [[Unstoppable]] or [[Invulnerable]] allies, Structures or Summons that are not [[Heroic Pets]].<li>''Into the Fray'' does not benefit from any Talents affecting ''Wrecking Ball''.}};45;;False;
+
+| talents = <!-- LEVEL 1 -->
+Warbreaker;1;1;{{Quest|Stun Heroes with Groundbreaker.|After Stunning 5 Heroes, Groundbreaker deals an additional 165 damage over 3 seconds to Heroes.}}<p>{{Reward}} After Stunning 15 Heroes, permanently reduce Groundbreaker's cooldown by 2 seconds.<!--
+-->{{undoc-x|type=Spell damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Damage over Time]]<!--
+-->|tickrate=1.0 per second (x3)<!--
+-->|prop1=Damage per tick|val1=50<!--
+-->|notes=<li>Actually gives Quest stacks any time it hits a Hero, even if the Hero is Unstoppable (including but not limited to Deathwing and Vehicles).}};File:Warbreaker_Icon.png;
+
+Unrivaled Strength;1;2;Increase Wrecking Ball's throw range by 15% and its damage by 120%.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|prop1=Bonus range|val1=0.9<!--
+-->|notes=<li>Damage bonus stacks additively with other offensive damage modifiers that can affect <i>Wrecking Ball</i>'s damage.}};File:Unrivaled_Strength_Icon.png;
+
+Body Check;1;3;{{Cooldown|15}}<br>{{Active}} Activate to deal 111 damage to a target enemy and Slow them by 35% for 3 seconds. Enemy Heroes hit receive 30% reduced healing for 3 seconds.<!--
+-->{{undoc-x|type=Spell damage, Crowd control / Healing received modifier<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies / Enemy Heroes<!--
+-->|target=Unit target<!--
+-->|props=[[Slow]]<!--
+-->|cast=0.125 + 0 seconds<!--
+-->|range=3.0<!--
+-->|notes=<li>Healing reduction stacks additively with other healing received modifiers affecting the target.}};File:Body_Check_Icon.png;
+
+<!-- LEVEL 4 -->
+In For the Kill;2;1;Increase Bloodthirst's damage against non-Heroes by 70%. Killing enemies with Bloodthirst resets its cooldown and refunds its Mana cost.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|notes=<li>Cooldown is reset if the target enemy is killed within 0.5 seconds of being affected by ''Bloodthirst''.}};File:In_For_The_Kill_Icon.png;
+
+Thirst for Battle;2;2;Basic Attacks against Heroes reduce the cooldown of Bloodthirst by 2 seconds.<!--
+-->{{undoc-x||props=[[Attack Modifier]]<!--
+-->|notes=}};File:Thirst_for_Battle_Icon.png;
+
+Indomitable;2;3;{{Cooldown|40}}<br>{{Active}} Activate to become Unstoppable for 1.5 seconds.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|props=[[Unstoppable]]<!--
+-->|cast=Instant<!--
+-->|notes=}};File:Indomitable_Icon.png;
+
+<!-- LEVEL 7 -->
+Intimidation;3;1;Groundbreaker reduces the Attack Speed of Heroes hit by 30% for 4 seconds.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Attack Slow]]<!--
+-->|notes=}};File:Intimidation_Icon.png;
+
+Oppressor;3;2;Basic Attacks and Bloodthirst against Heroes reduce the target's Spell Power by 30% for 2.5 seconds.<!--
+-->{{undoc-x|type=Healing dealt modifier, Offensive damage modifier<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Attack modifier]], [[Spell Power]] reduction<!--
+-->|notes=<li>Does not stack with itself. Subsequent applications refresh the duration.<li>Spell Power debuff from ''Oppressor'' stacks additively with other sources of Spell Power as well as other offensive damage modifiers and healing dealt modifiers affecting the target Hero.}};File:Oppressor_Icon.png;
+
+Lok-tar ogar!;3;3;Increase Into the Fray's Armor by 20. Hitting enemy Heroes with Into the Fray reduces its cooldown by 12 seconds.<!--
+-->{{undoc-x|nohr=1<!--
+-->|notes=<li>Cooldown reduction may trigger multiple times per cast.}};File:Lok-tar_Ogar!_Icon.png;
+
+<!-- LEVEL 10 -->
+Warlord's Challenge;4;1;{{Cooldown|50}}<br>Silence nearby Heroes and force them to attack Garrosh for 2 seconds.;File:Warlord's_Challenge_Icon.png;
+Decimate;4;2;{{Cooldown|8}}<br>Deal 50 damage to nearby enemies and Slow them by 40% for 1.5 seconds. Deals 100% more damage to Heroes, and each Hero hit reduces the cooldown by 1 second. Stores up to 3 charges.;File:Decimate_Icon.png;
+
+<!-- LEVEL 13 -->
+Defensive Measures;5;1;If Groundbreaker Stuns a Hero, Garrosh gains a 350 point Shield for 6 seconds.<!--
+-->{{undoc-x|type=Shield<!--
+-->|scaling=4.00%<!--
+-->|affects=Self<!--
+-->|props=[[Area of Effect]]<!--
+-->|notes=<li>Does not stack with itself. Subsequent applications refresh the Shield and duration.}};File:Defensive_Measures_Icon.png;
+
+Bloodcraze;5;2;When hitting a Hero, Bloodthirst heals for an additional 15% of Garrosh's maximum Health over 3 seconds.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|props=[[Heal over Time]]<!--
+-->|tickrate=1.0 per second (x4)<!--
+-->|prop1=Healing per tick|val1=3.75%<!--
+-->|notes=<li>Heal over Time from ''Bloodcraze'' does not stack with itself. Subsequent applications refresh the duration.}};File:Bloodcraze_Icon.png;
+
+Double Up;5;3;{{cooldown|30}}<br/>{{active}} Armor Up can be activated to increase its Armor bonus by 100% for 3 seconds.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|props=[[Armor]]<!--
+-->|notes=<li>Stacks additively with other sources of Armor.}};File:Double_Up_Icon.png;
+
+<!-- LEVEL 16 -->
+Mortal Combo;6;1;Hitting a Hero with Groundbreaker's Stun and throwing them with Wrecking Ball within 3 seconds reduces Wrecking Ball's cooldown by 10 seconds, regardless of order.<!--
+-->{{undoc-x|nohr=1<!--
+-->|notes=<li>Comboing multiple units with the level 20 talent Titanic Might allows an immediate full cooldown reset on Wrecking Ball, since the 10 second CDR is per Hero affected.}};File:Defensive_Measures_Icon.png;
+
+Earthshaker;6;2;Wrecking Ball Stuns enemies near the impact area for 0.5 seconds.<!--
+-->{{undoc-x|type=Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|props=[[Stun]]<!--
+-->|notes=}};File:Unrivaled_Strength_Icon.png;
+
+Seasoned Soldier;6;3;Gain 5% maximum Health, increase Groundbreaker's Slow duration by 1 second, and Bloodthirst gains an additional charge.<!--
+-->{{undoc-x|type=Bonus Health<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|notes=}};File:Bloodcraze_Icon.png;
+
+<!-- LEVEL 20 -->
+Death Wish;7;1;Increase the duration of Warlord's Challenge by 0.5 seconds. If an enemy Hero is killed while affected by Warlord's Challenge, its cooldown is reduced by 45 seconds.;File:Death_Wish_Icon.png;
+
+Deadly Calm;7;2;Heroes hit by Decimate deal 40% less damage for 3 seconds.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Enemy Heroes<!--
+-->|notes=<li>Damage reduction stacks additively with other offensive damage modifiers affecting the target hero's damage output.}};File:Deadly_Calm_Icon.png;
+
+Titanic Might;7;3;Wrecking Ball now throws the 2 closest enemies.;File:Titanic_Might_Icon.png;
+
+Inner Rage;7;4;Body Check gains an additional charge and its healing reduction is increased by an additional 45%.<!--
+-->{{undoc-x|prop1=Charge cooldown|val1=1.0 seconds<!--
+-->|notes=<li>Requires ''Body Check''.}};File:Inner_Rage_Icon.png;
+}}
+
+<noinclude>
+{{Scaling table/start|{{#var:health}}|{{#var:health scaling}}|{{#var:health regen}}|{{#var:health regen scaling}}|{{#var:attack damage}}|{{#var:attack damage scaling}}}}
+{{Scaling table/slot|Groundbreaker|81|0.04}}
+{{Scaling table/slot|Bloodthirst|156|0.04}}
+{{Scaling table/slot|Wrecking Ball|91|0.04}}
+{{Scaling table/slot|Decimate|50|0.04|10}}
+{{Scaling table/slot|Warbreaker|165|0.04|1}}
+{{Scaling table/slot|Warbreaker (per second)|55|0.04|1}}
+{{Scaling table/slot|Body Check|111|0.04|1}}
+{{Scaling table/slot|Into the Fray|91|0.04|7}}
+{{Scaling table/slot|Defensive Measures|350|0.04|13}}
+{{Scaling table/end}}
+</noinclude>

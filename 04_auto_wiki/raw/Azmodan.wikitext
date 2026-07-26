@@ -1,0 +1,287 @@
+{{hero data
+| name = Azmodan
+| date = October 7, 2014
+| price = 2000
+| title = Lord of Sin
+| role = Ranged
+| franchise = Diablo
+| info = A [[Summoner]] who can also deal high damage from far away. 
+| lore = The Lord of Sin rules over a densely populated land of Hell where both the greatest joys and despair and the deepest depravities can be experienced. But it is never enough for Azmodan, who has set his eyes on the realm of Sanctuary.
+| difficulty = Medium
+| melee = False
+| health = 2464
+| healthRegen = 5.1328
+| resource = 500
+| resourceType = Mana
+| armor = 0
+| attackSpeed = 1
+| attackRange = 5.5
+| attackDamage = 85
+| healthScaling = 0.04
+| regenScaling = 0.04
+| adamageScaling = 0.04
+| unitRadius = 1.1875
+| icon = File:Azmodan_Icon.png
+| skills = 
+Demon Lieutenant;D;File:Demon Lieutenant Icon.png;Summon a [[Demon Lieutenant]] at any allied [[Mercenary]], [[Minion]], or Azmodan Demon. The Lieutenant will cast Demonic Smite every 7 seconds, instantly killing an enemy Minion. Loses Health over 21 seconds.<p>Usable while Channeling All Shall Burn.<!--
+-->{{undoc-x|type=Summon<!--
+-->|target=Unit target<!--
+-->|cast=Instant<!--
+-->|range=[[Global]]<!--
+-->|notes=<li>Can be cast while casting and channeling the following Abilities: ''Globe of Annihilation'', ''All Shall Burn'', ''Demonic Invasion''.<li>Does not dismount.}}<!--
+
+--><hr><small>'''Demon Lieutenant'''</small>{{undoc-x|nohr=1<!--
+-->|type=Active<!--
+-->|scaling=4.00% (damage & Health)<!--
+-->|target=Automatic<!--
+-->|prop1=Health|val1=593<!--
+-->|prop2=Basic Attack damage|val2=52<!--
+-->|prop3=Attack speed|val3=1.0<!--
+-->|prop4=Attack range|val4=2.0<!--
+-->|prop5=Movement Speed|val5=3.25<!--
+-->|prop6=Unit radius|val6=0.75<!--
+-->|prop7=Sight radius|val7=7<!--
+-->|prop8=Leash radius|val8=-<!--
+-->|notes=<li>A Demon Lieutenant is unable to move or attack during its spawn duration. <li> Deals 100% bonus damage to Mercenaries and Minions.}}<!--
+
+--><hr><small>'''Demonic Smite'''</small><!--
+-->{{undoc-x|nohr=1<!--
+-->|type=Instant kill<!--
+-->|affects=Enemy Minions<!--
+-->|target=Unit target<!--
+-->|cast=Instant<!--
+-->|range=7.5<!--
+-->|missile=35<!--
+-->|prop1=First use delay|val1=1.5 seconds<!--
+-->|notes=}};60;;trait;False
+
+Globe Of Annihilation;Q;File:Globe_Of_Annihilation_Icon.png;Shoot a globe of destruction, dealing 176 damage on impact. Deals 50% damage to non-Heroes.<p>{{Quest|Hitting a Hero or killing a Minion within 3 seconds of being hit by Globe of Annihilation grants 2 stacks of Annihilation.|Each stack increases its damage by 1.}}<p> {{Reward|After gaining 450 Annihilation, the area of Globe of Annihilation is increased by 15% and it deals 150 additional damage.}}<!--
+-->{{undoc-x|type=Spell Damage / Bonus damage (quest)<!--
+-->|scaling=4.00% / -<!--
+-->|affects=Enemies / Ability<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], Self-castable<!--
+-->|cast=0.5625 + 0.125 seconds<!--
+-->|range=30<!--
+-->|aoe=Circle<!--
+-->|radius=4.0<!--
+-->|missile=18 ... 26<!--
+-->|notes=<li>Azmodan is able to cast ''Summon Demon Warrior'', ''Demon Lieutenant'' and ''Tide of Sin'' while casting this Ability.<li>This ability deals full damage to summons.<li>Increases radius by 15%, so the area is actually increased by 32%}};10;70;;False
+
+Summon Demon Warrior;W;File:Summon_Demon_Warrior_Icon.png;Spawn a [[Demon Warrior]] that marches forward. Warriors deal 53 damage per Attack. Loses Health over 17 seconds. Deals 100% bonus damage to Mercenaries and Minions. Stores up to 2 charges.<p>Usable while Channeling All Shall Burn.<!--
+-->{{undoc-x|type=Summon<!--
+-->|target=Point target<!--
+-->|cast=Instant<!--
+-->|range=1.5<!--
+-->|notes=<li>Can be cast while casting and channeling the following Abilities: ''Globe of Annihilation'', ''All Shall Burn'', ''Demonic Invasion''.}}<!--
+
+--><hr><small>'''Demon Warrior'''</small>{{undoc-x|nohr=1<!--
+-->|type=Active<!--
+-->|scaling=4.00% (damage & Health)<!--
+-->|target=Automatic<!--
+-->|prop1=Health|val1=435<!--
+-->|prop2=Basic Attack damage|val2=53<!--
+-->|prop3=Attack speed|val3=1.0<!--
+-->|prop4=Attack range|val4=2.0<!--
+-->|prop5=Movement Speed|val5=3.6015<!--
+-->|prop6=Sight radius|val6=7<!--
+-->|prop7=Leash radius|val7=-<!--
+-->|prop8=Unit radius|val8=0.75<!--
+-->|prop9=Duration|val9=11.5 seconds<!--
+-->|prop10=Spawn time|val10=1 second<!--
+-->|notes=<li>A Demon Warrior is immobile, Invulnerable, and unable to move or attack during its spawn duration, though it will still block skillshots, negating them entirely during this time, and will instantly take Structure aggro off of Heroes during this spawn time (unless they have [[Call for Help]] triggered).}};10;25;;False
+
+All Shall Burn;E;File:All_Shall_Burn_Icon.png;Channel a beam of death on an enemy, dealing 128 damage per second for 2.5 seconds. If the Channel lasts its full duration, deal an extra 340 damage to the target.<p>Azmodan's Movement Speed is reduced by 30% while Channeling.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Unit target<!--
+-->|props=[[Mobile channel]]<!--
+-->|cast=0.5 + CH + 0 seconds<!--
+-->|range=<br/>- Cast: 7.5<br/>- Active: 9.75<!--
+-->|tickrate=4.0 per second (x10)<!--
+-->|prop1=Damage per tick|val1=32<!--
+-->|notes=<li>The channel is interrupted if the target moves outside the active range.<li>Can be reactivated after 1 second to end its effect early. Does not grant full duration benefits if interrupted in this way.<li>Azmodan is able to cast ''Summon Demon Warrior'', ''Demon Lieutenant'', ''Demonic Invasion'' and ''Tide of Sin'' while casting and channeling this Ability.}};6 / 1.0;25;;True
+
+Demonic Invasion;R;File:Demonic_Invasion_Icon.png;Rain a small army of [[Demonic Grunt]]s down on enemies, dealing 85 damage per impact. Grunts deal 30 damage, have 750 Health and last up to 20 seconds. When Grunts die they explode, dealing 40 damage to nearby enemies, doubled against enemy Heroes.<p>Usable while Channeling All Shall Burn.<!--
+-->{{undoc-x|type=Spell Damage / Summon<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], Self-castable<!--
+-->|cast=0 + 0.5 seconds<!--
+-->|range=13.5<!--
+-->|radius=<br/>- Spawn area: 2.8 <sup>(1</sup><br/>- Impact: 1.5<!--
+-->|notes=<li><sup>1)</sup>Spawns a total of 8 Demonic Grunts, one every 0.125 seconds, in a randomized order to predetermined locations within 2.5 radius. Each spawn location has a randomized offset with 8 possible locations within 0.3125 radius.<li>Azmodan is able to cast ''Summon Demon Warrior'' and ''Demon Lieutenant'' while casting this Ability.}}<!--
+
+--><hr><small>'''Demonic Grunt'''</small>{{undoc-x|nohr=1<!--
+-->|type=Active<!--
+-->|scaling=4.00% (damage & Health)<!--
+-->|target=Automatic<!--
+-->|prop1=Health|val1=750<!--
+-->|prop2=Basic Attack damage|val2=39<!--
+-->|prop3=Attack speed|val3=1.0<!--
+-->|prop4=Attack range|val4=0.8<!--
+-->|prop5=Movement Speed|val5=4.875<!--
+-->|prop6=Unit radius|val6=0.5<!--
+-->|prop7=Sight radius|val7=7.0<!--
+-->|prop8=Leash radius|val8=-<!--
+-->|prop9=Explosion radius|val9=2.0<!--
+-->|notes=<li>Demonic Grunts lose 75 (+4%/level) Health per second, causing any damage dealt to them to also reduce their duration.}};100;60;heroic;False
+
+Tide of Sin;R;File:Black_Pool_Icon.png;Activate to make the next Globe of Annihilation cost no Mana and deal 50% more damage.<p>Usable while Channeling All Shall Burn.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|target=No target<!--
+-->|cast=Instant<!--
+-->|notes=<li>Stacks additively with other offensive damage modifiers affecting <i>Globe of Annihilation</i>'s damage.<li>Can be cast while casting and channeling ''Globe of Annihilation'' and ''All Shall Burn''.}};20;100;heroic;False
+
+| talents = <!-- LEVEL 1 -->
+Greed;1;1;Globe of Annihilation deals 15% more damage to non-Heroic targets.<p>{{Questonly|After gaining 225 Annihilation, increase the range of All Shall Burn by 25% and Demon Warriors gain 20% Attack Speed and Movement Speed. Globe of Annihilation's damage penalty against Minions and Mercenaries is removed.}}<!--
+-->{{undoc-x|type=Offensive damage modifier / Status effect<!--
+-->|affects=Ability / Demon Warriors<!--
+-->|props=[[Attack Speed]], [[Movement Speed]]<!--
+-->|prop1=Bonus cast range|val1=1.875<!--
+-->|prop2=Bonus active range|val2=1.875<!--
+-->|notes=<li>}};File:Greed Icon.png;
+
+Gluttony;1;2;Increase the number of stacks of Annihilation gained by hitting Heroes with Globe of Annihilation from 2 to 4.<p>{{Questonly|After gaining 225 Annihilation, each enemy hit by Globe of Annihilation reduces its cooldown by 0.25 seconds, doubled against Heroes. Globe of Annihilation's damage penalty against Minions and Mercenaries is removed.}};File:Gluttony Icon.png;
+
+Wrath;1;3; Every other Basic Attack against Heroes or Structures grants Annihilation.<p>{{Questonly| After gaining 225 Annihilation, hitting a Hero with Globe of Annihilation increases the damage of Azmodan's next Basic Attack against them within 3 seconds by 85% of the amount of Annihilation he has. Globe of Annihilation's damage penalty against Minions and Mercenaries is removed.}}<!--
+-->{{undoc-x|type=Bonus damage<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|props=[[Attack Modifier]] (Heroes)<!--
+-->|notes=<li>Annihilation is gained before the Basic Attack damage is dealt, increasing its damage if the Quest is complete and the Basic Attack would also be empowered by it.<li> damage unaffected by q quest final reward.  }};File:Wrath Icon.png;
+
+<!-- LEVEL 4 -->
+Army of Hell;2;1;Summon Demon Warrior spawns an additional Demon, but its cooldown is increased by 10 seconds.;File:Army_of_Hell_Icon.png;
+
+Hellforged Armor;2;2;Demon Warriors and Lieutenants gain 20 Armor and lose 25% less Health per second.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Demon Warriors & Lieutenants<!--
+-->|props=[[Armor]]<!--
+-->|notes= Effective 5.6s increase in duration}};File:Hellforged_Armor_Icon.png;
+
+Battleborn;2;3;Reduce the Mana cost of Summon Demon Warrior from 25 to 20. Azmodan's Basic Attacks reduce the cooldown of Summon Demon Warrior by 0.75 seconds and Demon Lieutenant by 1.5 seconds.<!--
+-->{{undoc-x|props=[[Attack Modifier]], Cooldown reduction<!--
+-->|notes=}};File:Battleborn_Icon.png;
+
+<!-- LEVEL 7 -->
+Art of Chaos;3;1;If Globe of Annihilation hits 2 or more Heroes, restore 40 Mana and gain an extra 2 Annihilation.;File:Art of Chaos Icon.png;
+
+Bombardment;3;2;After casting Globe of Annihilation, Azmodan's Basic Attacks within the next 3 seconds have an additional 1.5 range and can hit 3 additional targets. Hitting Heroes with Basic Attacks empowered by Bombardment grants 1 Annihilation.<!--
+-->{{undoc-x|type=Physical Damage<!--
+-->|scaling=-<!--
+-->|affects=Enemies<!--
+-->|props=[[Attack Modifier]], [[Bounce]]<!--
+-->|radius=3.0<!--
+-->|notes=<li>The additional targets hit can grant stacks for the ''Wrath'' talent and receive its bonus damage, and also grant cooldown reduction for the ''Battleborn'' talent.<li>Annihilation is gained before the Basic Attack damage is dealt (increasing its damage if <i>Wrath</i>'s Quest is complete and the Basic Attacks would also be empowered by it).}};File:Bombardment Icon.png;
+
+Master of Destruction;3;3;If All Shall Burn's channel kills or lasts its full duration, All Shall Burn's final damage applies to all enemies in an area around the target and grants 1 Annihilation per Hero hit.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=-<!--
+-->|affects=Enemies<!--
+-->|props=[[Splash]]<!--
+-->|radius=3.5<!--
+-->|notes=<li>Also triggers if the target dies to any other source of damage than ''All Shall Burn'' while its channel is active.}};File:Master_of_Destruction_Icon.png;
+
+<!-- LEVEL 10 -->
+Demonic Invasion;4;1;{{cooldown|100}}<p>Rain a small army of [[Demonic Grunt]]s down on enemies, dealing 85 damage per impact. Grunts deal 30 damage, have 750 Health and last up to 20 seconds. When Grunts die they explode, dealing 40 damage to nearby enemies, doubled against enemy Heroes.<p>Usable while Channeling All Shall Burn.;File:Demonic_Invasion_Icon.png;
+Tide of Sin;4;2;{{cooldown|20}}<p>Activate to make the next Globe of Annihilation cost no Mana and deal 50% more damage.<p>Usable while Channeling All Shall Burn.;File:Tide of Sin Icon.png;
+
+<!-- LEVEL 13 -->
+Brutish Vanguard;5;1;Demon Warriors and Lieutenants gain 25% increased Health. Demon Warriors Slow attacked targets by 30%.<!--
+-->{{undoc-x|type=Bonus Health / Crowd control<!--
+-->|scaling=-<!--
+-->|affects=Demon Warriors & Lieutenants / Enemies<!--
+-->|props=[[Area of Effect]], [[Slow]]<!--
+-->|prop1=Slow duration|val1=0.5625 seconds<!--
+-->|notes=}};File:Brutish Vanguard Icon.png;
+
+Cydaea's Kiss;5;2;Reduces the Channel time of All Shall Burn by 0.5 seconds. If All Shall Burn's Channel kills or lasts its full duration against a Hero, Azmodan is healed for 8% of his maximum Health.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|notes=<li>Reduces periodic damage ticks by 2. Damage per tick remains unchanged, lowering the total damage of the Ability.<li>Also triggers if the target dies to any other source of damage than ''All Shall Burn'' while its channel is active.}};File:Cydaea's Kiss Icon.png;
+
+Chain of Command;5;3;The cooldown of Demon Lieutenants' Demonic Smite is reduced by 2 seconds and they grant 25% increased damage to nearby friendly [[Minion]]s, [[Mercenaries]], and Azmodan’s summoned Demons.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects= Allied Minions, Mercenaries & Azmodan's Summons<!--
+-->|radius=7.0<!--
+-->|notes=<li>Does not increase the damage of Demon Lieutenant itself, but two Demon Lieutenants can potentially increase the damage of each other.<li>Does not stack with itself.<li>Stacks additively with other offensive damage modifiers affecting the target units' damage output.}};File:Chain of Command Icon.png;
+
+<!-- LEVEL 16 -->
+Total Annihilation;6;1;Globe of Annihilation damages Heroes for an additional 4% of their maximum Health.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=-<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Percent damage]]<!--
+-->|notes=}};File:Total Annihilation Icon.png;
+
+Hell Rift;6;2;If All Shall Burn Channels for its full duration or kills the target, a Demon Warrior is summoned at the target's location and all Demon Warriors deal 35% increased damage for 5 seconds.<!--
+-->{{undoc-x|type=Summon / Offensive damage modifier<!--
+-->|affects=Demon Warriors<!--
+-->|notes=<li>Also triggers if the target dies to any other source of damage than ''All Shall Burn'' while its channel is active.<li>Affects both the Basic Attack damage and the burn aura damage of Demon Warriors.<li>Stacks additively with other offensive damage modifiers affecting Demon Warriors' damage output.}};File:Cydaea's Kiss Icon.png;
+
+Trample;6;3;{{Cooldown|20}}<br/>Activate to charge a short distance, dealing 275 damage and Slowing enemies caught in the path by 60% for 1.25 seconds.<p>After hitting an enemy Hero with Trample, reduce the cooldown of Azmodan's Heroic Ability by 25%.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control / Movement: [[Dash]]<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies / Self<!--
+-->|target=Point target<!--
+-->|props=[[Clamping]], [[Skillshot]], [[Slow]]<!--
+-->|cast=Instant<!--
+-->|range=6.0<!--
+-->|hitbox=2.5 x 2.5<!--
+-->|missile=14<!--
+-->|tickrate=<!--
+-->|notes=}};File:Trample Icon.png;
+
+<!-- LEVEL 20 -->
+Siegebreaker;7;1;Azmodan’s Demons deal 40% increased damage to Structures.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Azmodan's Summons<!--
+-->|notes=<li>Stacks additively with other damage modifiers affecting target units' damage output.}};File:Siegebreaker Icon.png;
+
+Black Pool;7;2;Globes of Annihilation empowered by Tide of Sin also leave a Black Pool at their impact location for 5 seconds. Enemies within the pool lose 8 Armor per second, up to 15, and take 56 damage per second.<!--
+-->{{undoc-x|type=Spell Damage / Defensive damage modifier<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies / Enemy Heroes<!--
+-->|props=[[Area of Effect]]<!--
+-->|aoe=Circle<!--
+-->|radius=4.0<!--
+-->|tickrate=<br/>- Armor reduction: 8.0 per second (x40)<br/>- Damage: 4.0 per second (x20)<!--
+-->|prop1=Damage per tick|val1=14<!--
+-->|notes=<li>Stacks additively with itself, but not with other negative Armor effects. Other defensive damage modifiers may stack<li> radius unaffected by  q quest final reward.}};File:Black Pool Icon.png;
+
+Inescapable Annihilation;7;3;Globe of Annihilation can now be cast globally.<!--
+-->{{undoc-x|affects=Ability<!--
+-->|notes=}};File:Pride Icon.png;
+
+Sin's Grasp;7;4;All Shall Burn Slows enemy Heroes. While active, the target is Slowed by 15%, and if it lasts its full duration, they are Slowed by 50% for 2.5 seconds.<p>If All Shall Burn's channel kills or last its full duration against a Hero, reduce its cooldown by 50%.<!--
+-->{{undoc-x|type=Crowd control, Cooldown reduction<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Slow]]<!--
+-->|notes=<li>Also triggers if the target dies to any other source of damage than ''All Shall Burn'' while its channel is active.<li>A full duration channel only triggers these effects if the target is an enemy Hero.}};File:Sin's_Grasp_Icon.png;
+
+}}
+
+<noinclude>
+{{Scaling table/start|{{#var:health}}|{{#var:health scaling}}|{{#var:health regen}}|{{#var:health regen scaling}}|{{#var:attack damage}}|{{#var:attack damage scaling}}}}
+{{Scaling table/slot|Demon Lieutenant (Health)|593|0.04}}
+{{Scaling table/slot|Demon Lieutenant (attack)|52|0.04}}
+{{Scaling table/slot|Globe of Annihilation|176|0.04}}
+{{Scaling table/slot|Demon Warrior (Health)|435|0.04}}
+{{Scaling table/slot|Demon Warrior (attack)|53|0.04}}
+{{Scaling table/slot|All Shall Burn (periodic, per second)|128|0.04}}
+{{Scaling table/slot|All Shall Burn (periodic, single)|32|0.04}}
+{{Scaling table/slot|All Shall Burn (final)|340|0.04}}
+{{Scaling table/slot|Demonic Invasion (impact)|85|0.04|10}}
+{{Scaling table/slot|Demonic Invasion (explosion)|40|0.04|10}}
+{{Scaling table/slot|Demonic Invasion (Health)|750|0.04|10}}
+{{Scaling table/slot|Demonic Invasion (attack)|39|0.04|10}}
+{{Scaling table/slot|Trample|275|0.04|16}}
+{{Scaling table/slot|Black Pool (per second)|56|0.04|20}}
+{{Scaling table/slot|Black Pool (single)|14|0.04|20}}
+{{Scaling table/end}}
+</noinclude>

@@ -1,0 +1,233 @@
+{{hero data
+| name = Zarya
+| date = September 27, 2016
+| price = 7000
+| title = Defender of Russia
+| role = Support
+| franchise = Overwatch
+| info =  A Support who can enable deadly allies and is good at preventing burst damage.
+| lore = Aleksandra Zaryanova is one of the world's strongest women and was a promising athlete, but all that changed when the Siberian omnium reawakened. As a soldier in the Russian Defense Force, she now proudly uses her strength to protect the ones she loves.
+| difficulty = Medium
+| melee = False
+| health = 2292
+| healthRegen = 4.7734
+| resource = 100
+| resourceType = Energy
+| energyRegen = -3
+| armor = 0
+| attackSpeed = 4.00
+| attackRange = 4.5
+| attackDamage = 20
+| healthScaling = 0.04
+| regenScaling = 0.04
+| adamageScaling = 0.04
+| unitRadius = 0.8125
+| icon = File:Zarya_Icon.png
+| skills = 
+Energy;Trait;File:Energy_Icon.png;Each time Zarya's Personal Barrier or Shield Ally absorbs 9 damage, her Energy is increased by 1. Each point of Energy increases Zarya's damage by 2%. After 0.5 seconds, Energy decays by 3 per second.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Self<!--
+-->|notes=<li>Damage absorbed through Zarya's Shields is only limited by the Shield amount of <i>Personal Barrier</i> and <i>Shield Ally</i>. Talents that increase their Shield amounts thus also increase the maximum possible Energy gained from them.<li>Damage bonus stacks additively with itself and '''multiplicatively''' with other offensive damage modifiers affecting Zarya's damage output.}}<hr><small>'''Particle Cannon'''</small><!--
+-->{{undoc-x|type=Physical Damage<!--
+-->|affects=Enemies<!--
+-->|props=[[Attack Modifier]], [[Splash]]<!--
+-->|notes=<li>Zarya's Basic Attacks [[Splash]] to all enemies in a 1.0 x 6.25 rectangle in front of her. Her main target must still be within her attack range.<li>Splash cannot hit more than 4 times per second (even if Zarya's Attack Speed is increased).<li>Splash hits 62.5ms (1 server tick) after the primary target is hit and does not happen if the primary target is killed by that Basic Attack.}};;;;False;
+
+Particle Grenade;Q;File:Particle_Grenade_Icon.png;Launch a particle grenade that deals 80 damage to enemies within the area. Deals 50% damage to Structures.<p>Stores up to 4 charges.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Clamping]]<!--
+-->|cast=0.1875 + 0 seconds<!--
+-->|range=13<!--
+-->|aoe=Circle<!--
+-->|radius=2.25<!--
+-->|missile=26<!--
+-->|notes=<li>Structure damage penalty stacks additively with other offensive damage modifiers that can affect <i>Particle Grenade</i>'s damage.}};8 / 0.75;;False;
+
+Personal Barrier;W;File:Personal_Barrier_Icon.png;Gain a Shield that absorbs 560 damage for 3 seconds.<!--
+-->{{undoc-x|type=Shield<!--
+-->|scaling=4.00%<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|cast=Instant<!--
+-->|notes=}};10;;False;
+
+Shield Ally;E;File:Shield_Ally_Icon.png;Grants an allied Hero a Shield that absorbs 420 damage for 3 seconds.<!--
+-->{{undoc-x|type=Shield<!--
+-->|scaling=4.00%<!--
+-->|affects=Allied Heroes<!--
+-->|target=Unit target<!--
+-->|cast=Instant<!--
+-->|range=10<!--
+-->|notes=}};12;;False;
+
+Graviton Surge;R;File:Graviton_Surge_Icon.png;Launch a gravity bomb that detonates after 1 second and draws enemy Heroes toward the center for 2.5 seconds. Affected Heroes take 30 damage a second.<!--
+-->{{undoc-x|type=Crowd control<!--
+-->|affects=Enemy Heroes<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Clamping]], [[Knockback]]<!--
+-->|cast=0.15 + 0.225 seconds<!--
+-->|range=10<!--
+-->|aoe=Circle<!--
+-->|radius=<br/>- Impact: 4.0<br/>- Periodic: 3.0<!--
+-->|tickrate=2.0 per second (x5)<!--
+-->|prop1=Damage per tick|val1=15<!--
+-->|notes=<li>Graviton Surge pulls affected Heroes to within 1 radius of its center point and sets their [[Movement Speed]] to 0%.<li>Affected Heroes can still attack and use their Abilities.<li>Heroes can get out of Graviton Surge using [[Movement ability|Movement Abilities]].}};60;;Heroic;False;
+
+Expulsion Zone;R;File:Expulsion_Zone_Icon.png;Launch a gravity bomb that deals 124 damage and creates an expulsion zone for 3.5 seconds. Enemies who enter the affected area are knocked back and have their Movement Speed reduced by 50% for 1 second.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Clamping]], [[Knockback]], [[Slow]]<!--
+-->|cast=0.1 + 0 seconds<!--
+-->|range=10<!--
+-->|aoe=Circle<!--
+-->|radius=3.3<!--
+-->|tickrate=2.0 per second (x7)<!--
+-->|prop1=Impact delay|val1=0.75 seconds<!--
+-->|notes=}};45;;Heroic;False;
+
+| talents = <!-- LEVEL 1 -->
+Demolitions Expert;1;1;{{quest|For every 5 enemy Heroes hit by Particle Grenade, its recharge rate lowers by 0.4375 seconds, up to 3.5 seconds.|Once Particle Grenade has hit 40 enemy Heroes, its radius is increased by 15%.}}<!--
+-->{{undoc-x|prop1=Bonus radius|val1=0.3375}};File:Demolitions_Expert_Icon.png;
+
+Together We Are Strong;1;2;For 3 seconds after gaining Shield Ally, every 5.35 damage done by the bearer contributes 1 Energy to Zarya, up to 40 Energy per Shield.<!--
+-->{{undoc-x|scaling=4.00% (damage requirement)}};File:Together_We_Are_Strong_Icon.png;
+
+Feel the Heat;1;3;Zarya's Basic Attack deals 50% additional damage to enemies in melee range. While above 40 Energy, Zarya's Basic Attack size is increased by 35%.<!--
+-->{{undoc-x|type=Bonus damage<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|prop1=Range threshold|val1=3.0<!--
+-->|prop2=Extended Attack area|val2=1.35 x 8.4375<!--
+-->|notes=<li>''Feel the Heat'' uses its own base damage value, which is 50% higher than the original, causing the given percentage to stack '''multiplicatively''' with offensive damage modifiers.}};File:Feel_the_Heat_Icon.png;
+
+Maximum Charge;1;4;Regen Globes now instantly grant 20 Energy.<p>{{quest|Spend 150 seconds at or above 50 Energy.|Gain an additional 20 maximum Energy.}};File:Maximum_Charge_Icon.png;
+
+<!-- LEVEL 4 -->
+I Am the Strongest;2;1;Personal Barrier absorbs an additional 140 damage.<p>{{Passive}} Damage absorbed by Zarya's Shields contributes 20% more Energy.<!--
+-->{{undoc-x|type=Bonus Shield<!--
+-->|scaling=4.00%<!--
+-->|affects=Ability<!--
+-->|notes=}};File:I_Am_the_Strongest_Icon.png;
+
+Give Me Twenty;2;2;{{quest|Regeneration Globes increase Shield Ally value by 15, up to 300 permanently.|After collecting 20 Regen Globes, permanently reduce the cooldown of Shield Ally by 2 seconds.}}<!--
+-->{{undoc-x|type=Bonus Shield<!--
+-->|scaling=-<!--
+-->|affects=Ability}};File:Give_Me_Twenty_Icon.png;
+
+Speed Barrier;2;3;Shield Ally increases the allied Hero's Movement Speed by 50% for the duration.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Allied Heroes<!--
+-->|props=[[Movement Speed]]<!--
+-->|notes=}};File:Speed_Barrier_Icon.png;
+
+Defensive Shielding;2;4;Upon expiration or breaking, Personal Barrier and Shield Ally grant 75 Physical Armor against the next 2 Hero Basic Attacks for 6 seconds, reducing the damage taken by 75%.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Allied Heroes, Self<!--
+-->|props=[[Block]], [[Physical Armor]]<!--
+-->|notes=<li>Does not stack with itself or other positive Armor effects. Other defensive damage modifiers may stack.<li>If the target has certain Talents which give Block stacks (those Talents being [[Illidan]] with ''Reflexive Block'', [[The Lost Vikings]] with ''Olaf the Stout'', [[Muradin]] with ''Dwarf Block'', [[Rexxar]] or Misha with ''Grizzled Fortitude''), the Block stacks will be shared and capped at a maximum of 4. Additionally the duration of all Block stacks from either Talent will all be set to that of the most recently applied Block stacks.}};File:Defensive_Shielding_Icon.png;
+
+<!-- LEVEL 7 -->
+Pinpoint Accuracy;3;1;Particle Grenade deals 30 more damage and Slows Movement Speed by 25% for 2 seconds to enemies hit by the center of the blast.<!--
+-->{{undoc-x|type=Bonus damage / Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Ability / Enemies<!--
+-->|props=[[Slow]]<!--
+-->|prop1=Center radius|val1=0.75<!--
+-->|notes=<li>Center radius is unaffected by ''Demolitions Expert'' bonus.}};File:Pinpoint_Accuracy_Icon.png;
+
+Deep Burn;3;2;Hitting a Hero with Particle Grenade causes Basic Attacks against them to generate 2 Energy. Lasts 4 seconds.<!--
+-->{{undoc-x|nohr=1<!--
+-->|notes=<li>If multiple Zaryas are on a team, they can all benefit from ''Deep Burn'' applied by another Zarya regardless of if they have the Talent or not.}};File:Deep_Burn_Icon.png;
+
+Explosive Barrier;3;3;Upon expiration or breaking, Personal Barrier explodes, dealing 110 damage to nearby enemies.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|props=[[Area of Effect]]<!--
+-->|aoe=Circle<!--
+-->|radius=3.25}};File:Explosive_Barrier_Icon.png;
+
+<!-- LEVEL 10 -->
+Graviton Surge;4;1;{{cooldown|60}}<br/>Launch a gravity bomb that detonates after 1 second and draws enemy Heroes toward the center for 2.5 seconds. Affected Heroes take 30 damage a second.;File:Graviton_Surge_Icon.png;
+Expulsion Zone;4;2;{{cooldown|45}}<br/>Launch a gravity bomb that deals 124 damage and creates an expulsion zone for 3.5 seconds. Enemies who enter the affected area are knocked back and have their Movement Speed reduced by 50% for 1 second.;File:Expulsion_Zone_Icon.png;
+
+<!-- LEVEL 13 -->
+Unstoppable Competitor;5;1;Personal Barrier makes you Unstoppable for up to 2 seconds.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|props=[[Unstoppable]]}};File:Unstoppable_Competitor_Icon.png;
+
+Spell Barrier;5;2;Upon expiration or breaking, Personal Barrier grants Zarya 75 Spell Armor for 3 Seconds, reducing the damage taken from Abilities by 75%.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Spell Armor]]<!--
+-->|notes=<li>Does not stack with other positive Spell Armor effects. Other defensive damage modifiers may stack.}};File:Spell_Barrier_Icon.png;
+
+Endurance Training;5;3;While at or above 75 Energy, Zarya gains 20 Armor, reducing all damage taken by 20%.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Armor]]<!--
+-->|notes=}};File:Endurance_Training_Icon.png;
+
+Pain is Temporary;5;4;{{cooldown|30}}<br>Activate to consume all Energy and gain a Shield that absorbs 0.8% of Zarya's maximum Health per Energy consumed and lasts for 3 seconds. Zarya may only have one personal Shield active on herself at a time.<!--
+-->{{undoc-x|type=Shield<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|cast=Instant}};File:Pain_is_Temporary_Icon.png;
+
+<!-- LEVEL 16 -->
+Cleansing Shield;6;1;Causes Shield Ally to remove all disabling effects and reduces its cooldown by 3 seconds.<!--
+-->{{undoc-x|type=CC removal<!--
+-->|affects=Allied Heroes}};File:Cleansing_Shield_Icon.png;
+
+Gain Train;6;2;Shield Ally now grants an untalented shield to a nearby ally upon impact.<!--
+-->{{undoc-x|type=Shield<!--
+-->|scaling=4.00%<!--
+-->|affects=Allied Heroes<!--
+-->|props=[[Bounce]]<!--
+-->|radius=8.0<!--
+-->|notes=<li>Prioritizes the closest allied Hero to the primary target of <i>Shield Ally</i>.}};File:Gain_Train_Icon.png;
+
+Born in Battle;6;3;While at or above 75 Energy, Zarya's cooldowns regenerate 25% faster.;File:Born_in_Battle_Icon.png;
+
+<!-- LEVEL 20 -->
+Gravity Kills;7;1;Increases Graviton Surge's duration by 1 second and it Silences Heroes caught in its area.<!--
+-->{{undoc-x|type=Crowd control<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Silence]]<!--
+-->|notes=}};File:Gravity_Kills_Icon.png;
+
+Clear Out;7;2;Reduce Expulsion Zone's cooldown by 25 seconds and increase its duration by 1.5 seconds.;File:Clear_Out_Icon.png;
+
+Grenadier;7;3;All Particle Grenade charges are returned at once.;File:Grenadier_Icon.png;
+
+Unyielding Defender;7;4;{{cooldown|60}}<br/>Activate to reset the cooldowns of Personal Barrier and Shield Ally.<!--
+-->{{undoc-x|type=Active<!--
+-->|affects=Abilities<!--
+-->|target=No target<!--
+-->|cast=Instant<!--
+-->|notes=}};File:Unyielding_Defender_Icon.png;
+
+}}
+<noinclude>
+{{Scaling table/start|{{#var:health}}|{{#var:health scaling}}|{{#var:health regen}}|{{#var:health regen scaling}}|{{#var:attack damage}}|{{#var:attack damage scaling}}}}
+{{Scaling table/slot|Particle Grenade|75|0.04}}
+{{Scaling table/slot|Personal Barrier|560|0.04}}
+{{Scaling table/slot|Shield Ally|420|0.04}}
+{{Scaling table/slot|Expulsion Zone (single)|124|0.04|10}}
+{{Scaling table/slot|Expulsion Zone (per second)|248|0.04|10}}
+{{Scaling table/slot|Graviton Surge (single)|15|0.04|10}}
+{{Scaling table/slot|Graviton Surge (per second)|30|0.04|10}}
+{{Scaling table/slot|To the Limit|30|0.04|1}}
+{{Scaling table/slot|I Am the Strongest|140|0.04|4}}
+{{Scaling table/slot|Pinpoint Accuracy (bonus)|30|0.04|7}}
+{{Scaling table/slot|Explosive Barrier|110|0.04|7}}
+{{Scaling table/slot|Gain Train|420|0.04|16}}
+{{Scaling table/end}}
+</noinclude>

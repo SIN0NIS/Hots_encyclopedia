@@ -1,0 +1,229 @@
+{{hero data
+| name = Muradin
+| date = March 13, 2014
+| price = 4000
+| title = Mountain King
+| role = Tank
+| franchise = Warcraft
+| info = A sturdy Tank who can do well in a multitude of situations.
+| lore = Once a mentor to Prince Arthas, Muradin was unable to prevent his corruption. After recovering from a mild case of amnesia, he is now the leader of the Bronzebeard clan after the "diamond-ization" of his brother King Magni.
+| difficulty = Easy
+| melee = True
+| health = 2765
+| healthRegen = 5.7617
+| resource = 500
+| resourceType = Mana
+| armor = 0
+| attackSpeed = 1.11
+| attackRange = 1
+| attackDamage = 88
+| healthScaling = 0.04
+| regenScaling = 0.04
+| adamageScaling = 0.04
+| unitRadius = 0.8125
+| icon = File:Muradin_Icon.png
+| skills = 
+Second Wind;Trait;File:Second_Wind_Icon.png;Muradin restores 55 Health per second when he has not taken damage for 4 seconds. When below 40% Health, increased to 111 Health per second.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=4.00%<!--
+-->|affects=Self<!--
+-->|prop1=Tickrate|val1=1.0 per second}};;;trait;False
+
+Storm Bolt;Q;File:Storm_Bolt_Icon.png;Throw a hammer, dealing 110 damage to the first enemy hit and Stunning them for 1.25 seconds.<p>{{quest|Basic Attack enemies affected by Stuns, Slows, or Roots. Slowed or Rooted enemies grant 1 stack. Stunned enemies provide 2 stacks.|Upon hitting 40 targets, Storm Bolt pierces to hit an additional target, and Muradin's Basic Attacks reduce the cooldown of Storm Bolt by 0.5 seconds.}}<p>{{reward|Upon hitting 160 targets, Storm Bolt's range is increased by 50%, width increased by 100%, and now pierces all targets.}}<!--
+-->{{undoc-x|type=Spell Damage, Crowd control, Cooldown reduction, Mana restoration<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Attack modifier]], (reward), [[Clamping]], [[Skillshot]], [[Stun]]<!--
+-->|cast=0.15 + 0 seconds<!--
+-->|range=8.75<!--
+-->|hitbox=1.25 x 2.0<!--
+-->|missile=25<!--
+-->|notes=<li>The cooldown reduction and Mana restoration are also gained upon reaching level 10.}};10;45;;False
+
+Thunder Clap;W;File:Thunder_Clap_Icon.png;Blast nearby enemies for 96 damage and Slow them 30% for 2.5 seconds. Heroes hit also have their Attack Speed reduced by 30% for the duration.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=No target<!--
+-->|props=[[Area of Effect]], [[Attack Slow]], [[Slow]]<!--
+-->|cast=0.15 + 0 seconds<!--
+-->|aoe=Circle<!--
+-->|radius=3.0 <sup>(1</sup><!--
+-->|notes=<li><sup>1)</sup> Extended by Muradin's unit radius.<li>Does not stack with itself. Subsequent applications refresh the duration.<li>Attack Slow stacks additively with other effects that can affect the target Hero's Attack Speed.}};8;50;;False
+
+Dwarf Toss;E;File:Dwarf_Toss_Icon.png;Leap to target location, dealing 59 damage to enemies on landing. Upon leaping, gain 30 Armor for 2 seconds, reducing damage taken by 30%.<!--
+-->{{undoc-x|type=Spell Damage / Defensive damage modifier, Movement: [[Launch]]<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Armor]] [[Clamping]], Self-castable<!--
+-->|cast=Instant<!--
+-->|range=8.0<!--
+-->|radius=2.0<!--
+-->|missile=30}};10;55;;False
+
+Avatar;R;File:Avatar_Icon.png;Transform for 20 seconds, gaining 1000 Health.<!--
+-->{{undoc-x|type=Bonus Health<!--
+-->|scaling=4.00%<!--
+-->|affects=Self<!--
+-->|notes=<li>''Avatar'' also increases Muradin's Basic Attack range by 1.0 while active.<li>Increases both current and maximum Health by given amount. Upon expiration, only maximum Health gets reduced (still capping the current Health at the maximum amount).}};90;80;heroic;False
+
+Haymaker;R;File:Haymaker_Icon.png;Stun target enemy Hero, and wind up a punch dealing 319 damage and knocking the target back, hitting enemies in the way for 319 damage and knocking them aside.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemy Heroes (primary) / Enemies (secondary)<!--
+-->|target=Unit target<!--
+-->|props=[[Area of Effect]] (secondary), [[Knockback]], [[Stationary channel]], [[Stun]] (primary)<!--
+-->|cast=0 + CH + 0.5 seconds<!--
+-->|range=1.0<!--
+-->|prop1=Channel time|val1=0.3125 seconds<!--
+-->|prop2=Knockback duration|val2=<br>- Primary: 0.375 seconds<br>- Secondary: 0.375 seconds<!--
+-->|prop3=Knockback speed|val3=<br>- Primary: 31<br>- Secondary: 14<!--
+-->|prop4=Secondary hitbox|val4=4.05 x 2.35<!--
+-->|notes=<li>Stun is instant, but primary Knockback and damage are slightly delayed. Interrupting the Ability during this delay puts it on full cooldown.<li>Cast is also interrupted if the target moves farther than 3 range from Muradin.<li>Primary Knockback can launch the unit through Terrain and Structures.<li>Can be cast on [[Unstoppable]] enemies, but only deals damage to them.}};40;60;heroic;False
+
+| talents = <!-- LEVEL 1 -->
+
+Dwarf Block;1;1;Casting Dwarf Toss grants 3 charges of Block. Each Block charge grants 75 Physical Armor against a single enemy Hero Basic Attack, reducing the damage taken by 75%.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Block]], [[Physical Armor]]<!--
+-->|notes=<li>Can store up to 3 charges of Block.<li>Does not stack with itself or other positive Physical Armor effects. Other defensive damage modifiers may stack.}};File:Dwarf_Block_Icon.png;
+
+Third Wind;1;2;Increases Health Restoration rate to 90 per second, and raises Health threshold to 60% Health for improved 180 per second Restoration.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=4.00%<!--
+-->|affects=Self}};File:Third_Wind_Icon.png;
+
+Give 'em the Axe!;1;3;Attacking a Hero that is Stunned, Rooted, or Slowed increases Muradin's Basic Attack damage by 40% for 3 seconds.<!--
+-->{{undoc-x|type=Offensive damage modfier<!--
+-->|affects=Self<!--
+-->|props=[[Attack Modifier]]<!--
+-->|notes=<li>Damage bonus stacks additively with other offensive damage modifiers that can affect Muradin's Basic Attack damage.}};File:Give_'em_the_Axe!_Icon.png;
+
+<!-- LEVEL 4 -->
+Sledgehammer;2;1;Storm Bolt deals 500% damage to non-Heroic enemies. Stormbolt cooldown is reduced by 1.5 seconds.<!--
+-->{{undoc-x|type=Offensive damage modifier, Cooldown reduction<!--
+-->|affects=Ability<!--
+-->|notes=}};File:Sledgehammer_Icon.png;
+
+Reverberation;2;2;Increases the Attack Speed Slow of Thunder Clap from 30% to 50% and the duration from 2.5 seconds to 3.5 seconds. Each enemy Hero hit reduces your Heroic Ability cooldown by 5%.;File:Reverberation_Icon.png;
+
+Thunder Burn;2;3;Hitting an enemy Hero with Thunder Clap triggers a second explosion 2 seconds later in the same location that deals 72 damage.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=-<!--
+-->|affects=Enemies<!--
+-->|prop1=Damage|val1=72<!--
+-->|notes=<li>The secondary clap benefits from all talents affecting ''Thunder Clap''.<li>Slows from second explosion do not stack with first's. Subsequent applications refresh the duration.}};File:Thunder_Burn_Icon.png;
+
+<!-- LEVEL 7 -->
+Perfect Storm;3;1;Storm Bolt's cooldown is reset and 25 Mana is refunded if an enemy dies within 3 seconds of being hit by it. This effect has an 8.5 second cooldown.<!--
+-->{{undoc-x|type=Cooldown reset, Mana restoration<!--
+-->|scaling=-<!--
+-->|affects=Ability<!--
+-->|props=[[Attack modifier]]<!--
+-->|notes=}};File:Perfect_Storm_Icon.png;
+
+Heavy Impact;3;2;Enemies hit by Dwarf Toss are Slowed by 80% for 1.5 seconds.<!--
+-->{{undoc-x|type=Crowd control<!--
+-->|affects=Enemies<!--
+-->|props=[[Slow]]}};File:Heavy_Impact_Icon.png;
+
+Skullcracker;3;3;Every 3rd Basic Attack against the same enemy deals 90% bonus damage and Stuns them for 0.25 seconds.<!--
+-->{{undoc-x|type=Offensive damage modifier, Crowd control<!--
+-->|affects=Self<!--
+-->|props=[[Attack Modifier]], [[Stun]]<!--
+-->|notes=<li>The counter is reset if the target has not been hit by Muradin's Basic Attacks in the last 5 seconds.<li>Damage bonus stacks additively with other offensive damage modifiers that can affect Muradin's Basic Attack damage.}};File:Skullcracker_Icon.png;
+
+<!-- LEVEL 10 -->
+Avatar;4;1;{{cooldown|90}}<br/>Transform for 20 seconds, gaining 1000 Health.;File:Avatar_Icon.png;
+Haymaker;4;2;{{cooldown|40}}<br/>Stun target enemy Hero, and wind up a punch dealing 319 damage and knocking the target back, hitting enemies in the way for 319 damage and knocking them aside.;File:Haymaker_Icon.png;
+
+<!-- LEVEL 13 -->
+Bronzebeard Rage;5;1;Deal 15 damage per second to nearby enemies and heal for 75% of the damage dealt. Hitting an enemy Hero with Storm Bolt increases this damage by 200% for 3 seconds.<!--
+-->{{undoc-x|type=Spell Damage / Healing<!--
+-->|scaling=4.00% / -<!--
+-->|affects=Enemies / Self<!--
+-->|radius=3.5<!--
+-->|props=[[Lifesteal]]<!--
+-->|tickrate= 1.0 per second<!--
+-->|notes=<li>''Bronzebeard Rage'' is inactive while [[mount]]ed.<li>''Bronzebeard Rage'' does not affect unaggroed neutral Mercenaries.<li>Damaging enemy Heroes under their Structures with ''Bronzebeard Rage'' does not draw tower aggro.<li>Damage from ''Bronzebeard Rage'' is unaffected by offensive damage modifiers and lifesteal effects from other sources.}};File:Bronzebeard_Rage_Icon.png;
+
+Healing Static;5;2;Muradin heals for 6% of his maximum Health for each Hero hit by Thunder Clap.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=-<!--
+-->|affects=Self}};File:Healing_Static_Icon.png;
+
+Thunder Strike;5;3;Thunder Clap deals 300% damage if only one target is hit.<p>{{Passive}} Increase the duration of Dwarf Toss's Armor by 2 seconds.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|notes=<li>''Thunder Strike'' uses its own base damage value, which is 300% of the original value, causing the percentage to stack '''multiplicatively''' with offensive damage modifiers.<li>''Thunder Strike'' also has its own base value for ''Thunder Burn'' empowered by it.}};File:Thunder_Strike_Icon.png;
+
+<!-- LEVEL 16 -->
+Dwarf Launch;6;1;Increase the range of Dwarf Toss by 30%. Hitting an enemy Hero with Dwarf Toss reduces its cooldown by 1 seconds.<!--
+-->{{undoc-x|prop1=Bonus range|val1=3.2, Cooldown reduction<!--
+-->|notes=<li>Cooldown reduction may occur only once per cast.}};File:Dwarf_Launch_Icon.png;
+
+Imposing Presence;6;2;{{cooldown|20}}<p>Activate to reduce the Attack Speed by 50% and Movement Speed by 20% of nearby Heroes and Summons for 2.5 seconds.<p>{{Passive}} Heroes and Summons that attack your Hero have their Attack Speed Slowed by 20% for 2.5 seconds.<!--
+-->{{undoc-x|type=Crowd control, Status effect<!--
+-->|affects=Enemy Heroes & Summons<!--
+-->|target=No target<!--
+-->|props=[[Area of Effect]], [[Attack Slow]], [[Slow]]<!--
+-->|cast=Instant<!--
+-->|radius=5.0<!--
+-->|notes=<li>Passive is not applied if the enemy Basic Attack misses due to being Blinded.<li>Passive Attack Slow does not stack with itself, nor the active component.<li>Passive and active Attack Slow stack additively with other effects that can affect the target Hero's Attack Speed.}};File:Imposing_Presence_Icon.png;
+
+Stoneform;6;3;{{cooldown|60}}<br/>Activate to heal Muradin for 30% of his maximum Health over 10 seconds. Second Wind is disabled during this time.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|props=[[Heal over time]]<!--
+-->|cast=Instant<!--
+-->|prop1=Tickrate|val1=1.0 (x10)}};File:Stoneform_Icon.png;
+
+<!-- LEVEL 20 -->
+Unstoppable Force;7;1;While active, Avatar grants 20 Armor and causes Muradin's Basic Attack to reduce the cooldowns of Thunder Clap and Dwarf Toss by 0.75 seconds.<!--
+-->{{undoc-x|type=Defensive damage modifier, Cooldown reduction<!--
+-->|affects=Self<!--
+-->|props=[[Armor]], [[Attack Modifier]]<!--
+-->|notes=<li>Does not stack with other positive armor effects. Other defensive damage modifiers may stack.}};File:Unstoppable_Force_Icon.png;
+
+Grand Slam;7;2;Haymaker gains a 2nd charge and its damage is increased by 25%. If a Hero dies within 3 seconds of being hit by Haymaker, instantly gain 1 charge.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|prop1=Charge cooldown|val1=0.75 seconds<!--
+-->|notes=<li>Damage bonus stacks additively with other offensive damage modifiers that can affect <i>Haymaker</i>'s damage.}};File:Grand_Slam_Icon.png;
+
+Hardened Shield;7;4;{{cooldown|60}}<p>Activate to gain 75 Armor for 4 seconds, taking 75% less damage.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|props=[[Armor]], [[Hardened Shield]]<!--
+-->|cast=Instant<!--
+-->|notes=<li>Does not stack with other positive Armor effects. Other defensive damage modifiers may stack.}};File:Hardened_Shield_Icon.png;
+
+Mountain King;7;3;{{cooldown|60}}<p>Thunder Clap and Dwarf Toss have an extra charge.<!--
+-->{{undoc-x|type=Active<!--
+-->|affects=Abilities<!--
+-->|target=No target<!--
+-->|props=[[Rewind]]<!--
+-->|cast=Instant}};File:Thunder_Burn_Icon.png;
+}}
+
+<noinclude>
+{{Scaling table/start|{{#var:health}}|{{#var:health scaling}}|{{#var:health regen}}|{{#var:health regen scaling}}|{{#var:attack damage}}|{{#var:attack damage scaling}}}}
+{{Scaling table/slot|Second Wind|55|0.04}}
+{{Scaling table/slot|Second Wind (low health)|111|0.04}}
+{{Scaling table/slot|Storm Bolt|110|0.04}}
+{{Scaling table/slot|Thunderclap|96|0.04}}
+{{Scaling table/slot|Dwarf Toss|59|0.04}}
+{{Scaling table/slot|Avatar|1000|0.04|10}}
+{{Scaling table/slot|Haymaker|319|0.04|10}}
+{{Scaling table/slot|Third Wind|90|0.04}}
+{{Scaling table/slot|Third Wind (low health)|180|0.04}}
+{{Scaling table/slot|Thunder Burn|72|0.04|7}}
+{{Scaling table/slot|Thunder Strike (base)|288|0.04|13}}
+{{Scaling table/slot|Thunder Strike (Thunder Burn)|216|0.04|13}}
+{{Scaling table/slot|Bronzebeard Rage|15|0.04|13}}
+{{Scaling table/end}}
+</noinclude>

@@ -1,0 +1,252 @@
+{{Hero data
+| name = Imperius
+| date = January 8, 2019
+| price = 10000
+| title = Archangel of Valor
+| role = Bruiser
+| franchise = Diablo
+| info = An all-in Bruiser who leads the charge with strong initiation and single target damage.
+| lore = Leader of the Angiris Council and Aspect of Valor, Imperius has valiantly led the armies of the High Heavens to innumerous victories over the demons of the Burning Hells. While his methods are exact and severe, there is no greater defender of righteousness in the entirety of creation.
+| difficulty = Medium
+| melee = Yes
+| health = 2375
+| healthRegen = 4.95
+| resource = 500
+| resourceType = Mana
+| armor = 0
+| attackSpeed = 0.83
+| attackRange = 2.0
+| attackDamage = 126
+| healthScaling = 0.04
+| regenScaling = 0.04
+| adamageScaling = 0.04
+| unitRadius = 0.8125
+| icon =
+| skills = Valorous Brand;D;File:Valorous_Brand_Icon.png;Each Basic Ability marks enemy Heroes hit for 10 seconds. Basic Attacks consume the target's marks, dealing 20% bonus damage per mark and healing for 75 per mark.<!--
+-->{{undoc-x|type=Offensive damage modifier, Healing<!--
+-->|scaling=4.00% (heal)<!--
+-->|affects=Self<!--
+-->|props=[[Attack Modifier]]<!--
+-->|notes=<li>Marks are consumed even if Imperius is [[Blind]]ed or if the target is Evading. The healing still occurs, though all of the damage misses except from specific Talents.<li>A Hero can not be marked by the same Basic Ability more than once at a time. Further applications refresh the duration.<li>Stacks additively with itself and other Physical Damage modifiers.}};;;trait;False
+
+Celestial Charge;Q;File:Celestial_Charge_Icon.png;Lunge toward a targeted direction and stab, dealing 35 damage. If an enemy Hero is hit, Channel to Stun for 1 second and deal 80 additional damage when it finishes.<!--
+-->{{undoc-x|type=Spell Damage / Crowd control / Movement: [[Launch]]<!--
+-->|scaling=4.00%|affects=Enemies / Enemy Heroes / Self<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Stationary channel]], [[Stun]]<!--
+-->|cast=0.125 + Ch+0.1875 seconds<!--
+-->|range=4.0<!--
+-->|aoe=Rectangle<!--
+-->|width=1.25<!--
+-->|height=5.5<!--
+-->|prop1=Leap speed|val1=14<!--
+-->|prop2=Stun tickrate|val2=16 / second (x16)<!--
+-->|notes=<li>Imperius moves with a speed of 14 and is able to pass through [[terrain]].<li>Enemy Heroes hit are snapped toward the center line of the area within 1.5 - 4.5 units in front of Imperius.<li>If the Channel lasts for its full duration, the targets are Stunned for an additional 0.25 seconds while the bonus damage is being dealt.}};10;40;;False
+
+Solarion's Fire;W;File:Solarion's_Fire_Icon.png;Release a fiery wave that deals 110 damage. Enemies hit by the center take 50% bonus damage and are Slowed by 40% for 3 seconds.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Skillshot]] (piercing), [[Slow]]<!--
+-->|cast=0.125 + 0 seconds<!--
+-->|range=10<!--
+-->|hitbox=3.75 x 1.5<!--
+-->|missile=12.0<!--
+-->|prop1=Center area width|val1=0.75<!--
+-->|notes=<li>The wave has a sight range of 2.<li>Center damage bonus stacks additively with offensive damage modifiers that can affect <i>Solarion's Fire</i>'s damage.}};8;50;;False
+
+Molten Armor;E;File:Molten_Armor_Icon.png;Shroud Imperius in flames for 3 seconds, striking a nearby enemy for 19 damage every 0.25 seconds. Imperius heals for 50% of the damage dealt, increased to 100% against Heroes. Strikes 2 additional targets if no Heroes are in range, and restores 1 Mana for each strike on expiration.<!--
+-->{{undoc-x|type=Spell Damage / Healing<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies / Self<!--
+-->|target=Automatic <sup>(1</sup><!--
+-->|props=[[Lifesteal]]<!--
+-->|cast=Instant<!--
+-->|aoe=Circle<!--
+-->|radius=4.0<!--
+-->|tickrate=4.0 per second (x13)<!--
+-->|notes=<li><sup>1)</sup> Targets one enemy per tick prioritizing enemies currently Stunned by ''Celestial Charge'', then the closest enemies, prioritizing Heroes only if equidistant from Imperius. If there are multiple targets within the search area, the same target can not be hit again until all or up to 4 different targets in the area have been hit.<li>Can be activated while leaping or channeling ''Celestial Charge''.<li>Molten Armor will only hit [[revealed]]/[[visible]] targets.}};12;75;;False
+
+Angelic Armaments;R;File:Angelic_Armaments_Icon.png;Summon a ring of blazing swords that grants 850 Shield for 3 seconds. If the Shield lasts the full duration, this Ability can be reactivated within 5 seconds to launch 6 swords toward an area, each dealing 140 damage to the first enemy hit.<!--
+-->{{undoc-x|type=Shield / Spell Damage<!--
+-->|scaling=4.00% (both)<!--
+-->|affects=Enemies / Self<!--
+-->|target=No target / Point target<!--
+-->|props=[[Skillshot]]<!--
+-->|cast=Instant / 0.125 + 0 seconds<!--
+-->|range=11.25<!--
+-->|hitbox=1.0 x 1.5<!--
+-->|missile=28<!--
+-->|prop1=Sword spacing|val1=1.5<!--
+-->|prop2=Launch delay|val2=0.3125 seconds<!--
+-->|notes=}};70;70;heroic;True
+
+Wrath of the Angiris;R;File:Wrath_of_the_Angiris_Icon.png;After 0.75 seconds, charge in the target direction, lifting the first enemy Hero hit into the Heavens. While in the air, Imperius can steer the landing location by moving. After 2 seconds, slam the target into the ground, dealing 250 damage to them, increased by 20% for each Valorous Brand mark on them when landing, and Stunning them for 1 second.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control / Movement: [[Launch]], Status effect<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemy Heroes (damage, cc) / Enemy Heroes & Self (status effect)<!--
+-->|target=Point target<!--
+-->|props=[[Channeled cast]] (stationary), [[Skillshot]], [[Stasis]] (in air), [[Stun]], [[Unstoppable]] (dash)<!--
+-->|cast=0.75 + 0 seconds<!--
+-->|range=6<!--
+-->|hitbox=2.0 x 2.0<!--
+-->|prop1=Leap speed|val1=30<!--
+-->|prop2=Hitbox displacement|val2=1 (forward)<!--
+-->|prop3=Air movement speed|val3=5<!--
+-->|notes=<li>Interrupting the Ability during its cast puts it on a 10-second cooldown.<li>Doesn't affect [[Vehicles]].<li>While in air both Heroes are put in [[Stasis]]. In addition to usual effects of Stasis, Imperius and the target are removed from ground plane (disjoints certain projectiles), have no collision, cannot regenerate Health, Mana, Energy or Shields and cannot be seen on the minimap or revealed.<li>The target is affected by a hostile Stasis, causing some delayed healing Abilities to be prevented.<li>Landing location can't be steered over unpathable [[terrain]].<li>Upon landing, the target enemy Hero is placed at the center of the indicator, facing Imperius. Imperius will be positioned 2 units in front of the target, so that the target is positioned in the direction he was moving toward before landing.<li>Valorous Brand marks placed by Imperius will not be removed when launching the target into the air. Marks can still expire while in the air}};80;80;heroic;False
+
+| talents =
+<!-- LEVEL 1 -->
+Impaling Light;1;1;Celestial Charge deals 150% more damage to Heroes, reduced by 25% for each additional Hero hit. For each Valorous Brand on the target when Celestial Charge's Stun completes, reduce its cooldown by 1 second.<p>{{passive}} Reduce Celestial Charge's cooldown by 1.5 seconds, and its Mana cost from 40 to 30.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|notes=<li>Stacks additively with itself and other offensive damage modifiers that can affect <i>Celestial Charge</i>'s damage.}};File:Impaling_Light_Icon.png;
+
+Consuming Flame;1;2;Increase the center damage of Solarion's Fire by an additional 125% and its Slow amount by 15%. The first enemy Hero hit by Solarion's Fire refunds 30 Mana.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|notes=<li>Stacks additively with other offensive damage modifiers affecting <i>Solarion's Fire</i>'s damage.}};File:Consuming_Flame_Icon.png;
+
+Burn The Impure;1;3;Consuming a Valorous Brand mark deals bonus damage equal to 2.5% of the Hero's maximum Health.<!--
+-->{{undoc-x|type=[[Percent damage]]<!--
+-->|scaling=-<!--
+-->|affects=Ability<!--
+-->|notes=<li>This bonus damage is dealt even if Imperius is [[Blind]]ed, or if the target is Evading.}};File:Burn_The_Impure_Icon.png;
+
+<!-- LEVEL 4 -->
+Sovereign Armor;2;1;Molten Armor grants 20 Armor for 1.5 seconds. Damaging an enemy Hero with Molten Armor increases the duration of the Armor by 0.5 seconds.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Armor]]<!--
+-->|notes=<li>Does not stack with other positive Armor effects. Other defensive damage modifiers may stack.}};File:Sovereign_Armor_Icon.png;
+
+Battle Hunger;2;2;Increase the healing of Valorous Brand by 80%.<!--
+-->{{undoc-x|type=Bonus healing<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|notes=}};File:Battle_Hunger_Icon.png;
+
+Press Forward;2;3;Gain 10 Armor while being healed by a Regeneration Globe. Damaging an enemy Hero sets the duration of an active Regeneration Globe on Imperius to 8 seconds (unless it is already higher).<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Armor]]<!--
+-->|notes=<li>Does not stack with itself or other positive Armor effects. Other damage modifiers may stack.}};File:Press_Forward_Icon.png;
+
+<!-- LEVEL 7 -->
+Flash of Anger;3;1;Consuming a mark from Celestial Charge deals 150 damage around the target and grants Imperius a 250 point Shield for 4 seconds.<!--
+-->{{undoc-x|type=Spell Damage / Shield<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies / Self<!--
+-->|props=[[Area of Effect]], [[Splash]]<!--
+-->|aoe=Circle<!--
+-->|radius=3<!--
+-->|notes=<li>Also affects the target itself.<li>Enemies cannot be hit by ''Flash of Anger'' more than once per cast.<li>Does not benefit from talents affecting ''Celestial Charge''.<li>Shield does not stack.<li>Damage is dealt and Shield is gained even if Imperius is [[Blind]]ed, or if the target is Evading.}};File:Flash_of_Anger_Icon.png;
+
+Blaze of Glory;3;2;Solarion's Fire leaves a line of scorched earth along its center that explodes after 1.75 seconds for 212 damage, dealing bonus damage with Valorous Brand marks.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|props=[[Area of Effect]]<!--
+-->|aoe=Rectangle<!--
+-->|width=0.75<!--
+-->|height=9.5<!--
+-->|notes=<li>Does not benefit from talents affecting ''Solarion's Fire''.<li>''Valorous Brand'' marks only provide bonus damage. ''Blaze of Glory'' does not interact with any other effects associated with them.<li>''Blaze of Glory'' does not remove ''Valorous Brand'' marks from the targets.<li>Damage bonus stacks additively with other offensive [[damage modifier]]s that can affect <i>''Blaze of Glory</i>'s damage.}};File:Blaze_of_Glory_Icon.png;
+
+Holy Fervor;3;3;{{Cooldown|25}}<br>{{Active}} Activate to reset Imperius's Basic Attack cooldown and cause the next 4 Basic Attacks within 10 seconds to cleave for 30% additional damage.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|props=[[Attack Modifier]], [[Cleave]]<!--
+-->|cast=Instant<!--
+-->|aoe=Radial<!--
+-->|radius=3.5<!--
+-->|arc=180 degrees<!--
+-->|notes=<li>Consumes ''Valorous Brand'' marks from all targets hit.<li>Cooldown and duration start upon the first attack.<li>Duration limit also applies to passive charges and starts from the first Basic Attack after casting ''Molten Armor''.<li>May store up to 6 Basic Attacks combining the active and passive effects, but passive charges are refreshed every time ''Molten Armor'' is cast and cannot by themselves go past 2.<li>Stacks additively with other damage modifiers affecting Imperius's Physical Damage output.}};File:Holy_Fervor_Icon.png;
+
+<!-- LEVEL 10 -->
+Angelic Armaments;4;1;{{Cooldown|70}}<br>Summon a ring of blazing swords that grants 850 Shield for 3 seconds. If the Shield lasts the full duration, this Ability can be reactivated within 5 seconds to launch 6 swords toward an area, each dealing 140 damage to the first enemy hit.;File:Angelic_Armaments_Icon.png;
+Wrath of the Angiris;4;2;{{Cooldown|80}}<br>After 0.75 seconds, charge in the target direction, lifting the first enemy Hero hit into the Heavens. While in the air, Imperius can steer the landing location by moving. After 2 seconds, slam the target into the ground, dealing 375 damage and Stunning them for 1 second.;File:Wrath_of_the_Angiris_Icon.png;
+
+<!-- LEVEL 13 -->
+Pathetic Mortals;5;1;Stunning enemy Heroes with Celestial Charge reduces their Movement Speed by 25% and damage by 50% for 4 seconds.<!--
+-->{{undoc-x|type=Crowd control, Offensive damage modifier<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Slow]]<!--
+-->|notes=<li>Debuff is applied immediately once the Stun ends, regardless of whether Imperius finished the channel or not.<li>Damage debuff stacks additively with other offensive damage modifiers affecting the target's damage output.}};File:Pathetic_Mortals_Icon.png;
+
+Divine Rage;5;2;Consuming a Valorous Brand mark reduces the cooldown of Molten Armor by 1 second.;File:Divine_Rage_Icon.png;
+
+Heat of Battle;5;3;Increase Molten Armor's healing against Heroes by 2% for every 1% of health Imperius is Missing.<!--
+-->{{undoc-x|type=Healing modifier|affects=Ability<!--
+-->|notes=<li>Stacks additively with baseline Hero bonus.}};File:Heat_of_Battle_Icon.png;
+
+<!-- LEVEL 16 -->
+Celestial Swiftness;6;1;Gain 20% Movement Speed for 5 seconds after casting Celestial Charge. Gain 40% Attack Speed for 5 seconds for each enemy Hero stunned with Celestial Charge.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|props= [[Attack Speed]], [[Movement speed]]<!--
+-->|notes=<li>Subsequent application applications refresh the duration.<li>Attack speed stacks up to 10 times to a maximum of 400% bonus. Movement Speed does not stack.}};File:Celestial_Swiftness_Icon.png;
+
+Melting Touch;6;2;Consuming a Molten Armor mark reduces the target's Armor by 25 for 4 seconds.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Armor reduction]]<!--
+-->|notes=<li>Armor reduction triggers even if Imperius is [[Blind]]ed, or if the target is Evading.<li>Subsequent applications refresh the duration.<li>Does not stack with itself or other negative Armor effects. Other defensive damage modifiers may stack.}};File:Melting_Touch_Icon.png;
+
+Valorous Pursuit;6;3;{{Cooldown|20}}<br>{{Active}} Activate to teleport to an enemy that has been marked by Valorous Brand and gain 25 Armor for 3 seconds.<!--
+-->{{undoc-x|type=Movement: [[Teleport]], Damage modifier: [[Armor]]<!--
+-->|affects=Self<!--
+-->|target=Unit target<!--
+-->|cast=Instant<!--
+-->|range=Global<!--
+-->|notes=<li>Cannot target enemies you have no vision of.<li>Imperius is placed next to the target in the closet direction from his previous location.}};File:Valorous_Pursuit_Icon.png;
+
+<!-- LEVEL 20 -->
+Heavenly Host;7;1;Shields granted by Angelic Armaments no longer expire, and on initial activation, nearby allied Heroes gain a Shield that absorbs 600 damage.<p>If a Shield granted to an allied Hero lasts 3 seconds, it fires 1 sword at a nearby enemy, prioritizing Heroes, dealing 140 damage.<!--
+-->{{undoc-x|type=Shield / Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Allied Heroes / Enemy Heroes<!--
+-->|target=Automatic (closest)<!--
+-->|props=[[Area of Effect]]<!--
+-->|cast=<!--
+-->|aoe=Circle<!--
+-->|prop1=Ally search radius|val1=8.0<!--
+-->|prop2=Enemy search radius|val2=8.0<!--
+-->|notes=<li>Additional swords are only fired from Allied Heroes' Shields that expire without breaking.}};File:Heavenly_Host_Icon.png;
+
+Unrelenting Descent;7;2;Descending from the Heavens restores 30% of Imperius' maximum Health and Mana. Consuming a Valorous Brand reduces the cooldown of Wrath of the Angiris by 10 seconds.;File:Unrelenting_Descent_Icon.png;
+
+Molten Wrath;7;3;Molten Armor's radius is increased by 25% and it always strikes 2 additional targets, even if there are Heroes in range.;File:Molten_Armor_Icon.png;
+
+Brand of Solarion;7;4;Reduce the duration of Valorous Brand to 5 seconds, but it is no longer consumed when triggered.;File:Brand_of_Solarion_Icon.png;
+
+Impervious;7;5;{{Cooldown|75}}<br>{{Active}} Activate to become Unstoppable and gain 75 Spell Armor for 3 seconds. Hitting Heroes with the center of Solarion's Fire reduces this cooldown by 5 seconds.<!--
+-->{{undoc-x|type=Defensive damage modifier, Status effect<!--
+-->|affects=Self<!--
+-->|props=[[Unstoppable]]<!--
+-->|cast=Instant<!--
+-->|notes=}};File:Impervious_Icon.png;
+
+}}
+<noinclude>
+{{Scaling table/start|{{#var:health}}|{{#var:health scaling}}|{{#var:health regen}}|{{#var:health regen scaling}}|{{#var:attack damage}}|{{#var:attack damage scaling}}}}
+{{Scaling table/slot|Celestial Charge (initial)|35|0.04}}
+{{Scaling table/slot|Celestial Charge (finish)|80|0.04}}
+{{Scaling table/slot|Solarion's Fire (edge)|110|0.04}}
+{{Scaling table/slot|Solarion's Fire (center)|150|0.04}}
+{{Scaling table/slot|Molten Armor (single)|19|0.04}}
+{{Scaling table/slot|Molten Armor (per second)|76|0.04}}
+{{Scaling table/slot|Angelic Armaments (shield)|850|0.04|10}}
+{{Scaling table/slot|Angelic Armaments (damage, single)|140|0.04|10}}
+{{Scaling table/slot|Angelic Armaments (damage, x6)|840|0.04|10}}
+{{Scaling table/slot|Wrath of the Angiris|375|0.04|10}}
+{{Scaling table/slot|Unshakable Faith|250|0.04|4}}
+{{Scaling table/slot|Battle Hunger|82|0.04|4}}
+{{Scaling table/slot|Flash of Anger (damage)|150|0.04|7}}
+{{Scaling table/slot|Flash of Anger (shield)|250|0.04|7}}
+{{Scaling table/slot|Blaze of Glory|205|0.04|7}}
+{{Scaling table/slot|Heavenly Host (shield)|600|0.04|20}}
+{{Scaling table/slot|Heavenly Host (damage)|140|0.04|20}}
+{{Scaling table/end}}
+{{DEFAULTSORT:Imperius}}</noinclude>

@@ -1,0 +1,245 @@
+{{hero data
+| name = Junkrat
+| date = October 17, 2017
+| price = 10000
+| title = Junker Demolitionist
+| role = Ranged
+| franchise = Overwatch
+| info = A mobile assassin that bombards the enemy from afar, and sows chaos with traps and mines.
+| lore = The destruction of the Australian omnium left the area an irradiated waste and survivors like Jamison Fawkes were greatly affected by radiation. Now as the explosive-obsessed criminal Junkrat, he is renowned for leaving havoc and bedlam in his wake.
+| difficulty = Medium
+| melee = False
+| health = 1425
+| healthRegen = 2.9687
+| resource = 0
+| resourceType = None
+| armor = 0
+| attackSpeed = 1.00
+| attackRange = 5.5
+| attackDamage = 120
+| healthScaling = 0.04
+| regenScaling = 0.04
+| adamageScaling = 0.04
+| unitRadius = 0.6875
+| icon = File:Junkrat_Icon.png
+| skills = 
+Total Mayhem;Trait;File:Total_Mayhem_Icon.png;Upon dying, drop 5 grenades that explode after 0.75 seconds, each dealing 250 damage to nearby enemies. Deals 75% less damage to [[Structure]]s.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|props=[[Area of Effect]]<!--
+-->|aoe=Circle<!--
+-->|radius=<br/>- Explosion: 2.0<br/>- Drop area: 1.25<!--
+-->|notes=<li>Grenades are dropped at 5 points, randomly selected out of 10 preset locations, around Junkrat's death location over 0.3125 seconds.<li>Junkrat's Basic Attacks [[Splash]], dealing 100% of their damage in 2 radius.}}
+
+Detonate Mine;D;File:Detonate_Mine_Icon.png;Detonate the planted Concussion Mine, dealing 180 damage to nearby enemies and knocking them back. Junkrat can also be affected by Concussion Mine, but takes no damage.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|cast=Instant<!--
+-->|range=Global<!--
+-->|notes=<li>Requires an active ''Concussion Mine''.}};
+
+Frag Launcher;Q;File:Frag_Launcher_Icon.png;Launch a grenade that explodes at the end of its path or upon hitting an enemy, dealing 124 damage to nearby enemies. Grenades can ricochet off of terrain. Deals 50% less damage to [[Structure]]s.<p>Stores up to 4 charges. Frag Launcher's cooldown replenishes all charges at the same time.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Clamping]], [[Skillshot]]<!--
+-->|cast=Instant<!--
+-->|range=<br/>- Launch (max): 10<br/>- Roll: 12.25<!--
+-->|aoe=Circle<!--
+-->|radius=<br/>- Hitbox: 0.5<br/>- Explosion: 2.0<!--
+-->|missile=16 (launch)<!--
+-->|notes=<li>If the grenade lands on unpathable terrain, it explodes immediately without bouncing.<li>Enemies that are immune to skillshots cannot trigger the grenades, but can be damaged by the explosion.<li>Depending on the distance, launched grenades have a flight time of up to 0.625 seconds.<li>Grenades have a set rolling distance regardless of launch distance.<li>Rolling speed gradually decelerates over the distance down to 1.75.}};12 / 0.5;
+
+Concussion Mine;W;File:Concussion_Mine_Icon.png;Place a mine on the ground. Junkrat's Trait can be activated to detonate the mine, dealing 180 damage to nearby enemies and knocking them back. Junkrat can also be affected by Concussion Mine, but takes no damage. Limit 1 active mine.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies, Self<!--
+-->|props=[[Area of Effect]], [[Clamping]], Summon figment, Displacement, [[Daze]]<!--
+-->|cast=Instant<!--
+-->|range=10.5<!--
+-->|aoe=Circle<!--
+-->|radius=2.5<!--
+-->|prop1=Displacement duration|val1=<br/>- Min: 0.75<br/>- Max: 1.0<!--
+-->|prop2=Displacement distance|val2=<br/>- Min: 8.0 <br/>- Max: 14.0<!--
+-->|notes=<li>''Concussion Mine'' takes 0.125-0.75 seconds to reach the target location, based on distance to target point.<li>The mine is Invulnerable and untargetable and lasts indefinitely until detonation or placing another one.<li>''Concussion Mine'' provides vision in 3 radius.<li>The area of effect is visible to enemies.<li>Targets launched by Concussion Mine detonation (including Junkrat himself) are Dazed and can travel over unpathable terrain.<li>Distance and duration of the displacement depend on how far the target is hit from the center of the Mine, with the longest being the farthest.}};16;
+
+Steel Trap;E;File:Steel_Trap_Icon.png;Place a trap on the ground that arms after 2 seconds. Deals 130 damage to the first enemy that walks over it and [[Root]]s them for 2 seconds.<br>Limit 1 active trap.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Non-Structure Enemies<!--
+-->|target=Point target<!--
+-->|props=Summon figment, [[Root]]<!--
+-->|cast=Instant<!--
+-->|range=6.0<!--
+-->|hitbox=1.25 x 1.1<!--
+-->|notes=<li>The trap is Invulnerable and untargetable and lasts indefinitely until triggering or placing another one.<li>Enemy units that do not draw Minion aggro, such as [[Summons#Passive Summons|passive Summons]], do not trigger ''Steel Trap''.<li>''Steel Trap'' provides vision in 5 radius.}};15;
+
+RIP-Tire;R;File:RIP-Tire_Icon.png;Create a motorized bomb with 530 Health that lasts 15 seconds. While active, Junkrat is immobile but gains control of RIP-Tire's movement.<p>RIP-Tire can be reactivated to detonate immediately, knocking nearby enemies back and dealing 720 damage to enemies near the center gradually reduced to 445 to enemies on the edge.<!--
+-->{{undoc-x|type=Summon<!--
+-->|target=Point target<!--
+-->|props=[[Channeled cast]] (stationary), [[Stationary channel]]<!--
+-->|cast=1.0 (ch) + CH + 0 seconds}}<hr/><!--
+
+--><small>'''RIP-Tire'''</small>{{undoc-x|nohr=1<!--
+-->|type=Active<!--
+-->|scaling=4.00% (Health)<!--
+-->|target=Direct control<!--
+-->|prop1=Health|val1=530<!--
+-->|prop2=Basic Attack damage|val2=-<!--
+-->|prop5=Movement Speed|val5=6.5<!--
+-->|prop6=Sight radius|val6=8.0<!--
+-->|prop7=Leash radius|val7=-|<!--
+-->prop8=Unit radius|val8=0.75<!--
+-->|notes=<li>Interrupting the ability during its windup puts it on a 10 second cooldown.<li>While controlling RIP-Tire, Junkrat has access to ''Jump'' and ''Detonate RIP-Tire'' abilities.<li>RIP-Tire does not detonate if it is destroyed or has expired.<li>If Junkrat's channel gets interrupted, RIP-Tire instantly expires without detonating.<li>The durations of [[crowd control]] effects against RIP-Tire are reduced by 75%.}};75;
+
+RIP-Tire - Jump;Q;File:RIP-Tire_Jump_Icon.png;Activate to make RIP-Tire jump. Can be used to pass over terrain and Structures.<!--
+-->{{undoc-x|type=Movement: [[Launch]]<!--
+-->|affects=Self (RIP-Tire)<!--
+-->|target=No target<!--
+-->|cast=Instant<!--
+-->|range=6.5<!--
+-->|notes=<li>This Ability is available while controlling RIP-Tire.}};2;
+
+RIP-Tire - Detonate RIP-Tire;R;File:Detonate_RIP-Tire_Icon.png;Instantly detonate the RIP-Tire, knocking nearby enemies back and dealing 720 damage to enemies near the center gradually reduced to 445 to enemies on the edge.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=No target<!--
+-->|props=[[Area of Effect]], [[Knockback]]<!--
+-->|cast=Instant<!--
+-->|aoe=Circle<!--
+-->|radius=6.0|prop1=Knockback duration|val1=0.1875 seconds<!--
+-->|prop2=Knockback speed|val2=20<!--
+-->|notes=<li>This Ability is available while controlling RIP-Tire.<li>Base damage is reduced linearly based on the distance to the center.}};;
+
+Rocket Ride;R;File:Rocket_Ride_Icon.png;After 1.25 seconds, Junkrat launches into the air. While in the air, he can steer the landing location by moving.<p>After 3.75 seconds, Junkrat lands, dealing 935 damage to nearby enemies and activating Total Mayhem. 5 seconds after landing, Junkrat reappears at the Hall of Storms and gains 150% additional Movement Speed until dismounted.<!--
+-->{{undoc-x|type=Spell Damage / Movement: [[Teleport]], Status effect<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies / Self<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Channeled cast]] (stationary), [[Clamping]], [[Stasis]]<!--
+-->|cast=1.25 (ch) + 5.0 seconds<!--
+-->|range=10<!--
+-->|aoe=Circle<!--
+-->|radius=3.0<!--
+-->|prop1=Movement Speed in air|val1=6.0<!--
+-->|prop2=Sight radius in air|val2=5.0<!--
+-->|notes=<li>Interrupting the Ability during its windup puts it on a 10 second cooldown.<li>After successfully casting ''Rocket Ride'', Junkrat is put in Stasis until he re-emerges. In addition to usual effects of Stasis, Junkrat is removed from ground plane (disjoints certain projectiles) and has no collision. While waiting to respawn he also cannot regenerate Health, Mana, Energy or Shields and cannot be seen on the minimap or revealed.}};75;
+
+| talents = <!-- LEVEL 1 -->
+Tricky Shuffles;1;1;While Frag Launcher has no charges left, gain 10% Movement Speed and his Basic Attacks deal 15% bonus damage.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Self<!--
+-->|notes=<li>Damage bonus stacks additively with other offensive damage modifiers affecting Junkrat's Basic Attack damage.}};File:Tricky_Shuffles_Icon.png;
+
+Extra-Wound Timers;1;2;The final grenade from Frag Launcher deals 100% bonus damage, and Frag Launcher grenades last an additional 2 seconds before automatically detonating.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|notes=<li>Damage bonus stacks additively with other offensive damage modifiers affecting <i>Frag Launcher</i>'s damage.}};File:Extra-Wound_Timers_Icon.png;
+
+Blow 'Em Up!;1;3;Hitting an enemy Hero with Concussion Mine or Steel Trap causes Junkrat to deal 25% more damage with Basic Attacks and Basic Abilities for 6 seconds.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Self<!--
+-->|notes=<li>Subsequent applications refresh the duration.<li>Damage bonus stacks additively with other offensive damage modifiers affecting Junkrat's damage output.}};File:Blow_'Em_Up!_Icon.png;
+
+<!-- LEVEL 4 -->
+Taste For Explosions;2;1;{{Questonly|Hitting a Hero with Frag Launcher increases its damage by 0.2%, up to 40%.}}<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|notes=<li>Damage bonus stacks additively with itself and other offensive damage modifiers affecting <i>Frag Launcher</i>'s damage.}};File:Taste_For_Explosions_Icon.png;
+
+BOOM POW;2;2;Hitting an enemy Hero with Concussion Mine reduces its cooldown by 10 seconds.<!--
+-->{{undoc|<hr/><li>Cooldown reduction can trigger only once per cast.}};File:BOOM_POW_Icon.png;
+
+Chattering Teeth;2;3;Steel Traps will slowly chase nearby enemy Heroes.<!--
+-->{{undoc-x|prop1=Chase radius|val1=4.5<!--
+-->|prop2=Movement Speed|val2=2.0<!--
+-->|notes=}};File:Chattering_Teeth_Icon.png;
+
+<!-- LEVEL 7 -->
+Bogged Down;3;1;Enemies launched by Concussion Mine are Slowed by 40% for 2.5 seconds upon landing.<!--
+-->{{undoc-x|type=Crowd control<!--
+-->|affects=Enemies<!--
+-->|props=[[Slow]]<!--
+-->|notes=}};File:Bogged_Down_Icon.png;
+
+Sticky Wicket;3;2;Enemy Heroes who are hit by Steel Trap are Silenced for 2 seconds.<!--
+-->{{undoc-x|type=Crowd control<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Silence]]<!--
+-->|notes=}};File:Sticky_Wicket_Icon.png;
+
+Dirty Trickster;3;3;Increase the explosion radius of Total Mayhem by 20%. When Junkrat is Stunned, Rooted, or damaged by an enemy Hero while below 50% Health, he uses Total Mayhem, dropping 5 grenades at his feet that explode.<p>This effect has a 20 second cooldown.<!--
+-->{{undoc-x|prop1=Bonus explosion radius|val1=0.4<!--
+-->|notes=}};File:Dirty_Trickster_Icon.png;
+
+<!-- LEVEL 10 -->
+RIP-Tire;4;1;{{Cooldown|75}}<br>Create a motorized bomb with 530 Health that lasts 15 seconds. While active, Junkrat is immobile but gains control of RIP-Tire's movement.<p>RIP-Tire Can be reactivated to detonate immediately, knocking nearby enemies back and dealing 720 damage to enemies near the center gradually reduced to 445 to enemies on the edge.;File:RIP-Tire_Icon.png;
+Rocket Ride;4;2;{{Cooldown|75}}<br>After 1.25 seconds, Junkrat launches into the air. While in the air, he can steer the landing location by moving.<p>After 3.75 seconds, Junkrat lands, dealing 935 damage to nearby enemies and activating Total Mayhem. 5 seconds after landing, Junkrat reappears at the Hall of Storms and gains 150% additional Movement Speed until dismounted.;File:Rocket_Ride_Icon.png;
+
+<!-- LEVEL 13 -->
+Bombs Away;5;1;Increase Junkrat's Basic Attack range by 1. Frag Launcher grenades fired within 0.5 seconds of using a Basic Attack deal 30% bonus damage.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|notes=<li>Stacks additively with other offensive damage modifiers affecting <i>Frag Launcher</i>'s damage.}};File:Bombs_Away_Icon.png;
+
+Ripper Air;5;2;Junkrat is knocked back 50% farther by Concussion Mine. Additionally, Concussion Mine's cooldown is reduced by 12 seconds if only Junkrat is hit.;File:Ripper_Air_Icon.png;
+
+Gotta Trap 'Em All!;5;3;Reduce Steel Trap's cooldown by 5 seconds and increase the maximum number of active traps to 2.<!--
+-->{{undoc|<hr/><li>A Steel Trap cannot be placed within 4 radius from the center of another Steel Trap.}};File:Gotta_Trap_'Em_All!_Icon.png;
+
+Big As;5;4;Steel Trap now only hits Heroes, and Heroes hit have their Armor reduced by 15 for 3 seconds. Increase Steel Trap's radius and damage by 50%.<!--
+-->{{undoc-x|type=Defensive damage modifier / Offensive damage modifier<!--
+-->|affects=Enemy Heroes / Ability<!--
+-->|props=[[Armor]]<!--
+-->|prop1=Bonus hitbox width|val1=0.625<!--
+-->|prop2=Bonus hitbox height|val2=0.55<!--
+-->|notes=<li>Does not stack with other negative [[Armor]] effects. Other defensive damage modifiers may stack.<li>Damage bonus stacks with other offensive damage modifiers affecting <i>Steel Trap</i>'s damage.}};File:Big_As_Icon.png;
+
+<!-- LVEVEL 16 -->
+Burst Fire;6;1;Frag Launcher fires all of its charges in a continuous burst and its cooldown is reduced by 6 seconds, but it loses 1 maximum charge.<!--
+-->{{undoc-x|nohr=1<!--
+-->|notes=<li>All three grenades benefit from ''Bombs Away'', if the first was fired within the time window.}};File:Burst_Fire_Icon.png;
+
+Endless Nades;6;2;Hitting an enemy Hero with Frag Launcher reduces its cooldown by 1.5 seconds.<!--
+-->{{undoc|<hr><li>Cooldown reduction can occur multiple times per grenade.}};File:Endless_Nades_Icon.png;
+
+Spread Volley;6;3;{{Cooldown|30}}<br>{{Active}} Activate to make Frag Launcher fire 2 additional grenades in a spread. Works for up to 4 total charges, or until Frag Launcher runs out of charges.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies|target=No target<!--
+-->|notes=<li>Cooldown starts when all affected charges are fired.<li>Extra grenades benefit from all talents affecting ''Frag Launcher''.}};File:Spread_Volley_Icon.png;
+
+<!-- LEVEL 20 -->
+Extra Oomph;7;1;Increase RIP-Tire's knockback distance by 50%, and its cooldown is reduced by 25 seconds for each enemy Hero hit.<!--
+-->{{undoc-x|prop1=Bonus knockback duration|val1=0.125<!--
+-->|notes=}};File:Extra_Oomph_Icon.png;
+
+Puckish Scamp;7;2;Junkrat also gains the Ability RIP-Tire. Each time he uses this Heroic, it swaps to the alternate ability. Each Heroic has its own separate cooldown.<p>{{passive}} Reduce both Heroic cooldowns by 20 seconds.<!--
+-->{{undoc-x|nohr=1<!--
+-->|notes=<li>Does not switch to ''RIP-Tire'' until ''Rocket Ride'' is used again, if the talent is picked while it's on cooldown.}};File:Puckish_Scamp_Icon.png;
+
+Cannonball!;7;3;Increase the radius and explosion radius of grenades from Basic Attacks and Frag Launcher by 50%.<!--
+-->{{undoc-x|prop1=Bonus hitbox radius|val1=0.5<!--
+-->|prop2=Bonus explosion radius|val2=1.0<!--
+-->|notes=}};File:Cannonball!_Icon.png;
+
+I Hate Waiting!;7;4;Junkrat always rides his Rocket Ride Mount, which grants 150% increased Movement Speed, but his Mount cooldown is increased to 8 seconds.;File:I_Hate_Waiting!_Icon.png;
+}}
+
+<noinclude>
+{{Scaling table/start|{{#var:health}}|{{#var:health scaling}}|{{#var:health regen}}|{{#var:health regen scaling}}|{{#var:attack damage}}|{{#var:attack damage scaling}}}}
+{{Scaling table/slot|Total Mayhem|250|0.04}}
+{{Scaling table/slot|Frag Launcher|124|0.04}}
+{{Scaling table/slot|Concussion Mine|180|0.04}}
+{{Scaling table/slot|Steel Trap|130|0.04}}
+{{Scaling table/slot|RIP-Tire (health)|530|0.04|10}}
+{{Scaling table/slot|RIP-Tire (damage, max)|720|0.04|10}}
+{{Scaling table/slot|RIP-Tire (damage, min)|445|0.04|10}}
+{{Scaling table/slot|Rocket Ride|935|0.04|10}}
+{{Scaling table/end}}
+</noinclude>

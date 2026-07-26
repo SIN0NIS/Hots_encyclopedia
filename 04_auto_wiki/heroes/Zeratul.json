@@ -1,0 +1,549 @@
+{
+  "hero": "Zeratul",
+  "abilities": [
+    {
+      "name": "Permanent Cloak",
+      "hotkey": "TRAIT",
+      "icon": "Permanent_Cloak_Icon.png",
+      "description": "Gain Stealth when out of combat for 3 seconds. Taking damage, attacking, using Abilities, or channeling ends Stealth. Remaining stationary for at least 1.5 seconds while Stealthed grants Invisible.; 3; trait",
+      "fields": {
+        "type": "Status effect",
+        "affects": "Self",
+        "props": "Stealth",
+        "notes": "Stealth and Invisibility can be gained while mounted."
+      }
+    },
+    {
+      "name": "Cleave",
+      "hotkey": "Q",
+      "icon": "Cleave_Icon.png",
+      "description": "Deal 200 damage to nearby enemies.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "target": "No target",
+        "props": "Area of Effect",
+        "cast": "Instant",
+        "aoe": "Circle",
+        "radius": "3.0",
+        "cooldown": "6",
+        "cost": "40"
+      }
+    },
+    {
+      "name": "Singularity Spike",
+      "hotkey": "W",
+      "icon": "Singularity_Spike_Icon.png",
+      "description": "Flings a Singularity Spike that sticks to the first enemy hit. Deals 240 damage after 1 second and Slows the enemy by 40% for 3 seconds.",
+      "fields": {
+        "type": "Spell Damage, Crowd control",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "target": "Point target",
+        "props": "Clamping, Skillshot, Slow",
+        "cast": "0.1 + 0 seconds",
+        "range": "9.25",
+        "hitbox": "1.25 x 1.35",
+        "missile": "25",
+        "notes": "Singularity Spike grants vision in 2.7 radius around the target, until it explodes. Singularity Spike is instantly removed, preventing any associated effects from triggering, if the target becomes Invulnerable, or enters Stasis.",
+        "cooldown": "12",
+        "cost": "70"
+      }
+    },
+    {
+      "name": "Blink",
+      "hotkey": "E",
+      "icon": "Blink_Icon.png",
+      "description": "Teleport to the target location. Using this Ability does not break Stealth.",
+      "fields": {
+        "type": "Movement: Teleport",
+        "target": "Point target",
+        "props": "Clamping",
+        "cast": "Instant",
+        "range": "7.15",
+        "cooldown": "10",
+        "cost": "50"
+      }
+    },
+    {
+      "name": "Might Of The Nerazim",
+      "hotkey": "R",
+      "icon": "Might_Of_The_Nerazim_Icon.png",
+      "description": "Activate to cast an untalented version of Zeratul's most recently used Basic Ability, dealing 50% less damage. Passive After using an Ability, Zeratul's next Basic Attack within 6 seconds deals 30% more damage.; 20; 30; heroic",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Self",
+        "props": "Attack Modifier",
+        "notes": "Does not interact with Vorpal Blade in any way. Has all the same properties as the untalented Basic Ability, except its base damage is set to half of the original. Might of the Nerazim does not affect Talented versions of the Ability that involve reactivating the Ability. Attack Damage bonus stacks additively with other offensive damage modifiers affecting Zeratul's Basic Attack damage."
+      }
+    },
+    {
+      "name": "Void Prison",
+      "hotkey": "R",
+      "icon": "Void_Prison_Icon.png",
+      "description": "Slows time in an area to a near standstill, placing allies and enemies in Time Stop for 5 seconds. Zeratul is not affected.; 100 / 1.5; 80; heroic",
+      "fields": {
+        "type": "Status effect",
+        "affects": "Units (excl. Self), Capture points",
+        "target": "Point target",
+        "props": "Area of Effect, Time Stop",
+        "cast": "0.1 + 0 seconds",
+        "range": "5.0",
+        "aoe": "Circle",
+        "radius": "2.625",
+        "notes": "Void Prison can be ended prematurely by reactivating the Ability. Target units that walk into the AoE after the Ability has been cast are also affected."
+      }
+    },
+    {
+      "name": "Vorpal Blade",
+      "hotkey": "1",
+      "icon": "Vorpal_Blade_Icon.png",
+      "description": "Activate to teleport to Zeratul's last non-Structure Basic Attack target within 3 seconds. The target is Revealed during these 3 seconds.; 15; :False",
+      "fields": {
+        "type": "Status effect / Movement: Teleport",
+        "affects": "Enemies / Self",
+        "target": "No target",
+        "props": "Attack Modifier, Revealed",
+        "cast": "Instant",
+        "range": "Global",
+        "notes": "When teleporting with Vorpal Blade, Zeratul retains the direction he is facing and is placed right next to the target in a position where the target is right in front of him. The mark is consumed immediately upon cast, but the target will still be revealed for its full duration (3 seconds after the last AA)."
+      }
+    }
+  ],
+  "talents": [
+    {
+      "name": "Greater Cleave",
+      "tier": "1",
+      "slot": "1",
+      "icon": "Greater_Cleave_Icon.png",
+      "description": "Increases the radius of Cleave by 33%.",
+      "fields": {
+        "prop1": "Bonus radius",
+        "val1": "1"
+      },
+      "_raw_fields": [
+        "Greater Cleave",
+        "1",
+        "1",
+        "Increases the radius of Cleave by 33%.",
+        "File:Greater_Cleave_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Shadow Hunter",
+      "tier": "1",
+      "slot": "2",
+      "icon": "Shadow_Hunter_Icon.png",
+      "description": "quest Gather Regeneration Globes to lower the Mana cost of Blink by 3. Upon gathering 15 Regeneration Globes, Basic Attacks reduce the cooldown of Blink by 1.5 seconds.",
+      "fields": {
+        "type": "Cooldown reduction",
+        "affects": "Self"
+      },
+      "_raw_fields": [
+        "Shadow Hunter",
+        "1",
+        "2",
+        "quest Gather Regeneration Globes to lower the Mana cost of Blink by 3. Upon gathering 15 Regeneration Globes, Basic Attacks reduce the cooldown of Blink by 1.5 seconds.",
+        "File:Shadow_Hunter_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Move Unseen",
+      "tier": "1",
+      "slot": "3",
+      "icon": "Move_Unseen_Icon.png",
+      "description": "Reduce the cooldown of Permanent Cloak by 1 second. Gain 30% Movement Speed while Stealthed.",
+      "fields": {
+        "type": "Status effect",
+        "affects": "Self",
+        "props": "Movement speed"
+      },
+      "_raw_fields": [
+        "Move Unseen",
+        "1",
+        "3",
+        "Reduce the cooldown of Permanent Cloak by 1 second. Gain 30% Movement Speed while Stealthed.",
+        "File:Move_Unseen_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Rending Cleave",
+      "tier": "2",
+      "slot": "1",
+      "icon": "Rending_Cleave_Icon.png",
+      "description": "Cleave deals an additional 40% damage over 3 seconds.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "props": "Damage over Time",
+        "tickrate": "1.0 per second (x3)",
+        "prop1": "Damage per tick",
+        "val1": "26.67",
+        "notes": "Rending Cleave benefits from all of Zeratul's talents affecting Cleave. Rending Cleave has independent base damage values, causing the given percentage to stack multiplicatively with offensive damage modifiers."
+      },
+      "_raw_fields": [
+        "Rending Cleave",
+        "2",
+        "1",
+        "Cleave deals an additional 40% damage over 3 seconds.",
+        "File:Rending_Cleave_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Psionic Strength",
+      "tier": "2",
+      "slot": "2",
+      "icon": "Psionic_Strength_Icon.png",
+      "description": "Dealing damage to enemy Heroes increases all damage dealt by 6% for 3 seconds, stacking up to 30%.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "scaling": "4.00%",
+        "affects": "Self",
+        "notes": "Psionic Strength gains a stack after an enemy Hero has been damaged and therefore only affects subsequent instances of damage. Stacks additively with itself and other damage modifiers affecting Zeratul's damage output."
+      },
+      "_raw_fields": [
+        "Psionic Strength",
+        "2",
+        "2",
+        "Dealing damage to enemy Heroes increases all damage dealt by 6% for 3 seconds, stacking up to 30%.",
+        "File:Psionic_Strength_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Darkness Descends",
+      "tier": "2",
+      "slot": "3",
+      "icon": "Darkness_Descends_Icon.png",
+      "description": "cooldown 30 Activate to gain 40% bonus Attack Speed for 5 seconds. passive Gain 20% Attack Speed.",
+      "fields": {
+        "type": "Status effect",
+        "affects": "Self",
+        "target": "No target",
+        "props": "Attack Speed",
+        "cast": "Instant",
+        "notes": "Active and passive bonuses stack additively with each other as well as other effects affecting Zeratul's Attack Speed."
+      },
+      "_raw_fields": [
+        "Darkness Descends",
+        "2",
+        "3",
+        "cooldown 30 Activate to gain 40% bonus Attack Speed for 5 seconds. passive Gain 20% Attack Speed.",
+        "File:Darkness_Descends_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Wormhole",
+      "tier": "3",
+      "slot": "1",
+      "icon": "Wormhole_Icon.png",
+      "description": "After 1.25 seconds, reactivate Blink to return to the point where it was cast from, within 4 seconds.",
+      "fields": {
+        "type": "Movement: Teleport",
+        "affects": "Self",
+        "target": "No target",
+        "cast": "Instant"
+      },
+      "_raw_fields": [
+        "Wormhole",
+        "3",
+        "1",
+        "After 1.25 seconds, reactivate Blink to return to the point where it was cast from, within 4 seconds.",
+        "File:Wormhole_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Seeker in the Dark",
+      "tier": "3",
+      "slot": "2",
+      "icon": "Seeker_in_the_Dark_Icon.png",
+      "description": "Singularity Spike takes 50% longer to explode. It can be reactivated to teleport to the target, granting 30% increased Move Speed for 3 seconds.",
+      "fields": {
+        "type": "Movement: Teleport, Status effect",
+        "affects": "Self",
+        "target": "No target",
+        "props": "Movement speed"
+      },
+      "_raw_fields": [
+        "Seeker in the Dark",
+        "3",
+        "2",
+        "Singularity Spike takes 50% longer to explode. It can be reactivated to teleport to the target, granting 30% increased Move Speed for 3 seconds.",
+        "File:Seeker_in_the_Dark_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Warp Skirmisher",
+      "tier": "3",
+      "slot": "3",
+      "icon": "Warp_Skirmisher_Icon.png",
+      "description": "Vorpal Blade gains a 2nd charge. Teleporting with Vorpal Blade or entering Permanent Cloak causes Zeratul's next Basic Attack to deal 50% increased damage.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "scaling": "4.00%",
+        "affects": "Self",
+        "props": "Attack Modifier",
+        "prop1": "Charge cooldown",
+        "val1": "0.5 seconds",
+        "notes": "Stacks additively with other offensive damage modifiers that can affect Zeratul's Basic Attack damage."
+      },
+      "_raw_fields": [
+        "Warp Skirmisher",
+        "3",
+        "3",
+        "Vorpal Blade gains a 2nd charge. Teleporting with Vorpal Blade or entering Permanent Cloak causes Zeratul's next Basic Attack to deal 50% increased damage.",
+        "File:Warp_Skirmisher_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Might of the Nerazim",
+      "tier": "4",
+      "slot": "1",
+      "icon": "Might_Of_The_Nerazim_Icon.png",
+      "description": "Cooldown 20 Activate to cast an untalented version of Zeratul's most recently used Basic Ability, dealing 50% less damage. Passive After using an Ability, Zeratul's next Basic Attack within 6 seconds deals 30% more damage.",
+      "fields": {},
+      "_raw_fields": [
+        "Might of the Nerazim",
+        "4",
+        "1",
+        "Cooldown 20 Activate to cast an untalented version of Zeratul's most recently used Basic Ability, dealing 50% less damage. Passive After using an Ability, Zeratul's next Basic Attack within 6 seconds deals 30% more damage.",
+        "File:Might_Of_The_Nerazim_Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Void Prison",
+      "tier": "4",
+      "slot": "2",
+      "icon": "Void_Prison_Icon.png",
+      "description": "Cooldown 100 Slows time in an area to a near standstill, placing allies and enemies in Time Stop for 5 seconds. Zeratul is not affected.",
+      "fields": {},
+      "_raw_fields": [
+        "Void Prison",
+        "4",
+        "2",
+        "Cooldown 100 Slows time in an area to a near standstill, placing allies and enemies in Time Stop for 5 seconds. Zeratul is not affected.",
+        "File:Void_Prison_Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Shroud of Adun",
+      "tier": "5",
+      "slot": "1",
+      "icon": "Shroud_of_Adun_Icon.png",
+      "description": "Zeratul gains a Shield equal to 20% of his Maximum Health over 3 seconds while under Permanent Cloak.",
+      "fields": {
+        "type": "Shield",
+        "scaling": "-",
+        "affects": "Self",
+        "tickrate": "1.0 per second (x3)",
+        "prop1": "Shield per tick",
+        "val1": "6.6%"
+      },
+      "_raw_fields": [
+        "Shroud of Adun",
+        "5",
+        "1",
+        "Zeratul gains a Shield equal to 20% of his Maximum Health over 3 seconds while under Permanent Cloak.",
+        "File:Shroud_of_Adun_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Mending Strikes",
+      "tier": "5",
+      "slot": "2",
+      "icon": "Mending_Strikes_Icon.png",
+      "description": "Basic Attacks heal for 35% of the damage dealt.",
+      "fields": {
+        "type": "Healing",
+        "scaling": "-",
+        "affects": "Self",
+        "props": "Attack Modifier, Lifesteal"
+      },
+      "_raw_fields": [
+        "Mending Strikes",
+        "5",
+        "2",
+        "Basic Attacks heal for 35% of the damage dealt.",
+        "File:Mending_Strikes_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Spell Shield",
+      "tier": "5",
+      "slot": "3",
+      "icon": "Spell_Shield_Icon.png",
+      "description": "Every 30 seconds, gain 50 Spell Armor against the next Ability and subsequent Abilities for 3 seconds, reducing the damage taken by 50%. Can be toggled to allow or prevent this talent from triggering automatically.",
+      "fields": {
+        "type": "Defensive damage modifier",
+        "affects": "Self",
+        "target": "No target (toggle)",
+        "props": "Spell Armor, Spell Shield",
+        "cast": "Instant",
+        "prop1": "Toggle cooldown",
+        "val1": "0.5 seconds",
+        "notes": "Does not stack with other positive Spell Armor effects. Other defensive damage modifiers may stack."
+      },
+      "_raw_fields": [
+        "Spell Shield",
+        "5",
+        "3",
+        "Every 30 seconds, gain 50 Spell Armor against the next Ability and subsequent Abilities for 3 seconds, reducing the damage taken by 50%. Can be toggled to allow or prevent this talent from triggering automatically.",
+        "File:Spell_Shield_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Master Warp-Blade",
+      "tier": "6",
+      "slot": "1",
+      "icon": "Master_Warp-Blade_Icon.png",
+      "description": "Every third consecutive Basic Attack against the same target deals 125% bonus damage.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Self",
+        "props": "Attack Modifier",
+        "notes": "Stacks additively with other damage modifiers that can affect Zeratul's Basic Attack damage."
+      },
+      "_raw_fields": [
+        "Master Warp-Blade",
+        "6",
+        "1",
+        "Every third consecutive Basic Attack against the same target deals 125% bonus damage.",
+        "File:Master_Warp-Blade_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Void Slash",
+      "tier": "6",
+      "slot": "2",
+      "icon": "Void_Slash_Icon.png",
+      "description": "If Cleave hits more than one enemy Hero, it deals 40% increased damage and its cooldown is reduced by 3 seconds.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Ability",
+        "notes": "Also affects damage over time from Rending Cleave. Stacks additively with other damage modifiers that can affect Cleave 's damage output."
+      },
+      "_raw_fields": [
+        "Void Slash",
+        "6",
+        "2",
+        "If Cleave hits more than one enemy Hero, it deals 40% increased damage and its cooldown is reduced by 3 seconds.",
+        "File:Void_Slash_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Sentenced to Death",
+      "tier": "6",
+      "slot": "3",
+      "icon": "Sentenced_to_Death_Icon.png",
+      "description": "Deal 25% increased damage to enemies while they are marked or Slowed by Singularity Spike.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Enemies",
+        "notes": "Removing the Slow effect from the target after Singularity Spike has exploded also removes the damage bonus. Stacks additively with other offensive damage modifiers affecting Zeratul's damage output."
+      },
+      "_raw_fields": [
+        "Sentenced to Death",
+        "6",
+        "3",
+        "Deal 25% increased damage to enemies while they are marked or Slowed by Singularity Spike.",
+        "File:Sentenced_to_Death_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Twilight Falls",
+      "tier": "7",
+      "slot": "1",
+      "icon": "Twilight_Falls_Icon.png",
+      "description": "Might of the Nerazim resets the cooldown of all Basic Abilities.",
+      "fields": {},
+      "_raw_fields": [
+        "Twilight Falls",
+        "7",
+        "1",
+        "Might of the Nerazim resets the cooldown of all Basic Abilities.",
+        "File:Twilight_Falls_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Unwavering Pressure",
+      "tier": "7",
+      "slot": "2",
+      "icon": "Unwavering_Pressure_Icon.png",
+      "description": "Singularity Spike no longer costs Mana. Basic Attacks against enemies reduce its cooldown by 1.25 seconds, doubled against Heroes.",
+      "fields": {
+        "props": "Attack Modifier"
+      },
+      "_raw_fields": [
+        "Unwavering Pressure",
+        "7",
+        "2",
+        "Singularity Spike no longer costs Mana. Basic Attacks against enemies reduce its cooldown by 1.25 seconds, doubled against Heroes.",
+        "File:Unwavering_Pressure_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Shadow Stride",
+      "tier": "7",
+      "slot": "3",
+      "icon": "Shadow_Stride_Icon.png",
+      "description": "Reduce the cooldown of Vorpal Blade by 10 seconds. Casting Vorpal Blade grants Zeratul a Shield that absorbs 260 damage over 3 seconds.",
+      "fields": {
+        "type": "Shield",
+        "scaling": "4.00%",
+        "affects": "Self",
+        "notes": "Does not stack with itself. Subsequent applications refresh the Shield amount and duration."
+      },
+      "_raw_fields": [
+        "Shadow Stride",
+        "7",
+        "3",
+        "Reduce the cooldown of Vorpal Blade by 10 seconds. Casting Vorpal Blade grants Zeratul a Shield that absorbs 260 damage over 3 seconds.",
+        "File:Shadow_Stride_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Shadow Mending",
+      "tier": "7",
+      "slot": "4",
+      "icon": "Shadow_Mending_Icon.png",
+      "description": "Heal for 60% of Spell Damage dealt to Heroes.",
+      "fields": {
+        "type": "Healing",
+        "scaling": "-",
+        "affects": "Self",
+        "props": "Lifesteal"
+      },
+      "_raw_fields": [
+        "Shadow Mending",
+        "7",
+        "4",
+        "Heal for 60% of Spell Damage dealt to Heroes.",
+        "File:Shadow_Mending_Icon.png"
+      ],
+      "level": "20"
+    }
+  ],
+  "other": [],
+  "_unparsed_count": 0
+}

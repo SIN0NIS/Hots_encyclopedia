@@ -1,0 +1,553 @@
+{
+  "hero": "Artanis",
+  "abilities": [
+    {
+      "name": "Shield Overload",
+      "hotkey": "TRAIT",
+      "icon": "Shield_Overload_Icon.png",
+      "description": "After taking damage while below 75% Health, Artanis gains a 365 point Shield for 5 seconds. Basic Attacks lower the cooldown of Shield Overload by 4 seconds.; 24; trait",
+      "fields": {
+        "type": "Shield",
+        "scaling": "4.00%",
+        "affects": "Self",
+        "props": "Attack Modifier (cdr)",
+        "notes": "Shield applies after the damage that triggered Shield Overload is applied to Artanis's Health. However, Artanis will not die if Shield Overload is off cooldown, and no \"overkill\" damage will carry over to this Shield."
+      }
+    },
+    {
+      "name": "Blade Dash",
+      "hotkey": "Q",
+      "icon": "Blade_Dash_Icon.png",
+      "description": "Dash forward and deal 63 damage to enemies, then return and deal 171 damage. Every enemy hit reduces the cooldown on Shield Overload by 1 second, and Heroes by 2 seconds.",
+      "fields": {
+        "type": "Spell Damage / Movement: Launch",
+        "scaling": "4.00%",
+        "affects": "Enemies / Self",
+        "targeting": "Point target",
+        "props": "Piercing Skillshot, Clamping",
+        "cast": "Instant",
+        "range": "8.0",
+        "hitbox": "3.0 x 3.0",
+        "missile": "- Min: 0.25 - Max: 50",
+        "prop1": "Dash duration",
+        "val1": "1.25 seconds",
+        "notes": "Both forward and backward dash grant Shield Overload cooldown reduction. Hitting an enemy at the very peak of the dash only damages with backward dash damage.",
+        "cooldown": "10",
+        "cost": "50"
+      }
+    },
+    {
+      "name": "Twin Blades",
+      "hotkey": "W",
+      "icon": "Twin_Blades_Icon.png",
+      "description": "Artanis's next Basic Attack immediately causes him to charge a short distance and strike the enemy 2 times.",
+      "fields": {
+        "type": "Movement: Dash",
+        "affects": "Self",
+        "target": "No target",
+        "props": "Primed",
+        "cast": "Instant",
+        "range": "3.5",
+        "missile": "- Min: 5.0 - Max: 45",
+        "prop1": "Strike interval",
+        "val1": "0.25 seconds",
+        "notes": "Activating this Ability immediately resets Artanis's Basic Attack timer. Cooldown starts once the Ability is triggered by Basic Attacking an enemy. Twin Blades can be triggered while Rooted, but it doesn't dash.",
+        "cooldown": "4",
+        "cost": "20"
+      }
+    },
+    {
+      "name": "Phase Prism",
+      "hotkey": "E",
+      "icon": "Phase_Prism_Icon.png",
+      "description": "Fire a Phase Prism that deals 66 damage to Heroes and swaps Artanis's position with theirs. Hitting a Hero also grants Artanis Unstoppable for 1.5 seconds. Can be used during Blade Dash.",
+      "fields": {
+        "type": "Spell Damage, Crowd control / Movement: Launch, Status effect",
+        "scaling": "4.00%",
+        "affects": "Enemy Heroes",
+        "target": "Point target",
+        "props": "Clamping, Daze, Displacement, Skillshot, Stationary channel, Unstoppable",
+        "cast": "0.0625 + 0.1875 seconds",
+        "range": "7.5",
+        "hitbox": "1.0 x 1.0",
+        "missile": "- Projectile: 12.7 - Swap: 18.0",
+        "notes": "Enemies can be swapped over terrain and enemy Structures, but not through allied Structures.",
+        "cooldown": "12",
+        "cost": "50"
+      }
+    },
+    {
+      "name": "Suppression Pulse",
+      "hotkey": "R",
+      "icon": "Suppression_Pulse_Icon.png",
+      "description": "Fire a large area pulse from the Spear of Adun, dealing 114 damage and Blinding enemies for 4 seconds. Unlimited range.; 50; 40; heroic",
+      "fields": {
+        "type": "Spell Damage, Crowd control",
+        "scaling": "4.00%",
+        "affects": "Enemy Heroes",
+        "target": "Point target",
+        "props": "Area of Effect, Blind, Self-castable",
+        "cast": "0 + 0.125 seconds",
+        "range": "Global",
+        "aoe": "Circle",
+        "radius": "8.0",
+        "prop1": "Initial delay",
+        "val1": "1.25 seconds",
+        "prop2": "Vision radius",
+        "val2": "9.0",
+        "prop3": "Vision duration",
+        "val3": "3.0 seconds"
+      }
+    },
+    {
+      "name": "Purifier Beam",
+      "hotkey": "R",
+      "icon": "Purifier_Beam_Icon.png",
+      "description": "Target an enemy Hero with an orbital beam from the Spear of Adun, dealing 184 damage per second for 8 seconds. The beam will chase the target as they move. Unlimited range.; 70; 65; heroic",
+      "fields": {
+        "typer": "Spell damage",
+        "scaling": "4.00%",
+        "affects": "Enemy Heroes",
+        "target": "Unit target",
+        "props": "Area of Effect, Revealed",
+        "cast": "0 + 0.125 seconds",
+        "range": "Global",
+        "aoe": "Circle",
+        "radius": "1.25",
+        "missile": "3.105",
+        "tickrate": "4.0 per second (x32)",
+        "prop1": "Damage per tick",
+        "val1": "46",
+        "prop2": "Initial delay",
+        "val2": "2.0 seconds",
+        "prop3": "Vision radius",
+        "val3": "3.0",
+        "notes": "Reveals the target for 10 seconds upon cast. Hits all enemies in its radius, including Heroes and Structures."
+      }
+    }
+  ],
+  "talents": [
+    {
+      "name": "Reactive Parry",
+      "tier": "1",
+      "slot": "1",
+      "icon": "Reactive_Parry_Icon.png",
+      "description": "Damaging enemy Heroes with Twin Blades or Blade Dash grants Artanis 50 Physical Armor against the next enemy Hero Basic Attack, reducing its damage by 50%. Stores up to 2 charges.",
+      "fields": {
+        "type": "Defensive damage modifier",
+        "affects": "Self",
+        "props": "Block",
+        "notes": "Twin Blades grants a charge on each attack. Blade Dash grants a charge for each Hero hit on both the initial dash and return. Does not stack with other positive Physical Armor effects. Other defensive damage modifiers may stack."
+      },
+      "_raw_fields": [
+        "Reactive Parry",
+        "1",
+        "1",
+        "Damaging enemy Heroes with Twin Blades or Blade Dash grants Artanis 50 Physical Armor against the next enemy Hero Basic Attack, reducing its damage by 50%. Stores up to 2 charges.",
+        "File:Reactive_Parry_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Amateur Opponent",
+      "tier": "1",
+      "slot": "2",
+      "icon": "Amateur_Opponent_Icon.png",
+      "description": "Twin Blades attacks deal 150% bonus damage to non-Heroes.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Ability",
+        "notes": "Damage bonus stacks additively with other offensive damage modifiers that can affect Artanis's Basic Attack damage with Twin Blades."
+      },
+      "_raw_fields": [
+        "Amateur Opponent",
+        "1",
+        "2",
+        "Twin Blades attacks deal 150% bonus damage to non-Heroes.",
+        "File:Amateur_Opponent_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Protector of Aiur",
+      "tier": "1",
+      "slot": "3",
+      "icon": "Protector_Of_Aiur_Icon.png",
+      "description": "questonly Basic Attacks against enemy Heroes increase Artanis's Basic Attack damage by 0.1%. Takedowns grant 1% bonus damage.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Self",
+        "notes": "Damage bonus stacks additively with itself and other offensive damage modifiers that can affect Artanis's Basic Attack damage."
+      },
+      "_raw_fields": [
+        "Protector of Aiur",
+        "1",
+        "3",
+        "questonly Basic Attacks against enemy Heroes increase Artanis's Basic Attack damage by 0.1%. Takedowns grant 1% bonus damage.",
+        "File:Protector_Of_Aiur_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Psionic Synergy",
+      "tier": "2",
+      "slot": "1",
+      "icon": "Phase_Prism_Icon.png",
+      "description": "Hitting an enemy with Phase Prism grants 30 Armor for 5 seconds.",
+      "fields": {
+        "type": "Defensive damage modifier",
+        "affects": "Self",
+        "props": "Armor",
+        "notes": "Does not stack with other positive Armor effects. Other defensive damage modifiers may stack."
+      },
+      "_raw_fields": [
+        "Psionic Synergy",
+        "2",
+        "1",
+        "Hitting an enemy with Phase Prism grants 30 Armor for 5 seconds.",
+        "File:Phase_Prism_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Shield Battery",
+      "tier": "2",
+      "slot": "2",
+      "icon": "Shield_Battery_Icon.png",
+      "description": "Shield Overload's cooldown recharges 125% faster while its Shield is active. Passive Reduce Shield Overload's cooldown by 4 seconds.",
+      "fields": {
+        "type": "Cooldown reduction",
+        "notes": "Reduces the cooldown of Shield Overload by 0.3125 seconds every 0.25 seconds while it is active."
+      },
+      "_raw_fields": [
+        "Shield Battery",
+        "2",
+        "2",
+        "Shield Overload's cooldown recharges 125% faster while its Shield is active. Passive Reduce Shield Overload's cooldown by 4 seconds.",
+        "File:Shield_Battery_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Shield Surge",
+      "tier": "2",
+      "slot": "3",
+      "icon": "Shield_Surge_Icon.png",
+      "description": "Increases Shield Overload's Shields by 80% while below 25% Health.",
+      "fields": {
+        "type": "Bonus Shield",
+        "scaling": "4.00%",
+        "affects": "Ability",
+        "prop1": "Bonus Shield",
+        "val1": "292"
+      },
+      "_raw_fields": [
+        "Shield Surge",
+        "2",
+        "3",
+        "Increases Shield Overload's Shields by 80% while below 25% Health.",
+        "File:Shield_Surge_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Solarite Reaper",
+      "tier": "3",
+      "slot": "1",
+      "icon": "Solarite_Reaper_Icon.png",
+      "description": "Increases the damage of the first dash of Blade Dash by 175%.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Ability",
+        "notes": "Damage bonus stacks additively with other offensive damage modifiers that can affect Blade Dash 's damage."
+      },
+      "_raw_fields": [
+        "Solarite Reaper",
+        "3",
+        "1",
+        "Increases the damage of the first dash of Blade Dash by 175%.",
+        "File:Solarite_Reaper_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Chrono Surge",
+      "tier": "3",
+      "slot": "2",
+      "icon": "Chrono_Surge_Icon.png",
+      "description": "Hitting an enemy Hero with Phase Prism grants 40% bonus Attack Speed for 5 seconds and Slows the enemy's Movement Speed by 30% for 4 seconds.",
+      "fields": {
+        "type": "Status effect / Crowd control",
+        "affects": "Self / Enemy Heroes",
+        "props": "Attacks Speed, Slow"
+      },
+      "_raw_fields": [
+        "Chrono Surge",
+        "3",
+        "2",
+        "Hitting an enemy Hero with Phase Prism grants 40% bonus Attack Speed for 5 seconds and Slows the enemy's Movement Speed by 30% for 4 seconds.",
+        "File:Chrono_Surge_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Final Cut",
+      "tier": "3",
+      "slot": "3",
+      "icon": "Final_Cut_(Artanis)_Icon.png",
+      "description": "After using an Ability, your next Basic Attack within 6 seconds deals 40% additional damage. While under 25% Health, this damage bonus is increased to 60%.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Self",
+        "props": "Follow Through",
+        "notes": "During Twin Blades the damage bonus is applied to the first strike only. Does not stack with itself. Stacks additively with other offensive damage modifiers that can affect Artanis's Basic Attack damage."
+      },
+      "_raw_fields": [
+        "Final Cut",
+        "3",
+        "3",
+        "After using an Ability, your next Basic Attack within 6 seconds deals 40% additional damage. While under 25% Health, this damage bonus is increased to 60%.",
+        "File:Final_Cut_(Artanis)_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Suppression Pulse",
+      "tier": "4",
+      "slot": "1",
+      "icon": "Suppression_Pulse_Icon.png",
+      "description": "Cooldown 50 Fire a large area pulse from the Spear of Adun, dealing 114 damage and Blinding enemies for 4 seconds. Unlimited range.",
+      "fields": {},
+      "_raw_fields": [
+        "Suppression Pulse",
+        "4",
+        "1",
+        "Cooldown 50 Fire a large area pulse from the Spear of Adun, dealing 114 damage and Blinding enemies for 4 seconds. Unlimited range.",
+        "File:Suppression_Pulse_Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Purifier Beam",
+      "tier": "4",
+      "slot": "2",
+      "icon": "Purifier_Beam_Icon.png",
+      "description": "Cooldown 70 Target an enemy Hero with an orbital beam from the Spear of Adun, dealing 184 damage per second for 8 seconds. The beam will chase the target as they move. Unlimited range.",
+      "fields": {},
+      "_raw_fields": [
+        "Purifier Beam",
+        "4",
+        "2",
+        "Cooldown 70 Target an enemy Hero with an orbital beam from the Spear of Adun, dealing 184 damage per second for 8 seconds. The beam will chase the target as they move. Unlimited range.",
+        "File:Purifier_Beam_Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Templar's Zeal",
+      "tier": "5",
+      "slot": "1",
+      "icon": "Templar's_Zeal_Icon.png",
+      "description": "Reduce the Mana cost of Blade Dash from 50 to 25. Each time that Shield Overload activates, reduce the cooldown of Blade Dash by 6 seconds.",
+      "fields": {},
+      "_raw_fields": [
+        "Templar's Zeal",
+        "5",
+        "1",
+        "Reduce the Mana cost of Blade Dash from 50 to 25. Each time that Shield Overload activates, reduce the cooldown of Blade Dash by 6 seconds.",
+        "File:Templar's_Zeal_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Triple Strike",
+      "tier": "5",
+      "slot": "2",
+      "icon": "Triple_Strike_Icon.png",
+      "description": "Increase Twin Blades's number of Basic Attacks to 3, but increase its cooldown by 1 second.",
+      "fields": {},
+      "_raw_fields": [
+        "Triple Strike",
+        "5",
+        "2",
+        "Increase Twin Blades's number of Basic Attacks to 3, but increase its cooldown by 1 second.",
+        "File:Triple_Strike_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Graviton Vortex",
+      "tier": "5",
+      "slot": "3",
+      "icon": "Graviton_Vortex_Icon.png",
+      "description": "Reduce the Mana cost of Phase Prism from 50 to 25. Hitting an enemy Hero with Basic Attacks or Blade Dash lowers the cooldown of Phase Prism by 2 seconds.",
+      "fields": {},
+      "_raw_fields": [
+        "Graviton Vortex",
+        "5",
+        "3",
+        "Reduce the Mana cost of Phase Prism from 50 to 25. Hitting an enemy Hero with Basic Attacks or Blade Dash lowers the cooldown of Phase Prism by 2 seconds.",
+        "File:Graviton_Vortex_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Phase Bulwark",
+      "tier": "5",
+      "slot": "4",
+      "icon": "Phase_Bulwark_Icon.png",
+      "description": "Shield Overload grants 50 Spell Armor while active, and for 2 seconds after it expires.",
+      "fields": {
+        "type": "Defensive damage modifier",
+        "affects": "Self",
+        "props": "Spell Armor",
+        "notes": "Does not stack with other positive Spell Armor effects. Other damage modifiers may stack."
+      },
+      "_raw_fields": [
+        "Phase Bulwark",
+        "5",
+        "4",
+        "Shield Overload grants 50 Spell Armor while active, and for 2 seconds after it expires.",
+        "File:Phase_Bulwark_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Titan Killer",
+      "tier": "6",
+      "slot": "1",
+      "icon": "Titan_Killer_Icon.png",
+      "description": "Basic Attacks against Heroes deal an additional 0.5% of their maximum Health in damage, increased to 1.5% when empowered by Twin Blades.",
+      "fields": {
+        "type": "Percent damage",
+        "affects": "Enemy Heroes",
+        "props": "Attack Modifier"
+      },
+      "_raw_fields": [
+        "Titan Killer",
+        "6",
+        "1",
+        "Basic Attacks against Heroes deal an additional 0.5% of their maximum Health in damage, increased to 1.5% when empowered by Twin Blades.",
+        "File:Titan_Killer_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Force of Will",
+      "tier": "6",
+      "slot": "2",
+      "icon": "Force_of_Will_Artanis_Icon.png",
+      "description": "Casting Basic Abilities reduces the cooldown of Shield Overload by 5 seconds.",
+      "fields": {},
+      "_raw_fields": [
+        "Force of Will",
+        "6",
+        "2",
+        "Casting Basic Abilities reduces the cooldown of Shield Overload by 5 seconds.",
+        "File:Force_of_Will_Artanis_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Blades of a Templar",
+      "tier": "6",
+      "slot": "3",
+      "icon": "Blades of a Templar Icon.png",
+      "description": "Increase Attack Speed by 20%. Basic Attacks Slow enemy Movement Speed by 20% for 1.25 seconds.",
+      "fields": {
+        "type": "Status effect / Crowd control",
+        "affects": "Self / Enemies",
+        "props": "Attack Speed buff, Slow"
+      },
+      "_raw_fields": [
+        "Blades of a Templar",
+        "6",
+        "3",
+        "Increase Attack Speed by 20%. Basic Attacks Slow enemy Movement Speed by 20% for 1.25 seconds.",
+        "File:Blades of a Templar Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Orbital Bombardment",
+      "tier": "7",
+      "slot": "1",
+      "icon": "Orbital_Bombardment_Icon.png",
+      "description": "Suppression Pulse gains an additional charge. There is a 10 second cooldown between uses.",
+      "fields": {},
+      "_raw_fields": [
+        "Orbital Bombardment",
+        "7",
+        "1",
+        "Suppression Pulse gains an additional charge. There is a 10 second cooldown between uses.",
+        "File:Orbital_Bombardment_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Target Purified",
+      "tier": "7",
+      "slot": "2",
+      "icon": "Target_Purified_Icon.png",
+      "description": "Increase the speed of Purifier Beam by 15%. If the target of Purifier Beam dies, it automatically recasts on the nearest visible enemy Hero.",
+      "fields": {
+        "prop1": "Retarget delay",
+        "val1": "2.0 seconds"
+      },
+      "_raw_fields": [
+        "Target Purified",
+        "7",
+        "2",
+        "Increase the speed of Purifier Beam by 15%. If the target of Purifier Beam dies, it automatically recasts on the nearest visible enemy Hero.",
+        "File:Target_Purified_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Zealot Charge",
+      "tier": "7",
+      "slot": "3",
+      "icon": "Zealot_Charge_Icon.png",
+      "description": "Increase Twin Blades's charge distance by 75%.",
+      "fields": {
+        "prop1": "Bonus range",
+        "val1": "2.625"
+      },
+      "_raw_fields": [
+        "Zealot Charge",
+        "7",
+        "3",
+        "Increase Twin Blades's charge distance by 75%.",
+        "File:Zealot_Charge_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Plasma Burn",
+      "tier": "7",
+      "slot": "4",
+      "icon": "Plasma_Burn_Icon.png",
+      "description": "While Shield Overload is active, deal 70 damage per second to nearby enemies.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "props": "Area of Effect",
+        "aoe": "Circle",
+        "radius": "2.625 (1",
+        "tickrate": "1.0 per second",
+        "notes": "1) Area of Effect is extended by Artanis's unit radius. Plasma Burn does not affect unaggroed neutral Mercenaries. Damaging enemies with Plasma Burn does not trigger tower aggro. Plasma Burn is unaffected by offensive damage modifier and lifesteal effects."
+      },
+      "_raw_fields": [
+        "Plasma Burn",
+        "7",
+        "4",
+        "While Shield Overload is active, deal 70 damage per second to nearby enemies.",
+        "File:Plasma_Burn_Icon.png"
+      ],
+      "level": "20"
+    }
+  ],
+  "other": [],
+  "_unparsed_count": 0
+}

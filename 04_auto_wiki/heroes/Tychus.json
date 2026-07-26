@@ -1,0 +1,620 @@
+{
+  "hero": "Tychus",
+  "abilities": [
+    {
+      "name": "Minigun",
+      "hotkey": "TRAIT",
+      "icon": "Minigun_Icon.png",
+      "description": "Activate to have Basic Attacks against Heroes deal bonus damage equal to 2.5% of their maximum Health. Lasts 3 seconds.; 12; trait",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "-",
+        "affects": "Enemy Heroes",
+        "target": "No target",
+        "props": "Attack modifier, Percent Damage, Primed",
+        "cast": "Instant",
+        "notes": "Minigun duration starts at the first Basic Attack after activating the trait. Cooldown starts when the duration ends. Bonus damage from Minigun is dealt in a separate instance."
+      }
+    },
+    {
+      "name": "Overkill",
+      "hotkey": "Q",
+      "icon": "Overkill_Icon.png",
+      "description": "Deal 552 damage to the target and 276 damage to nearby targets over 4 seconds. Reactivate to select a new target or direction. Can move and use Abilities while channeling.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "target": "Unit target",
+        "props": "Area of Effect, Mobile channel",
+        "cast": "Instant",
+        "range": "7.5",
+        "aoe": "Radial",
+        "radius": "8.0",
+        "arc": "45 degrees",
+        "tickrate": "3.0 per second",
+        "prop1": "Damage per tick",
+        "val1": "- Primary: 46 - Secondary: 23",
+        "notes": "Tychus can cancel Overkill by starting to Mount or casting Commandeer Odin. If the main target of Overkill dies while it's active, it will automatically retarget the closest enemy within its radius. If the main target is simply out of range, Overkill remains fixated to it until a new target is issued by reactivating the Ability.",
+        "cooldown": "12",
+        "cost": "60"
+      }
+    },
+    {
+      "name": "Frag Grenade",
+      "hotkey": "W",
+      "icon": "Frag_Grenade_Icon.png",
+      "description": "Lob a grenade that deals 256 damage, knocking enemies away.",
+      "fields": {
+        "type": "Spell Damage, Crowd control",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "target": "Point target",
+        "props": "Area of Effect, Knockback",
+        "cast": "0 + 0.225 seconds",
+        "range": "8.75",
+        "aoe": "Circle",
+        "radius": "2.25",
+        "missile": "25.6",
+        "prop1": "Knockback duration",
+        "val1": "0.125 seconds",
+        "prop2": "Knockback speed",
+        "val2": "18",
+        "cooldown": "10",
+        "cost": "50"
+      }
+    },
+    {
+      "name": "Run and Gun",
+      "hotkey": "E",
+      "icon": "Run_and_Gun_Icon.png",
+      "description": "Dash a short distance.",
+      "fields": {
+        "type": "Movement: Dash",
+        "affects": "Self",
+        "target": "Point target",
+        "cast": "Instant",
+        "range": "4.0",
+        "missile": "14",
+        "cooldown": "10",
+        "cost": "50"
+      }
+    },
+    {
+      "name": "Commandeer Odin",
+      "hotkey": "R",
+      "icon": "Commandeer_Odin_Icon.png",
+      "description": "Call down an Odin to pilot. The Odin deals increased Damage, has 100% increased Basic Attack range, and uses different Abilities. The Odin has 25 Armor and lasts 23 seconds.; 100; 100; heroic",
+      "fields": {
+        "type": "Transformation, Defensive damage modifier, Status effect",
+        "scaling": "4.00%",
+        "affects": "Self",
+        "target": "No target",
+        "props": "Attack modifier, Armor, Unstoppable",
+        "cast": "Instant",
+        "prop1": "Odin Basic Attack damage",
+        "val1": "191",
+        "prop2": "Odin Attack Speed",
+        "val2": "1.00",
+        "prop3": "Odin Attack Range",
+        "val3": "9.0",
+        "notes": "Tychus is unable to act for 2.75 seconds while entering the Odin. During this time Tychus is Unstoppable. This delay is included in its duration. Activating Commandeer Odin immediately ends Minigun and Overkill. Cooldown starts immediately when the Ability is cast. Tychus cannot use Minigun and does not benefit from Sizzling Attacks while piloting Odin."
+      }
+    },
+    {
+      "name": "Commandeer Odin - Annihilate",
+      "hotkey": "Q",
+      "icon": "Annihilate_Icon.png",
+      "description": "Fire the Odin's cannons in a straight line, dealing 196 damage to everything in the path.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "target": "Point target",
+        "props": "Area of Effect, Clamping",
+        "cast": "Instant",
+        "aoe": "Rectangle (1",
+        "width": "3.6",
+        "height": "18.8",
+        "notes": "1) Annihilate 's search area is a line of 7 circles with 1.8 radius, which centers are 2.5 units apart. Impact on each sub-area is delayed by 0.1 seconds from the previous, but a target cannot be hit more than once per cast. Does not stack with other positive Armor effects. Other defensive damage modifiers may stack. Only available while Commandeer Odin is active.",
+        "cooldown": "7"
+      }
+    },
+    {
+      "name": "Commandeer Odin - Ragnarok Missiles",
+      "hotkey": "W",
+      "icon": "Ragnarok_Missiles_Icon.png",
+      "description": "Launches a volley of missiles at target area, dealing 132 damage and Slowing enemy Movement Speed by 30% for 2 seconds.",
+      "fields": {
+        "type": "Spell Damage, Crowd control",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "target": "Point target",
+        "props": "Area of Effect, Slow",
+        "cast": "Instant",
+        "range": "14.0",
+        "aoe": "Circle",
+        "radius": "4.0",
+        "prop1": "Impact delay",
+        "val1": "1.5 seconds",
+        "notes": "Only available while Commandeer Odin is active.",
+        "cooldown": "7"
+      }
+    },
+    {
+      "name": "Commandeer Odin - Thrusters",
+      "hotkey": "E",
+      "icon": "Thrusters_Icon.png",
+      "description": "Dash in target direction.",
+      "fields": {
+        "type": "Movement: Dash",
+        "affects": "Self",
+        "target": "Point target",
+        "cast": "Instant",
+        "range": "4.0",
+        "missile": "14",
+        "notes": "Only available while Commandeer Odin is active.",
+        "cooldown": "8"
+      }
+    },
+    {
+      "name": "Drakken Laser Drill",
+      "hotkey": "R",
+      "icon": "Drakken_Laser_Drill_Icon.png",
+      "description": "Call down a Laser Drill to attack nearby enemies, dealing 142 damage every second. Reactivate to assign a new target. Lasts 22 seconds. Drakken Laser Drill ; 100; 100; heroic",
+      "fields": {
+        "type": "Active",
+        "target": "Retargetable",
+        "cast": "Instant",
+        "range": "7.0",
+        "nohr": "true",
+        "scaling": "4.00% (damage & Health)",
+        "prop1": "Health",
+        "val1": "1255",
+        "prop2": "Basic Attack damage",
+        "val2": "71",
+        "prop3": "Attack speed",
+        "val3": "2.00",
+        "prop4": "Attack range",
+        "val4": "10.0",
+        "prop5": "Movement Speed",
+        "val5": "-",
+        "prop6": "Unit radius",
+        "val6": "1.5",
+        "prop7": "Sight radius",
+        "val7": "9.25",
+        "prop8": "Leash radius",
+        "val8": "-",
+        "notes": "Drakken Laser Drill has a 2 second spawn delay. This delay is included in its duration. Cooldown starts immediately when the Ability is cast. Laser Drill 's attack is a channeled beam that deals Spell Damage."
+      }
+    }
+  ],
+  "talents": [
+    {
+      "name": "Quarterback",
+      "tier": "1",
+      "slot": "1",
+      "icon": "Quarterback_Icon.png",
+      "description": "Increases Frag Grenade's damage by 10% and its range by 45%.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "prop1": "Bonus range",
+        "val1": "3.9375"
+      },
+      "_raw_fields": [
+        "Quarterback",
+        "1",
+        "1",
+        "Increases Frag Grenade's damage by 10% and its range by 45%.",
+        "File:Quarterback_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Dash",
+      "tier": "1",
+      "slot": "2",
+      "icon": "Dash_Icon.png",
+      "description": "Increase the range of Run and Gun by 50%. When cast, increase Tychus's Movement Speed by 20% for 2.5 seconds.",
+      "fields": {
+        "type": "Status effect",
+        "affects": "Self",
+        "props": "Movement Speed",
+        "prop1": "Bonus range",
+        "val1": "2.0"
+      },
+      "_raw_fields": [
+        "Dash",
+        "1",
+        "2",
+        "Increase the range of Run and Gun by 50%. When cast, increase Tychus's Movement Speed by 20% for 2.5 seconds.",
+        "File:Dash_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Press the Advantage",
+      "tier": "1",
+      "slot": "3",
+      "icon": "Press_the_Advantage_Icon.png",
+      "description": "Increase Tychus's Basic Attack range by 1.",
+      "fields": {},
+      "_raw_fields": [
+        "Press the Advantage",
+        "1",
+        "3",
+        "Increase Tychus's Basic Attack range by 1.",
+        "File:Press_the_Advantage_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "In the Rhythm",
+      "tier": "2",
+      "slot": "1",
+      "icon": "In_the_Rhythm_Icon.png",
+      "description": "questonly While Minigun is active, Basic Attacks against Heroes permanently increase future Minigun durations by 0.03 seconds.",
+      "fields": {},
+      "_raw_fields": [
+        "In the Rhythm",
+        "2",
+        "1",
+        "questonly While Minigun is active, Basic Attacks against Heroes permanently increase future Minigun durations by 0.03 seconds.",
+        "File:In_the_Rhythm_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "The Bigger They Are...",
+      "tier": "2",
+      "slot": "2",
+      "icon": "The Bigger_They_Are_Icon.png",
+      "description": "Increase the damage bonus to 4% while enemy Heroes are above 30% Health, but Minigun no longer has any effect on targets below 30%.",
+      "fields": {},
+      "_raw_fields": [
+        "The Bigger They Are...",
+        "2",
+        "2",
+        "Increase the damage bonus to 4% while enemy Heroes are above 30% Health, but Minigun no longer has any effect on targets below 30%.",
+        "File:The Bigger_They_Are_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Master Assassin",
+      "tier": "2",
+      "slot": "3",
+      "icon": "Master_Assassin_Icon.png",
+      "description": "passive Increase Tychus's Attack Speed by 10%. reward After getting 15 Takedowns, Tychus's Attack Speed is increased by an additional 15%.",
+      "fields": {
+        "nohr": "true",
+        "notes": "Also affects Tychus's Attack Speed during Commandeer Odin."
+      },
+      "_raw_fields": [
+        "Master Assassin",
+        "2",
+        "3",
+        "passive Increase Tychus's Attack Speed by 10%. reward After getting 15 Takedowns, Tychus's Attack Speed is increased by an additional 15%.",
+        "File:Master_Assassin_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Melting Point",
+      "tier": "3",
+      "slot": "1",
+      "icon": "Melting_Point_Icon.png",
+      "description": "Enemies hit by Frag Grenade take an additional 75 damage over 3 seconds. This damage is increased by 100% against Minions, Mercenaries and Monsters.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "props": "Damage over Time",
+        "tickrate": "1.0 per second (x3)",
+        "prop1": "Damage per tick",
+        "val1": "25",
+        "notes": "Does not benefit from the damage bonus from Quarterback. Bonus damage to Minions, Mercenaries and Monsters stacks additively with offensive damage modifiers."
+      },
+      "_raw_fields": [
+        "Melting Point",
+        "3",
+        "1",
+        "Enemies hit by Frag Grenade take an additional 75 damage over 3 seconds. This damage is increased by 100% against Minions, Mercenaries and Monsters.",
+        "File:Melting_Point_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Combat Tactician",
+      "tier": "3",
+      "slot": "2",
+      "icon": "Combat_Tactician_Icon.png",
+      "description": "Reduce the cooldown of Minigun by 4 seconds. Reduce the cooldown by an additional 4 seconds after using Run and Gun.",
+      "fields": {
+        "nohr": "true",
+        "notes": "Casting Run and Gun while Minigun is still active has no effect on the cooldown."
+      },
+      "_raw_fields": [
+        "Combat Tactician",
+        "3",
+        "2",
+        "Reduce the cooldown of Minigun by 4 seconds. Reduce the cooldown by an additional 4 seconds after using Run and Gun.",
+        "File:Combat_Tactician_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Relentless Soldier",
+      "tier": "3",
+      "slot": "3",
+      "icon": "Relentless_Soldier_Icon.png",
+      "description": "Being Stunned or Rooted grants 30 Armor for 3 seconds, reducing damage taken by 30%.",
+      "fields": {
+        "type": "Defensive damage modifier",
+        "affects": "Self",
+        "props": "Armor",
+        "notes": "Does not stack with other positive Armor effects. Other defensive damage modifiers may stack."
+      },
+      "_raw_fields": [
+        "Relentless Soldier",
+        "3",
+        "3",
+        "Being Stunned or Rooted grants 30 Armor for 3 seconds, reducing damage taken by 30%.",
+        "File:Relentless_Soldier_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Commandeer Odin",
+      "tier": "4",
+      "slot": "1",
+      "icon": "Commandeer_Odin_Icon.png",
+      "description": "Cooldown 100 Call down an Odin to pilot. The Odin deals increased Damage, has 100% increased Basic Attack range, and uses different Abilities. The Odin has 25 Armor and lasts 23 seconds.",
+      "fields": {},
+      "_raw_fields": [
+        "Commandeer Odin",
+        "4",
+        "1",
+        "Cooldown 100 Call down an Odin to pilot. The Odin deals increased Damage, has 100% increased Basic Attack range, and uses different Abilities. The Odin has 25 Armor and lasts 23 seconds.",
+        "File:Commandeer_Odin_Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Drakken Laser Drill",
+      "tier": "4",
+      "slot": "2",
+      "icon": "Drakken_Laser_Drill_Icon.png",
+      "description": "Cooldown 100 Call down a Laser Drill to attack nearby enemies, dealing 142 damage every second. Reactivate to assign a new target. Lasts 22 seconds.",
+      "fields": {},
+      "_raw_fields": [
+        "Drakken Laser Drill",
+        "4",
+        "2",
+        "Cooldown 100 Call down a Laser Drill to attack nearby enemies, dealing 142 damage every second. Reactivate to assign a new target. Lasts 22 seconds.",
+        "File:Drakken_Laser_Drill_Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Spray 'n' Pray",
+      "tier": "5",
+      "slot": "1",
+      "icon": "Spray_'n'_Pray_Icon.png",
+      "description": "Overkill Slows enemy Movement Speed by 25% and its range is increased by 25%.",
+      "fields": {
+        "type": "Crowd control",
+        "affects": "Enemies",
+        "prop1": "Bonus range",
+        "val1": "1.875",
+        "prop2": "Bonus radius",
+        "val2": "2.0",
+        "props": "Slow"
+      },
+      "_raw_fields": [
+        "Spray 'n' Pray",
+        "5",
+        "1",
+        "Overkill Slows enemy Movement Speed by 25% and its range is increased by 25%.",
+        "File:Spray_'n'_Pray_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "That's the Stuff!",
+      "tier": "5",
+      "slot": "2",
+      "icon": "That's_the_Stuff!_Icon.png",
+      "description": "Minigun heals Tychus for 100% of the bonus damage dealt after it expires.",
+      "fields": {
+        "type": "Healing",
+        "scaling": "-",
+        "affects": "Self",
+        "props": "Lifesteal"
+      },
+      "_raw_fields": [
+        "That's the Stuff!",
+        "5",
+        "2",
+        "Minigun heals Tychus for 100% of the bonus damage dealt after it expires.",
+        "File:That's_the_Stuff!_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Neosteel Coating",
+      "tier": "5",
+      "slot": "3",
+      "icon": "Neosteel_Coating_Icon.png",
+      "description": "Cooldown 30 Activate to gain 75 Spell Armor for 4 seconds, reducing Ability Damage taken by 75%.",
+      "fields": {
+        "type": "Defensive damage modifier",
+        "affects": "Self",
+        "target": "No target",
+        "props": "Spell Armor",
+        "cast": "Instant",
+        "notes": "Does not stack with other positive Armor effects. Other defensive damage modifiers may stack."
+      },
+      "_raw_fields": [
+        "Neosteel Coating",
+        "5",
+        "3",
+        "Cooldown 30 Activate to gain 75 Spell Armor for 4 seconds, reducing Ability Damage taken by 75%.",
+        "File:Neosteel_Coating_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Armor Piercing Rounds",
+      "tier": "6",
+      "slot": "1",
+      "icon": "Armor_Piercing_Rounds_Icon.png",
+      "description": "Each time Overkill hits an enemy, its damage against them is increased by 15%, stacking up to 60% bonus damage.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Ability",
+        "notes": "Damage bonus stacks additively with other offensive damage modifiers that can affect Overkill 's damage."
+      },
+      "_raw_fields": [
+        "Armor Piercing Rounds",
+        "6",
+        "1",
+        "Each time Overkill hits an enemy, its damage against them is increased by 15%, stacking up to 60% bonus damage.",
+        "File:Armor_Piercing_Rounds_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Titan Grenade",
+      "tier": "6",
+      "slot": "2",
+      "icon": "Titan_Grenade_Icon.png",
+      "description": "Frag Grenade deals bonus damage to Heroes equal to 5% of their maximum Health. Each enemy Hero hit by Frag Grenade reduces its cooldown by 1 second.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "-",
+        "props": "Percent Damage",
+        "affects": "Enemy Heroes",
+        "notes": "Bonus damage is dealt in a separate instance."
+      },
+      "_raw_fields": [
+        "Titan Grenade",
+        "6",
+        "2",
+        "Frag Grenade deals bonus damage to Heroes equal to 5% of their maximum Health. Each enemy Hero hit by Frag Grenade reduces its cooldown by 1 second.",
+        "File:Titan_Grenade_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Sizzlin' Attacks",
+      "tier": "6",
+      "slot": "3",
+      "icon": "Sizzlin_Attacks_Icon.png",
+      "description": "Basic Attacks deal bonus damage to Heroes equal to 1% of their maximum Health. Stacks with Minigun.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "-",
+        "affects": "Enemy Heroes",
+        "props": "Attack Modifier, Percent Damage",
+        "notes": "Bonus damage is dealt in a separate instance from both Tychus's Basic Attacks and Minigun. Commandeer Odin does not benefit from Sizzlin' Attacks."
+      },
+      "_raw_fields": [
+        "Sizzlin' Attacks",
+        "6",
+        "3",
+        "Basic Attacks deal bonus damage to Heroes equal to 1% of their maximum Health. Stacks with Minigun.",
+        "File:Sizzlin_Attacks_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Big Red Button",
+      "tier": "7",
+      "slot": "1",
+      "icon": "Big_Red_Button_Icon.png",
+      "description": "Odin lasts 50% longer and Ragnarok Missiles also launches a Nuclear Missile, which lands 2.5 seconds later, dealing 319 damage in its area.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "props": "Area of Effect",
+        "notes": "Nuclear Missile is launched at the same location as Ragnarok Missiles and has the same radius. Nuclear Missile does not Slow."
+      },
+      "_raw_fields": [
+        "Big Red Button",
+        "7",
+        "1",
+        "Odin lasts 50% longer and Ragnarok Missiles also launches a Nuclear Missile, which lands 2.5 seconds later, dealing 319 damage in its area.",
+        "File:Big_Red_Button_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Focusing Diodes",
+      "tier": "7",
+      "slot": "2",
+      "icon": "Focusing_Diodes_Icon.png",
+      "description": "Increases the range of the Drakken Laser Drill by 50%. Deals increased damage the longer it remains on a single target, up to 100% extra damage.",
+      "fields": {
+        "type": "Bonus damage",
+        "scaling": "-",
+        "affects": "Ability",
+        "prop1": "Bonus attack range",
+        "val1": "5.0",
+        "notes": "Damage increases in 20% increments every second Laser Drill has been locked to a target, up to 5 times. Changing target instantly resets the bonus. Damage bonus stacks additively with itself and with other offensive damage modifiers that can affect Drakken Laser Drill 's damage."
+      },
+      "_raw_fields": [
+        "Focusing Diodes",
+        "7",
+        "2",
+        "Increases the range of the Drakken Laser Drill by 50%. Deals increased damage the longer it remains on a single target, up to 100% extra damage.",
+        "File:Focusing_Diodes_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Can Do This All Day",
+      "tier": "7",
+      "slot": "3",
+      "icon": "Can_Do_This_All_Day_Icon.png",
+      "description": "Reduce Overkill's cooldown by 5 seconds. While Channeling Overkill, Tychus gains 40 Armor.",
+      "fields": {
+        "type": "Defensive damage modifier",
+        "affects": "Self",
+        "props": "Armor",
+        "notes": "Does not stack with other positive Armor effects. Other defensive damage modifiers may stack."
+      },
+      "_raw_fields": [
+        "Can Do This All Day",
+        "7",
+        "3",
+        "Reduce Overkill's cooldown by 5 seconds. While Channeling Overkill, Tychus gains 40 Armor.",
+        "File:Can_Do_This_All_Day_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Bob and Weave",
+      "tier": "7",
+      "slot": "4",
+      "icon": "Bob_and_Weave_Icon.png",
+      "description": "Run and Gun and Odin's Thrusters gain 2 additional charges and reduces Run and Gun's Mana cost from 50 to 25. After using Run and Gun, increase Tychus's Basic Attack range by 1.5 for 4 seconds.",
+      "fields": {
+        "prop1": "Cooldown between charges",
+        "val1": "0.5 seconds",
+        "notes": "Does not affect Tychus's attack range during Commandeer Odin."
+      },
+      "_raw_fields": [
+        "Bob and Weave",
+        "7",
+        "4",
+        "Run and Gun and Odin's Thrusters gain 2 additional charges and reduces Run and Gun's Mana cost from 50 to 25. After using Run and Gun, increase Tychus's Basic Attack range by 1.5 for 4 seconds.",
+        "File:Bob_and_Weave_Icon.png"
+      ],
+      "level": "20"
+    }
+  ],
+  "other": [],
+  "_unparsed_count": 0
+}

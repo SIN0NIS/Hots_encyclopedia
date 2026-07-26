@@ -1,0 +1,261 @@
+{{hero data
+| name = Tassadar
+| date = March 13, 2014
+| price = 4000
+| title = Savior of the Templar
+| role = Ranged
+| franchise = Starcraft
+| info = A psychic Mage who can deliver area damage from long distances.
+| lore = An Executor without equal, Tassadar has fought tirelessly to purify the Koprulu sector of zerg infestation. Only now, after learning to wield the power of the void, is Tassadar finally ready to face the Overmind and its all-consuming Swarm.
+| difficulty = Medium
+| melee = False
+| health = 1650
+| healthRegen = 3.4375
+| resource = 500
+| resourceType = Mana
+| armor = 0
+| attackSpeed = 4.00
+| attackRange = 6.5
+| attackDamage = 14
+| healthScaling = 0.04
+| regenScaling = 0.04
+| adamageScaling = 0.04
+| unitRadius = 0.8125
+| icon = File:Tassadar_Icon.png
+| skills =
+Resonance Beam;Trait;File:Resonance_Beam_Icon.png;Tassadar's Basic Attack is a Channeled beam that Slows by 15%. While Channeling, your Basic Attack damage and Mana Regeneration increase by 25% a second, to a maximum of 100%. While at full charge, gain an additional 3 Mana per second.<p>This bonus is lost after 6 seconds of not Channeling.<!--
+-->{{undoc-x|type=Offensive damage modifier / Crowd control<!--
+-->|affects=Self / Enemies<!--
+-->|props=[[Attack Modifier]], [[Slow]]<!--
+-->|prop1=Slow duration|val1=0.3125 seconds<!--
+-->|notes=<li>Each tick grants 6.25% ''Resonance Beam'' charge.<li>Gaining charge in any way resets the duration.<li>Damage bonus stacks additively with itself and other offensive damage modifiers that can affect Tassadar's Basic Attack damage.}};;;trait;False
+
+Shock Ray;Q;File:Shock_Ray_Icon.png;Channel a beam of Psionic energy, dealing 280 damage and Slowing enemies in a line by 30% for 2 seconds.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Channeled cast]] (stationary), [[Slow]], [[Stationary channel]]<!--
+-->|cast=0.375 (ch) + CH + 0.0625 seconds<!--
+-->|range=13.5<!--
+-->|hitbox=2.0 x 1.25<!--
+-->|missile=20<!--
+-->|prop1=Channel time|val1=0.6875 seconds<!--
+-->|notes=<li>Tassadar can start moving after the channel although there is an additional 0.0625s delay (noted above) before the beam appears from its cast location.<li>Interrupting the Ability during its windup puts it on a 0.5 second cooldown.<li>Cooldown does not start until the channel completely finishes.<li>It is possible to reduce the cast time to 0.1 seconds through an input buffer: W > Basic Attack > Q (buffer is easier to execute while ''Archon'' is active).}};7;55;;False
+
+Psionic Storm;W;File:Psionic_Storm_Icon.png;Create a Psionic Storm at the targeted location for 3 seconds. While in a storm, enemies take 38 damage every 0.5 seconds, increasing by 20% for each consecutive instance of damage, up to 100%.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]]<!--
+-->|cast=0.1 + 0 seconds<!--
+-->|range=8.0<!--
+-->|aoe=Circle<!--
+-->|radius=2.75<!--
+-->|tickrate=<br>- Damage: 2.0 per second (x6)<br>- Target search: 4.0 per second (x11)<!--
+-->|notes=<li>Enemies can only be affected by one ''Psionic Storm'' at a time. This also applies in the event there are multiple Tassadars in a team.<li>Damage bonus tracks each target separately and can carry over to another cast of ''Psionic Storm'', if it damages the target within 0.4 seconds of the last damage instance. This also applies to ''Psionic Storms'' cast by different Tassadars.<li>A target with no existing stacks that is hit by a full-duration Storm will take 342 damage (excluding [[scaling]] and other [[damage modifier]]s).<li>Damage bonus stacks additively with itself and offensive damage modifiers.}};8;60;False
+
+Force Wall;E;File:Force_Wall_Icon.png;After a 0.5 second delay, create a wall that blocks all units from moving through it for 2 seconds.<!--
+-->{{undoc-x|type=Pathing blocker<!--
+-->|scaling=4.00%<!--
+-->|affects=All units<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]]<!--
+-->|cast=0.0625 + 0 seconds<!--
+-->|range=9.0<!--
+-->|aoe=Rectangle <sup>(1</sup><!--
+-->|width=6.125<!--
+-->|height=2.125<!--
+-->|notes=<li><sup>1)</sup> Area consists of four overlapping circular blocking units with 1.0625 radius.<li>''Force Wall'' can be reactivated 0.5 seconds after it has spawned to end its effect early.<li>''Force Wall'' grants vision in 6 radius.}};18 / 0.5;65;False
+
+Archon;R;File:Archon_Icon.png;Tassadar transforms into an Archon, gaining a Shield equal to 25% of his maximum Health and empowering Resonance Beam. Lasts for 12 seconds.<p>{{Resonance Beam}} Deals 140 damage to the target and splashes 70 damage to nearby enemies. Heroes hit have their Spell Armor reduced by 20 for 2 seconds. Resonance Beam is fully charged while Archon is active.<!--
+-->{{undoc-x|type=Physical Damage, Defensive damage modifier / Shield<!--
+-->|scaling=4.00% (damage) / - (Shield)<!--
+-->|affects=Enemies / Self<!--
+-->|target=No target<!--
+-->|props=[[Attack Modifier]], [[armor|Spell Armor reduction]], [[Splash]]<!--
+-->|cast=Instant<!--
+-->|range=<!--
+-->|aoe=Circle (splash)<!--
+-->|radius=2.5 (splash)<!--
+-->|prop1=Archon Attack Speed|val1=1.00<!--
+-->|notes=<li>Tassadar cannot Mount while in this form.<li>Cooldown starts when the transformation ends.<li>''Archon'' benefits from <i>Resonance Beam</i>'s Slow and Mana regeneration bonuses, but not from the damage bonus.<li>''Archon'' attacks benefit from all talents enhancing ''Resonance Beam'', except ''Khaydarin Amulet''.<li>Does not stack with itself or other negative Spell Armor effects. Other defensive damage modifiers may stack.}};90;100;heroic;False
+
+Black Hole;R;File:Black_Hole_Icon.png;After a 0.5 second cast, launch a Black Hole that travels in a long line. Enemy Heroes within the Black Hole's area are quickly pulled toward its center. Touching the center deals 310 damage and Stuns for 1.25 seconds.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemy Heroes<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Channeled cast]] (stationary), [[Displacement]], [[Stun]]<!--
+-->|cast=0.5 (ch) + 0.125 seconds<!--
+-->|range=24<!--
+-->|aoe=Circle<!--
+-->|radius=<br/>- Inner: 0.75<br/>- Outer: 3.25<!--
+-->|missile=<br/>- Min: 1.0<br/>- Max: 5.5<!--
+-->|prop1=Pull speed|val1=1.8<!--
+-->|notes=<li>Interrupting the cast during its windup puts the Ability on a 10 second cooldown.<li>Pull from ''Black Hole'' does not apply [[Daze]], allowing the target to control their Hero's movement and actions as normal and causing it to be unable to interrupt channels (without getting hit by its center).<li>Heroes hit by the center continue to be pulled until they leave Black Hole's area, but cannot be hit by the center again.}};60;60;heroic;False
+
+| talents =
+<!-- LEVEL 1 -->
+Static Charge;1;1;{{Questonly|Heroes hit by Shock Ray permanently increase its damage by 5 and grant 33% Resonance Beam charge.}}<p>Maximum of 200 additional damage.<!--
+-->{{undoc-x|type=Bonus damage<!--
+-->|scaling=-<!--
+-->|affects=Ability<!--
+-->|notes=}};File:Static_Charge_Icon.png;
+
+Psi-Infusion;1;2;Increases the range of Psionic Storm by 33%. Each non-Structure enemy hit by Psionic Storm restores 0.5 Mana, increased to 5 against Heroes.<!--
+-->{{undoc-x|type=Mana refund<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|prop1=Bonus range|val1=2.7<!--
+-->|notes=<li>Mana refund can trigger multiple times on the same target.}};File:Psi-Infusion_Icon.png;
+
+Khaydarin Amulet;1;3;{{Quest|Resonance Beam charges 50% faster.|After Resonance Beam has been fully charged for 80 seconds, it bounces to hit 1 additional target for 75% damage.}}<p>{{Reward|After Resonance Beam has been fully charged for 160 seconds, it bounces to hit 2 additional targets for 75% damage.}}<!--
+-->{{undoc-x|type=Physical Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=<!--
+-->|props=[[Attack Modifier]], [[Bounce]]<!--
+-->|radius=3.0 (bounce)<!--
+-->|notes=<li>Bounce radius is extended by the target's unit radius.<li>Bounces chain from the secondary target.<li>Secondary attacks Slow.<li>Secondary targets do not grant additional charge.<li>''Archon'' Basic Attacks do not bounce.<li>Damage reduction to both bounces is relative to damage dealt to primary target.<li>Damage reduction to secondary targets stacks '''multiplicatively''' with offensive damage modifiers that can affect Tassadar's Basic Attack damage.<li>Target must be visible to initially bounce to them, and then is revealed while linked.}};File:Khaydarin_Amulet_Icon.png;
+
+<!-- LEVEL 4-->
+Induction;2;1;Tassadar gains 10% Movement Speed. Casting Shock Ray increases this bonus to 30% for 3 seconds.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|props=[[Movement Speed]]<!--
+-->|notes=}};File:Induction_Icon.png;
+
+Electric Fence;2;2;Force Wall deals 92 damage a second to nearby enemies and Slows them by 35%.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=<!--
+-->|props=[[Area of Effect]]<!--
+-->|radius=2.125 (from centerline)<!--
+-->|tickrate=2.0 per second (x5)<!--
+-->|prop1=Damage per tick|val1=46<!--
+-->|prop2=Slow duration|val2=0.5 seconds<!--
+-->|notes=}};File:Electric_Fence_Icon.png;
+
+Plasma Shield;2;3;While Resonance Beam is fully charged, gain a Shield equal to 3% of max Health every second, stacking up to 12%.<!--
+-->{{undoc-x|type=Shield<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|tickrate=1.0 per second<!--
+-->|notes=}};File:Plasma_Shield_Icon.png;
+
+<!-- LEVEL 7 -->
+Beam Alignment;3;1;While Resonance Beam is fully charged, Shock Ray's cooldown refreshes 100% faster and its Slow duration is increased to 4 seconds.<p>{{passive}} Reduce the Mana cost of Shock Ray from 55 to 40.<!--
+-->{{undoc-x|nohr=1<!--
+-->|notes=<li>Reduces the cooldown of ''Shock Ray'' by 0.125 seconds every 0.125 seconds.<li>Slow duration is determined when the Ability hits the target. Gaining or losing full ''Resonance Beam'' charge does not affect the duration.}};File:Beam_Alignment_Icon.png;
+
+Psionic Echo;3;2;Casting Psionic Storm causes your next Shock Ray within 3 seconds to only cost 30 Mana and create a Psionic Storm on the first enemy Hero hit.<!--
+-->{{undoc-x|nohr=1<!--
+-->|notes=<li>The ''Psionic Storm'' created by ''Psionic Echo'' benefits from all talents affecting ''Psionic Storm''.}};File:Psionic_Echo_Icon.png;
+
+Arc Discharge;3;3;When Resonance Beam is fully charged, Tassadar's Basic Attack range is increased by 1 and its next instance of damage also creates a Psionic Storm on the target.<p>This effect has a 20 second cooldown that decays twice as fast while Resonance Beam is fully charged.<!--
+-->{{undoc-x|type=<!--
+-->|props=[[Attack Modifier]]<!--
+-->|notes=<li>Secondary targets from ''Khaydarin Amulet'' and ''Archon'' do not generate a ''Psionic Storm''.<li>A ''Psionic Storm'' created by ''Arc Discharge'' interacts with all Talents affecting ''Psionic Storm''.<li>Does not benefit from cooldown reduction granted by ''Executor's Will''.}};File:Arc_Discharge_Icon.png;
+
+<!-- LEVEL 10 -->
+Archon;4;1;{{Cooldown|90}}<br>Tassadar transforms into an Archon, gaining a Shield equal to 25% of his maximum Health and empowering Resonance Beam. Lasts for 12 seconds.<p>{{Resonance Beam}} Deals 140 damage to the target and splashes for 70. Heroes hit have their Spell Armor reduced by 20 for 2 seconds. Resonance Beam is fully charged while Archon is active.;File:Archon_Icon.png;
+
+Black Hole;4;2;{{Cooldown|60}}<br>After a 0.5 second cast, launch a Black Hole that travels in a long line. Enemy Heroes within the Black Hole's area are quickly pulled toward its center. Touching the center deals 310 damage and Stuns for 1.25 seconds.;File:Black_Hole_Icon.png;
+
+<!-- LEVEL 13 -->
+Feedback;5;1;When an enemy Hero is affected by Psionic Storm, Resonance Beam's Slow is increased to 50% and it reduces Physical Armor by 25.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemy Heroes<!--
+-->|target=<!--
+-->|props=[[Attack Modifier]], [[armor|Armor reduction]]<!--
+-->|notes=<li>Basic Attacks apply the debuff for 0.5 seconds, subsequent applications refreshing the duration. While ''Archon'' is active, the duration of the debuff is increased to 2 seconds.<li>Secondary attacks from ''Khaydarin Amulet'' can trigger the effect.<li>Debuff applies ''after'' the triggering Basic Attack's damage is calculated.<li>Does not stack with itself or other negative Physical Armor effects. Other defensive damage modifiers may stack.}};File:Feedback_Icon.png;
+
+Shadow Walk;5;2;{{Cooldown|60}}<br/>Tassadar becomes Stealthed and Unrevealable, but cannot attack or use Abilities for 1.5 seconds. While this effect is active gain 40% increased Movement Speed and 35 Armor.<p>Can be cast while channeling Shock Ray.<!--
+-->{{undoc-x|type=Status effect, Defensive damage modifier<!--
+-->|scaling=<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|props=[[Armor]], [[Stealth]], [[Unrevealable]]<!--
+-->|cast=Instant<!--
+-->|notes=<li>Can also be cast while channeling ''Black Hole''.<li>''Shadow Walk'' can be reactivated after 0.5 seconds to end its effect early.<li>Activating ''Shadow Walk'' during the windup of ''Shock Ray'' or ''Black Hole'' puts the Abilities on their respective shorter cooldowns. If ''Shock Ray'' is interrupted this way after the windup, the Ability ends immediately and is put on full cooldown.}};File:Shadow_Walk_Icon.png;
+
+Oracle;5;3;{{Cooldown|45}}<br/>{{Passive}} While stationary, gain 30 Spell Armor for 0.75 seconds and restore 12 Health per second.<p>Activate to Channel for up to 4 seconds, revealing a gradually increasing area anywhere on the map.<!--
+-->{{undoc-x|type=Status effect / Defensive damage modifier, Healing<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies / Self<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Stationary channel]], [[Revealed]], [[Spell Armor]]<!--
+-->|cast=Instant<!--
+-->|range=Global<!--
+-->|aoe=Circle<!--
+-->|radius=<br/>- Min: 5.0 <sup>(1</sup><br/>- Max: 16<!--
+-->|notes=<li><sup>1)</sup> Reveal area radius grows in 0.5 increments every 0.125 seconds.<li>Vision and Revealed status persists for 2 seconds after Tassadar stops channeling.<li>Does not stack with itself or other positive Spell Armor effects. Other defensive damage modifiers may stack.}};File:Oracle_Icon.png;
+
+<!-- LEVEL 16 -->
+Thermal Lance;6;1;Shock Ray deals an additional 8% of maximum Health as damage to the first Hero it hits.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=-<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Percent Damage]]<!--
+-->|notes=}};File:Thermal_Lance_Icon.png;
+
+Psychic Shock;6;2;Psionic Storm deals damage 25% faster.<!--
+-->{{undoc-x|type=<!--
+-->|tickrate=2.67 per second<!--
+-->|notes=<li>Actually deals damage 33.3~% faster because it sets the period of the AoE to 74.5% of its original (.375s instead of .5s).<li>Duration remains the same, causing ''Psionic Storm'' to tick an additional 2 times.<li>Results in up to a ~44.4% increase in total damage to someone who stands in its entire duration, due to its ramping.}};File:Psychic_Shock_Icon.png;
+
+Executor's Will;6;3;{{Cooldown|60}}<br/>Activate to gain full Resonance Beam charge, 20% Spell Power, and cause Basic and Heroic Ability cooldowns to regenerate 25% faster. This effect lasts as long as Resonance Beam remains at full charge.<!--
+-->{{undoc-x|type=Offensive damage modifier, Healing dealt modifier<!--
+-->|scaling=<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|props=[[Spell Power]]<!--
+-->|cast=Instant<!--
+-->|notes=<li>Cooldown starts when the Ability is cast.<li>Spell Power from ''Executor's Will'' does not stack with itself, but stacks additively with other sources of Spell Power and other offensive damage and healing modifiers affecting Tassadar's Spell Damage or healing output.}};File:Executor's_Will_Icon.png;
+
+<!-- LEVEL 20 -->
+Twilight Archon;7;1;Basic Attacks while in Archon form increase its duration by 2 seconds.<!--
+-->{{undoc-x|type=<!--
+-->|props=[[Attack Modifier]]<!--
+-->|notes=<li>Basic Attacks will not increase the remaining duration of ''Archon'' if it is already higher than 12 seconds, effectively limiting the remaining duration to 14 seconds.}};File:Twilight_Archon_Icon.png;
+
+Kugelblitz;7;2;Enemy Heroes hit by Black Hole's center have their Armor reduced by 20 for 3 seconds and have a Psionic Storm created at their location.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Armor]]<!--
+-->|notes=<li>''Psionic Storm''s created by ''Kugelblitz'' benefit from all talents affecting ''Psionic Storm''.<li>Armor debuff is not cleansed by Stasis.<li>Does not stack with other negative Armor effects. Other defensive damage modifiers may stack.}};File:Kugelblitz_Icon.png;
+
+Force Barrier;7;3;Increase the duration of Force Wall by 0.5 seconds, its range by 50%, and reduce its cooldown by 10 seconds.<!--
+-->{{undoc-x|type=<!--
+-->|prop1=Bonus range|val1=4.5<!--
+-->|notes=<li>Causes ''Electric Fence'' to tick 1 additional time.}};File:Force_Barrier_Icon.png;
+
+Khala's Gift;7;4;Gain 4% Spell Power for yourself and each nearby ally Hero, up to 20% total Spell Power. Your total bonus is shared with all contributing allies.<!--
+-->{{undoc-x|type=Offensive damage modifier, Healing dealt modifier<!--
+-->|scaling=<!--
+-->|affects=Allied Heroes, Self<!--
+-->|target=<!--
+-->|props=[[Area of Effect]], [[Spell Power]]<!--
+-->|radius=8.25<!--
+-->|tickrate=4.0 per second<!--
+-->|notes=<li>Searches for allies in range every 0.25 seconds.<li>Lingers for 0.3125 seconds after going out of range.<li>Spell Power from ''Khala's Gift'' stacks additively with itself and other offensive damage and healing modifiers affecting the target Hero's Spell Damage or healing output.}};File:Khala's_Gift_Icon.png;
+
+}}
+
+<noinclude>
+{{Scaling table/start|{{#var:health}}|{{#var:health scaling}}|{{#var:health regen}}|{{#var:health regen scaling}}|{{#var:attack damage}}|{{#var:attack damage scaling}}}}
+{{Scaling table/slot|Shock Ray|280|0.04}}
+{{Scaling table/slot|Psionic Storm (single)|38|0.04}}
+{{Scaling table/slot|Psionic Storm (per second)|76|0.04}}
+{{Scaling table/slot|Archon (damage)|150|0.04|10}}
+{{Scaling table/slot|Archon (splash)|75|0.04|10}}
+{{Scaling table/slot|Black Hole|310|0.04|10}}
+{{Scaling table/slot|Electric Fence (single)|46|0.04|4}}
+{{Scaling table/slot|Electric Fence (per second)|92|0.04|4}}
+{{Scaling table/slot|Oracle (healing)|12|0.04|13}}
+{{Scaling table/end}}
+</noinclude>

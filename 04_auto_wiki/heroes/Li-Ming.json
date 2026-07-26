@@ -1,0 +1,577 @@
+{
+  "hero": "Li-Ming",
+  "abilities": [
+    {
+      "name": "Critical Mass",
+      "hotkey": "TRAIT",
+      "icon": "Critical_Mass_Icon.png",
+      "description": "Getting a Takedown will refresh the cooldown on all of Li-Ming's Abilities.; trait",
+      "fields": {}
+    },
+    {
+      "name": "Magic Missiles",
+      "hotkey": "Q",
+      "icon": "Magic_Missiles_Icon.png",
+      "description": "Fire three missiles toward an area, each dealing 147 damage to the first enemy hit. These missiles do 50% damage to Structures.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "3.49121094%",
+        "affects": "Enemies",
+        "target": "Point target",
+        "props": "Clamping, Skillshot",
+        "cast": "0.125 + 0 seconds",
+        "range": "12.0",
+        "hitbox": "0.5 x 1.6",
+        "missile": "13.0",
+        "prop1": "Initial missile spacing",
+        "val1": "3.0",
+        "prop2": "Initial delay",
+        "val2": "0.1875 seconds",
+        "notes": "Damage reduction against Structures stacks additively with offensive damage modifiers.",
+        "cooldown": "3",
+        "cost": "20"
+      }
+    },
+    {
+      "name": "Arcane Orb",
+      "hotkey": "W",
+      "icon": "Arcane_Orb_Icon.png",
+      "description": "Fire an orb that powers up as it travels, dealing 135 damage to the first enemy hit. Damage is increased the farther it travels, up to 270 more damage.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "3.00292969%",
+        "affects": "Enemies",
+        "target": "Point target",
+        "props": "Clamping, Skillshot, Splash",
+        "cast": "0.125 + 0 seconds",
+        "range": "13.5",
+        "aoe": "Circle",
+        "radius": "- Hitbox (initial): 0.25 - Splash: 3.0",
+        "missile": "9.0",
+        "notes": "Upon hitting a target the Orb explodes, dealing area damage. Units that are immune to skillshots cannot trigger the explosion, but can be damaged by it. Hit detection radius is increased by 0.09 and damage is increased by 16.875 every 0.0625 seconds the orb travels. Arcane Orb 's damage can increase up to 16 times, causing it to reach its maximum damage after travelling for 1.0 second (9.0 range).",
+        "cooldown": "8",
+        "cost": "40"
+      }
+    },
+    {
+      "name": "Teleport",
+      "hotkey": "E",
+      "icon": "Teleport_Icon.png",
+      "description": "Teleport a short distance instantly.",
+      "fields": {
+        "type": "Movement: Teleport",
+        "affects": "Self",
+        "target": "Point target",
+        "props": "Clamping",
+        "cast": "Instant",
+        "range": "4.0",
+        "notes": "As a teleport-type Movement Ability, Teleport can disjoint most projectiles.",
+        "cooldown": "5",
+        "cost": "30"
+      }
+    },
+    {
+      "name": "Disintegrate",
+      "hotkey": "R",
+      "icon": "Disintegrate_Icon.png",
+      "description": "Channel a powerful beam, dealing 480 damage over 2.6 seconds to enemies while they are in it. The direction of the beam changes with your mouse cursor position.; 20; 80; Heroic",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "5.00488281%",
+        "affects": "Enemies",
+        "target": "Point target / Cursor tracking",
+        "props": "Area of Effect, Clamping, Stationary channel",
+        "cast": "Instant",
+        "aoe": "Rectangle",
+        "width": "1.0",
+        "height": "16.0",
+        "tickrate": "16.0 per second (x40)",
+        "prop1": "Damage per tick",
+        "val1": "12"
+      }
+    },
+    {
+      "name": "Wave of Force",
+      "hotkey": "R",
+      "icon": "Wave_Of_Force_Icon.png",
+      "description": "Knock away all enemies from an area and deal 160 damage.; 30; 80; Heroic",
+      "fields": {
+        "type": "Spell Damage, Crowd control",
+        "scaling": "5.00488281%",
+        "affects": "Enemies",
+        "target": "Point target",
+        "props": "Area of Effect, Knockback",
+        "cast": "Instant",
+        "range": "9.0",
+        "aoe": "Circle",
+        "radius": "4.0",
+        "prop1": "Impact delay",
+        "val1": "0.25 seconds",
+        "prop2": "Knockback duration",
+        "val2": "0.25 seconds",
+        "prop3": "Knockback speed",
+        "val3": "18.0"
+      }
+    }
+  ],
+  "talents": [
+    {
+      "name": "Force Armor",
+      "tier": "1",
+      "slot": "1",
+      "icon": "Force_Armor_Icon.png",
+      "description": "When Magic Missiles damages an enemy Hero, gain 50 Spell Armor against the next enemy Ability, reducing the damage taken by 50%. Can only gain 1 charge per cast, up to 4 charges maximum. Passive Li Ming's Mana regeneration is increased by 100% while below 35% Mana.",
+      "fields": {
+        "type": "Defensive damage modifier",
+        "affects": "Self",
+        "props": "Spell Block, Spell Armor",
+        "notes": "Does not stack with itself or other positive Armor effects. Other defensive damage modifiers may stack."
+      },
+      "_raw_fields": [
+        "Force Armor",
+        "1",
+        "1",
+        "When Magic Missiles damages an enemy Hero, gain 50 Spell Armor against the next enemy Ability, reducing the damage taken by 50%. Can only gain 1 charge per cast, up to 4 charges maximum. Passive Li Ming's Mana regeneration is increased by 100% while below 35% Mana.",
+        "File:Force_Armor_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Aether Walker",
+      "tier": "1",
+      "slot": "2",
+      "icon": "Aether_Walker_Icon.png",
+      "description": "Teleport costs no Mana. If Li-Ming hasn't taken damage in the last 3 seconds, Teleport's cooldown is decreased by 2 seconds. Casting Teleport causes Li-Ming's next cast of Magic Missiles to deal 10% bonus damage.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Ability",
+        "notes": "Does not stack with itself. Stacks additively with other offensive damage modifiers that can affect Magic Missiles 's damage."
+      },
+      "_raw_fields": [
+        "Aether Walker",
+        "1",
+        "2",
+        "Teleport costs no Mana. If Li-Ming hasn't taken damage in the last 3 seconds, Teleport's cooldown is decreased by 2 seconds. Casting Teleport causes Li-Ming's next cast of Magic Missiles to deal 10% bonus damage.",
+        "File:Aether_Walker_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Power Hungry",
+      "tier": "1",
+      "slot": "3",
+      "icon": "Power_Hungry_Icon.png",
+      "description": "Regeneration Globes restore 100% more Mana and grant 10% Spell Power for 20 seconds.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Self",
+        "props": "Spell Power",
+        "notes": "Does not stack with itself. Subsequent Globes refresh the duration. Stacks additively with other sources of Spell Power as well as other offensive damage modifiers affecting Li-Ming's Spell Damage."
+      },
+      "_raw_fields": [
+        "Power Hungry",
+        "1",
+        "3",
+        "Regeneration Globes restore 100% more Mana and grant 10% Spell Power for 20 seconds.",
+        "File:Power_Hungry_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Charged Blast",
+      "tier": "2",
+      "slot": "1",
+      "icon": "Charged_Blast_Icon.png",
+      "description": "Basic Attacking a target recently hit by a Magic Missile does an extra 87 damage.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "4.00390625%",
+        "affects": "Enemies",
+        "props": "Debuff",
+        "notes": "Damage is dealt in a separate instance of Spell Damage."
+      },
+      "_raw_fields": [
+        "Charged Blast",
+        "2",
+        "1",
+        "Basic Attacking a target recently hit by a Magic Missile does an extra 87 damage.",
+        "File:Charged_Blast_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Triumvirate",
+      "tier": "2",
+      "slot": "2",
+      "icon": "Triumvirate_Icon.png",
+      "description": "If Arcane Orb hits an enemy Hero after traveling at least 50% of its base range, the cooldown is reduced by 5 seconds and 40 Mana is refunded.",
+      "fields": {
+        "prop1": "Distance threshold",
+        "val1": "6.75",
+        "notes": "Distance threshold is unaffected by the range increase from Arcane Orbit."
+      },
+      "_raw_fields": [
+        "Triumvirate",
+        "2",
+        "2",
+        "If Arcane Orb hits an enemy Hero after traveling at least 50% of its base range, the cooldown is reduced by 5 seconds and 40 Mana is refunded.",
+        "File:Triumvirate_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Dominance",
+      "tier": "2",
+      "slot": "3",
+      "icon": "Dominance_Icon.png",
+      "description": "Takedowns restore 30% of Li Ming's missing Health.",
+      "fields": {
+        "type": "Healing",
+        "scaling": "-",
+        "affects": "Self"
+      },
+      "_raw_fields": [
+        "Dominance",
+        "2",
+        "3",
+        "Takedowns restore 30% of Li Ming's missing Health.",
+        "File:Dominance_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Seeker",
+      "tier": "3",
+      "slot": "1",
+      "icon": "Seeker_Icon.png",
+      "description": "If three Magic Missiles hit the same target, the third one deals an additional 140 damage.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "4.00390625%",
+        "affects": "Enemies",
+        "notes": "Damage is dealt in a separate instance of Spell Damage."
+      },
+      "_raw_fields": [
+        "Seeker",
+        "3",
+        "1",
+        "If three Magic Missiles hit the same target, the third one deals an additional 140 damage.",
+        "File:Seeker_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Zei's Vengeance",
+      "tier": "3",
+      "slot": "2",
+      "icon": "Zeis_Vengeance_Icon.png",
+      "description": "Increase Arcane Orb's damage increase for distance traveled by 30%. Additionally, reduce its cooldown by 1 second.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Ability",
+        "notes": "Cooldown reduction is permanent. Only affects the distance-based portion of Arcane Orb 's damage, effectively increasing Arcane Orb 's total damage by up to 20%. Stacks multiplicatively with other offensive damage modifiers that can affect Arcane Orb 's damage."
+      },
+      "_raw_fields": [
+        "Zei's Vengeance",
+        "3",
+        "2",
+        "Increase Arcane Orb's damage increase for distance traveled by 30%. Additionally, reduce its cooldown by 1 second.",
+        "File:Zeis_Vengeance_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Calamity",
+      "tier": "3",
+      "slot": "3",
+      "icon": "Calamity_Icon.png",
+      "description": "Teleport does 300 damage to enemy Heroes near your destination.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "3.00292969%",
+        "affects": "Enemy Heroes",
+        "props": "Area of Effect",
+        "aoe": "Circle",
+        "radius": "2.5"
+      },
+      "_raw_fields": [
+        "Calamity",
+        "3",
+        "3",
+        "Teleport does 300 damage to enemy Heroes near your destination.",
+        "File:Calamity_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Disintegrate",
+      "tier": "4",
+      "slot": "1",
+      "icon": "Disintegrate_Icon.png",
+      "description": "Cooldown 20 Channel a powerful beam, dealing 480 damage over 2.6 seconds to enemies while they are in it. The direction of the beam changes with your mouse cursor position.",
+      "fields": {},
+      "_raw_fields": [
+        "Disintegrate",
+        "4",
+        "1",
+        "Cooldown 20 Channel a powerful beam, dealing 480 damage over 2.6 seconds to enemies while they are in it. The direction of the beam changes with your mouse cursor position.",
+        "File:Disintegrate_Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Wave Of Force",
+      "tier": "4",
+      "slot": "2",
+      "icon": "Wave_Of_Force_Icon.png",
+      "description": "Cooldown 30 Knock away all enemies from an area and deal 160 damage.",
+      "fields": {},
+      "_raw_fields": [
+        "Wave Of Force",
+        "4",
+        "2",
+        "Cooldown 30 Knock away all enemies from an area and deal 160 damage.",
+        "File:Wave_Of_Force_Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Illusionist",
+      "tier": "5",
+      "slot": "1",
+      "icon": "Illusionist_Icon.png",
+      "description": "If Li-Ming loses more than 20% of her Health at once, Teleport's cooldown is instantly refreshed. This effect has a 4 second cooldown. passive Increases Teleport's range by 50%.",
+      "fields": {
+        "prop1": "Bonus range",
+        "val1": "2.0",
+        "notes": "Based on Li-Ming's maximum Health. This cooldown is not reset by Critical Mass."
+      },
+      "_raw_fields": [
+        "Illusionist",
+        "5",
+        "1",
+        "If Li-Ming loses more than 20% of her Health at once, Teleport's cooldown is instantly refreshed. This effect has a 4 second cooldown. passive Increases Teleport's range by 50%.",
+        "File:Illusionist_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Cannoneer",
+      "tier": "5",
+      "slot": "2",
+      "icon": "Cannoneer_Icon.png",
+      "description": "When Li-Ming uses an Ability, her next Basic Attack's damage is increased by 75% and deals Spell Damage instead of Physical. Stacks up to 3 times.",
+      "fields": {
+        "type": "Spell Damage / Offensive damage modifier",
+        "scaling": "-",
+        "affects": "Enemies / Ability",
+        "props": "Attack Modifier",
+        "notes": "Stacks additively with itself and other offensive damage modifiers that can affect Li-Ming's Spell Damage."
+      },
+      "_raw_fields": [
+        "Cannoneer",
+        "5",
+        "2",
+        "When Li-Ming uses an Ability, her next Basic Attack's damage is increased by 75% and deals Spell Damage instead of Physical. Stacks up to 3 times.",
+        "File:Cannoneer_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Glass Cannon",
+      "tier": "5",
+      "slot": "3",
+      "icon": "Glass_Cannon_Icon.png",
+      "description": "Increase Li-Ming's Spell Power by 20%, but decrease her maximum Health by 15%.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Self",
+        "props": "Spell Power",
+        "notes": "Stacks additively with other sources of Spell Power as well as other offensive damage modifiers affecting Li-Ming's Spell Damage."
+      },
+      "_raw_fields": [
+        "Glass Cannon",
+        "5",
+        "3",
+        "Increase Li-Ming's Spell Power by 20%, but decrease her maximum Health by 15%.",
+        "File:Glass_Cannon_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Fireflies",
+      "tier": "6",
+      "slot": "1",
+      "icon": "Fireflies_Icon.png",
+      "description": "Drastically increases Magic Missiles's speed. Its cooldown is reduced by 1 second and its Mana cost is reduced by 5.",
+      "fields": {
+        "missile": "20.0"
+      },
+      "_raw_fields": [
+        "Fireflies",
+        "6",
+        "1",
+        "Drastically increases Magic Missiles's speed. Its cooldown is reduced by 1 second and its Mana cost is reduced by 5.",
+        "File:Fireflies_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Mirrorball",
+      "tier": "6",
+      "slot": "2",
+      "icon": "Mirrorball_Icon.png",
+      "description": "Magic Missiles fires an additional 2 missiles, but its Mana cost is increased by 5.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "3.49121094%",
+        "affects": "Enemies",
+        "notes": "Additional missiles from Mirrorball benefit from all talents affecting Magic Missiles."
+      },
+      "_raw_fields": [
+        "Mirrorball",
+        "6",
+        "2",
+        "Magic Missiles fires an additional 2 missiles, but its Mana cost is increased by 5.",
+        "File:Mirrorball_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Arcane Orbit",
+      "tier": "6",
+      "slot": "3",
+      "icon": "Arcane_Orbit_Icon.png",
+      "description": "Arcane Orb travels 25% farther, increasing its maximum distance damage bonus from 270 to 371.",
+      "fields": {
+        "prop1": "Bonus range",
+        "val1": "3.375",
+        "notes": "Raises the cut-off point of the damage increase by 6 ticks. The distance scaling rate remains the same, causing only long range Arcane Orbs to be affected."
+      },
+      "_raw_fields": [
+        "Arcane Orbit",
+        "6",
+        "3",
+        "Arcane Orb travels 25% farther, increasing its maximum distance damage bonus from 270 to 371.",
+        "File:Arcane_Orbit_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Diamond Skin",
+      "tier": "6",
+      "slot": "4",
+      "icon": "Diamond_Skin_Icon.png",
+      "description": "Teleport grants a Shield equal to 25% of Li-Ming's maximum Health for 4 seconds.",
+      "fields": {
+        "type": "Shield",
+        "scaling": "-",
+        "affects": "Self"
+      },
+      "_raw_fields": [
+        "Diamond Skin",
+        "6",
+        "4",
+        "Teleport grants a Shield equal to 25% of Li-Ming's maximum Health for 4 seconds.",
+        "File:Diamond_Skin_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Temporal Flux",
+      "tier": "7",
+      "slot": "1",
+      "icon": "Temporal_Flux_Li-Ming_Icon.png",
+      "description": "Disintegrate gradually Slows enemies caught in its beam, to a maximum of 60%.",
+      "fields": {
+        "type": "Crowd control",
+        "affects": "Enemies",
+        "props": "Slow",
+        "prop1": "Slowing rate",
+        "val1": "1.5% per tick",
+        "prop2": "Slow duration",
+        "val2": "0.1875 seconds",
+        "notes": "Stacks additively with itself, but not with other Slow effects."
+      },
+      "_raw_fields": [
+        "Temporal Flux",
+        "7",
+        "1",
+        "Disintegrate gradually Slows enemies caught in its beam, to a maximum of 60%.",
+        "File:Temporal_Flux_Li-Ming_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Repulsion",
+      "tier": "7",
+      "slot": "2",
+      "icon": "Repulsion_Icon.png",
+      "description": "Increases Wave of Force's knockback distance by 150% and increases its cast range by 95%.",
+      "fields": {
+        "prop1": "Bonus cast range",
+        "val1": "8.5",
+        "prop2": "Bonus knockback duration",
+        "val2": "0.25 seconds",
+        "prop3": "Bonus knockback speed",
+        "val3": "8.55"
+      },
+      "_raw_fields": [
+        "Repulsion",
+        "7",
+        "2",
+        "Increases Wave of Force's knockback distance by 150% and increases its cast range by 95%.",
+        "File:Repulsion_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Tal Rasha's Elements",
+      "tier": "7",
+      "slot": "3",
+      "icon": "Tal_Rasha's_Elements_Icon.png",
+      "description": "Casting Abilities increases the damage of the next Ability by 5%, up to a maximum of 20%. This bonus is reset when the same Ability is used within a chain.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Self",
+        "notes": "Damage bonus is added and validated after the Ability has been cast. In case the bonus is reset, the Ability that reset the bonus still benefits from the damage increase. Using any Ability twice within a 4 Ability chain resets the bonus. Upon reaching 20% bonus, the next Ability used resets the bonus. Stacks additively with itself and other offensive damage modifiers that can affect the cast Ability's damage."
+      },
+      "_raw_fields": [
+        "Tal Rasha's Elements",
+        "7",
+        "3",
+        "Casting Abilities increases the damage of the next Ability by 5%, up to a maximum of 20%. This bonus is reset when the same Ability is used within a chain.",
+        "File:Tal_Rasha's_Elements_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Archon: Pure Power",
+      "tier": "7",
+      "slot": "4",
+      "icon": "Archon_Pure_Power_Icon.png",
+      "description": "cooldown 10 / 1.0 Active Activate to enter Archon form, allowing Li-Ming to repeatedly use Disintegrate, but be unable to cast other Abilities.",
+      "fields": {
+        "type": "Transformation",
+        "affects": "Self",
+        "target": "No target",
+        "cast": "Instant",
+        "prop1": "Transformation time",
+        "val1": "0.75 seconds",
+        "prop2": "Disintegrate toggle cooldown",
+        "val2": "1.0 seconds",
+        "notes": "Archon form lasts indefinitely once cast and can be disabled by reactivating the Ability. Cooldown starts upon leaving Archon form. Entering Archon form replaces Wave of Force and Disintegrate with Archon's Disintegrate, which has no Mana cost and can be freely toggled on and off. Archon's Disintegrate has a separate cooldown from normal Disintegrate. Li-Ming is unable to mount while in Archon form."
+      },
+      "_raw_fields": [
+        "Archon: Pure Power",
+        "7",
+        "4",
+        "cooldown 10 / 1.0 Active Activate to enter Archon form, allowing Li-Ming to repeatedly use Disintegrate, but be unable to cast other Abilities.",
+        "File:Archon_Pure_Power_Icon.png"
+      ],
+      "level": "20"
+    }
+  ],
+  "other": [],
+  "_unparsed_count": 0
+}

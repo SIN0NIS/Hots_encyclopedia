@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>히오스 자료 모음</title>
+<style>
+:root { --p:#a333ff; --bg:#0b0b0d; --card:#16161a; --blue:#00d4ff; --gold:#ffd700; }
+* { box-sizing:border-box; }
+body { margin:0; min-height:100vh; background:var(--bg); color:#eee; display:flex;
+  flex-direction:column; align-items:center; justify-content:center; padding:32px 20px;
+  font-family:"Malgun Gothic",-apple-system,sans-serif; }
+header { text-align:center; margin-bottom:34px; }
+h1 { margin:0 0 8px; font-size:26px; color:var(--p); font-weight:bold; }
+.meta { color:#666; font-size:12px; }
+/* 넷이 3+1 로 떨어지지 않게 2x2 로 묶는다 */
+.cards { display:grid; gap:14px; width:100%; max-width:640px;
+  grid-template-columns:repeat(auto-fit,minmax(270px,1fr)); }
+.card { background:var(--card); border:1px solid #262630; border-left:3px solid var(--accent);
+  border-radius:10px; padding:18px 18px 16px; text-decoration:none; color:inherit;
+  display:flex; flex-direction:column; gap:6px; transition:border-color .15s, transform .15s; }
+.card:hover { border-color:var(--accent); transform:translateY(-2px); }
+.icon { font-size:26px; line-height:1; }
+.name { font-size:15px; font-weight:bold; color:var(--accent); }
+.desc { font-size:12.5px; color:#9a9aa6; line-height:1.6; }
+.host { font-size:11px; color:#555; margin-top:auto; padding-top:8px; word-break:break-all; }
+footer { margin-top:30px; color:#4a4a52; font-size:11px; text-align:center; line-height:1.7; }
+</style>
+</head>
+<body>
+<header>
+  <h1>히오스 자료 모음</h1>
+  <div class="meta">Build 97650</div>
+</header>
+
+<div class="cards">
+  <a class="card" style="--accent:var(--p)" href="hots_encyclopedia_wiki.html">
+    <span class="icon">📖</span>
+    <span class="name">영웅 백과사전</span>
+    <span class="desc">영웅 90명의 스킬·특성 전체. 위키 상세 수치와 범위 그림이
+      들어 있다. 레벨 0부터 30까지 수치가 바뀐다.</span>
+    <span class="host">hots_encyclopedia_wiki.html</span>
+  </a>
+
+  <a class="card" style="--accent:var(--blue)" href="hots_encyclopedia_wiki.html#glossary">
+    <span class="icon">📘</span>
+    <span class="name">용어집</span>
+    <span class="desc">스킬·특성 하단 필드의 한글 표기를 정리했다. 게임 번역이 아니라
+      직접 정한 말들이라 어디서 왔는지 적어 두었다.</span>
+    <span class="host">백과사전 안에 있다</span>
+  </a>
+
+  <a class="card" style="--accent:var(--gold)" href="https://sin0nis.github.io/hots_talent_build_auto_git/hots_talent_build.html" target="_blank" rel="noopener">
+    <span class="icon">🧩</span>
+    <span class="name">특성 찍기</span>
+    <span class="desc">영웅별 특성 빌드를 짜고 공유한다.</span>
+    <span class="host">sin0nis.github.io</span>
+  </a>
+
+  <a class="card" style="--accent:#3ddc84" href="https://heroesofthestorm.fandom.com/wiki/Heroes_of_the_Storm_Wiki" target="_blank" rel="noopener">
+    <span class="icon">📚</span>
+    <span class="name">HotS 위키</span>
+    <span class="desc">Fandom 원문 위키. 백과사전의 상세 수치가 여기서 온다.</span>
+    <span class="host">heroesofthestorm.fandom.com</span>
+  </a>
+</div>
+
+<footer>위 두 장은 이 폴더 안에 있고, 아래 둘은 바깥 사이트다.</footer>
+</body>
+</html>

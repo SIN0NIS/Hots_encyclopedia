@@ -1,0 +1,540 @@
+{
+  "hero": "The Butcher",
+  "abilities": [
+    {
+      "name": "Fresh Meat",
+      "hotkey": "TRAIT",
+      "icon": "Fresh_Meat_Icon.png",
+      "description": "Upon dying, nearby enemy Minions drop 1 Fresh Meat and enemy Heroes drop 20 Fresh Meat. Fresh Meat can be picked up to gain 0.5 Attack Damage per Meat. The Butcher loses 15 Fresh Meat upon dying. quest Collect 200 Fresh Meat. Gain an additional 125 Attack Damage and 25% increased Attack Speed. Heroes continue to drop 10 Fresh Meat, Minions no longer drop Fresh Meat, and Fresh Meat is no longer lost on death.",
+      "fields": {
+        "type": "Bonus damage, Status effect",
+        "scaling": "-",
+        "affects": "Self",
+        "props": "Attack Speed",
+        "radius": "- Drop: 13.125 (Minions) / upon takedown (Heroes) - Collect: 0.125",
+        "prop1": "Pickup duration",
+        "val1": "15 seconds",
+        "notes": "Attack Speed stacks additively with other effects affecting the Butcher's Attack Speed. Bonus Attack Damage from Fresh Meat is added to The Butcher 's base Attack Damage before multiplying by the sum of any damage modifiers, such as Brutal Strike and Nexus Blades."
+      }
+    },
+    {
+      "name": "Hamstring",
+      "hotkey": "Q",
+      "icon": "Hamstring_Icon.png",
+      "description": "Deal 110 damage and Slow enemies by 50% fading over 2 seconds. The Butcher's next Basic Attack will strike immediately.",
+      "fields": {
+        "type": "Spell Damage, Crowd control",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "target": "Point target",
+        "props": "AA reset, Area of Effect",
+        "cast": "0.1875 + 0 seconds",
+        "aoe": "Rectangle",
+        "width": "2.5",
+        "height": "7.0",
+        "cooldown": "4",
+        "cost": "40"
+      }
+    },
+    {
+      "name": "Butcher's Brand",
+      "hotkey": "W",
+      "icon": "Butcher's_Brand_Icon.png",
+      "description": "Deal 37 damage to an enemy and Brand them for 4 seconds. The Butcher's Basic Attacks against the Branded target heal him for 75% of the damage done. Basic Attacks against Branded Heroes heal for double and extend the duration of the Brand by 0.5 seconds.",
+      "fields": {
+        "type": "Spell Damage / Healing",
+        "scaling": "4.00%",
+        "affects": "Non-Structure enemies / Self",
+        "target": "Unit target",
+        "props": "Attack Modifier, Lifesteal",
+        "cast": "0.125 + 0 seconds",
+        "range": "1.5",
+        "notes": "Resets The Butcher's Basic Attack timer.",
+        "cooldown": "14",
+        "cost": "60"
+      }
+    },
+    {
+      "name": "Ruthless Onslaught",
+      "hotkey": "E",
+      "icon": "Ruthless_Onslaught_Icon.png",
+      "description": "Charge at an enemy, becoming Unstoppable and gaining Movement Speed. If The Butcher reaches the target, they are Stunned for 1 second and take 119 damage.",
+      "fields": {
+        "type": "Spell Damage, Crowd control / Status effect",
+        "scaling": "4.00%",
+        "affects": "Non-Structure enemies / Self",
+        "target": "Unit target",
+        "props": "Mobile channel, Movement speed, Stun, Unstoppable",
+        "cast": "0.5 + CH + 0 seconds",
+        "range": "12",
+        "notes": "The Butcher is not Unstoppable until the cast time is complete, meaning that, like other Abilities, it can interrupted by enemy crowd control during its windup, refunding its cooldown and Mana cost. Ruthless Onslaught can be reactivated after 0.75 seconds to interrupt the charge, placing it on full cooldown. Otherwise The Butcher is uncontrollable during the charge. Charge is automatically canceled if it has been active for 4 seconds without hitting the target or if the target becomes untargetable or, for its windup, if the target moves farther than 5 units from its maximum cast range.",
+        "cooldown": "15",
+        "cost": "50"
+      }
+    },
+    {
+      "name": "Furnace Blast",
+      "hotkey": "R",
+      "icon": "Furnace_Blast_Icon.png",
+      "description": "After a 3 second delay, fire explodes around The Butcher dealing 500 damage to enemies. Can be cast while using Ruthless Onslaught.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "target": "No target",
+        "props": "Area of Effect",
+        "cast": "Instant",
+        "aoe": "Circle",
+        "radius": "4.0",
+        "cooldown": "60",
+        "cost": "75"
+      }
+    },
+    {
+      "name": "Lamb to the Slaughter",
+      "hotkey": "R",
+      "icon": "Lamb_to_the_Slaughter_Icon.png",
+      "description": "Throw a hitching post that attaches to the nearest enemy Hero after a 1 second delay. This deals 171 damage and causes the enemy to be chained to the post and Silenced for 3 seconds.",
+      "fields": {
+        "type": "Spell Damage, Crowd control",
+        "scaling": "4.00%",
+        "affects": "Enemy Heroes",
+        "target": "Point target",
+        "props": "Knockback, Silence",
+        "cast": "Instant",
+        "range": "14",
+        "aoe": "Circle",
+        "radius": "4.0 (target search)",
+        "notes": "'Nearest enemy' refers to the one closest to the center of the search area. Chained enemies will be pulled to the center if they try to escape the area.",
+        "cooldown": "90",
+        "cost": "75"
+      }
+    }
+  ],
+  "talents": [
+    {
+      "name": "Invigoration",
+      "tier": "1",
+      "slot": "1",
+      "icon": "Invigoration_Icon.png",
+      "description": "If Hamstring hits a Hero, half of the Mana cost is refunded and the cooldown is reduced by 1 second.",
+      "fields": {
+        "type": "Mana restoration, Cooldown reduction",
+        "scaling": "-",
+        "affects": "Self"
+      },
+      "_raw_fields": [
+        "Invigoration",
+        "1",
+        "1",
+        "If Hamstring hits a Hero, half of the Mana cost is refunded and the cooldown is reduced by 1 second.",
+        "File:Invigoration_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Block",
+      "tier": "1",
+      "slot": "2",
+      "icon": "Block_Icon.png",
+      "description": "Every 5 seconds, gain 75 Physical Armor against the next enemy Hero Basic Attack, reducing the damage taken by 75%. Stores up to 2 charges.",
+      "fields": {
+        "type": "Defensive damage modifier",
+        "affects": "Self",
+        "props": "Block, Physical Armor",
+        "notes": "Does not stack with itself or other positive Physical Armor effects. Other defensive damage modifiers may stack."
+      },
+      "_raw_fields": [
+        "Block",
+        "1",
+        "2",
+        "Every 5 seconds, gain 75 Physical Armor against the next enemy Hero Basic Attack, reducing the damage taken by 75%. Stores up to 2 charges.",
+        "File:Block_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Chop Meat",
+      "tier": "1",
+      "slot": "3",
+      "icon": "Chop_Meat_Icon.png",
+      "description": "Increases Hamstring damage by 100% to Minions, Mercenaries, and Monsters.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Ability",
+        "notes": "Damage bonus stacks additively with other offensive damage modifiers affecting Hamstring 's damage."
+      },
+      "_raw_fields": [
+        "Chop Meat",
+        "1",
+        "3",
+        "Increases Hamstring damage by 100% to Minions, Mercenaries, and Monsters.",
+        "File:Chop_Meat_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Flail Axe",
+      "tier": "2",
+      "slot": "1",
+      "icon": "Flail_Axe_Icon.png",
+      "description": "Increases the length of Hamstring by 40%.",
+      "fields": {
+        "prop1": "Bonus height",
+        "val1": "2.8"
+      },
+      "_raw_fields": [
+        "Flail Axe",
+        "2",
+        "1",
+        "Increases the length of Hamstring by 40%.",
+        "File:Flail_Axe_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Unrelenting Pursuit",
+      "tier": "2",
+      "slot": "2",
+      "icon": "Unrelenting_Pursuit_Icon.png",
+      "description": "Reduces the cooldown of Ruthless Onslaught by 33% upon impact.",
+      "fields": {
+        "prop1": "Cooldown reduction",
+        "val1": "5 seconds"
+      },
+      "_raw_fields": [
+        "Unrelenting Pursuit",
+        "2",
+        "2",
+        "Reduces the cooldown of Ruthless Onslaught by 33% upon impact.",
+        "File:Unrelenting_Pursuit_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Cheap Shot",
+      "tier": "2",
+      "slot": "3",
+      "icon": "Cheap_Shot_Icon.png",
+      "description": "Hamstring does 100% more damage to targets affected by Slow, Root, or Stun.",
+      "fields": {
+        "type": "Damage modifier",
+        "affects": "Ability",
+        "notes": "Does not benefit from Hamstring 's Slow, as the damage is dealt before the Slow is applied. Damage bonus stacks additively with other offensive damage modifiers affecting Hamstring 's damage output."
+      },
+      "_raw_fields": [
+        "Cheap Shot",
+        "2",
+        "3",
+        "Hamstring does 100% more damage to targets affected by Slow, Root, or Stun.",
+        "File:Cheap_Shot_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Insatiable Blade",
+      "tier": "3",
+      "slot": "1",
+      "icon": "Insatiable_Blade_Icon.png",
+      "description": "While facing the branded enemy, The Butcher's Movement Speed is increased by 25%.",
+      "fields": {
+        "type": "Status effect",
+        "affects": "Self",
+        "props": "Movement Speed",
+        "radius": "12",
+        "arc": "10 degrees"
+      },
+      "_raw_fields": [
+        "Insatiable Blade",
+        "3",
+        "1",
+        "While facing the branded enemy, The Butcher's Movement Speed is increased by 25%.",
+        "File:Insatiable_Blade_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Victuals",
+      "tier": "3",
+      "slot": "2",
+      "icon": "Victuals_Icon.png",
+      "description": "Every time a nearby enemy Minion dies, The Butcher heals 5% of his maximum Health.",
+      "fields": {
+        "type": "Healing",
+        "scaling": "-",
+        "affects": "Self",
+        "radius": "13.125"
+      },
+      "_raw_fields": [
+        "Victuals",
+        "3",
+        "2",
+        "Every time a nearby enemy Minion dies, The Butcher heals 5% of his maximum Health.",
+        "File:Victuals_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Meat Shield",
+      "tier": "3",
+      "slot": "3",
+      "icon": "Meat_Shield_Icon.png",
+      "description": "When Ruthless Onslaught impacts an enemy Hero, The Butcher gains 50 Spell Armor for 2.5 seconds, reducing Spell Damage taken by 50%.",
+      "fields": {
+        "type": "Defensive damage modifier",
+        "affects": "Self",
+        "props": "Spell Armor",
+        "notes": "Does not stack with itself or other positive Spell Armor effects. Other defensive damage modifiers may stack."
+      },
+      "_raw_fields": [
+        "Meat Shield",
+        "3",
+        "3",
+        "When Ruthless Onslaught impacts an enemy Hero, The Butcher gains 50 Spell Armor for 2.5 seconds, reducing Spell Damage taken by 50%.",
+        "File:Meat_Shield_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Furnace Blast",
+      "tier": "4",
+      "slot": "1",
+      "icon": "Furnace_Blast_Icon.png",
+      "description": "Cooldown 60 After a 3 second delay, fire explodes around The Butcher dealing 500 damage to enemies. Can be cast while using Ruthless Onslaught.",
+      "fields": {},
+      "_raw_fields": [
+        "Furnace Blast",
+        "4",
+        "1",
+        "Cooldown 60 After a 3 second delay, fire explodes around The Butcher dealing 500 damage to enemies. Can be cast while using Ruthless Onslaught.",
+        "File:Furnace_Blast_Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Lamb to the Slaughter",
+      "tier": "4",
+      "slot": "2",
+      "icon": "Lamb_to_the_Slaughter_Icon.png",
+      "description": "Cooldown 90 Throw a hitching post that attaches to the nearest enemy Hero after a 1 second delay. This deals 171 damage and causes the enemy to be chained to the post and Silenced for 3 seconds.",
+      "fields": {},
+      "_raw_fields": [
+        "Lamb to the Slaughter",
+        "4",
+        "2",
+        "Cooldown 90 Throw a hitching post that attaches to the nearest enemy Hero after a 1 second delay. This deals 171 damage and causes the enemy to be chained to the post and Silenced for 3 seconds.",
+        "File:Lamb_to_the_Slaughter_Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Cleaver",
+      "tier": "5",
+      "slot": "1",
+      "icon": "Cleaver_Icon.png",
+      "description": "Basic Attacks deal 35% of The Butcher's Basic Attack Damage in an area around the target.",
+      "fields": {
+        "type": "Physical Damage",
+        "scaling": "-",
+        "affects": "Enemies",
+        "props": "Attack Modifier, Splash",
+        "aoe": "Circle",
+        "radius": "2.0",
+        "notes": "Cleaver benefits from the bonus damage from Fresh Meat . Splash damage does not grant lifesteal when damaging enemies affected by Butcher's Brand . Damage reduction stacks additively with offensive damage modifiers affecting The Butcher's Basic Attack damage."
+      },
+      "_raw_fields": [
+        "Cleaver",
+        "5",
+        "1",
+        "Basic Attacks deal 35% of The Butcher's Basic Attack Damage in an area around the target.",
+        "File:Cleaver_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Savage Charge",
+      "tier": "5",
+      "slot": "2",
+      "icon": "Savage_Charge_Icon.png",
+      "description": "Ruthless Onslaught deals bonus damage to Heroes equal to 10% of their maximum Health.",
+      "fields": {
+        "type": "Percent damage",
+        "scaling": "-",
+        "affects": "Enemy Heroes",
+        "props": "Percent Damage"
+      },
+      "_raw_fields": [
+        "Savage Charge",
+        "5",
+        "2",
+        "Ruthless Onslaught deals bonus damage to Heroes equal to 10% of their maximum Health.",
+        "File:Savage_Charge_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Brutal Strike",
+      "tier": "5",
+      "slot": "3",
+      "icon": "Brutal_Strike_Icon.png",
+      "description": "After using Hamstring, The Butcher's next 3 Basic Attacks within 5 seconds deal an additional 15% damage.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Self",
+        "props": "Attack Modifier",
+        "notes": "Does not stack with itself. Charges from previous casts are not stored. Damage bonus stacks additively with other damage modifiers affecting The Butcher's Basic Attack damage."
+      },
+      "_raw_fields": [
+        "Brutal Strike",
+        "5",
+        "3",
+        "After using Hamstring, The Butcher's next 3 Basic Attacks within 5 seconds deal an additional 15% damage.",
+        "File:Brutal_Strike_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Crippling Slam",
+      "tier": "6",
+      "slot": "1",
+      "icon": "Crippling_Slam_Icon.png",
+      "description": "Hamstring's Slow no longer fades out, and the duration is increased by 30%.",
+      "fields": {},
+      "_raw_fields": [
+        "Crippling Slam",
+        "6",
+        "1",
+        "Hamstring's Slow no longer fades out, and the duration is increased by 30%.",
+        "File:Crippling_Slam_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Enraged",
+      "tier": "6",
+      "slot": "2",
+      "icon": "Enraged_Icon.png",
+      "description": "While below 50% of his maximum Health, taking damage causes The Butcher to become Enraged for 10 seconds, gaining 40% Attack Speed and 25 Armor, reducing damage taken by 25%. This effect has a 25 second cooldown.",
+      "fields": {
+        "type": "Defensive damage modifier, Status effect",
+        "affects": "Self",
+        "props": "Armor, Attack Speed",
+        "notes": "Attack Speed stacks additively with other effects affecting The Butcher's Attack Speed. Does not stack with other positive Armor effects. Other defensive damage modifiers may stack."
+      },
+      "_raw_fields": [
+        "Enraged",
+        "6",
+        "2",
+        "While below 50% of his maximum Health, taking damage causes The Butcher to become Enraged for 10 seconds, gaining 40% Attack Speed and 25 Armor, reducing damage taken by 25%. This effect has a 25 second cooldown.",
+        "File:Enraged_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Blood Frenzy",
+      "tier": "6",
+      "slot": "3",
+      "icon": "Blood_Frenzy_Icon.png",
+      "description": "Basic Attacks against enemy Heroes grant 5% increased Attack and Movement Speed for 3 seconds, up to 25%.",
+      "fields": {
+        "type": "Status effect",
+        "affects": "Self",
+        "props": "Attack Modifier, Attack Speed, Movement Speed",
+        "notes": "Attack Speed bonus stacks additively with itself and other effects affecting The Butcher's Attack Speed. Movement Speed bonus stacks additively with itself, but not with other sources of Movement Speed."
+      },
+      "_raw_fields": [
+        "Blood Frenzy",
+        "6",
+        "3",
+        "Basic Attacks against enemy Heroes grant 5% increased Attack and Movement Speed for 3 seconds, up to 25%.",
+        "File:Blood_Frenzy_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Fires of Hell",
+      "tier": "7",
+      "slot": "1",
+      "icon": "Fires_of_Hell_Icon.png",
+      "description": "Furnace Blast explodes a second time 3 seconds after the initial explosion.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "notes": "Secondary explosion has the same properties as the first."
+      },
+      "_raw_fields": [
+        "Fires of Hell",
+        "7",
+        "1",
+        "Furnace Blast explodes a second time 3 seconds after the initial explosion.",
+        "File:Fires_of_Hell_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Slaughterhouse",
+      "tier": "7",
+      "slot": "2",
+      "icon": "Slaughterhouse_Icon.png",
+      "description": "Lamb to the Slaughter now chains all enemy Heroes in range.",
+      "fields": {
+        "props": "Area of Effect"
+      },
+      "_raw_fields": [
+        "Slaughterhouse",
+        "7",
+        "2",
+        "Lamb to the Slaughter now chains all enemy Heroes in range.",
+        "File:Slaughterhouse_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Nexus Blades",
+      "tier": "7",
+      "slot": "3",
+      "icon": "Nexus_Blades_Icon.png",
+      "description": "Basic Attacks deal 20% more damage and Slow enemy Movement Speed by 20% for 1 second.",
+      "fields": {
+        "type": "Offensive damage modifier, Crowd control",
+        "affects": "Self",
+        "props": "Attack Modifier, Slow",
+        "notes": "Damage bonus stacks additively with other damage modifiers affecting The Butcher's Basic Attack damage. The sum of these bonuses is multiplied by The Butcher's Attack Damage (which includes his bonus Attack Damage from Fresh Meat)."
+      },
+      "_raw_fields": [
+        "Nexus Blades",
+        "7",
+        "3",
+        "Basic Attacks deal 20% more damage and Slow enemy Movement Speed by 20% for 1 second.",
+        "File:Nexus_Blades_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Bolt of the Storm",
+      "tier": "7",
+      "slot": "4",
+      "icon": "Bolt_of_the_Storm_Icon.png",
+      "description": "Cooldown 70 Activate to teleport to a nearby location.",
+      "fields": {
+        "type": "Movement: Teleport",
+        "affects": "Self",
+        "target": "Point target",
+        "props": "Clamping",
+        "cast": "Instant",
+        "range": "7.2"
+      },
+      "_raw_fields": [
+        "Bolt of the Storm",
+        "7",
+        "4",
+        "Cooldown 70 Activate to teleport to a nearby location.",
+        "File:Bolt_of_the_Storm_Icon.png"
+      ],
+      "level": "20"
+    }
+  ],
+  "other": [],
+  "_unparsed_count": 0
+}

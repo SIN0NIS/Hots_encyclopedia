@@ -1,0 +1,6 @@
+# 저장소 안에서는 줄바꿈을 LF 로 통일한다. 게임 XML·게임스트링이 수십 MB라
+# 윈도우에서 CRLF 로 커밋되면 아무것도 안 고쳐도 전부 바뀐 것처럼 보인다.
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.html linguist-vendored

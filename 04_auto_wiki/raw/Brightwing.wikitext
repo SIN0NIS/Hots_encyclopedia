@@ -1,0 +1,237 @@
+{{hero data
+| name = Brightwing
+| date = April 15, 2014
+| price = 7000
+| title = Faerie Dragon
+| role = Healer
+| franchise = Warcraft
+| info = A Healer who can teleport to allies, excelling on large battlegrounds.
+| lore = Like many Faerie Dragons, Brightwing is happiest darting around the forests of Ashenvale, healing friends, and then grabbing a light snack. By the way, did you know a human head only weighs ten pounds? Talk about light!
+| difficulty = Hard
+| melee = False
+| health = 1425
+| healthRegen = 2.9687
+| resource = 500
+| resourceType = Mana
+| armor = 0
+| attackSpeed = 1.11
+| attackRange = 5.5
+| attackDamage = 81
+| healthScaling = 0.04
+| regenScaling = 0.04
+| adamageScaling = 0.04
+| unitRadius = 0.6875
+| icon = File:Brightwing_Icon.png
+| skills = 
+Soothing Mist;Trait;File:Soothing_Mist_Icon.png;Activate to remove all Stun, Root, Slow, and Silence effects from nearby allied Heroes.<p>{{Passive}} Brightwing heals nearby allied Heroes for 110 every 4 seconds.<!--
+-->{{undoc-x|type=CC removal (active) / Healing (passive)<!--
+-->|scaling=4.00%<!--
+-->|affects=Allied Heroes, Self<!--
+-->|target=No target<!--
+-->|props=[[Area of Effect]]<!--
+-->|cast=Instant<!--
+-->|aoe=Circle<!--
+-->|radius=<br/>- Initial: 1.0<br/>- End: 7.0<!--
+-->|notes=<li>Expands to its maximum radius over 0.6 seconds.<li>Passive heal does not trigger if Brightwing and all targetable allied Heroes in range are at full Health, but instead remains at 0 cooldown and automatically activates just after any valid target takes damage.<li>Upon entering a Vehicle, the cooldown from the Passive is frozen at its value prior to entering, and resumes counting down from there upon exiting.}};75;;trait;False
+
+Arcane Flare;Q;File:Arcane_Flare_Icon.png;Shoot a flare dealing 75 damage to enemies hit, and an additional 105 damage to enemies in the center. If a Hero is hit by the center, Soothing Mist's passive healing instantly activates.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]]<!--
+-->|cast=0.15 + 0 seconds<!--
+-->|range=8|aoe=Circle<!--
+-->|radius=<br/>Outer - 2.5<br/>Inner - 1.0<!--
+-->|missile=11.4<!--
+-->|notes=}};6;35;;False
+
+Polymorph;W;File:Polymorph_Icon.png;Polymorph a target for 1.5 seconds, Slowing their Movement Speed by 30% and Silencing them. Targets are not able to attack while Polymorphed.<!--
+-->{{undoc-x|type=Crowd Control<!--
+-->|affects=Enemies<!--
+-->|target=Unit target<!--
+-->|props=[[Polymorph]], [[Slow]]<!--
+-->|cast=0.2 + 0 seconds<!--
+-->|range=7.5<!--
+-->|notes=<li>Polymorph counts as a [[Silence]] and [[Slow]] effect. Abilities that interact with Silences and Slows also affect Polymorphed targets.}};12;50;;False
+
+Pixie Dust;E;File:Pixie_Dust_Icon.png;Increase target's Movement Speed by 20%, and grant them 30 Spell Armor for 3 seconds, reducing Spell Damage taken by 30%.<!--
+-->{{undoc-x|type=Defensive damage modifier, Status effect<!--
+-->|affects=Allied Heroes, Self<!--
+-->|target=Unit target<!--
+-->|props=[[Movement Speed]], [[Spell Armor]]<!--
+-->|cast=Instant<!--
+-->|range=7.0<!--
+-->|missile=32<!--
+-->|notes=<li>Does not stack with itself or other positive Spell Armor effects. Other defensive damage modifiers may stack.}};10;60;;False
+
+Blink Heal;R;File:Blink_Heal_Icon.png;{{Charge Cooldown|9}}<br/>Teleport to a nearby ally. When teleporting to a Hero, heal them for 200.<p> Stores up to 2 charges.<!--
+-->{{undoc-x|type=Healing / Movement: [[Teleport]]<!--
+-->|scaling=4.00%<!--
+-->|affects=Allies / Self<!--
+-->|target=Unit target<!--
+-->|range=10<!--
+-->|notes=}};9 / 2;40;heroic;False
+
+Emerald Wind;R;File:Emerald_Wind_Icon.png;After 0.5 seconds, create an expanding nova of wind, dealing 225 damage and pushing enemies away.<!--
+-->{{undoc-x|type=Spell Damage, Crowd Control<!--
+-->|scaling=4.00%<!--
+-->|affects=Non-Structure enemies<!--
+-->|target=No target<!--
+-->|props=[[Area of Effect]], [[Channeled cast]] (stationary), [[Knockback]], [[Stationary channel]]<!--
+-->|cast=0.5(ch) + 0 seconds<!--
+-->|aoe=Circle<!--
+-->|radius=8.0<!--
+-->|tickrate=16.0 per second (x27)<!--
+-->|prop1=Knockback duration|val1=0.1875 seconds<!--
+-->|prop2=Knockback speed|val2=4<!--
+-->|notes=<li>Expands to its maximum radius over 1.625 seconds of animation.<li>Interrupting the Ability during its windup puts it on a 10-second cooldown.}};50;90;heroic;False
+
+Phase Shift;Z;File:Icon_brightwing_mount.png;After 2 seconds, teleport to an allied Hero and heal them for 25% of their maximum Health.<!--
+-->{{undoc-x|type=Healing / Movement: [[Teleport]]<!--
+-->|scaling=-<!--
+-->|affects=Allied Heroes / Self<!--
+-->|target=Unit target<!--
+-->|props=[[Channeled cast]] (stationary)<!--
+-->|cast=2.0 + 0 seconds<!--
+-->|range=Global<!--
+-->|notes=<li>Interrupting the Ability during its windup puts it on a 10 second cooldown.<li>Ability is interrupted if Brightwing directly targets an ally who enters Stasis at any time during the cast.}};40;;;False;
+
+| talents = 
+<!-- LEVEL 1 -->
+Greater Polymorph;1;1;{{Passive}} Increase Polymorph's range by 30%.<p>If Brightwing hits an enemy Hero with Arcane Flare's center within 2 seconds of being Polymorphed, then reduce Polymorph's cooldown by 7 seconds and gain 50 Mana.<!--
+-->{{undoc-x|prop1=Bonus range|val1=2.25<!--
+-->|notes=}};File:Greater_Polymorph_Icon.png;
+
+Hyper Shift;1;2;Increase Phase Shift's healing by an additional 4% of the target's maximum Health. Nearby enemy Minion deaths reduce Phase Shift's cooldown by 0.5 seconds.<!--
+-->{{undoc-x|type=Bonus healing<!--
+-->|scaling=-<!--
+-->|affects=Allied Heroes<!--
+-->|notes=<li>Bonus stacks multiplicatively with healing modifiers.}};File:Hyper_Shift_Icon.png;
+
+Pixie Charm;1;3;Activate to consume 20 stacks of Bribe to instantly defeat an uncaptured Mercenary.<p>{{Passive}} Gain 1 stack of Bribe when a nearby enemy Minion dies, and 5 stacks when hitting an enemy Hero with Arcane Flare's center. Maximum 80 stacks.<!--
+-->{{undoc-x|type=Instant kill<!--
+-->|affects=Non-Elite neutral Mercenaries<!--
+-->|target=Unit target<!--
+-->|cast=Instant<!--
+-->|props=[[Bribe]]<!--
+-->|range=6.0<!--
+-->|prop1=Charge cooldown|val1=0.25 seconds<!--
+-->|notes=}};File:Bribe_Icon.png;
+
+<!-- LEVEL 4 -->
+Dream Shot;2;1;Increase Arcane Flare's range by 60%. Hitting a Hero with Arcane Flare's center reduces its cooldown to 2 seconds.<!--
+-->{{undoc-x|prop1=Bonus range|val1=4.8<!--
+-->|notes=}};File:Dream_Shot_Icon.png;
+
+Unstable Anomaly;2;2;Increase Polymorph's Slow by 15%. Upon expiration, Polymorph deals damage to nearby enemy Heroes equal to 2% of their maximum Health.<!--
+-->{{undoc-x|type=[[Percent damage]]<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Area of Effect]]<!--
+-->|aoe=Circle<!--
+-->|radius=3.0<!--
+-->|notes=}};File:Unstable_Anomaly_Icon.png;
+
+Magic Spit;2;3;Increase Basic Attack range by 1.1. Basic Attacks against Heroes reduce the cooldown of Soothing Mist by 4 seconds.<!--
+-->{{undoc-x|props=[[Attack Modifier]]}};File:Magic Spit_Icon.png;
+
+<!-- LEVEL 7 -->
+Sticky Flare;3;1;Enemies hit by Arcane Flare have their Movement Speed Slowed by 20% for 3 seconds. Increase the Slow to 40% if they are hit by the center portion.<!--
+-->{{undoc-x|type=Crowd control<!--
+-->|affects=Enemies<!--
+-->|props=[[Slow]]<!--
+-->|notes=}};File:Sticky_Flare_Icon.png;
+
+Peekaboo!;3;2;Phase Shifting to an ally grants both Brightwing and her target a 335 point Shield for 4 seconds and reveals a large area around them for 5 seconds.<!--
+-->{{undoc-x|type=Shield<!--
+-->|scaling=4.00%<!--
+-->|affects=Self, Target<!--
+-->|target=<!--
+-->|props=[[Revealed]]<!--
+-->|prop1=Reveal radius|val1=15<!--
+-->|notes=}};File:Peekaboo!_Icon.png;
+
+Critical Mist;3;3;Soothing Mist heals for 165. Increase this by 140% if Soothing Mist removed a disabling effect from that ally.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=4.00%<!--
+-->|affects=Allied Heroes<!--
+-->|notes=<li>Bonus healing from removing a disabling effect stacks additively with healing modifiers that affect healing dealt and multiplicatively with modifiers that affect healing received.}};File:Critical Mist Icon.png;
+
+<!-- LEVEL 10 -->
+Blink Heal;4;1;{{Charge Cooldown|9}}<br/>Teleport to a nearby ally. When teleporting to a Hero, heal them for 200.<p> Stores up to 2 charges.;File:Blink_Heal_Icon.png;
+Emerald Wind;4;2;{{cooldown|50}}<br>After 0.5 seconds, create an expanding nova of wind, dealing 225 damage and pushing enemies away.;File:Emerald_Wind_Icon.png;
+
+<!-- LEVEL 13 -->
+Pixie Boost;5;1;Pixie Dust gives 50% bonus Movement Speed, decaying to 20% over 3 seconds.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Allied Heroes<!--
+-->|props=[[Movement Speed]]<!--
+-->|notes=<li>Movement Speed bonus decreases linearly every tick (1/16 s).}};File:Pixie_Boost_Icon.png;
+
+Safety Dust;5;2;Increase Pixie Dust's duration by 1 second. Soothing Mist and Blink Heal heal allies with an active Pixie Dust for 75% more.<!--
+-->{{undoc-x|type=Healing dealt modifier<!--
+-->|affects=Self<!--
+-->|notes=<li>Stacks additively with other healing modifiers that affect healing dealt and multiplicatively with modifiers that affect healing received.}};File:Safety_Dust_Icon.png;
+
+Pixie Power;5;3;Reduce the cooldown of Pixie Dust by 3 seconds and increase the Spell Armor granted by 25.;File:Pixie Power_Icon.png;
+
+<!-- LEVEL 16 -->
+Hush!;6;1;Enemy Heroes hit by the center of Arcane Flare are Silenced for 1 second and deal 25% less damage for 3 seconds.<!--
+-->{{undoc-x|type=Crowd Control, Offensive damage modifier<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Silence]]<!--
+-->|notes=<li>Damage debuff stacks additively with other offensive damage modifiers affecting the target's damage output.}};File:Hush!_Icon.png;
+
+Critterize;6;2;While Polymorphed, the target's Armor is reduced by 25, increasing the damage they take by 25%.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Enemy Heroes<!--
+-->|notes=<li>Does not stack with other negative Armor effects. Other defensive damage modifiers may stack.<li>Damage taken is only increased by 25% assuming no positive Armor is in play. E.g. at 75 positive Armor, applying this debuff doubles the relative damage the enemy Hero takes.}};File:Critterize_Icon.png;
+
+Phase Out;6;3;{{cooldown|20}}<br>{{Active}} Activate to place Brightwing in Stasis for 0.75 seconds.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|target=No Target<!--
+-->|props=[[Stasis]]<!--
+-->|cast=Instant<!--
+-->|notes=<li>''Phase Out'' cannot be canceled.<li>Brightwing retains collision during ''Phase Out''.}};File:Phase Out_Icon.png;
+
+<!-- LEVEL 20 -->
+Invisible Friends;7;1;Blink Heal grants Stealth to BrightwingAnd her Heroic targets for 9 seconds, and they are Unrevealable for the first 0.5 seconds. While Stealthed by Invisible Friends, Heroes heal for 25 Health per second and are Unrevealable for the first 0.5 seconds.<p>Remaining stationary for at least 1.5 seconds while Stealthed grants Invisible.<!--
+-->{{undoc-x|type=Status effect, Healing<!--
+-->|scaling=4.00%<!--
+-->|affects=Allied Heroes, Self<!--
+-->|props=[[Heal over Time]], [[Stealth]]<!--
+-->|tickrate=1.0 per second<!--
+-->|notes=}};File:Invisible Friends_Icon.png;
+
+Intensive Winds;7;2;Permanently reduce Emerald Wind's cooldown to 5 seconds.;File:Intensive Winds_Icon.png;
+
+Speedy Dragon;7;3;Permanently gain 20% Movement Speed. Reduce Phase Shift's cast time by 1 second.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|props=[[Movement Speed]]}};File:Speedy Dragon_Icon.png;
+
+Faerie Protector;7;4;{{cooldown|45}}<br>{{Active}} Activate to apply Pixie Dust to all nearby Heroes.<p>{{passive}} Pixie Dust always bounces back and applies to Brightwing.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Allied Heroes, Self<!--
+-->|target=No target<!--
+-->|props=[[Area of Effect]], [[Spell Armor]]<!--
+-->|cast=Instant<!--
+-->|aoe=Circle<!--
+-->|radius=8.0<!--
+-->|notes=<li>Benefits from all talents affecting <i>Pixie Dust</i>.<li>Does not stack with other positive Spell Armor effects. Other defensive damage modifiers may stack.}};File:Faerie Protector_Icon.png;
+}}
+
+<noinclude>
+{{Scaling table/start|{{#var:health}}|{{#var:health scaling}}|{{#var:health regen}}|{{#var:health regen scaling}}|{{#var:attack damage}}|{{#var:attack damage scaling}}}}
+{{Scaling table/slot|Soothing Mist (passive)|110|0.04}}
+{{Scaling table/slot|Arcane Flare (outer)|75|0.04}}
+{{Scaling table/slot|Arcane Flare (inner)|105|0.04}}
+{{Scaling table/slot|Blink Heal|200|0.04|10}}
+{{Scaling table/slot|Emerald Wind|225|0.04|10}}
+{{Scaling table/slot|Peekaboo!|335|0.04|7}}
+{{Scaling table/slot|Critical Mist|165|0.04|7}}
+{{Scaling table/slot|Invisible Friends (per second)|25|0.04|20}}
+{{Scaling table/end}}
+</noinclude>

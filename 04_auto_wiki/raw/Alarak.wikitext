@@ -1,0 +1,212 @@
+{{hero data
+| name = Alarak
+| date = September 13, 2016
+| price = 7000
+| title = Highlord of the Tal'darim
+| role = Melee
+| franchise = Starcraft
+| info =  A combo Assassin who can move enemies around and punish mistakes.
+| lore =  Not all Heroes are born of altruism... some, like Alarak, simply desire vengeance. As the new Highlord of the Tal'darim, Alarak leads his people to a destiny free of the corrupt influence of the fallen Xel'Naga, Amon.
+| difficulty = Hard
+| melee = True
+| health = 1950
+| healthRegen = 4.0625
+| resource = 500
+| resourceType = Mana
+| armor = 0
+| attackSpeed = 1.2
+| attackRange = 1.5
+| attackDamage = 160
+| healthScaling = 0.04
+| regenScaling = 0.04
+| adamageScaling = 0.04
+| unitRadius = 0.8125
+| icon = File:Alarak_Icon.png
+| skills =
+Sadism (Trait);Trait;File:Sadism_Icon.png;Alarak's Ability damage and self-healing are increased by 100% against enemy Heroes.<p>{{Repeatable Quest|[[Takedown]]s increase Sadism by 3%, up to 30%. Sadism gained from Takedowns is lost on death.}}<!--
+-->{{undoc-x|type=Offensive damage modifier, Healing dealt modifier<!--
+-->|affects=Abilities<!--
+-->|prop1=Max total Sadism|val1=1000%<!--
+-->|notes=<li>Benefits all flat Spell Damage and healing instances and bonuses from Alarak's Basic and Heroic Abilities and Talents. Spell Damage and healing from other sources will not be amplified.<li><i>Sadism</i> stacks additively with itself and other damage modifiers affecting Alarak's Ability damage.<li><i>Sadism</i> stacks additively with healing modifiers that increase healing dealt and multiplicatively with modifiers that affect healing received.}};;;False;
+
+Discord Strike;Q;File:Discord_Strike_Icon.png;After a 0.5 second delay, enemies in front of Alarak take 165 damage and are silenced for 1.5 seconds.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Clamping]], [[Silence]]<!--
+-->|cast=0.5 + 0.125 seconds<!--
+-->|aoe=Triangle<!--
+-->|width=5.5<!--
+-->|height=6.5<!--
+-->|notes=}};8;55;False;
+
+Telekinesis;W;File:Telekinesis_Icon.png;Create a force, pushing Alarak and all enemies hit from the targeted point towards the targeted direction. Deals 48 damage to enemies.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control / Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies / Self<!--
+-->|target=[[Vector Targeting]]<!--
+-->|props= [[Area of Effect]], [[Knockback]]<!--
+-->|cast=Instant<!--
+-->|range=9.0<!--
+-->|hitbox=1.5 x 0.5<!--
+-->|prop1=Knockback duration|val1=0.3125 seconds<!--
+-->|prop2=Knockback speed|val2=18<!--
+-->|notes=<li>Alarak does not get Dazed when using ''Telekinesis'' on himself.<li>Self-casting sets the starting point at Alarak's location and pushes him (and nearby enemies) to the direction he is facing.}};12;30;False;
+
+Lightning Surge;E;File:Lightning_Surge_Icon.png;Deal 62 damage to an enemy and an additional 100% damage to enemies between Alarak and the target. Restore 75 Health for each Hero hit.<!--
+-->{{undoc-x|type=Spell Damage / Healing<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies / Self<!--
+-->|target=Unit taget<!--
+-->|props=[[Area of Effect]]<!--
+-->|cast=Instant<!--
+-->|range=10<!--
+-->|aoe=Rectangle<!--
+-->|width=1.5<!--
+-->|notes=<li>The primary target of the cast is unaffected by any center bonuses.<li>Healing is unaffected by center bonuses.<li>The center bonus stacks additively with Sadism and other offensive damage modifiers that can affect <i>Lightning Surge</i>'s damage.}};6;25;False;
+
+Deadly Charge;R;File:Deadly_Charge_Icon.png;After channeling, Alarak charges forward dealing 200 damage to all enemies in his path. Distance is increased based on the amount of time channeled, up to 1.5 seconds.<p>Issuing a Move order while this is channeling will cancel it at no cost. Taking damage will interrupt the channeling.<!--
+-->{{undoc-x|type=Spell Damage / Movement: [[Launch]]<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies / Self<!--
+-->|target=No target / Point target<!--
+-->|props=[[Area of Effect]], [[Clamping]], [[Channeled Ability#Weak Channel|Weak Channel]] (stationary)<!--
+-->|cast=Instant<!--
+-->|range=<br/>- Min: 3<br/>- Max: 18.25<!--
+-->|hitbox=3.0 x 1.0<!--
+-->|missile=42<!--<!--
+-->|notes=<li>Interrupting the channel in any way does not put the Ability on cooldown.<li>Mana cost is not consumed until the Ability has been fully cast, but can't be initiated if Alarak has insufficient Mana.<li>Range increases by 0.6354 for every 0.0625 seconds channeled.<li>Ability can be channeled indefinitely, but distance will no longer increase after reaching maximum distance at the 1.5 second mark.}};45;60;Heroic;False;
+
+Counter-Strike;R;File:Counter-Strike_Icon.png;Alarak targets an area and channels for 1 second, becoming Protected and Unstoppable. Afterward, if he took damage from an enemy Hero, he sends a shockwave that deals 275 damage.<!--
+-->{{undoc-x|type=Spell Damage / Status effect<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies / Self|target=Point target<!--
+-->|props=[[Area of Effect]], [[Clamping]], [[Protected]], [[Stationary channel]], [[Unstoppable]]<!--
+-->|cast=Instant<!--
+-->|range=13<!--
+-->|aoe=Triangle<!--
+-->|width=4.6<!--
+-->|height=13<!--
+-->|missile=16<!--
+-->|notes=<li>Hitscan is done in 3 ticks over 0.1825 seconds, ranging from 0 to 6 on the first, 6 to 9 on the second and 9 to 13 on the third tick.<li>Taking damage in the final tick of the channel only activates the sound, but not the damage, of the Ability.<li>Incoming Basic Attacks still trigger the Ability, despite missing due to [[Evasion]] granted by Protected status.}};30;50;Heroic;False;
+
+| talents =
+<!-- LEVEL 1 -->
+Overwhelming Power;1;1;Hitting an enemy Hero with Discord Strike grants 40% Attack Speed and causes Basic Attacks to heal for 15% of the damage dealt, increased by 50% of Sadism's bonus when hitting Heroes. These effects last for 4 seconds.<!--
+-->{{undoc-x|type=Healing, Status effect<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|props=[[Attack Modifier]], [[Attack Speed]], [[Lifesteal]]<!--
+-->|notes=}};File:Overwhelming_Power.png
+
+Ruthless Momentum;1;2;Reduce the Mana cost of Telekinesis from 30 to 20. Telekinesis's cooldown recharges 100% faster while above 80% Health.<!--
+-->{{undoc|<hr><li>Reduces the cooldown of <i>Telekinesis</i> by 0.0625 seconds every 0.0625 seconds while active.}};File:Ruthless_Momentum_Icon.png;
+
+Extended Lightning;1;3;Reduce Sadism by 10%.<p>{{Quest|Hit Heroes with the center of Lightning Surge.|After hitting 5 Heroes, increase Lightning Surge's range by 20%.}}<p>{{Reward|After hitting 15 Heroes, Lightning Surge's center also Slows enemies by 40% for 2 seconds.}}<p>{{Reward|After hitting 3 Heroes with a single cast, increase Sadism by 10% and instantly gain all other Rewards.}}<!--
+-->{{undoc-x|type=Crowd control<!--
+-->|affects=Enemies<!--
+-->|props=[[Slow]]<!--
+-->|prop1=Bonus range|val1=2.0<!--
+-->|notes=}};File:Extended_Lightning_Icon.png;
+
+<!-- LEVEL 4 -->
+Chaos Reigns;2;1;{{Quest|Hit Heroes with Discord Strike.|After hitting 15 Heroes, increase Discord Strike's damage by 60.}}<p>{{Reward|After hitting 2 Heroes with a single Discord Strike, increase its damage by 60.}}<p>{{Reward|After hitting 3 Heroes with a single Discord Strike, increase its damage by 100 and instantly gain all other Rewards.}}<!--
+-->{{undoc-x|type=Bonus damage<!--
+-->|scaling=-<!--
+-->|affects=Ability<!--
+-->|notes=}};File:Chaos_Reigns_Icon.png;
+
+Negatively Charged;2;2;Increase the Lightning Surge damage bonus to enemies between Alarak and his victim to 175%.<p>{{Repeatable Quest|Each Hero hit by the center of Lightning Surge permanently increases the damage bonus by 5%.}}<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|notes=<li>Quest reward stacks additively with center damage bonus and other offensive damage modifiers that can affect <i>Lightning Surge</i>'s damage.}};File:Negatively_Charged_Icon.png;
+
+Show of Force;2;3;Heroes hit with 3 of Alarak's Abilities within 2 seconds take an additional 61 damage and increase Sadism by 2%, stacking up to 20%.<p>Sadism gained from Show of Force is lost on death.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemy Heroes<!--
+-->|notes=}};File:Show_of_Force_Icon.png;
+
+<!-- LEVEL 7 -->
+Dissonance;3;1;Increase Discord Strike's Silence duration by 0.75 seconds.;File:Dissonance_Icon.png;
+
+Hindered Motion;3;2;Telekinesis Slows enemies by 30% for 3 seconds.<!--
+-->{{undoc-x|type=Crowd control<!--
+-->|affects=Enemies<!--
+-->|props=[[Slow]]<!--
+-->|notes=}};File:Hindered_Motion_Icon.png;
+
+Applied Force;3;3;Reduce Sadism by 10%, but Telekinesis pushes 15% farther and has 15% increased range.<!--
+-->{{undoc-x|prop1=Bonus range|val1=1.35<!--
+-->|prop2=Knockback duration|val2=0.3125 seconds<!--
+-->|prop3=Knockback speed|val3=22}};File:Applied_Force_Icon.png;
+
+<!-- LEVEL 10 -->
+Deadly Charge;4;1;{{Cooldown|45}}<br>After channeling, Alarak charges forward, dealing 200 damage to all enemies in his path. Distance is increased based on the amount of time channeled, up to 1.5 seconds.<p>Issuing a Move order while this is channeling will cancel it at no cost. Taking damage will interrupt the channeling.;File:Deadly_Charge_Icon.png;
+Counter-Strike;4;2;{{Cooldown|30}}<br>Alarak targets an area and channels for 1 second, becoming Protected and Unstoppable. Afterward, if he took damage from an enemy Hero, he sends a shockwave that deals 275 damage.;File:Counter-Strike_Icon.png;
+
+<!-- LEVEL 13 -->
+Blade of the Highlord;5;1;[[Basic Attack]]s against Heroes increase Sadism by 2%, up to 40%.<p>Sadism gained from Blade of the Highlord is lost on death.<!--
+-->{{undoc-x|props=[[Attack Modifier]] (Heroes)<!--
+-->|notes=}};File:Blade_of_the_Highlord_Icon.png;
+
+Pure Malice;5;2;Increase Sadism by 10% any time an allied Hero dies, up to 40%.<p>Sadism gained from Pure Malice is lost on death.;File:Pure_Malice_Icon.png;
+
+Rite of Rak'Shir;5;3;{{Cooldown|300}}<br>Activate to mark an enemy Hero for 300 seconds.<p>Hitting the marked Hero with Discord Strike increases Sadism by 3%. Killing the marked Hero increases Sadism by 5% and lowers the cooldown of Rite of Rak'Shir to 10 seconds.<p>Sadism gained from Rite of Rak'Shir is lost on death.<!--
+-->{{undoc-x|type=Debuff<!--
+-->|affects=Enemy Heroes<!--
+-->|target=Unit target<!--
+-->|cast=Instant<!--
+-->|range=8.0<!--
+-->|prop1=Max stacks|val1=<br/>- Marked hits: 300% (x100)<br/>- Marked Takedowns: 250% (x50)<!--
+-->|notes=<li>Debuff is only removed when the mark expires or the target dies.}};File:Rite_of_Rak'Shir_Icon.png;
+
+<!-- LEVEL 16 -->
+Lethal Onslaught;6;1;Hitting an enemy Hero with Discord Strike grants 50% of Sadism's damage bonus to Alarak's Basic Attacks for 4 seconds. Basic Attacks against Heroes refresh this duration.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Attack Modifier]]<!--
+-->|notes=<li>Stacks additively with other offensive damage modifiers that can affect Alarak's Basic Attack damage.}};File:Lethal_Onslaught_Icon.png;
+
+Lightning Barrage;6;2;Hitting an enemy Hero with the center of Lightning Surge allows it to be cast again for free on a different primary target within the next 3 seconds. This free cast cannot benefit from Lightning Barrage.<!--
+-->{{undoc-x|prop1=Recast cooldown|val1=0.125 seconds<!--
+-->|notes=<li>Second cast interacts with all other talents affecting ''Lightning Surge''.}};File:Lightning_Barrage_Icon.png;
+
+Mocking Strikes;6;3;Basic Attacks against Heroes reduce the cooldown of Alarak's Basic Abilities by 1.5 seconds. This bonus is doubled against enemy Heroes who are Stunned, Silenced, Slowed or Rooted.<!--
+-->{{undoc-x|affects=Self<!--
+-->|props=[[Attack Modifier]] (Heroes)<!--
+-->|notes=}};File:Mocking_Strikes_Icon.png;
+
+<!-- LEVEL 20 -->
+Wrath of the Highlord;7;1;If Deadly Charge was the selected Heroic, Heroes hit by Deadly Strike take bonus damage from Alarak's Abilities equal to 75% of Sadism's bonus damage for 4 seconds.<p>If Counter-Strike was the selected Heroic, it's cooldown is reduced by 2.5 seconds for each enemy Hero hit by Alarak's Basic Abilities.;File:Show_of_Force_Icon.png;
+
+Might of the Highlord;7;2;Alarak gains access to both of his Heroic Abilities. This can be activated to change which Ability occupies the Heroic slot, with the other ability using the Trait slot.;File:Pure_Malice_Icon.png;
+
+Last Laugh;7;3;{{Cooldown|30}}<br>{{Active}} Activate to teleport to the chosen location and remove all Roots, Slows, and damage over time effects. If Alarak fails to hit enemy Heroes 3 times with Basic Abilities within 4 seconds of using Last Laugh, his Health is reduced to 1.<!--
+-->{{undoc-x|type=Movement: [[Teleport]]<!--
+-->|affects=Self<!--
+-->|target=Point target<!--
+-->|props=[[Clamping]], Debuff removal<!--
+-->|cast=Instant<!--
+-->|range=12<!--
+-->|notes=<li>Hit requirement is the sum of all Heroic targets hit, with any of his Basic Ablities, within the time limit.<li>Health reduction ignores all damage reduction and prevention effects.}};File:Last_Laugh_Icon.png;
+
+Hasty Bargain;7;4;{{Cooldown|20}}<br>{{Active}} Activate to permanently reduce Alarak's Sadism by 4% and reset the cooldowns of his Basic Abilities.<!--
+-->{{undoc-x|type=Active<!--
+-->|target=No target<!--
+-->|cast=Instant<!--
+-->|notes=<li>''Hasty Bargain'' cannot be used if Alarak doesn't have enough Sadism.<li>Alarak's innate Sadism is consumed first. If there is not enough innate Sadism, ''Hasty Bargain'' can consume Sadism gained from Takedowns and Talents.}};File:Hasty_Bargain_Icon.png;
+}}
+
+<noinclude>
+{{Scaling table/start|{{#var:health}}|{{#var:health scaling}}|{{#var:health regen}}|{{#var:health regen scaling}}|{{#var:attack damage}}|{{#var:attack damage scaling}}}}
+{{Scaling table/slot|Discord Strike|165|0.04}}
+{{Scaling table/slot|Telekinesis|48|0.04}}
+{{Scaling table/slot|Lightning Surge (damage)|62|0.04}}
+{{Scaling table/slot|Lightning Surge (heal)|70|0.04}}
+{{Scaling table/slot|Deadly Charge|200|0.04|10}}
+{{Scaling table/slot|Counter Strike|275|0.04|10}}
+{{Scaling table/slot|Show of Force|61|0.04|4}}
+{{Scaling table/end}}
+</noinclude>

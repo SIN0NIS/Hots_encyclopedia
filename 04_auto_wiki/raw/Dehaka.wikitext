@@ -1,0 +1,217 @@
+{{hero data
+| name = Dehaka
+| date = March 29, 2016
+| price = 10000
+| title = Primal Pack Leader
+| role = Bruiser
+| franchise = Starcraft
+| info = A Bruiser with a strong, global presence who can effectively clear groups of Minions.
+| lore = Cunning and wise, Dehaka is one of the last surviving pack leaders of the forgotten world of Zerus. As with all primal Zerg, he is driven by a powerful desire to consume the essence of his foes and evolve into newer and more deadly forms.
+| difficulty = Hard
+| melee = True
+| health = 2358
+| healthRegen = 4.9687
+| resource = 500
+| resourceType = Mana
+| armor = 0 
+| attackSpeed = 1.25
+| attackRange = 1.00
+| attackDamage = 95
+| healthScaling = 0.04
+| regenScaling = 0.04
+| adamageScaling = 0.04
+| unitRadius = 1.0
+| icon = File:Dehaka_Icon.png
+| skills =
+Essence Collection;Trait;File:Essence_Collection_Icon.png;Heal Dehaka for 29 Health per stored Essence over 5 seconds. Can be cast during Drag and Burrow.<p>{{passive}} Gain 10 Essence from Takedowns and 2 Essence from nearby Minions dying. Maximum of 50 Essence.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=4.00%<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|props=[[Heal over time]]<!--
+-->|cast=Instant<!--
+-->|radius=12 (minion deaths)<!--
+-->|tickrate=2.0 per second (x11)<!--
+-->|notes=}};1;;D;False;
+
+Drag;Q;File:Drag_Icon.png;Dehaka lashes out his tongue, dealing 160 damage to the first enemy hit, Stunning and dragging them with him for 1.75 seconds.<p>If Dehaka is Stunned or Silenced while using Drag, the effect ends.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Clamping]], [[Skillshot]]<!--
+-->|cast=0.1875 + 0 seconds<!--
+-->|range=5.5<!--
+-->|hitbox=1.25 x 2.0<!--
+-->|missile=14<!--
+-->|notes=<li>Is also interrupted by [[Daze]] (from [[Knockback]]s).<li>Can use Basic Attacks and all other Abilities except ''Burrow'' without interrupting ''Drag''.}};15;75;;False;
+
+Dark Swarm;W;File:Dark_Swarm_Icon.png;Deal 48 damage every 0.5 seconds to nearby enemies for 3.5 seconds. While active, you are able to move through units. Can be cast during Drag and Burrow.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=No target<!--
+-->|props=[[Area of Effect]]<!--
+-->|cast=Instant<!--
+-->|aoe=Circle<!--
+-->|radius=3.5<!--
+-->|tickrate=2.0 per second (x8)<!--
+-->|notes=}};10;50;;False;
+
+Burrow;E;File:Burrow_Icon.png;Burrow into the ground, entering Stasis and becoming Invulnerable for 2 seconds. While Burrowed, Dehaka can move at 50% Movement Speed.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|props=[[Pseudo-Stasis]]<!--
+-->|cast=Instant<!--
+-->|notes=<li>''Burrow'' can be reactivated after 0.5 seconds to end its effect early.<li>Temporarily disables all [[Movement Speed]] buffs while active, causing Dehaka to always move at 50% speed while Burrowed.<li>Will not remove Revealed status.}};20 / 0.5;65;;False
+
+Isolation;R;File:Isolation_Icon.png;Launch biomass that hits the first enemy Hero dealing 200 damage, revealing, Silencing, and Slowing them 30% for 3 seconds. Additionally, their vision radius is greatly reduced for 6 seconds.<!--
+-->{{undoc-x|type=Spell Damage, Crows control, Status effect, Vision reduction<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemy Heroes<!--
+-->|target=Point target<!--
+-->|props=[[Channeled cast]] (stationary), [[Revealed]], [[Silence]], [[Skillshot]], [[Slow]]<!--
+-->|cast=0.375 (ch) + 0.1875 seconds<!--
+-->|range=8.0<!--
+-->|hitbox=1.75 x 0.65<!--
+-->|missile=18<!--
+-->|prop1=Reduced vision radius|val1=3.5<!--
+-->|notes=<li>Interrupting the ability during its windup puts it on a 10 second cooldown.<li>Enemy Heroes hit by ''Isolation'' are Revealed for 3 seconds.}};60;70;Heroic;False;
+
+Adaptation;R;File:Adaptation_(Dehaka)_Icon.png;After 4 seconds, heal for 100% of the damage Dehaka took over this period.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|cast=Instant<!--
+-->|notes=<li>Healing is calculated from final damage taken, after damage modifications.<li>Amount healed can further be affected by healing modifiers affecting either Dehaka's healing output (e.g. Spell Power) or healing received.}};60;70;Heroic;False;
+
+Brushstalker;Z;File:Icon_dehaka_mount.png;Activate to burrow to a bush on the Battleground.<p>{{Passive}} Gain 20% Movement Speed while in a bush and for 2 seconds after leaving.<!--
+-->{{undoc-x|type=Movement: Teleport, Status effect<!--
+-->|affects=Self<!--
+-->|target=Point target<!--
+-->|props=[[Channeled cast]] (stationary), [[Movement Speed]], [[Stasis]]<!--
+-->|cast=2.0 (ch) + 0 seconds<!--
+-->|range=Global<!--
+-->|notes=<li>Interrupting ''Brushstalker'' during its cast puts it on a 10 second cooldown.<li>While traveling, Dehaka is removed from battleground and put in Stasis for 1.5 seconds, removing most debuffs.<li>Targeting ''Brushstalker'' inside of Dehaka's unit radius (or self-casting it) causes Dehaka to use it in place and its cooldown to be reset when he emerges.}};75;;;False;
+
+| talents =
+<!-- LEVEL 1 -->
+Enduring Swarm;1;1;Dark Swarm's duration is increased by 0.5 seconds and grants 50 Spell Armor while active.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Spell Armor]]<!--
+-->|notes=<li>Does not stack with other positive Spell Armor effects. Other defensive damage modifiers may stack.}};File:Enduring_Swarm_Icon.png;
+
+Tissue Regeneration;1;2;Regneration Globes grant 10 Essence.<p>{{Repeatable Quest|Every 50 Essence collected permanently increases Health Regeneration by 4, up to 40, and maximum Essence by 1, up to 10.}}<!--
+-->{{undoc-x|type=Bonus Health Regeneration<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|notes=<li>Essence collected while at maximum Essence still counts toward quest progress.}};File:Tissue_Regeneration_Icon.png;
+
+Enhanced Agility;1;3;Brushstalker's Movement Speed bonus now lasts for 4 seconds after leaving a bush.<p>{{Repeatable Quest|Every 50 Essence collected permanently increases the Movement Speed bonus of Brushstalker by 2%, up to 20%.}}<!--
+-->{{undoc-x|nohr=1<!--
+-->|notes=<li>Stacks additively with itself and <i>Brushstalker</i>'s passive Movement Speed bonus.<li>Essence collected while at maximum Essence still counts toward quest progress.}};File:Enhanced_Agility_Icon.png;
+
+<!-- LEVEL 4 -->
+Lurker Strain;2;1;Emerging from Burrow grants Dehaka Stealth for 3 seconds and knocks nearby enemies back, dealing 125 damage and Slowing them by 30% for 3 seconds.<p>{{Passive}} Reduce the cooldown of Burrow by 2 seconds.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control / Status effect<!--
+-->|affects=Enemies / Self<!--
+-->|props=[[Area of Effect]], [[Knockback]], [[Slow]], [[Stealth]]<!--
+-->|aoe=Circle<!--
+-->|radius=3.0<!--
+-->|prop1=Knockback duration|val1=0.25 seconds<!--
+-->|prop2=Knockback speed|val2=10<!--
+-->|notes=}};File:Lurker_Strain_Icon.png;
+
+One-Who-Collects;2;2;Increases Essence collected from Minions by 50%. Dark Swarm deals 40% more damage to Mercenaries.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|notes=<li>Damage bonus stacks additively with other offensive [[damage modifier]]s that can affect <i>Dark Swarm</i>'s damage against [[Mercenaries]].}};File:One-Who-Collects_Icon.png;
+
+Hero Stalker;2;3;Increases Essence gained from Takedowns by 100%, and gain 1 Essence for each enemy Hero hit by Dark Swarm, up to 3 at once.;File:Hero_Stalker_Icon.png;
+
+<!-- LEVEL 7 -->
+Feeding Frenzy;3;1;Increase Drag's duration by 0.5 seconds.<p>{{Gambitonly|Basic Attacks reduce Drag's cooldown by 1.5 seconds. Every death reduces this cooldown reduction by 0.25 seconds, up to 3 times.}}<!--
+-->{{undoc-x|props=[[Attack Modifier]]<!--
+-->|notes=}};File:Feeding_Frenzy_Icon.png;
+
+Paralyzing Enzymes;3;2;Drag Slows the target by 40% and reduces their healing received by 50% while active and for 2 seconds after ending. Dehaka's Basic Attacks increase the duration of the healing reduction to 2 seconds.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|affects=Non-Structure Enemies<!--
+-->|props=[[Healing modifier]], [[Slow]]<!--
+-->|tickrate=2.0 per second (x4)<!--
+-->|prop1=Damage per tick|val1=70<!--
+-->|notes=}};File:Paralyzing_Enzymes_Icon.png;
+
+Symbiosis;3;3;Every time Dark Swarm damages an enemy Hero, reduce its cooldown by 0.4 seconds.;File:Symbiosis_Icon.png;
+
+<!-- LEVEL 10 -->
+Isolation;4;1;{{Cooldown|60}}<p>Launch biomass that hits the first enemy Hero dealing 200 damage, revealing, Silencing, and Slowing them 30% for 3 seconds. Additionally, their vision radius is greatly reduced for 6 seconds.;File:Isolation_Icon.png;
+Adaptation;4;2;{{Cooldown|60}}<p>After 4 seconds, heal for 100% of the damage Dehaka took over this period.;File:Adaptation_(Dehaka)_Icon.png;
+
+<!-- LEVEL 13 -->
+
+Ferocious Stalker;5;1;Dark Swarm Slows enemy Heroes by 15% for 0.75 seconds and deals 50% more damage while Brushstalker's Movement Speed bonus is active.<!--
+-->{{undoc-x|type=Crowd control / Offensive damage modifier<!--
+-->|affects=Enemy Heroes / Ability<!--
+-->|props=[[Slow]]<!--
+-->|notes=<li>Damage bonus stacks additively with other offensive damage modifiers that can affect <i>Dark Swarm</i>'s damage.}};File:Ferocious_Stalker_Icon.png;
+
+Primal Swarm;5;2;Dark Swarm causes enemies hit to lose 10 Armor for 0.75 seconds, causing them to take 10% extra damage.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Enemy Heroes<!--
+-->|notes=<li>Does not stack with itself or other negative Armor effects. Other defensive damage modifiers may stack.}};File:Primal_Swarm_Icon.png;
+
+Primal Rage;5;3;Gain 1.25% increased Attack Damage per Essence stored.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Self<!--
+-->|notes=<li>Stacks additively with itself and other offensive damage modifiers that can affect Dehaka's Basic Attack damage.}};File:One-Who-Collects_Icon.png;
+
+<!-- LEVEL 16 -->
+Elongated Tongue;6;1;Increase Drag range by 20%.<!--
+-->{{undoc-x|prop1=Bonus range|val1=1.1<!--
+-->|notes=}};File:Elongated_Tongue_Icon.png;
+
+Tunneling Claws;6;2;Increase movement speed while Burrowing to 120%.;File:Tunneling_Claws_Icon.png;
+
+Pack Leader;6;3;Dehaka gains 40 Armor and 15% increased Attack Speed while in a bush and for 4 seconds after leaving.<!--
+-->{{undoc-x|type=Defensive damage modifier, Status effect<!--
+-->|affects=Self<!--
+-->|props=[[Armor]], [[Attack Speed]]<!--
+-->|notes=<li>Attack Speed from ''Pack Leader'' stacks additively with other effects affecting Dehaka's Attack Speed.<li>Does not stack with itself or other positive Armor effects. Other defensive damage modifiers may stack.}};File:Pack_Leader_Icon.png;
+
+<!-- LEVEL 20 -->
+Contagion;7;1;Isolation hits all Heroes near the first target, but it deals 60% less damage to all targets.<!--
+-->{{undoc-x|props=[[Splash]]<!--
+-->|aoe=Circle<!--
+-->|radius=3.5<!--
+-->|notes=}};File:Contagion_Icon.png;
+
+Change Is Survival;7;2;Increases Adaptation healing to 200% of the damage received and reduces the cooldown by 40 seconds.<!--
+-->{{undoc-x|type=Bonus healing, Cooldown reduction<!--
+-->|scaling=-<!--
+-->|affects=Ability<!--
+-->|notes=<li>Increases the amount of healing stored, causing the bonus to stack multiplicatively with healing modifiers.}};File:Change_Is_Survival_Icon.png;
+
+Essence Claws;7;3;Dehaka's Basic Attacks Slow the target by 20% for 1 second. If the target is a Hero, Dehaka gains 5 Essence.<!--
+-->{{undoc-x|type=Crowd control<!--
+-->|affects=Enemies<!--
+-->|props=[[Attack Modifier]], [[Slow]]<!--
+-->|notes=}};File:Essence_Claws_Icon.png;
+
+Apex Predator;7;4;Reduces Brushstalker's cooldown by 50 seconds and the cast time by 0.5 seconds.;File:Apex_Predator_Icon.png;
+}}
+<noinclude>
+{{Scaling table/start|{{#var:health}}|{{#var:health scaling}}|{{#var:health regen}}|{{#var:health regen scaling}}|{{#var:attack damage}}|{{#var:attack damage scaling}}}}
+{{Scaling table/slot|Essence Collection (per Essence)|29|0.04}}
+{{Scaling table/slot|Essence Collection (x50)|1450|0.04}}
+{{Scaling table/slot|Drag|160|0.04}}
+{{Scaling table/slot|Dark Swarm (single)|52|0.04}}
+{{Scaling table/slot|Dark Swarm (per second)|98|0.04}}
+{{Scaling table/slot|Isolation|200|0.04|10}}
+{{Scaling table/slot|Lurker Strain|125|0.04|125|4}}
+{{Scaling table/slot|Paralyzing Enzymes|280|0.04|4}}
+{{Scaling table/slot|Paralyzing Enzymes (per second)|140|0.04|4}}
+{{Scaling table/end}}</noinclude>

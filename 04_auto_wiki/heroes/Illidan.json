@@ -1,0 +1,535 @@
+{
+  "hero": "Illidan",
+  "abilities": [
+    {
+      "name": "Betrayer's Thirst",
+      "hotkey": "TRAIT",
+      "icon": "Betrayer's_Thirst_Icon.png",
+      "description": "Basic Attacks heal for 30% of damage dealt and reduce Ability cooldowns by 1 second.; trait",
+      "fields": {
+        "type": "Healing",
+        "scaling": "-",
+        "affects": "Self",
+        "props": "Attack Modifier (enemies), Lifesteal",
+        "notes": "Cooldown reduction affects both Heroic and Basic Abilities, but not active Abilities gained from Talents. Getting Blinded makes you unable to hit enemies and gain cooldown reduction or lifesteal."
+      }
+    },
+    {
+      "name": "Dive",
+      "hotkey": "Q",
+      "icon": "Dive_Icon.png",
+      "description": "Dive at the target, dealing 66 damage and flipping to the other side of the target.",
+      "fields": {
+        "type": "Spell Damage / Movement: Launch",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "target": "Unit target",
+        "cast": "Instant",
+        "range": "7.125",
+        "missile": "150",
+        "notes": "The damage is dealt upon first reaching the target. If the target dies, Illidan does not get flipped to the other side.",
+        "cooldown": "6"
+      }
+    },
+    {
+      "name": "Sweeping Strike",
+      "hotkey": "W",
+      "icon": "Sweeping_Strike_Icon.png",
+      "description": "Dash toward target point, dealing 119 damage to enemies along the way. Hitting an enemy increases Illidan's Basic Attack damage by 35% for 3 seconds.; 8 / 1.0",
+      "fields": {
+        "type": "Spell Damage / Offensive damage modifier, Movement: Dash",
+        "scaling": "4.00%",
+        "affects": "Enemies / Self",
+        "target": "Point target",
+        "props": "Area of Effect",
+        "cast": "Instant",
+        "range": "5.5",
+        "hitbox": "3.0 x 2.55",
+        "missile": "14.4",
+        "notes": "Does not stack with itself. Consecutive applications refresh the duration. Damage bonus stacks additively with other offensive damage modifiers that can affect Illidan's Basic Attack damage."
+      }
+    },
+    {
+      "name": "Evasion",
+      "hotkey": "E",
+      "icon": "Evasion_Icon.png",
+      "description": "Evade enemy Basic Attacks for 2.5 seconds.",
+      "fields": {
+        "type": "Status effect",
+        "affects": "Self",
+        "target": "No target",
+        "props": "Evasion",
+        "cast": "Instant",
+        "cooldown": "15"
+      }
+    },
+    {
+      "name": "Metamorphosis",
+      "hotkey": "R",
+      "icon": "Metamorphosis_Icon.png",
+      "description": "Transform into Demon Form at the target location, dealing 46 damage in the area. Temporarily increases maximum Health by 220 for each Hero hit by the initial impact. Lasts for 18 seconds.; 120; heroic",
+      "fields": {
+        "type": "Spell Damage / Status effect, Bonus Health, Movement: Teleport",
+        "scaling": "4.00% (damage, Health)",
+        "affects": "Enemies / Self",
+        "target": "Point target",
+        "props": "Area of Effect, Special Stasis",
+        "cast": "Instant",
+        "range": "12",
+        "aoe": "Circle",
+        "radius": "4.125",
+        "notes": "Can be cast while Rooted. While phased out, Illidan is put in Stasis. In addition to usual effects of Stasis, Illidan is removed from ground plane (disjoints certain projectiles) and has no collision, but does not get the initial expanded debuff removal. Bonus Health is calculated and damage is dealt when the transformation period ends and Illidan reappears on the battlefield. Illidan's current Health is increased by the same flat amount as his maximum Health. Once Metamorphosis ends, only maximum Health is reduced."
+      }
+    },
+    {
+      "name": "The Hunt",
+      "hotkey": "R",
+      "icon": "The_Hunt_Icon.png",
+      "description": "Charge to target unit, dealing 251 damage on impact and Stunning for 1 second.; 100; heroic",
+      "fields": {
+        "type": "Spell Damage, Crowd control, Status effect / Movement: Launch, Status effect",
+        "scaling": "4.00%",
+        "affects": "Non-Structure enemies / Self",
+        "target": "Unit target",
+        "props": "Channeled cast (stationary), Revealed, Stun, Unstoppable",
+        "cast": "1.0 (ch) + 0 seconds",
+        "range": "45",
+        "missile": "- Initial: 25 - Maximum: 200 - Acceleration: 75",
+        "notes": "Interrupting the cast puts the Ability on a 10 second cooldown. Cast is interrupted if the target moves more than 5 units past its maximum range. The target is Revealed instantly upon cast until Illidan hits the target. After the cast period, Illidan is Unstoppable until he hits the target."
+      }
+    }
+  ],
+  "talents": [
+    {
+      "name": "Immolation",
+      "tier": "1",
+      "slot": "1",
+      "icon": "Immolation_Icon.png",
+      "description": "After using Sweeping Strike, burn nearby enemies for 22 damage a second for 4 seconds.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "props": "Area of Effect",
+        "aoe": "Circle",
+        "radius": "3.125 (1",
+        "tickrate": "1.0 per second",
+        "notes": "1) Extended by Illidan's unit radius. Does not draw tower aggro when damaging Heroes under their Structures. Damage from Immolation is affected by offensive damage modifiers unlike other burning rage effects. Disabled while Illidan is Mounted or in Stasis."
+      },
+      "_raw_fields": [
+        "Immolation",
+        "1",
+        "1",
+        "After using Sweeping Strike, burn nearby enemies for 22 damage a second for 4 seconds.",
+        "File:Immolation_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Battered Assault",
+      "tier": "1",
+      "slot": "2",
+      "icon": "Battered_Assault_Icon.png",
+      "description": "Increase Sweeping Strike's Basic Attack damage bonus duration from 3 to 5 seconds. If Sweeping Strike hits 2 Heroes its damage bonus is increased from 35% to 125%.",
+      "fields": {
+        "nohr": "1",
+        "notes": "Does not stack with itself. Damage bonus increase always lasts 5 seconds: If the next Sweeping Strike hits only a single enemy Hero while Battered Assault is still active, the baseline bonus of the new cast is overridden with the higher value until previous cast's Battered Assault bonus ends."
+      },
+      "_raw_fields": [
+        "Battered Assault",
+        "1",
+        "2",
+        "Increase Sweeping Strike's Basic Attack damage bonus duration from 3 to 5 seconds. If Sweeping Strike hits 2 Heroes its damage bonus is increased from 35% to 125%.",
+        "File:Battered_Assault_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Unending Hatred",
+      "tier": "1",
+      "slot": "3",
+      "icon": "Unending_Hatred_Icon.png",
+      "description": "quest Every Minion you kill gives you 0.2 Basic Attack damage. Every Takedown gives 1 Basic Attack damage. Once you reach 20 Basic Attack damage, receive an additional 20 Basic Attack damage.",
+      "fields": {
+        "type": "Bonus damage",
+        "scaling": "-",
+        "affects": "Self",
+        "notes": "Continues to gain stacks even after the quest is completed. Grants credit if within 13.125 range of an enemy Minion as it dies."
+      },
+      "_raw_fields": [
+        "Unending Hatred",
+        "1",
+        "3",
+        "quest Every Minion you kill gives you 0.2 Basic Attack damage. Every Takedown gives 1 Basic Attack damage. Once you reach 20 Basic Attack damage, receive an additional 20 Basic Attack damage.",
+        "File:Unending_Hatred_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Reflexive Block",
+      "tier": "2",
+      "slot": "1",
+      "icon": "Reflexive_Block_Icon.png",
+      "description": "Using Dive grants 75 Physical Armor against the next 3 Hero Basic Attacks for 4 seconds, reducing the damage taken by 75%.",
+      "fields": {
+        "type": "Defensive damage modifier",
+        "affects": "Self",
+        "props": "Block, Physical Armor",
+        "notes": "Illidan can have a maximum of 4 Block stacks from this Talent, and the duration of all existing Block stacks from the Talent is refreshed if he gains more from it."
+      },
+      "_raw_fields": [
+        "Reflexive Block",
+        "2",
+        "1",
+        "Using Dive grants 75 Physical Armor against the next 3 Hero Basic Attacks for 4 seconds, reducing the damage taken by 75%.",
+        "File:Reflexive_Block_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Thirsting Blade",
+      "tier": "2",
+      "slot": "2",
+      "icon": "Thirsting_Blade_Icon.png",
+      "description": "Betrayer's Thirst's healing from Basic Attacks is increased from 30% to 50% while Sweeping Strike's damage bonus is active.",
+      "fields": {},
+      "_raw_fields": [
+        "Thirsting Blade",
+        "2",
+        "2",
+        "Betrayer's Thirst's healing from Basic Attacks is increased from 30% to 50% while Sweeping Strike's damage bonus is active.",
+        "File:Thirsting_Blade_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Hunter's Onslaught",
+      "tier": "2",
+      "slot": "3",
+      "icon": "Hunter's_Onslaught_Icon.png",
+      "description": "Basic Abilities heal for 35% of the damage they deal. Double this bonus versus Heroes.",
+      "fields": {
+        "type": "Healing",
+        "scaling": "-",
+        "affects": "Self",
+        "props": "Lifesteal",
+        "notes": "Benefits from bonus damage from Marked for Death and Immolation 's burn damage."
+      },
+      "_raw_fields": [
+        "Hunter's Onslaught",
+        "2",
+        "3",
+        "Basic Abilities heal for 35% of the damage they deal. Double this bonus versus Heroes.",
+        "File:Hunter's_Onslaught_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Rapid Chase",
+      "tier": "3",
+      "slot": "1",
+      "icon": "Rapid_Chase_Icon.png",
+      "description": "Dive grants 20% Movement Speed for 2 seconds. If the target is an enemy Hero, reduce its cooldown by 1 second.",
+      "fields": {},
+      "_raw_fields": [
+        "Rapid Chase",
+        "3",
+        "1",
+        "Dive grants 20% Movement Speed for 2 seconds. If the target is an enemy Hero, reduce its cooldown by 1 second.",
+        "File:Rapid_Chase_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Friend or Foe",
+      "tier": "3",
+      "slot": "2",
+      "icon": "Friend_or_Foe_Icon.png",
+      "description": "Increases the range of Dive by 20% and allows it to be used to dive to allied Heroes.",
+      "fields": {
+        "affects": "Enemies, allied Heroes",
+        "prop1": "Bonus range",
+        "val1": "1.425",
+        "notes": "Using Dive on an allied Hero does not damage them nor flip Illidan over them."
+      },
+      "_raw_fields": [
+        "Friend or Foe",
+        "3",
+        "2",
+        "Increases the range of Dive by 20% and allows it to be used to dive to allied Heroes.",
+        "File:Friend_or_Foe_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Unbound",
+      "tier": "3",
+      "slot": "3",
+      "icon": "Unbound_Icon.png",
+      "description": "Sweeping Strike can go over walls and terrain. reward After hitting 15 Heroes with Sweeping Strike, gain a second charge.",
+      "fields": {
+        "type": "Movement: Launch",
+        "affects": "Self",
+        "prop1": "Charge cooldown",
+        "val1": "1.0 second",
+        "notes": "Original animation of Sweeping Strike becomes broken when this talent is picked (adds extra frames of delay durning end animation)."
+      },
+      "_raw_fields": [
+        "Unbound",
+        "3",
+        "3",
+        "Sweeping Strike can go over walls and terrain. reward After hitting 15 Heroes with Sweeping Strike, gain a second charge.",
+        "File:Unbound_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Metamorphosis",
+      "tier": "4",
+      "slot": "1",
+      "icon": "Metamorphosis_Icon.png",
+      "description": "Cooldown 120 Transform into Demon Form at the target location, dealing 46 damage in the area. Temporarily increase your maximum Health by 220 for each Hero hit. Lasts for 18 seconds.",
+      "fields": {},
+      "_raw_fields": [
+        "Metamorphosis",
+        "4",
+        "1",
+        "Cooldown 120 Transform into Demon Form at the target location, dealing 46 damage in the area. Temporarily increase your maximum Health by 220 for each Hero hit. Lasts for 18 seconds.",
+        "File:Metamorphosis_Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "The Hunt",
+      "tier": "4",
+      "slot": "2",
+      "icon": "The_Hunt_Icon.png",
+      "description": "Cooldown 100 Charge to target unit, dealing 251 damage on impact and Stunning for 1 second.",
+      "fields": {},
+      "_raw_fields": [
+        "The Hunt",
+        "4",
+        "2",
+        "Cooldown 100 Charge to target unit, dealing 251 damage on impact and Stunning for 1 second.",
+        "File:The_Hunt_Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Nimble Defender",
+      "tier": "5",
+      "slot": "1",
+      "icon": "Nimble_Defender_Icon.png",
+      "description": "If Sweeping Strike hits an enemy Hero, gain 25 Armor for 2 seconds, reducing damage taken by 25%.",
+      "fields": {
+        "type": "Defensive damage modifier",
+        "affects": "Self",
+        "props": "Armor",
+        "notes": "Does not stack with itself or other positive Armor effects. Other defensive damage modifiers may stack."
+      },
+      "_raw_fields": [
+        "Nimble Defender",
+        "5",
+        "1",
+        "If Sweeping Strike hits an enemy Hero, gain 25 Armor for 2 seconds, reducing damage taken by 25%.",
+        "File:Nimble_Defender_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Elusive Strike",
+      "tier": "5",
+      "slot": "2",
+      "icon": "Elusive_Strike_Icon.png",
+      "description": "Sweeping Strike reduces the cooldown of Evasion by 3 seconds every time it damages an enemy Hero.",
+      "fields": {},
+      "_raw_fields": [
+        "Elusive Strike",
+        "5",
+        "2",
+        "Sweeping Strike reduces the cooldown of Evasion by 3 seconds every time it damages an enemy Hero.",
+        "File:Elusive_Strike_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Sixth Sense",
+      "tier": "5",
+      "slot": "3",
+      "icon": "Sixth_Sense_Icon.png",
+      "description": "Evasion grants Illidan 75 Spell Armor against the next 2 sources of Spell Damage, reducing their damage by 75%.",
+      "fields": {
+        "type": "Defensive damage modifier",
+        "affects": "Self",
+        "props": "Spell Armor, Spell Block",
+        "notes": "Charges expire when Evasion ends."
+      },
+      "_raw_fields": [
+        "Sixth Sense",
+        "5",
+        "3",
+        "Evasion grants Illidan 75 Spell Armor against the next 2 sources of Spell Damage, reducing their damage by 75%.",
+        "File:Sixth_Sense_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Marked for Death",
+      "tier": "6",
+      "slot": "1",
+      "icon": "Marked_for_Death_Icon.png",
+      "description": "Dive deals an extra 180 damage if used consecutively on a target within 10 seconds.",
+      "fields": {
+        "type": "Bonus damage",
+        "scaling": "4.00%",
+        "affects": "Ability",
+        "notes": "Does not stack with itself."
+      },
+      "_raw_fields": [
+        "Marked for Death",
+        "6",
+        "1",
+        "Dive deals an extra 180 damage if used consecutively on a target within 10 seconds.",
+        "File:Marked_for_Death_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Fiery Brand",
+      "tier": "6",
+      "slot": "2",
+      "icon": "Fiery_Brand_Icon.png",
+      "description": "Every 3rd attack against the same Hero deals an additional 7% of their maximum Health as damage.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "-",
+        "affects": "Enemy Heroes",
+        "props": "Attack Modifier (Heroes), Percent Damage",
+        "notes": "The counter is reset if Illidan has not attacked the enemy Hero for 300 seconds or if they gain Stasis or Invulnerable. Attacking a different Hero resets the counter. Counter does not continue through the cycle if Illidan is Blinded or the target is Evading."
+      },
+      "_raw_fields": [
+        "Fiery Brand",
+        "6",
+        "2",
+        "Every 3rd attack against the same Hero deals an additional 7% of their maximum Health as damage.",
+        "File:Fiery_Brand_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Blades of Azzinoth",
+      "tier": "6",
+      "slot": "3",
+      "icon": "Blades_of_Azzinoth_Icon.png",
+      "description": "Active Hitting 5 Heroes with Sweeping Strike allows Blades of Azzinoth to be activated, increasing Basic Attack damage by 75% for 8 seconds.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Self",
+        "target": "No target",
+        "props": "Attack Modifier (enemies)",
+        "cast": "Instant",
+        "prop1": "Maximum stacks",
+        "val1": "5",
+        "notes": "Each Hero hit counts as 1 stack. After gathering 5 stacks the ability can be activated, consuming all stacks. Starts with full 5 stacks. Damage bonus stacks additively with other offensive damage modifiers that can affect Illidan's Basic Attack damage."
+      },
+      "_raw_fields": [
+        "Blades of Azzinoth",
+        "6",
+        "3",
+        "Active Hitting 5 Heroes with Sweeping Strike allows Blades of Azzinoth to be activated, increasing Basic Attack damage by 75% for 8 seconds.",
+        "File:Blades_of_Azzinoth_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Demonic Form",
+      "tier": "7",
+      "slot": "1",
+      "icon": "Demonic_Form_Icon.png",
+      "description": "Permanently remain in Demonic Form. Metamorphosis also increases Attack Speed by 20% and reduces the duration of Stuns, Roots and Slows by 50%. Illidan can now mount in Demonic Form.",
+      "fields": {
+        "type": "Status effect",
+        "affects": "Self",
+        "props": "Attack Speed, CC reduction",
+        "notes": "The bonuses are applied the next time Illidan casts Metamorphosis . Metamorphosis and its bonuses are removed upon death. The Health bonus is still temporary. Attack Speed bonus stacks additively with other effects that affect Illidan's Attack Speed. In Demonic Form, Illidan's Mount is limited to a special Ability-specific one."
+      },
+      "_raw_fields": [
+        "Demonic Form",
+        "7",
+        "1",
+        "Permanently remain in Demonic Form. Metamorphosis also increases Attack Speed by 20% and reduces the duration of Stuns, Roots and Slows by 50%. Illidan can now mount in Demonic Form.",
+        "File:Demonic_Form_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Nowhere to Hide",
+      "tier": "7",
+      "slot": "2",
+      "icon": "Nowhere_to_Hide_Icon.png",
+      "description": "The Hunt gains unlimited range. Illidan passively Reveals enemy Heroes below 25% Health anywhere on the Battleground.",
+      "fields": {
+        "type": "Status effect",
+        "affects": "Enemy Heroes",
+        "props": "Revealed",
+        "range": "Global",
+        "notes": "The Hunt cannot be used to travel into or out of the underground level in Haunted Mines. Passive Reveal still applies everywhere."
+      },
+      "_raw_fields": [
+        "Nowhere to Hide",
+        "7",
+        "2",
+        "The Hunt gains unlimited range. Illidan passively Reveals enemy Heroes below 25% Health anywhere on the Battleground.",
+        "File:Nowhere_to_Hide_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Nexus Blades",
+      "tier": "7",
+      "slot": "3",
+      "icon": "Nexus_Blades_Icon.png",
+      "description": "Basic Attacks deal 20% more damage and Slow enemy Movement Speed by 20% for 1 second.",
+      "fields": {
+        "type": "Crowd control / Offensive damage modifier",
+        "affects": "Enemies / Self",
+        "props": "Attack Modifier (enemies), Slow",
+        "notes": "Damage bonus stacks additively with other offensive damage modifiers that can affect Illidan's Basic Attack damage."
+      },
+      "_raw_fields": [
+        "Nexus Blades",
+        "7",
+        "3",
+        "Basic Attacks deal 20% more damage and Slow enemy Movement Speed by 20% for 1 second.",
+        "File:Nexus_Blades_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Bolt of the Storm",
+      "tier": "7",
+      "slot": "4",
+      "icon": "Bolt_of_the_Storm_Icon.png",
+      "description": "Cooldown 70 Active Activate to teleport to a nearby location.",
+      "fields": {
+        "type": "Movement: Teleport",
+        "affects": "Self",
+        "target": "Point target",
+        "props": "Clamping",
+        "cast": "Instant",
+        "range": "7.2",
+        "notes": "Can be used to extend active frames of Sweeping Strike (note: this is not possible anymore if Unbound is picked level 7)."
+      },
+      "_raw_fields": [
+        "Bolt of the Storm",
+        "7",
+        "4",
+        "Cooldown 70 Active Activate to teleport to a nearby location.",
+        "File:Bolt_of_the_Storm_Icon.png"
+      ],
+      "level": "20"
+    }
+  ],
+  "other": [],
+  "_unparsed_count": 0
+}

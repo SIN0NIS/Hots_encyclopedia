@@ -1,0 +1,44 @@
+{
+  "_comment": [
+    "빌드 설정. 코드가 아니라 취향·정책에 해당하는 값만 모았다.",
+    "여기 없는 값은 코드가 데이터에서 계산하거나 게임에서 뽑아 쓰는 것이다."
+  ],
+  "links": {
+    "_comment": "메인 페이지 카드와 백과사전 우측 상단 바로가기가 함께 쓴다.",
+    "wiki": "https://heroesofthestorm.fandom.com/wiki/Heroes_of_the_Storm_Wiki",
+    "builder": "https://sin0nis.github.io/hots_talent_build_auto_git/hots_talent_build.html",
+    "github": "https://github.com/SIN0NIS/Hots_encyclopedia"
+  },
+  "aoeGauges": {
+    "_comment": [
+      "범위 그림에 겹쳐 그릴 크기 기준자. 그림이 들어가는 가장 작은 것을 고른다.",
+      "사거리 값은 XML 무기 정의에서 읽으므로 패치를 따라간다 - 여기서는 어느",
+      "무기를 자로 쓸지만 정한다."
+    ],
+    "weapons": [
+      {
+        "key": "raynor",
+        "nameId": "RaynorWeapon",
+        "ko": "레이너 평타",
+        "en": "Raynor basic attack"
+      },
+      {
+        "key": "siege",
+        "nameId": "SgtHammerSiegeModeWeapon",
+        "ko": "해머 공성 모드",
+        "en": "Hammer siege mode"
+      }
+    ]
+  },
+  "aoeDrawing": {
+    "_comment": [
+      "  값을 키우면 큰 원을 더 오래 유지하고, 줄이면 일찍 가로로 편다.",
+      "partColors: 도형이 여럿인 스킬에서 조각마다 돌려 쓰는 색."
+    ],
+    "partColors": [
+      "#ff5f5f",
+      "#ffb84a",
+      "#4aa3ff"
+    ]
+  }
+}

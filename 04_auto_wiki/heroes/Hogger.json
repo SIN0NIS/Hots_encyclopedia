@@ -1,0 +1,606 @@
+{
+  "hero": "Hogger",
+  "abilities": [
+    {
+      "name": "Loot Hoard",
+      "hotkey": "D",
+      "icon": "Loot_Hoard_Icon.png",
+      "description": "Throw a pile of junk onto the battlefield, dealing 102 damage in a small area, knocking enemies away and acting as terrain for up to 5 seconds. When the Loot Hoard expires or is destroyed, a chunk of Meat falls out that can be picked up to restore 3% of maximum Health every second for 4 seconds. Reactivate to destroy Loot Hoard.",
+      "fields": {
+        "type": "Terrain / Spell Damage, Crowd control / Healing",
+        "scaling": "4.00% (damage)",
+        "affects": "All units / Enemies / Self",
+        "props": "Area of Effect, Heal over Time, Knockback, Self-castable",
+        "cast": "0.125 + 0.0625 seconds",
+        "range": "8.75",
+        "aoe": "- Terrain: Square - Impact: Circle",
+        "width": "2.0 (terrain)",
+        "height": "2.0 (terrain)",
+        "radius": "2.5 (impact)",
+        "missile": "40",
+        "tickrate": "1.0 per second (x5)",
+        "prop1": "Meat pickup radius",
+        "val1": "2.0",
+        "prop2": "Knockback duration",
+        "val2": "0.0625 seconds",
+        "prop3": "Knockback speed",
+        "val3": "12",
+        "notes": "Loot Hoard can be reactivated 0.5 seconds after it has spawned to end its effect early. This still spawns Meat. Loot Hoard is aligned with the map grid and must be placed on a location, where it does not collide with Hogger's unit radius and its center does not collide with existing terrain. Picking up Meat while under its effects adds to its total duration. Meat stays on the ground for up to 8 seconds.",
+        "cooldown": "20"
+      }
+    },
+    {
+      "name": "Rage",
+      "hotkey": "TRAIT",
+      "icon": "Rage_Icon.png",
+      "description": "Rage is gained by taking damage or dealing Basic Attack damage. Hogger’s Basic Ability cooldowns refresh 1% faster for every 2 points of Rage. After 3 seconds of not gaining Rage, it begins to quickly decay.",
+      "fields": {
+        "affects": "Self",
+        "props": "Attack Modifier",
+        "notes": "Hogger gains 5 Rage when landing a Basic Attack and 1 Rage each time he takes damage. Decays by 0.8125 per 0.0625s (13 per second) after not gaining any Rage for 3 seconds."
+      }
+    },
+    {
+      "name": "Staggering Blow",
+      "hotkey": "Q",
+      "icon": "Staggering_Blow_Icon.png",
+      "description": "Swing your chain in a wide arc, dealing 140 damage to enemies hit and knocking them away. If an enemy collides with terrain, deal an additional 150 damage, Stun for 0.75 seconds, and gain 15 Rage.",
+      "fields": {
+        "type": "Spell Damage, Crowd control",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "target": "Point target",
+        "props": "Area of Effect, Clamping, Knockback, Stationary channel (1 , Stun",
+        "cast": "0.125 + 0.125 seconds",
+        "aoe": "Radial",
+        "radius": "5.75",
+        "arc": "120 degrees (1",
+        "prop1": "Knockback duration",
+        "val1": "0.1875 seconds",
+        "prop2": "Knockback speed",
+        "val2": "17",
+        "notes": "1) The swing is channeled and the search is split in three 40 degree sections, rotating counter-clockwise over 0.1875 seconds. Enemies are knocked away radially from Hogger. Damage from terrain hit is dealt in a separate instance. Hogger's Basic Attack is placed on a 0.375 second cooldown when Staggering Blow finishes casting.",
+        "cooldown": "12"
+      }
+    },
+    {
+      "name": "Ez-Thro Dynamite",
+      "hotkey": "W",
+      "icon": "Ez-Throw_Dynamite_Icon.png",
+      "description": "Toss a bundle of Dynamite with a 1.5 second fuse. Upon detonation, enemies take 180 damage and are Slowed by 30% for 2 seconds. The Dynamite instantly detonates when landing directly on an enemy Hero and grants Hogger 10 Rage.",
+      "fields": {
+        "type": "Spell Damage, Crowd control",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "target": "Point target",
+        "props": "Area of Effect, Self-castable, Slow",
+        "cast": "0.125 + 0 seconds",
+        "range": "6.75",
+        "aoe": "Circle",
+        "radius": "- Timed: 3.0 - Instant: 0.875",
+        "notes": "Dynamite bundle takes 0.5 seconds to reach its end location regardless of distance. Instant detonation only triggers on the enemy Hero closest to the dynamite's center, causing the Rage gain and talent bonuses only to be applied once per dynamite regardless of how many Heroes were hit. Dynamite bundle grants vision over its area before detonating.",
+        "cooldown": "8"
+      }
+    },
+    {
+      "name": "Hogg Wild",
+      "hotkey": "E",
+      "icon": "Hogg_Wild_Icon.png",
+      "description": "After 0.25 seconds, become Unstoppable and uncontrollably spin towards the target direction, ricocheting off terrain. Ricocheting off terrain refreshes the duration. Every 0.125 seconds, deal 44 damage to nearby non-Structure enemies. Damage against Heroes is increased by 0.5% for each point of Rage.",
+      "fields": {
+        "type": "Spell Damage / Movement: Dash, Status effect",
+        "scaling": "4.00%",
+        "affects": "non-Structure enemies / Self",
+        "target": "Point target",
+        "props": "Area of Effect, Clamping, Self-castable, Unstoppable",
+        "cast": "0.25 + 0 seconds",
+        "aoe": "Circle",
+        "radius": "2.625",
+        "missile": "- Initial: 0.2 - Maximum: 13.5 - Acceleration: 13 - Bounces: 14.5 (constant)",
+        "tickrate": "8.0 per second",
+        "prop1": "Damage per tick",
+        "val1": "36",
+        "prop2": "Duration",
+        "val2": "- Initial: 1.5625 seconds - Bounces: 1.375 seconds",
+        "notes": "Hogg Wild can be reactivated after 0.5 seconds to end its effect early. Bouncing off terrain instantly sets the speed to 14.5. During Hogg Wild Hogger also bounces off of Structure units and his Loot Hoard, but ignores collision with any other units, including pathing blockers like Tassadar's Force Wall. Contact with terrain is checked from the centerpoint of Hogger's hitbox. Cooldown starts when the Ability ends. Rage damage bonus stacks additively with other offensive damage modifiers that can affect Hogg Wild 's damage.",
+        "cooldown": "14"
+      }
+    },
+    {
+      "name": "Hoardapult",
+      "hotkey": "R",
+      "icon": "Hoardapult_Icon.png",
+      "description": "Launch an empowered Loot Hoard with Hogger attached, dealing 100 damage and Slowing enemies by 50% for 2 seconds. Hoardapult’s Loot Hoard lasts for up to 20 seconds, decaying rapidly while not nearby. Every 10 seconds Hogger can take a chunk of Meat from the Loot Hoard.",
+      "fields": {
+        "type": "Spell Damage, Crowd control / Movement: Launch, Status effect",
+        "scaling": "4.00%",
+        "affects": "Enemies, Self",
+        "target": "Vector targeting",
+        "props": "Area of Effect, Self-castable, Slow, Unstoppable",
+        "cast": "0.375 + 0.0625 seconds",
+        "range": "15",
+        "aoe": "Circle",
+        "radius": "2.5",
+        "missile": "40",
+        "prop1": "Meat pickup radius",
+        "val1": "4.5",
+        "prop2": "Decay radius",
+        "val2": "14",
+        "notes": "Hoardapult can be canceled after 0.75 seconds to end its effect early. The initial point of vector targeting determines the location of the Loot Hoard unit and the second which direction Hogger will be positioned next to it. Hoardapult can exceptionally be cast while Rooted. Hogger is Unstoppable while in the air. In addition to Hoardapult 's damage, enemies also take damage from Loot Hoard 's impact. Loot Hoards created by Hoardapult and Meat dropped by them have the same properties as their base version and interact with Talents affecting them, except that the initial Meat drop from Bones to Gnaw does not happen. Hogger automatically consumes Meat if he is within the pickup radius and not at maximum Health. The first Meat can be collected instantly. If Hogger is not within the decay radius, Hoardapult's duration is reduced by 0.5 seconds every 0.0625 seconds.",
+        "cooldown": "60"
+      }
+    },
+    {
+      "name": "Shockwave",
+      "hotkey": "R",
+      "icon": "Shockwave_Icon.png",
+      "description": "After 0.5 seconds, slam the ground, sending out a shockwave that travels in a long line. Enemies hit by the initial slam take 335 damage and are Stunned for 1.5 seconds. Enemies only hit by the shockwave take 230 damage and are Stunned for 0.75 seconds.",
+      "fields": {
+        "type": "Spell Damage, Crowd control",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "target": "Point target",
+        "props": "Area of Effect, Channeled cast (stationary), Clamping, Piercing Skillshot, Stun",
+        "cast": "0.5 (ch) + 0.25 seconds",
+        "range": "- Slam: 2.5 - Shockwave: 17",
+        "aoe": "- Slam: Circle - Shockwave: Rectangle",
+        "radius": "2.5 (slam)",
+        "hitbox": "2.5 x 1.5 (shockwave)",
+        "missile": "22",
+        "notes": "Interrupting Shockwave during its windup puts it on a 10 second cooldown. Enemies hit by the initial slam cannot be affected by the shockwave.",
+        "cooldown": "70"
+      }
+    }
+  ],
+  "talents": [
+    {
+      "name": "Journeyman Cooking",
+      "tier": "1",
+      "slot": "1",
+      "icon": "Journeyman_Cooking_Icon.png",
+      "description": "Each Hero hit by Ez-Thro Dynamite heals you for 8% of maximum Health. Questonly Hitting Heroes with Ez-Thro Dynamite permanently increases your maximum Health by 10, to a maximum of 750 bonus Health.",
+      "fields": {
+        "type": "Healing / Bonus Health",
+        "scaling": "-",
+        "affects": "Self"
+      },
+      "_raw_fields": [
+        "Journeyman Cooking",
+        "1",
+        "1",
+        "Each Hero hit by Ez-Thro Dynamite heals you for 8% of maximum Health. Questonly Hitting Heroes with Ez-Thro Dynamite permanently increases your maximum Health by 10, to a maximum of 750 bonus Health.",
+        "File:Journeyman_Cooking_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Bones to Gnaw",
+      "tier": "1",
+      "slot": "2",
+      "icon": "Bones_to_Gnaw_Icon.png",
+      "description": "Loot Hoard creates a chunk of Meat when it lands. While under the effects of Meat, gain 10 Armor.",
+      "fields": {
+        "type": "Defensive damage modifier",
+        "affects": "Self",
+        "props": "Armor",
+        "notes": "Does not stack with other positive Armor effects. Other defensive damage modifiers may stack."
+      },
+      "_raw_fields": [
+        "Bones to Gnaw",
+        "1",
+        "2",
+        "Loot Hoard creates a chunk of Meat when it lands. While under the effects of Meat, gain 10 Armor.",
+        "File:Bones_to_Gnaw_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "On The Prowl",
+      "tier": "1",
+      "slot": "3",
+      "icon": "On_The_Prowl_Icon.png",
+      "description": "Cooldown 40 ActiveActivate to gain 30 Rage over 8 seconds. Passive You heal for 7 Health every second, increased by 2% per point of Rage.",
+      "fields": {
+        "type": "Healing",
+        "scaling": "4.00%",
+        "affects": "Self",
+        "target": "No target",
+        "cast": "Instant",
+        "tickrate": "1.0 per second",
+        "notes": "Rage healing bonus directly increases the base healing of the Ability, causing the bonus to stack multiplicatively with Healing modifiers."
+      },
+      "_raw_fields": [
+        "On The Prowl",
+        "1",
+        "3",
+        "Cooldown 40 ActiveActivate to gain 30 Rage over 8 seconds. Passive You heal for 7 Health every second, increased by 2% per point of Rage.",
+        "File:On_The_Prowl_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Brute Force",
+      "tier": "2",
+      "slot": "1",
+      "icon": "Brute_Strength_Icon.png",
+      "description": "Increase the range of Loot Hoard by 25% and its damage by 50%. Questonly Hitting Heroes with Staggering Blow permanently increases Basic Attack damage by 2, up to 150 bonus damage. Enemy Heroes that hit terrain grant an additional 6 damage.",
+      "fields": {
+        "type": "Bonus damage",
+        "scaling": "-",
+        "affects": "Self",
+        "prop1": "Bonus range",
+        "val1": "2.1875"
+      },
+      "_raw_fields": [
+        "Brute Force",
+        "2",
+        "1",
+        "Increase the range of Loot Hoard by 25% and its damage by 50%. Questonly Hitting Heroes with Staggering Blow permanently increases Basic Attack damage by 2, up to 150 bonus damage. Enemy Heroes that hit terrain grant an additional 6 damage.",
+        "File:Brute_Strength_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Aggro Range",
+      "tier": "2",
+      "slot": "2",
+      "icon": "Aggro_Range_Icon.png",
+      "description": "Increase Hogg Wild’s radius by 20% and each enemy hit generates 0.5 Rage, increased to 2 against Heroes.",
+      "fields": {
+        "prop1": "Bonus radius",
+        "val1": "0.535"
+      },
+      "_raw_fields": [
+        "Aggro Range",
+        "2",
+        "2",
+        "Increase Hogg Wild’s radius by 20% and each enemy hit generates 0.5 Rage, increased to 2 against Heroes.",
+        "File:Aggro_Range_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Hogger’s Joggers",
+      "tier": "2",
+      "slot": "3",
+      "icon": "Hogger's_Joggers_Icon.png",
+      "description": "While at or above 30 Rage, gain 10% increased Movement Speed and healing received. While at or above 50 Rage, increase these bonuses to 15%.",
+      "fields": {
+        "type": "Status effect, Healing received modifier",
+        "affects": "Self",
+        "props": "Movement Speed",
+        "notes": "Stacks additively with other healing modifiers that affect healing received and multiplicatively with modifiers that affect healing dealt."
+      },
+      "_raw_fields": [
+        "Hogger’s Joggers",
+        "2",
+        "3",
+        "While at or above 30 Rage, gain 10% increased Movement Speed and healing received. While at or above 50 Rage, increase these bonuses to 15%.",
+        "File:Hogger's_Joggers_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Dense Blasting Powder",
+      "tier": "3",
+      "slot": "1",
+      "icon": "Dense_Blasting_Powder_Icon.png",
+      "description": "Instant detonations of Ez-Thro Dynamite create an additional dynamite bundle behind the Hero hit. Hitting the bundle of Ez-Thro Dynamite with Staggering Blow breaks it into 3 sticks and launches them forward in an arc.",
+      "fields": {
+        "type": "Spell Damage, Crowd control",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "props": "Area of Effect, Slow",
+        "prop1": "Vertical offset",
+        "val1": "5.25 (all)",
+        "prop2": "Horizontal offset",
+        "val2": "- Center: 0 - Sides: ±3.75",
+        "notes": "Dynamites launched with Dense Blasting Powder have the same properties as base version and interact with all other talents affecting it. Dynamites created from Dense Blasting Power cannot be split by hitting them with Staggering Blow. The original Ez-Thro Dynamite does not explode if split with Staggering Blow."
+      },
+      "_raw_fields": [
+        "Dense Blasting Powder",
+        "3",
+        "1",
+        "Instant detonations of Ez-Thro Dynamite create an additional dynamite bundle behind the Hero hit. Hitting the bundle of Ez-Thro Dynamite with Staggering Blow breaks it into 3 sticks and launches them forward in an arc.",
+        "File:Dense_Blasting_Powder_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Garbage Fire",
+      "tier": "3",
+      "slot": "2",
+      "icon": "Garbage_Fire_Icon.png",
+      "description": "Reduce the cooldown of Loot Hoard by 2 seconds. Every 0.5 seconds, enemies in a large area around Loot Hoard take 23 damage and are Slowed by 20%.",
+      "fields": {
+        "type": "Spell Damage, Crowd control",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "props": "Area of Effect, Slow",
+        "aoe": "Circle",
+        "radius": "3.25",
+        "tickrate": "2.0 per second (x10)",
+        "notes": "Enemies can be damaged by multiple Garbage Fires simultaneously."
+      },
+      "_raw_fields": [
+        "Garbage Fire",
+        "3",
+        "2",
+        "Reduce the cooldown of Loot Hoard by 2 seconds. Every 0.5 seconds, enemies in a large area around Loot Hoard take 23 damage and are Slowed by 20%.",
+        "File:Garbage_Fire_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Seeing Red",
+      "tier": "3",
+      "slot": "3",
+      "icon": "Seeing_Red_Icon.png",
+      "description": "While above 50 Rage, gain 35% Attack Speed and the cooldowns of Staggering Blow and Hogg Wild refresh 30% faster.",
+      "fields": {
+        "type": "Status effect",
+        "affects": "Self",
+        "props": "Attack Speed"
+      },
+      "_raw_fields": [
+        "Seeing Red",
+        "3",
+        "3",
+        "While above 50 Rage, gain 35% Attack Speed and the cooldowns of Staggering Blow and Hogg Wild refresh 30% faster.",
+        "File:Seeing_Red_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Hoardapult",
+      "tier": "4",
+      "slot": "1",
+      "icon": "Hoardapult_Icon.png",
+      "description": "Cooldown 60 Launch an empowered Loot Hoard with Hogger attached, dealing 100 damage and Slowing enemies by 50% for 2 seconds. Hoardapult’s Loot Hoard lasts for up to 20 seconds, decaying rapidly while not nearby. Every 10 seconds Hogger can take a chunk of Meat from the Loot Hoard.",
+      "fields": {},
+      "_raw_fields": [
+        "Hoardapult",
+        "4",
+        "1",
+        "Cooldown 60 Launch an empowered Loot Hoard with Hogger attached, dealing 100 damage and Slowing enemies by 50% for 2 seconds. Hoardapult’s Loot Hoard lasts for up to 20 seconds, decaying rapidly while not nearby. Every 10 seconds Hogger can take a chunk of Meat from the Loot Hoard.",
+        "File:Hoardapult_Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Shockwave",
+      "tier": "4",
+      "slot": "2",
+      "icon": "Shockwave_Icon.png",
+      "description": "Cooldown 70 After 0.5 seconds, slam the ground, sending out a shockwave that travels in a long line. Enemies hit by the initial slam take 335 damage and are Stunned for 1.5 seconds. Enemies only hit by the shockwave take 230 damage and are Stunned for 0.75 seconds.",
+      "fields": {},
+      "_raw_fields": [
+        "Shockwave",
+        "4",
+        "2",
+        "Cooldown 70 After 0.5 seconds, slam the ground, sending out a shockwave that travels in a long line. Enemies hit by the initial slam take 335 damage and are Stunned for 1.5 seconds. Enemies only hit by the shockwave take 230 damage and are Stunned for 0.75 seconds.",
+        "File:Shockwave_Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Dust Devil",
+      "tier": "5",
+      "slot": "1",
+      "icon": "Dust_Devil_Icon.png",
+      "description": "Gain 25 Armor while Hogg Wild is active and for 4 seconds afterward. While at or above 50 Rage, increase this Armor to 40.",
+      "fields": {
+        "type": "Defensive damage modifier",
+        "affects": "Self",
+        "props": "Armor",
+        "notes": "Does not stack with other positive Armor effects. Other defensive damage modifiers may stack."
+      },
+      "_raw_fields": [
+        "Dust Devil",
+        "5",
+        "1",
+        "Gain 25 Armor while Hogg Wild is active and for 4 seconds afterward. While at or above 50 Rage, increase this Armor to 40.",
+        "File:Dust_Devil_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Pummel",
+      "tier": "5",
+      "slot": "2",
+      "icon": "Pummel_Icon.png",
+      "description": "Enemies hit by Hogg Wild are Slowed by 10% for 2 seconds, stacking up to 5 times. Heroes hit have their Spell Power reduced by 30% for 2 seconds.",
+      "fields": {
+        "type": "Crowd control, Offensive damage modifier, Healing dealt modifier",
+        "affects": "Enemies",
+        "props": "Spell Power",
+        "notes": "Pummel 's Spell Power reduction does not stack with itself. Spell Power reduction stacks additively with other sources of Spell Power and other damage and healing modifiers affecting the target Hero's Spell Damage or healing output."
+      },
+      "_raw_fields": [
+        "Pummel",
+        "5",
+        "2",
+        "Enemies hit by Hogg Wild are Slowed by 10% for 2 seconds, stacking up to 5 times. Heroes hit have their Spell Power reduced by 30% for 2 seconds.",
+        "File:Pummel_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Bloodthirst",
+      "tier": "5",
+      "slot": "3",
+      "icon": "Bloodthirst_(Hogger)_Icon.png",
+      "description": "Damaging Heroes with Basic Attacks, Staggering Blow or Hogg Wild heals you for 33% of the damage dealt.",
+      "fields": {
+        "type": "Healing",
+        "scaling": "-",
+        "affects": "Self",
+        "props": "Lifesteal (heroes)"
+      },
+      "_raw_fields": [
+        "Bloodthirst",
+        "5",
+        "3",
+        "Damaging Heroes with Basic Attacks, Staggering Blow or Hogg Wild heals you for 33% of the damage dealt.",
+        "File:Bloodthirst_(Hogger)_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Headbanger",
+      "tier": "6",
+      "slot": "1",
+      "icon": "Headbanger_Icon.png",
+      "description": "Enemy Heroes Stunned by Staggering Blow take an additional 8% of their maximum Health as damage and are Stunned for an additional 0.5 seconds.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "4.00%",
+        "affects": "Enemy Heroes",
+        "props": "Percent damage",
+        "notes": "Bonus damage is dealt in a separate instance and does grant lifesteal with Bloodthirst."
+      },
+      "_raw_fields": [
+        "Headbanger",
+        "6",
+        "1",
+        "Enemy Heroes Stunned by Staggering Blow take an additional 8% of their maximum Health as damage and are Stunned for an additional 0.5 seconds.",
+        "File:Headbanger_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Kablooie!",
+      "tier": "6",
+      "slot": "2",
+      "icon": "Kablooie!_Icon.png",
+      "description": "Instant Ez-Thro Dynamite detonations deal 50% more damage, reduce its cooldown by 1.5 seconds, and increase its Slow amount to 50%. Passive Increase Ez-Thro Dynamite’s range by 25%.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Ability",
+        "prop1": "Bonus range",
+        "val1": "1.6875",
+        "notes": "Cooldown reduction and Slow increase only apply to the target of instant detonation. Damage bonus stacks additively with other offensive damage modifiers that can affect Ez-Thro Dynamite 's damage."
+      },
+      "_raw_fields": [
+        "Kablooie!",
+        "6",
+        "2",
+        "Instant Ez-Thro Dynamite detonations deal 50% more damage, reduce its cooldown by 1.5 seconds, and increase its Slow amount to 50%. Passive Increase Ez-Thro Dynamite’s range by 25%.",
+        "File:Kablooie!_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Furzerker",
+      "tier": "6",
+      "slot": "3",
+      "icon": "Furzerker_Icon.png",
+      "description": "Hitting Heroes with Staggering Blow or Ez-Thro Dynamite increases the damage of the next Basic Attack within 8 seconds by 50%, stacking up to 2 times. When Hogg Wild ends, gain 30% Movement Speed for 2 seconds.",
+      "fields": {
+        "type": "Offensive damage modifier, Status effect",
+        "affects": "Self",
+        "props": "Attack Modifier, Movement speed",
+        "notes": "Damage bonus stacks additively with itself and with other offensive damage modifiers that can affect Hogger's Basic Attack damage."
+      },
+      "_raw_fields": [
+        "Furzerker",
+        "6",
+        "3",
+        "Hitting Heroes with Staggering Blow or Ez-Thro Dynamite increases the damage of the next Basic Attack within 8 seconds by 50%, stacking up to 2 times. When Hogg Wild ends, gain 30% Movement Speed for 2 seconds.",
+        "File:Furzerker_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Secret Stash",
+      "tier": "7",
+      "slot": "1",
+      "icon": "Secret_Stash_Icon.png",
+      "description": "Every 2 seconds, Hoardapult’s Loot Hoard randomly launches Ez-Thro Dynamite, prioritizing nearby enemy Heroes. Every 5 seconds, it also launches a chunk of Meat toward Hogger.",
+      "fields": {
+        "type": "Spell Damage, Crowd control / Healing",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "props": "Area of Effect",
+        "notes": "Dynamite bundles launch at a set 4.5 distance towards a random enemy Hero, if there are any within 7 radius. If no enemy Heroes are within the radius at the time, dynamite bundles are launched to one of 8 predetermined locations chosen randomly. Dynamite bundles launched by Secret Stash have the same properties as the base version and interact with all talents affecting Ez-Thro Dynamite, except Dense Blasting Powder. Meat is launched at a set 4.0 distance in Hogger's direction. Secret Stash 's Meat launch cooldown is independent from Hoardapult's Meat pickup and does not require Hogger to be full Health. The first Meat is launched after 5 seconds. Meat launched by Secret Stash interacts with all talents affecting Meat."
+      },
+      "_raw_fields": [
+        "Secret Stash",
+        "7",
+        "1",
+        "Every 2 seconds, Hoardapult’s Loot Hoard randomly launches Ez-Thro Dynamite, prioritizing nearby enemy Heroes. Every 5 seconds, it also launches a chunk of Meat toward Hogger.",
+        "File:Secret_Stash_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Power Spike",
+      "tier": "7",
+      "slot": "2",
+      "icon": "Power_Spike_Icon.png",
+      "description": "Hitting Heroes with Shockwave reduces their Armor by 15 for 4 seconds and grants 20 Rage. Passive Rage's cooldown reduction affects Shockwave's cooldown.",
+      "fields": {
+        "type": "Defensive damage modifier",
+        "affects": "Enemy Heroes",
+        "props": "Armor reduction",
+        "notes": "Does not stack with other negative Armor effects. Other defensive damage modifiers may stack."
+      },
+      "_raw_fields": [
+        "Power Spike",
+        "7",
+        "2",
+        "Hitting Heroes with Shockwave reduces their Armor by 15 for 4 seconds and grants 20 Rage. Passive Rage's cooldown reduction affects Shockwave's cooldown.",
+        "File:Power_Spike_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "No Control",
+      "tier": "7",
+      "slot": "3",
+      "icon": "No_Control_Icon.png",
+      "description": "Cooldown 60 ActiveActivate to cast an untalented Hogg Wild and begin chasing an enemy Hero. After reaching the Hero, bounce to a random nearby enemy Hero. Lasts up to 5 seconds, rapidly decaying if there are no other enemy Heroes nearby. Cannot be canceled.",
+      "fields": {
+        "type": "Spell Damage, Status effect",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "target": "Unit target",
+        "props": "Area of Effect, Mobile channel, Movement speed, Unstoppable",
+        "cast": "0.25 + 0 seconds",
+        "range": "- Initial: 9.0 - Bounce search: 10",
+        "aoe": "Circle",
+        "radius": "2.625",
+        "tickrate": "8.0 per second",
+        "prop1": "Damage per tick",
+        "val1": "44",
+        "notes": "No Control increases Hogger's Movement Speed by 10% every 0.0625 seconds, stacking up to 24 times (~16.5 max speed). Hogger loses 2 stacks every 0.0625 seconds if the current target is within 1.75 range. Bounces choose the farthest targetable Hero in the range that has not been targeted within the last 2 seconds. The current target is revealed for 0.125 seconds every 0.0625 seconds while Hogger is traveling to them. If Hogger has no viable bounce targets, the duration of No Control begins to decay by 0.1875 seconds every 0.0625 seconds."
+      },
+      "_raw_fields": [
+        "No Control",
+        "7",
+        "3",
+        "Cooldown 60 ActiveActivate to cast an untalented Hogg Wild and begin chasing an enemy Hero. After reaching the Hero, bounce to a random nearby enemy Hero. Lasts up to 5 seconds, rapidly decaying if there are no other enemy Heroes nearby. Cannot be canceled.",
+        "File:No_Control_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Anger Management",
+      "tier": "7",
+      "slot": "4",
+      "icon": "Anger_Management_(Hogger)_Icon.png",
+      "description": "Increase maximum Rage by 50, raising the maximum bonuses for its cooldown refresh rate to 75% and Hogg Wild's Hero damage to 75%. Passive Basic Attacks grant 5 additional Rage.",
+      "fields": {},
+      "_raw_fields": [
+        "Anger Management",
+        "7",
+        "4",
+        "Increase maximum Rage by 50, raising the maximum bonuses for its cooldown refresh rate to 75% and Hogg Wild's Hero damage to 75%. Passive Basic Attacks grant 5 additional Rage.",
+        "File:Anger_Management_(Hogger)_Icon.png"
+      ],
+      "level": "20"
+    }
+  ],
+  "other": [],
+  "_unparsed_count": 0
+}

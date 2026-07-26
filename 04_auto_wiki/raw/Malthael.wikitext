@@ -1,0 +1,195 @@
+{{hero data
+| name = Malthael
+| date = June 13, 2017
+| price = 10000
+| title = Aspect of Death
+| role = Bruiser
+| franchise = Diablo
+| info = A Bruiser who marks his enemies, shredding away high Health enemies.
+| lore = Once the Aspect of Wisdom, Malthael abandoned heaven after the Worldstone's destruction. In secret, he had resolved to end the Eternal Conflict by becoming a Reaper of Souls and eliminating everything affected by demonic corruption, including humanity.
+| difficulty = Medium
+| melee = True
+| health = 1962
+| healthRegen = 4.086
+| resource = 500
+| resourceType = Mana
+| armor = 0
+| attackSpeed = 0.91
+| attackRange = 1.5
+| attackDamage = 82
+| healthScaling = 0.04
+| regenScaling = 0.04
+| adamageScaling = 0.04
+| unitRadius = 0.6875
+| icon = File:Malthael_Icon.png
+| skills =
+Reaper's Mark;Trait;File:Reaper's_Mark_Icon.png;Basic Attacks cleave in an area in front of Malthael and afflict non-Structure targets with {{Reaper's Mark}} for 4 seconds. Marked enemies are revealed and take damage equal to 2% of their maximum Health every 1 second.<!--
+-->{{undoc-x|type=Percent damage, Status effect<!--
+-->|scaling=-<!--
+-->|affects=Non-Structure enemies<!--
+-->|props=[[Attack Modifier]], [[Damage over Time]], [[Percent damage]], [[Revealed]], [[Splash]]<!--
+-->|radius=3.25<!--
+-->|arc=170 degrees<!--
+-->|notes=<li>If Multiple Malthaels are on a team, they each apply and refresh their own Mark separately. However, the effects of all ''Reaper's Marks'' are shared: the damage does not stack, and all Malthaels can interact with a target that has ''Reaper's Mark'' regardless of whether or not they own a mark on the target.}};;;False;
+
+Soul Rip;Q;File:Soul Rip_Icon.png;Extract the souls of nearby enemies afflicted by {{Reaper's Mark}}, dealing 100 damage and healing Malthael for 25 per target hit. Heroic targets heal Malthael for an additional 4% of the Hero's maximum Health.<!--
+-->{{undoc-x|type=Spell Damage / Healing<!--
+-->|scaling=4.00% (damage) / 4.00% (healing vs. non-Heroes) / - (healing vs. Heroes)<!--
+-->|affects=Non-Structure enemies / Self<!--
+-->|target=No target<!--
+-->|cast=Instant<!--
+-->|radius=6.5<!--
+-->|notes=<li>Can only be activated if there is at least one enemy affected by Reaper's Mark within the Ability's radius.<li>Healing from each target is dealt in a separate instance, and bonus healing from Heroes is dealt in yet another instance, separate from the base heal.}};2;25;False;
+
+Wraith Strike;W;File:Wraith_Strike_Icon.png;Instantly teleport through an enemy afflicted by {{Reaper's Mark}}, dealing 59 damage and refreshing {{Reaper's Mark}}.<!--
+-->{{undoc-x|type=Spell Damage / Movement: [[Teleport]]<!--
+-->|scaling=4.00%<!--
+-->|affects=Non-Structure enemies<!--
+-->|target=Unit target<!--
+-->|cast=Instant<!--
+-->|range=7.0<!--
+-->|notes=<li>Can only be activated if there is at least one enemy affected by Reaper's Mark.<li>Malthael teleports to the opposite side of the target from his location at 1.5 distance.<li>Puts Malthael's Basic Attack on full cooldown (1.1s) without using it upon activation.}};5;30;False;
+
+Death Shroud;E;File:Death_Shroud_Icon.png;After 0.25 seconds, unleash a wave of dark mist that applies {{Reaper's Mark}} to enemies it hits.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|scaling=-<!--
+-->|affects=Non-Structure enemies<!--
+-->|target=Point target<!--
+-->|cast=0.25 + 0 seconds<!--
+-->|props=Piercing [[Skillshot]], [[Clamping]]<!--
+-->|range=11.25<!--
+-->|hitbox=3 x 1.75<!--
+-->|missile=10}};8;50;False;
+
+Tormented Souls;R;File:Tormented_Souls_Icon.png;Unleash a torrent of souls, continually applying {{Reaper's Mark}} to nearby enemies for 4 seconds.<p>Tormented Souls resets the cooldown of Wraith Strike when activated, and while active, Wraith Strike costs no Mana and its cooldown is reduced to 2 seconds.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|scaling=-<!--
+-->|affects=Non-Structure enemies<!--
+-->|target=No target<!--
+-->|cast=0.125 + 0 seconds<!--
+-->|props=[[Area of Effect]]<!--
+-->|aoe=Circle<!--
+-->|radius=5.0}};60;20;heroic;False
+
+Last Rites;R;File:Last_Rites_Icon.png;Apply a death sentence to an enemy Hero that, after 2 seconds, deals damage equal to 50% of their missing Health.<p>{{Repeatable Quest|Enemies killed between the application of Last Rites and within 1.5 seconds of it dealing damage permanently reduce its cooldown by 5 seconds, to a minimum of 20 seconds.}}<!--
+-->{{undoc-x|type=Percent damage<!--
+-->|scaling=-<!--
+-->|affects=Non-[[Vehicle]] Enemy Heroes<!--
+-->|target=Unit target<!--
+-->|cast=0.125 + 0 seconds<!--
+-->|props=[[Percent damage]]<!--
+-->|range=5.0<!--
+-->|notes=<li>Mathematically, kills a target which is at less than or equal to 1/3 of maximum Health.<li>Damage is based on missing Health when the Mark expires after 2 seconds.<li>The Mark cannot be removed, but the damage can be avoided with effects that grant damage immunity, like entering the [[Hall of Storms]], or entering [[Stasis]] or [[Invulnerability]], at the time of its expiration.<li>While ''Last Rites'' is available, enemy Heroes within 12 radius of Malthael are indicated by a red skull above them if the damage from ''Last Rites'' would be enough to kill them.}};70;100;heroic;False
+
+| talents = 
+<!-- LEVEL 1 -->
+Death's Reach;1;1;Increase Wraith Strike's range by 35%.<!--
+-->{{undoc-x|prop1=Bonus range|val1=2.1}};File:Death's_Reach_Icon.png;
+
+On a Pale Horse;1;2;Gain an additional 20% Movement Speed while mounted.;File:On_a_Pale_Horse_Icon.png;
+
+Fear the Reaper;1;3;{{Cooldown|25}}<br>{{Active}} Activate to increase Movement Speed by 25% and pass through other units for 4 seconds.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|props=[[Movement Speed]]<!--
+-->|cast=Instant<!--
+-->|notes=}};File:Fear_the_Reaper_Icon.png;
+
+<!-- LEVEL 4 -->
+Die Alone;2;1;Soul Rip deals 50% more damage if it hits only one Hero.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|notes=<li>If any number of non-Heroic targets are also hit, the bonus damage still applies, but only to the Hero.}};File:Die_Alone_Icon.png;
+
+Throwing Shade;2;2;Increase Death Shroud's range by 33%, reduce its cooldown by 3 seconds, and reduce its Mana cost from 50 to 30.<p>Death Shroud's initial impact deals 2% maximum Health as damage to non-Structure enemies.<!--
+-->{{undoc-x|type=Percent damage<!--
+-->|scaling=-<!--
+-->|affects=Non-Structure enemies<!--
+-->|props=[[Percent damage]]<!--
+-->|prop1=Bonus range|val1=3.75}};File:Throwing_Shade_Icon.png;
+
+Black Harvest;2;3;{{Quest|Apply {{Reaper's Mark}} to Heroes for a total of 150 seconds.|Permanently increase {{Reaper's Mark|'s}} duration by 2 seconds.}}<!--
+-->{{undoc-x|nohr=1<!--
+-->|notes=<li>If multiple Malthaels are in a team, ''Black Harvest'' starts to gain stacks only when the Hero with the Talent has applied a ''Reaper's Mark'' to the enemy Hero. However, once applied it continues to gain stacks even after the Hero's personal mark has expired, as long as the target is afflicted by any ''Reaper's Mark''.}};File:Black_Harvest_Icon.png;
+
+<!-- LEVEL 7 -->
+Cold Hand;3;1;Soul Rip Slows enemies by 20% for 2.5 seconds.<!--
+-->{{undoc-x|type=Crowd control<!--
+-->|affects=Enemies<!--
+-->|props=[[Slow]]}};File:Cold_Hand_Icon.png;
+
+Massacre;3;2;Wraith Strike now damages and applies {{Reaper's Mark}} to enemies around its target.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Non-Structure enemies<!--
+-->|[[Area of Effect]]<!--
+-->|radius=4.0<!--
+-->|notes=<li>Also applies bonus damage from ''Mortality''.}};File:Massacre_Icon.png;
+
+Touch of Death;3;3;{{Cooldown|20}}<br>{{Active}} Activate to reduce healing received by Heroes afflicted by {{Reaper's Mark}} by 50% for 4 seconds.<!--
+-->{{undoc-x|type=[[Healing modifier]]<!--
+-->|affects=Enemy Heroes<!--
+-->|notes=<li>Affects all active ''Reaper's Marks'', including those placed by other Malthaels.<li>Healing reduction stacks additively with other [[healing modifier]]s that can affect the healing received by the target Hero.}};File:Touch_of_Death_Icon.png;
+
+<!-- LEVEL 10 -->
+Tormented Souls;4;1;{{Cooldown|60}}<br>Unleash a torrent of souls, continually applying {{Reaper's Mark}} to nearby enemies for 4 seconds.<p>Tormented Souls resets the cooldown of Wraith Strike when activated, and while active, Wraith Strike costs no Mana and its cooldown is reduced to 2 seconds.;File:Tormented_Souls_Icon.png;
+Last Rites;4;2;{{Cooldown|70}}<br>Apply a death sentence to an enemy Hero that, after 2 seconds, deals damage equal to 50% of their missing Health.<p>{{Repeatable Quest|Enemies killed between the application of Last Rites and within 1.5 seconds of it dealing damage permanently reduce its cooldown by 5 seconds, to a minimum of 20 seconds.}};File:Last_Rites_Icon.png;
+
+<!-- LEVEL 13 -->
+Soul Siphon;5;1;Increase Soul Rip's bonus healing from Heroes to 4.75% of the Hero's maximum Health.;File:Soul_Siphon_Icon.png;
+
+Ethereal Existence;5;2;Gain 10 Physical Armor per enemy Hero afflicted by {{Reaper's Mark}}, up to a maximum of 30.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Physical Armor]]<!--
+-->|notes=<li>Benefits from all ''Reaper's Marks'', including those placed by other Malthaels.<li>Stacks additively with itself, but not with other positive Physical Armor effects. Other defensive damage modifiers may stack.}};File:Ethereal_Existence_Icon.png;
+
+Inevitable End;5;3;{{Cooldown|20}}<br>{{Active}} Activate to become Unstoppable for 2 seconds, but remove all active {{Reaper's Mark|s}}.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|props=[[Unstoppable]]<!--
+-->|notes=<li>If multiple Malthael's are in a team, only affects ''Reaper's Marks'' placed by the Malthael that activates the Ability.}};File:Inevitable_End_Icon.png;
+
+Shroud of Wisdom;5;4;{{Cooldown|20}}<br>{{Active}} After 2 seconds, gain 50 Spell Armor for 4 seconds.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Spell Armor]]<!--
+-->|notes=<li>Does not stack with other positive Spell Armor effects. Other defensive damage modifiers may stack.}};File:Shroud_of_Wisdom_Icon.png;
+
+<!-- LEVEL 16 -->
+Soul Collector;6;1;Reduce Soul Rip's cooldown by 0.5 seconds and increase its range by 25%.<!--
+-->{{undoc-x|prop1=Bonus range|val1=1.625}};File:Soul_Collector_Icon.png;
+
+Mortality;6;2;When damaging a Hero, Wraith Strike deals bonus damage equal to 8% of the Hero's maximum Health.<!--
+-->{{undoc-x|type=Percent damage<!--
+-->|affects=Enemy heroes<!--
+-->|props=[[Percent damage]]<!--
+-->|notes=<li>Also affects enemies hit by ''Massacre''.}};File:Mortality_Icon.png;
+
+Memento Mori;6;3;{{Reaper's Mark}} deals 60% increased damage after afflicting an enemy for more than 4 seconds.<!--
+-->{{undoc-x|type=Bonus damage<!--
+-->|scaling=-<!--
+-->|affects=Ability<!--
+-->|notes=<li>Duration requirement is per target.<li>If multiple Malthaels are in a team, the damage increase only applies while the personal mark from a Malthael with ''Memento Mori'' has met the time requirement and remains on the target.}};File:Memento_Mori_Icon.png;
+
+<!-- LEVEL 20 -->
+Reaper of Souls;7;1;Increase the duration of Tormented Souls to 6 seconds, and while Tormented Souls is active, Hero Takedowns refresh its duration.<p>If 2 or more enemy Heroes are in Tormented Souls's radius, it does not decay;File:Reaper_of_Souls_Icon.png;
+
+Angel of Death;7;2;Last Rites heals for 100% of the damage dealt, and its current and future cooldown reduction bonuses are doubled.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|props=[[Lifesteal]]<!--
+-->|notes=<li>Also heals for 100% of the overkill value.}};File:Angel_of_Death_Icon.png;
+
+Final Curtain;7;3;Death Shroud leaves a trail in its wake for 4 seconds, applying {{Reaper's Mark}} to enemies in its area.<!--
+-->{{undoc|<hr/><li>Benefits from bonus range from ''Throwing Shade''.}};File:Final_Curtain_Icon.png;
+
+No One Can Stop Death;7;4;{{Cooldown|180}}<br>{{Active}} Activate while dead to immediately respawn at the Altar but increase Malthael's next respawn time by 25%.<!--
+-->{{undoc-x|type=Resurrection<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|cast=Instant<!--
+-->|notes=<!--
+-->}};File:No_One_Can_Stop_Death_Icon.png;
+}}

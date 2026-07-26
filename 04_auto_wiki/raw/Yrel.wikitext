@@ -1,0 +1,234 @@
+{{hero data
+| name = Yrel
+| date = June 12, 2018
+| price = 10000
+| title = Light of Hope
+| role = Bruiser
+| franchise = Warcraft
+| info = A deliberate melee Bruiser whose heavyweight abilities reward investment and careful timing.
+| lore = After traveling to an Alternate Draenor, the forces of Azeroth saved the acolyte Yrel from the Iron Horde. With their aid, she rose to the rank of Exarch and fought back the demonic invasion of her world. Now, she finds herself where time, space, and dimensions converge: the Nexus.
+| difficulty = Medium
+| melee = Yes
+| health = 2678
+| healthRegen = 5.418
+| resource = 500
+| resourceType = Mana
+| armor = 0
+| attackSpeed = 0.77
+| attackRange = 1.5
+| attackDamage = 155
+| healthScaling = 0.04
+| regenScaling = 0.04
+| adamageScaling = 0.04
+| unitRadius = 0.75
+| icon = File:Yrel_Icon.png
+| skills = 
+Divine Purpose;D;File:Divine Purpose Icon.png;Activate to instantly charge Yrel's next Basic Ability at no Mana cost. Divine Purpose's cooldown is reset when Yrel casts a Heroic Ability.<p>{{Passive}} Yrel's Basic Abilities charge up over 1.5 seconds, increasing in effectiveness, but reducing Yrel's Movement Speed by 25%.<!--
+-->{{undoc-x|type=<!--
+-->|affects=Abilities<!--
+-->|target=No target<!--
+-->|cast=Instant<!--
+-->|notes=<li>Activating ''Divine Purpose'' does not dismount.<li>Yrel channels Abilities indefinitely until they are cast or interrupted.<li> If Yrel is interrupted while channeling a Basic Ability, it goes on full cooldown without firing off.}};8;;trait;False
+
+Vindication;Q;File:Vindication Icon.png;Unleash holy energy around Yrel, dealing 42 damage to nearby enemies and healing her for 96.<p>Charging up this Ability increases its damage up to 140, and healing up to 320.<!--
+-->{{undoc-x|type=Spell Damage / Healing<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies / Self<!--
+-->|target=No target - No Target<!--
+-->|props=[[Area of Effect]], [[Mobile channel]] (charge)<!--
+-->|cast=0 + Ch + 0.1875 seconds<!--
+-->|aoe=Circle<!--
+-->|radius=4.0<!--
+-->|notes=}};6;65;;False
+
+Righteous Hammer;W;File:Righteous Hammer Icon.png;Swing Yrel's hammer, dealing 38 damage to enemies in front of her and knocking them away.<p>Charging up this Ability increases its knockback distance, and damage up to 125. Enemies hit at maximum charge are Stunned for 0.75 seconds.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=No target - Point target<!--
+-->|props=[[Area of Effect]], [[Clamping]], [[Knockback]], [[Mobile channel]] (charge), [[Stun]]<!--
+-->|cast=0 + Ch + 0.1875 seconds<!--
+-->|aoe=Radial<!--
+-->|radius=5.0<!--
+-->|arc=180 degrees <sup>(1</sup><!--
+-->|prop1=Knockback duration|val1=<br/>- Min: 0.125 seconds<br/>- Max: 0.25 seconds<!--
+-->|prop2=Knockback speed|val2=14<!--
+-->|notes=<li><sup>1)</sup> Swing search is done in three 60 degree areas rotating clockwise over 0.1875 seconds. Enemies can only be hit by the Ability once regardless.}};6;65;;False
+
+Avenging Wrath;E;File:Avenging Wrath Icon.png;Leap to a location, dealing 225 damage to enemies in an area and Slowing them by 50% for 1 second.<p>Charging up this Ability increases its range.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control / Movement: [[Launch]]<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies / Self<!--
+-->|target=No target - Point target<!--
+-->|props=[[Area of Effect]], [[Clamping]], [[Mobile channel]] (charge), [[Slow]], Self-castable<!--
+-->|cast=0 + Ch + 0.1875 seconds<!--
+-->|range=<br/>- Min: 2.5<br/>- Max: 8.0<!--
+-->|aoe=Circle<!--
+-->|radius=2.5<!--
+-->|prop1=Leap duration|val1=0.625 seconds<!--
+-->|notes=<li>Being Rooted prevents initiating the charge and interrupts the Ability if it is charging, putting it on full cooldown.<li>Leap has a set duration regardless of distance.}};6;65;;False
+
+Ardent Defender;R;File:Ardent Defender Icon.png;Surround Yrel in a barrier for 3 seconds, absorbing all damage taken and healing her for 50% of the damage received.<!--
+-->{{undoc-x|type=Status effect, Healing<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|props=[[Absorbing]]<!--
+-->|cast=Instant<!--
+-->|notes=<li>Healing is calculated from final damage taken, after all modifications.}};120;80;;False
+
+Sacred Ground;R;File:Sacred Ground Icon.png;Yrel sanctifies the ground around her, gaining 50 Armor until she leaves the area.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|props=[[Area of Effect]], [[Armor]]<!--
+-->|cast=0 + 0.1875 seconds<!--
+-->|aoe=Circle<!--
+-->|radius=5.5<!--
+-->|notes=<li>Cooldown starts when the Ability is cast.<li>Does not stack with itself or other positive Armor effects. Other defensive damage modifiers may stack.}};25;;;False
+
+| talents = <!-- LEVEL 1 -->
+Light of Karabor;1;1;Increase Vindication's radius by 15%. Hitting an enemy Hero increases Vindication's healing by 45%. If more than one Hero is hit, the bonus is increased by 90%.<!--
+-->{{undoc-x|type=Healing dealt modifier<!--
+-->|affects=Ability<!--
+-->|prop1=Bonus radius|val1=0.6<!--
+-->|notes=}};File:Light of Karabor Icon.png;
+
+Dauntless;1;2;Casting a Basic Ability grants Yrel 35 Physical Armor for 2.5 seconds.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Physical Armor]]<!--
+-->|notes=<li>Requires successfully casting a Basic Ability.<li>Subsequent instances of ''Dauntless'' refresh the duration. Does not stack with itself.<li>Does not stack with other Physical Armor effects. Other defensive damage modifiers may stack.}};File:Dauntless Icon.png;
+
+Maraad's Insight;1;3;After damaging an enemy Hero with a Basic Ability, Yrel's next Basic Attack heals her for 160.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=4.00%<!--
+-->|affects=Self<!--
+-->|props=[[Attack Modifier]]<!--
+-->|cast=<!--
+-->|notes=<li>''Maraad's Insight'' does not stack nor generate charges.<li>A Basic Attack at full Health does not consume the healing.}};File:Maraad's Insight Icon.png;
+
+<!-- LEVEL 4 -->
+Aegis of Light;2;1;Upon landing, Avenging Wrath grants other nearby allied Heroes 40 Armor for 5 seconds.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Allied Heroes<!--
+-->|props=[[Area of Effect]], [[Armor]]<!--
+-->|aoe=Circle<!--
+-->|radius=4.5<!--
+-->|notes=<li>Does not stack with other positive Armor effects. Other defensive damge modifiers may stack.}};File:Aegis of Light Icon.png;
+
+Gift of the Naaru;2;2;Divine Purpose heals the lowest Health nearby allied Hero other than Yrel for 275.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=4.00%<!--
+-->|affects=Allied Heroes<!--
+-->|target=Automatic (lowest)<!--
+-->|radius=8.0<!--
+-->|notes=}};File:Gift of the Naaru Icon.png;
+
+Hand of Freedom;2;3;{{cooldown|30}}<br/>{{active}} Grant an allied Hero 30% Movement Speed for 3 seconds and remove all Slows and Roots from them.<!--
+-->{{undoc-x|type=CC removal<!--
+-->|affects=Allied Heroes, Self<!--
+-->|target=Unit target<!--
+-->|cast=Instant<!--
+-->|range=10<!--
+-->|notes=}};File:Hand of Freedom Icon.png;
+
+<!-- LEVEL 7 -->
+Righteous Momentum;3;1;Gain 5% Movement Speed. Yrel is no longer Slowed while channeling Righteous Hammer, and instead this bonus is quadrupled.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|props=[[Movement Speed]]<!--
+-->|notes=}};File:Righteous Momentum Icon.png;
+
+Holy Avenger;3;2;Hitting an enemy Hero with Avenging Wrath at maximum charge deals 25% more damage and reduces its cooldown to 1 second.<!--
+-->{{undoc-x|type=Offensive damage modifier, Cooldown reduction<!--
+-->|affects=Ability<!--
+-->|notes=}};File:Holy Avenger Icon.png;
+
+Divine Steed;3;3;Mounting is instant and grants 60% Movement Speed that decays over 3 seconds.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|props=[[Movement Speed]]<!--
+-->|notes=}};File:Divine Steed Icon.png;
+
+<!-- LEVEL 10 -->
+Ardent Defender;4;1;{{Cooldown|120}}<br/>Surround Yrel in a barrier for 3 seconds, absorbing all damage taken and healing her for 50% of the damage received.;File:Ardent Defender Icon.png;
+Sacred Ground;4;2;{{Cooldown|25}}<br/>Yrel sanctifies the ground around her, gaining 50 Armor until she leaves the area.;File:Sacred Ground Icon.png;
+
+<!-- LEVEL 13 -->
+Aldor Peacekeeper;5;1;Enemy Heroes hit by Vindication at maximum charge deal 40% less damage for 3 seconds.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Enemy Heroes<!--
+-->|notes=<li>Damage reduction stacks additively with other offensive damage modifiers affecting the target Heroes' damage output.}};File:Aldor Peacekeeper Icon.png;
+
+Repentance;5;2;Increase Avenging Wrath's Slow by 25% and duration by 0.75 seconds.;File:Repentance Icon.png;
+
+Velen's Chosen;5;3;Hitting an enemy Hero with a Basic Ability at maximum charge grants 10% Spell Power for 10 seconds, up to 30%.<!--
+-->{{undoc-x|type=Offensive damage modifier, Healing dealt modifier<!--
+-->|affects=Self<!--
+-->|props=[[Spell Power]]<!--
+-->|notes=<li>Limited to 1 stack per cast.<li>Subsequent instances of ''Velen's Chosen'' refresh the duration.<li>Stacks additively with itself and other sources of Spell Power.<li>Stacks additively with other offensive damage modifiers or healing dealt modifiers that can affect Yrel's damage or healing output respectively.}};File:Velen's Chosen Icon.png;
+
+<!-- LEVEL 16 -->
+Templar's Verdict;6;1;Righteous Hammer reduces the Armor of enemy Heroes hit by 15 for 4 seconds and deals bonus damage equal to 6% of their maximum Health.<!--
+-->{{undoc-x|type=Spell Damage, Defensive damage modifier<!--
+-->|scaling=-<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Armor reduction]], [[Percent damage]]<!--
+-->|notes=<li>Bonus damage is dealt in a separate instance.<li>Does not stack with other negative Armor effects. Other defensive damage modifiers may stack.}};File:Templar's Verdict Icon.png;
+
+Divine Favor;6;2;Casting a Basic Ability reduces the cooldown of Divine Purpose by 2.5 seconds.<!--
+-->{{undoc|<hr/><li>Requires successfully casting a Basic Ability.}};File:Divine Favor Icon.png;
+
+Holy Wrath;6;3;After casting a Basic Ability, Yrel's next Basic Attack splashes for 35% increased damage around the target.<!--
+-->{{undoc-x|type=Physical Damage / Offensive damage modifier<!--
+-->|scaling=-<!--
+-->|affects=Enemies / Self<!--
+-->|props=[[Attack Modifier]], [[Splash]]<!--
+-->|aoe=Circle<!--
+-->|radius=3.0<!--
+-->|notes=<li>Increases Yrel's next Basic Attack's damage by the given amount, which then splashes to nearby enemies for 100% of the (increased) damage.<li>Requires successfully casting a Basic Ability.<li>''Holy Wrath'' does not stack with itself.<li>Damage bonus stacks with other offensive damage modifiers that can affect Yrel's Basic Attack damage.}};File:Holy Wrath Icon.png;
+
+Word of Glory;7;1;Increase the amount that Yrel heals from damage received from 50% to 75%. Ardent Defender heals nearby allied Heroes for 100% of the healing received by Yrel.<!--
+-->{{undoc-x|type=Heaing<!--
+-->|scaling=-<!--
+-->|affects=Allied Heroes<!--
+-->|props=[[Area of Effect]]<!--
+-->|aoe=Circle<!--
+-->|radius=12<!--
+-->|notes=}};File:Word of Glory Icon.png;
+
+Hallowed Ground;7;2;Casting Avenging Wrath while inside Sacred Ground moves Sacred Ground to Yrel's location upon landing.;File:Hallowed Ground Icon.png;
+
+Bubble Hearth;7;3;{{Cooldown|80}}<br/>{{Active}} After 1 second, Yrel becomes Invulnerable and casts Hearthstone. Cannot be canceled.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|props=[[Channeled cast]] (stationary), [[Invulnerable]], [[Stationary channel]]<!--
+-->|cast=1.0 (ch) + 6.0 seconds<!--
+-->|notes=<li>Interrupting the Ability during its windup puts it on a 10 second cooldown.}};File:Bubble Hearth Icon.png;
+
+Seraphim;7;4;{{Cooldown|10}}<br/>{{Active}} Activate to become Unstoppable for 2 seconds.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|props=[[Unstoppable]]<!--
+-->|cast=Instant<!--
+-->|notes=}};File:Seraphim Icon.png;
+}}
+
+<noinclude>
+{{Scaling table/start|{{#var:health}}|{{#var:health scaling}}|{{#var:health regen}}|{{#var:health regen scaling}}|{{#var:attack damage}}|{{#var:attack damage scaling}}}}
+{{Scaling table/slot|Vindication (damage, min)|42|0.04}}
+{{Scaling table/slot|Vindication (damage, max)|140|0.04}}
+{{Scaling table/slot|Vindication (healing, min)|96|0.04}}
+{{Scaling table/slot|Vindication (healing, max)|320|0.04}}
+{{Scaling table/slot|Righteous Hammer (min)|38|0.04}}
+{{Scaling table/slot|Righteous Hammer (max)|125|0.04}}
+{{Scaling table/slot|Avenging Wrath|225|0.04}}
+{{Scaling table/slot|Maraad's Insight|140|0.04|1}}
+{{Scaling table/slot|Gift of the Naaru|275|0.04|4}}
+{{Scaling table/end}}
+</noinclude>
+
+<noinclude>{{DEFAULTSORT:Yrel}}</noinclude>

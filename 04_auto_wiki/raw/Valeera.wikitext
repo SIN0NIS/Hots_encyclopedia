@@ -1,0 +1,235 @@
+{{hero data
+| name = Valeera
+| date = January 24, 2017
+| price = 10000
+| title = Shadow of the Uncrowned
+| role = Melee
+| franchise = Warcraft
+| info = A [[stealth]]ed Assassin who specializes in shutting down her opponents.
+| lore = For a time, the gladiator Valeera Sanguinar served dutifully as one of Varian Wrynn's personal bodyguards. Now, her shadowy skills find her a natural fit within the secretive rogue order, the Uncrowned, in their fight against the Legion.
+| difficulty = Hard
+| melee = True
+| health = 2047
+| healthRegen = 4.2656
+| resource = 100
+| resourceType = Energy
+| armor = 0
+| attackSpeed = 2.00
+| attackRange = 1.25
+| attackDamage = 79
+| healthScaling = 0.04
+| regenScaling = 0.04
+| adamageScaling = 0.04
+| unitRadius = 0.625
+| icon = 
+| skills = 
+Vanish;D;File:Vanish_Icon.png;Vanish from sight, becoming [[Stealth]]ed, gaining 20% [[Movement Speed]] and access to new Abilities. For the first second, Valeera is Unrevealable and can pass through other units. Remaining stationary for at least 1.5 seconds while Stealthed grants Invisible.<p>After being Stealthed for 3 seconds, Ambush, Cheap Shot and Garrote have 100% increased range and cause Valeera to teleport to the target when used.<!--
+-->{{undoc-x|type=Status effect, Movement: [[Teleport]]<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|props=[[Movement speed]], [[Stealth]], [[Unrevealable]]<!--
+-->|cast=Instant<!--
+-->|notes=<li>Valeera can't use Basic Attacks while Stealthed by ''Vanish''.<li>''Vanish'' can be manually cancelled to unstealth Valeera by reactivating the Ability.<li>Valeera immediately loses access to Stealth Ablities once she is unstealthed.<li>Teleporting with Stealth Abilities places Valeera behind her target.}};8 / 1.0;;False;
+
+Sinister Strike;Q;File:Sinister_Strike_Icon.png;Dash forward, hitting all enemies in a line for 110 damage. If Sinister Stike hits a Hero, Valeera stops dashing immediately and the cooldown is reduced to 1 second.<p>{{Combo Point|Awards 1 Combo Point}}.<p>{{purpletext|'''Stealth: Ambush'''}}<br />Heavily damage an enemy and reduce their Armor.<!--
+-->{{undoc-x|type=Spell Damage / Movement: [[Dash]]<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies / Self<!--
+-->|target=Point target<!--
+-->|props= [[Area of Effect]], [[Clamping]]<!--
+-->|cast=Instant<!--
+-->|range=4.25<!--
+-->|hitbox=0.75 x 1.5<!--
+-->|missile=21<!--
+-->|prop1=Dash duration|val1=0.1875 seconds}};5;25;;False;
+
+Ambush;Q;File:Ambush_Valeera_Icon.png;Ambush an enemy, dealing 130 damage and reducing their Armor by 10 for 5 seconds.<p>{{Combo Point|Awards 1 Combo Point}}.<p>{{purpletext|'''Unstealth: Sinister Strike'''}}<br />Dash foward, damaging enemies.<!--
+-->{{undoc-x|type=Spell Damage, Defensive damage modifier<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Unit target<!--
+-->|props=[[Armor reduction]]<!--
+-->|cast=Instant<!--
+-->|range=2.5<!--
+-->|notes=<li>Does not stack with other negative Armor effects. Other defensive damage modifiers may stack.}};1;10;;False;
+
+Blade Flurry;W;File:Blade_Flurry_Icon.png;Deal 130 damage in an area around Valeera.<p>{{Combo Point|Awards 1 Combo Point}} per enemy Hero hit.<p>{{purpletext|'''Stealth: Cheap Shot'''}}<br />Stun, Blind, and damage an enemy.<!--
+-->{{undoc-x|type=Spell damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=No target<!--
+-->|props=[[Area of Effect]]<!--
+-->|cast=Instant<!--
+-->|aoe=Circle<!--
+-->|radius=3.0|arc=<!--
+-->|notes=}};4;40;;False;
+
+Cheap Shot;W;File:Cheap_Shot_Valeera_Icon.png;Deal 30 damage to an enemy, Stun them for 0.75 seconds, and Blind them for 2 seconds once Cheap Shot's Stun expires.<p>{{Combo Point|Awards 1 Combo Point}}.<p>{{purpletext|'''Unstealth: Blade Furry'''}}<br />Deal damage in an area around Valeera.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Unit target<!--
+-->|props=[[Blind]], [[Stun]]<!--
+-->|cast=Instant<!--
+-->|range=2.5<!--
+-->|notes=}};1;30;;False;
+
+Eviscerate;E;File:Eviscerate_Valeera_Icon.png;Consumes all {{Combo Point|Combo Points}}.<p>Eviscerate an enemy, dealing increased damage per {{Combo Point}}.<p>{{Combo Point|1 Point}}: 85<br>{{Combo Point|2 Points}}: 170<br>{{Combo Point|3 Points}}: 255<p>{{purpletext|'''Stealth: Garrote'''}}<br />Silence and damage an enemy over time.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Unit target<!--
+-->|cast=Instant<!--
+-->|range=2.5<!--
+-->|notes=<li>''Eviscerate'' is unavailable if Valeera does not have any Combo Points.}};1;25;;False;
+
+Garrote;E;File:Garrote_Icon.png;Deal 20 damage to an enemy and an additional 140 damage over 7 seconds, and Silence them for 2.5 seconds.<p>{{Combo Point|Awards 1 Combo Point}}.<p>{{purpletext|'''Unstealth: Eviscerate'''}}<br />High damage finishing move.<!--
+-->{{undoc-x|type=Spell Damage, [[Crowd control]]<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Unit target<!--
+-->|props=[[Damage over Time]], [[Silence]]<!--
+-->|cast=Instant<!--
+-->|range=2.5<!--
+-->|tickrate=1.0 per second (x7)<!--
+-->|prop1=Damage per tick|val1=20<!--
+-->|notes=}};1;30;;False;
+
+Smoke Bomb;R;File:Smoke_Bomb_Icon.png;Create a cloud of smoke. While in the smoke, Valeera is Unrevealable, can pass through other units, and gains 60 Armor, reducing damage taken by 60%. Valeera can continue to attack and use Abilities without being revealed. Lasts 5 seconds.<p>Using this Ability does not break Stealth.<!--
+-->{{undoc-x|type=Status effect, Defensive damage modifier<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|props=[[Armor]], [[Stealth]], [[Unrevealable]]<!--
+-->|cast=Instant<!--
+-->|aoe=Circle<!--
+-->|radius=4.0<!--
+-->|notes=<li>Valeera can use Smoke Bomb's Unrevealable effect while Stealthed to prevent her Stealth from being broken by incoming enemy damage.<li>When Valeera attacks inside the Smoke Bomb, a particle effect plays to notify players that she's still inside it.<li>Does not stack with other positive Armor effects. Other defensive damage modifiers may stack.}};60;;False;
+
+Cloak of Shadows;R;File:Cloak_of_Shadows_Icon.png;Valeera is enveloped in a Cloak of Shadows, which immediately removes all damage over time effects from her. For 1.5 seconds, she becomes Unstoppable and gains 75 Spell Armor, reducing Ability Damage taken by 75%.<p>Using this Ability does not break Stealth.<!--
+-->{{undoc-x|type=Defensive damage modifier, Status effect<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|props=[[Spell Armor]], [[Unstoppable]]|cast=Instant<!--
+-->|notes=<li>Does not stack with other positive Spell Armor effects. Other defensive damage modifiers may stack.}};15;;False;
+
+| talents = <!-- LEVEL 1 -->
+Vigor;1;1;Valeera regenerates an additional 3 Energy per second.<p>{{reward|After Gathering 20 Regen Globes, increase Valeera's maximum Energy to 120.}};File:Vigor_Icon.png;
+
+Subtlety;1;2;After teleporting with Ambush, Cheap Shot, or Garrote regenerate 10 Energy per second for 5 seconds.;File:Subtlety_Icon.png;
+
+Combat Readiness;1;3;Each Combo Point spent grants 75 Armor against the next enemy Hero Basic Attack, reducing its damage by 75%. Stores up to 3 charges.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Block]], [[Physical Armor]]<!--
+-->|notes=<li>Does not stack with itself or other positive Physical Armor effects. Other defensive damage modifiers may stack.}};File:Combat_Readiness_Icon.png;
+
+Crippling Poison;1;4;{{cooldown|15}}<br/>Activate to make Valeera's next damaging Ability and subsequent Abilities within 4 seconds Slow targets by 20% for 4 seconds.<p>Activating Crippling Poison does not break Stealth.<!--
+-->{{undoc-x|type=Crowd control<!--
+-->|affects=Enemies<!--
+-->|target=No target<!--
+-->|props=Primed, [[Slow]]<!--
+-->|cast=Instant<!--
+-->|notes=<li>Cooldown starts once the effect is triggered by damaging an enemy with an Ability.<li>Structures are not affected by the Slow, but damaging them still triggers the effect.}};File:Crippling_Poison_Icon.png;
+
+<!-- LEVEL 4 -->
+Relentless Strikes;2;1;Reduces the Energy cost of Sinister Strike by 10.;File:Relentless_Strikes_Icon.png;
+
+Hemorrhage;2;2;Valeera's Basic Attacks deal 40% additional damage to enemies affected by Garrote.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Enemies<!--
+-->|props=[[Attack Modifier]]<!--
+-->|notes=<li>Stacks additively with other damage modifiers affecting Valeera's Basic Attack damage.}};File:Hemorrhage_Icon.png;
+
+Initiative;2;3;Ambush, Cheap Shot, and Garrote grant 15% Movement Speed for 3 seconds and award 2 Combo Points.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|props=[[Movement Speed]]<!--
+-->|notes=}};File:Initiative_Icon.png;
+
+Wound Poison;2;4;{{cooldown|15}}<br/>Activate to make Valeera's next damaging Ability and subsequent Abilities within 4 seconds reduce enemy healing received by 50% for 4 seconds.<p>Activating Wound Poison does not break Stealth.<!--
+-->{{undoc-x|type=Healing received modifier<!--
+-->|affects=Enemies<!--
+-->|target=No target<!--
+-->|props=Primed<!--
+-->|cast=Instant<!--
+-->|notes=<li>Cooldown starts once the effect is triggered by damaging an enemy with an Ability.<li>Structures are not affected by the healing reduction, but damaging them still triggers the effect.}};File:Wound_Poison_Icon.png;
+
+<!-- LEVEL 7 -->
+Mutilate;3;1;Sinister Strike now hits with both blades, dealing 125% additional damage, but its range is reduced by 1.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|notes=<li>Stacks additively with other damage modifiers affecting <i>Sinister Strike</i>'s damage output.}};File:Mutilate_Icon.png;
+
+Fatal Finesse;3;2;{{quest|Each time Blade Flurry damages an enemy Hero, its damage increases by 6, up to 90.|After damaging 15 Heroes with Blade Flurry, permanently reduce its Energy cost by 20.}}<!--
+-->{{undoc-x|type=Bonus damage<!--
+-->|scaling=-<!--
+-->|affects=Ability<!--
+-->|notes=}};File:Fatal_Finesse_Icon.png;
+
+Slice and Dice;3;3;Eviscerating an enemy with 3 Combo Points grants 150% Attack Speed. Lasts 3 seconds or 3 Basic Attacks.<p>{{passive}} Basic Attacks restore 2 Energy.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|props=[[Attack Modifier]], [[Attack Speed]]<!--
+-->|notes=<li>Stacks additively with other effects that can affect Valeera's Attack Speed.}};File:Slice_and_Dice_Icon.png;
+
+<!-- LEVEL 10 -->
+Smoke Bomb;4;1;{{cooldown|60}}<br/>Create a cloud of smoke. While in the smoke, Valeera is Unreavealable, can pass through other units, and gains 60 Armor, reducing damage taken by 60%. Valeera can continue to attack and use Abilities without being revealed. Lasts 5 seconds.<p>Using this Ability does not break Vanish.;File:Smoke_Bomb_Icon.png;
+Cloak of Shadows;4;2;{{cooldown|15}}<br/>Valeera is enveloped in a Cloak of Shadows, which immediately removes all damage over time effects from her. For 1 second, she becomes Unstoppable and gains 75 Spell Armor, reducing Ability Damage taken by 75%.<p>Using this Ability does not break Vanish.;File:Cloak_of_Shadows_Icon.png;
+
+<!-- LEVEL 13 -->
+Death From Above;5;1;Teleporting with Ambush reduces the cooldown of Vanish by 4 seconds.;File:Death_From_Above_Icon.png;
+
+Blind;5;3;Increase the duration of Cheap Shot's Blind by 2.5 seconds.;File:Blind_Icon.png;
+
+Strangle;5;4;Using Garrote on a Hero reduces their Spell Power by 40% for 6 seconds.<!--
+-->{{undoc-x|type=Healing dealt modifier, Offensive damage modifier<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Spell Power]]<!--
+-->|notes=<li>Spell Power reduction from ''Strangle'' stacks additively with other sources of Spell Power as well as other offensive damage modifiers and healing dealt modifiers affecting the target Hero.}};File:Strangle_Icon.png;
+
+<!-- LEVEL 16 -->
+Seal Fate;6;1;Sinister Strike deals 50% additional damage and generates an additional Combo Point when used against [[Silence]]d, [[Root]]ed, or [[Stun]]ned enemy Heroes.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|notes=<li>Stacks additively with other damage modifiers affecting <i>Sinister Strike</i>'s damage output.}};File:Seal_Fate_Icon.png
+
+Assassinate;6;2;Ambush deals 50% additional damage and reduces the target's Armor by an additional 10 if no other enemy Heroes are within 4 range of the victim.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Enemy Heroes<!--
+-->|notes=<li>Damage bonus stacks additively with other damage modifiers affecting damage taken from ''Ambush''.<li>Armor reduction stacks additively with <i>Ambush</i>'s base Armor reduction, but not with other negative Armor effects.}};File:Assassinate_Icon.png;
+
+Thistle Tea;6;4;{{cooldown|20}}<br/>Activate to instantly restore 100 Energy.<p>Activating Thistle Tea does not break Vanish.<!--
+-->{{undoc-x|type=Resource<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|cast=Instant}};File:Thistle_Tea_Icon.png;
+
+<!-- LEVEL 20 -->
+Adrenaline Rush;7;1;While in the Smoke Bomb, Valeera regenerates an additional 40 Energy per second.;File:Adrenaline_Rush_Valeera_Icon.png;
+
+Enveloping Shadows;7;2;Whenever Valeera uses Vanish, she also gains Cloak of Shadows.;File:Enveloping_Shadows_Icon.png;
+
+Rupture;7;3;Increase Garrote's damage over time by 100%. Valeera's Basic Attacks refresh the duration of Garrote.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|notes=<li>Basic Attacks refresh Garrote even if they miss due to Valeera being [[Blind]]ed or the target Evading.<li>Duration refreshing only affects <i>Garrote</i>'s Damage over Time effect.}};File:Rupture_Icon.png;
+
+Elusiveness;7;4;Increase Valeera's Movement Speed while Vanished by an additional 20%.;File:Elusiveness_Icon.png;
+
+}}
+
+<noinclude>
+{{Scaling table/start|{{#var:health}}|{{#var:health scaling}}|{{#var:health regen}}|{{#var:health regen scaling}}|{{#var:attack damage}}|{{#var:attack damage scaling}}}}
+{{Scaling table/slot|Sinister Strike|110|0.04}}
+{{Scaling table/slot|Ambush|130|0.04}}
+{{Scaling table/slot|Blade Flurry|130|0.04}}
+{{Scaling table/slot|Cheap Shot|30|0.04}}
+{{Scaling table/slot|Eviscerate (1 point)|85|0.04}}
+{{Scaling table/slot|Eviscerate (2 points)|170|0.04}}
+{{Scaling table/slot|Eviscerate (3 points)|255|0.04}}
+{{Scaling table/slot|Garrote|140|0.04}}
+{{Scaling table/slot|Garrote (per second)|20|0.04}}
+{{Scaling table/end}}
+</noinclude>
+
+<noinclude>{{DEFAULTSORT:Valeera}}</noinclude>

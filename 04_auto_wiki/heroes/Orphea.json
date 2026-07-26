@@ -1,0 +1,576 @@
+{
+  "hero": "Orphea",
+  "abilities": [
+    {
+      "name": "Overflowing Chaos",
+      "hotkey": "D",
+      "icon": "Overflowing Chaos Icon.png",
+      "description": "Hitting an enemy Hero with a Basic Ability grants 1 Chaos. Chaos can stack up to 3 times. While Orphea has Chaos, her Basic Attacks against Heroes consume all Chaos, dealing 50% increased damage per stack, and healing for 100% of the damage dealt.; trait",
+      "fields": {
+        "type": "Healing, Offensive damage modifier",
+        "scaling": "-",
+        "affects": "Self",
+        "props": "Attack Modifier, Lifesteal",
+        "notes": "Orpheas hands glow purplish-pink when she has Chaos stacks. Chaos stacks additively with itself and multiplicatively with other offensive damage modifiers that can affect Orphea's Basic Attack damage."
+      }
+    },
+    {
+      "name": "Shadow Waltz",
+      "hotkey": "Q",
+      "icon": "Shadow Waltz Icon.png",
+      "description": "After 0.5 seconds, deal 165 damage to enemies in a line. Hitting a Hero with Shadow Waltz sets its cooldown to 2 seconds, refunds 35 Mana, and causes Orphea to dash a short distance upon moving.",
+      "fields": {
+        "type": "Spell Damage / Movement: Dash",
+        "scaling": "4.00%",
+        "target": "Point target",
+        "affects": "Enemies / Self",
+        "props": "Area of Effect, Clamping",
+        "cast": "0.5 + 0 seconds",
+        "aoe": "Rectangle",
+        "prop1": "Width",
+        "val1": "1.25",
+        "prop2": "Height",
+        "val2": "8.75",
+        "prop3": "Dash duration",
+        "val3": "0.1875 seconds",
+        "prop4": "Dash speed",
+        "val4": "20",
+        "prop5": "Dash distance",
+        "val5": "3.75",
+        "notes": "Cannot be self-cast. Casting Shadow Waltz will drop all commands upon casting (except attack commands, if the target is still within Orphea's Attack Range). Upon hitting a Heroic Target Waltz Dash is enabled for 2 seconds. During this time the first movement command issued, including Ability and attack orders that require her to move in their range, causes Orphea to dash in that direction. Can be cast while Rooted, but Orphea cannot dash afterward if she was/became Rooted after hitting an enemy Hero. Orphea cannot attack while dashing.",
+        "cooldown": "5",
+        "cost": "35"
+      }
+    },
+    {
+      "name": "Chomp",
+      "hotkey": "W",
+      "icon": "Chomp Icon.png",
+      "description": "After 0.625 seconds, deal 305 damage to nearby enemies in front of Orphea.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "4.00%",
+        "target": "Point target",
+        "affects": "Enemies",
+        "props": "Area of Effect, Clamping",
+        "cast": "0.625 + 0 seconds",
+        "aoe": "Custom (1",
+        "prop1": "Inner width",
+        "val1": "6.0",
+        "prop2": "Outer width",
+        "val2": "3.0",
+        "prop3": "Height",
+        "val3": "5.0",
+        "notes": "1) The accurate Area of Effect is done by a vertex. It's a mirrored area drawn by points (-3,0), (-3,-2), (-2.5,-3.5) (-1.5,-4.5) and (0,-5) in order. Casting Chomp will drop all movement commands, but not attack commands.",
+        "cooldown": "10",
+        "cost": "60"
+      }
+    },
+    {
+      "name": "Dread",
+      "hotkey": "E",
+      "icon": "Dread Icon.png",
+      "description": "Release a wave of dread that deals 85 damage to enemies hit. Dread erupts 0.75 seconds after reaching the end of its path, dealing 175 damage. Enemies hit by Dread's wave or eruption are Slowed by 25% for 2 seconds.",
+      "fields": {
+        "type": "Spell Damage, Crowd control",
+        "scaling": "4.00%",
+        "target": "Point target",
+        "affects": "Enemies",
+        "props": "Area of Effect, Clamping, Self-castable,, Slow",
+        "cast": "0.125 + 0 seconds",
+        "range": "12",
+        "aoe": "- Path: Rectangle - End area: Circle",
+        "radius": "2.5 (end area)",
+        "hitbox": "3.5 x 1.5 (path)",
+        "missile": "17",
+        "notes": "Damage from Dread is applied before the Slow. Enemies can be hit by path only once per cast.",
+        "cooldown": "14",
+        "cost": "50"
+      }
+    },
+    {
+      "name": "Eternal Feast",
+      "hotkey": "R",
+      "icon": "Eternal Feast Icon.png",
+      "description": "After 1.5 seconds, deal 210 damage in an area. Eternal Feast repeats every 1 second as long as it hits an enemy Hero.; 50; 75; heroic",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "4.00%",
+        "target": "Point target",
+        "affects": "Enemies",
+        "props": "Area of Effect, Reveal, Self-castable",
+        "cast": "0.125 + 0 seconds",
+        "range": "14",
+        "aoe": "Circle",
+        "radius": "4.5",
+        "notes": "Drops all movement commands, but not attacks."
+      }
+    },
+    {
+      "name": "Crushing Jaws",
+      "hotkey": "R",
+      "icon": "Crushing Jaws Icon.png",
+      "description": "After 1.25 seconds, pull enemies in an area toward the center, dealing 250 damage and Stunning them for 0.5 seconds.; 70; 75; heroic",
+      "fields": {
+        "type": "Spell Damage, Crowd control",
+        "scaling": "4.00%",
+        "target": "Point target",
+        "affects": "Enemies",
+        "props": "Area of Effect, Knockback, Stun",
+        "cast": "0.125 + 0 seconds",
+        "range": "9.0",
+        "aoe": "Rectangle",
+        "prop1": "Pull area width",
+        "val1": "10",
+        "prop2": "Damage area width",
+        "val2": "4.0",
+        "prop3": "Height",
+        "val3": "4.0",
+        "prop4": "Pull duration",
+        "val4": "0.25",
+        "prop5": "Pull speed",
+        "val5": "18",
+        "notes": "Damage from Crushing Jaws is applied before the Stun. Cannot be self-cast."
+      }
+    }
+  ],
+  "talents": [
+    {
+      "name": "En Pointe",
+      "tier": "1",
+      "slot": "1",
+      "icon": "En Pointe Icon.png",
+      "description": "Shadow Waltz deals an increased 90% damage to enemies hit by its end and grants 1 additional Chaos.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Ability",
+        "prop1": "End area height",
+        "val1": "2.0",
+        "notes": "Gaining additional Chaos also requires hitting Heroes with the end area. Damage bonus stacks additively with other offensive damage modifiers that can affect Shadow Waltz 's damage."
+      },
+      "_raw_fields": [
+        "En Pointe",
+        "1",
+        "1",
+        "Shadow Waltz deals an increased 90% damage to enemies hit by its end and grants 1 additional Chaos.",
+        "File:En Pointe Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Growing Nightmare",
+      "tier": "1",
+      "slot": "2",
+      "icon": "Growing Nightmare Icon.png",
+      "description": "Increase Dread's damage by 50%. Quest Hit 3 Heroes with a single cast of Dread's eruption. Permanently increase Dread's eruption damage by 50% and increase the Slow amount of Dread's eruption by 15%.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Ability",
+        "notes": "Passive and quest bonus stack additively with each other as well as other offensive damage modifiers that can affect Dread 's damage."
+      },
+      "_raw_fields": [
+        "Growing Nightmare",
+        "1",
+        "2",
+        "Increase Dread's damage by 50%. Quest Hit 3 Heroes with a single cast of Dread's eruption. Permanently increase Dread's eruption damage by 50% and increase the Slow amount of Dread's eruption by 15%.",
+        "File:Growing Nightmare Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Ancestral Strength",
+      "tier": "1",
+      "slot": "3",
+      "icon": "Ancestral Strength Icon.png",
+      "description": "Non-Heroic Abilities deal 15% more damage to Stunned, Rooted, Silenced or Slowed enemies. Enemy Heroes who are hit with Overflowing Chaos are Slowed by 20% for 2.5 seconds.",
+      "fields": {
+        "type": "Offensive damage modifier / Crowd control",
+        "affects": "non-Heroic Abilities / Enemy Heroes",
+        "props": "Slow",
+        "notes": "Slow is applied after damage is dealt. Damage bonus stacks additively with other offensive damage modifiers affecting damage dealt by Orphea's Abilities."
+      },
+      "_raw_fields": [
+        "Ancestral Strength",
+        "1",
+        "3",
+        "Non-Heroic Abilities deal 15% more damage to Stunned, Rooted, Silenced or Slowed enemies. Enemy Heroes who are hit with Overflowing Chaos are Slowed by 20% for 2.5 seconds.",
+        "File:Ancestral Strength Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Allegrissimo",
+      "tier": "2",
+      "slot": "1",
+      "icon": "Allegrissimo Icon.png",
+      "description": "Reduce the cooldown of Shadow Waltz by 1 second. Hitting Heroes with the end of Shadow Waltz sets its cooldown to 0.75 seconds.",
+      "fields": {
+        "prop1": "End area height",
+        "val1": "2.0"
+      },
+      "_raw_fields": [
+        "Allegrissimo",
+        "2",
+        "1",
+        "Reduce the cooldown of Shadow Waltz by 1 second. Hitting Heroes with the end of Shadow Waltz sets its cooldown to 0.75 seconds.",
+        "File:Allegrissimo Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Backbiter",
+      "tier": "2",
+      "slot": "2",
+      "icon": "Backbiter Icon.png",
+      "description": "If Chomp hits a Hero, Orphea immediately dashes a short distance backwards. Passive Gain 15% maximum Health.",
+      "fields": {
+        "type": "Crowd control, Bonus Health",
+        "scaling": "-",
+        "affects": "Self",
+        "props": "Knockback",
+        "prop1": "Knockback duration",
+        "val1": "0.25 seconds",
+        "prop2": "Knockback speed",
+        "val2": "24",
+        "prop3": "Knockback distance",
+        "val3": "6.0",
+        "notes": "Removes existing displacement effects from Orphea upon triggering."
+      },
+      "_raw_fields": [
+        "Backbiter",
+        "2",
+        "2",
+        "If Chomp hits a Hero, Orphea immediately dashes a short distance backwards. Passive Gain 15% maximum Health.",
+        "File:Backbiter Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Chaotic Assault",
+      "tier": "2",
+      "slot": "3",
+      "icon": "Chaotic Assault Icon.png",
+      "description": "Basic Attacks against enemy Heroes while having 3 stacks of Chaos deal an additional 75% bonus damage.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Self",
+        "notes": "Damage bonus stacks additively with Chaos stacks, and multiplicatively with other offensive damage modifiers that can affect Orphea's Basic Attack damage."
+      },
+      "_raw_fields": [
+        "Chaotic Assault",
+        "2",
+        "3",
+        "Basic Attacks against enemy Heroes while having 3 stacks of Chaos deal an additional 75% bonus damage.",
+        "File:Chaotic Assault Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Insatiable",
+      "tier": "3",
+      "slot": "1",
+      "icon": "Insatiable (Orphea) Icon.png",
+      "description": "Hitting a Hero with Chomp sets its cooldown to 2 seconds.",
+      "fields": {},
+      "_raw_fields": [
+        "Insatiable",
+        "3",
+        "1",
+        "Hitting a Hero with Chomp sets its cooldown to 2 seconds.",
+        "File:Insatiable (Orphea) Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Ravenous Hunger",
+      "tier": "3",
+      "slot": "2",
+      "icon": "Ravenous Hunger Icon.png",
+      "description": "Questonly Minions that die within 1.5 seconds of being hit by Chomp permanently increase its damage by 2 and heal Orphea for 60. Heroes that die increase its damage by 40 and heal Orphea for 25% of her maximum Health.",
+      "fields": {
+        "type": "Healing / Bonus damage",
+        "scaling": "4.00% (Minion heal) / - (Hero heal, bonus damage)",
+        "affects": "Self / Ability",
+        "prop1": "Maximum damage bonus",
+        "val1": "99,999"
+      },
+      "_raw_fields": [
+        "Ravenous Hunger",
+        "3",
+        "2",
+        "Questonly Minions that die within 1.5 seconds of being hit by Chomp permanently increase its damage by 2 and heal Orphea for 60. Heroes that die increase its damage by 40 and heal Orphea for 25% of her maximum Health.",
+        "File:Ravenous Hunger Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Mind Devourer",
+      "tier": "3",
+      "slot": "3",
+      "icon": "Mind Devourer Icon.png",
+      "description": "Quest Hitting Heroes with Dread increases its damage by 5, up to 150. After hitting 30 Heroes, hitting an enemy Hero with Dread's eruption sets its cooldown to 6 seconds and refunds 50 Mana.",
+      "fields": {
+        "type": "Bonus damage",
+        "scaling": "-",
+        "affects": "Ability"
+      },
+      "_raw_fields": [
+        "Mind Devourer",
+        "3",
+        "3",
+        "Quest Hitting Heroes with Dread increases its damage by 5, up to 150. After hitting 30 Heroes, hitting an enemy Hero with Dread's eruption sets its cooldown to 6 seconds and refunds 50 Mana.",
+        "File:Mind Devourer Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Eternal Feast",
+      "tier": "4",
+      "slot": "1",
+      "icon": "Eternal Feast Icon.png",
+      "description": "Cooldown 50 After 1.5 seconds, deal 210 damage in an area. Eternal Feast repeats every 1 second as long as it hits an enemy Hero.",
+      "fields": {},
+      "_raw_fields": [
+        "Eternal Feast",
+        "4",
+        "1",
+        "Cooldown 50 After 1.5 seconds, deal 210 damage in an area. Eternal Feast repeats every 1 second as long as it hits an enemy Hero.",
+        "File:Eternal Feast Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Crushing Jaws",
+      "tier": "4",
+      "slot": "2",
+      "icon": "Crushing Jaws Icon.png",
+      "description": "Cooldown 50 After 1.25 seconds, pulls enemies in an area toward the center, dealing 250 damage and Stunning them for 0.5 seconds.",
+      "fields": {},
+      "_raw_fields": [
+        "Crushing Jaws",
+        "4",
+        "2",
+        "Cooldown 50 After 1.25 seconds, pulls enemies in an area toward the center, dealing 250 damage and Stunning them for 0.5 seconds.",
+        "File:Crushing Jaws Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Determination",
+      "tier": "5",
+      "slot": "1",
+      "icon": "Determination Icon.png",
+      "description": "After dashing with Shadow Waltz, Orphea gains 50 Spell Armor, stacking up to 2 times. While Orphea has Determination, her Physical Damage is increased by 15%.",
+      "fields": {
+        "type": "Defensive damage modifier, Offensive damage modifier",
+        "affects": "Self",
+        "props": "Spell Block",
+        "notes": "Additional charges do not modify damage dealt. Damage bonus stacks additively with other offensive damage modifiers that affect Orphea's Physical Damage output. Does not stack with other positive Spell Armor effects. Other defensive damage modifiers may stack."
+      },
+      "_raw_fields": [
+        "Determination",
+        "5",
+        "1",
+        "After dashing with Shadow Waltz, Orphea gains 50 Spell Armor, stacking up to 2 times. While Orphea has Determination, her Physical Damage is increased by 15%.",
+        "File:Determination Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Abyssal Symbiosis",
+      "tier": "5",
+      "slot": "2",
+      "icon": "Abyssal Symbiosis Icon.png",
+      "description": "Hitting a Hero with Chomp instantly grants Orphea maximum Chaos and a 170 Shield for 3 seconds.",
+      "fields": {
+        "type": "Shield",
+        "scaling": "4.00%",
+        "affects": "Self",
+        "notes": "Shield does not stack with itself."
+      },
+      "_raw_fields": [
+        "Abyssal Symbiosis",
+        "5",
+        "2",
+        "Hitting a Hero with Chomp instantly grants Orphea maximum Chaos and a 170 Shield for 3 seconds.",
+        "File:Abyssal Symbiosis Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Invasive Miasma",
+      "tier": "5",
+      "slot": "3",
+      "icon": "Invasive Miasma Icon.png",
+      "description": "Cooldown 10 Active Activate to deal 150 damage to all nearby enemies after 2 seconds. For each Hero hit, heal for 182 and gain 1 Chaos.",
+      "fields": {
+        "type": "Spell Damage / Healing",
+        "scaling": "4.00%",
+        "affects": "Enemies / Self",
+        "target": "No target",
+        "props": "Area of Effect",
+        "cast": "Instant",
+        "aoe": "Circle",
+        "radius": "4.5"
+      },
+      "_raw_fields": [
+        "Invasive Miasma",
+        "5",
+        "3",
+        "Cooldown 10 Active Activate to deal 150 damage to all nearby enemies after 2 seconds. For each Hero hit, heal for 182 and gain 1 Chaos.",
+        "File:Invasive Miasma Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Bond of Anguish",
+      "tier": "6",
+      "slot": "1",
+      "icon": "Bond of Anguish Icon.png",
+      "description": "Shadow Waltz deals bonus damage to Heroes equal to 3% of their maximum Health, healing Orphea for 50% of the damage dealt.",
+      "fields": {
+        "type": "Percent damage / Healing",
+        "scaling": "-",
+        "affects": "Enemy Heroes / Self",
+        "props": "Lifesteal"
+      },
+      "_raw_fields": [
+        "Bond of Anguish",
+        "6",
+        "1",
+        "Shadow Waltz deals bonus damage to Heroes equal to 3% of their maximum Health, healing Orphea for 50% of the damage dealt.",
+        "File:Bond of Anguish Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Dead Magic",
+      "tier": "6",
+      "slot": "2",
+      "icon": "Dead Magic Icon.png",
+      "description": "Basic Attacks that consume Chaos ignore Armor and deal 90 Spell Damage to the target and all enemies around them.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "props": "Attack Modifier, Armor piercing, Splash",
+        "aoe": "Circle",
+        "prop1": "Splash radius",
+        "val1": "2.5",
+        "notes": "Armor piercing only affects the Basic Attack damage dealt to the primary target. Armor piercing ignores only positive Armor effects. Splash does not interact with Overflowing Chaos or the talents affecting it. It can still be affected by offensive Spell Damage modifiers, like Spell Power."
+      },
+      "_raw_fields": [
+        "Dead Magic",
+        "6",
+        "2",
+        "Basic Attacks that consume Chaos ignore Armor and deal 90 Spell Damage to the target and all enemies around them.",
+        "File:Dead Magic Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Lurking Terror",
+      "tier": "6",
+      "slot": "3",
+      "icon": "Lurking Terror Icon.png",
+      "description": "Mana 60 Cooldown 10 Active After Dread erupts and for 2 seconds afterward, activate to cast Chomp from the eruption area. Enemy Heroes hit by this Chomp are Slowed by 70% for 1.5 seconds.",
+      "fields": {
+        "type": "Spell Damage / Crowd control",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "target": "Point target",
+        "props": "Area of Effect, Clamping, Slow",
+        "cast": "Instant",
+        "aoe": "Custom (see Chomp)",
+        "notes": "Cooldown is shared with Chomp. Interacts with all Talents affecting Chomp, except Backbiter."
+      },
+      "_raw_fields": [
+        "Lurking Terror",
+        "6",
+        "3",
+        "Mana 60 Cooldown 10 Active After Dread erupts and for 2 seconds afterward, activate to cast Chomp from the eruption area. Enemy Heroes hit by this Chomp are Slowed by 70% for 1.5 seconds.",
+        "File:Lurking Terror Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Monster Within",
+      "tier": "7",
+      "slot": "1",
+      "icon": "Monster Within Icon.png",
+      "description": "Eternal Feast grants 1 Chaos each time it hits a Hero. While Eternal Feast is active and for 5 seconds afterward, Orphea's Basic Abilities recharge 150% faster.",
+      "fields": {},
+      "_raw_fields": [
+        "Monster Within",
+        "7",
+        "1",
+        "Eternal Feast grants 1 Chaos each time it hits a Hero. While Eternal Feast is active and for 5 seconds afterward, Orphea's Basic Abilities recharge 150% faster.",
+        "File:Monster Within Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Engulfing Oblivion",
+      "tier": "7",
+      "slot": "2",
+      "icon": "Engulfing Oblivion Icon.png",
+      "description": "Crushing Jaws reduces the Armor of Heroes hit by 50 for 3 seconds. Takedowns set its cooldown to 5 seconds.",
+      "fields": {
+        "type": "Defensive damage modifier",
+        "affects": "Enemy Heroes",
+        "props": "Armor reduction",
+        "notes": "Armor reduction is applied after damage is dealt. Does not stack with other negative Armor effects. Other defensive damage modifiers may stack."
+      },
+      "_raw_fields": [
+        "Engulfing Oblivion",
+        "7",
+        "2",
+        "Crushing Jaws reduces the Armor of Heroes hit by 50 for 3 seconds. Takedowns set its cooldown to 5 seconds.",
+        "File:Engulfing Oblivion Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Eldritch Conduit",
+      "tier": "7",
+      "slot": "3",
+      "icon": "Eldritch Conduit Icon.png",
+      "description": "Each Chaos consumed increases Orphea's Spell Power by 3%, up to 30%. After reaching the maximum bonus, the Spell Power is increased by an additional 30%. Lasts 10 seconds.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Self",
+        "notes": "Each application refreshes the timer. Spell Power from Eldritch Conduit stacks additively with itself and other sources of Spell Power as well as other offensive damage and healing modifiers affecting Orphea's Spell Damage or healing output."
+      },
+      "_raw_fields": [
+        "Eldritch Conduit",
+        "7",
+        "3",
+        "Each Chaos consumed increases Orphea's Spell Power by 3%, up to 30%. After reaching the maximum bonus, the Spell Power is increased by an additional 30%. Lasts 10 seconds.",
+        "File:Eldritch Conduit Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Final Toccata",
+      "tier": "7",
+      "slot": "4",
+      "icon": "Final Toccata Icon.png",
+      "description": "Cooldown 20 Active Activate to instantly reset the cooldown of Shadow Waltz. For the next 5 seconds, dashing with Shadow Waltz resets its cooldown and increases the duration of Final Toccata by 1 second.",
+      "fields": {
+        "affects": "Ability",
+        "target": "No target",
+        "cast": "Instant"
+      },
+      "_raw_fields": [
+        "Final Toccata",
+        "7",
+        "4",
+        "Cooldown 20 Active Activate to instantly reset the cooldown of Shadow Waltz. For the next 5 seconds, dashing with Shadow Waltz resets its cooldown and increases the duration of Final Toccata by 1 second.",
+        "File:Final Toccata Icon.png"
+      ],
+      "level": "20"
+    }
+  ],
+  "other": [],
+  "_unparsed_count": 0
+}

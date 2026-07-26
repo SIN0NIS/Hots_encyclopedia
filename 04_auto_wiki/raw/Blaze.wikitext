@@ -1,0 +1,262 @@
+{{hero data
+| name = Blaze
+| date = January 9, 2018
+| price = 10000
+| title = Veteran Firebat
+| role = Tank
+| franchise = Starcraft
+| info = Blaze is a ranged Tank who specializes in initiating fights and dealing area damage by spreading his flames.
+| lore = Cpl. Miles "Blaze" Lewis has always been drawn to the flame, but it wasn't until he joined up with Raynor's Raiders that he put his pyromania to good use. He's seen his fair share of battles since then, and has never failed to bring the heat.
+| difficulty = Medium
+| melee = False
+| health = 2900
+| healthRegen = 6.04
+| resource = 500
+| resourceType = Mana
+| armor = 0
+| attackSpeed = 1.00
+| attackRange = 4.5
+| attackDamage = 60
+| healthScaling = 0.04
+| regenScaling = 0.04
+| adamageScaling = 0.04
+| unitRadius = 0.9375
+| icon = File:Blaze_Icon.png
+| skills = 
+Pyromania;D;File:Pyromania_Icon.png;Gain 40 Armor and deal 40 damage to nearby enemies every 0.5 seconds for 4 seconds.<p>Each Hero hit by Flame Stream reduces Pyromania's cooldown by 4 seconds.<!--
+-->{{undoc-x|type=Spell Damage / Defensive damage modifier<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies / Self<!--
+-->|target=No target<!--
+-->|props=[[Area of Effect]], [[Armor]]<!--
+-->|cast=Instant<!--
+-->|aoe=Circle<!--
+-->|radius=3.5<!--
+-->|tickrate=2.0 per second (x9)<!--
+-->|notes=<li>Does not affect unaggroed neutral Mercenaries.<li>Cooldown reduction can trigger for both streams as well as the bonus damage from hitting an enemy with both.<li>Does not stack with other positive Armor effects. Other defensive damage modifiers may stack.<li>Blaze's Basic Attacks [[Splash]] in a 55 degree wide cone starting from the weapon he is firing with and hit all targets in front of him, up to 5.05 range. Blaze alternates the hand he uses to attack, causing a small offset to the starting point of every Basic Attack.}};90;;trait;False
+
+Flame Stream;Q;File:Flame_Stream_Icon.png;Fire two streams that deal 76 damage to enemies hit, and an additional 120 damage to enemies hit by both streams. Flame Stream Ignites Oil Spills it comes in contact with.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Clamping]], [[Skillshot]]<!--
+-->|cast=0.125 + 0 seconds<!--
+-->|range=11.25<!--
+-->|hitbox=0.85 x 1.75<!--
+-->|missile=16<!--
+-->|prop1=Center gap|val1=0.85<!--
+-->|notes=<li>Additional damage cannot affect Structures.<li>If multiple Blazes are on a team, the double hit effect can be triggered by single Flame Streams from different Blazes if they hit the target within 0.25 seconds of each other.}};4;30
+
+Oil Spill;W;File:Oil_Spill_Icon.png;Dispense a slick of oil that lasts for 5 seconds and Slows enemies that come in contact with it by 50%.<p>Oil Spills are Ignited for 2.5 seconds when hit by Flame Stream. Ignited Oil Spills no longer Slow enemies, but instead deal 16 damage to them every 0.3 seconds. Additionally, Blaze is healed for 49 Health every 0.3 seconds while standing in Ignited Oil Spills.<p>Stores up to 2 charges.<!--
+-->{{undoc-x|type=Crowd control (unignited), Spell Damage (ignited) / Healing (ignited)<!--
+-->|scaling=4.00% (damage & healing)<!--
+-->|affects=Enemies / Self<!--
+-->|target=[[Vector Targeting]]<!--
+-->|props=[[Area of Effect]]<!--
+-->|cast=0.125 + 0 seconds<!--
+-->|range=10<!--
+-->|aoe=Rectangle <sup>(1</sup><!--
+-->|width=3.0<!--
+-->|height=6.0<!--
+-->|missile=26<!--
+-->|tickrate=3.2 per second (x8)<!--
+-->|prop1=Damage per tick|val1=16<!--
+-->|prop2=Heal per tick|val2=49<!--
+-->|notes=<li><sup>1)</sup> One ''Oil Spill'' consists of three smaller circular puddles with 1.5 radius, with the centers 1.5 units apart.<li>Each smaller ''Oil'' puddle provides vision in 2.5 radius.<li>Igniting an ''Oil Spill'' sets its remaining duration to 2.5 seconds regardless of how long it has been on the ground.<li>If no secondary direction is issued, ''Oil Spill'' will be cast toward the direction Blaze is facing.<li>Self-casting creates an ''Oil Spill'' starting from Blaze's feet toward the direction he is facing.<li>Blaze can ignite any ally Blaze's ''Oil Spill'', but only the Blaze who Ignited the Oil can heal from it.}};12 / 1.0;50
+
+Jet Propulsion;E;File:Jet_Propulsion_Icon.png;After 0.375 seconds, charge forward. Colliding with an enemy Hero deals 52 damage to all nearby enemy Heroes and Stuns them for 1.25 seconds.<!--
+-->{{undoc-x|type=Crowd control, Spell Damage / Movement: [[Dash]]<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemy Heroes<!--
+-->|target=Point target<!--
+-->|props=[[Clamping]], [[Skillshot]], [[Splash]]<!--
+-->|cast=0.375 + 0 seconds<!--
+-->|range=9.8<!--
+-->|hitbox=2.25 x 1.5<!--
+-->|missile=19<!--
+-->|prop2=Impact radius|val2=3.0<!--
+-->|notes=<li>Enemies that are immune to skillshots cannot be hit by the initial dash, but can be affected by the impact, as long as they are not also immune to AoE.<li>Does not search inside of Blaze's own hitbox upon a successful cast, so units who can ignore collision such as [[Dehaka]] with ''Dark Swarm'' active will not be hit if overlapping with Blaze on cast.}};10;45
+
+Bunker Drop;R;File:Bunker_Drop_Icon.png;After 0.5 seconds, deploy and enter a Bunker with 1435 Health. Blaze and his allies can enter and exit the Bunker at will. While in the Bunker, occupants gain access to Flamethrower, dealing 150 damage to enemies in a line.<p>Exiting the Bunker grants 25 Armor for 2 seconds. Bunkers last 10 seconds, or until destroyed.<!--
+-->{{undoc-x|type=Summon<!--
+-->|target=No target<!--
+-->|cast=Instant<!--
+-->|props=[[Stasis]]}}<!--
+--><small>'''Bunker'''</small>{{undoc-x|type=Passive<!--
+-->|scaling=4.00% (Health)<!--
+-->|prop1=Health|val1=1435<!--
+-->|prop2=Basic Attack damage|val2=-<!--
+-->|prop5=Movement Speed|val5=-<!--
+-->|prop6=Unit radius|val6=2.5<!--
+-->|prop7=Sight radius|val7=3.0<!--
+-->|notes=<li>Upon cast, Blaze automatically enters the Bunker. Otherwise, entering the Bunker requires a 0.5 second [[Stationary channel]].<li>''Bunker Drop'' is interrupted, putting it on a 10 second cooldown, if Blaze dies or is put in Stasis during the initial delay.<li>Heroes inside the Bunker are put in [[Stasis]]. In addition to usual effects of Stasis, the targets are removed from ground plane (disjoints certain projectiles), have no collision and cannot be seen on the minimap or revealed.<li> Damage dealt by bunker is unaffected by hero damage modifers. <li>Players can exit the Bunker to a direction of their choice, 1 second after entering. Exiting the Bunker requires you to target an area you have vision over.<li>If the Bunker is put in [[Time Stop]] (by Void Prison), all units inside are put in Time Stop as well.<li>If Blaze is put in [[Time Stop]] during the initial delay, the Bunker drops as usual after the [[Time Stop]] ends.}};80;80
+
+Bunker - Flamethrower;Q;File:Flame_Stream_Icon.png;Deal 150 damage to enemies in a line.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Clamping]], [[Area of Effect]], [[Skillshot]]<!--
+-->|cast=0.125 + 0 seconds<!--
+-->|range=10.25<!--
+-->|hitbox=1.75 x 1.5<!--
+-->|missile=16<!--
+-->|notes=<li>Does not ignite ''Oil Spill''s.}};1;
+
+Combustion;R;File:Combustion_Icon.png;Channel for up to 2.6 seconds. Upon ending, Slow nearby enemies by 60% and deal 55 damage to them every 0.5 seconds. Combustion's Slow and damage over time duration is extended the longer Blaze Channels, from 1 second up to 5 seconds.<p>Blaze's Movement Speed is reduced by 40% while Channeling.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=No target<!--
+-->|cast=0.125 + CH + 0 seconds<!--
+-->|props=[[Area of Effect]], [[Damage over Time]], [[Mobile channel]], [[Slow]]<!--
+-->|radius=6.5<!--
+-->|tickrate=2.0 per second<!--
+-->|prop1=Damage per tick|val1=55<!--
+-->|prop2=Channel time (max)|val2=2.5625<!--
+-->|notes=<li>Every 0.3125 seconds of channeling increases Slow and DoT duration by 0.5 seconds<li>''Combustion'' can be reactivated after 0.5 seconds to trigger its end effect early.<li>Interrupting ''Combustion'' in any way during its channel fires it with its accumulated duration.<li>During the channel Blaze can Mount by targeting an ally Mounted with the Toy Train equipped.}};80 / 0.5;70
+
+| talents =
+<!-- LEVEL 1 -->
+Adrenaline Stimpack;1;1;{{Cooldown|30}} <p>{{Passive}} While over 80% Health, gain 20% bonus Attack Speed and 10% bonus Movement Speed.<p>Activate to gain 100% Attack Speed and 25% Movement Speed for 5 seconds.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|cast=Instant<!--
+-->|props=[[Attack speed]], [[Movement speed]]<!--
+-->|notes=<li>Movement Speed bonus does not stack with itself or other Movement Speed bonuses.<li>Attack Speed bonus stacks additively with itself and other Attack Speed bonuses.}};File:Adrenaline_Stimpack_Icon.png;
+
+Endurance Stimpack;1;2;{{Cooldown|40}} <p>Activate to gain a Shield that absorbs 590 damage over 5 seconds.<p>When taking damage while below 30% maximum Health, Endurance Stimpack will automatically be cast if it is not on cooldown.<!--
+-->{{undoc-x|type=Shield<!--
+-->|scaling=4.00%<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|cast=Instant}};File:Endurance_Stimpack_Icon.png;
+
+Neural Stimpack;1;3;{{Cooldown|30}} <p>Activate to gain 40 Mana and cause Basic Ability cooldowns to recharge 100% faster for 5 seconds.<!--
+-->{{undoc-x|type=Mana<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|cast=Instant<!--
+-->|notes=<li>Reduces Basic Ability cooldowns by 0.0625 seconds every 0.0625 seconds.}};File:Neural_Stimpack_Icon.png;
+
+New Habits;1;4;Collecting Regeneration Globes reduces the cooldown of Pyromania by 6 seconds.<p>{{Quest|Collect 15 Regeneration Globes.|Pyromania grants Unstoppable for 2 seconds.}}<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|props=[[Unstoppable]]}};File:New_Habits_Icon.png;
+
+<!-- LEVEL 4 -->
+Oil Dispersal;2;1;Increase Oil Spill's area by 20%. Each enemy Hero hit by Flame Stream reduces the cooldown of Oil Spill by 0.75 seconds and refunds 5 Mana.<!--
+-->{{undoc-x|type=Mana restoration, Cooldown reduction<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|notes=<li>Increases the radius of ''Oil'' puddles by 0.3, resulting in 0.6 bonus length and width to the ''Oil Spill'' (the separation among the puddles is not increased). This actually results in approximately a 32% increase in the area of each ''Oil Spill''.<li>Effects trigger per stream. Enemies hit by both streams trigger the cooldown reduction and Mana refund for both of them.}};File:Oil_Dispersal_Icon.png;
+
+Meltdown;2;2;Hitting an enemy Hero with Pyromania reduces their damage dealt by 8% for 2.5 seconds, up to 40%.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Enemy Heroes<!--
+-->|notes=<li>Stacks additively with other offensive damage modifiers that affect the target Hero's damage output.}};File:Meltdown_Icon.png;
+
+Incinerator Gauntlets;2;3;Increase Basic Attack area by 15%, and Basic Attack damage to Minions, Mercenaries, and Monsters by 40%.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Attack Modifier]]<!--
+-->|prop1=Bonus splash range|val1=0.75<!--
+-->|notes=<li>Also increases damage against Summons.<li>15% increase in splash range, so actually a 32% increase in splash area.<li>Damage bonus stacks additively with other offensive damage modifiers that can affect Blaze's Basic Attack damage.}};File:Incinerator_Gauntlets_Icon.png;
+
+<!-- LEVEL 7 -->
+Suppressive Fire;3;1;Each stream of Flame Stream reduces the Spell Power of Heroes hit by 20% for 4 seconds, up to 40%.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Enemy Heroes<!--
+-->|props=Spell Damage reduction<!--
+-->|notes=<li>Stacks additively with itself and other damage modifiers that can affect the target's Spell Power.}};File:Suppressive_Fire_Icon.png;
+
+Nanomachine Coating;3;2;Enemies standing in Oil Spills and Ignited Oil Spills have their Attack Speed reduced by 35% for 4 seconds.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Enemies<!--
+-->|props=[[Attack Slow]]<!--
+-->|notes=}};File:Nanomachine_Coating_Icon.png;
+
+Fuel Leak;3;3;Jet Propulsion creates Oil Spills along Blaze's path. If Jet Propulsion impacts an enemy Hero, an additional Oil Spill is created underneath them.<!--
+-->{{undoc|<hr/><li>Oil Spills created by ''Fuel Leak'' fully interact with all Talents affecting ''Oil Spill''.}};File:Fuel_Leak_Icon.png;
+
+<!-- LEVEL 10 -->
+Bunker Drop;4;1;{{Cooldown|80}}<br>After 0.5 seconds, deploy and enter a Bunker with 1435 Health. Blaze and his allies can enter and exit the Bunker at will. While in the Bunker, occupants gain access to Flamethrower, dealing 150 damage to enemies in a line.<p>Exiting the Bunker grants 25 Armor for 2 seconds. Bunkers last 10 seconds, or until destroyed.;File:Bunker_Drop_Icon.png;
+Combustion;4;2;{{Cooldown|80}}<br>Channel for up to 2.6 seconds. Upon ending, Slow nearby enemies by 60% and deal 55 damage to them every 0.5 seconds. Combustion's Slow and damage over time duration is extended the longer Blaze Channels, from 1 second up to 5 seconds.<p>Blaze's Movement Speed is reduced by 40% while Channeling.;File:Combustion_Icon.png;
+
+<!-- LEVEL 13 -->
+Grill and Kill;5;1;Increase Ignited Oil Spill damage by 45%.<p>{{Quest|Damage enemy Heroes with Ignited Oil Spills 30 times.|Increase Oil Spill's Ignite duration by 2.5 seconds.}}<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|notes=<li>Damage bonus stacks additively with other offensive damage modifiers that can affect <i>Oil Spill</i>'s damage.}};File:Grill_and_Kill_Icon.png;
+
+Adhesive Petroleum;5;2;Enemies standing in Oil Spill when it is Ignited are Slowed by 40% and take 35% more Basic Attack damage from Blaze for 3 seconds. Additionally, Basic Attack splashes Ignite Oil Spills.<!--
+-->{{undoc-x|type=Crowd Control<!--
+-->|affects=Enemies<!--
+-->|props=[[Slow]]<!--
+-->|notes=<li>Effects are applied only to enemies that are standing on an Oil Spill as it is being Ignited - enemies that enter the Oil Spill after it has been Ignited are unaffected.<li>Slow is not removed by leaving the area of an Ignited Oil Spill.<li>''Adhesive Petroleum'' can be fully removed with Invulnerable and friendly Stasis effects. Unstoppable and CC removal effects only remove the Slow and not the damage bonus debuff.<li>Damage bonus stacks additively with other offensive damage modifiers affecting Blaze's Basic Attack damage.}};File:Adhesive_Petroleum_Icon.png;
+
+Collision Course;5;3;Jet Propulsion's collision deals 260 damage to the first enemy Hero hit.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemy Heroes<!--
+-->|notes=<li>Damage is dealt in a separate instance.}};File:Collision_Course_Icon.png;
+
+<!-- LEVEL 16 -->
+Thermal Protection;6;1;Each enemy hit by Jet Propulsion grants 10 Armor for 3 seconds and reduces its cooldown by 1.25 seconds.<!--
+-->{{undoc-x|type=Defensive damage modifier, Cooldown reduction<!--
+-->|affects=Self<!--
+-->|props=[[Armor]]<!--
+-->|notes=<li>Stacks additively with itself, but not with other positive Armor effects. Other defensive damage modifiers may stack.}};File:Thermal_Protection_Icon.png;
+
+Heat Treatment;6;2;Heal for 75% of the damage dealt by Pyromania.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|notes=}};File:Heat_Treatment_Icon.png;
+
+Juggernaut Plating;6;3;{{Cooldown|30}} <p>Activate to gain 50 Spell Armor for 3 seconds. Upon expiration, gain a Shield equal to 125% of the Spell Damage taken while Juggernaut Plating was active.<!--
+-->{{undoc-x|type=Defensive damage modifier, Shield<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|cast=Instant<!--
+-->|notes=<li>Shield amount is calculated from final damage taken, after modifications.<li>Shield from ''Juggernaut Plating'' does not expire.}};File:Juggernaut_Plating_Icon.png;
+
+<!-- LEVEL 20 -->
+Fortified Bunker;7;1;Occupants can cast Oil Spill from Bunker Drop every 6 seconds. Additionally, Bunker Drop's Armor bonus upon exiting is increased by 25, and its duration by 1 second.<!--
+-->{{undoc-x|nohr=1<!--
+-->|notes=<li>When an ''Oil Spill'' is cast from the ''Bunker'', it can only heal the Blaze who ignites it (only relevant if there are multiple Blazes on the same team in ARAM, or if Abathur uses ''Ultimate Evolution'' on Blaze). This is different from the usual Ignited ''Oil Spill'' behavior.<li>Additionally, ''Oil Spill''s placed by Heroes other than Blaze, when Ignited by Blaze, only do the base damage of the Ability (as if it were ignited by a level 0 Blaze).}};File:Fortified_Bunker_Icon.png;
+
+Flash Fire;7;2;While Channeling Combustion, Blaze's Movement Speed is no longer reduced, and nearby enemies are Slowed by 60%.;File:Flash_Fire_Icon.png;
+
+Burn Notice;7;3;Basic Attacks Slow enemies by 5% and deal an additional 18 damage over 2.5 seconds. Stacks up to 5 times.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|affects=Enemies<!--
+-->|props=[[Attack Modifier]], [[Damage over Time]], [[Slow]]<!--
+-->|tickrate=2.0 per second (x6)<!--
+-->|prop1=Damage per tick|val1=3 (per stack)<!--
+-->|notes=<li>Damage stacks up to 6 times, not 5, though the Slow stacks up to 5 times.<li>Basic Attacks deal a tick of damage per new stack and refresh the duration of all stacks. They also restart the DoT tick timer for each stack, synchronizing them (so the next damage tick for all stacks will be 0.5s after the most recent Basic Attack).<li>This also means DoT ticks that happen on the same server tick (1/16 s) as a Basic Attack generally happen twice (the DoT takes place and then the on-hit DoT tick from the Basic Attack resolves) There is observed to be about a 75% chance of this happening when a Basic Attack resolves, and a 25% chance of only 1 tick per stack, for reasons not fully understood. This is hypothesized to be because the Basic Attack, which applies and refreshes DoT durations, and the pre-scheduled DoT ticks happen on the same server tick, so which resolves first is seemingly random.}};File:Burn_Notice_Icon.png;
+}}
+<noinclude>
+{{Scaling table/start|{{#var:health}}|{{#var:health scaling}}|{{#var:health regen}}|{{#var:health regen scaling}}|{{#var:attack damage}}|{{#var:attack damage scaling}}}}
+{{Scaling table/slot|Pyromania|40|0.04}}
+{{Scaling table/slot|Pyromania (per second)|80|0.04}}
+{{Scaling table/slot|Flame Stream|76|0.04}}
+{{Scaling table/slot|Flame Stream (crossfire bonus)|120|0.04}}
+{{Scaling table/slot|Oil Spill (damage)|16|0.04}}
+{{Scaling table/slot|Oil Spill (damage, per second)|51.2|0.04}}
+{{Scaling table/slot|Oil Spill (healing)|49|0.04}}
+{{Scaling table/slot|Oil Spill (healing, per second)|156.8|0.04}}
+{{Scaling table/slot|Jet Propulsion|52|0.04}}
+{{Scaling table/slot|Bunker Drop (health)|1435|0.04|10}}
+{{Scaling table/slot|Bunker Drop - Flamethrower|170|0.04|10}}
+{{Scaling table/slot|Combustion|55|0.04|10}}
+{{Scaling table/slot|Combustion (per second)|110|0.04|10}}
+{{Scaling table/slot|Bunker Drop (Health)|1435|0.04|10}}
+{{Scaling table/slot|Endurance Stimpack|590|0.04|1}}
+{{Scaling table/slot|Collision Course|260|0.04|13}}
+{{Scaling table/slot|Burn Notice|18|0.04|20}}
+{{Scaling table/slot|Burn Notice (per second)|3|0.04|20}}
+{{Scaling table/end}}
+</noinclude>

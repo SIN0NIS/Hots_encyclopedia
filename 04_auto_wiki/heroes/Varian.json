@@ -1,0 +1,628 @@
+{
+  "hero": "Varian",
+  "abilities": [
+    {
+      "name": "Heroic Strike",
+      "hotkey": "TRAIT",
+      "icon": "Heroic_Strike_Icon.png",
+      "description": "Every 18 seconds, Varian's next Basic Attack deals 125 bonus Spell Damage. Basic Attacks reduce this cooldown by 3 seconds.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "props": "Attack Modifier",
+        "notes": "This damage will also miss and set the Trait back on full cooldown if a Basic Attack misses while this effect is available (because of Varian being Blinded or the target Evading).",
+        "cooldown": "18"
+      }
+    },
+    {
+      "name": "Lion's Fang",
+      "hotkey": "Q",
+      "icon": "Lion's_Fang_Icon.png",
+      "description": "Create a shockwave that travels in a straight line, dealing 150 damage and Slowing enemies by 35% for 1.5 seconds. Each enemy hit heals Varian for 35, increased to 140 against Heroes.",
+      "fields": {
+        "type": "Spell Damage, Crowd control / Healing",
+        "scaling": "4.00%",
+        "affects": "Enemies / Self",
+        "target": "Point target",
+        "props": "Clamping, Piercing Skillshot, Slow",
+        "cast": "0.125 + 0 seconds",
+        "range": "10",
+        "hitbox": "0.875 x 2.4",
+        "missile": "18",
+        "cooldown": "8",
+        "cost": "50"
+      }
+    },
+    {
+      "name": "Parry",
+      "hotkey": "W",
+      "icon": "Parry_Icon.png",
+      "description": "Charge Cooldown 10 Parry all incoming Basic Attacks for 1.25 seconds, reducing their damage by 100%. Stores up to 2 charges.",
+      "fields": {
+        "type": "Status effect",
+        "scaling": "4.00%",
+        "affects": "Self",
+        "target": "No target",
+        "props": "Evasion",
+        "cast": "Instant",
+        "cost": "30"
+      }
+    },
+    {
+      "name": "Charge",
+      "hotkey": "E",
+      "icon": "Charge_Icon.png",
+      "description": "Charge to the target enemy, dealing 50 damage and Slowing them by 75% for 1 second.",
+      "fields": {
+        "type": "Spell Damage, Crowd control / Movement: Dash",
+        "scaling": "4.00%",
+        "affects": "Enemies / Self",
+        "target": "Unit target",
+        "props": "Slow",
+        "cast": "Instant",
+        "range": "5.0",
+        "missile": "18",
+        "notes": "If there is an unpathable area between Varian and the target, Varian will try to dash around it until Charge reaches its maximum duration of 1.5 seconds.",
+        "cooldown": "12",
+        "cost": "45"
+      }
+    },
+    {
+      "name": "Taunt",
+      "hotkey": "R",
+      "icon": "Taunt_Icon.png",
+      "description": "Silence a target Hero and force them to attack Varian for 1.25 seconds. Passive Maximum Health and Health Regeneration increased by 40%.",
+      "fields": {
+        "type": "Crowd control / Health modifier",
+        "scaling": "-",
+        "affects": "Enemy Heroes / Self",
+        "target": "Unit target",
+        "props": "Taunt",
+        "cast": "Instant",
+        "aoe": "Circle",
+        "radius": "2.0",
+        "notes": "The effect ends immediately if Varian dies. Cannot be cast on enemy Heroes who are immune to crowd control.",
+        "cooldown": "16",
+        "cost": "20"
+      }
+    },
+    {
+      "name": "Colossus Smash",
+      "hotkey": "R",
+      "icon": "Colossus_Smash_Icon.png",
+      "description": "Smash a target enemy, dealing 185 damage and lowering their Armor by 25 for 3 seconds, causing them to take 25% increased damage. Passive Base Attack Damage increased by 100%. Passive Maximum Health and Health Regeneration reduced by 10%.",
+      "fields": {
+        "type": "Spell Damage, Defensive damage modifier / Movement: Launch, Offensive damage modifier, Health modifier",
+        "scaling": "4.00%",
+        "affects": "Non-Structure enemies / Self",
+        "target": "Unit target",
+        "props": "Armor reduction",
+        "cast": "Instant",
+        "range": "5.0",
+        "missile": "8.0",
+        "notes": "Cast is interrupted if the distance between Varian and the target becomes greater than 12 units or the target instantly teleports farther than 12 units from their previous location. Armor reduction does not stack with other negative Armor effects. Other defensive damage modifiers may stack. Attack damage bonus stacks additively with other offensive damage modifiers that can attack Varian's Attack Damage.",
+        "cooldown": "20",
+        "cost": "40"
+      }
+    },
+    {
+      "name": "Twin Blades of Fury",
+      "hotkey": "TRAIT",
+      "icon": "Twin_Blades_of_Fury_Icon.png",
+      "description": "Basic Attacks reduce Heroic Strike's cooldown by 9 seconds, and increase Varian's Movement Speed by 30% for 2 seconds. Passive Attack Speed increased by 100%. Passive Base Attack Damage reduced by 25%.; Heroic",
+      "fields": {
+        "type": "Status effect, Offensive damage modifier",
+        "affects": "Self",
+        "target": "Self",
+        "props": "Attack Speed, Movement speed",
+        "notes": "Attack Speed increase stacks additively with other Attack Speed modifiers. Damage penalty stacks additively with other offensive damage modifiers that can affect Varian's Basic Attack damage."
+      }
+    }
+  ],
+  "talents": [
+    {
+      "name": "Lion's Maw",
+      "tier": "1",
+      "slot": "1",
+      "icon": "Lion's_Maw_Icon.png",
+      "description": "quest Every time Lion's Fang hits a Hero, increase its damage by 7, up to 175. After hitting 25 Heroes, the Slow is increased to 50% and its duration is increased to 2 seconds.",
+      "fields": {
+        "type": "Bonus damage",
+        "scaling": "-",
+        "affects": "Ability"
+      },
+      "_raw_fields": [
+        "Lion's Maw",
+        "1",
+        "1",
+        "quest Every time Lion's Fang hits a Hero, increase its damage by 7, up to 175. After hitting 25 Heroes, the Slow is increased to 50% and its duration is increased to 2 seconds.",
+        "File:Lion's_Maw_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Overpower",
+      "tier": "1",
+      "slot": "2",
+      "icon": "Overpower_(Varian)_Icon.png",
+      "description": "When you Parry a Hero's Basic Attack, Heroic Strike's cooldown is refreshed and the next one does 40% more damage.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Ability",
+        "notes": "Damage bonus stacks additively with other offensive damage modifiers that can affect Heroic Strike 's damage."
+      },
+      "_raw_fields": [
+        "Overpower",
+        "1",
+        "2",
+        "When you Parry a Hero's Basic Attack, Heroic Strike's cooldown is refreshed and the next one does 40% more damage.",
+        "File:Overpower_(Varian)_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "High King's Quest",
+      "tier": "1",
+      "slot": "3",
+      "icon": "High_King's_Quest_Icon.png",
+      "description": "questonly Hit 50 Heroes with Basic Attacks. questonly Participate in 5 Hero Takedowns. questonly Gather 15 Regeneration Globes. reward Completing a Quest grants 10 Base Attack Damage. Completing all 3 Quests grants an additional 30 Base Attack Damage.",
+      "fields": {
+        "type": "Bonus damage",
+        "scaling": "-",
+        "affects": "Self",
+        "notes": "Completing all three quests grants a total of 60 bonus Basic Attack damage. Bonus damage is affected by damage modifiers, including Colossus Smash and Twin Blades of Furys' passive multipliers."
+      },
+      "_raw_fields": [
+        "High King's Quest",
+        "1",
+        "3",
+        "questonly Hit 50 Heroes with Basic Attacks. questonly Participate in 5 Hero Takedowns. questonly Gather 15 Regeneration Globes. reward Completing a Quest grants 10 Base Attack Damage. Completing all 3 Quests grants an additional 30 Base Attack Damage.",
+        "File:High_King's_Quest_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Taunt",
+      "tier": "2",
+      "slot": "1",
+      "icon": "Taunt_Icon.png",
+      "description": "cooldown 16 Silence a target Hero and force them to attack Varian for 1.25 seconds. Passive Maximum Health and Health Regeneration increased by 40%.",
+      "fields": {},
+      "_raw_fields": [
+        "Taunt",
+        "2",
+        "1",
+        "cooldown 16 Silence a target Hero and force them to attack Varian for 1.25 seconds. Passive Maximum Health and Health Regeneration increased by 40%.",
+        "File:Taunt_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Colossus Smash",
+      "tier": "2",
+      "slot": "2",
+      "icon": "Colossus_Smash_Icon.png",
+      "description": "cooldown 20 Smash a target enemy, dealing 185 damage and lowering their Armor by 25 for 3 seconds, causing them to take 25% increased damage. Passive Base Attack Damage increased by 100%. Passive Maximum Health reduced by 10%.",
+      "fields": {},
+      "_raw_fields": [
+        "Colossus Smash",
+        "2",
+        "2",
+        "cooldown 20 Smash a target enemy, dealing 185 damage and lowering their Armor by 25 for 3 seconds, causing them to take 25% increased damage. Passive Base Attack Damage increased by 100%. Passive Maximum Health reduced by 10%.",
+        "File:Colossus_Smash_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Twin Blades of Fury",
+      "tier": "2",
+      "slot": "3",
+      "icon": "Twin_Blades_of_Fury_Icon.png",
+      "description": "Basic Attacks reduce Heroic Strike's cooldown by 9 seconds and increase Varian's Movement Speed by 30% for 2 seconds. Passive Attack Speed increased by 100%. Passive Base Attack Damage reduced by 25%.",
+      "fields": {},
+      "_raw_fields": [
+        "Twin Blades of Fury",
+        "2",
+        "3",
+        "Basic Attacks reduce Heroic Strike's cooldown by 9 seconds and increase Varian's Movement Speed by 30% for 2 seconds. Passive Attack Speed increased by 100%. Passive Base Attack Damage reduced by 25%.",
+        "File:Twin_Blades_of_Fury_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Lionheart",
+      "tier": "3",
+      "slot": "1",
+      "icon": "Lionheart_Icon.png",
+      "description": "Increase Lion Fang's healing from Heroes by 75%.",
+      "fields": {
+        "type": "Healing dealt modifier",
+        "affects": "Ability",
+        "notes": "Stacks additively with healing modifiers that can affect Lion's Fang 's healing output and multiplicatively with modifiers that affect healing received by the target."
+      },
+      "_raw_fields": [
+        "Lionheart",
+        "3",
+        "1",
+        "Increase Lion Fang's healing from Heroes by 75%.",
+        "File:Lionheart_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Second Wind",
+      "tier": "3",
+      "slot": "2",
+      "icon": "Second_Wind_(Varian)_Icon.png",
+      "description": "Basic Attacks heal Varian for 1% of his maximum Health. While below 50% Health, they also heal him for 50% of the damage dealt.",
+      "fields": {
+        "type": "Healing",
+        "scaling": "-",
+        "affects": "Self",
+        "props": "Attack Modifier, Lifesteal (secondary)",
+        "notes": "Does not heal from Heroic Strike damage."
+      },
+      "_raw_fields": [
+        "Second Wind",
+        "3",
+        "2",
+        "Basic Attacks heal Varian for 1% of his maximum Health. While below 50% Health, they also heal him for 50% of the damage dealt.",
+        "File:Second_Wind_(Varian)_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Victory Rush",
+      "tier": "3",
+      "slot": "3",
+      "icon": "Victory_Rush_Icon.png",
+      "description": "Every 30 seconds, Varian's next Basic Attack will heal him for 350 Health. When a nearby enemy Minion or Monster dies, this cooldown is reduced by 10 seconds.",
+      "fields": {
+        "type": "Healing",
+        "scaling": "4.00%",
+        "affects": "Self",
+        "props": "Attack Modifier",
+        "notes": "Monster deaths only trigger the cooldown reduction if killed by Varian. Effect will not trigger nor be put on cooldown if the attack misses due to being Blinded or target Evading. Minion deaths within 12 radius trigger the cooldown reduction."
+      },
+      "_raw_fields": [
+        "Victory Rush",
+        "3",
+        "3",
+        "Every 30 seconds, Varian's next Basic Attack will heal him for 350 Health. When a nearby enemy Minion or Monster dies, this cooldown is reduced by 10 seconds.",
+        "File:Victory_Rush_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Shield Wall",
+      "tier": "4",
+      "slot": "1",
+      "icon": "Shield_Wall_Icon.png",
+      "description": "Parry now grants Protected, preventing all incoming damage for the duration. Additionally, Parry's cooldown is reduced by 5 seconds, but it loses 1 charge.",
+      "fields": {
+        "type": "Status effect",
+        "affects": "Self",
+        "props": "Protected",
+        "notes": "Protected replaces Evasion after taking this Talent."
+      },
+      "_raw_fields": [
+        "Shield Wall",
+        "4",
+        "1",
+        "Parry now grants Protected, preventing all incoming damage for the duration. Additionally, Parry's cooldown is reduced by 5 seconds, but it loses 1 charge.",
+        "File:Shield_Wall_Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Warbringer",
+      "tier": "4",
+      "slot": "2",
+      "icon": "Warbringer_Icon.png",
+      "description": "Reduces Charge's cooldown by 8 seconds and Mana cost from 45 to 25. Additionally, Charge can be cast on allied Heroes.",
+      "fields": {
+        "nohr": "1",
+        "notes": "Charging to allied Heroes neither damages nor Slows them."
+      },
+      "_raw_fields": [
+        "Warbringer",
+        "4",
+        "2",
+        "Reduces Charge's cooldown by 8 seconds and Mana cost from 45 to 25. Additionally, Charge can be cast on allied Heroes.",
+        "File:Warbringer_Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Juggernaut",
+      "tier": "5",
+      "slot": "1",
+      "icon": "Juggernaut_Icon.png",
+      "description": "Charge deals bonus damage to Heroes equal to 4% of their maximum Health.",
+      "fields": {
+        "type": "Percent damage",
+        "scaling": "-",
+        "affects": "Enemy Heroes"
+      },
+      "_raw_fields": [
+        "Juggernaut",
+        "5",
+        "1",
+        "Charge deals bonus damage to Heroes equal to 4% of their maximum Health.",
+        "File:Juggernaut_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Mortal Strike",
+      "tier": "5",
+      "slot": "2",
+      "icon": "Mortal_Strike_Icon.png",
+      "description": "Heroes hit by Heroic Strike receive 40% reduced healing for 4 seconds.",
+      "fields": {
+        "type": "Healing received modifier",
+        "affects": "Enemy Heroes",
+        "props": "Attack Modifier",
+        "notes": "Stacks additively with modifiers that affect healing received, and multiplicatively with modifiers that affect healing dealt."
+      },
+      "_raw_fields": [
+        "Mortal Strike",
+        "5",
+        "2",
+        "Heroes hit by Heroic Strike receive 40% reduced healing for 4 seconds.",
+        "File:Mortal_Strike_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Shattering Throw",
+      "tier": "5",
+      "slot": "3",
+      "icon": "Shattering_Throw_Icon.png",
+      "description": "cooldown 30 Active Activate to throw a sword at a target Hero that deals 50 damage, and up to 1400 bonus damage to their Shields. Passive Basic Attacks against Heroes deal up to 200% bonus Physical Damage to Shields.",
+      "fields": {
+        "type": "Spell Damage / Offensive damage modifier",
+        "scaling": "4.00%",
+        "affects": "Enemy Heroes / Self",
+        "target": "Unit target",
+        "cast": "Instant",
+        "range": "8.0",
+        "missile": "28",
+        "notes": "Passive Basic Attack damage multiplier does not affect Heroic Strike. Passive Shield damage bonus stacks additively with other offensive damage modifiers that can affect Varian's Basic Attack damage."
+      },
+      "_raw_fields": [
+        "Shattering Throw",
+        "5",
+        "3",
+        "cooldown 30 Active Activate to throw a sword at a target Hero that deals 50 damage, and up to 1400 bonus damage to their Shields. Passive Basic Attacks against Heroes deal up to 200% bonus Physical Damage to Shields.",
+        "File:Shattering_Throw_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Banner of Stormwind",
+      "tier": "6",
+      "slot": "1",
+      "icon": "Banner_of_Stormwind_Icon.png",
+      "description": "cooldown 25 Active Activate to place a Banner that grants 25% increased Movement Speed to nearby allied Heroes. Lasts 12 seconds. Banner Stormwind Aura",
+      "fields": {
+        "type": "Status effect",
+        "target": "Point target",
+        "cast": "Instant",
+        "range": "10",
+        "nohr": "true",
+        "scaling": "4.00% (health)",
+        "prop1": "Health",
+        "val1": "435",
+        "prop2": "Basic Attack damage",
+        "val2": "-",
+        "prop5": "Movement Speed",
+        "val5": "-",
+        "prop6": "Unit radius",
+        "val6": "0.5",
+        "prop7": "Sight radius",
+        "val7": "10.5",
+        "prop8": "Leash radius",
+        "val8": "-",
+        "affects": "Allied Heroes, Self",
+        "props": "Area of Effect, Movement Speed",
+        "radius": "10.5",
+        "tickrate": "2.0 per second",
+        "notes": "Does not stack with other positive Movement Speed effects, such as Twin Blades of Fury's Movement Speed bonus, unless otherwise specified by the Ability in question."
+      },
+      "_raw_fields": [
+        "Banner of Stormwind",
+        "6",
+        "1",
+        "cooldown 25 Active Activate to place a Banner that grants 25% increased Movement Speed to nearby allied Heroes. Lasts 12 seconds. Banner Stormwind Aura",
+        "File:Banner_of_Stormwind_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Banner of Ironforge",
+      "tier": "6",
+      "slot": "2",
+      "icon": "Banner_of_Ironforge_Icon.png",
+      "description": "cooldown 45 Active Activate to place a Banner that grants 20 Armor to nearby allied Heroes, reducing damage taken by 20%. Lasts 12 seconds. Banner Ironforge Aura",
+      "fields": {
+        "type": "Defensive damage modifier",
+        "target": "Point target",
+        "cast": "Instant",
+        "range": "10",
+        "nohr": "true",
+        "scaling": "4.00% (health)",
+        "prop1": "Health",
+        "val1": "435",
+        "prop2": "Basic Attack damage",
+        "val2": "-",
+        "prop5": "Movement Speed",
+        "val5": "-",
+        "prop6": "Unit radius",
+        "val6": "0.5",
+        "prop7": "Sight radius",
+        "val7": "10.5",
+        "prop8": "Leash radius",
+        "val8": "-",
+        "affects": "Allied Heroes, Self",
+        "props": "Area of Effect, Armor",
+        "radius": "10.5",
+        "tickrate": "2.0 per second",
+        "notes": "Does not stack with other positive Armor effects. Other defensive damage modifiers may stack."
+      },
+      "_raw_fields": [
+        "Banner of Ironforge",
+        "6",
+        "2",
+        "cooldown 45 Active Activate to place a Banner that grants 20 Armor to nearby allied Heroes, reducing damage taken by 20%. Lasts 12 seconds. Banner Ironforge Aura",
+        "File:Banner_of_Ironforge_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Banner of Dalaran",
+      "tier": "6",
+      "slot": "3",
+      "icon": "Banner_of_Dalaran_Icon.png",
+      "description": "cooldown 25 Active Activate to place a Banner that grants 20% increased Spell Power to nearby allied Heroes. Lasts 12 seconds. Banner Dalaran Aura",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "target": "Point target",
+        "cast": "Instant",
+        "range": "10",
+        "nohr": "true",
+        "scaling": "4.00% (health)",
+        "prop1": "Health",
+        "val1": "435",
+        "prop2": "Basic Attack damage",
+        "val2": "-",
+        "prop5": "Movement Speed",
+        "val5": "-",
+        "prop6": "Unit radius",
+        "val6": "0.5",
+        "prop7": "Sight radius",
+        "val7": "10.5",
+        "prop8": "Leash radius",
+        "val8": "-",
+        "affects": "Allied Heroes, Self",
+        "props": "Area of Effect, Spell Power",
+        "radius": "10.5",
+        "tickrate": "2.0 per second",
+        "notes": "Spell Power stacks additively with itself and other offensive damage and healing modifiers affecting target Heroes' Spell Damage or healing output."
+      },
+      "_raw_fields": [
+        "Banner of Dalaran",
+        "6",
+        "3",
+        "cooldown 25 Active Activate to place a Banner that grants 20% increased Spell Power to nearby allied Heroes. Lasts 12 seconds. Banner Dalaran Aura",
+        "File:Banner_of_Dalaran_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Vigilance",
+      "tier": "7",
+      "slot": "1",
+      "icon": "Vigilance_Icon.png",
+      "description": "Being hit by a Hero Basic Attack reduces the cooldown of Taunt by 1 second.",
+      "fields": {},
+      "_raw_fields": [
+        "Vigilance",
+        "7",
+        "1",
+        "Being hit by a Hero Basic Attack reduces the cooldown of Taunt by 1 second.",
+        "File:Vigilance_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Master at Arms",
+      "tier": "7",
+      "slot": "2",
+      "icon": "Master_at_Arms_Icon.png",
+      "description": "Colossus Smash affects all enemies near the target, and its cooldown is reduced by 10 seconds.",
+      "fields": {
+        "props": "Splash",
+        "aoe": "Circle",
+        "radius": "2.0",
+        "notes": "Structures can be affected by the splash damage."
+      },
+      "_raw_fields": [
+        "Master at Arms",
+        "7",
+        "2",
+        "Colossus Smash affects all enemies near the target, and its cooldown is reduced by 10 seconds.",
+        "File:Master_at_Arms_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Frenzy",
+      "tier": "7",
+      "slot": "3",
+      "icon": "Frenzy_Icon.png",
+      "description": "Twin Blades of Fury increases Heroic Strike damage by an additional 25%, and Basic Attacks increase his Movement Speed by an additional 10%.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Ability",
+        "notes": "Stacks additively with other offensive damage modifiers that can affect Heroic Strike 's damage."
+      },
+      "_raw_fields": [
+        "Frenzy",
+        "7",
+        "3",
+        "Twin Blades of Fury increases Heroic Strike damage by an additional 25%, and Basic Attacks increase his Movement Speed by an additional 10%.",
+        "File:Frenzy_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Glory to the Alliance",
+      "tier": "7",
+      "slot": "4",
+      "icon": "Glory_to_the_Alliance_Icon.png",
+      "description": "Banner now also increases health regeneration and all healing received for nearby allied Heroes by 50%, and the cooldown is reduced by 50%.",
+      "fields": {
+        "type": "Healing modifier",
+        "affects": "Allied Heroes",
+        "notes": "Stacks additively with other healing modifiers that affect healing received, and multiplicatively with modifiers that affect healing dealt (such as Banner of Dalaran)."
+      },
+      "_raw_fields": [
+        "Glory to the Alliance",
+        "7",
+        "4",
+        "Banner now also increases health regeneration and all healing received for nearby allied Heroes by 50%, and the cooldown is reduced by 50%.",
+        "File:Glory_to_the_Alliance_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Demoralizing Shout",
+      "tier": "7",
+      "slot": "5",
+      "icon": "Demoralizing_Shout_Icon.png",
+      "description": "cooldown 20 Active Activate to demoralize nearby enemy Heroes, reducing damage they deal by 40% for 5 seconds. Each time an enemy Hero affected by Demoralizing Shout deals damage to a Hero, reduce its cooldown and Parry's cooldown by 5%.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Enemies",
+        "target": "No target",
+        "props": "Area of Effect",
+        "cast": "0.125 + 0 seconds",
+        "aoe": "Circle",
+        "radius": "5.5",
+        "notes": "Stacks additively with other offensive damage modifiers that affect the target Heroes' damage output."
+      },
+      "_raw_fields": [
+        "Demoralizing Shout",
+        "7",
+        "5",
+        "cooldown 20 Active Activate to demoralize nearby enemy Heroes, reducing damage they deal by 40% for 5 seconds. Each time an enemy Hero affected by Demoralizing Shout deals damage to a Hero, reduce its cooldown and Parry's cooldown by 5%.",
+        "File:Demoralizing_Shout_Icon.png"
+      ],
+      "level": "20"
+    }
+  ],
+  "other": [],
+  "_unparsed_count": 0
+}

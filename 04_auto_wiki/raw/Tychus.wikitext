@@ -1,0 +1,272 @@
+{{hero data
+| name = Tychus
+| date = March 18, 2014
+| price = 4000
+| title = Notorious Outlaw
+| role = Ranged
+| franchise = Starcraft
+| info = An [[Assassin]] who shreds High [[Health]] enemies. 
+| lore = Tychus Findlay is a big man with a big ego and a bigger gun. Fortunately, his loyalty is easily won. Buy him a drink or three and promise him enough credits, and there's no job in the whole universe too dangerous for this outlaw.
+| difficulty = Medium
+| melee = False
+| health = 1925
+| healthRegen = 4.0117
+| resource = 500
+| resourceType = Mana
+| armor = 0
+| attackSpeed = 4.00
+| attackRange = 4.5
+| attackDamage = 50
+| healthScaling = 0.04
+| regenScaling = 0.04
+| adamageScaling = 0.04
+| unitRadius = 0.8125
+| icon = File:Tychus_Icon.png
+| skills = 
+Minigun;Trait;File:Minigun_Icon.png;Activate to have Basic Attacks against Heroes deal bonus damage equal to 2.5% of their maximum Health. Lasts 3 seconds.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=-<!--
+-->|affects=Enemy Heroes<!--
+-->|target=No target<!--
+-->|props=[[Attack modifier]], [[Percent Damage]], Primed<!--
+-->|cast=Instant<!--
+-->|notes=<li>Minigun duration starts at the first Basic Attack after activating the trait.<li>Cooldown starts when the duration ends.<li>Bonus damage from ''Minigun'' is dealt in a separate instance.}};12;;trait;False
+
+Overkill;Q;File:Overkill_Icon.png;Deal 552 damage to the target and 276 damage to nearby targets over 4 seconds. Reactivate to select a new target or direction. Can move and use Abilities while channeling.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Unit target<!--
+-->|props=[[Area of Effect]], [[Mobile channel]]<!--
+-->|cast=Instant<!--
+-->|range=7.5<!--
+-->|aoe=Radial<!--
+-->|radius=8.0<!--
+-->|arc=45 degrees<!--
+-->|tickrate=3.0 per second<!--
+-->|prop1=Damage per tick|val1=<br/>- Primary: 46<br/>- Secondary: 23<!--
+-->|notes=<li>Tychus can cancel ''Overkill'' by starting to [[Mount]] or casting ''Commandeer Odin''.<li>If the main target of ''Overkill'' dies while it's active, it will automatically retarget the closest enemy within its radius.<li>If the main target is simply out of range, ''Overkill'' remains fixated to it until a new target is issued by reactivating the Ability.}};12;60;;False
+
+Frag Grenade;W;File:Frag_Grenade_Icon.png;Lob a grenade that deals 256 damage, knocking enemies away.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Knockback]]<!--
+-->|cast=0 + 0.225 seconds<!--
+-->|range=8.75<!--
+-->|aoe=Circle<!--
+-->|radius=2.25<!--
+-->|missile=25.6<!--
+-->|prop1=Knockback duration|val1=0.125 seconds<!--
+-->|prop2=Knockback speed|val2=18<!--
+-->|notes=}};10;50;;True
+
+Run and Gun;E;File:Run_and_Gun_Icon.png;Dash a short distance.<!--
+-->{{undoc-x|type=Movement: [[Dash]]<!--
+-->|affects=Self<!--
+-->|target=Point target<!--
+-->|cast=Instant<!--
+-->|range=4.0<!--
+-->|missile=14<!--
+-->|notes=}};10;50;;True
+
+Commandeer Odin;R;File:Commandeer_Odin_Icon.png;Call down an Odin to pilot. The Odin deals increased Damage, has 100% increased Basic Attack range, and uses different Abilities. The Odin has 25 Armor and lasts 23 seconds.<!--
+-->{{undoc-x|type=Transformation, Defensive damage modifier, Status effect<!--
+-->|scaling=4.00%<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|props=[[Attack modifier]], [[Armor]], [[Unstoppable]]<!--
+-->|cast=Instant<!--
+-->|prop1=Odin Basic Attack damage|val1=191<!--
+-->|prop2=Odin Attack Speed|val2=1.00<!--
+-->|prop3=Odin Attack Range|val3=9.0<!--
+-->|notes=<li>Tychus is unable to act for 2.75 seconds while entering the Odin. During this time Tychus is Unstoppable. This delay is included in its duration.<li>Activating ''Commandeer Odin'' immediately ends ''Minigun'' and ''Overkill''.<li>Cooldown starts immediately when the Ability is cast.<li>Tychus cannot use ''Minigun'' and does not benefit from ''Sizzling Attacks'' while piloting Odin.}};100;100;heroic;False
+
+Commandeer Odin - Annihilate;Q;File:Annihilate_Icon.png;Fire the Odin's cannons in a straight line, dealing 196 damage to everything in the path.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Clamping]]<!--
+-->|cast=Instant<!--
+-->|aoe=Rectangle <sup>(1</sup><!--
+-->|width=3.6<!--
+-->|height=18.8<!--
+-->|notes=<li><sup>1)</sup> <i>Annihilate</i>'s search area is a line of 7 circles with 1.8 radius, which centers are 2.5 units apart.<li>Impact on each sub-area is delayed by 0.1 seconds from the previous, but a target cannot be hit more than once per cast.<li>Does not stack with other positive Armor effects. Other defensive damage modifiers may stack.<li>Only available while ''Commandeer Odin'' is active.}};7;;;False
+
+Commandeer Odin - Ragnarok Missiles;W;File:Ragnarok_Missiles_Icon.png;Launches a volley of missiles at target area, dealing 132 damage and Slowing enemy Movement Speed by 30% for 2 seconds.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Slow]]<!--
+-->|cast=Instant<!--
+-->|range=14.0<!--
+-->|aoe=Circle<!--
+-->|radius=4.0<!--
+-->|prop1=Impact delay|val1=1.5 seconds<!--
+-->|notes=<li>Only available while ''Commandeer Odin'' is active.}};7;;;False
+
+Commandeer Odin - Thrusters;E;File:Thrusters_Icon.png;Dash in target direction.<!--
+-->{{undoc-x|type=Movement: [[Dash]]<!--
+-->|affects=Self<!--
+-->|target=Point target<!--
+-->|cast=Instant<!--
+-->|range=4.0<!--
+-->|missile=14<!--
+-->|tickrate=<!--
+-->|notes=<li>Only available while ''Commandeer Odin'' is active.}};8;;;False
+
+Drakken Laser Drill;R;File:Drakken_Laser_Drill_Icon.png;Call down a [[Drakken Laser Drill|Laser Drill]] to attack nearby enemies, dealing 142 damage every second. Reactivate to assign a new target. Lasts 22 seconds.<!--
+-->{{undoc-x|type=Summon<!--
+-->|target=Point target<!--
+-->|cast=Instant<!--
+-->|range=7.0}}<hr/><!--
+--><small>'''Drakken Laser Drill'''</small>{{undoc-x|nohr=true<!--
+-->|type=Active<!--
+-->|scaling=4.00% (damage & Health)<!--
+-->|target=Retargetable<!--
+-->|prop1=Health|val1=1255<!--
+-->|prop2=Basic Attack damage|val2=71<!--
+-->|prop3=Attack speed|val3=2.00<!--
+-->|prop4=Attack range|val4=10.0<!--
+-->|prop5=Movement Speed|val5=-<!--
+-->|prop6=Unit radius|val6=1.5<!--
+-->|prop7=Sight radius|val7=9.25<!--
+-->|prop8=Leash radius|val8=-<!--
+-->|notes=<li>''Drakken Laser Drill'' has a 2 second spawn delay. This delay is included in its duration.<li>Cooldown starts immediately when the Ability is cast.<li><i>Laser Drill</i>'s attack is a channeled beam that deals [[Spell Damage]].}};100;100;heroic;False
+
+| talents = <!-- LEVEL 1 -->
+Quarterback;1;1;Increases Frag Grenade's damage by 10% and its range by 45%.<!--
+-->{{undoc-x|type=Offensive damage modifier|prop1=Bonus range|val1=3.9375<!--
+-->|notes=}};File:Quarterback_Icon.png;
+
+Dash;1;2;Increase the range of Run and Gun by 50%. When cast, increase Tychus's Movement Speed by 20% for 2.5 seconds.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|props=[[Movement Speed]]<!--
+-->|prop1=Bonus range|val1=2.0<!--
+-->|notes=}};File:Dash_Icon.png;
+
+Press the Advantage;1;3;Increase Tychus's Basic Attack range by 1.<!--
+-->{{undoc|<hr/><li>Does not affect Tychus's attack range during ''Commandeer Odin''.}};File:Press_the_Advantage_Icon.png;
+
+<!-- LEVEL 4 -->
+In the Rhythm;2;1;{{questonly|While Minigun is active, Basic Attacks against Heroes permanently increase future Minigun durations by 0.03 seconds.}};File:In_the_Rhythm_Icon.png;
+
+The Bigger They Are...;2;2;Increase the damage bonus to 4% while enemy Heroes are above 30% Health, but Minigun no longer has any effect on targets below 30%.;File:The Bigger_They_Are_Icon.png;
+
+Master Assassin;2;3;{{passive}} Increase Tychus's Attack Speed by 10%.<p>{{reward|After getting 15 Takedowns, Tychus's Attack Speed is increased by an additional 15%.}}<!--
+-->{{undoc-x|nohr=true<!--
+-->|notes=<li>Also affects Tychus's Attack Speed during ''Commandeer Odin''.}};File:Master_Assassin_Icon.png;
+
+<!-- LEVEL 7 -->
+Melting Point;3;1;Enemies hit by Frag Grenade take an additional 75 damage over 3 seconds. This damage is increased by 100% against Minions, Mercenaries and Monsters.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|props=[[Damage over Time]]<!--
+-->|tickrate=1.0 per second (x3)<!--
+-->|prop1=Damage per tick|val1=25<!--
+-->|notes=<li>Does not benefit from the damage bonus from ''Quarterback''.<li>Bonus damage to Minions, Mercenaries and Monsters stacks additively with offensive damage modifiers.}};File:Melting_Point_Icon.png;
+
+Combat Tactician;3;2;Reduce the cooldown of Minigun by 4 seconds. Reduce the cooldown by an additional 4 seconds after using Run and Gun.<!--
+-->{{undoc-x|nohr=true<!--
+-->|notes=<li>Casting ''Run and Gun'' while ''Minigun'' is still active has no effect on the cooldown.}};File:Combat_Tactician_Icon.png;
+
+Relentless Soldier;3;3;Being Stunned or Rooted grants 30 Armor for 3 seconds, reducing damage taken by 30%.<!--
+-->{{undoc-x|type=Defensive damage modifier|scaling=|affects=Self|target=|props=[[Armor]]<!--
+-->|notes=<li>Does not stack with other positive Armor effects. Other defensive damage modifiers may stack.}};File:Relentless_Soldier_Icon.png;
+
+<!-- LEVEL 10 -->
+Commandeer Odin;4;1;{{Cooldown|100}}<br />Call down an Odin to pilot. The Odin deals increased Damage, has 100% increased Basic Attack range, and uses different Abilities. The Odin has 25 Armor and lasts 23 seconds.;File:Commandeer_Odin_Icon.png;
+Drakken Laser Drill;4;2;{{Cooldown|100}}<br />Call down a Laser Drill to attack nearby enemies, dealing 142 damage every second. Reactivate to assign a new target. Lasts 22 seconds.;File:Drakken_Laser_Drill_Icon.png;
+
+<!-- LEVEL 13 -->
+Spray 'n' Pray;5;1;Overkill Slows enemy Movement Speed by 25% and its range is increased by 25%.<!--
+-->{{undoc-x|type=Crowd control<!--
+-->|affects=Enemies<!--
+-->|prop1=Bonus range|val1=1.875<!--
+-->|prop2=Bonus radius|val2=2.0|props=[[Slow]]<!--
+-->|notes=}};File:Spray_'n'_Pray_Icon.png;
+
+That's the Stuff!;5;2;Minigun heals Tychus for 100% of the bonus damage dealt after it expires.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|props=[[Lifesteal]]<!--
+-->|notes=}};File:That's_the_Stuff!_Icon.png;
+
+Neosteel Coating;5;3;{{Cooldown|30}}<br />Activate to gain 75 Spell Armor for 4 seconds, reducing Ability Damage taken by 75%.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|props=[[Spell Armor]]<!--
+-->|cast=Instant<!--
+-->|notes=<li>Does not stack with other positive Armor effects. Other defensive damage modifiers may stack.}};File:Neosteel_Coating_Icon.png;
+
+<!-- LEVEL 16 -->
+Armor Piercing Rounds;6;1;Each time Overkill hits an enemy, its damage against them is increased by 15%, stacking up to 60% bonus damage.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|notes=<li>Damage bonus stacks additively with other offensive damage modifiers that can affect <i>Overkill</i>'s damage.}};File:Armor_Piercing_Rounds_Icon.png;
+
+Titan Grenade;6;2;Frag Grenade deals bonus damage to Heroes equal to 5% of their maximum Health. Each enemy Hero hit by Frag Grenade reduces its cooldown by 1 second.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=-<!--
+-->|props=[[Percent Damage]]<!--
+-->|affects=Enemy Heroes<!--
+-->|notes=<li>Bonus damage is dealt in a separate instance.}};File:Titan_Grenade_Icon.png;
+
+Sizzlin' Attacks;6;3;Basic Attacks deal bonus damage to Heroes equal to 1% of their maximum Health. Stacks with Minigun.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=-<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Attack Modifier]], [[Percent Damage]]<!--
+-->|notes=<li>Bonus damage is dealt in a separate instance from both Tychus's Basic Attacks and ''Minigun''.<li>''Commandeer Odin'' does not benefit from ''Sizzlin' Attacks''.}};File:Sizzlin_Attacks_Icon.png;
+
+<!-- LEVEL 20 -->
+Big Red Button;7;1;Odin lasts 50% longer and Ragnarok Missiles also launches a Nuclear Missile, which lands 2.5 seconds later, dealing 319 damage in its area.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|props=[[Area of Effect]]<!--
+-->|notes=<li>Nuclear Missile is launched at the same location as ''Ragnarok Missiles'' and has the same radius.<li>Nuclear Missile does not Slow.}};File:Big_Red_Button_Icon.png;
+
+Focusing Diodes;7;2;Increases the range of the Drakken Laser Drill by 50%. Deals increased damage the longer it remains on a single target, up to 100% extra damage.<!--
+-->{{undoc-x|type=Bonus damage<!--
+-->|scaling=-<!--
+-->|affects=Ability<!--
+-->|prop1=Bonus attack range|val1=5.0<!--
+-->|notes=<li>Damage increases in 20% increments every second Laser Drill has been locked to a target, up to 5 times.<li>Changing target instantly resets the bonus.<li>Damage bonus stacks additively with itself and with other offensive damage modifiers that can affect <i>Drakken Laser Drill</i>'s damage.}};File:Focusing_Diodes_Icon.png;
+
+Can Do This All Day;7;3;Reduce Overkill's cooldown by 5 seconds. While Channeling Overkill, Tychus gains 40 Armor.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Armor]]|<!--
+-->|notes=<li>Does not stack with other positive Armor effects. Other defensive [[damage modifier]]s may stack.}};File:Can_Do_This_All_Day_Icon.png;
+
+Bob and Weave;7;4;Run and Gun and Odin's Thrusters gain 2 additional charges and reduces Run and Gun's Mana cost from 50 to 25. After using Run and Gun, increase Tychus's Basic Attack range by 1.5 for 4 seconds.<!--
+-->{{undoc-x|prop1=Cooldown between charges|val1=0.5 seconds<!--
+-->|notes=<li>Does not affect Tychus's attack range during ''Commandeer Odin''.}};File:Bob_and_Weave_Icon.png;
+
+}}
+
+<noinclude>
+{{Scaling table/start|{{#var:health}}|{{#var:health scaling}}|{{#var:health regen}}|{{#var:health regen scaling}}|{{#var:attack damage}}|{{#var:attack damage scaling}}}}
+{{Scaling table/slot|Overkill (primary)|552|0.04}}
+{{Scaling table/slot|Overkill (primary, per second)|138|0.04}}
+{{Scaling table/slot|Overkill (secondary)|276|0.04}}
+{{Scaling table/slot|Overkill (secondary, per second)|69|0.04}}
+{{Scaling table/slot|Frag Grenade|256|0.04}}
+{{Scaling table/slot|Commandeer Odin (attack)|191|0.04|10}}
+{{Scaling table/slot|Commandeer Odin - Annihilate|196|0.04|10}}
+{{Scaling table/slot|Commandeer Odin - Ragnarok Missiles|132|0.04|10}}
+{{Scaling table/slot|Drakken Laser Drill (health)|1255|0.04|10}}
+{{Scaling table/slot|Drakken Laser Drill (damage)|142|0.04|10}}
+{{Scaling table/slot|Drakken Laser Drill (damage, single)|71|0.04|10}}
+{{Scaling table/slot|Melting Point|75|0.04|7}}
+{{Scaling table/slot|Melting Point (per second)|25|0.04|7}}
+{{Scaling table/end}}
+</noinclude>

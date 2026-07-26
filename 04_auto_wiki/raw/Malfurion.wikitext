@@ -1,0 +1,245 @@
+{{hero data
+| name = Malfurion
+| date = March 13, 2014
+| price = 2000
+| title = Archdruid
+| role = Healer
+| franchise = Warcraft
+| info = A strong sustained Healer who can help lockdown enemies to secure takedowns.
+| lore = Malfurion Stormrage is the greatest druid on Azeroth, and a student of the demi-god Cenarius. Communing with nature and Cenarius through the Emerald dream, Malfurion protects the wilds from demonic influences.
+| difficulty = Easy
+| melee = False
+| health = 1525
+| healthRegen = 3.1796
+| resource = 500
+| resourceType = Mana
+| armor = 0
+| attackSpeed = 1.11
+| attackRange = 5.5
+| attackDamage = 60
+| healthScaling = 0.04
+| regenScaling = 0.04
+| adamageScaling = 0.04
+| unitRadius = 0.75
+| icon = File:Malfurion_Icon.png
+| skills =
+Innervate;D;File:Innervate_Icon.png;Grant an allied Hero 20% of their maximum Mana over 5 seconds. While affected by Innervate, their Basic Ability cooldowns recharge 50% faster.<p>{{yellowtext|Cannot be used on Heroes that do not use Mana.}}<!--
+-->{{undoc-x|type=Mana restoration<!--
+-->|scaling=-<!--
+-->|affects=Allied Heroes<!--
+-->|target=Unit target<!--
+-->|cast=Instant<!--
+-->|range=7.0<!--
+-->|tickrate=1.0 per second (x5)<!--
+-->|notes=<li>Cannot be self-cast.}};25;;trait;False
+
+Regrowth;Q;File:Regrowth_Icon.png;Heal an allied Hero for 380 Health over 20 seconds.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=4.00%<!--
+-->|affects=Allied Heroes, Self<!--
+-->|target=Unit target<!--
+-->|props=[[Heal over time]]<!--
+-->|cast=Instant<!--
+-->|range=7.0<!--
+-->|tickrate=1.0 per second (x20)<!--
+-->|prop1=Heal per tick|val1=19<!--
+-->|notes=<li>Casting ''Regrowth'' sets Malfurion's Basic Attack's cooldown to 0.5 seconds, potentially causing his next attack to come out faster or slower.}};5;35;;False
+
+Moonfire;W;File:Moonfire_Icon.png;Deal 90 damage to enemies in an area and reveal them for 2 seconds.<p>Allies with an active Regrowth are healed for 130 Health for each enemy Hero hit by Moonfire.<!--
+-->{{undoc-x|type=Spell Damage / Healing<!--
+-->|scaling=4.00% (both)<!--
+-->|affects=Enemies / Allied Heroes<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Revealed]], Triggered Heal<!--
+-->|cast=0.15 + 0 seconds<!--
+-->|range=9.0<!--
+-->|aoe=Circle<!--
+-->|radius=1.5<!--
+-->|notes=<li>Healing from ''Moonfire'' does not have a range limitation.<li>Healing from each ''Moonfire'' hit is dealt in a separate instance.}};3;10;;False
+
+Entangling Roots;E;File:Entangling_Roots_Icon.png;Root enemy Heroes in an area for 1.25 seconds, and deal 117 damage over the duration. Affected area grows over 3 seconds.<!--
+-->{{undoc-x|type=Spell Damage / Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemy Heroes<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Root]]<!--
+-->|cast=0.15 + 0 seconds<!--
+-->|range=8.0<!--
+-->|aoe=Circle<!--
+-->|radius=3.0 <sup>(1</sup><!--
+-->|tickrate=2.5 per second (x3)<!--
+-->|prop1=Damage per tick|val1=39<!--
+-->|prop2=Initial delay|val2=0.375 seconds<!--
+-->|prop3=Initial radius|val3=0.5<!--
+-->|notes=<li>Only deals damage when the Root connects, and therefore cannot damage anything except Heroes who are not currently Unstoppable or in Stasis.<li><sup>1)</sup> The area grows every 0.5 seconds in 0.5 ... 0.75 increments, reaching maximum radius 2.0 seconds after the center appeared.<li>After reaching its maximum radius, the area lingers for 1.25 seconds}};12;65;;False
+
+Tranquility;R;File:Tranquility_Icon.png;Heal nearby allied Heroes for 80 Health per second for 8 seconds. Allies affect by Regrowth within Tranquility's area gain 10 Armor.<!--
+-->{{undoc-x|type=Healing, Defensive damage modifier<!--
+-->|scaling=4.00%|affects=Allied Heroes<!--
+-->|target=No target<!--
+-->|props=[[Area of Effect]], [[Armor]]<!--
+-->|cast=Instant<!--
+-->|aoe=Circle<!--
+-->|radius=6.5<!--
+-->|tickrate=2.0 per second (x16)<!--
+-->|prop1=Heal per tick|val1=40<!--
+-->|notes=<li>Casting ''Tranquility'' sets Malfurion's Basic Attack's cooldown to 0.5 seconds, potentially causing his next attack to come out faster or slower.<li>Does not stack with other positive Armor effects. Other defensive damage modifiers may stack.}};80;80;heroic;False
+
+Twilight Dream;R;File:Twilight_Dream_Icon.png;After 0.5 seconds, deal 310 damage in a large area around Malfurion, Silencing enemies, making them unable to use Abilities for 3 seconds.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=No target<!--
+-->|props=[[Area of Effect]], [[Channeled cast]] (stationary), [[Silence]]<!--
+-->|cast=0.5 (ch) + 0 seconds<!--
+-->|aoe=Circle<!--
+-->|radius=4.0<!--
+-->|notes=<li>Interrupting the Ability during its windup puts it on a 10 second cooldown.}};90;100;heroic;False
+
+| talents = <!-- LEVEL 1 -->
+Deep Roots;1;1;Entangling Roots grows 25% larger and persists on the ground 40% longer.<p>{{Repeatable Quest|Every time an enemy Hero becomes Rooted, gain 14 Mana permanently.}}<!--
+-->{{undoc-x|type=Bonus Mana<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|prop1=Bonus radius|val1=0.75<!--
+-->|prop2=Duration increase|val2=0.75 seconds<!--
+-->|notes=<li>Bonus duration is split between growth to bonus radius and linger duration: time to reach maximum radius (now 3.75) is increased by 0.5 seconds and the linger duration by 0.25 seconds.<li>Quest bonus increases both maximum and current Mana by given amount.}};File:Deep_Roots_Icon.png;
+
+Vengeful Roots;1;2;Entangling Roots spawns a Treant that does 58 damage per second and lasts 10 seconds.<p>{{Repeatable Quest|Hitting enemy Heroes with Entangling Roots permanently increases the Treant's Basic Attack damage by 7.}}<!--
+-->{{undoc-x|type=Summon<!--
+
+-->}}<hr/><small>'''Treant'''</small><!--
+-->{{undoc-x|nohr=true<!--
+-->|type=Active<!--
+-->|scaling=4.00% (damage & health)<!--
+-->|target=Automatic<!--
+-->|prop1=Health|val1=450<!--
+-->|prop2=Basic Attack damage|val2=58<!--
+-->|prop3=Attack speed|val3=1.0<!--
+-->|prop4=Attack range|val4=1.0<!--
+-->|prop5=Movement Speed|val5=4.8007<!--
+-->|prop6=Sight radius|val6=8.0<!--
+-->|prop7=Leash radius|val7=10<!--
+-->|notes=}}<!--
+
+-->{{undoc-x|type=Bonus damage<!--
+-->|scaling=-<!--
+-->|affects=Treant<!--
+-->|notes=}};File:Vengeful_Roots_Icon.png;
+
+Emerald Dreams;1;3;Entangling Roots Sleeps enemy Heroes for 2 seconds after its Root expires.<!--
+-->{{undoc-x|type=Crowd control<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Sleep]]<!--
+-->|notes=<li>The Sleep effect is not applied if the Root is cleansed}};File:Emerald_Dreams_Icon.png;
+
+<!-- LEVEL 4 -->
+Rejuvenation;2;1;Casting Regrowth on an ally also grants Malfurion its effect for 50% normal duration.<!--
+-->{{undoc-x|type=Healing<!--
+-->|affects=Self<!--
+-->|notes=<li>''Rejuvenation'' counts toward the total number of active ''Regrowth''s.<li>''Rejuvenation'' benefits from bonus healing from ''Ysera's Gift'', but not from ''Lifebloom''.<li>''Rejuvenation'' benefits from <i>Wild Growth</i>'s duration increase when hitting enemies with ''Moonfire'', but doesn't gain even a partial duration increase from ''Nature's Balance''.}};File:Rejuvenation_Icon.png;
+
+Celestial Alignment;2;2;Increase Moonfire's reveal duration by 3 second. Malfurion's Basic Attacks against Heroes revealed by Moonfire deal 85% more damage.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Attack Modifier]]<!--
+-->|notes=}};File:Celestial Alignment Icon.png;
+
+Shan'do's Clarity;2;3;Gain a second charge of Innervate. Its cooldown recharges 25% faster per ally affected by Regrowth.<!--
+-->{{undoc-x|prop1=Charge cooldown|val1=1.0 seconds<!--
+-->|notes=<li>Each ''Regrowth'' reduces the remaining cooldown of ''Innervate'' by 0.25 seconds every time it ticks (1 per second).}};File:Shan'do's_Clarity_Icon.png;
+
+<!-- LEVEL 7 -->
+Wild Growth;3;1;Each enemy hit by Moonfire extends the duration of currently active Regrowths by 1 second.<!--
+-->{{undoc|<hr><li>''Wild Growth'' can increase the remaining duration of ''Regrowth'' higher than it was initially, without a limit.}};File:Wild_Growth_Icon.png;
+
+Tenacious Roots;3;2;Increase the Root duration of Entangling Roots by 25%. When Malfurion is Stunned, the cooldown of Entangling Roots is instantly reset. This can only occur every 10 seconds.<!--
+-->{{undoc-x|prop1=Bonus Root duration|val1=0.3125 seconds}};File:Tenacious_Roots_Icon.png;
+
+Nature's Cure;3;3;{{cooldown|45}}<br/>{{Active}} Activate to remove all Stuns, Roots, and Slows from allies affected by Regrowth.<!--
+-->{{undoc-x|type=CC removal<!--
+-->|affects=Allied Heroes<!--
+-->|target=No target<!--
+-->|cast=Instant<!--
+-->|range=Global<!--
+-->|notes=}};File:Nature's_Cure_Icon.png;
+
+<!-- LEVEL 10 -->
+Tranquility;4;1;{{cooldown|80}}<br/>Heal nearby allied Heroes for 80 Health per second for 8 seconds. Allies affect by Regrowth within Tranquility's area gain 10 Armor.;File:Tranquility_Icon.png;
+Twilight Dream;4;2;{{cooldown|90}}<br/>After 0.5 seconds, deal 310 damage in a large area around Malfurion, Silencing enemies, making them unable to use Abilities for 3 seconds.;File:Twilight_Dream_Icon.png;
+
+<!-- LEVEL 13 -->
+Nature's Swiftness;5;1;Malfurion gains 6% Movement Speed for every active Regrowth.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|props=[[Movement speed]]<!--
+-->|notes=<li>Movement Speed bonus stacks additively with itself, but not with other Movement Speed bonuses.}};File:Nature's_Swiftness_Icon.png;
+
+Hindering Moonfire;5;2;Moonfire Slows Enemy Heroes by 25% for 3 seconds.<!--
+-->{{undoc-x|type=Crowd Control<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Slow]]<!--
+-->|notes=}};File:Hindering_Moonfire_Icon.png;
+
+Revitalize;5;3;Using Innervate also grants Malfurion 15% of his maximum Mana and causes his Basic Ability cooldowns to refresh 50% faster for 5 seconds.<!--
+-->{{undoc-x|type=Mana restoration<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|notes=}};File:Revitalize_Icon.png;
+
+<!-- LEVEL -- 16 -->
+Ysera's Gift;6;1;While Malfurion is above 75% Health, Regrowth's healing-over-time is increased by 75%.<!--
+-->{{undoc-x|type=Healing dealt modifier<!--
+-->|affects=Ability<!--
+-->|notes=<li>Stacks additively with other healing dealt modifiers that can affect <i>Regrowth</i>'s healing.}};File:Ysera's_Gift_Icon.png;
+
+Nature's Balance;6;2;Increase Moonfire's area by 25% and Regrowth's duration by 5 seconds.<!--
+-->{{undoc-x|prop1=Bonus radius|val1=0.375<!--
+-->|notes=<li>Actually increases radius by 25%, so area by 56.25%.<li>Causes ''Regrowth'' to tick 5 additional times for an additional 95 healing over time.}};File:Moonlit_Harmony_Icon.png;
+
+Moonlit Harmony;6;3;Increase Moonfire's heal by 20%, and 15% per ally affected by Regrowth.<!--
+-->{{undoc-x|type=Healing dealt modifier<!--
+-->|affects=Ability<!--
+-->|notes=<li>Healing bonus stacks additively with itself and other healing dealt modifiers that can affect <i>Moonfire</i>'s healing.}};File:Nature's_Balance_Icon.png;
+
+<!-- LEVEL 20 -->
+Serenity;7;1;Each enemy Hero hit by Moonfire reduces the cooldown of Tranquility by 3 seconds. Increase Tranquility's healing by 25% and 10% per ally affected by Regrowth.<!--
+-->{{undoc-x|type=Healing dealt modifier<!--
+-->|scaling=-<!--
+-->|affects=Ability<!--
+-->|notes=<li>Healing bonuses stack additively with themselves and other healing dealt modifiers that can affect <i>Tranquility</i>'s healing.}};File:Serenity_Icon.png;
+
+Astral Communion;7;2;Activate to channel for 1 second, and then instantly teleport and cast Twilight Dream at the targeted location. Cooldown is shared with Twilight Dream.<p>{{Passive}} Increase Twilight Dream's Silence duration to 5 seconds.<!--
+-->{{undoc-x|type=Movement: [[Teleport]]<!--
+-->|target=Point target<!--
+-->|props=[[Channeled cast]], Clamping<!--
+-->|cast=1.0 (ch) + 0 seconds<!--
+-->|range=7.2<!--
+-->|notes=}};File:Nightmare_Icon.png;
+
+Lifebloom;7;3;Casting Regrowth instantly heals its target for 10% of their missing Health.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=-<!--
+-->|affects=Allied Heroes<!--
+-->|notes=}};File:Lifebloom_Icon.png;
+
+Lunar Shower;7;4;If Moonfire hits a Hero, its cooldown is reduced by 1 second and the next Moonfire within 6 seconds deals 20% more damage. This damage bonus stacks up to 60%.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|notes=<li>Damage bonus stacks additively with itself and other offensive damage modifiers that can affect <i>Moonfire</i>'s damage.}};File:Lunar_Shower_Icon.png;
+}}
+
+<noinclude>
+{{Scaling table/start|{{#var:health}}|{{#var:health scaling}}|{{#var:health regen}}|{{#var:health regen scaling}}|{{#var:attack damage}}|{{#var:attack damage scaling}}}}
+{{Scaling table/slot|Regrowth (per second)|19|0.04}}
+{{Scaling table/slot|Regrowth (x20)|380|0.04}}
+{{Scaling table/slot|Moonfire (damage)|90|0.04}}
+{{Scaling table/slot|Moonfire (healing)|130|0.04}}
+{{Scaling table/slot|Entangling Roots|137|0.04}}
+{{Scaling table/slot|Tranquility (single)|40|0.04|10}}
+{{Scaling table/slot|Tranquility (per second)|80|0.04|10}}
+{{Scaling table/slot|Twilight Dream|310|0.04|10}}
+{{Scaling table/slot|Vengeful Roots (Treant health)|450|0.04|7}}
+{{Scaling table/slot|Vengeful Roots (Treant damage)|58|0.04|7}}
+{{Scaling table/end}}
+</noinclude>

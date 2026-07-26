@@ -1,0 +1,554 @@
+{
+  "hero": "Cho",
+  "abilities": [
+    {
+      "name": "Ogre Hide",
+      "hotkey": "D",
+      "icon": "Ogre_Hide_Icon.png",
+      "description": "Activate to gain 25 Armor, but reduce Gall's damage by 25%.; 5; trait",
+      "fields": {
+        "type": "Defensive damage modifier",
+        "affects": "Self",
+        "target": "No target",
+        "props": "Armor",
+        "cast": "Instant",
+        "notes": "Shares cooldown with Gall's Ogre Rage. Does not stack with other positive Armor effects. Other defensive damage modifiers may stack."
+      }
+    },
+    {
+      "name": "Surging Fist",
+      "hotkey": "Q",
+      "icon": "Surging_Fist_Icon.png",
+      "description": "Activate to begin charging Surging Fist. Activate again to dash forward, knocking aside enemies and dealing 46 damage. The dash range increases by up to 250%, depending on how long it is charged.",
+      "fields": {
+        "type": "Spell Damage, Crowd control / Movement: Dash",
+        "scaling": "4.00%",
+        "affects": "Enemies / Self",
+        "target": "No target, Point target",
+        "props": "Clamping, Knockback, Mobile channel, Piercing Skillshot",
+        "cast": "0 + CH + 0 seconds",
+        "range": "- Minimum: 2.0 - Maximum: 7.0",
+        "hitbox": "2.5 x 1.5",
+        "missile": "17.5",
+        "prop1": "Knockback duration",
+        "val1": "0.125 seconds",
+        "prop2": "Knockback speed",
+        "val2": "16",
+        "notes": "Surging Fist can be channeled for up to 5 seconds, but its range ceases to grow after 2 seconds. Cho cannot attack while channeling Surging Fist. While dashing, Cho'gall's unit radius is reduced to 0.75. While channeling this Ability, Cho can target an ally Mounted with the Toy Train equipped to Mount.",
+        "cooldown": "12"
+      }
+    },
+    {
+      "name": "Consuming Blaze",
+      "hotkey": "W",
+      "icon": "Consuming_Blaze_Icon.png",
+      "description": "Ignite nearby enemies, dealing 150 damage over 5 seconds. Basic Attacking burning enemies re-Ignites them. Cho is healed for 40 when an enemy is Ignited.",
+      "fields": {
+        "type": "Spell Damage / Healing",
+        "scaling": "4.00%",
+        "affects": "Enemies / Self",
+        "target": "No target",
+        "props": "Area of Effect, Attack Modifier, Damage over Time",
+        "cast": "0 + 0.125 seconds",
+        "aoe": "Circle",
+        "radius": "5.0",
+        "tickrate": "2.0 per second",
+        "prop1": "Damage per tick",
+        "val1": "15",
+        "cooldown": "12"
+      }
+    },
+    {
+      "name": "Rune Bomb",
+      "hotkey": "E",
+      "icon": "Rune_Bomb_Icon.png",
+      "description": "Roll a bomb dealing 91 damage to enemies in its path. Gall can use Runic Blast to detonate it to deal 221 damage in an area.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "target": "Point target",
+        "props": "Clamping, Piercing Skillshot",
+        "cast": "0.375 + 0 seconds",
+        "range": "14.0",
+        "radius": "0.75 (hitbox)",
+        "missile": "- Initial: 1.5 - Final: 10 - Acceleration: 4.0",
+        "cooldown": "8"
+      }
+    },
+    {
+      "name": "Hammer of Twilight",
+      "hotkey": "R",
+      "icon": "Hammer_of_Twilight_Icon.png",
+      "description": "Activate to swing the Hammer of Twilight, dealing 150 damage, pushing enemies away, and Stunning them for 0.75 seconds. Passive Cho's Basic Attacks deal 25% increased damage.; 15; heroic",
+      "fields": {
+        "type": "Spell Damage, Crowd control / Offensive damage modifier",
+        "scaling": "4.4921875%",
+        "affects": "Enemies / Self",
+        "target": "Point target",
+        "props": "Area of Effect, Knockback, Stun",
+        "cast": "0 + 0.125 seconds",
+        "aoe": "Radial",
+        "radius": "4.5",
+        "arc": "220 degrees (1",
+        "prop1": "Knockback duration",
+        "val1": "0.25 seconds",
+        "prop2": "Knockback speed",
+        "val2": "20",
+        "notes": "1) Search is performed in three 73.3 degree sections rotating counter-clockwise over three successive ticks. Damage bonus stacks additively with other offensive damage modifiers that can affect Cho's Basic Attack damage."
+      }
+    },
+    {
+      "name": "Upheaval",
+      "hotkey": "R",
+      "icon": "Upheaval_Icon.png",
+      "description": "After 1 second, pull enemies toward Cho'gall, Slowing them by 25% for 3 seconds and dealing 175 damage.; 40; heroic",
+      "fields": {
+        "type": "Spell Damage, Crowd control",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "target": "Point target",
+        "props": "Area of Effect, Clamping, Pull, Slow",
+        "cast": "0 + 1.0 seconds",
+        "aoe": "Radial",
+        "radius": "14.0",
+        "arc": "45 degrees",
+        "prop1": "Knockback duration",
+        "val1": "0.5 seconds",
+        "prop2": "Knockback speed",
+        "val2": "20"
+      }
+    }
+  ],
+  "talents": [
+    {
+      "name": "Consuming Fire",
+      "tier": "1",
+      "slot": "1",
+      "icon": "Consuming_Fire_Icon.png",
+      "description": "Consuming Blaze heals for 150% more when a Hero is Ignited.",
+      "fields": {
+        "type": "Healing dealt modifier",
+        "affects": "Ability",
+        "notes": "Stacks additively with other effects that can increase healing dealt by Consuming Blaze and multiplicatively with effects that affect healing received."
+      },
+      "_raw_fields": [
+        "Consuming Fire",
+        "1",
+        "1",
+        "Consuming Blaze heals for 150% more when a Hero is Ignited.",
+        "File:Consuming_Fire_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Calloused Hide",
+      "tier": "1",
+      "slot": "2",
+      "icon": "Calloused_Hide_Icon.png",
+      "description": "While under 60% maximum Health, Cho gains 15% increased Movement Speed and healing received.",
+      "fields": {
+        "type": "Healing received modifier",
+        "affects": "Self",
+        "props": "Movement speed",
+        "notes": "Stacks additively with other effects that affect healing received and multiplicatively with other healing modifiers."
+      },
+      "_raw_fields": [
+        "Calloused Hide",
+        "1",
+        "2",
+        "While under 60% maximum Health, Cho gains 15% increased Movement Speed and healing received.",
+        "File:Calloused_Hide_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "The Will Of Cho",
+      "tier": "1",
+      "slot": "3",
+      "icon": "The_Will_of_Cho_Icon.png",
+      "description": "questonly Killing enemy Minions grants 1 stack of The Will of Cho, and Hero takedowns grant 10 stacks. Gain 1 Armor for every 30 stacks, up to a maximum of 10 Armor. This Armor bonus stacks with Ogre Hide.",
+      "fields": {
+        "type": "Defensive damage modifier",
+        "affects": "Self",
+        "props": "Armor",
+        "notes": "Stacks additively with itself and Ogre Hide, but not with other positive Armor effects. Other defensive damage modifiers may stack."
+      },
+      "_raw_fields": [
+        "The Will Of Cho",
+        "1",
+        "3",
+        "questonly Killing enemy Minions grants 1 stack of The Will of Cho, and Hero takedowns grant 10 stacks. Gain 1 Armor for every 30 stacks, up to a maximum of 10 Armor. This Armor bonus stacks with Ogre Hide.",
+        "File:The_Will_of_Cho_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Uppercut",
+      "tier": "2",
+      "slot": "1",
+      "icon": "Uppercut_Icon.png",
+      "description": "Hitting an enemy Hero with Surging Fist deals additional damage to Heroes equal to 5% of their max Health and reduces the cooldown of Surging Fist by 5 seconds.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "-",
+        "affects": "Enemy Heroes",
+        "props": "Percent damage",
+        "notes": "Damage is dealt in an additional instance. Each Hero hit grants cooldown reduction."
+      },
+      "_raw_fields": [
+        "Uppercut",
+        "2",
+        "1",
+        "Hitting an enemy Hero with Surging Fist deals additional damage to Heroes equal to 5% of their max Health and reduces the cooldown of Surging Fist by 5 seconds.",
+        "File:Uppercut_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Rollback",
+      "tier": "2",
+      "slot": "2",
+      "icon": "Rollback_Icon.png",
+      "description": "Rune Bomb rolls back to Cho, damaging enemies in its path.",
+      "fields": {
+        "prop1": "Missile speed on return",
+        "val1": "9.0",
+        "notes": "Rune Bomb continues to the maximum range before returning. Rune Bomb deals collision damage in both ways. Gall can still activate Rune Bomb only once per cast."
+      },
+      "_raw_fields": [
+        "Rollback",
+        "2",
+        "2",
+        "Rune Bomb rolls back to Cho, damaging enemies in its path.",
+        "File:Rollback_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Seared Flesh",
+      "tier": "2",
+      "slot": "3",
+      "icon": "Seared_Flesh_Icon.png",
+      "description": "Each consecutive Basic Attack to an enemy Hero deals 20% more damage, to a maximum of 60% damage. This bonus lasts 5 seconds or until a non-Heroic enemy is attacked.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Self",
+        "notes": "Damage bonus is applied before damage is dealt, starting from 0%. Stacks additively with itself and other offensive damage modifiers that can affect Cho's Basic Attack damage."
+      },
+      "_raw_fields": [
+        "Seared Flesh",
+        "2",
+        "3",
+        "Each consecutive Basic Attack to an enemy Hero deals 20% more damage, to a maximum of 60% damage. This bonus lasts 5 seconds or until a non-Heroic enemy is attacked.",
+        "File:Seared_Flesh_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Power Surge",
+      "tier": "3",
+      "slot": "1",
+      "icon": "Power_Surge_Icon.png",
+      "description": "Enemy Heroes who are hit by Surging Fist are Slowed by 30% for 2.5 seconds. Gain 15% Movement Speed while charging Surging Fist and for 2.5 seconds after casting the Ability.",
+      "fields": {
+        "type": "Crowd control / Status effect",
+        "affects": "Enemy Heroes / Self",
+        "props": "Movement Speed, Slow"
+      },
+      "_raw_fields": [
+        "Power Surge",
+        "3",
+        "1",
+        "Enemy Heroes who are hit by Surging Fist are Slowed by 30% for 2.5 seconds. Gain 15% Movement Speed while charging Surging Fist and for 2.5 seconds after casting the Ability.",
+        "File:Power_Surge_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Firestarter",
+      "tier": "3",
+      "slot": "2",
+      "icon": "Fire_Eater_Icon.png",
+      "description": "Basic Attacks against ignited Heroes decrease the cooldown of Consuming Blaze by 1 second. Passive Reduce the cooldown of Consuming Blaze by 3 seconds.",
+      "fields": {
+        "props": "Attack Modifier"
+      },
+      "_raw_fields": [
+        "Firestarter",
+        "3",
+        "2",
+        "Basic Attacks against ignited Heroes decrease the cooldown of Consuming Blaze by 1 second. Passive Reduce the cooldown of Consuming Blaze by 3 seconds.",
+        "File:Fire_Eater_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Enraged Regeneration",
+      "tier": "3",
+      "slot": "3",
+      "icon": "Enraged_Regeneration_Icon.png",
+      "description": "Each time Cho deals damage to enemy Heroes, he is healed for 60 over 3 seconds. Enemy Heroes hit by Gall’s Dread Orb receive 35% less healing for 2 seconds.",
+      "fields": {
+        "type": "Healing / Healing modifier",
+        "scaling": "4.00%",
+        "affects": "Self / Enemy Heroes",
+        "tickrate": "2.00 per second (x6)",
+        "pro1": "Healing per tick",
+        "val1": "10"
+      },
+      "_raw_fields": [
+        "Enraged Regeneration",
+        "3",
+        "3",
+        "Each time Cho deals damage to enemy Heroes, he is healed for 60 over 3 seconds. Enemy Heroes hit by Gall’s Dread Orb receive 35% less healing for 2 seconds.",
+        "File:Enraged_Regeneration_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Hammer of Twilight",
+      "tier": "4",
+      "slot": "1",
+      "icon": "Hammer_of_Twilight_Icon.png",
+      "description": "Cooldown 15 Activate to swing the Hammer of Twilight, dealing 150 damage, pushing enemies away, and Stunning them for 0.75 seconds. Passive Cho's Basic Attacks deal 25% increased damage.",
+      "fields": {},
+      "_raw_fields": [
+        "Hammer of Twilight",
+        "4",
+        "1",
+        "Cooldown 15 Activate to swing the Hammer of Twilight, dealing 150 damage, pushing enemies away, and Stunning them for 0.75 seconds. Passive Cho's Basic Attacks deal 25% increased damage.",
+        "File:Hammer_of_Twilight_Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Upheaval",
+      "tier": "4",
+      "slot": "2",
+      "icon": "Upheaval_Icon.png",
+      "description": "Cooldown 40 After 1 second, pull enemies toward Cho'gall, Slowing them by 25% for 3 seconds and dealing 175 damage.",
+      "fields": {},
+      "_raw_fields": [
+        "Upheaval",
+        "4",
+        "2",
+        "Cooldown 40 After 1 second, pull enemies toward Cho'gall, Slowing them by 25% for 3 seconds and dealing 175 damage.",
+        "File:Upheaval_Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Surging Dash",
+      "tier": "5",
+      "slot": "1",
+      "icon": "Surging_Dash_Icon.png",
+      "description": "While channeling Surging Fist, Cho heals for 150 Health per second.",
+      "fields": {
+        "type": "Healing",
+        "scaling": "4.00%",
+        "affects": "Self",
+        "tickrate": "2.0 per second",
+        "prop1": "Healing per tick",
+        "val1": "75"
+      },
+      "_raw_fields": [
+        "Surging Dash",
+        "5",
+        "1",
+        "While channeling Surging Fist, Cho heals for 150 Health per second.",
+        "File:Surging_Dash_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Twilight Veil",
+      "tier": "5",
+      "slot": "2",
+      "icon": "Twilight_Veil_Icon.png",
+      "description": "cooldown 30 Active Activate to increase the Armor bonus of Ogre Hide to 75 for 4 seconds. If cast while Ogre Rage is active, it instantly swaps to Ogre Hide.",
+      "fields": {
+        "type": "Defensive damage modifier",
+        "affects": "Self",
+        "target": "No target",
+        "props": "Armor",
+        "cast": "Instant",
+        "notes": "Places Ogre Hide on cooldown upon activation."
+      },
+      "_raw_fields": [
+        "Twilight Veil",
+        "5",
+        "2",
+        "cooldown 30 Active Activate to increase the Armor bonus of Ogre Hide to 75 for 4 seconds. If cast while Ogre Rage is active, it instantly swaps to Ogre Hide.",
+        "File:Twilight_Veil_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Molten Block",
+      "tier": "5",
+      "slot": "3",
+      "icon": "Molten_Block_Icon.png",
+      "description": "cooldown 60 Active Activate to enter Stasis and gain Invulnerability for 3 seconds, damaging nearby enemies for 92 damage per second.",
+      "fields": {
+        "type": "Spell Damage / Status effect",
+        "scaling": "4.00%",
+        "affects": "Enemies / Self",
+        "target": "No target",
+        "props": "Area of Effect (damage), Stasis",
+        "cast": "Instant",
+        "aoe": "Circle",
+        "radius": "4.5",
+        "tickrate": "2.0 per second",
+        "prop1": "Damage per tick",
+        "val1": "46"
+      },
+      "_raw_fields": [
+        "Molten Block",
+        "5",
+        "3",
+        "cooldown 60 Active Activate to enter Stasis and gain Invulnerability for 3 seconds, damaging nearby enemies for 92 damage per second.",
+        "File:Molten_Block_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Frenzied Fists",
+      "tier": "6",
+      "slot": "1",
+      "icon": "Frenzied_Fists_Icon.png",
+      "description": "Gain 75% Attack Speed for 5 seconds after using Surging Fist.",
+      "fields": {
+        "type": "Status effect",
+        "scaling": "-",
+        "affects": "Self",
+        "props": "Attack Speed"
+      },
+      "_raw_fields": [
+        "Frenzied Fists",
+        "6",
+        "1",
+        "Gain 75% Attack Speed for 5 seconds after using Surging Fist.",
+        "File:Frenzied_Fists_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Runic Feedback",
+      "tier": "6",
+      "slot": "2",
+      "icon": "Runic_Feedback_Icon.png",
+      "description": "Gall's Runic Blast reduces Cho's Rune Bomb cooldown by 1 seconds per enemy hit, and 2 seconds for each Hero hit.",
+      "fields": {},
+      "_raw_fields": [
+        "Runic Feedback",
+        "6",
+        "2",
+        "Gall's Runic Blast reduces Cho's Rune Bomb cooldown by 1 seconds per enemy hit, and 2 seconds for each Hero hit.",
+        "File:Runic_Feedback_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Runed Gauntlet",
+      "tier": "6",
+      "slot": "3",
+      "icon": "Runed_Gauntlet_Icon.png",
+      "description": "Basic Attacks reduce the cooldowns of Cho's and Gall's Heroic Abilities by 6%.",
+      "fields": {
+        "props": "Attack Modifier"
+      },
+      "_raw_fields": [
+        "Runed Gauntlet",
+        "6",
+        "3",
+        "Basic Attacks reduce the cooldowns of Cho's and Gall's Heroic Abilities by 6%.",
+        "File:Runed_Gauntlet_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "C'thun's Gift",
+      "tier": "7",
+      "slot": "1",
+      "icon": "C'thun's_Gift_Icon.png",
+      "description": "Cho's Basic Attack becomes ranged and Slows targets by 20% for 1.5 seconds.",
+      "fields": {
+        "type": "Crowd control",
+        "affects": "Enemies",
+        "props": "Attack Modifier, Slow",
+        "range": "5.0"
+      },
+      "_raw_fields": [
+        "C'thun's Gift",
+        "7",
+        "1",
+        "Cho's Basic Attack becomes ranged and Slows targets by 20% for 1.5 seconds.",
+        "File:C'thun's_Gift_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Favor of the Old Gods",
+      "tier": "7",
+      "slot": "2",
+      "icon": "Favor_of_the_Old_Gods_Icon.png",
+      "description": "Upheaval Roots enemy Heroes for 2 seconds.",
+      "fields": {
+        "type": "Crowd control",
+        "affects": "Enemy Heroes",
+        "props": "Root"
+      },
+      "_raw_fields": [
+        "Favor of the Old Gods",
+        "7",
+        "2",
+        "Upheaval Roots enemy Heroes for 2 seconds.",
+        "File:Favor_of_the_Old_Gods_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Fuel for the Flame",
+      "tier": "7",
+      "slot": "3",
+      "icon": "Fuel_for_the_Flame_Icon.png",
+      "description": "Basic Attacks against enemies cause them to explode, dealing 21 damage to them and 45 damage to nearby enemies. This damage is doubled against enemy Heroes.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "props": "Splash",
+        "aoe": "Circle",
+        "radius": "3.3",
+        "notes": "Hero damage bonus (+100%) stacks additively with offensive damage modifiers that can affect Cho'gall's Spell Damage output."
+      },
+      "_raw_fields": [
+        "Fuel for the Flame",
+        "7",
+        "3",
+        "Basic Attacks against enemies cause them to explode, dealing 21 damage to them and 45 damage to nearby enemies. This damage is doubled against enemy Heroes.",
+        "File:Fuel_for_the_Flame_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Hour of Twilight",
+      "tier": "7",
+      "slot": "4",
+      "icon": "Hour_of_Twilight_Icon.png",
+      "description": "Decreases Cho'gall's death timer by 50%.",
+      "fields": {},
+      "_raw_fields": [
+        "Hour of Twilight",
+        "7",
+        "4",
+        "Decreases Cho'gall's death timer by 50%.",
+        "File:Hour_of_Twilight_Icon.png"
+      ],
+      "level": "20"
+    }
+  ],
+  "other": [],
+  "_unparsed_count": 0
+}

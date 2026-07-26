@@ -1,0 +1,219 @@
+{{hero data
+| name = Falstad
+| date = March 13, 2014
+| price = 7000
+| title = Wildhammer Thane
+| role = Ranged
+| franchise = Warcraft
+| info = An Assassin who can fly large distances, excelling on large battlegrounds. 
+| lore = Falstad is the High Thane of the Wildhammer Clan and a founding member of the Council of Three Hammers that presides over Ironforge. Despite speculation, Falstad has never been dead and anyone who claims such is a liar.
+| difficulty = Medium
+| melee = False
+| health = 1365
+| healthRegen = 2.8437
+| resource = 500
+| resourceType = Mana
+| armor = 0
+| attackSpeed = 1.43
+| attackRange = 5.5
+| attackDamage = 104
+| healthScaling = 0.0400390625
+| regenScaling = 0.0400390625
+| adamageScaling = 0.0400390625
+| unitRadius = 0.8125
+| icon = File:Falstad_Icon.png
+
+| skills = 
+Tailwind;Trait;File:Tailwind_Icon.png;Gain 15% increased Movement Speed after not taking damage for 5 seconds.;6;;trait;False
+
+Hammerang;Q;File:Hammerang_Icon.png;Throw out a Hammer that returns to Falstad, dealing 80 damage and Slowing enemies by 25% for 2 seconds. Reactive to explode the hammer, dealing 95 damage to nearby enemies.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00390625%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Clamping]], Piercing [[Skillshot]]<!--
+-->|cast=<br>- Initial: 0.0625 + 0.125 seconds<br>- Reactivation: Instant<!--
+-->|range=11<!--
+-->|aoe=Circle<!--
+-->|radius=2.5<!--
+-->|hitbox=1.25 x 2.1<!--
+-->|missile=10<!--
+-->|notes=<li>Hammerang can hit a unit twice, once on both throw and return.<li>Reactivation area damage does not apply the Slow.}};10;60;;False
+
+Lightning Rod;W;File:Lightning_Rod_Icon.png;Deal 107 to an enemy, and an additional 75 damage per second for 3.75 seconds while close to the target. Deals 100% increased damage to Minions and Mercenaries.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00390625%<!--
+-->|affects=Enemies<!--
+-->|target=Unit target<!--
+-->|cast=Instant<!--
+-->|range=<br/>- Cast: 7.0<br/>- Active: 10.0<!--
+-->|tickrate=1.11 per second (x5, incl. initial)<!--
+-->|notes=<li>Target is validated every 0.25 seconds. If the target is untargetable or outside the active radius during the check, the Ability ends. Target momentarily leaving the active radius or becoming untargetable does not end the Ability, as long as they are valid for the next check.<li>Only one ''Lightning Rod'' may be active at a time. Recasting ''Lightning Rod'' on another Hero while it is still active causes only the initial damage to be dealt. Recasting ''Lightning Rod'' on the same Hero resets its duration.<li>Damage bonus to Minions and Mercenaries stacks additively with other offensive damage modifiers affecting <i>Lightning Rod</i>'s damage.}};12;60;;False
+
+Barrel Roll;E;File:Barrel_Roll_Icon.png;Dashes forward and grants a 171 point Shield for 3 seconds.<!--
+-->{{undoc-x|type=Shield, Movement: [[Launch]]<!--
+-->|scaling=4.00390625%<!--
+-->|affects=Self<!--
+-->|target=Point target<!--
+-->|props=[[Clamping]]<!--
+-->|cast=Instant<!--
+-->|range=7.0<!--
+-->|speed=24<!--
+-->|notes=}};13;70;;False
+
+Hinterland Blast;R;File:Hinterland_Blast_Icon.png;After 1 second, deal 475 damage to enemies within a long line. The cooldown is reduced by 30 seconds for every enemy Hero hit.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.76074219%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Channeled cast]] (stationary), [[Clamping]]<!--
+-->|cast=1.0 (ch) + 0 seconds<!--
+-->|aoe=Rectangle<!--
+-->|width=3.0<!--
+-->|height=32.5<!--
+-->|notes=<li>Interrupting the channel during its cast puts the ability on a 10 second cooldown.}};120;80;heroic;False
+
+Mighty Gust;R;File:Mighty_Gust_Icon.png;Push enemies away, and Slow their Movement Speed by 40% decaying over 4 seconds.<!--
+-->{{undoc-x|type=Crowd control<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Knockback]], Piercing [[Skillshot]], [[Slow]]<!--
+-->|cast=0.25 + 0.25 seconds<!--
+-->|range=19.5<!--
+-->|hitbox=8.0 x 3.0<!--
+-->|missile=32<!--
+-->|prop1=Knockback duration|val1=0.875 seconds<!--
+-->|prop2=Knockback speed|val2=14<!--
+-->|notes=<li>Always pushes a set distance regardless of the distance between Falstad and the affected enemy.}};60;70;heroic;False
+
+Flight;Z;File:Epic_Mount_Icon.png;Instead of mounting, Falstad can fly a great distance over terrain.<!--
+-->{{undoc-x|type=Movement: [[Launch]]<!--
+-->|range=75<!--
+-->|props=[[Channeled cast]] (stationary), [[Unstoppable]], [[Untargetable]]<!--
+-->|cast=2.0 (ch) + 0 seconds<!--
+-->|speed=25<!--
+-->|notes=<li>Cast can be canceled by issuing a 'move' or 'stop' command or be interrupted by enemy abilities that [[Stun]], [[Silence]], [[Stasis]] or [[Knockback]]. Taking damage does not interrupt the cast.<li>Interrupting the channel in any way puts ''Flight'' on a 10 second cooldown.<li>An indicator will display the landing location to both teams on the ground (for the enemy team, it only appears if within vision).}};75;;;False;
+
+| talents = <!-- LEVEL 1 -->
+Gathering Storm;1;1;{{Quest|Hit enemy Heroes with Hammerang. Restore 6 Mana for each Hero hit. Upon dying, lose 8 stacks.|After hitting 30 Heroes, Hammerang permanently deals 30% more damage.}}<p>{{Reward|After hitting 80 Heroes, Hammerang permanently deals an additional 50% damage.}}<p>{{Reward|After hitting 150 Heroes, Hammerang permanently deals an additional 70% damage.}}<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|notes=<li><i>Hammerang</i>'s reactivation also grants stacks and benefits from the damage bonus.<li>Continues to gain stacks after the quest reward is achieved.<li>Per hit and reward damage bonuses stack additively with themselves and other offensive damage modifiers that can affect <i>Hammerang</i>'s damage.}};File:Gathering_Storm_Icon.png;
+
+Dishonorable Discharge;1;2;{{Quest|After 3 Lightning Rod strikes, subsequent strikes on enemy Heroes increase its damage.|After 20 subsequent strikes, gain 30% damage.}}<p>{{Reward|After 45 subsequent strikes, gain an additional 75% damage and reduce the cooldown by 2 seconds.}}<p>{{Reward|After 75 subsequent strikes, <i>Lightning Rod</i> provides 2 additional strikes and Stuns enemy Heroes for 1.25 seconds on its last strike.}}<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|scaling=-<!--
+-->|affects=Ability<!--
+-->|notes=<li>Damage bonus affects both initial and periodic damage instances.<li>Damage bonus stacks additively with itself and offensive damage modifiers that can affect <i>Lightning Rod</i>'s damage.}};File:Dishonorable_Discharge_Icon.png;
+
+Frequent Flyer;1;3;{{Cooldown|60}}<p>Activate Frequent Flyer to gain 25% Attack Speed and Tailwind for 4 seconds.<p>{{Quest|Minion kills grant 1 stack. Hero Takedowns grant 5 stacks.|After 60 stacks, gain 20 Attack Damage.}}<p>{{Reward|After 150 stacks, gain 50 additional Attack Damage.}}<p>{{Reward|After 300 stacks, gain 125 additional Attack Damage.}}<!--
+-->{{undoc-x|type=Status effect (active) / Bonus damage (quest)<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|props=[[Attack Speed]]<!--
+-->|cast=Instant<!--
+-->|notes=<li>When ''Tailwind'' is activated through this talent, it cannot be interrupted by taking damage.<li>Minions that die in any way within 8.5 radius of Falstad grant quest progress.}};File:Frequent_Flyer_Icon.png;
+
+<!-- LEVEL 4 -->
+Static Shield;2;1;Gain a Shield equal to 4% of Falstad's maximum Health after every Lightning Rod strike. Lasts 4 seconds and stacks.<!--
+-->{{undoc-x|type=Shield<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|prop1=Maximum Shield|val1=28% (x7)<!--
+-->|notes=<li>Duration is refreshed on every consecutive lightning strike.}};File:Static_Shield_Icon.png;
+
+Updraft;2;2;Increases Barrel Roll's range by 40% and Shield amount by 70% and its Shield now lasts indefinitely.<!--
+-->{{undoc-x|type=Bonus Shield<!--
+-->|scaling=-<!--
+-->|affects=Ability<!--
+-->|prop1=Bonus range|val1=2.8<!--
+-->|notes=<li>Shield does not stack with itself.}};File:Updraft_Icon.png;
+
+Hammer Gains;2;3;Basic Attacks heal for 20% of the damage dealt to the primary target.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|props=[[Attack Modifier]] (all), [[Lifesteal]]<!--
+-->|notes=}};File:Hammer_Gains_Icon.png;
+
+<!-- LEVEL 7 -->
+Secret Weapon;3;1;Increases Hammerang's range by 30% and Basic Attacks deal 75% bonus damage while Hammerang is in flight.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Self<!--
+-->|prop1=Bonus range|val1=3.0<!--
+-->|notes=<li>Stacks additively with other offensive damage modifiers affecting Falstad's Basic Attack damage.}};File:Secret_Weapon_Icon.png;
+
+BOOMerang;3;2;Hammerang's explosion deals 100% additional damage, and hitting enemy Heroes reduces their Spell Armor by 15 for 3 seconds.<!--
+-->{{undoc-x|type=Defensive damage modifier / Offensive damage modifier<!--
+-->|affects=Enemy Heroes / Ability<!--
+-->|props=[[Spell Armor]] reduction<!--
+-->|notes=<li>Only <i>Hammerang</i>'s explosion applies the Spell Armor reduction.<li>Damage bonus stacks additively with other offensive damage modifiers that can affect <i>Hammerang</i>'s explosion damage.<li>Does not stack with other negative Spell Armor effects. Other defensive damage modifiers may stack.}};File:BOOMerang_Icon.png;
+
+Thunderstrikes;3;3;Lightning Rod deals 25% more damage each subsequent strike.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|prop1=Maximum damage bonus|val1=150% (x6)<!--
+-->|notes=<li>Damage bonus is immediately reset every time ''Lightning Rod'' is cast.<li>Damage bonus is applied 0.5 seconds after the damage is dealt, including the initial damage instance.<li>Damage bonus stacks additively with itself and other offensive damage modifiers affecting <i>Lightning Rod</i>'s damage.}};File:Thunderstrikes_Icon.png;
+
+<!-- LEVEL 10 -->
+Hinterland Blast;4;1;{{cooldown|120}}<br>After 1 second, deal 475 damage to enemies within a long line. The cooldown is reduced by 30 seconds for every enemy Hero hit.;File:Hinterland_Blast_Icon.png;
+Mighty Gust;4;2;{{cooldown|60}}<br>Push enemies away, and Slow their Movement Speed by 40% decaying over 4 seconds.;File:Mighty_Gust_Icon.png;
+
+<!-- LEVEL 13 -->
+Charged Up;5;1;Increases Lightning Rod range by 25%. Hero Takedowns reset Lightning Rod's cooldown.<!--
+-->{{undoc-x|prop1=Bonus range|val1=<br/>- Cast: 1.875<br/>- Active: 1.875<!--
+-->|notes=}};File:Charged_Up_Icon.png;
+
+Flow Rider;5;2;While Tailwind is active, Falstad's Basic Abilities recharge 100% faster.;File:Flow_Rider_Icon.png;
+
+Sustained Winds;5;3;Basic Attacks against enemy Heroes deal bonus damage equal to 1.5% of the Hero's maximum Health, increased to 2% while Tailwind is active.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=-<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Attack Modifier]] (heroes), [[Percent Damage]]<!--
+-->|notes=}};File:Sustained_Winds_Icon.png;
+
+<!-- LEVEL 16 -->
+Crippling Hammer;6;1;Increases Hammerang's Slow from 25% to 50%, and Hammerang's explosion also Slows.;File:Crippling_Hammer_Icon.png;
+
+Aerie Gusts;6;2;Reduces the activation time for Tailwind from 5 to 3 seconds, and increases the Movement Speed bonus from 15% to 25%.;File:Aerie_Gusts_Icon.png;
+
+Afterburner;6;3;Barrel Roll increases Movement Speed by 60%, decaying over 3 seconds.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|props=[[Movement speed]]<!--
+-->|notes=}};File:Afterburner_Icon.png;
+
+<!-- LEVEL 20 -->
+Call of the Wildhammer;7;1;Hinterland Blast has double the range and deals 25% more damage.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|notes=<li>Stacks additively with other offensive damage modifiers affecting <i>Hinterland Blast</i>.}};File:Call_of_the_Wildhammer_Icon.png;
+
+Wind Tunnel;7;2;Mighty Gust creates a wind tunnel for 4 seconds. Enemies caught in the tunnel will periodically be pushed back.<!--
+-->{{undoc-x|type=Crowd control<!--
+-->|affects=Enemies<!--
+-->|props=[[Knockback]]<!--
+-->|tickrate=2.0 per second (x8)<!--
+-->|prop1=Knockback duration|val1=0.125<!--
+-->|prop2=Knockback speed|val2=4.84<!--
+-->|notes=<li><i>Wind Tunnel</i>'s pulses do not Slow.}};File:Wind_Tunnel_Icon.png;
+
+Nexus Frenzy;7;3;Increases Attack Speed by 20% and Attack Range by 1.1.;File:Nexus_Frenzy_Icon.png;
+
+Epic Mount;7;4;Reduce the cooldown of Flight by 50 seconds, reduce the cast time before flying to 0.5 seconds, and increase the travel speed by 50%.<!--
+-->{{undoc-x|type=Cooldown reduction<!--
+-->|notes=}};File:Epic_Mount_Icon.png;
+}}
+
+<noinclude>
+{{Scaling table/start|{{#var:health}}|{{#var:health scaling}}|{{#var:health regen}}|{{#var:health regen scaling}}|{{#var:attack damage}}|{{#var:attack damage scaling}}}}
+{{Scaling table/slot|Hammerang (primary)|80|0.0400390625}}
+{{Scaling table/slot|Hammerang (explosion)|95|0.0400390625}}
+{{Scaling table/slot|Lightning Rod (initial)|107|0.0400390625}}
+{{Scaling table/slot|Lightning Rod (periodic)|75|0.0400390625}}
+{{Scaling table/slot|Barrel Roll (Shield)|171|0.0400390625}}
+{{Scaling table/slot|Hinterland Blast|475|0.0476074219|10}}
+{{Scaling table/end}}
+</noinclude>

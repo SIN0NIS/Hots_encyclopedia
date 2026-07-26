@@ -1,0 +1,239 @@
+{{hero data
+| name = Fenix
+| date = March 27, 2018
+| price = 10000
+| title = Steward of the Templar
+| role = Ranged
+| franchise = Starcraft
+| info = A sustained damage Assassin with a regenerating Shield that enables him to efficiently duel his opponents.
+| lore = As one of the greatest heroes in Protoss history, Fenix's deeds on the battlefield are legendary. After falling to the Zerg during the invasion of Aiur, his body was recovered and implanted into a dragoon so he could continue to fight. Not even death can stop Fenix from achieving glory and valor.
+| difficulty = Medium
+| melee = False
+| health = 1140
+| healthRegen = 2.379
+| resource =
+| resourceType = None
+| armor = 0
+| attackSpeed = 0.74
+| attackRange = 5.0
+| attackDamage = 83
+| healthScaling = 0.04
+| regenScaling = 0.04
+| adamageScaling = 0.04
+| unitRadius = 1.0625
+| icon = 
+| skills = 
+Shield Capacitor;Trait;File:Shield_Capacitor_Fenix_Icon.png;Fenix has a permanent 760 Shield which regenerates at 10% per second after not taking damage for 5 seconds.<!--
+-->{{undoc-x|type=Shield<!--
+-->|scaling=4.00%<!--
+-->|affects=Self<!--
+-->|tickrate=1.0 per second<!--
+-->|notes=}};;;trait;False
+
+Plasma Cutter;Q;File:Plasma_Cutter_Icon.png;Create a laser beam at the target point that circles around Fenix twice, dealing 135 damage to enemies hit and Slowing them by 25% for 4 seconds.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Clamping]], [[Slow]]<!--
+-->|cast=Instant<!--
+-->|range=<br>- Minimum: 1.5<br>- Maximum: 6.0<!--
+-->|aoe=Circle<!--
+-->|radius=0.7<!--
+-->|prop1=Cycle duration|val1=1.5 seconds<!--
+-->|notes=<li>Enemies can be hit by ''Plasma Cutter'' multiple times within the same cast, but not more often than once every 0.5 seconds.<li>Damage is dealt before any additional effects of ''Plasma Cutter'' or associated Talents are applied.}};12;;;False
+
+Weapon Mode: Repeater Cannon;W;File:Weapon Mode Repeater Cannon Icon.png;Basic Attack speed increased by 150%.<p>Activate to change to '''{{Weapon Mode|Phase Bomb}}''', increasing Basic Attack range and damage and causing Basic Attacks to splash.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|target=No target (toggle)<!--
+-->|props=[[Attack Modifier]], [[Attack Speed]]<!--
+-->|cast=Instant<!--
+-->|notes=<li>Repeater Cannon's single-target DPS is twice that of Phase Bomb.<li>Switching weapon modes does not dismount nor does it interrupt mounting, hearthing or channeling objectives.<li>Attack Speed stacks additively with other effects that can affect Fenix's Attack Speed.}};0.5;;;False
+
+Weapon Mode: Phase Bomb;W;File:Weapon Mode Phase Bomb Icon.png;Basic Attacks have 1.25 increased range, deal 25% more damage, and splash to nearby enemies.<p>Activate to change to '''{{Weapon Mode|Repeater Cannon}}''', increasing Basic Attack Speed.<!--
+-->{{undoc-x|type=Bonus damage / Physical Damage<!--
+-->|scaling=-<!--
+-->|affects=Self / Enemies<!--
+-->|target=No target (toggle)<!--
+-->|props=[[Attack Modifier]], [[Splash]]<!--
+-->|cast=Instant<!--
+-->|prop1=Splash radius|val1=3.0<!--
+-->|notes=<li>Damage bonus is implemented as a direct base damage increase, causing it to stack '''multiplicatively''' with offensive damage modifiers.<li>Switching weapon modes does not reset Fenix's auto-attack timer. The auto-attack timer ticks from its current completion percentage according to the weapon mode currently selected. Therefore, by attacking exclusively with Phase Bomb and quickly switching to Repeater Cannon and back just between auto-attacks (ideally staying in Repeater Cannon mode for all of the auto-attack downtime), Fenix can benefit from the bonus range, damage, and splash damage of Phase Bomb as well as the bonus attack speed of Repeater Cannon.}};0.5;;;False
+
+Warp;E;File:Warp_Icon.png;Warp to a targeted location, phasing out after 0.5 seconds, and arriving 0.75 seconds later.<!--
+-->{{undoc-x|type=Movement: [[Teleport]], Status effect<!--
+-->|affects=Self<!--
+-->|target=Point target<!--
+-->|props=[[Channeled cast]] (stationary) [[Clamping]], [[Pseudo-Stasis]]<!--
+-->|cast=0.5 (ch) + 0 seconds<!--
+-->|range=9.0<!--
+-->|notes=<li>Interrupting ''Warp'' during its cast puts it on full cooldown.<li>While phased out Fenix is put in [[Stasis]]. However, he does not get the debuff removal most Stasis effects give.}};17;;;False
+
+Purification Salvo;R;File:Purification_Salvo_Icon.png;Channel for 1.5 seconds, sweeping a laser in front of Fenix that locks onto enemy Heroes. Once Channeling finishes, fire 5 missiles at each locked Hero, dealing 79 damage each. Deals 50% increased damage to [[Slow]]ed targets.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemy Heroes<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Clamping]], [[Mobile channel]]<!--
+-->|cast=0.0625 + CH + 0 seconds<!--
+-->|aoe=Radial<!--
+-->|radius=13.25<!--
+-->|arc=180 degrees <sup>(1</sup><!--
+-->|prop1=Channel time|val1=1.5 seconds<!--
+-->|prop2=Missile fire delay|val2=0.5 seconds<!--
+-->|prop3=Missile interval|val3=0.125 seconds<!--
+-->|notes=<li><sup>1)</sup> Scan is performed in twenty-four 7.5 degree sections rotating counter-clockwise over 1.5 seconds and only detects visible enemy Heroes.<li>Fenix cannot attack or use his Abilities while channeling.<li>Interrupting the Ability during the channeled targeting period puts it on a 10-second cooldown.<li>''Purification Salvo'' missiles can only be disjointed if the target dies, is removed from the plane (certain [[Stasis]] effects) or instantly teleports farther than 60 units from its previous location. When disjointed, the missile expires upon reaching the target's location before the event. Otherwise, the missiles will keep redirecting to the target unit.<li>Damage bonus stacks additively with other offensive damage modifiers that can affect <i>Purification Salvo</i>'s damage.}};90;;heroic;False
+
+Planet Cracker;R;File:Planet_Cracker_Icon.png;After 0.5 seconds, Channel a powerful beam that spans across the battleground for 4 seconds, dealing 112 damage every 0.25 seconds to non-Structure enemies hit.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Non-Structure enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Channeled cast]] (stationary), [[Stationary channel]]<!--
+-->|cast=0.5 (ch) + CH + 0 seconds<!--
+-->|range=Global<!--
+-->|aoe=Rectangle<!--
+-->|tickrate=4.0 per second (x16)<!--
+-->|notes=<li>Interrupting the Ability during its 0.5 second windup channel puts it on a 10 second cooldown.<li>''Planet Cracker'' can be reactivated after 1 second to end its effect early.}};100 / 1.0;;heroic;False;
+
+| talents =
+Advanced Targeting;1;1;{{quest|Hitting enemy Heroes with Plasma Cutter permanently increases Fenix's Basic Attack damage by 0.5, up to 60.|After hitting 30 Heroes, Plasma Cutter circles an additional time.}}<!--
+-->{{undoc-x|type=Bonus damage<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|notes=<li>Bonus damage from ''Advanced Targeting'' does not benefit from <i>Weapon Mode: Phase Bomb</i>'s damage multiplier.}};File:Advanced Targeting Icon.png;
+
+Arsenal Synergy;1;2;After hitting enemy Heroes with Basic Attacks 3 times while Repeater Cannon is active, the next Basic Attack with Phase Bomb deals 150% more damage and splashes in a 50% larger area.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Attack Modifier]]<!--
+-->|prop1=Bonus splash radius|val1=1.5<!--
+-->|notes=<li>Damage bonus stacks additively with other offensive damage modifiers that can affect Fenix's Basic Attack damage.}};File:Arsenal Synergy Icon.png;
+
+Mobile Offense;1;3;After moving, Fenix's next Basic Attack deals 35% more damage to Heroes.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Attack Modifier]]<!--
+-->|notes=<li>Damage bonus stacks additively with other offensive damage modifiers that can affect Fenix's Basic Attack damage.<li>The bonus damage vs Heroes applies to splash damage as well, even if the primary target is non-Heroic.}};File:Mobile Offense Icon.png;
+
+<!-- LEVEL 4 -->
+Target Acquired;2;1;Basic Attacks against Slowed Heroes with Repeater Cannon active grant 10% Movement Speed for 4 seconds, up to 40%.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|props=[[Attack Modifier]], [[Movement speed]]<!--
+-->|notes=<li>Stacks additively with itself, but not with other sources of Movement Speed.}};File:Target Acquired Icon.png;
+
+Inhibiting Energy;2;2;Every 10 seconds, Fenix's next Basic Attack with Phase Bomb active Slows all enemies hit by 60%, decaying in strength over 1.5 seconds.<!--
+-->{{undoc-x|type=Crowd control<!--
+-->|affects=Enemies<!--
+-->|props=[[Attack Modifier]],[[Slow]]<!--
+-->|notes=<li>Goes on full cooldown if Fenix's Basic Attack misses due to [[Blind]]s, but does not go on cooldown if it misses due to the target Evading.}};File:Inhibiting Energy Icon.png;
+
+Emergency Protocol;2;3;While Fenix has shields from Shield Capacitor, he gains 10% Movement Speed. This bonus is increased to 15% when Fenix loses shields from Shield Capacitor.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|props=[[Movement speed]]<!--
+-->|notes=<li>Does not stack with other sources of Movement Speed.}};File:Emergency Protocol Icon.png;
+
+<!-- LEVEL 7 -->
+Combat Advantage;3;1;Plasma Cutter deals 35% more damage to Slowed targets.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|notes=<li>Damage bonus stacks additively with other offensive damage modifiers that can affect <i>Plasma Cutter</i>'s damage.}};File:Combat Advantage Icon.png;
+
+Warp Warfare;3;2;After arriving with Warp, gain 175% Attack Speed for 4 seconds while in Repeater Cannon mode. Hero Takedowns reset Warp's cooldown.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|props=[[Attack Speed]]<!--
+-->|notes=<li>Stacks additively with Attack Speed bonus from ''Weapon Mode: Repeater Cannon'' and other effects that can affect Fenix's Attack Speed.}};File:Warp Warfare Icon.png;
+
+Divert Power: Weapons;3;3;{{Cooldown|40}}<br/>{{Active}} Activate to gain 40% Basic Attack damage for 5 seconds. Basic Attacking a Hero refreshes this duration. Once Divert Power: Weapons ends, drain all of Shield Capacitor's Shields.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Self<!--
+-->|notes=<li>Cooldown starts ticking immediately when the Ability is cast.<li>Damage bonus stacks additively with other offensive damage modifiers that can affect Fenix's Basic Attack damage.}};File:Divert Power Weapon Icon.png;
+
+<!-- LEVEL 10 -->
+Purification Salvo;4;1;{{Cooldown|90}}<br/>Channel for 1.5 seconds, sweeping a laser in front of Fenix that locks onto enemy Heroes. Once Channeling finishes, fire 5 missiles at each locked Hero, dealing 79 damage each. Deals 50% increased damage to Slowed targets. ;File:Purification Salvo Icon.png;
+Planet Cracker;4;2;{{Cooldown|100}}<br/>After 0.5 seconds, Channel a powerful beam that spans across the battleground for 4 seconds, dealing 112 damage every 0.25 seconds to non-Structure enemies hit.;File:Planet Cracker Icon.png;
+
+<!-- LEVEL 13 -->
+Adanium Shell;5;1;After arriving with Warp, gain 50 Armor for 4 seconds.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Armor]]<!--
+-->|notes=<li>Does not stack with other positive Armor effects. Other defensive damage modifiers may stack.}};File:Adanium Shell Icon.png;
+
+Dampening Field;5;2;Fenix gains 30 Spell Armor while he has a Shield from Shield Capacitor.<!--
+-->{{undoc-x|type=Defensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Spell Armor]]<!--
+-->|notes=<li>Does not stack with other positive Spell Armor Effects. Other defensive damage modifiers may stack.}};File:Dampening Field Icon.png;
+
+Rapid Recharge;5;3;The time before Shield Capacitor begins regenerating after taking damage is reduced by 2 seconds. Whenever Fenix is healed, Shield Capacitor's Shield recharges for 60% of the healing received.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=-<!--
+-->|affects=Fenix's Shield<!--
+-->|notes=<li>Shield healing can be increased or decreased based on Fenix's [[Spell Power]].}};File:Rapid Recharge Icon.png;
+
+Auxiliary Shields;5;4;Permanently reduce Fenix's maximum Health by 30% but increase Shield Capacitor's Shield by 40%. Basic Attacks regenerate Shields equal to 10% of the damage dealt.<!--
+-->{{undoc-x|type=Shield<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|props=[[Attack Modifier]]<!--
+-->|notes=<li>This lowers overall Fenix's effective Health pool (including Shields) by 2%.<li>Shield gain is calculated from final damage dealt after all damage modifications.
+}};File:Auxiliary Shields Icon.png;
+
+<!-- LEVEL 16 -->
+Offensive Cadence;6;1;Every 3rd Basic Attack against Heroes while Repeater Cannon is active deals an additional 6% of the target's maximum Health as damage.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=-<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Attack Modifier]], [[Percent Damage]]}};File:Offensive Cadence Icon.png;
+
+Photonic Weaponry;6;2;Fenix deals 20% more damage while he has a Shield from Shield Capacitor.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Self<!--
+-->|notes=<li>Affects damage dealt by both Basic Attacks and all Abilities.<li>Damage bonus stacks additively with other offensive damage modifiers that can affect Fenix's damage.}};File:Photonic Weaponry Icon.png;
+
+Arsenal Overcharge;6;3;Basic Attacks with Repeater Cannon reduce Ability cooldowns by 0.5 seconds. Basic Attacks with Phase Bomb active reduce Ability cooldowns by 0.5 seconds per Hero hit.<!--
+-->{{undoc-x|props=[[Attack Modifier]], Cooldown reduction<!--
+-->|notes=<li>Affects both Basic and Heroic Abilities, but not Trait or Talents that have a cooldown.<li>''Repeater Cannon'' attacks do not require the target to be a Hero.<li>Phase Bomb does not grant cooldown reduction for the primary target hit, even if it is a Hero.<li>Phase Bomb attack cooldown reduction is capped at 1.5 seconds per Basic Attack (i.e. 3 Heroes).}};File:Arsenal Overcharge Icon.png;
+
+<!-- LEVEL 20 -->
+Armageddon Beam;7;1;Planet Cracker's width increases by 100% over 1.5 seconds.<p>{{Passive}} Reduce Planet Cracker's cooldown by 40 seconds.<!--
+-->{{undoc-x|prop1=Bonus width|val1=2.5}};File:Armageddon_Beam_Icon.png;
+
+Secondary Fire;7;2;Hitting an enemy Hero with Plasma Cutter fires a Purification Salvo missile at them after 0.5 seconds, dealing 79 damage. Deals 50% increased damage to Slowed targets.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemy Heroes<!--
+-->|notes=<li>Damage bonus stacks additively with other offensive damage modifiers that can affect Fenix's Spell Damage.}};File:Secondary Fire Icon.png;
+
+Singularity Charge;7;3;Repeater Cannon grants 100% more Attack Speed, and Phase Bomb grants 1.25 more range.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|props=[[Attack Speed]]<!--
+-->|notes=<li>Stacks additively with Attack Speed bonus from ''Weapon Mode: Repeater Cannon'' and other effects that can affect Fenix's Attack Speed.}};File:Singularity Charge Icon.png;
+
+Unconquered Spirit;7;4;Upon taking fatal damage, Shield Capacitor regains 800 Shields. This effect has a 120 second cooldown.<!--
+-->{{undoc-x|type=Healing<!--
+-->|scaling=4.00%<!--
+-->|affects=Fenix's Shield<!--
+-->|notes=}};File:Unconquered Spirit Icon.png;
+
+}}
+<noinclude>
+{{Scaling table/start|{{#var:health}}|{{#var:health scaling}}|{{#var:health regen}}|{{#var:health regen scaling}}|{{#var:attack damage}}|{{#var:attack damage scaling}}}}
+{{Scaling table/slot|Shield Capacitor (shield)|760|0.04}}
+{{Scaling table/slot|Shield Capacitor (regen)|76|0.04}}
+{{Scaling table/slot|Plasma Cutter|135|0.04}}
+{{Scaling table/slot|Purification Salvo (single)|79|0.04|10}}
+{{Scaling table/slot|Purification Salvo (x5)|395|0.04|10}}
+{{Scaling table/slot|Planet Cracker (single)|112|0.04|10}}
+{{Scaling table/slot|Planet Cracker (per second)|448|0.04|10}}
+{{Scaling table/slot|Secondary Fire|79|0.04|20}}
+{{Scaling table/slot|Unconquered Spirit|800|0.04|20}}
+{{Scaling table/end}}
+</noinclude>

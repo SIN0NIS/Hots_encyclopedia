@@ -1,0 +1,549 @@
+{
+  "hero": "Uther",
+  "abilities": [
+    {
+      "name": "Devotion",
+      "hotkey": "TRAIT",
+      "icon": "Eternal_Devotion_Icon.png",
+      "description": "Uther's Basic Abilities grant 25 Armor to allied Heroes, and 15 to Uther, for 2 seconds. Eternal Vanguard Upon dying, Uther becomes an Invulnerable spirit for up to 8 seconds. While in spirit form, Uther can heal allies with Flash of Light.; trait",
+      "fields": {
+        "type": "Special death state",
+        "affects": "Self",
+        "props": "Armor",
+        "notes": "Eternal Vanguard can pass through enemy gates."
+      }
+    },
+    {
+      "name": "Holy Light",
+      "hotkey": "Q",
+      "icon": "Holy_Light_Icon.png",
+      "description": "Heal target ally for 362 Health. When used on a target other than Uther, also heal Uther for 181 Health.",
+      "fields": {
+        "type": "Healing",
+        "scaling": "4.00%",
+        "affects": "Allied Heroes, Self",
+        "target": "Unit target",
+        "cast": "Instant",
+        "range": "7.0",
+        "cooldown": "12",
+        "cost": "80"
+      }
+    },
+    {
+      "name": "Flash of Light",
+      "hotkey": "Q",
+      "icon": "Flash_of_Light_Icon.png",
+      "description": "Heal an ally for 242 Health.",
+      "fields": {
+        "type": "Healing",
+        "scaling": "4.00%",
+        "affects": "Allies",
+        "target": "Unit target",
+        "cast": "Instant",
+        "range": "7.0",
+        "notes": "Flash of Light applies Devotion. Flash of Light is a separate ability from Holy Light and thus does not interact with any talents affecting it.",
+        "cooldown": "1.5"
+      }
+    },
+    {
+      "name": "Holy Radiance",
+      "hotkey": "W",
+      "icon": "Holy_Radiance_Icon.png",
+      "description": "Heal allied Heroes and Minions in a line for 194 Health, dealing 177 damage to enemies.",
+      "fields": {
+        "type": "Spell Damage / Healing",
+        "scaling": "4.00% (both)",
+        "affects": "Enemies / Allied Heroes & Minions, Self",
+        "target": "Point target",
+        "props": "Clamping, Piercing Skillshot",
+        "cast": "0.15 + 0 seconds",
+        "range": "10",
+        "hitbox": "2.5 x 2.5",
+        "missile": "20",
+        "notes": "Also hits Uther.",
+        "cooldown": "10",
+        "cost": "55"
+      }
+    },
+    {
+      "name": "Hammer of Justice",
+      "hotkey": "E",
+      "icon": "Hammer_of_Justice_Icon.png",
+      "description": "Deal 109 damage and Stun the target for 1 second.",
+      "fields": {
+        "type": "Spell Damage, Crowd control",
+        "scaling": "4.00%",
+        "affects": "Non-Structure enemies",
+        "target": "Unit target",
+        "props": "Stun",
+        "cast": "0.15 + 0 seconds",
+        "range": "3.0",
+        "notes": "Cast is interrupted without putting the ability on cooldown if the target moves more than 1.5 units past its maximum range. Unstoppable enemies can be targeted, but they will only be damaged upon being hit by Hammer of Justice.",
+        "cooldown": "10",
+        "cost": "40"
+      }
+    },
+    {
+      "name": "Divine Shield",
+      "hotkey": "R",
+      "icon": "Divine_Shield_Icon.png",
+      "description": "Make an allied Hero Invulnerable and increase their Movement Speed by 20% for 3 seconds.; 90; 80; heroic",
+      "fields": {
+        "type": "Status effect",
+        "affects": "Allied Heroes, Self",
+        "target": "Unit target",
+        "props": "Invulnerable, Movement speed",
+        "cast": "0 + 0.3 seconds",
+        "range": "10"
+      }
+    },
+    {
+      "name": "Divine Storm",
+      "hotkey": "R",
+      "icon": "Divine_Storm_Icon.png",
+      "description": "Deal 170 damage and Stun nearby enemies for 1.75 seconds.; 80; 80; heroic",
+      "fields": {
+        "type": "Spell Damage, Crowd control",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "target": "No target",
+        "props": "Area of Effect, Stun",
+        "cast": "0.1 + 0.1 seconds",
+        "aoe": "Circle",
+        "radius": "3.5"
+      }
+    }
+  ],
+  "talents": [
+    {
+      "name": "Silver Touch",
+      "tier": "1",
+      "slot": "1",
+      "icon": "Holy_Light_Icon.png",
+      "description": "quest Reduce damage from Heroic sources with Devotion. After reducing damage 40 times, Holy Light's Mana cost is reduced from 80 to 60. reward After reducing damage 80 times, Holy Light's Mana cost is reduced to 40, and its range is increased by 50%.",
+      "fields": {
+        "prop1": "Bonus range",
+        "val1": "3.5"
+      },
+      "_raw_fields": [
+        "Silver Touch",
+        "1",
+        "1",
+        "quest Reduce damage from Heroic sources with Devotion. After reducing damage 40 times, Holy Light's Mana cost is reduced from 80 to 60. reward After reducing damage 80 times, Holy Light's Mana cost is reduced to 40, and its range is increased by 50%.",
+        "File:Holy_Light_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Wave of Light",
+      "tier": "1",
+      "slot": "2",
+      "icon": "Holy_Radiance_Icon.png",
+      "description": "quest Damage or heal Heroes 60 times with Holy Radiance. Increase the duration of Devotion by 0.5 seconds. Passive Damaging or healing Heroes with Holy Radiance refunds 5 Mana and reduces its cooldown by 0.75 seconds.",
+      "fields": {
+        "type": "Mana restoration",
+        "scaling": "-",
+        "affects": "Self"
+      },
+      "_raw_fields": [
+        "Wave of Light",
+        "1",
+        "2",
+        "quest Damage or heal Heroes 60 times with Holy Radiance. Increase the duration of Devotion by 0.5 seconds. Passive Damaging or healing Heroes with Holy Radiance refunds 5 Mana and reduces its cooldown by 0.75 seconds.",
+        "File:Holy_Radiance_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Hammer of the Lightbringer",
+      "tier": "1",
+      "slot": "3",
+      "icon": "Hammer of the Lightbringer Icon.png",
+      "description": "quest Basic Attack enemies 75 times. Basic Attacks reduce the cooldown of Hammer of Justice by 1.5 seconds. Passive Basic Attacks restore 1.5% of Uther's maximum Mana.",
+      "fields": {
+        "type": "Mana restoration, Cooldown reduction",
+        "scaling": "-",
+        "affects": "Self",
+        "props": "Attack Modifier"
+      },
+      "_raw_fields": [
+        "Hammer of the Lightbringer",
+        "1",
+        "3",
+        "quest Basic Attack enemies 75 times. Basic Attacks reduce the cooldown of Hammer of Justice by 1.5 seconds. Passive Basic Attacks restore 1.5% of Uther's maximum Mana.",
+        "File:Hammer of the Lightbringer Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Holy Shock",
+      "tier": "2",
+      "slot": "1",
+      "icon": "Holy_Light_Icon.png",
+      "description": "Holy Light can be used on an enemy to do 40% of its healing amount as damage. When used this way, Uther receives its self-healing benefits, its cooldown is reduced by 6 seconds, and it refunds 45 Mana.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "-",
+        "affects": "Enemies",
+        "target": "Unit target",
+        "range": "10",
+        "notes": "Benefits from all talents affecting Holy Light."
+      },
+      "_raw_fields": [
+        "Holy Shock",
+        "2",
+        "1",
+        "Holy Light can be used on an enemy to do 40% of its healing amount as damage. When used this way, Uther receives its self-healing benefits, its cooldown is reduced by 6 seconds, and it refunds 45 Mana.",
+        "File:Holy_Light_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Pursuit of Justice",
+      "tier": "2",
+      "slot": "2",
+      "icon": "Hammer_of_Justice_Icon.png",
+      "description": "Hammer of Justice increases Uther's Movement Speed by 25% for 3 seconds.",
+      "fields": {
+        "type": "Status effect",
+        "affects": "Self",
+        "props": "Movement speed"
+      },
+      "_raw_fields": [
+        "Pursuit of Justice",
+        "2",
+        "2",
+        "Hammer of Justice increases Uther's Movement Speed by 25% for 3 seconds.",
+        "File:Hammer_of_Justice_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Holy Fire",
+      "tier": "2",
+      "slot": "3",
+      "icon": "Holy Fire Icon.png",
+      "description": "Deal 13 damage per second to nearby enemies. Basic Attacks against enemy Heroes increase this damage by 20% for 3 seconds. This can stack up to 3 times.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "props": "Area of Effect, Attack Modifier",
+        "aoe": "Circle",
+        "radius": "3.5",
+        "tickrate": "1.0 per second",
+        "notes": "Holy Fire is inactive while Mounted. Holy Fire does not affect unaggroed neutral Mercenaries. Damaging enemy Heroes with Holy Fire does not trigger tower aggro. Damage from Holy Fire is unaffected by external offensive damage modifiers and lifesteal effects. Damage bonus from itself stacks additively."
+      },
+      "_raw_fields": [
+        "Holy Fire",
+        "2",
+        "3",
+        "Deal 13 damage per second to nearby enemies. Basic Attacks against enemy Heroes increase this damage by 20% for 3 seconds. This can stack up to 3 times.",
+        "File:Holy Fire Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Armor of Faith",
+      "tier": "3",
+      "slot": "1",
+      "icon": "Holy_Light_Icon.png",
+      "description": "Being Stunned, Rooted, or Silenced grants Uther 90 Mana and causes Holy Light's cooldown to recharge 200% faster for 6 seconds. This effect has a 20 second cooldown.",
+      "fields": {},
+      "_raw_fields": [
+        "Armor of Faith",
+        "3",
+        "1",
+        "Being Stunned, Rooted, or Silenced grants Uther 90 Mana and causes Holy Light's cooldown to recharge 200% faster for 6 seconds. This effect has a 20 second cooldown.",
+        "File:Holy_Light_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Guardian of Ancient Kings",
+      "tier": "3",
+      "slot": "2",
+      "icon": "Eternal_Devotion_Icon.png",
+      "description": "Healing a Hero with a Basic Ability that is Stunned, Rooted, or Silenced grants them 50 Armor for 3 seconds.",
+      "fields": {
+        "type": "Defensive damage modifier",
+        "affects": "Allied Heroes, Self",
+        "props": "Armor",
+        "notes": "Does not stack with other positive Armor effects. Other defensive damage modifiers may stack."
+      },
+      "_raw_fields": [
+        "Guardian of Ancient Kings",
+        "3",
+        "2",
+        "Healing a Hero with a Basic Ability that is Stunned, Rooted, or Silenced grants them 50 Armor for 3 seconds.",
+        "File:Eternal_Devotion_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Hand of Protection",
+      "tier": "3",
+      "slot": "3",
+      "icon": "Cleanse_Icon.png",
+      "description": "Cooldown 90 Activate to make target ally Unstoppable for 1 second. Cannot be cast on Uther. Basic Attacks reduce Hand of Protection's cooldown by 5 seconds.",
+      "fields": {
+        "type": "Status effect",
+        "affects": "Allied Heroes",
+        "target": "Unit target",
+        "props": "Attack Modifier, Unstoppable",
+        "cast": "Instant",
+        "range": "10"
+      },
+      "_raw_fields": [
+        "Hand of Protection",
+        "3",
+        "3",
+        "Cooldown 90 Activate to make target ally Unstoppable for 1 second. Cannot be cast on Uther. Basic Attacks reduce Hand of Protection's cooldown by 5 seconds.",
+        "File:Cleanse_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Divine Shield",
+      "tier": "4",
+      "slot": "1",
+      "icon": "Divine_Shield_Icon.png",
+      "description": "Cooldown 90 Make an allied Hero Invulnerable and increase their Movement Speed by 20% for 3 seconds.",
+      "fields": {},
+      "_raw_fields": [
+        "Divine Shield",
+        "4",
+        "1",
+        "Cooldown 90 Make an allied Hero Invulnerable and increase their Movement Speed by 20% for 3 seconds.",
+        "File:Divine_Shield_Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Divine Storm",
+      "tier": "4",
+      "slot": "2",
+      "icon": "Divine_Storm_Icon.png",
+      "description": "Cooldown 80 Deal 170 damage and stun nearby enemies for 1.75 seconds.",
+      "fields": {},
+      "_raw_fields": [
+        "Divine Storm",
+        "4",
+        "2",
+        "Cooldown 80 Deal 170 damage and stun nearby enemies for 1.75 seconds.",
+        "File:Divine_Storm_Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Blessed Champion",
+      "tier": "5",
+      "slot": "1",
+      "icon": "Blessed_Champion_Icon.png",
+      "description": "For the next 5 seconds after using Holy Light, Uther's Basic Attacks heal him and nearby allies for 15% of the total amount healed by Holy Light.",
+      "fields": {
+        "type": "Healing",
+        "scaling": "-",
+        "affects": "Allies, Self",
+        "props": "Area of Effect, Attack Modifier",
+        "aoe": "Circle",
+        "radius": "6.5",
+        "notes": "Healing from Blessed Champion does not apply Devotion. The healing amount is calculated from the sum of Holy Light 's allied and self-heal after modifications (bonuses and reductions). Healing past target's maximum Health does not count toward this amount."
+      },
+      "_raw_fields": [
+        "Blessed Champion",
+        "5",
+        "1",
+        "For the next 5 seconds after using Holy Light, Uther's Basic Attacks heal him and nearby allies for 15% of the total amount healed by Holy Light.",
+        "File:Blessed_Champion_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Well Met",
+      "tier": "5",
+      "slot": "2",
+      "icon": "Hammer_of_Justice_Icon.png",
+      "description": "When used against Heroes, Hammer of Justice reduces the target's Movement Speed and damage dealt by 25% for 3 seconds.",
+      "fields": {
+        "type": "Offensive damage modifier, Crowd control",
+        "affects": "Enemy Heroes",
+        "props": "Slow",
+        "notes": "Stacks additively with other damage modifiers affecting the target's damage output."
+      },
+      "_raw_fields": [
+        "Well Met",
+        "5",
+        "2",
+        "When used against Heroes, Hammer of Justice reduces the target's Movement Speed and damage dealt by 25% for 3 seconds.",
+        "File:Hammer_of_Justice_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Spell Shield",
+      "tier": "5",
+      "slot": "3",
+      "icon": "Spell_Shield_Icon.png",
+      "description": "Every 30 seconds, gain 50 Spell Armor against the next enemy Ability and subsequent Abilities for 3 seconds, reducing the damage taken by 50%. Can be toggled to allow or prevent this talent from triggering automatically.",
+      "fields": {
+        "type": "Defensive damage modifier",
+        "affects": "Self",
+        "target": "No target (toggle)",
+        "props": "Spell Armor, Spell Shield",
+        "prop1": "Toggle cooldown",
+        "val1": "0.5 seconds"
+      },
+      "_raw_fields": [
+        "Spell Shield",
+        "5",
+        "3",
+        "Every 30 seconds, gain 50 Spell Armor against the next enemy Ability and subsequent Abilities for 3 seconds, reducing the damage taken by 50%. Can be toggled to allow or prevent this talent from triggering automatically.",
+        "File:Spell_Shield_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Beacon of Light",
+      "tier": "6",
+      "slot": "1",
+      "icon": "Holy_Light_Icon.png",
+      "description": "Uther receives 125% more self-healing when targeting others with Holy Light. This bonus is increased to 250% while he is below 50% Health.",
+      "fields": {
+        "type": "Healing dealt modifier",
+        "affects": "Ability",
+        "notes": "Beacon of Light will trigger whenever Uther himself is not the primary target of the cast, meaning that damaging enemies with Holy Shock also grants increased self-healing. Stacks additively with healing modifiers that affect self-healing dealt by Holy Light and multiplicatively with modifiers that affect healing received by Uther."
+      },
+      "_raw_fields": [
+        "Beacon of Light",
+        "6",
+        "1",
+        "Uther receives 125% more self-healing when targeting others with Holy Light. This bonus is increased to 250% while he is below 50% Health.",
+        "File:Holy_Light_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Tyr's Deliverance",
+      "tier": "6",
+      "slot": "2",
+      "icon": "Holy_Radiance_Icon.png",
+      "description": "Increase the damage and healing of Holy Radiance by 10%. Basic Attacks against enemy Heroes cause Uther’s next cast of Holy Radiance to have its damage and healing increased by an additional 10%, stacking up to 7 times.",
+      "fields": {
+        "type": "Healing dealt modifier, Offensive damage modifier",
+        "affects": "Ability",
+        "props": "Area of Effect, Attack Modifier",
+        "notes": "Bonus from Basic Attack stacks up to 7 times, making the maximum bonus from the talent 80% with the base percentage. Damage bonus stacks additively with itself and other offensive damage modifiers that can affect Holy Radiance 's damage. Healing bonus stacks additively with other healing dealt modifiers that can affect healing from Holy Radiance."
+      },
+      "_raw_fields": [
+        "Tyr's Deliverance",
+        "6",
+        "2",
+        "Increase the damage and healing of Holy Radiance by 10%. Basic Attacks against enemy Heroes cause Uther’s next cast of Holy Radiance to have its damage and healing increased by an additional 10%, stacking up to 7 times.",
+        "File:Holy_Radiance_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Benediction",
+      "tier": "6",
+      "slot": "3",
+      "icon": "Benediction_Icon.png",
+      "description": "Cooldown 60 Activate to reduce the Mana cost of your next Basic Ability by 50 and its cooldown by 10 seconds.",
+      "fields": {
+        "type": "Active",
+        "target": "No target",
+        "props": "Primed",
+        "cast": "Instant",
+        "notes": "Cooldown starts after the ability is triggered by casting a Basic Ability."
+      },
+      "_raw_fields": [
+        "Benediction",
+        "6",
+        "3",
+        "Cooldown 60 Activate to reduce the Mana cost of your next Basic Ability by 50 and its cooldown by 10 seconds.",
+        "File:Benediction_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Bulwark of Light",
+      "tier": "7",
+      "slot": "1",
+      "icon": "Bulwark_of_Light_Icon.png",
+      "description": "Divine Shield is also applied to all nearby allied Heroes and lasts 1 second longer.",
+      "fields": {
+        "props": "Area of Effect",
+        "aoe": "Circle",
+        "radius": "3.0"
+      },
+      "_raw_fields": [
+        "Bulwark of Light",
+        "7",
+        "1",
+        "Divine Shield is also applied to all nearby allied Heroes and lasts 1 second longer.",
+        "File:Bulwark_of_Light_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Divine Hurricane",
+      "tier": "7",
+      "slot": "2",
+      "icon": "Divine_Hurricane_Icon.png",
+      "description": "Divine Storm's radius is increased by 50% and its cooldown is reduced by 40 seconds.",
+      "fields": {
+        "prop1": "Bonus radius",
+        "val1": "1.75"
+      },
+      "_raw_fields": [
+        "Divine Hurricane",
+        "7",
+        "2",
+        "Divine Storm's radius is increased by 50% and its cooldown is reduced by 40 seconds.",
+        "File:Divine_Hurricane_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Redemption",
+      "tier": "7",
+      "slot": "3",
+      "icon": "Redemption_Icon.png",
+      "description": "After Eternal Devotion ends, Uther revives at the spirit's location with 50% of his maximum Health. This effect has a 180 second cooldown.",
+      "fields": {
+        "type": "Resurrection",
+        "notes": "If Redemption goes off cooldown when Uther is in Eternal Vanguard, it will trigger."
+      },
+      "_raw_fields": [
+        "Redemption",
+        "7",
+        "3",
+        "After Eternal Devotion ends, Uther revives at the spirit's location with 50% of his maximum Health. This effect has a 180 second cooldown.",
+        "File:Redemption_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Divine Protection",
+      "tier": "7",
+      "slot": "4",
+      "icon": "Divine_Protection_Icon.png",
+      "description": "Increase Devotion's Armor to 50 and its duration by 0.5 seconds.",
+      "fields": {
+        "nohr": "1",
+        "notes": "Affects Armor bonuses for both allied Heroes and Uther."
+      },
+      "_raw_fields": [
+        "Divine Protection",
+        "7",
+        "4",
+        "Increase Devotion's Armor to 50 and its duration by 0.5 seconds.",
+        "File:Divine_Protection_Icon.png"
+      ],
+      "level": "20"
+    }
+  ],
+  "other": [],
+  "_unparsed_count": 0
+}

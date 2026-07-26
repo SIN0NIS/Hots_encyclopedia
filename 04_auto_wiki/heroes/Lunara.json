@@ -1,0 +1,621 @@
+{
+  "hero": "Lunara",
+  "abilities": [
+    {
+      "name": "Nature's Toxin",
+      "hotkey": "TRAIT",
+      "icon": "Nature's_Toxin_Icon.png",
+      "description": "Passive Lunara's Basic Attacks and damaging Abilities poison their target, dealing 33 damage a second for 3 seconds. Every additional application increases the duration by 3 seconds, up to a maximum of 9 seconds.; trait",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "props": "Attack Modifier, Damage over Time",
+        "tickrate": "1.0 per second (x3)"
+      }
+    },
+    {
+      "name": "Noxious Blossom",
+      "hotkey": "Q",
+      "icon": "Noxious_Blossom_Icon.png",
+      "description": "After 0.5 seconds, cause an area to explode with pollen, dealing 160 damage.",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "target": "Point target",
+        "props": "Area of Effect",
+        "cast": "0.0625 + 0 seconds",
+        "range": "8.25",
+        "aoe": "Circle",
+        "radius": "1.375",
+        "cooldown": "8",
+        "cost": "60"
+      }
+    },
+    {
+      "name": "Crippling Spores",
+      "hotkey": "W",
+      "icon": "Crippling_Spores_Icon.png",
+      "description": "Enemies currently afflicted by Nature's Toxin have its duration increased by 3 seconds and are Slowed by 40% decaying over 3 seconds.",
+      "fields": {
+        "type": "Crowd control",
+        "affects": "Enemies",
+        "target": "No target",
+        "props": "Slow",
+        "cast": "Instant",
+        "range": "Global",
+        "notes": "Only activatable if there is an enemy afflicted by Nature's Toxin. This cannot increase the duration to longer than 9 seconds.",
+        "cooldown": "10",
+        "cost": "50"
+      }
+    },
+    {
+      "name": "Wisp",
+      "hotkey": "E",
+      "icon": "Wisp_Icon.png",
+      "description": "Spawn a Wisp to scout an area. Can be redirected once active. When the Wisp is in a bush for more than 2 seconds, its vision radius is increased by 75%. Lasts 45 seconds. Wisp",
+      "fields": {
+        "type": "Passive",
+        "target": "Retargetable",
+        "cast": "Instant",
+        "range": "Global",
+        "nohr": "true",
+        "scaling": "-",
+        "prop1": "Health",
+        "val1": "2",
+        "prop2": "Basic Attack damage",
+        "val2": "-",
+        "prop5": "Movement Speed",
+        "val5": "8.3593",
+        "prop6": "Unit radius",
+        "val6": "0.375",
+        "prop7": "Sight radius",
+        "val7": "6.0",
+        "prop8": "Leash radius",
+        "val8": "-",
+        "notes": "Each instance of damage taken reduces Wisp's Health by 1. Only 1 Wisp can be active at a time. Cooldown starts when the ablility is cast.",
+        "cooldown": "30"
+      }
+    },
+    {
+      "name": "Relocate Wisp",
+      "hotkey": "E",
+      "icon": "Relocate_Wisp_Icon.png",
+      "description": "Orders your Wisp to move to a new location.",
+      "fields": {
+        "type": "Move order",
+        "affects": "Wisp",
+        "target": "Point target",
+        "cast": "Instant",
+        "range": "Global",
+        "notes": "Replaces Wisp while your Wisp is alive.",
+        "cooldown": "1.0"
+      }
+    },
+    {
+      "name": "Thornwood Vine",
+      "hotkey": "R",
+      "icon": "Thornwood_Vine_Icon.png",
+      "description": "Charge CooldownW 15 / 0.5 Send forth vines that deal 184 damage to all enemies in a line. Stores up to 3 charges.; 35; heroic",
+      "fields": {
+        "type": "Spell Damage",
+        "scaling": "4.00%",
+        "affects": "Enemies",
+        "target": "Point target",
+        "props": "Area of Effect, Clamping",
+        "cast": "0.15 + 0 seconds",
+        "range": "12",
+        "hitbox": "1.4 x 1.0",
+        "missile": "23.4"
+      }
+    },
+    {
+      "name": "Leaping Strike",
+      "hotkey": "R",
+      "icon": "Leaping_Strike_Icon.png",
+      "description": "Charge CooldownW 20 / 0.5 Leap over an enemy, Slowing them by 80% for 0.35 seconds and dealing 271 damage. Stores up to 2 charges.; 50; heroic",
+      "fields": {
+        "type": "Spell Damage, Crowd control / Movement: Launch, Status effect",
+        "scaling": "4.00%",
+        "affects": "Enemies / Self",
+        "target": "Unit target",
+        "props": "Slow, Unstoppable",
+        "cast": "Instant",
+        "range": "- Cast: 6.25 - Placement: 7.0 (from target)",
+        "notes": "Lunara is Unstoppable during the leap. Regardless, the Ability cannot be casted while Rooted, as it is a Movement Ability."
+      }
+    },
+    {
+      "name": "Dryad's Swiftness",
+      "hotkey": "TRAIT",
+      "icon": "Dryads-swiftness.png",
+      "description": "Lunara moves 20% faster by leaping short distances.",
+      "fields": {
+        "type": "Status effect",
+        "affects": "Self",
+        "props": "Movement Speed",
+        "notes": "Lunara cannot Mount. Dryad's Swiftness grants Lunara +90% Movement Speed that gradually decays to -50% in a repeating cycle of 10 game ticks: +90% > +75% > +60% > +45% > +30% > +15% > +0% > +0% > -50% > -50% (1 tick = 0.0625 seconds), resulting in an average Movement Speed increase of +21.5%. The 50% ticks are set as a Movement Speed maximum and cannot be exceeded using any Movement Speed buffs. Issuing a 'stop' command resets Dryad's Swiftness ' Movement Speed cycle and can, with repetition, be used to reach higher average Movement Speed than intended."
+      }
+    }
+  ],
+  "talents": [
+    {
+      "name": "Sentinel Wisp",
+      "tier": "1",
+      "slot": "1",
+      "icon": "Sentinel Wisp Icon.png",
+      "description": "After remaining in a bush for 5 seconds, Wisp's vision radius is increased by 200% and reveals the surrouding area.",
+      "fields": {
+        "type": "Status effect",
+        "affects": "Enemies",
+        "props": "Revealed",
+        "prop1": "Bonus vision radius",
+        "val1": "12.0"
+      },
+      "_raw_fields": [
+        "Sentinel Wisp",
+        "1",
+        "1",
+        "After remaining in a bush for 5 seconds, Wisp's vision radius is increased by 200% and reveals the surrouding area.",
+        "File:Sentinel Wisp Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Natural Perspective",
+      "tier": "1",
+      "slot": "2",
+      "icon": "Natural_Perspective_Icon.png",
+      "description": "Nature's Toxin reveals enemies for its duration.",
+      "fields": {
+        "type": "Status effect",
+        "affects": "Enemies",
+        "props": "Revealed",
+        "notes": "The effect is tied to Natures Toxin. If the damage over time is removed, Revealed status gets removed as well."
+      },
+      "_raw_fields": [
+        "Natural Perspective",
+        "1",
+        "2",
+        "Nature's Toxin reveals enemies for its duration.",
+        "File:Natural_Perspective_Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Hippity Hop",
+      "tier": "1",
+      "slot": "3",
+      "icon": "Hippity Hop Icon.png",
+      "description": "After not Basic Attacking or taking damage for 2 seconds, increase the Move Speed bonus of Dryad's Swiftness by 10%.",
+      "fields": {
+        "nohr": "1",
+        "notes": "Increases Dryad's Swiftness ' Movement Speed cycle's initial bonus to +120% and the decay rate on the first 6 ticks to -20% per tick. Due to cycling, the actual average Movement Speed bonus of Dryad's Swiftness increases to +32%."
+      },
+      "_raw_fields": [
+        "Hippity Hop",
+        "1",
+        "3",
+        "After not Basic Attacking or taking damage for 2 seconds, increase the Move Speed bonus of Dryad's Swiftness by 10%.",
+        "File:Hippity Hop Icon.png"
+      ],
+      "level": "1"
+    },
+    {
+      "name": "Blossom Swell",
+      "tier": "2",
+      "slot": "1",
+      "icon": "Blossom_Swell_Icon.png",
+      "description": "Increases Noxious Blossom's range by 25% and its radius by 20%. Noxious Blossom applies two stacks of Nature's Toxin to enemies hit.",
+      "fields": {
+        "prop1": "Bonus range",
+        "val1": "2.0625",
+        "prop2": "Bonus radius",
+        "val2": "0.275"
+      },
+      "_raw_fields": [
+        "Blossom Swell",
+        "2",
+        "1",
+        "Increases Noxious Blossom's range by 25% and its radius by 20%. Noxious Blossom applies two stacks of Nature's Toxin to enemies hit.",
+        "File:Blossom_Swell_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Siphoning Toxin",
+      "tier": "2",
+      "slot": "2",
+      "icon": "Siphoning_Toxin_Icon.png",
+      "description": "While at least one enemy is afflicted by Nature's Toxin, heal for 9 per second. When an enemy Hero has 3 stacks of Nature's Toxin, increase this healing by 19 per second.",
+      "fields": {
+        "type": "Healing",
+        "scaling": "4.00%",
+        "affects": "Self",
+        "tickrate": "1.0 per second"
+      },
+      "_raw_fields": [
+        "Siphoning Toxin",
+        "2",
+        "2",
+        "While at least one enemy is afflicted by Nature's Toxin, heal for 9 per second. When an enemy Hero has 3 stacks of Nature's Toxin, increase this healing by 19 per second.",
+        "File:Siphoning_Toxin_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Nature's Culling",
+      "tier": "2",
+      "slot": "3",
+      "icon": "Nature's_Culling_Icon.png",
+      "description": "Increases Nature's Toxin's damage by 125% to non-Heroes.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Ability",
+        "notes": "Stacks additively with other offensive damage modifiers that can affect Nature's Toxin 's damage."
+      },
+      "_raw_fields": [
+        "Nature's Culling",
+        "2",
+        "3",
+        "Increases Nature's Toxin's damage by 125% to non-Heroes.",
+        "File:Nature's_Culling_Icon.png"
+      ],
+      "level": "4"
+    },
+    {
+      "name": "Splintered Spear",
+      "tier": "3",
+      "slot": "1",
+      "icon": "Splintered_Spear_Icon.png",
+      "description": "Casting Noxious Blossom grants Lunara 3 stacks of Splintered Spear. When Lunara uses her Basic Attack, it hits an additional enemy for each stack of Splintered Spear, consuming 1 stack for each target. Stores up to 3 stacks. Splintered Spear deals 90 damage, and applies Nature's Toxin.",
+      "fields": {
+        "type": "Physical Damage",
+        "scaling": "-",
+        "affects": "Enemies",
+        "props": "Attack Modifier",
+        "radius": "11",
+        "arc": "55 degrees",
+        "notes": "Additional Basic Attacks target enemies within the sector in front of Lunara, prioritizing Heroes. Target selection is random within the target priority group."
+      },
+      "_raw_fields": [
+        "Splintered Spear",
+        "3",
+        "1",
+        "Casting Noxious Blossom grants Lunara 3 stacks of Splintered Spear. When Lunara uses her Basic Attack, it hits an additional enemy for each stack of Splintered Spear, consuming 1 stack for each target. Stores up to 3 stacks. Splintered Spear deals 90 damage, and applies Nature's Toxin.",
+        "File:Splintered_Spear_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Choking Pollen",
+      "tier": "3",
+      "slot": "2",
+      "icon": "Choking_Pollen_Icon.png",
+      "description": "Noxious Blossom deals 100% more damage to enemies afflicted by Nature's Toxin, increased to 175% against enemies with 3 stacks.",
+      "fields": {
+        "type": "Bonus damage",
+        "affects": "Ability",
+        "notes": "Damage bonuses stack additively with themselves and with other offensive damage modifiers."
+      },
+      "_raw_fields": [
+        "Choking Pollen",
+        "3",
+        "2",
+        "Noxious Blossom deals 100% more damage to enemies afflicted by Nature's Toxin, increased to 175% against enemies with 3 stacks.",
+        "File:Choking_Pollen_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Wild Vigor",
+      "tier": "3",
+      "slot": "3",
+      "icon": "Wild_Vigor_Icon.png",
+      "description": "Using Crippling Spores increases the damage of Lunara's next 4 Basic Attacks by 70%.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Self",
+        "props": "Attack Modifier",
+        "notes": "Stacks additively with other damage modifiers that can affect Lunara's Basic Attack damage. Does not affect the damage of Nature's Toxin."
+      },
+      "_raw_fields": [
+        "Wild Vigor",
+        "3",
+        "3",
+        "Using Crippling Spores increases the damage of Lunara's next 4 Basic Attacks by 70%.",
+        "File:Wild_Vigor_Icon.png"
+      ],
+      "level": "7"
+    },
+    {
+      "name": "Thornwood Vine",
+      "tier": "4",
+      "slot": "1",
+      "icon": "Thornwood_Vine_Icon.png",
+      "description": "Charge CooldownW 15 / 0.5 Send forth vines that deal 184 damage to all enemies in a line. Stores up to 3 charges.",
+      "fields": {},
+      "_raw_fields": [
+        "Thornwood Vine",
+        "4",
+        "1",
+        "Charge CooldownW 15 / 0.5 Send forth vines that deal 184 damage to all enemies in a line. Stores up to 3 charges.",
+        "File:Thornwood_Vine_Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Leaping Strike",
+      "tier": "4",
+      "slot": "2",
+      "icon": "Leaping_Strike_Icon.png",
+      "description": "Charge CooldownW 20 / 0.5 Leap over an enemy, Slowing them by 80% for 0.35 seconds and dealing 271 damage. Stores up to 2 charges.",
+      "fields": {},
+      "_raw_fields": [
+        "Leaping Strike",
+        "4",
+        "2",
+        "Charge CooldownW 20 / 0.5 Leap over an enemy, Slowing them by 80% for 0.35 seconds and dealing 271 damage. Stores up to 2 charges.",
+        "File:Leaping_Strike_Icon.png"
+      ],
+      "level": "10"
+    },
+    {
+      "name": "Endless Spores",
+      "tier": "5",
+      "slot": "1",
+      "icon": "Endless Spores Icon.png",
+      "description": "Casting Crippling Spores while at least 2 Heroes are afflicted by Nature's Toxin reduces the cooldown by 4 seconds and refunds 50 Mana.",
+      "fields": {},
+      "_raw_fields": [
+        "Endless Spores",
+        "5",
+        "1",
+        "Casting Crippling Spores while at least 2 Heroes are afflicted by Nature's Toxin reduces the cooldown by 4 seconds and refunds 50 Mana.",
+        "File:Endless Spores Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Let Them Wither",
+      "tier": "5",
+      "slot": "2",
+      "icon": "Let_Them_Wither_Icon.png",
+      "description": "Increases Crippling Spores's slow by 1 second and causes it to no longer decay.",
+      "fields": {},
+      "_raw_fields": [
+        "Let Them Wither",
+        "5",
+        "2",
+        "Increases Crippling Spores's slow by 1 second and causes it to no longer decay.",
+        "File:Let_Them_Wither_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Greater Spell Shield",
+      "tier": "5",
+      "slot": "3",
+      "icon": "Greater_Spell_Shield_Icon.png",
+      "description": "Every 30 seconds, gain 75 Spell Armor against the next enemy Ability and subsequent Abilities for 3 seconds, reducing the damage taken by 75%. Can be toggled to allow or prevent this talent from triggering automatically.",
+      "fields": {
+        "type": "Defensive damage modifier",
+        "affects": "Self",
+        "target": "No target (toggle)",
+        "props": "Spell Armor",
+        "prop1": "Toggle cooldown",
+        "val1": "0.5 seconds",
+        "notes": "Does not stack with other positive Spell Armor effects. Other defensive damage modifiers may stack."
+      },
+      "_raw_fields": [
+        "Greater Spell Shield",
+        "5",
+        "3",
+        "Every 30 seconds, gain 75 Spell Armor against the next enemy Ability and subsequent Abilities for 3 seconds, reducing the damage taken by 75%. Can be toggled to allow or prevent this talent from triggering automatically.",
+        "File:Greater_Spell_Shield_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Abolish Magic",
+      "tier": "5",
+      "slot": "4",
+      "icon": "Abolish_Magic_Icon.png",
+      "description": "Cooldown 20 Active Target an ally to remove all damage over time and disabling effects from them and Lunara. For 2 seconds afterward, the duration of disabling effects is reduced by 50%.",
+      "fields": {
+        "type": "CC removal",
+        "affects": "Allied Heroes, Self",
+        "target": "Unit target",
+        "cast": "Instant",
+        "range": "10.0",
+        "notes": "Can be self-cast on Lunara without the need of an ally. \"Disabling effects\" refers to Stuns, Roots, Slows, Silences and their derivative effects."
+      },
+      "_raw_fields": [
+        "Abolish Magic",
+        "5",
+        "4",
+        "Cooldown 20 Active Target an ally to remove all damage over time and disabling effects from them and Lunara. For 2 seconds afterward, the duration of disabling effects is reduced by 50%.",
+        "File:Abolish_Magic_Icon.png"
+      ],
+      "level": "13"
+    },
+    {
+      "name": "Accelerated Contamination",
+      "tier": "6",
+      "slot": "1",
+      "icon": "Accelerated Contamination Icon.png",
+      "description": "Reduce the Mana cost of Noxious Blossom from 60 to 40. While at least 1 enemy Hero is afflicted with Nature's Toxin, Noxious Blossom's cooldown recharges 75% faster.",
+      "fields": {
+        "nohr": "1",
+        "notes": "While active reduces the cooldown of Noxious Blossom by 0.0468 seconds every 0.0625 seconds."
+      },
+      "_raw_fields": [
+        "Accelerated Contamination",
+        "6",
+        "1",
+        "Reduce the Mana cost of Noxious Blossom from 60 to 40. While at least 1 enemy Hero is afflicted with Nature's Toxin, Noxious Blossom's cooldown recharges 75% faster.",
+        "File:Accelerated Contamination Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Star Wood Spear",
+      "tier": "6",
+      "slot": "2",
+      "icon": "Star_Wood_Spear_Icon.png",
+      "description": "Increase Lunara's Basic Attack range by 0.5. Using Crippling Spores increases Lunara's Basic Attack Range by 2.25 for 6 seconds.",
+      "fields": {},
+      "_raw_fields": [
+        "Star Wood Spear",
+        "6",
+        "2",
+        "Increase Lunara's Basic Attack range by 0.5. Using Crippling Spores increases Lunara's Basic Attack Range by 2.25 for 6 seconds.",
+        "File:Star_Wood_Spear_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Invigorating Spores",
+      "tier": "6",
+      "slot": "3",
+      "icon": "Invigorating_Spores_Icon.png",
+      "description": "Crippling Spores grants 30% Attack Speed for 6 seconds. Basic Attacks against enemy Heroes with 3 stacks of Nature's Toxin deal damage equal to 1.5% of their maximum Health.",
+      "fields": {
+        "type": "Spell Damage, Status effect",
+        "scaling": "-",
+        "affects": "Enemy Heroes",
+        "props": "Attack Modifier (heroes), Attack Speed, Percent Damage",
+        "notes": "Damage is dealt in a separate instance. Attack Speed bonus stacks additively with other effects that can affect Lunara's Attack Speed."
+      },
+      "_raw_fields": [
+        "Invigorating Spores",
+        "6",
+        "3",
+        "Crippling Spores grants 30% Attack Speed for 6 seconds. Basic Attacks against enemy Heroes with 3 stacks of Nature's Toxin deal damage equal to 1.5% of their maximum Health.",
+        "File:Invigorating_Spores_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "Unfair Advantage",
+      "tier": "6",
+      "slot": "4",
+      "icon": "Unfair_Advantage_Icon.png",
+      "description": "Nature's Toxin deals 60% more damage to Heroes who are Slowed, Rooted, or Stunned.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Ability",
+        "notes": "Damage bonus stacks additively with other damage modifiers that can affect Nature's Toxin 's damage."
+      },
+      "_raw_fields": [
+        "Unfair Advantage",
+        "6",
+        "4",
+        "Nature's Toxin deals 60% more damage to Heroes who are Slowed, Rooted, or Stunned.",
+        "File:Unfair_Advantage_Icon.png"
+      ],
+      "level": "16"
+    },
+    {
+      "name": "For the Wildlands",
+      "tier": "7",
+      "slot": "1",
+      "icon": "Forest's_Wrath_Icon.png",
+      "description": "Thornwood Vine shoots 4 additional vines in an arc.",
+      "fields": {},
+      "_raw_fields": [
+        "For the Wildlands",
+        "7",
+        "1",
+        "Thornwood Vine shoots 4 additional vines in an arc.",
+        "File:Forest's_Wrath_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Boundless Stride",
+      "tier": "7",
+      "slot": "2",
+      "icon": "Boundless_Stride_Icon.png",
+      "description": "All Leaping Strike charges are returned every 15 seconds. Leaping Strike can be used on allies.",
+      "fields": {},
+      "_raw_fields": [
+        "Boundless Stride",
+        "7",
+        "2",
+        "All Leaping Strike charges are returned every 15 seconds. Leaping Strike can be used on allies.",
+        "File:Boundless_Stride_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Forest's Wrath",
+      "tier": "7",
+      "slot": "3",
+      "icon": "Forest's_Wrath_Icon.png",
+      "description": "Lunara's Heroic Ability now applies 2 stacks of Nature's Toxin, and its range is increased by 30% passive Increase Lunara's vision radius by 35%.",
+      "fields": {
+        "prop1": "Thornwood Vines Bonus range",
+        "val1": "3.5",
+        "prop2": "Thornwood Vines Bonus missile speed",
+        "val2": "5.4",
+        "prop3": "Leaping Strike Bonus range",
+        "val3": "1.875",
+        "prop4": "Bonus vision radius",
+        "val4": "4.2"
+      },
+      "_raw_fields": [
+        "Forest's Wrath",
+        "7",
+        "3",
+        "Lunara's Heroic Ability now applies 2 stacks of Nature's Toxin, and its range is increased by 30% passive Increase Lunara's vision radius by 35%.",
+        "File:Forest's_Wrath_Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Intensifying Toxin",
+      "tier": "7",
+      "slot": "4",
+      "icon": "Intensifying Toxin Icon.png",
+      "description": "At 3 stacks, Nature's Toxin deals 40% more damage.",
+      "fields": {
+        "type": "Offensive damage modifier",
+        "affects": "Ability",
+        "notes": "Damage bonus stacks additively with other damage modifiers that can affect Nature's Toxin 's damage."
+      },
+      "_raw_fields": [
+        "Intensifying Toxin",
+        "7",
+        "4",
+        "At 3 stacks, Nature's Toxin deals 40% more damage.",
+        "File:Intensifying Toxin Icon.png"
+      ],
+      "level": "20"
+    },
+    {
+      "name": "Galloping Gait",
+      "tier": "7",
+      "slot": "5",
+      "icon": "Galloping_Gait_Icon.png",
+      "description": "cooldown 30 Activate to increase the Movement Speed bonus of Dryad's Swiftness to 80% for 6 seconds.",
+      "fields": {
+        "affects": "Self",
+        "target": "No target",
+        "cast": "Instant",
+        "notes": "Increases Dryad's Swiftness ' Movement Speed cycle's initial bonus to +252% and the decay rate on the first 6 ticks to -42% per tick. Due to cycling, the actual average Movement Speed bonus of Dryad's Swiftness increases to +78.2%."
+      },
+      "_raw_fields": [
+        "Galloping Gait",
+        "7",
+        "5",
+        "cooldown 30 Activate to increase the Movement Speed bonus of Dryad's Swiftness to 80% for 6 seconds.",
+        "File:Galloping_Gait_Icon.png"
+      ],
+      "level": "20"
+    }
+  ],
+  "other": [],
+  "_unparsed_count": 0
+}

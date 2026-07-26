@@ -1,0 +1,257 @@
+{{hero data
+| name = Johanna
+| date = June 2, 2015
+| price = 4000
+| title = Crusader of Zakarum
+| role = Tank
+| franchise = Diablo
+| info = A Tank who shines against Physical Attackers and can effectively clear groups of minions.
+| lore = There have been many women who have borne the name Johanna in service of the crusade, and each has given her life to purify her faith. Johanna carries on their legacy as she searches the kingdom of Khanduras for the fallen star.
+| difficulty = Medium
+| melee = True
+| health = 2625
+| healthRegen = 5.4687
+| resource = 500
+| resourceType = Mana
+| attackSpeed = 0.91
+| attackRange = 1.5
+| attackDamage = 99
+| healthScaling = 0.04
+| regenScaling = 0.04
+| adamageScaling = 0.04
+| unitRadius = 0.75
+| icon = File:Johanna_Icon.png
+| skills = 
+Iron Skin;D;File:Iron_Skin_Icon.png;Activate to grant Johanna a Shield that absorbs 810 damage for 4 seconds. While this Shield is active, Johanna is Unstoppable.<!--
+-->{{undoc-x|type=Shield, Status effect<!--
+-->|scaling=4.00%<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|props=[[Unstoppable]]<!--
+-->|cast=Instant<!--
+-->|notes=<li>If the Shield breaks, Johanna loses Unstoppable and any other benefits that come with it.}};22;;trait;False
+
+Punish;Q;File:Punish_Icon.png;Step forward dealing 113 damage and Slowing enemies by 50% decaying over 2 seconds.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Clamping]], [[Slow]]<!--
+-->|cast=0 + 0.125 seconds<!--
+-->|aoe=Radial<!--
+-->|radius=3.5<!--
+-->|arc=160 degrees<!--
+-->|notes=<li>Using ''Punish'' causes Johanna to minidash into the target direction. [[Root]]s prevent the dash behavior, but do not disable the Ability altogether.}};8;40;;False
+
+Condemn;W;File:Condemn_Icon.png;After 1 second, Johanna pulls nearby enemies toward her, Stunning them for 0.25 seconds and dealing 55 damage. Deals 200% increased damage to Minions and Mercenaries.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=No target<!--
+-->|props=[[Area of Effect]], [[Pull]], [[Stun]]<!--
+-->|cast=Instant<!--
+-->|aoe=Circle<!--
+-->|radius=5.0<!--
+-->|prop1=Pull duration|val1=0.1875 seconds<!--
+-->|prop2=Pull speed|val2=18<!--
+-->|notes=<li>Enemies hit by ''Condemn'' are in order first pulled, then damaged, and once the pull ends Stunned.<li>Damage bonus to Minions and Mercenaries stacks additively with offensive damage modifiers that can affect <i>Condemn</i>'s damage.}};10;50;;False
+
+Shield Glare;E;File:Shield_Glare_Icon.png;Deal 59 damage to enemies and Blind them for 1.5 seconds.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Blind]], [[Clamping]]<!--
+-->|cast=0.125 + 0.125 seconds<!--
+-->|aoe=Circle<!--
+-->|radius=12<!--
+-->|arc=35 degrees<!--
+-->|missile=<br>- Initial: 50<br>- Final: 40<br>- Acceleration: -10<!--
+-->|notes=}};12;55;;False
+
+Falling Sword;R;File:Falling_Sword_Icon.png;Johanna leaps into the air for 2 seconds and she can steer the landing location by moving. While in the air, allies below Johanna are Unstoppable. Upon landing enemies hit take 225 damage and are Stunned for 0.25 seconds.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control / Movement: [[Teleport]], Status effect / Status effect<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies / Self / Allied Heroes<!--
+-->|target=Point target<!--
+-->|props=[[Area of Effect]], [[Stasis]], [[Stun]], [[Unstoppable]]<!--
+-->|cast=0.5 + 0.625 seconds<!--
+-->|range=10<!--
+-->|aoe=Circle<!--
+-->|radius=4.0<!--
+-->|notes=<li>The cast is uninterruptible.<li>The initial teleport can be used to cross over [[terrain]] or [[Structure]]s, but the Ability cannot be targeted on top of them or steered into them, except for allied and enemy [[Gate]]s.<li>Immediately upon activating the Ability and while in the air, Johanna is put in Stasis. In addition to usual effects of Stasis, Johanna has no collision and after the initial delay removed from the ground plane.<li>While targeting the landing area, Johanna moves at regular [[Movement Speed]] subject to allied and her own Movement Speed buffs applied beforehand.<li>While in the air, Johanna gains vision over the target area.<li>The range indicator for the Ability's initial cast shown in game is incorrect.}};50;60;heroic;False
+
+Blessed Shield;R;File:Blessed_Shield_Icon.png;Deal 114 damage and Stun the first enemy hit for 1.5 seconds. Blessed Shield then bounces to 2 nearby enemies, dealing 57 damage and Stunning them for 0.75 seconds.<!--
+-->{{undoc-x|type=Spell Damage, Crowd control<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=Point target<!--
+-->|props=[[Bounce]], [[Clamping]], [[Skillshot]]<!--
+-->|cast=0.1 + 0 seconds<!--
+-->|range=11.0<!--
+-->|hitbox=2.0 x 1.75<!--
+-->|missile=<br>- Initial: 25<br>- Bounce: 30<!--
+-->|prop1=Bounce search radius|val1=5.5<!--
+-->|notes=<li>Bounces prioritize Heroes and then the closest enemy to Johanna.<li>Each bounce originates from the previous target.<li>Enemies that are immune to skillshots cannot be hit by the initial projectile, but can be targeted by bounces as long as they are not also immune to AoE (Invulnerable targets therefore cannot be targeted by or hit by either).}};60;90;heroic;False
+
+| talents = <!-- LEVEL 1 -->
+Zealous Glare;1;1;Shield Glare gains 1 additional charge, and deals 70% more damage.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|prop1=Charge cooldown|val1=0.5 seconds<!--
+-->|notes=<li>Damage bonus stacks with other offensive [[damage modifier]]s that can affect <i>Shield Glare</i>'s damage.}};File:Zealous_Glare_Icon.png;
+
+Divine Fortress;1;2;Basic Attacks grant 10 Physical Armor for 4 seconds, stacking up to 40.<p>{{Gambitonly|Gain 25% bonus maximum Health. Every death reduces this bonus by 5%.}}<!--
+-->{{undoc-x|type=Bonus Health, Defensive damage modifier<!--
+-->|affects=Self<!--
+-->|props=[[Attack modifier]], [[Physical Armor]]<!--
+-->|notes=<li>Bonus loss is additive and the loss per death stops when 0% is reached.}};File:Divine_Fortress_Icon.png;
+
+Laws of Hope;1;3;{{cooldown|40}}<br />Activate to heal 20% of Johanna's max Health over 5 seconds.<p>{{Questonly|Every 10 Regeneration Globes gathered increases this heal amount by 5% of Johanna's max Health.}}<!--
+-->{{undoc-x|type=Healing, Bonus Health Regeneration<!--
+-->|scaling=- (healing) / 4.00% (regen)<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|props=[[Heal over Time]]<!--
+-->|cast=Instant<!--
+-->|tickrate=1.0 per second (x5)<!--
+-->|prop1=Healing per tick|val1=4.0%<!--
+-->|prop2=Maximum healing bonus|val2=32,500 (x6,500)<!--
+-->|notes=}};File:Laws_of_Hope_Icon.png;
+
+<!-- LEVEL 4 -->
+Subdue;2;1;Hitting 2 or more Heroes at the same time with Punish increases the Slow to 70% and the Slow amount does not decay.<p>{{Quest|Hit 4 or more Heroes at the same time with Punish.|Punish always Slows by 80%.}}<!--
+-->{{undoc-x|type=Crowd control<!--
+-->|notes=<li>Slow amount also does not decay after completing the Quest.}};File:Subdue_Icon.png;
+
+Eternal Retaliation;2;2;Mark enemies hit by Condemn for 10 seconds. Johanna's next Basic Attack against them removes the mark, lowering the cooldown of Condemn by 1 second, refunding 10 Mana, and killing Minions.<!--
+-->{{undoc-x|type=Mana restoration / Instant kill / Cooldown reduction<!--
+-->|scaling=-<!--
+-->|affects=Self / Enemy Minions<!--
+-->|props=[[Attack modifier]]<!--
+-->|notes=}};File:Eternal_Retaliation_Icon.png;
+
+Hold Your Ground;2;3;Increases Iron Skin's Shield by 40% and its cooldown is reduced by 2 seconds.<!--
+-->{{undoc-x|type=Bonus Shield, Cooldown reduction<!--
+-->|scaling=-<!--
+-->|affects=Ability<!--
+-->|notes=}};File:Hold_Your_Ground_Icon.png;
+
+<!-- LEVEL 7 -->
+Sins Exposed;3;1;Punish reduces healing received by 35% for 3 seconds. Basic Attacks against them refresh this duration.<!--
+-->{{undoc-x|type=Healing received modifier<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Attack modifier]]<!--
+-->|notes=<li>Does not stack with itself. Reapplying refreshes the duration.<li>Healing reduction stacks additively with other healing received modifiers affecting the target Hero.}};File:Sins_Exposed_Icon.png;
+
+Conviction;3;2;Gain 10% Movement Speed, increased to 20% while Condemn is charging up.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|props=[[Movement Speed]]<!--
+-->|notes=}};File:Conviction_Icon.png;
+
+Steed Charge;3;3;{{Cooldown|20}}<br/>Activate to instantly Mount for 4 seconds, unhindered by damage.<p>{{passive}} Increase the duration of Iron Skin by 2 seconds.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|target=No target<!--
+-->|props=[[Movement Speed]]<!--
+-->|cast=Instant<!--
+-->|notes=<li>Cannot be activated while [[Root]]ed.<li>Johanna is automatically dismounted when the effect ends, placing [[Mount]] on cooldown.<li>Attacking, using Abilities or getting Rooted, [[Stun]]ned, [[Polymorphed]], [[Dazed]] or put in [[Stasis]] instantly ends the effect.}};File:Steed_Charge_Icon.png;
+
+<!-- LEVEL 10 -->
+Falling Sword;4;1;{{Cooldown|50}}<br>Johanna leaps into the air for 2 seconds and she can steer the landing location by moving. While in the air, allies below Johanna are Unstoppable. Upon landing enemies hit take 225 damage and are Stunned for 0.25 seconds.;File:Falling_Sword_Icon.png;
+Blessed Shield;4;2;{{Cooldown|60}}<br>Deal 114 damage and Stun the first enemy hit for 1.5 seconds. Blessed Shield then bounces to 2 nearby enemies, dealing 57 damage and Stunning them for 0.75 seconds.;File:Blessed_Shield_Icon.png;
+
+<!-- LEVEL 13 -->
+Roar;5;1;Increases Punish's damage by 50%. This bonus is increased to 150% whenever Punish hits 2 or more Heroes.<!--
+-->{{undoc-x|type=Offensive damage modifier<!--
+-->|affects=Ability<!--
+-->|notes=<li>Multihit bonus does not stack with base bonus.<li>Stacks additively with other offensive damage modifiers that can affect <i>Punish</i>'s damage.}};File:Roar_Icon.png;
+
+Holy Fury;5;2;Deal 15 damage per second to nearby enemies. Each Hero hit by Condemn increases this damage by 40% for 5 seconds.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|props=[[Area of Effect]], [[Burning Rage]]<!--
+-->|aoe=Circle<!--
+-->|radius=3.5<!--
+-->|tickrate=1.0 per second<!--
+-->|notes=<li>''Holy Fury'' is inactive while [[Mount]]ed.<li>''Holy Fury'' does not affect unaggroed neutral Mercenaries<li>Damaging enemy Heroes with ''Holy Fury'' does not draw tower aggro.<li>Damage from ''Holy Fury'' is unaffected by external offensive [[damage modifier]]s and [[lifesteal]] effects.<li><i>Holy Fury</i>'s damage bonus stacks additively with itself.}};File:Holy_Fury_Icon.png;
+
+Blessed Hammer;5;3;{{cooldown|30}}<br>Activate to create 2 hammers that spiral outward from Johanna, dealing 65 damage to enemies hit. Damaging enemies with Basic Abilities reduces the cooldown of this Ability by 2 seconds.<p>{{passive}} Every 3rd Basic Attack against enemy Heroes releases a Hammer.<!--
+-->{{undoc-x|type=Spell Damage<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies<!--
+-->|target=No target<!--
+-->|props=[[Area of Effect]], [[Attack modifier]]<!--
+-->|cast=Instant<!--
+-->|aoe=Circle<!--
+-->|radius=<br>- Spiral (max): 15<br>- Hitbox: 0.75<!--
+-->|prop1=Duration|val1=3.5 seconds<!--
+-->|notes=<li>Actually 2.5s of cooldown reduction per enemy hit by Basic Abilities, despite the tooltip.<li>The Ability is interrupted if Johanna dies or is put in Stasis.<li>Hammers spiral clockwise around Johanna, always starting from 10 o'clock and making 2.25 revolutions before reaching maximum radius and disappearing. The second hammer appears 1 second after the first.<li>Enemies can be hit by ''Blessed Hammer'' multiple times, but not more often than once per 0.5 seconds.}};File:Blessed_Hammer_Icon.png;
+
+<!-- LEVEL 16 -->
+Shrinking Vacuum;6;1;Condemn reduces enemy Heroes' damage by 30% and Slows by 30% for 3 seconds.<!--
+-->{{undoc-x|type=Crowd control, Offensive damage modifier<!--
+-->|affects=Enemy Heroes<!--
+-->|props=[[Area of Effect]], [[Slow]]<!--
+-->|notes=<li>Damage reduction stacks additively with other offensive damage modifiers that can affect the target Hero's damage output.}};File:Shrinking_Vacuum_Icon.png;
+
+Holy Renewal;6;2;Hitting enemy Heroes with Shield Glare reduces its cooldown by 1 second and heals for 5% of Johanna's maximum Health.<!--
+-->{{undoc-x|type=Healing, Cooldown reduction<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|notes=<li>Each enemy Hero hit applies the cooldown reduction.}};File:Holy_Renewal_Icon.png;
+
+Blessed Momentum;6;3;Basic Attacks grant 10% increased Attack Speed for 4 seconds, stacking up to 40%. They also reduce Johanna's Basic Ability cooldowns by 0.5 seconds.<!--
+-->{{undoc-x|type=Status effect<!--
+-->|affects=Self<!--
+-->|props=[[Attack modifier]], [[Attack Speed]], Cooldown reduction<!--
+-->|notes=<li>Attack Speed from ''Blessed Momentum'' stacks additively with itself and other Attack Speed effects.}};File:Blessed_Momentum_Icon.png;
+
+<!-- LEVEL 20 -->
+Heaven's Fury;7;1;Falling Sword rains down holy bolts, dealing 50 damage to enemies, healing allied Heroes for 68, and reducing its cooldown by 1 second for each Hero hit.<!--
+-->{{undoc-x|type=Spell Damage / Healing, Cooldown reduction<!--
+-->|scaling=4.00%<!--
+-->|affects=Enemies / Allied Heroes<!--
+-->|radius=4.0<!--
+-->|tickrate=4.0 per second (x8)<!--
+-->|prop1=Initial delay|val1=0.25 seconds<!--
+-->|notes=<li>Can target up to 3 enemies and 3 allied Heroes per tick, chosen at random within the target area.<li>Allied Heroes healed and enemy Heroes damaged both grant cooldown reduction.<li>Invulnerable allies are not healed by this Ability.}};File:Heaven's_Fury_Icon.png;
+
+Radiating Faith;7;2;Increase the number of enemies hit by Blessed Shield by 2. Its Stun duration is increased to 1.75 seconds and all targets hit are Stunned for the maximum duration.;File:Radiating_Faith_Icon.png;
+
+Indestructible;7;3;Upon taking fatal damage, Johanna gains a Shield equal to her maximum Health for 4 seconds. This effect has a 120 second cooldown.<!--
+-->{{undoc-x|type=Shield<!--
+-->|scaling=-<!--
+-->|affects=Self<!--
+-->|notes=}};File:Indestructible_Icon.png;
+
+Blinded By The Light;7;4;{{cooldown|60}}<br />Activate to grant nearby allied Heroes a Shield for 25% of their maximum Health for 3 seconds.<p>Hitting Heroes with Shield Glare reduces the cooldown of this Ability by 8 seconds.<!--
+-->{{undoc-x|type=Shield<!--
+-->|scaling=-<!--
+-->|affects=Allied Heroes, Self<!--
+-->|target=No target<!--
+-->|props=[[Area of Effect]]<!--
+-->|cast=Instant<!--
+-->|aoe=Circle<!--
+-->|radius=8.0<!--
+-->|notes=}};File:Blinded_by_the_Light_Icon.png;
+}}
+
+<noinclude>
+{{Scaling table/start|{{#var:health}}|{{#var:health scaling}}|{{#var:health regen}}|{{#var:health regen scaling}}|{{#var:attack damage}}|{{#var:attack damage scaling}}}}
+{{Scaling table/slot|Iron Skin|810|0.04}}
+{{Scaling table/slot|Punish|113|0.04}}
+{{Scaling table/slot|Condemn|55|0.04}}
+{{Scaling table/slot|Shield Glare|59|0.04}}
+{{Scaling table/slot|Falling Sword|225|0.04|10}}
+{{Scaling table/slot|Blessed Shield (primary)|114|0.04|10}}
+{{Scaling table/slot|Blessed Shield (secondary)|57|0.04|10}}
+{{Scaling table/slot|Holy Fury|15|0.04|13}}
+{{Scaling table/slot|Holy Fury (per Hero bonus)|6|0.04|13}}
+{{Scaling table/slot|Blessed Hammer|65|0.04|13}}
+{{Scaling table/slot|Heaven's Fury (damage)|50|0.04|20}}
+{{Scaling table/slot|Heaven's Fury (healing)|75|0.04|20}}
+{{Scaling table/end}}
+</noinclude>
