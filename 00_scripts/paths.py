@@ -74,7 +74,9 @@ REPORT = os.path.join(LOCALIZED, "report.md")
 
 # 8. 최종 결과물. 이 폴더에는 완성된 HTML 만 둔다.
 OUTPUT = _pick(("output",), ("hots_ref",))
-FINAL = os.path.join(OUTPUT, "hots_encyclopedia_wiki.html")
+# 백과사전 본문. 예전에 쓰던 이름(hots_encyclopedia.html, hots_encyclopedia_wiki.html)
+# 은 이제 메인 페이지로 보내는 안내 페이지가 쓰므로 겹치지 않는 이름을 쓴다.
+FINAL = os.path.join(OUTPUT, "encyclopedia.html")
 # 사람이 처음 여는 문. 여기서 백과사전·용어집·바깥 사이트로 갈라진다.
 INDEX = os.path.join(OUTPUT, "index.html")
 
