@@ -9,8 +9,8 @@
   archive/index.html       판 목록
   CHANGELOG.md             빌드마다 무엇이 달라졌는지
 
-같은 빌드 번호로 다시 돌리면 아무것도 하지 않는다. 게임이 안 바뀌었는데
-같은 것을 쌓아 봐야 저장소만 불어난다.
+같은 빌드 번호로 다시 돌리면 보관 내용만 최신으로 맞추고 변경 기록은 늘리지
+않는다. 게임이 안 바뀌었는데 줄이 쌓이면 기록이 아니라 잡음이 된다.
 
   python 00_scripts/archive_build.py
 """
@@ -109,16 +109,20 @@ def main():
         raise SystemExit("백과사전 제목에서 빌드 번호를 찾지 못했습니다.")
 
     target = os.path.join(ARCHIVE, "Build_%s" % number)
-    if os.path.isdir(target):
-        print("  Build %s 는 이미 보관돼 있습니다. 넘어갑니다." % number)
-    else:
-        os.makedirs(target, exist_ok=True)
-        for name in os.listdir(paths.OUTPUT):
-            source = os.path.join(paths.OUTPUT, name)
-            if os.path.isfile(source):
-                shutil.copy2(source, os.path.join(target, name))
-        print("  보관 -> %s" % target)
+    fresh = not os.path.isdir(target)
 
+    # 같은 빌드 번호로 다시 돌아도 내용은 최신으로 맞춘다. 코드가 바뀌어 결과물이
+    # 달라졌는데 보관함만 옛것이면 나중에 견줄 때 헷갈린다.
+    os.makedirs(target, exist_ok=True)
+    for name in os.listdir(paths.OUTPUT):
+        source = os.path.join(paths.OUTPUT, name)
+        if os.path.isfile(source):
+            shutil.copy2(source, os.path.join(target, name))
+    print("  보관 -> %s%s" % (target, "" if fresh else " (내용 갱신)"))
+
+    # 변경 기록은 처음 보는 빌드일 때만 한 줄 늘린다. 같은 빌드로 여러 번 돌린다고
+    # 줄이 쌓이면 기록이 아니라 잡음이 된다.
+    if fresh:
         summary = counts()
         line = "- **Build %s** — %s\n" % (
             number, " · ".join("%s %s" % kv for kv in summary.items()) or "기록 없음")

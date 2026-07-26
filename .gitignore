@@ -1,15 +1,15 @@
 # auto 가 붙은 폴더는 빌드가 매번 다시 만든다. 저장소에 둘 이유가 없다.
-# 다만 03·05·06·07 은 만들 수 있는 반면, 01·02 는 게임이 있어야만 만들 수 있어서
-# 예외로 커밋한다 (아래 '커밋하는 예외' 참고).
+#
+# 게임 데이터(01·02)도 여기 들어간다. 파서의 online 모드가 리눅스 러너에서는
+# 멀쩡히 돌아서, CI 가 블리자드 CDN 에서 그때그때 받아 온다. 윈도우에서는
+# "Not a valid Win32 FileTime" 으로 죽으니 로컬에서는 설치된 게임을 읽어야 한다.
+01_auto_casc/
+02_auto_herodata/
 03_auto_analysis/
 05_auto_profile/
 06_auto_encyclopedia/
 07_auto_localized/
 output/
-
-# 영웅 아이콘 43MB. 백과사전이 raw.githubusercontent.com 에서 불러오므로
-# 빌드에 필요 없다.
-02_auto_herodata/images/
 
 __pycache__/
 *.pyc

@@ -1,100 +1,83 @@
-# 히오스 백과사전 — GitHub Actions 판
+# 히오스 백과사전
 
-[hots_date260725](../hots_date260725) 와 같은 파이프라인인데, **3단계부터 GitHub
-Actions 가 돌린다.** 결과물은 GitHub Pages 로 올라간다.
+영웅 90명의 스킬·특성을 한글로 정리한 백과사전. 위키 상세 수치와 범위 그림이
+들어 있다.
 
-푸시하면 자동으로 다시 만들어지고, 매주 월요일에도 한 번 돈다.
+**보기 → https://sin0nis.github.io/Hots_encyclopedia/**
+
+게임이 패치되면 **하루에 한 번 알아서 다시 만든다.** 손댈 일이 없다.
 
 ---
 
-## 왜 1·2단계는 여기서 못 도는가
+## 어떻게 도는가
 
-파이프라인 8단계 중 앞의 두 개만 **게임 원본**을 건드린다.
+매일 한국 시간 오전 8시에 블리자드 패치 서버를 보고, 새 빌드가 나왔을 때만
+처음부터 다시 만든다. 그대로면 아무것도 하지 않는다.
 
-| 단계 | 하는 일 | Actions 에서 |
-|---|---|---|
-| 1 casc | 게임 XML·게임스트링 추출 | ❌ |
-| 2 herodata | 영웅 JSON·아이콘 추출 | ❌ |
-| 3 analysis ~ 8 verify | 나머지 전부 | ✅ |
-
-이유는 둘이다.
-
-1. **게임이 설치돼 있어야 한다.** 러너에는 히오스가 없다.
-2. **파서의 `online` 모드가 죽는다.** 블리자드 CDN 에서 바로 받아 오는 길이
-   있긴 한데, 실제로 돌려 보면 1.4초 만에 `Not a valid Win32 FileTime` 으로
-   끝난다. 파서가 CDN 메타데이터를 못 읽는다.
-
-   ```
-   $ dotnet-heroes-data-parser casc-extract online -o out -i "..."
-   Error: Not a valid Win32 FileTime.
-   ```
-
-그래서 **1·2단계의 결과물만 저장소에 커밋해 두고** Actions 는 3단계부터 돌린다.
-게임이 패치되면 그때만 로컬에서 1·2를 돌려 커밋하면 된다.
-
-## 저장소에 무엇이 들어 있나
-
-| 폴더 | 크기 | 무엇 |
-|---|---|---|
-| `00_manual/` | 76K | 손으로 관리하는 값 (범위 보정·용어집·설정) |
-| `00_scripts/` | 412K | 파이프라인 코드 |
-| `01_auto_casc/` | 39M | 게임 XML·게임스트링 — **1단계 결과물** |
-| `02_auto_herodata/data/` | 6.4M | 영웅 JSON — **2단계 결과물** |
-| `04_auto_wiki/` | 7.6M | Fandom 위키 수집분 (캐시) |
-| | **54M** | |
-
-**영웅 아이콘 43MB 는 넣지 않았다.** 백과사전이 아이콘을
-`raw.githubusercontent.com` 에서 불러오기 때문에 빌드에 필요 없다. 그것만 빼도
-저장소가 절반 아래로 줄었다.
-
-3·5·6·7 단계 폴더와 `output/` 은 `.gitignore` 로 뺐다. Actions 가 매번 다시
-만든다.
-
-## 게임이 패치되면
-
-로컬(게임이 깔린 컴퓨터)에서 앞의 두 단계만 돌리고 커밋한다.
-
-```bash
-python 00_scripts/pipeline.py --only casc,herodata
-git add 01_auto_casc 02_auto_herodata
-git commit -m "게임 데이터 갱신 (Build XXXXX)"
-git push
+```
+1. 패치 서버에서 지금 빌드 번호를 읽는다
+     http://us.patch.battle.net:1119/hero/versions  ->  97650
+2. archive/Build_97650/ 이 이미 있으면 -> 그대로 둔다
+3. 없으면 -> 아래 8단계를 처음부터 돌린다
 ```
 
-푸시하면 Actions 가 나머지를 만들어 Pages 에 올린다.
+| 단계 | 하는 일 |
+|---|---|
+| 1 casc | 블리자드 CDN 에서 게임 XML·게임스트링을 받는다 |
+| 2 herodata | 영웅 JSON 을 받는다 |
+| 3 analysis | 영웅별로 다시 묶는다 |
+| 4 wiki | Fandom 위키를 긁는다 (평소엔 캐시를 쓴다) |
+| 5 profile | XML + 위키를 합친다 |
+| 6 build | 백과사전 HTML 을 만든다 |
+| 7 kr | 한글화하고 위키 필드·범위 그림을 심는다 |
+| 8 verify | 위키 수치를 게임 데이터와 맞대 본다 |
 
-## 위키를 다시 긁고 싶으면
+**게임 데이터는 저장소에 없다.** 파서의 `online` 모드가 리눅스에서 멀쩡히 돌아서
+CI 가 그때그때 받아 온다. (윈도우에서는 `Not a valid Win32 FileTime` 으로 죽는다.
+로컬에서 돌릴 때는 설치된 게임을 읽어야 한다.)
 
-위키는 사람이 손으로 고치는 곳이라 게임 패치와 따로 논다. Actions 탭에서
-**Run workflow** 를 누르고 `refresh_wiki` 를 켜면 90개 영웅을 다시 긁는다
-(약 3분). 새로 긁은 결과는 봇이 `04_auto_wiki/` 에 되커밋한다.
+## 저장소에 있는 것
 
-평소 빌드는 커밋된 캐시를 그대로 쓴다.
+| 폴더 | 무엇 |
+|---|---|
+| `00_manual/` | **손으로 관리하는 값** — 범위 보정·용어집·설정. 여기만 고치면 된다 |
+| `00_scripts/` | 파이프라인 코드 |
+| `04_auto_wiki/` | Fandom 위키 수집분 (캐시) |
+| `archive/` | 지난 판. 게임 빌드마다 그 시점 결과물이 통째로 남는다 |
+| `CHANGELOG.md` | 빌드마다 한 줄씩 |
+
+나머지는 전부 빌드가 만든다.
+
+## 손으로 돌리고 싶으면
+
+**Actions → 백과사전 빌드 → Run workflow**
+
+| 칸 | 뜻 |
+|---|---|
+| `force` | 게임이 그대로여도 다시 만든다 (코드를 고쳤을 때) |
+| `refresh_wiki` | Fandom 위키도 다시 긁는다 (90번 호출, 약 3분) |
+
+`00_manual/` 이나 `00_scripts/` 를 고쳐 푸시해도 바로 다시 만든다.
+
+## 지난 판
+
+게임이 패치될 때마다 그 시점 백과사전이 `archive/Build_<번호>/` 에 통째로 남는다.
+사이트에서는 메인 페이지 아래 **지난 판** 에서 들어간다.
 
 ## 나오는 것
 
-- **Pages** — `index.html` (메인) → 백과사전 → 용어집
+- **사이트** — 메인 → 백과사전 → 용어집, 그리고 지난 판
 - **아티팩트 `리포트`** — 빌드마다 남는 점검 결과
-  - `xml_check.md` — 위키 수치를 게임 데이터와 맞댄 결과
+  - `xml_check.md` — 위키 수치를 게임 데이터와 맞댄 결과 (어느 XML 파일·태그에서
+    읽었는지까지 적혀 있다)
   - `wiki_inventory.md` — 위키가 주는 데이터 전수 목록
   - `no_aoe.html` — 범위 그림이 없는 스킬 목록
   - `report.md` — 한글화 미검수 항목
 
 ## 처음 켤 때
 
-저장소 **Settings → Pages → Source** 를 **GitHub Actions** 로 둔다.
-`refresh_wiki` 를 쓰려면 **Settings → Actions → Workflow permissions** 를
-**Read and write** 로 둬야 봇이 되커밋할 수 있다.
-
-## 한 가지 짚고 갈 것
-
-`01_auto_casc/` 와 `02_auto_herodata/` 는 **블리자드의 게임 데이터**다. 공개
-저장소에 올리면 그 자체를 재배포하는 셈이 된다. 결과물(백과사전)만 공개하는
-것과는 무게가 다르다.
-
-- **비공개 저장소**로 두고 Pages 만 공개하는 쪽이 안전하다
-  (Pages 는 비공개 저장소에서도 GitHub Pro 이상이면 공개로 낼 수 있다)
-- 공개로 갈 거면 최소한 게임 데이터를 뺀 채로 두고, 빌드할 때만 넣는 방법을
-  따로 마련하는 편이 낫다
+- **Settings → Pages → Source** 를 **GitHub Actions** 로
+- **Settings → Actions → Workflow permissions** 를 **Read and write** 로
+  (봇이 `archive/` 와 `CHANGELOG.md` 를 되커밋한다)
 
 파이프라인 자체 설명은 [README_pipeline.md](README_pipeline.md) 에 있다.

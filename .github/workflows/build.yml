@@ -1,43 +1,90 @@
 name: 백과사전 빌드
 
-# 1·2 단계(게임 데이터 추출)는 여기서 돌지 않는다. 게임이 설치돼 있어야 하고,
-# 파서의 online 모드는 "Not a valid Win32 FileTime" 으로 죽는다. 그래서 그 두
-# 단계의 결과물만 저장소에 커밋해 두고, Action 은 3단계부터 돌린다.
+# 매일 한국 오전 8시에 블리자드 패치 서버를 보고, 게임이 새로 나왔으면 그때만
+# 처음부터 다시 만든다. 게임 데이터는 저장소에 두지 않고 CI 가 그때그때 받아 온다.
 on:
+  schedule:
+    # 23:00 UTC = 한국 오전 8시
+    - cron: '0 23 * * *'
+  workflow_dispatch:
+    inputs:
+      force:
+        description: '게임이 그대로여도 다시 만든다'
+        type: boolean
+        default: false
+      refresh_wiki:
+        description: 'Fandom 위키도 다시 긁는다 (90번 호출, 약 3분)'
+        type: boolean
+        default: false
   push:
     branches: [main]
     paths:
       - '00_manual/**'
       - '00_scripts/**'
-      - '01_auto_casc/**'
-      - '02_auto_herodata/**'
       - '.github/workflows/build.yml'
-  workflow_dispatch:
-    inputs:
-      refresh_wiki:
-        description: 'Fandom 위키를 다시 긁는다 (90번 호출, 약 3분)'
-        type: boolean
-        default: false
-  schedule:
-    # 매주 월요일 새벽. 위키가 패치를 반영했는지 확인하는 용도다.
-    - cron: '0 18 * * 0'
 
 permissions:
-  # 봇이 04_auto_wiki 와 archive 를 되커밋하므로 쓰기가 필요하다
+  # 봇이 보관함·변경 기록·위키 수집분을 되커밋한다
   contents: write
   pages: write
   id-token: write
 
-# 빌드가 겹치면 뒤엣것만 남긴다. 앞엣것을 끝까지 돌릴 이유가 없다.
 concurrency:
   group: pages
   cancel-in-progress: true
 
 jobs:
+  # 만들 이유가 있는지부터 본다. 게임이 그대로면 러너를 5분 돌릴 이유가 없다.
+  check:
+    runs-on: ubuntu-latest
+    outputs:
+      go: ${{ steps.decide.outputs.go }}
+      build: ${{ steps.decide.outputs.build }}
+      why: ${{ steps.decide.outputs.why }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 지금 게임 빌드와 이미 만든 판 견주기
+        id: decide
+        run: |
+          curl -sS --max-time 30 http://us.patch.battle.net:1119/hero/versions > versions.txt
+          BUILD=$(awk -F'|' '/^us\|/ {print $5}' versions.txt)
+          echo "패치 서버가 알려 준 빌드: ${BUILD:-읽기실패}"
+          echo "build=$BUILD" >> "$GITHUB_OUTPUT"
+
+          if [ -z "$BUILD" ]; then
+            echo 'go=false' >> "$GITHUB_OUTPUT"
+            echo 'why=패치 서버를 못 읽었다' >> "$GITHUB_OUTPUT"
+          elif [ "${{ github.event_name }}" != 'schedule' ]; then
+            # 손으로 돌렸거나 코드가 바뀐 경우다. 게임과 무관하게 다시 만든다.
+            echo 'go=true' >> "$GITHUB_OUTPUT"
+            echo "why=${{ github.event_name }} 로 불렸다" >> "$GITHUB_OUTPUT"
+          elif [ -d "archive/Build_$BUILD" ]; then
+            echo 'go=false' >> "$GITHUB_OUTPUT"
+            echo "why=Build $BUILD 는 이미 만들어 뒀다" >> "$GITHUB_OUTPUT"
+          else
+            echo 'go=true' >> "$GITHUB_OUTPUT"
+            echo "why=새 빌드 $BUILD 가 나왔다" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: 판단 남기기
+        run: echo "### ${{ steps.decide.outputs.why }}" >> "$GITHUB_STEP_SUMMARY"
+
   build:
+    needs: check
+    if: needs.check.outputs.go == 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0'
+
+      - name: 파서 설치
+        run: |
+          dotnet tool install -g heroesdataparser
+          echo "$HOME/.dotnet/tools" >> "$GITHUB_PATH"
 
       - uses: actions/setup-python@v5
         with:
@@ -47,32 +94,42 @@ jobs:
       - name: 의존성 설치
         run: pip install -r requirements.txt
 
-      # 점검은 실제로 돌릴 것과 같은 범위를 봐야 한다. 범위가 어긋나면
-      # 돌지도 않을 단계의 준비물이 없다고 빌드가 죽는다.
+      # 위키는 사람이 손으로 고치는 곳이라 게임 패치와 따로 논다. 평소에는
+      # 커밋해 둔 수집분을 쓰고, 시켰을 때만 다시 긁는다.
       - name: 계획 정하기
         id: plan
         run: |
           if [ "${{ github.event.inputs.refresh_wiki }}" = "true" ]; then
-            echo 'steps=analysis,wiki,profile,build,kr,verify' >> "$GITHUB_OUTPUT"
+            echo 'steps=casc,herodata,analysis,wiki,profile,build,kr,verify' >> "$GITHUB_OUTPUT"
           else
-            echo 'steps=analysis,profile,build,kr,verify' >> "$GITHUB_OUTPUT"
+            echo 'steps=casc,herodata,analysis,profile,build,kr,verify' >> "$GITHUB_OUTPUT"
           fi
 
       - name: 준비물 점검
-        run: python 00_scripts/pipeline.py --only ${{ steps.plan.outputs.steps }} --check
+        run: |
+          python 00_scripts/pipeline.py --only ${{ steps.plan.outputs.steps }} \
+            --storage online --no-images --check
 
+      # 게임 데이터를 블리자드 CDN 에서 바로 받는다. 아이콘 43MB 는 받지 않는다 -
+      # 백과사전이 raw.githubusercontent.com 에서 불러오기 때문에 필요 없다.
       - name: 빌드
-        run: python 00_scripts/pipeline.py --only ${{ steps.plan.outputs.steps }}
+        run: |
+          python 00_scripts/pipeline.py --only ${{ steps.plan.outputs.steps }} \
+            --storage online --no-images
+
+      - name: 만든 것이 이번 빌드가 맞는지 확인
+        run: |
+          grep -q "Build ${{ needs.check.outputs.build }}" output/index.html \
+            || { echo "받아 온 것이 Build ${{ needs.check.outputs.build }} 가 아니다"; exit 1; }
 
       - name: 이번 판 보관
         run: python 00_scripts/archive_build.py
 
       - name: 보관함을 결과물 폴더에 함께 담기
-        # Pages 는 output/ 만 올린다. 보관함은 저장소 루트에 두고 올릴 때만 넣는다.
+        # Pages 는 output/ 만 올린다. 보관함은 저장소에 두고 올릴 때만 넣는다.
         run: cp -r archive output/archive
 
       - name: 바뀐 것 되돌려 놓기
-        # 위키를 다시 긁었으면 그 수집분도, 새 판이 생겼으면 보관함도 함께 커밋한다.
         run: |
           git config user.name  'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
@@ -80,7 +137,7 @@ jobs:
           if git diff --staged --quiet; then
             echo "바뀐 것이 없습니다."
           else
-            git commit -m '이번 판 보관 (자동)'
+            git commit -m "Build ${{ needs.check.outputs.build }} 보관 (자동)"
             git push
           fi
 
