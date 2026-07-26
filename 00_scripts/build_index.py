@@ -58,11 +58,11 @@ body {{ margin:0; min-height:100vh; background:var(--bg); color:#eee; display:fl
 header {{ text-align:center; margin-bottom:34px; }}
 h1 {{ margin:0 0 8px; font-size:26px; color:var(--p); font-weight:bold; }}
 .meta {{ color:#666; font-size:12px; }}
-/* 넷이 3+1 로 떨어지지 않게 2x2 로 묶는다 */
 .past {{ margin-top:18px; font-size:12.5px; }}
 .past a {{ color:#7fd4f0; text-decoration:none; border-bottom:1px dotted #2c6d85; }}
 .past a:hover {{ color:#bdefff; }}
-.cards {{ display:grid; gap:14px; width:100%; max-width:640px;
+/* 셋이 넓은 화면에서 한 줄로 서고 좁아지면 한 장씩 떨어진다 */
+.cards {{ display:grid; gap:14px; width:100%; max-width:960px;
   grid-template-columns:repeat(auto-fit,minmax(270px,1fr)); }}
 .card {{ background:var(--card); border:1px solid #262630; border-left:3px solid var(--accent);
   border-radius:10px; padding:18px 18px 16px; text-decoration:none; color:inherit;
@@ -82,22 +82,6 @@ footer {{ margin-top:30px; color:#4a4a52; font-size:11px; text-align:center; lin
 </header>
 
 <div class="cards">
-  <a class="card" style="--accent:var(--p)" href="{local}">
-    <span class="icon">📖</span>
-    <span class="name">영웅 백과사전</span>
-    <span class="desc">영웅 {heroes}명의 스킬·특성 전체. 위키 상세 수치와 범위 그림이
-      들어 있다. 레벨 0부터 30까지 수치가 바뀐다.</span>
-    <span class="host">{local}</span>
-  </a>
-
-  <a class="card" style="--accent:var(--blue)" href="{local}#glossary">
-    <span class="icon">📘</span>
-    <span class="name">용어집</span>
-    <span class="desc">스킬·특성 하단 필드의 한글 표기를 정리했다. 게임 번역이 아니라
-      직접 정한 말들이라 어디서 왔는지 적어 두었다.</span>
-    <span class="host">백과사전 안에 있다</span>
-  </a>
-
   <a class="card" style="--accent:var(--gold)" href="{builder}" target="_blank" rel="noopener">
     <span class="icon">🧩</span>
     <span class="name">특성 찍기</span>
@@ -111,9 +95,17 @@ footer {{ margin-top:30px; color:#4a4a52; font-size:11px; text-align:center; lin
     <span class="desc">Fandom 원문 위키. 백과사전의 상세 수치가 여기서 온다.</span>
     <span class="host">heroesofthestorm.fandom.com</span>
   </a>
+
+  <a class="card" style="--accent:var(--p)" href="{local}">
+    <span class="icon">📖</span>
+    <span class="name">영웅 백과사전</span>
+    <span class="desc">영웅 {heroes}명의 스킬·특성 전체. 위키 상세 수치와 범위 그림이
+      들어 있다. 레벨 0부터 30까지 수치가 바뀐다. 용어집은 그 안 좌측 상단에 있다.</span>
+    <span class="host">내가 만든 것</span>
+  </a>
 </div>
 {archive}
-<footer>위 두 장은 이 폴더 안에 있고, 아래 둘은 바깥 사이트다.</footer>
+<footer>앞의 둘은 바깥 사이트이고, 백과사전은 이 폴더 안에 있다.</footer>
 </body>
 </html>
 """
